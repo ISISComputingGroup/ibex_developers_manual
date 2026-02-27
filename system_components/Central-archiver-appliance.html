@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central archiver appliance &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Database Server" href="DatabaseServer.html" />
+    <link rel="prev" title="Using the archive engine with MySQL" href="archive/Using-the-archive-engine-with-mysql.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">Central archiver appliance</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/Central-archiver-appliance.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="central-archiver-appliance">
+<h1>Central archiver appliance<a class="headerlink" href="#central-archiver-appliance" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page describes the work-in-progress implementation of the <em>central</em> inst archiver based on the <a class="reference external" href="https://epicsarchiver.readthedocs.io/en/latest/">archive appliance</a>. For information about the older, existing inst archiver, see <a class="reference internal" href="CSS-Archive-Engine.html"><span class="doc std std-doc">CSS archiver</span></a>.</p>
+</div>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading"></a></h2>
+<p>Based on decisions taken in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8489">issue 8469</a>, the proposed architecture is:</p>
+<ul class="simple">
+<li><p>Run a single, central, archive appliance cluster for the inst archiver</p>
+<ul>
+<li><p>(the word “cluster” is archive appliance terminology, this may actually just be one machine depending on performance metrics etc)</p></li>
+</ul>
+</li>
+<li><p>Initially for a short period this may be in parallel with the existing inst archivers on the instruments</p>
+<ul>
+<li><p>As we gain confidence with the new archiver, we then may choose to start automatically removing old rows from the “old” archiver (without backup) periodically, and then eventually remove it once we’ve gained enough confidence.</p></li>
+</ul>
+</li>
+<li><p>Various options for where exactly the central archiver will get deployed.</p>
+<ul>
+<li><p>Our own central windows machine that we control / administer</p></li>
+<li><p>Our own central linux machine that we control / administer</p></li>
+<li><p>SCD cloud (probably linux?)</p></li>
+<li><p>FIT cloud (probably windows?)</p></li>
+</ul>
+</li>
+<li><p>Use containers so that the solution is agnostic to where it actually ends up running.</p>
+<ul>
+<li><p>Needs a reasonable amount of disk space. Based on historic archiving data something on the order of a TB or two will likely be sufficient to keep a cycles’ worth of data at full granularity, and then decimated data longer-term.
+We can adjust our archive appliance policies here to fine-tune the exact balance between space usage and data granularity</p></li>
+</ul>
+</li>
+<li><p>Don’t move the block archiver (at least initially)</p>
+<ul>
+<li><p>This means isisicp doesn’t need to change initially - if/when we move the block archiver we’ll also need to change isisicp.</p></li>
+<li><p>This also means that we can gain experience/confidence with the inst archiver running centrally, and then can make a decision about what we want to do with the block archiver later, based on the experience we’ve gained and reliability metrics etc etc.</p></li>
+<li><p>inst archiver likely takes the bulk of the space for archived data on most instruments.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading"></a></h2>
+<p>Archive appliance configuration files are in <a class="reference external" href="https://github.com/isiscomputinggroup/isis-aa-config">isis-aa-config</a> and our build of the archive appliance is at <a class="reference external" href="https://github.com/isiscomputinggroup/epicsarchiverap"><code class="docutils literal notranslate"><span class="pre">epicsarchiverap</span></code></a>.</p>
+<p>The archiver appliance is run using containers, so you will need to install rancher desktop to do any development on this system.</p>
+<p>Some key commands are:</p>
+<p>Run the archive appliance (run from within <code class="docutils literal notranslate"><span class="pre">isis-aa-config</span></code> repo):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nerdctl</span> <span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">yaml</span> <span class="n">up</span>
+</pre></div>
+</div>
+<p>Stop, rebuild &amp; restart container (without cached images, e.g. if you have changed <code class="docutils literal notranslate"><span class="pre">Containerfile</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nerdctl</span> <span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">yaml</span> <span class="n">down</span> <span class="o">&amp;&amp;</span> <span class="n">nerdctl</span> <span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">yaml</span> <span class="n">build</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span> <span class="o">&amp;&amp;</span> <span class="n">nerdctl</span> <span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">yaml</span> <span class="n">up</span>
+</pre></div>
+</div>
+<p>To run a bash session inside the running container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nerdctl</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="n">my_aa</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+</pre></div>
+</div>
+<p>When running, the archive appliance UI is available at <a class="reference external" href="http://localhost:17665/mgmt/ui/index.html">http://localhost:17665/mgmt/ui/index.html</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="archive/Using-the-archive-engine-with-mysql.html" class="btn btn-neutral float-left" title="Using the archive engine with MySQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="DatabaseServer.html" class="btn btn-neutral float-right" title="Database Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

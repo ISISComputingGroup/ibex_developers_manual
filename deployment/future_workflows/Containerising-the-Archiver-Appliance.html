@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Containerising the Archive Appliance &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mount or create IBEX VHDs" href="Mount-or-create-IBEX-VHDs.html" />
+    <link rel="prev" title="Containerising an IOC" href="Containerising-an-IOC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Deploy.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Patch.html">Patching</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Future.html">Future Workflows</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Containerising-an-IOC.html">Containerising an IOC</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Containerising the Archive Appliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mount-or-create-IBEX-VHDs.html">Mount or create IBEX VHDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Future.html">Future Workflows</a></li>
+      <li class="breadcrumb-item active">Containerising the Archive Appliance</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/future_workflows/Containerising-the-Archiver-Appliance.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="containerising-the-archive-appliance">
+<h1>Containerising the Archive Appliance<a class="headerlink" href="#containerising-the-archive-appliance" title="Link to this heading"></a></h1>
+<p>The EPICS Archiver Appliance is principally targeted to run on a Linux host and there are some issues when attempting to run it under Windows.
+<a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8438">Ticket #8438</a> was to investigate and document whether the Archiver Appliance can be run in a container on a Windows host. Particular interest is its ability to run on a NDX Windows virtual machine.</p>
+<p>A new EPICS gateway has been configured to make localhost PVs available to the container - In C:\Instrument\Apps\EPICS\gateway (<a class="reference external" href="https://github.com/ISISComputingGroup/EPICS.git">https://github.com/ISISComputingGroup/EPICS.git</a>), new files have been added:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gwcontainer.acf</span></code></p></td>
+<td><p>Container gateway security</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gwcontainer.pvlist</span></code></p></td>
+<td><p>Container gateway PV list</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">start_gwcontainer.bat</span></code></p></td>
+<td><p>Container gateway start script, called from start_gateways.bat</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stop_gwcontainer.bat</span></code></p></td>
+<td><p>Container gateway stop script, called from stop_gateways.bat</p></td>
+</tr>
+</tbody>
+</table>
+<p>A new git repository has been created (<code class="docutils literal notranslate"><span class="pre">https://github.com/ISISComputingGroup/isis-aa-config.git</span></code>). This contains all the code required to build a Archiver Appliance image and run a container instance.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Containerfile</span></code></p></td>
+<td><p>Defines the content to build into the image</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aa-compose.yaml</span></code></p></td>
+<td><p>Used by <code class="docutils literal notranslate"><span class="pre">nerdctl</span> <span class="pre">compose</span></code> to control building the image and running the container</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker-compose.yaml</span></code></p></td>
+<td><p>This was used as an experimental compose file to test various networking options to try to circumvent Windows lack of ‘host’ container networking. Retained as there is some useful info and techniques</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">containerdata</span></code></p></td>
+<td><p>This directory is mounted by the container and facilitates data persistence</p></td>
+</tr>
+</tbody>
+</table>
+<p>Due to complications and uncertainties of licencing of Docker Desktop, it has been decided to adopt an open source alternative, a number of which are freely available, such as Rancher Desktop, <code class="docutils literal notranslate"><span class="pre">Podman</span></code>, etc. For the purpose of this exercise, <a class="reference external" href="https://rancherdesktop.io/">Rancher</a> was chosen.</p>
+<section id="rancher-desktop-installation">
+<h2>Rancher Desktop Installation<a class="headerlink" href="#rancher-desktop-installation" title="Link to this heading"></a></h2>
+<p>Non-windows Containers on Windows hosts need Windows System for Linux (WSL2) to be installed on the host machine. If not already present, this is installed as part of the Rancher Desktop installation process. Rancher Desktop will create its own necessary distributions (rancher-desktop-data and rancher-desktop) on WSL and it there is no need to manually install anything else.</p>
+<p><strong>Note:</strong> Rancher (and other container managers) have a minimum Windows version that it will run on, which is 10-1909 or newer.</p>
+<p>Download the Installation MSI file for Windows (x64). At the time of writing, it is: <code class="docutils literal notranslate"><span class="pre">Rancher.Desktop.Setup.1.15.1.msi</span></code></p>
+<p>Run the msi file, you will need admin access at some point. Under testing, an error message was presented: “Rancher Desktop Setup Wizard ended prematurely. Your system has not been modified…”, but on the second attempt, the installation completed successfully.</p>
+</section>
+<section id="creating-the-archiver-appliance-image">
+<h2>Creating the Archiver Appliance image<a class="headerlink" href="#creating-the-archiver-appliance-image" title="Link to this heading"></a></h2>
+<p>The image is composed of the EPICS Archiver Appliance, hosted on a minimal Linux platform. The definition for this is specified in the <code class="docutils literal notranslate"><span class="pre">Containerfile</span></code> file.
+The repository for the containerised Archiver Appliance development is: <a class="reference external" href="https://github.com/ISISComputingGroup/isis-aa-config.git">isis-aa-config.git</a></p>
+<p>The image can be built either using the <code class="docutils literal notranslate"><span class="pre">Containerfile</span></code> directly:</p>
+<p><code class="docutils literal notranslate"><span class="pre">nerdctl</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">--tag</span> <span class="pre">isis-aa</span></code></p>
+<p>Or it can be built and run using <code class="docutils literal notranslate"><span class="pre">compose</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">nerdctl</span> <span class="pre">compose</span> <span class="pre">-f</span> <span class="pre">aa-compose.yaml</span> <span class="pre">up</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">compose</span></code> route is preferred, as it specifies all the port mappings and host mount points within the YAML file.</p>
+<p>if <code class="docutils literal notranslate"><span class="pre">nerdctl</span> <span class="pre">build</span></code> is used, then the container will need to be spun up via the following:
+<code class="docutils literal notranslate"><span class="pre">nerdctl</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--rm</span> <span class="pre">-v</span> <span class="pre">&quot;containerdata:/storage&quot;</span> <span class="pre">-p</span> <span class="pre">17665:17665,5064:5064,5065:5065</span> <span class="pre">isis-aa</span> <span class="pre">/bin/bash</span></code>
+Where:</p>
+<ul class="simple">
+<li><p>17665 is the Archiver Appliance web interface port.</p></li>
+<li><p>5065,5064 are the standard EPICS channel access ports (both UDP and TCP).</p></li>
+</ul>
+<p><strong>Note</strong> that the local <code class="docutils literal notranslate"><span class="pre">containerdata</span></code> directory is specified as a relative path to the current working directory. It is possible to define an absolute path, but this needs further reading and testing to discover how it works.</p>
+</section>
+<section id="observations-and-present-limitations">
+<h2>Observations and present limitations<a class="headerlink" href="#observations-and-present-limitations" title="Link to this heading"></a></h2>
+<section id="minimum-windows-version">
+<h3>Minimum Windows version<a class="headerlink" href="#minimum-windows-version" title="Link to this heading"></a></h3>
+<p>Rancher Desktop (and likely any other container management platform under Windows) requires WSL2. The minimum Windows version that is supported is 10-1909. Unfortunately, the NDX VMs are older, probably running 10-1809, so it will not be possible to run any form of containerisation on those hosts until they are upgraded. Upgrading the NDX hosts requires a carefully designed test plan to ensure minimal risk to loss of beam time.</p>
+</section>
+<section id="rancher-wsl-vs-windows-wsl">
+<h3>Rancher WSL vs Windows WSL<a class="headerlink" href="#rancher-wsl-vs-windows-wsl" title="Link to this heading"></a></h3>
+<p>Although Rancher does install a version of WSL automatically, I ran into an issue which prompted me to update it using the <code class="docutils literal notranslate"><span class="pre">cmd</span></code> command: <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--update</span></code>
+after which there were no further issues.</p>
+</section>
+<section id="virtualisation-support-on-the-ndx-and-ndh-hosts">
+<h3>Virtualisation support on the NDX and NDH hosts<a class="headerlink" href="#virtualisation-support-on-the-ndx-and-ndh-hosts" title="Link to this heading"></a></h3>
+<p>On the container host system (NDX) it is necessary to switch on WSL (Windows Subsystem for Linux):
+<img alt="image" src="../../_images/Containerising-the-Archiver-Appliance-windows-options.png" /></p>
+<p>On the main VM host machine (NDH) it is necessary to switch on ‘Nested Virtualisation’ to allow the NDX VM to run its own VMs. If this is not done, then errors will be presented when trying to run Rancher Desktop: ‘Requires WSL with kernel 5.15 or newer (have 0.0.0.0)</p>
+</section>
+</section>
+<section id="epics-container-gateway">
+<h2>EPICS Container Gateway<a class="headerlink" href="#epics-container-gateway" title="Link to this heading"></a></h2>
+<section id="the-problem">
+<h3>The problem<a class="headerlink" href="#the-problem" title="Link to this heading"></a></h3>
+<p>The Archiver Appliance running inside a container requires visibility of Channel Access broadcasts to enable it to see PVs. By default a container is isolated from the host network, unless networking is specified or specific ports mapped at runtime to the host network. A Linux host, with a standard network stack can permit a container to full network access by specifying <code class="docutils literal notranslate"><span class="pre">--network</span> <span class="pre">'host'</span></code> parameter. Unfortunately, Windows does not implement a standard stack and has some weird network interface construction that prevents the ‘host’ option being used.
+Instead a gateway has been configured which the container ‘sees’ via port mapping 5064 and 5065.
+The new container targeted gateway is started with the <code class="docutils literal notranslate"><span class="pre">start_gwcontainer.bat</span></code> script, called from within <code class="docutils literal notranslate"><span class="pre">start_gateways.bat</span></code>.</p>
+</section>
+<section id="access-security">
+<h3>Access security<a class="headerlink" href="#access-security" title="Link to this heading"></a></h3>
+<p>A new ACF file (<code class="docutils literal notranslate"><span class="pre">gwcontainer.acf</span></code>) has been created specifically for the container gateway running on the localhost (NDX). Only localhost is in the machine list (<code class="docutils literal notranslate"><span class="pre">HAG</span></code>) and PVs are made read/write by anyone.</p>
+</section>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Link to this heading"></a></h2>
+<p>Reduced performance is to be expected when running containers on a virtual machine. Some metrics have been obtained by running simple containerised stress tests and comparing with those observed on a development machine.
+A simple python script to find 1000 prime numbers:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Host type</p></th>
+<th class="head"><p>Elapsed time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NDX native</p></td>
+<td><p>0.004 - 0.010 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>NDX container</p></td>
+<td><p>0.006 - 0.009 s</p></td>
+</tr>
+</tbody>
+</table>
+<p>At first sight, this seems to indicate that there should be very little concern regarding container performance on NDX machines compared with native execution.</p>
+<section id="storing-images-in-a-different-location">
+<h3>Storing images in a different location<a class="headerlink" href="#storing-images-in-a-different-location" title="Link to this heading"></a></h3>
+<p>On installing Rancher Desktop, two WSL distributions are created: <code class="docutils literal notranslate"><span class="pre">rancher-desktop</span></code> and <code class="docutils literal notranslate"><span class="pre">rancher-desktop-data</span></code>. The latter is where images are stored and it is feasible to modify the physical storage volume via the following procedure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="o">--</span><span class="n">shutdown</span>
+<span class="n">wsl</span> <span class="o">--</span><span class="n">export</span> <span class="n">rancher</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">data</span> <span class="n">rancher</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">tar</span>
+<span class="n">wsl</span> <span class="o">--</span><span class="n">unregister</span> <span class="n">rancher</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">data</span>
+<span class="n">wsl</span> <span class="o">--</span><span class="kn">import</span><span class="w"> </span><span class="nn">rancher</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">data</span> <span class="n">c</span><span class="p">:</span>\<span class="n">instrument</span>\<span class="n">var</span>\<span class="n">containers</span> <span class="n">rancher</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">tar</span> <span class="o">--</span><span class="n">version</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Once verified that it has worked, <code class="docutils literal notranslate"><span class="pre">rancher-desktop-data.tar</span></code> can be deleted.</p>
+</section>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<p>In order to verify correct operation of the Archiver Appliance container, follow the procedures from the sections above:</p>
+<ol class="arabic simple">
+<li><p>Rancher Desktop Installation (above)</p></li>
+<li><p>It is important to ensure that Rancher Desktop is running.</p></li>
+<li><p>Start a local EPICS gateway, using Instrument/Apps/EPICS/gateway/start_gateways.bat</p></li>
+<li><p>Build and run the container by following: Creating the Archiver Appliance image (above)</p></li>
+<li><p>Wait for Tomcat to complete initialisation in the container.</p></li>
+<li><p>Use a browser to view: <a class="reference external" href="http://localhost:17665/mgmt/ui/index.html">http://localhost:17665/mgmt/ui/index.html</a></p></li>
+<li><p>Select a small number of PVs and type them into the web page (Home page) where it says: “please type in some PV names here”</p></li>
+<li><p>Click the ‘Archive’ button.</p></li>
+<li><p>After a delay of around a minute or longer, the PV status should change from ‘Initial sampling’ to ‘Being archived’.</p></li>
+<li><p>Check that archive files are being created in <code class="docutils literal notranslate"><span class="pre">./Containerdata/{sts,mts,lts}</span></code> directory trees.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Containerising-an-IOC.html" class="btn btn-neutral float-left" title="Containerising an IOC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Mount-or-create-IBEX-VHDs.html" class="btn btn-neutral float-right" title="Mount or create IBEX VHDs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lua Utility Functions &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Serve file contents over EPICS" href="../Serve-file-contents-over-EPICS.html" />
+    <link rel="prev" title="LuaCheck" href="LuaCheck.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Tools.html">Tools &amp; Support Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Asyn-Interpose-Functions.html">Asyn Interpose functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AsynEchoDriver.html">Asyn Echo Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Autosave.html">Autosave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Convert-Record.html">Convert record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Creating-a-State-Machine-%28Sequencer%29.html">Creating a State Machine (Sequencer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../IOC-Utilities.html">IOC Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../IOC-access-security.html">IOC Access Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ISIS-modules-for-file-handling.html">ISIS modules for file handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Labview-Remote.html">LabVIEW Remote</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Lua.html">Lua</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="LuaCheck.html">LuaCheck</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Lua Utility Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Serve-file-contents-over-EPICS.html">Serve file contents over EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Template-Substitutions.html">Template Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Utilities-Library.html">Utilities Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../aSub-records.html">Asub records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../icpconfig.html">ICP Config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../../Tools.html">Tools &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Lua.html">Lua</a></li>
+      <li class="breadcrumb-item active">Lua Utility Functions</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tools/lua/Our-Lua-Utility-Functions.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lua-utility-functions">
+<h1>Lua Utility Functions<a class="headerlink" href="#lua-utility-functions" title="Link to this heading"></a></h1>
+<section id="using-our-lua-utility-functions">
+<h2>Using our Lua utility functions<a class="headerlink" href="#using-our-lua-utility-functions" title="Link to this heading"></a></h2>
+<p>Currently we have four functions available as utilities for booting iocs using lua: <code class="docutils literal notranslate"><span class="pre">getMacroValue</span></code>, <code class="docutils literal notranslate"><span class="pre">setAsynOptions</span></code>, <code class="docutils literal notranslate"><span class="pre">setHardwareFlowControl</span></code>, <code class="docutils literal notranslate"><span class="pre">setSoftwareFlowControl</span></code>.</p>
+<p>To be able to use these you need to add this to the top of your lua file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">package</span><span class="o">.</span><span class="n">path</span> <span class="o">..</span> <span class="s1">&#39;;&#39;</span> <span class="o">..</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;UTILITIES&quot;</span><span class="p">)</span> <span class="o">..</span> <span class="s1">&#39;/lua/luaUtils.lua;&#39;</span>
+<span class="n">ibex_utils</span> <span class="o">=</span> <span class="n">require</span> <span class="s2">&quot;luaUtils&quot;</span>
+</pre></div>
+</div>
+<section id="getmacrovalue-options">
+<h3><code class="docutils literal notranslate"><span class="pre">getMacroValue(options)</span></code><a class="headerlink" href="#getmacrovalue-options" title="Link to this heading"></a></h3>
+<p>Getting a macro from the environment. If the macro cannot be retrieved from the environment the default options value is returned. If there is no default given and the macro cannot be retrieved an error is raised.</p>
+<ul class="simple">
+<li><p>macro: String, the macro to look up in the</p></li>
+<li><p>default: String, the value to return if the macro if the macro is not set in the environment</p></li>
+</ul>
+<p>Example call: <code class="docutils literal notranslate"><span class="pre">ibex_utils.getMacroValue{macro=&quot;RECSIM&quot;,</span> <span class="pre">default=&quot;0&quot;}</span></code>
+CMD equivalent: <code class="docutils literal notranslate"><span class="pre">$(RECSIM=0)</span></code></p>
+</section>
+<section id="setasynoptions-device-port-baud-bits-parity-stop">
+<h3><code class="docutils literal notranslate"><span class="pre">setAsynOptions(device,</span> <span class="pre">port,</span> <span class="pre">baud,</span> <span class="pre">bits,</span> <span class="pre">parity,</span> <span class="pre">stop)</span></code><a class="headerlink" href="#setasynoptions-device-port-baud-bits-parity-stop" title="Link to this heading"></a></h3>
+<p>Note: This automatically sets asyn address port to -1. If you need to set it differently please use the calls <code class="docutils literal notranslate"><span class="pre">iocsh.drvAsynSerialPortConfigure</span></code> and <code class="docutils literal notranslate"><span class="pre">iocsh.asynSetOption</span></code> in your script.</p>
+<p>For a real device configure the asyn serial port and set the baud, bits, parity and stop options for it.</p>
+<ul class="simple">
+<li><p>device: String, the name of the asyn port</p></li>
+<li><p>port: String, the name of the physical port the device is connected to</p></li>
+<li><p>baud: Integer, The baud rate of the device</p></li>
+<li><p>bits: Integer, the number of data bits</p></li>
+<li><p>parity: String, the device parity</p></li>
+<li><p>stop: Integer, the number of stop bits.</p></li>
+</ul>
+<p>Example call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">isRecsim</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">isDevsim</span><span class="p">)</span> <span class="n">then</span>
+    <span class="n">local</span> <span class="n">port</span> <span class="o">=</span> <span class="n">ibex_utils</span><span class="o">.</span><span class="n">getMacroValue</span><span class="p">{</span><span class="n">macro</span><span class="o">=</span><span class="s2">&quot;PORT&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;NO_PORT_MACRO&quot;</span><span class="p">}</span>
+    <span class="n">local</span> <span class="n">baud</span> <span class="o">=</span> <span class="n">ibex_utils</span><span class="o">.</span><span class="n">getMacroValue</span><span class="p">{</span><span class="n">macro</span><span class="o">=</span><span class="s2">&quot;BAUD&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;9600&quot;</span><span class="p">}</span>
+    <span class="n">local</span> <span class="n">bits</span> <span class="o">=</span> <span class="n">ibex_utils</span><span class="o">.</span><span class="n">getMacroValue</span><span class="p">{</span><span class="n">macro</span><span class="o">=</span><span class="s2">&quot;BITS&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;8&quot;</span><span class="p">}</span>
+    <span class="n">local</span> <span class="n">parity</span> <span class="o">=</span> <span class="n">ibex_utils</span><span class="o">.</span><span class="n">getMacroValue</span><span class="p">{</span><span class="n">macro</span><span class="o">=</span><span class="s2">&quot;PARITY&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">}</span>
+    <span class="n">local</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">ibex_utils</span><span class="o">.</span><span class="n">getMacroValue</span><span class="p">{</span><span class="n">macro</span><span class="o">=</span><span class="s2">&quot;STOP&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
+    <span class="n">ibex_utils</span><span class="o">.</span><span class="n">setAsynOptions</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">baud</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">parity</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>CMD equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFNOTDEVSIM) $(IFNOTRECSIM) drvAsynSerialPortConfigure(&quot;$(DEVICE)&quot;, &quot;$(PORT=NO_PORT_MACRO)&quot;, 0, 0, 0, 0)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;$(DEVICE)&quot;, -1, &quot;baud&quot;, &quot;$(BAUD=9600)&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;$(DEVICE)&quot;, -1, &quot;bits&quot;, &quot;$(BITS=8)&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;$(DEVICE)&quot;, -1, &quot;parity&quot;, &quot;$(PARITY=none)&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;$(DEVICE)&quot;, -1, &quot;stop&quot;, &quot;$(STOP=1)&quot;)
+</pre></div>
+</div>
+</section>
+<section id="sethardwareflowcontrol-device-flowcontrolon">
+<h3><code class="docutils literal notranslate"><span class="pre">setHardwareFlowControl(device,</span> <span class="pre">flowControlOn)</span></code><a class="headerlink" href="#sethardwareflowcontrol-device-flowcontrolon" title="Link to this heading"></a></h3>
+<p>Note: This automatically sets asyn address port to -1. If you need to set it differently please use the call iocsh.asynSetOption in your script the way you want.</p>
+<p>Set the hardware flow control for when it is off or on.</p>
+<ul class="simple">
+<li><p>device: String, the name of the asyn port.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flowControlOn</span></code>: Boolean, true if hardware flow control is on.</p></li>
+</ul>
+</section>
+<section id="setsoftwareflowcontrol-device-flowcontrolon">
+<h3><code class="docutils literal notranslate"><span class="pre">setSoftwareFlowControl(device,</span> <span class="pre">flowControlOn)</span></code><a class="headerlink" href="#setsoftwareflowcontrol-device-flowcontrolon" title="Link to this heading"></a></h3>
+<p>Note: This automatically sets asyn address port to -1. If you need to set it differently please use the call iocsh.asynSetOption in your script the way you want.</p>
+<p>Sets the software flow control for when it is off or on.</p>
+<ul class="simple">
+<li><p>device: String, the name of the asyn port</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flowControlOn</span></code>: Boolean, true if software flow control is on.</p></li>
+</ul>
+</section>
+</section>
+<section id="adding-to-our-lua-utility-functions">
+<h2>Adding to our Lua utility functions<a class="headerlink" href="#adding-to-our-lua-utility-functions" title="Link to this heading"></a></h2>
+<p>Things to do:</p>
+<ul class="simple">
+<li><p>Add documentation in this page (the plan is to have documentation closer to the code, but that also needs to be worked out first)</p></li>
+<li><p>Add it to the imports in “Using our Lua utility functions” section above</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LuaCheck.html" class="btn btn-neutral float-left" title="LuaCheck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Serve-file-contents-over-EPICS.html" class="btn btn-neutral float-right" title="Serve file contents over EPICS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

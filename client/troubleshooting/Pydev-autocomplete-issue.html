@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyDEV Autocompletion &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Slow PV Reconnections" href="Slow-reconnection-in-the-GUI.html" />
+    <link rel="prev" title="PVManager &amp; Observers Logging" href="PV-Manager-and-Observers-Logging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Debugging-memory-leaks-in-the-IBEX-GUI.html">Debugging memory leaks in the IBEX GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Java-Resource-Usage-Tools.html">Java Memory and CPU Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Manager-and-Observers-Logging.html">PVManager &amp; Observers Logging</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PyDEV Autocompletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Slow-reconnection-in-the-GUI.html">Slow PV Reconnections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+      <li class="breadcrumb-item active">PyDEV Autocompletion</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/troubleshooting/Pydev-autocomplete-issue.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pydev-autocompletion">
+<h1>PyDEV Autocompletion<a class="headerlink" href="#pydev-autocompletion" title="Link to this heading"></a></h1>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>We have re-enabled the pydev autocomplete, which is the autocomplete in the ibex GUI scripting window. This had been disabled for a while after we discovered a problem, but it is not an easy fix and the problem may actually have existed for a much longer time than we realised.</p>
+<p>The problem only occurs with a “chained autocomplete”. For example if you type <code class="docutils literal notranslate"><span class="pre">g.</span></code> or <code class="docutils literal notranslate"><span class="pre">b.</span></code> to autocomplete a command or block name then that works fine. The problem occurs if you try and autocomplete further on an already completed command. For example if you type <code class="docutils literal notranslate"><span class="pre">g.c</span></code> you will be able to complete a <code class="docutils literal notranslate"><span class="pre">g.cset</span></code> command with no problems. However if after having completed this as <code class="docutils literal notranslate"><span class="pre">g.cset(&quot;ablock&quot;,</span> <span class="pre">1)</span></code> you then typed a further <code class="docutils literal notranslate"><span class="pre">.</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">g.cset(&quot;ablock&quot;,</span> <span class="pre">1).</span></code>) you would end up running the <code class="docutils literal notranslate"><span class="pre">cset</span></code> command continuously. This is because the command line needs to run the function to find out what type of object it returns so as to be able to display the list of new options to complete on. So the bottom line is that simple single autocompletes will not give any problems, but be aware that autocompleting on the result of a command/function will cause the command/function to run continuously which may have undesirable side effects. This does not apply only to genie python functions, it applies to any python function. For a simple example if you type <code class="docutils literal notranslate"><span class="pre">print(&quot;hello&quot;)</span></code> in the scripting window and then press <code class="docutils literal notranslate"><span class="pre">.</span></code> rather than the enter key, it will print hello continuously as it needs to run the print function to get the autocomplete choice.</p>
+</section>
+<section id="further-details-and-history">
+<h2>Further details and history<a class="headerlink" href="#further-details-and-history" title="Link to this heading"></a></h2>
+<p>We found an issue in the <code class="docutils literal notranslate"><span class="pre">pydev</span></code> plugin, used for the embedded scripting console in the GUI, in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7604">https://github.com/ISISComputingGroup/IBEX/issues/7604</a> which basically ran a function on autocomplete continuously. An example of this is like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">x</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>if you then used <code class="docutils literal notranslate"><span class="pre">x().</span></code> in a scripting console this would run in a never-ending loop and print “hello” continuously.</p>
+<p>This was alarming as we have several functions in our genie_python library which could be called this way by accident and this could have done bad things ie. move motors or set temperatures without the user realising.</p>
+<p>It was decided after investigation that we should <a class="reference external" href="https://github.com/ISISComputingGroup/Pydev/pull/4">disable this for now</a>, <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7850">triangulate</a> when it started happening, then look into a solution. This led to <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7898">some investigation</a> and we discovered that:
+a) this had been happening since the introduction of pydev in the GUI, though no one other than us had actually noticed - more on this later
+b) this problem only happens in pydev’s console view, which has no form of dynamic analysis of the code put into it</p>
+<p>After talking to the maintainer and doing several days work into looking into the code, we decided that the best course of action was to re-enable for now on instruments and let instrument scientists know that it may cause issues. The fix isn’t trivial due to the lack of dynamic analysis, but the continuously doing the action is a definite bug.</p>
+</section>
+<section id="how-to-enable-or-disable-auto-completion">
+<h2>How to enable or disable auto completion<a class="headerlink" href="#how-to-enable-or-disable-auto-completion" title="Link to this heading"></a></h2>
+<p>Pydev on a built GUI client is stored as several jars in the <code class="docutils literal notranslate"><span class="pre">plugins\</span></code> directory. The one we care about is called <code class="docutils literal notranslate"><span class="pre">org.python.pydev.ast_XXX</span></code> where <code class="docutils literal notranslate"><span class="pre">XXX</span></code> is the version suffix. The jar contains lots of bytecode-compiled java classes which are not directly editable.</p>
+<p>In order to disable autocompletion on an instrument, you will need to (in <code class="docutils literal notranslate"><span class="pre">\instrument\apps\client_e4\plugins\org.python.pydev.ast_xxx</span></code>)</p>
+<ul class="simple">
+<li><p>rename <code class="docutils literal notranslate"><span class="pre">ast.jar</span></code> to <code class="docutils literal notranslate"><span class="pre">ast.jar.ACENABLED</span></code></p></li>
+<li><p>copy <code class="docutils literal notranslate"><span class="pre">ast.jar</span></code> from <code class="docutils literal notranslate"><span class="pre">\\shadow&lt;isis</span> <span class="pre">suffix&gt;\ICP_P2$\Pydevup_042023\plugins\org.python.pydev.ast</span></code></p></li>
+</ul>
+<p><em>Note: this will get reverted when we deploy a new GUI, so we may have to keep doing it until the underlying issue is solved.</em></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PV-Manager-and-Observers-Logging.html" class="btn btn-neutral float-left" title="PVManager &amp; Observers Logging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Slow-reconnection-in-the-GUI.html" class="btn btn-neutral float-right" title="Slow PV Reconnections" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

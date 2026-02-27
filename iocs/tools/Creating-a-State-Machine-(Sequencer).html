@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating a State Machine (Sequencer) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Utilities" href="IOC-Utilities.html" />
+    <link rel="prev" title="Convert record" href="Convert-Record.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Asyn-Interpose-Functions.html">Asyn Interpose functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AsynEchoDriver.html">Asyn Echo Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Autosave.html">Autosave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Convert-Record.html">Convert record</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating a State Machine (Sequencer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Utilities.html">IOC Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-access-security.html">IOC Access Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-modules-for-file-handling.html">ISIS modules for file handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Labview-Remote.html">LabVIEW Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lua.html">Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serve-file-contents-over-EPICS.html">Serve file contents over EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Template-Substitutions.html">Template Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities-Library.html">Utilities Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aSub-records.html">Asub records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="icpconfig.html">ICP Config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools &amp; Support Modules</a></li>
+      <li class="breadcrumb-item active">Creating a State Machine (Sequencer)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tools/Creating-a-State-Machine-(Sequencer).md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-state-machine-sequencer">
+<h1>Creating a State Machine (Sequencer)<a class="headerlink" href="#creating-a-state-machine-sequencer" title="Link to this heading"></a></h1>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#sequencer-intro">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#sequencer-snl-file">Create State File</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sequencer-call-snl-file">Call State file from IOC</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#sequencer-macros">Passing macros into the sequencer</a></p></li>
+</ul>
+</section>
+<section id="sequencer-intro">
+<h2>Introduction<a class="headerlink" href="#sequencer-intro" title="Link to this heading"></a></h2>
+<p>Does your IOC require definitive states? If the logic of your IOC will go beyond calc fields, you may wish to implement a Finite State Machine.</p>
+<p>EPICS supports State Machine creation with a set of <a class="reference external" href="https://epics-modules.github.io/sequencer/Manual.html">Sequencer tools.</a> The state file, which controls the states the system can be in and the transitions between them, is written in C-based State Notation Language.
+This is a how-to guide to create and implement a state machine into your IOC.</p>
+</section>
+<section id="sequencer-snl-file">
+<h2>Create State File<a class="headerlink" href="#sequencer-snl-file" title="Link to this heading"></a></h2>
+<p>Enter the support directory of your IOC, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">support</span>\<span class="n">HFMAGPSU</span>\<span class="n">master</span>\<span class="n">HFMAGPSUSup</span>
+</pre></div>
+</div>
+<p>Create a state file in this directory (e.g. <code class="docutils literal notranslate"><span class="pre">fsm.st</span></code>).
+The EPICS manual for SNL files can be found <a class="reference external" href="https://epics-modules.github.io/sequencer/Manual.html">here.</a></p>
+<p>If you are reading or changing PV values, the following must be included in your <code class="docutils literal notranslate"><span class="pre">fsm.st</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;ibexSeqPVmacros.h&quot;</span>
+</pre></div>
+</div>
+<p>You may also need to add a line to your <code class="docutils literal notranslate"><span class="pre">configure/RELEASE</span></code> file to allow inclusion of these PV utility macros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>UTILITIES=$(SUPPORT)/utilities/master
+</pre></div>
+</div>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">fsm.dbd</span></code> file, which contains the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">registrar</span><span class="p">(</span><span class="n">fsmRegistrar</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Make sure that your <code class="docutils literal notranslate"><span class="pre">.dbd</span></code> file has a different name to the IOC <code class="docutils literal notranslate"><span class="pre">.dbd</span></code> file. Otherwise, your IOC <code class="docutils literal notranslate"><span class="pre">.dbd</span></code> file will be overwritten.</p>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in this folder, to reference your new <code class="docutils literal notranslate"><span class="pre">.dbd</span></code> and <code class="docutils literal notranslate"><span class="pre">.st</span></code> files and add the libraries needed for them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>TOP=..
+include $(TOP)/configure/CONFIG
+#=======================================
+
+# Install .dbd and .db files
+DATA += devHFMAGPSU.proto
+DBD += fsm.dbd
+
+# Sequence file
+HFMAGPSU_SRCS += fsm.st
+LIBRARY_IOC = HFMAGPSU
+HFMAGPSU_LIBS += seq pv
+HFMAGPSU_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+#=======================================
+include $(TOP)/configure/RULES
+</pre></div>
+</div>
+<p>Be sure to include the library location for seq in the support <code class="docutils literal notranslate"><span class="pre">RELEASE</span></code> file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Macros required for basic ioc/stream device
+SNCSEQ=$(SUPPORT)/seq/master
+</pre></div>
+</div>
+<section id="sequencer-call-snl-file">
+<h3>Call State file from IOC<a class="headerlink" href="#sequencer-call-snl-file" title="Link to this heading"></a></h3>
+<p>Enter IOC folder, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(cd …EPICS\ioc\master\HFMAGPSU\iocBoot\iocHFMAGPSU-IOC-01)
+</pre></div>
+</div>
+<p>Add the following to the end of the <code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; $(IOCSTARTUP)/postiocinit.cmd
+epicsEnvSet(P,$(MYPVPREFIX)$(IOCNAME))
+
+## Start any sequence programs
+seq fsm, &quot;P=$(P)&quot;
+</pre></div>
+</div>
+<p>In the above example, we are passing the name of the IOC through to the <code class="docutils literal notranslate"><span class="pre">fsm.st</span></code> file so we can reference PVs in it with <code class="docutils literal notranslate"><span class="pre">{P}:</span></code>.</p>
+<p>Enter the IOC source folder (e.g. <code class="docutils literal notranslate"><span class="pre">HFMAGPSU-IOC-01App\src</span></code>)</p>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">build.mak</span></code> to ensure the needed libraries are included:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Add all the support libraries needed by this IOC
+## ISIS standard libraries ##
+
+$(APPNAME)_LIBS += seq pv
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h3>
+<p>Whenever you make an edit  to the <code class="docutils literal notranslate"><span class="pre">fsm.st</span></code> file, rebuild the support module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd …EPICS\support\HFMAGPSU\master
+make
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sequencer-macros">
+<h2>Passing macros into the sequencer<a class="headerlink" href="#sequencer-macros" title="Link to this heading"></a></h2>
+<p>You can pass macros into your sequencer by including them in brackets after you define the program. E.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="n">keithley_2001</span> <span class="p">(</span><span class="s2">&quot;P, channels&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">P</span></code> and <code class="docutils literal notranslate"><span class="pre">channels</span></code> are passed as macros to the state machine. You pass these to the state machine in the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> file when calling the state machine. E.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="n">keithley_2001</span><span class="p">,</span> <span class="s2">&quot;P=$(MYPVPREFIX)$(IOCNAME):, channels=10&quot;</span>
+</pre></div>
+</div>
+<p>To access these macros in your state machine, create a variable to hold your macro, e.g. <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">*P</span></code> for the macro <code class="docutils literal notranslate"><span class="pre">P</span></code>, and call <code class="docutils literal notranslate"><span class="pre">macValueGet</span></code> on your macro, e.g. <code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">=</span>&#160; <span class="pre">macValueGet(&quot;P&quot;)</span></code>, within your state machine to allow you to use the macro “P” within your code as the variable “P”.</p>
+<p>Note that the macros you pass into the state machine <strong>must</strong> match up with those in your <code class="docutils literal notranslate"><span class="pre">.db</span></code> files. Otherwise your state machine will not be able to assign variables to PVs and the state machine won’t run.</p>
+</section>
+<section id="using-epicsthreadsleep">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">epicsThreadSleep</span></code><a class="headerlink" href="#using-epicsthreadsleep" title="Link to this heading"></a></h2>
+<p>From <a class="reference external" href="https://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#common-pitfalls-and-misconceptions">https://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#common-pitfalls-and-misconceptions</a></p>
+<p><em>If your action statements have any sort of polling loops or calls to <code class="docutils literal notranslate"><span class="pre">epicsThreadSleep</span></code> you should reconsider your design. The presence of such operations is a strong indication that you’re not using the sequencer as intended.</em></p>
+<p>Long sleeps will hang the thread and then other things may happen. An example was an SNL program to check that a setpoint had been actioned by waiting 30 seconds and then comparing setpoint and readback. While it was waiting, the setpoint may change again, and the wait is now redundant, and if it doesn’t check for a change in original setpoint it may do the wrong thing. Using delay() is better as that does not block the thread and allows other checks in the state to continue.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Convert-Record.html" class="btn btn-neutral float-left" title="Convert record" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-Utilities.html" class="btn btn-neutral float-right" title="IOC Utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

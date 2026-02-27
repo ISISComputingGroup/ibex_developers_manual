@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022-06-15 &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2022-05-18" href="Retrospective-Notes-2022.05.18.html" />
+    <link rel="prev" title="2022-08-10" href="Retrospective-Notes-2022.08.10.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.10.30.html">2025-10-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.10.02.html">2025-10-02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.08.28.html">2025-08-28</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.07.31.html">2025-07-31</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.07.10.html">2025-07-10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.05.08.html">2025-06-10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.05.07.html">2025-05-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.04.03.html">2025-04-03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.03.05.html">2025-03-05</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.02.04.html">2025-02-04</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2025.01.07.html">2025-01-17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.12.18.html">2024-12-18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.11.27.html">2024-11-27</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.10.30.html">2024-10-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.10.02.html">2024-10-02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.09.04.html">2024-09-04</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.08.07.html">2024-08-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.07.17.html">2024-07-17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.06.19.html">2024-06-19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.05.22.html">2024-05-22</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.05.01.html">2024-05-01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.04.03.html">2024-04-03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.03.06.html">2024-03-06</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.01.31.html">2024-01-31</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2024.01.08.html">2024-01-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.11.30.html">2023-11-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.11.01.html">2023-11-01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.10.04.html">2023-10-04</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.09.08.html">2023-09-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.08.09.html">2023-08-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.07.12.html">2023-07-12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.06.07.html">2023-06-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.05.10.html">2023-05-10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.04.12.html">2023-04-12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.03.08.html">2023-03-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.02.01.html">2023-02-01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2023.01.04.html">2023-01-04</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.11.23.html">2022-11-23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.10.26.html">2022-10-26</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.10.05.html">2022-10-05</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.09.07.html">2022-09-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.08.10.html">2022-08-10</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2022-06-15</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.05.18.html">2022-05-18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.04.20.html">2022-04-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.03.23.html">2022-03-23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.02.23.html">2022-02-23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.02.02.html">2022-02-02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2022.01.05.html">2022-01-05</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.12.15.html">2021-12-15</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.11.17.html">2021-11-17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.10.28.html">2021-10-28</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.09.22.html">2021-09-22</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.08.25.html">2021-08-25</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.07.21.html">2021-07-21</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.06.23.html">2021-06-23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.05.26.html">2021-05-26</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.05.05.html">2021-05-05</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.03.31.html">2021-03-31</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.03.03.html">2021-03-03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.02.03.html">2021-02-03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2021.01.06.html">2021-01-06</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.12.16.html">2020-12-16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.11.11.html">2020-11-11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.10.16.html">2020-10-16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.09.17.html">2020-09-17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.08.19.html">2020-08-19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.07.22.html">2020-07-22</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.06.24.html">2020-06-24</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.05.28.html">2020-05-28</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.04.01.html">2020-04-01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.03.04.html">2020-03-04</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.02.05.html">2020-02-05</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2020.01.08.html">2020-01-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2019.12.02.html">2019-12-02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2019.11.06.html">2019-11-06</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2019.10.09.html">2019-10-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2019.09.11.html">2019-09-11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2019.04.24.html">2019-04-24</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2018.12.20.html">2018-12-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2018.11.21.html">2018-11-21</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2018.10.29.html">2018-10-29</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2018.09.26.html">2018-09-26</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2018.03.14.html">2018-03-14</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Retrospective-Notes-2018.02.14.html">2018-02-14</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+      <li class="breadcrumb-item active">2022-06-15</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/retrospective-notes/Retrospective-Notes-2022.06.15.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2022-06-15<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Chair</p></th>
+<th class="head text-center"><p>Timekeeper</p></th>
+<th class="head text-right"><p>Note Taker</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://github.com/LilithCole">&#64;LilithCole</a></p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/LilithCole">&#64;LilithCole</a></p></td>
+<td class="text-right"><p><a class="reference external" href="https://github.com/daryakoskeroglu">&#64;daryakoskeroglu</a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<section id="items-from-last-retrospective">
+<h2>Items from last retrospective<a class="headerlink" href="#items-from-last-retrospective" title="Link to this heading"></a></h2>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h2>
+<section id="windows-10-and-other-migrations">
+<h3>Windows 10 and Other Migrations.<a class="headerlink" href="#windows-10-and-other-migrations" title="Link to this heading"></a></h3>
+<p>Win10 and other migrations should be one of the main focuses over the summer.
+<em>No change, still as it is.</em></p>
+</section>
+<section id="disk-cleaning-automation">
+<h3>Disk cleaning Automation<a class="headerlink" href="#disk-cleaning-automation" title="Link to this heading"></a></h3>
+<p>Time should be spent looking into using <a class="reference external" href="https://github.com/ChrisM-S">&#64;ChrisM-S</a> powershell script to automate cleaning of drives, moving over IOC logs periodically as part of a cron job.</p>
+<p>A discussion ticket should also be written up to discuss how we could automate truncating the database without affecting active runs.</p>
+<p><em>Did not have a chance to discuss this sprint, need a discussion this sprint.</em></p>
+</section>
+<section id="splitting-up-github-issues-more-finely">
+<h3>Splitting up GitHub Issues More Finely<a class="headerlink" href="#splitting-up-github-issues-more-finely" title="Link to this heading"></a></h3>
+<p>A discussion took place about splitting up issues that involve writing IOC’s, Emulators and systems tests as the work is usually always contained within 1 large issue. It was agreed to keep this as it is and change how we approach developing the IOC, system tests and Emulators and document the process in the wiki.</p>
+<p>The process discussed was to write the minimum functionality required to have a working IOC with only one function, and system test and gauge how long it would take to write the rest based on the time required to write one function.
+It was also agreed that development should be done in a way that allows for the work to easily be split into additional issues if needed.</p>
+<p><em>Agreed that the process will be used</em></p>
+</section>
+<section id="sprint-lengths">
+<h3>Sprint Lengths<a class="headerlink" href="#sprint-lengths" title="Link to this heading"></a></h3>
+<p>How we currently run sprints was discussed in relation to how we adapt the length based on cycles and support. It was agreed that <a class="reference external" href="https://github.com/orgs/ISISComputingGroup/people/KathrynBaker">&#64;KathrynBaker</a> will spend a couple of weeks looking into trailing a nested sprint where sub-sprints occur for each theme within the main sprint and present this in the next Retrospective.</p>
+<p><em>Kathryn did a presentation about nested and sub-sprints in this retrospective</em></p>
+</section>
+<section id="support-during-cycle">
+<h3>Support During Cycle<a class="headerlink" href="#support-during-cycle" title="Link to this heading"></a></h3>
+<p>Support during the cycle has been eerily quiet…</p>
+<p><em>No cycle this Sprint, hence another quiet Sprint</em></p>
+</section>
+<section id="beckhoff">
+<h3>Beckhoff<a class="headerlink" href="#beckhoff" title="Link to this heading"></a></h3>
+<p>Small Beckhoff in a box is missing? maybe on IMAT?
+Look into buying test license for Beckhoff.
+Keeps hearing about weird errors from Beckhoffs - Pester motion control to get a fix.</p>
+<p><em>&#64;rerpha is discussing about buying test licence for Beckhoff with the motion team.</em></p>
+</section>
+</section>
+<section id="equipment">
+<h2>Equipment<a class="headerlink" href="#equipment" title="Link to this heading"></a></h2>
+<p>New docks have arrived!</p>
+<p>Network Cable Tester arrived works well!</p>
+<p><em>People who started using the new equipment are happy with them</em></p>
+</section>
+<hr class="docutils" />
+<section id="items-from-current-retrospective">
+<h2>Items from current retrospective<a class="headerlink" href="#items-from-current-retrospective" title="Link to this heading"></a></h2>
+<section id="project-board-channel-on-ms-teams-stopped-working">
+<h3>Project board channel on MS Teams stopped working<a class="headerlink" href="#project-board-channel-on-ms-teams-stopped-working" title="Link to this heading"></a></h3>
+<p>No one is using this channel so it was agreed that it should be removed.
+&#64;FreddieAkeroyd knows the best way to remove it from channel list.</p>
+</section>
+<section id="rota-table-in-meeting-roles-and-rotas-wiki-page-is-confusing">
+<h3>Rota table in “Meeting Roles and Rotas” wiki page is confusing<a class="headerlink" href="#rota-table-in-meeting-roles-and-rotas-wiki-page-is-confusing" title="Link to this heading"></a></h3>
+<p>“Week Commencing” column causes confusion as it only relates to the Stand-Ups.</p>
+<p>It was agreed that &#64;KathrynBaker will split table in 2, one for Sprint Planning meetings and other for Stand-Up meetings.</p>
+</section>
+<section id="alternative-to-plan-it-poker">
+<h3>Alternative to Plan It Poker<a class="headerlink" href="#alternative-to-plan-it-poker" title="Link to this heading"></a></h3>
+<p>Plan It Poker webpage was down in the last Pre-planning meeting but it came back to life.</p>
+<p>&#64;KathrynBaker found a new website alternative to Plan It Poker: Scrumpy</p>
+<p>Benefits: add issues direct from GitHub, add comments to the chain and more user friendly.</p>
+<p>The members decided to try for the next Sprint Planning meeting.</p>
+<p>Kathryn demonstrated how to link to GitHub.</p>
+<p>No registration needed, can log in with a GitHub account but not necessary.</p>
+</section>
+<section id="suggestion-for-different-ways-of-managing-the-work-in-experiment-controls">
+<h3>Suggestion for different ways of managing the work in Experiment Controls<a class="headerlink" href="#suggestion-for-different-ways-of-managing-the-work-in-experiment-controls" title="Link to this heading"></a></h3>
+<p>&#64;KathrynBaker did a presentation about a different approach of managing work we are doing in Experiment Controls.
+Key notes from the presentation:</p>
+<ul class="simple">
+<li><p>Consider all the work we have to do as “program”.</p></li>
+<li><p>Program Increment (PI) would be things to be done between now and next release.</p></li>
+<li><p>Sprint is still a sprint, instead of following Scrum, we can aim to reduce Work In Progress and reduce sprint length to find a better rhythm.</p></li>
+<li><p>Each program will have a Kanban board: Program Kanban, Program Increment Kanban, Sprint Kanban</p></li>
+<li><p>More information about this management approach can be found here: <a class="reference external" href="https://www.scaledagileframework.com/program-and-solution-kanbans/">https://www.scaledagileframework.com/program-and-solution-kanbans/</a></p></li>
+<li><p>Rough timeline suggested:</p></li>
+<li><ul>
+<li><p>Sprint 2022_05_19 We decide if we would like to try – The voting happened on zoom, we will give it a try.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Sprint 2022_06_16 Make sure we are carrying nothing forward, and getting everything we need in for the next release done.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Sprint 2022_07_14 Build release, testing, prepare for training.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Sprint 2022_08_11 IBEX Training, deploy to TS1, hackathon/tech debt removal/something, PI planning, sprint planning</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Sprint 2022_?_? Sprint retrospective for previous sprint, sprint planning</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Retrospective-Notes-2022.08.10.html" class="btn btn-neutral float-left" title="2022-08-10" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Retrospective-Notes-2022.05.18.html" class="btn btn-neutral float-right" title="2022-05-18" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

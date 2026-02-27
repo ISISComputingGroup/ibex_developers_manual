@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building the GUI &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maven and Tycho" href="Maven-and-Tycho.html" />
+    <link rel="prev" title="Building" href="../GUI-Building.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Building.html">Building</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building the GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Maven-and-Tycho.html">Maven and Tycho</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Building.html">Building</a></li>
+      <li class="breadcrumb-item active">Building the GUI</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/compiling/Building-the-GUI.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="building-the-gui">
+<h1>Building the GUI<a class="headerlink" href="#building-the-gui" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Before following this guide, ensure you have completed the following steps from
+<a class="reference internal" href="../../overview/First-Time-Build.html"><span class="doc std std-doc">the first-time installation guide</span></a>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../overview/First-Time-Build.html#first-time-install-java"><span class="std std-ref">Install Java JDK</span></a></p></li>
+<li><p><a class="reference internal" href="../../overview/First-Time-Build.html#first-time-install-maven"><span class="std std-ref">Install Maven</span></a></p></li>
+<li><p><a class="reference internal" href="../../overview/First-Time-Build.html#first-time-install-git"><span class="std std-ref">Install Git</span></a></p></li>
+<li><p><a class="reference internal" href="../../overview/First-Time-Build.html#first-time-install-uktena"><span class="std std-ref">Install Python (Uktena)</span></a></p></li>
+</ul>
+</div>
+<section id="gui-build-checkout-code">
+<h2>Checking out the code<a class="headerlink" href="#gui-build-checkout-code" title="Link to this heading"></a></h2>
+<p>Development builds of the IBEX GUI are conventionally located in <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev</span></code>. Create this folder if it
+doesn’t already exist.</p>
+<p>From a windows command prompt, navigate to <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev</span></code> and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">recursive</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">ibex_gui</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>The code for the IBEX GUI will now be located in <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev\ibex_gui</span></code>.</p>
+<p>A <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4786">pre-commit hook</a> should now be installed; to do this, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">c</span><span class="p">:</span>\<span class="n">instrument</span>\<span class="n">dev</span>\<span class="n">ibex_gui</span>\<span class="n">build</span>
+<span class="n">install_pre_commit_hook</span><span class="o">.</span><span class="n">bat</span>
+</pre></div>
+</div>
+</section>
+<section id="gui-build-install-eclipse">
+<h2>Installing Eclipse<a class="headerlink" href="#gui-build-install-eclipse" title="Link to this heading"></a></h2>
+<p>You must use a version of eclipse which supports the RCP and Java versions currently in use by the client. There are
+two options for this:</p>
+<ul class="simple">
+<li><p>Download a recent Eclipse version directly from
+<a class="reference external" href="https://www.eclipse.org/downloads/packages/">the eclipse website</a>; choose the package for “RCP and RAP developers”</p></li>
+<li><p>Use the most recent version in <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\Developer</span> <span class="pre">Tools</span></code> (which is simply a download from
+the Eclipse website, at a specific version).</p></li>
+</ul>
+<p>By convention eclipse versions are installed into <code class="docutils literal notranslate"><span class="pre">c:\tools</span></code>, for example in
+<code class="docutils literal notranslate"><span class="pre">c:\tools\eclipse-rcp-2024-06-R-win32-x86_64</span></code>.</p>
+<p>After installing eclipse from either of the above sources, you will need to add the line</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">Djdk</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">zip</span><span class="o">.</span><span class="n">disableZip64ExtraFieldValidation</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
+<p>to the end of <code class="docutils literal notranslate"><span class="pre">eclipse.ini</span></code> (located next to the <code class="docutils literal notranslate"><span class="pre">eclipse.exe</span></code> executable), if it is not already present.</p>
+</section>
+<section id="gui-build-via-eclipse">
+<h2>Building in Eclipse<a class="headerlink" href="#gui-build-via-eclipse" title="Link to this heading"></a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>If at any point during these instructions you get errors, there are troubleshooting notes for Eclipse
+<a class="reference internal" href="../eclipse/Common-Eclipse-Issues.html"><span class="doc std std-doc">here</span></a> and for the GUI in general <a class="reference internal" href="../GUI-Troubleshooting.html"><span class="doc std std-doc">here</span></a>.</p>
+</div>
+<p>The first time the Eclipse IDE is started, it will ask you for a folder to use as a workspace.
+Unless you have a specific reason to choose a different location, use <code class="docutils literal notranslate"><span class="pre">c:\Instrument\dev\eclipse_workspaces\ibex_gui</span></code>
+(create this folder if it doesn’t already exist).</p>
+<p><img alt="" src="../../_images/eclipse_workspace_selection.png" /></p>
+<p>From the menu bar choose File -&gt; Import -&gt; General -&gt; Existing Projects into Workspace.
+Choose “Select root directory” and browse to <code class="docutils literal notranslate"><span class="pre">c:\Instrument\dev\ibex_gui\base</span></code>. You should now see a list of plugins
+to import with names like <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.*</span></code>. Eclipse should automatically select everything so you just need
+to click “Finish” to add them to the project.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If “Marketplace solutions available” dialogues appear, click cancel; these will be obtained later.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/eclipse_import_ibex_gui.png"><img alt="../../_images/eclipse_import_ibex_gui.png" src="../../_images/eclipse_import_ibex_gui.png" width="400" />
+</a>
+<p>From the “Project Explorer” tab on the left, expand the target platform folder (labelled as
+<code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.targetplatform</span></code>), double click on the <code class="docutils literal notranslate"><span class="pre">targetplatform.target</span></code> file and choose
+“Set as Active Target Platform”. This may take some time as dependencies are downloaded - there is a progress bar
+in the very bottom-right of the Eclipse IDE.</p>
+<p>Once the target platform has finished downloading, the target platform view should look like this:</p>
+<a class="reference internal image-reference" href="../../_images/eclipse_target_platform_view.png"><img alt="../../_images/eclipse_target_platform_view.png" src="../../_images/eclipse_target_platform_view.png" width="600" />
+</a>
+<p>To run the application from within Eclipse: open <code class="docutils literal notranslate"><span class="pre">ibex.product</span></code> from the <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.e4.client.product</span></code>
+folder, select “Launch an Eclipse application”. The IBEX GUI should now open.</p>
+<p>Next, From the menu bar choose Run-&gt;Run configurations and select <code class="docutils literal notranslate"><span class="pre">ibex.product</span></code> from the left hand list under
+“Eclipse Application”. In the “Main” tab, in <strong>Run configurations</strong>, tick the “Clear” tick box and untick the
+“Ask for confirmation before clearing”.</p>
+<a class="reference internal image-reference" href="../../_images/eclipse_clear_workspace.png"><img alt="../../_images/eclipse_clear_workspace.png" src="../../_images/eclipse_clear_workspace.png" width="400" />
+</a>
+<p>In the “Configuration” tab, tick the “Clear the configuration area before launching” tick box, then click “Apply”
+and select “Run”.</p>
+<p>Lastly, you should <a class="reference internal" href="../eclipse/Checkstyle-setup.html"><span class="doc std std-doc">set up checkstyle</span></a>.</p>
+</section>
+<section id="gui-build-via-maven">
+<h2>Building via Maven<a class="headerlink" href="#gui-build-via-maven" title="Link to this heading"></a></h2>
+<p>Firstly, ensure you have a recent Maven version installed. Generally a suitable version will be the highest version
+number in <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\Binaries</span></code>. You can double-check your current Maven version by running
+<code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">-v</span></code> in a command prompt.</p>
+<p>To build using Maven, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">c</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">dev</span>\<span class="n">ibex_gui</span>\<span class="n">build</span>
+<span class="n">build</span><span class="o">.</span><span class="n">bat</span>
+</pre></div>
+</div>
+<p>Once the build finishes, the IBEX client executable can be found in <code class="docutils literal notranslate"><span class="pre">.\built_client\</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../GUI-Building.html" class="btn btn-neutral float-left" title="Building" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Maven-and-Tycho.html" class="btn btn-neutral float-right" title="Maven and Tycho" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

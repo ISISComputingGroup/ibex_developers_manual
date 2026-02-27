@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Containerising an IOC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Containerising the Archive Appliance" href="Containerising-the-Archiver-Appliance.html" />
+    <link rel="prev" title="Future Workflows" href="../Future.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Deploy.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Patch.html">Patching</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Future.html">Future Workflows</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Containerising an IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Containerising-the-Archiver-Appliance.html">Containerising the Archive Appliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mount-or-create-IBEX-VHDs.html">Mount or create IBEX VHDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Future.html">Future Workflows</a></li>
+      <li class="breadcrumb-item active">Containerising an IOC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/future_workflows/Containerising-an-IOC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="containerising-an-ioc">
+<h1>Containerising an IOC<a class="headerlink" href="#containerising-an-ioc" title="Link to this heading"></a></h1>
+<section id="setting-up-a-development-environment-on-windows">
+<h2>Setting Up a Development Environment on Windows<a class="headerlink" href="#setting-up-a-development-environment-on-windows" title="Link to this heading"></a></h2>
+<p>WSL, or Windows Subsystem for Linux, allows the use of a Linux/GNU environment from a Windows machine.</p>
+<section id="check-your-windows-version">
+<h3>Check Your Windows Version<a class="headerlink" href="#check-your-windows-version" title="Link to this heading"></a></h3>
+<p>WLS2 is only available in Windows 11 or Windows 10, Version 1903, Build 18362 or later.</p>
+<p>The Windows version of your machine can be checked by pressing <code class="docutils literal notranslate"><span class="pre">Win</span> <span class="pre">+</span> <span class="pre">R</span></code>, typing <code class="docutils literal notranslate"><span class="pre">winver</span></code> and pressing Enter.</p>
+</section>
+<section id="installing-wsl">
+<h3>Installing WSL<a class="headerlink" href="#installing-wsl" title="Link to this heading"></a></h3>
+<p>To install WSL, open a PowerShell or CMD window in Administrator mode, and enter the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span></code></p>
+<p>Note: This method only works if WSL is not installed. If you run <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span></code> and see the WSL help text, please try running <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--list</span> <span class="pre">--online</span></code> to see a list of available distribution and run <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span> <span class="pre">-d</span> <span class="pre">&lt;DistroName&gt;</span></code> to install a distribution.</p>
+</section>
+<section id="uninstalling-legacy-wsl-versions">
+<h3>Uninstalling Legacy WSL Versions<a class="headerlink" href="#uninstalling-legacy-wsl-versions" title="Link to this heading"></a></h3>
+<p>If you wish to uninstall the legacy version of WSL, instructions of how can be found <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting#uninstall-legacy-version-of-wsl">here</a></p>
+</section>
+<section id="additional-resource">
+<h3>Additional Resource<a class="headerlink" href="#additional-resource" title="Link to this heading"></a></h3>
+<p>Further information on the WSL installation process can be found <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command">here</a></p>
+</section>
+</section>
+<section id="rancher-desktop-installation">
+<h2>Rancher Desktop Installation<a class="headerlink" href="#rancher-desktop-installation" title="Link to this heading"></a></h2>
+<p>Rancher Desktop is an application provides container management and <code class="docutils literal notranslate"><span class="pre">Kubernetes</span></code> on the desktop. Rancher Desktop provides the ability to build, push, and pull container images along with the ability to run containers.</p>
+<p>Rancher Desktop can be installed <a class="reference external" href="https://docs.rancherdesktop.io/getting-started/installation/">here</a>.</p>
+<p>Once the .exe file has been downloaded, follow the steps to complete the installation process.</p>
+<p>Ensure the <code class="docutils literal notranslate"><span class="pre">dockerd</span></code> is selected as the runtime during the installation or within the Rancher Desktop settings.</p>
+</section>
+<section id="creating-a-container">
+<h2>Creating a Container<a class="headerlink" href="#creating-a-container" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Create a folder in which all container file will be stored i.e. <code class="docutils literal notranslate"><span class="pre">C:\Instrument\App\Epics\Container</span></code>.</p></li>
+<li><p>Within the folder, create a <code class="docutils literal notranslate"><span class="pre">test.db</span></code> file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">record(ao,</span> <span class="pre">&quot;TESTTEST:FOO&quot;)</span> <span class="pre">{}</span></code></p>
+</li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> should be added as this is the set of ‘instructions’ from which Docker builds images. Below is an example which creates a container with a simple IOC:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">FROM</span> <span class="n">python</span><span class="p">:</span><span class="mf">3.11</span><span class="o">-</span><span class="n">slim</span>
+    <span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> \
+        <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> \
+        <span class="n">build</span><span class="o">-</span><span class="n">essential</span> \
+        <span class="n">wget</span> \
+        <span class="n">git</span> \
+        <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="nb">list</span><span class="o">/*</span>
+	
+    <span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+    <span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">epicscorelibs</span>
+	
+    <span class="n">ENV</span> <span class="n">EPICS_BASE</span><span class="o">=/</span><span class="n">epics</span>
+    <span class="n">ENV</span> <span class="n">EPICS_HOST_ARCH</span><span class="o">=</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span>
+    <span class="n">ENV</span> <span class="n">EPICS_CA_SERVER_PORT</span> <span class="mi">5066</span>
+	
+    <span class="n">WORKDIR</span> <span class="o">/</span><span class="n">app</span>
+    <span class="n">COPY</span> <span class="o">.</span> <span class="o">/</span><span class="n">app</span>
+	
+    <span class="n">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;epicscorelibs.ioc&quot;</span><span class="p">,</span> <span class="s2">&quot;-d&quot;</span><span class="p">,</span> <span class="s2">&quot;test.db&quot;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>To build the container from the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, cd into the folder within a CMD window with admin privilege, ensure that Rancher Desktop is running and enter:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">&lt;container_name&gt;</span> <span class="pre">.</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> docker build: Tells Docker to create a new image.
+
+ -t: Specifies a name for the image you&#39;re building.
+
+ &lt;container_name&gt;: The name you&#39;re giving to the new image.
+
+ .: Tells Docker to use the current folder for the build.
+</pre></div>
+</div>
+</li>
+<li><p>To run the container, enter the following (replace the path with your own folder location):</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--rm</span> <span class="pre">-it</span> <span class="pre">--net=host</span> <span class="pre">-v</span> <span class="pre">&lt;path_to_folder&gt;:/usr/src/app</span> <span class="pre">&lt;container_name&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">EXAMPLE:</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--rm</span> <span class="pre">-it</span> <span class="pre">--net=host</span> <span class="pre">-v</span> <span class="pre">/c/Instrument/Apps/EPICS/isis-ioc-container:/usr/src/app</span> <span class="pre">ioc_container</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> docker run: Starts a container.
+
+ --rm: Deletes the container when done.
+
+ -it: Lets you interact with the container.
+
+ --net=host: Uses your computer’s network.
+
+ -v &lt;path_to_folder&gt;:/usr/src/app: Shares a folder from your computer with the container.
+
+ &lt;container_name&gt;: The image to use for the container.
+</pre></div>
+</div>
+<p>After this, the container should be running within the Python Environment within the CMD window.</p>
+</li>
+<li><p>To test if the PV is readable within the container, a EPICS terminal window is needed. For this, open another CMD window and enter the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Epics\config_env.bat</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">EPICS_CA_ADDR_LIST=127.0.0.1:5066</span></code></p>
+</li>
+<li><p>Now that both terminals are running, the value from the PV can be retrieve by entering the following command into the EPICS terminal:</p>
+<p><code class="docutils literal notranslate"><span class="pre">caget</span> <span class="pre">TESTTEST:FOO</span></code></p>
+<p>To which the response should be <code class="docutils literal notranslate"><span class="pre">TESTTEST:FOO</span>&#160;&#160;&#160; <span class="pre">0</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">caput</span> <span class="pre">&lt;PV_name&gt;</span></code> can also be used to set the value of the PV.</p>
+</li>
+</ol>
+<section id="network-connections">
+<h3>Network Connections<a class="headerlink" href="#network-connections" title="Link to this heading"></a></h3>
+<p>The following command entered within the EPICS terminal allows users to check for network connections that are being used by a specified port, in this example the port 5066 is being checked:</p>
+<p><code class="docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">-a</span> <span class="pre">-n</span> <span class="pre">-o</span> <span class="pre">|findstr</span> <span class="pre">5066</span></code></p>
+</section>
+</section>
+<section id="observations-and-present-limitations">
+<h2>Observations and Present Limitations<a class="headerlink" href="#observations-and-present-limitations" title="Link to this heading"></a></h2>
+<p>It would appear that both IBEX and the network=host wish to use port 5064, and the container is being blocked whilst the IBEX server is running.</p>
+<p>A solution as been found, which is already included within the <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, where another port has been bound which enables the container’s IOC to be communicated with whilst the IBEX server is running. However, it has been found that each IOC will need it’s own port, which can lead to issues as the number IOC increases.</p>
+</section>
+<section id="further-exploration">
+<h2>Further Exploration<a class="headerlink" href="#further-exploration" title="Link to this heading"></a></h2>
+<p>In the above example, an approach similar to <a class="reference external" href="https://epics-containers.github.io/main/index.html">epics-containers</a> was attempted, however there are a couple of alternative methods that could be explored.</p>
+<p><a class="reference external" href="https://github.com/ISISNeutronMuon/SnowSignal/tree/main">SnowSignal</a> is a possible alternative to UDP communication between localhost and the container. SnowSignal is designed to create a mesh network between instances of the program that will listen for UDP broadcasts received on one node of the network and rebroadcast on all other nodes.</p>
+<p>WLS on Windows 11 22H2 and higher introduced <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking">‘Mirror mode networking’</a>. This changes WSL to an entirely new networking architecture which has the goal of ‘mirroring’ the network interfaces that you have on Windows into Linux, to add new networking features and improve compatibility.</p>
+</section>
+<section id="wsl2-on-a-windows-11-virtual-machine">
+<h2>WSL2 on a Windows 11 Virtual Machine<a class="headerlink" href="#wsl2-on-a-windows-11-virtual-machine" title="Link to this heading"></a></h2>
+<p>There can be an issue with running a VM on a Windows 11 VM, which may result in the following error:</p>
+<p><a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed">“Error: 0x80370102 The virtual machine could not be started because a required feature is not installed.”</a></p>
+<p>The command is as below, if you run it directly on the right server you can skip the <code class="docutils literal notranslate"><span class="pre">-Computername</span> <span class="pre">HOSTSERVERNAME</span></code> bit.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PS</span> <span class="pre">C:\&gt;</span> <span class="pre">Set-VMProcessor</span> <span class="pre">-ComputerName</span> <span class="pre">HOSTSERVERNAME</span> <span class="pre">-VMName</span> <span class="pre">GUESTMACHINENAME</span> <span class="pre">-ExposeVirtualizationExtensions</span> <span class="pre">$true</span></code></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Future.html" class="btn btn-neutral float-left" title="Future Workflows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Containerising-the-Archiver-Appliance.html" class="btn btn-neutral float-right" title="Containerising the Archive Appliance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remote IOC Server &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Run Control" href="Run-control.html" />
+    <link rel="prev" title="Virtual environments (uv)" href="python/Python-venvs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">Remote IOC Server</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/Remote-IOCs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="remote-ioc-server">
+<h1>Remote IOC Server<a class="headerlink" href="#remote-ioc-server" title="Link to this heading"></a></h1>
+<p>Remote IOCs are used when:</p>
+<ul class="simple">
+<li><p>There is a piece of equipment that is mobile (i.e. not a permanent part of any beamline)</p></li>
+<li><p>Diagnostics from the equipment are useful even when it is not connected to any beamline</p></li>
+<li><p>The kit is physically capable of running an IOC</p></li>
+</ul>
+<p>The first piece of equipment to use this is likely to be the Triton dilution fridges.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Configure the remote PC like a mini-inst, but with an empty <code class="docutils literal notranslate"><span class="pre">startup.txt</span></code> so that it starts no IOCs.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">start_ibex_server.bat</span></code> so that appropriate services (e.g. <code class="docutils literal notranslate"><span class="pre">PSCTRL</span></code>, <code class="docutils literal notranslate"><span class="pre">conserv</span></code>) start</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">C:\Instrument\Apps\EPICS\ISIS\inst_servers\master\start_remote_ioc_server.bat</span></code> on the remote PC to start the remote IOC server.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">caput</span> <span class="pre">-S</span> <span class="pre">%MYPVPREFIX%REMIOC:INSTRUMENT</span> <span class="pre">IN:&lt;local</span> <span class="pre">instrument&gt;:</span></code> to configure the remote ioc server to point at the relevant instrument</p></li>
+<li><p>On the instrument control NDX computer, go to the IBEX configuration menu and set the “Remote PV prefix” for the IOC to the prefix of the remote machine (e.g. <code class="docutils literal notranslate"><span class="pre">ME:&lt;name</span> <span class="pre">of</span> <span class="pre">equipment&gt;:</span></code>)</p></li>
+<li><p>To see the needed field in the GUI set <code class="docutils literal notranslate"><span class="pre">ALLOW_REMOTE_PV_PREFIX_CHANGE</span></code> to true. (<code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.ui.configserver/src/uk/ac/stfc/isis/ibex/ui/configserver/editing/iocs/dialog/EditPanel.java</span></code>)</p></li>
+</ol>
+</section>
+<section id="architecture">
+<h2>Architecture:<a class="headerlink" href="#architecture" title="Link to this heading"></a></h2>
+<p><img alt="architecture of the remote IOC" src="../_images/remoteIOCArchitecture.png" /></p>
+<section id="setting-configuration-parameters-macros-pv-sets-etc">
+<h3>Setting configuration parameters (macros, pv sets, etc)<a class="headerlink" href="#setting-configuration-parameters-macros-pv-sets-etc" title="Link to this heading"></a></h3>
+<p>Local PC (NDX instrument control computer):</p>
+<ul class="simple">
+<li><p>User edits configuration in GUI. There is a new option to select the “remote pv prefix” - if non-empty, this signifies that the IOC will run remotely.</p></li>
+<li><p>The local blockserver receives the configuration and saves it as normal. The “remote pv prefix” property is stored in the configuration XML.</p></li>
+<li><p>The blockserver does not stop/start/restart any local IOC if it is marked as having a remote PV prefix.</p></li>
+</ul>
+<p>Remote PC:</p>
+<ul class="simple">
+<li><p>The remote PC is configured to monitor a given instrument. This configuration must be done locally (on the remote PC). Currently this is done by <code class="docutils literal notranslate"><span class="pre">caput</span> <span class="pre">-S</span> <span class="pre">%MYPVPREFIX%REMIOC:INSTRUMENT</span> <span class="pre">TE:NDW1799:</span></code> to monitor <code class="docutils literal notranslate"><span class="pre">NDW1799</span></code>’s configuration.</p></li>
+<li><p>The remote ioc server sets up an EPICS monitor on the blockserver of the configured instrument</p></li>
+<li><p>When the remote ioc server gets a monitor, it writes the parts of the config which have the same remote pv prefix as itself to file (in XML format, same as what the blockserver uses).</p></li>
+<li><p>After writing the config XML, it restarts all of the IOCs which it’s looking after</p></li>
+</ul>
+</section>
+<section id="ioc-running-status">
+<h3>Ioc running status<a class="headerlink" href="#ioc-running-status" title="Link to this heading"></a></h3>
+<p>To be done in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4467">https://github.com/ISISComputingGroup/IBEX/issues/4467</a></p>
+</section>
+<section id="interesting-pvs">
+<h3>Interesting PVs<a class="headerlink" href="#interesting-pvs" title="Link to this heading"></a></h3>
+<p>To be done in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4468">https://github.com/ISISComputingGroup/IBEX/issues/4468</a></p>
+</section>
+<section id="alarms">
+<h3>Alarms<a class="headerlink" href="#alarms" title="Link to this heading"></a></h3>
+<p>To be done in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4466">https://github.com/ISISComputingGroup/IBEX/issues/4466</a></p>
+</section>
+</section>
+<section id="archiving">
+<h2>Archiving<a class="headerlink" href="#archiving" title="Link to this heading"></a></h2>
+<p>Some IOCs run on remote systems (e.g. Tritons after <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3125">ticket 3125</a>). This page describes the <em>instrument</em> archiver functionality for these IOCs.</p>
+<p>There are essentially 3 places where data could be logged:</p>
+<section id="on-the-remote-pc">
+<h3>On the remote PC<a class="headerlink" href="#on-the-remote-pc" title="Link to this heading"></a></h3>
+<p>We are not doing this as there are concerns about how we would monitor resource use for a PC which is not on the network. It could be done in future by running a normal MySQL / archiver setup on the remote PC.</p>
+</section>
+<section id="centrally">
+<h3>Centrally<a class="headerlink" href="#centrally" title="Link to this heading"></a></h3>
+<p>This is, at least initially, where all data from all remote IOCs will be being archived.</p>
+<p>The central archiver is running as a service on <code class="docutils literal notranslate"><span class="pre">control-svcs</span></code> (passwords on the usual sharepoint page). The archiver is in <code class="docutils literal notranslate"><span class="pre">/home/epics/EPICS/CSS/master/ArchiveEngine/</span></code> and the settings are in <code class="docutils literal notranslate"><span class="pre">archive_config_central.xml</span></code>.</p>
+<p>The archiver is running as a service, after modifying the archive configuration file it needs to be restarted using <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">epics_archiver.service</span></code></p>
+</section>
+<section id="onto-the-instrument-archive">
+<h3>Onto the instrument archive<a class="headerlink" href="#onto-the-instrument-archive" title="Link to this heading"></a></h3>
+<p>This is not being done initially as it is hard. What would need to be done to make this happen is:</p>
+<ul class="simple">
+<li><p>Some service running on the instrument PCs that the remote IOC can push archived PVs to.</p></li>
+<li><p>This service would need to merge the archived PVs from all connected remote IOCs</p></li>
+<li><p>The service would probably need to translate the remote PVs (<code class="docutils literal notranslate"><span class="pre">ME:...</span></code>) to their local aliases (<code class="docutils literal notranslate"><span class="pre">IN:...</span></code>).</p></li>
+<li><p>The instrument archive would then need to be reloaded with these changed settings</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python/Python-venvs.html" class="btn btn-neutral float-left" title="Virtual environments (uv)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Run-control.html" class="btn btn-neutral float-right" title="Run Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

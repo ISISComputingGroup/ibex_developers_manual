@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smoothing motor readback &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Updating the old Galil driver" href="Updating-old-galil-driver.html" />
+    <link rel="prev" title="Resetting HOMEVAL" href="Resetting-HOMEVAL.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Attocube.html">Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Beckhoff.html">Beckhoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Galil.html">Galil</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Differences-between-real-Galil-and-simulated-motor.html">Differences between real Galil &amp; Simulated motor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Homing-Routine-Steps.html">Galil Homing Routine steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Instrument-Configuration.html">Galil Instrument Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Userdef-Records.html">Galil Userdef records</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-default-parameters.html">Galil default parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-homing-routines.html">Galil Homing Routines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMAT-tomography-stages.html">IMAT Tomography Stages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Multi-galil-IOC.html">Multi-Galil IOC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="New-Galil-Driver.html">New Galil Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Resetting-HOMEVAL.html">Resetting <code class="docutils literal notranslate"><span class="pre">HOMEVAL</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Smoothing motor readback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Updating-old-galil-driver.html">Updating the old Galil driver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Motors.html">Motors</a></li>
+          <li class="breadcrumb-item"><a href="../Galil.html">Galil</a></li>
+      <li class="breadcrumb-item active">Smoothing motor readback</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/galil/Smoothing-Motor-Readback.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="smoothing-motor-readback">
+<h1>Smoothing motor readback<a class="headerlink" href="#smoothing-motor-readback" title="Link to this heading"></a></h1>
+<p>Several Galil systems use analogue feedback as the encoder, this is effectively an absolute encoder (so no need to rehome etc) but the readback can be noisy and this has caused issues in the past with setpoints looking like they are drifting. The WISH instrument is an example.</p>
+<p>We did look at smoothing the values within an EPICS db using the compress record etc. and linking this to an alternative motor readback <a class="reference internal" href="#smoothing-galil-readback-old-approach">as per old notes</a>, but it turned out the jaws were so noisy it swamped the Galil and we had to add smoothing there.</p>
+<p>The data is smoothed using the same algorithm available in an epics analogue input (ai) record i.e. a first-order infinite impulse response (IIR) digital filter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">New_Val</span> <span class="o">=</span>  <span class="n">Old_VAL</span> <span class="o">*</span> <span class="n">SMOO</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">SMOO</span><span class="p">)</span> <span class="o">*</span> <span class="n">New_Data</span>
+</pre></div>
+</div>
+<p>So <code class="docutils literal notranslate"><span class="pre">SMOO</span> <span class="pre">==</span> <span class="pre">0</span></code> is no smoothing. During a move the un-smoothed encoder position is returned by the galil IOC to the motor record, but once motion has stopped the smoothing algorithm is activated to smooth the the data. For the system to work it needs to:</p>
+<ul class="simple">
+<li><p>be setup to retry moves (which is our default)</p></li>
+<li><p>have a readback delay set (something like 2 seconds)
+The readback delay is important as this is how long the motor record waits (settle time) after a move has finished before it uses the position for the next task (retry in our case). So the readback delay is how much time we are averaging the encoder readback of the stationary motor for before we decide on any correction/retry to get to the requested setpoint.</p></li>
+<li><p>have an non-zero smoothing factor.</p></li>
+</ul>
+<p>To set this up for <code class="docutils literal notranslate"><span class="pre">MTR0105</span></code> on WISH for example you would:</p>
+<ul class="simple">
+<li><p>Set max retries (MTR0105.RTRY) to &gt; 0 (typically 10)</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">readback</span> <span class="pre">delay</span></code> (MTR0105.DLY) to a reasonable averaging period (e.g. 2 seconds)</p></li>
+<li><p>Set encoder smoothing factor MTR0105_ENC_SMOO_SP to &gt; 0 e.g. 0.5
+You may need to experiment a bit with delay and smoothing. Bear in mind that these are autosaved at 30 second intervals, so don’t restart IOC too soon after a change or you will lose them.</p></li>
+</ul>
+<section id="smoothing-galil-readback-old-approach">
+<h2>Old approach<a class="headerlink" href="#smoothing-galil-readback-old-approach" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the old proposed way and not currently used, but some of its implementation is in place</p>
+</div>
+<p>To solve this issue, the readbacks can be smoothed using an EPICS compress record and this fed into the motor record by using its optional readback link functionality. So the motor record internally sets values as usual, but using a different route for readback. A few notes on the system:</p>
+<ul class="simple">
+<li><p>the motor record <code class="docutils literal notranslate"><span class="pre">REP</span></code> field is monitored via the <code class="docutils literal notranslate"><span class="pre">_EPOS_CALC</span></code> PV, stored in a circular buffer in a compress record and then a configurable number are averaged to provide an <code class="docutils literal notranslate"><span class="pre">EPOS_AV</span></code> PV. The linking is done via a channel access monitor, so assumes that the readback is noisy and that the noisy rate is sufficient to generate a good number of values to average. It would be possible to explicitly scan this record if you wished to average a less noisy signal.</p></li>
+<li><p>when the motor record is using the readback link, it is in “no encoder” mode i.e. it thinks it is in open loop. The only visible effect of this is that on startup it didn’t sync the last setpoint to the current readback, this has been resolved by forcing a delayed write to the motor record SYNC field after ioc startup (see <code class="docutils literal notranslate"><span class="pre">_EPOS_INIT</span></code> and <code class="docutils literal notranslate"><span class="pre">_EPOS_SYNC</span></code> PVs). This needs to be delayed so channel access and other things have started.</p></li>
+<li><p>a readback delay needs to be set on the motor record, this is because the compress record averaged values will be a bit biased by the motion that has just occurred otherwise and so any retry calculation distance will be incorrect.</p></li>
+</ul>
+<p>To set this up for <code class="docutils literal notranslate"><span class="pre">MTR0105</span></code> on WISH for example you would:</p>
+<ul class="simple">
+<li><p>have a non-zero <code class="docutils literal notranslate"><span class="pre">max</span> <span class="pre">retries</span></code> count - default is 10</p></li>
+<li><p>set a <code class="docutils literal notranslate"><span class="pre">readback</span> <span class="pre">delay</span></code>, currently using 5 seconds</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">readback</span> <span class="pre">resolution</span></code> to 1 (we have handled this in the <code class="docutils literal notranslate"><span class="pre">_EPOS_CALC</span></code> record)</p></li>
+<li><p>set a <code class="docutils literal notranslate"><span class="pre">readback</span> <span class="pre">link</span></code> value - for MTR0105 on WISH this is <code class="docutils literal notranslate"><span class="pre">IN:WISH:MOT:MTR0105:EPOS_AV</span> <span class="pre">CP</span> <span class="pre">MS</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">encoder</span></code> to <code class="docutils literal notranslate"><span class="pre">no</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">readback</span></code> to <code class="docutils literal notranslate"><span class="pre">yes</span></code></p></li>
+</ul>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">encoder</span></code> to <code class="docutils literal notranslate"><span class="pre">no</span></code> before enabling readback is probably a better sequence of operations, but not crucial. If you set readback to yes it automatically sets encoder to no, but i had a case when it seemed to get a bit confused. If it does make sure values are correct and then just restart ioc and autosave will apply them correctly. Bear in mind that these are settings and so autosave at 30 second intervals, so don’t restart too soon after a change</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Resetting-HOMEVAL.html" class="btn btn-neutral float-left" title="Resetting HOMEVAL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Updating-old-galil-driver.html" class="btn btn-neutral float-right" title="Updating the old Galil driver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

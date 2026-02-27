@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spangle Banner &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Startup and Shutdown" href="../Startup-and-Shutdown.html" />
+    <link rel="prev" title="PV Values" href="PV-Values.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Calibration-Files.html">Calibration files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Configuration-Rules.html">Configuration rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Sets.html">PV Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Values.html">PV Values</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Spangle Banner</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+      <li class="breadcrumb-item active">Spangle Banner</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/configurations/Spangle-banner.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="spangle-banner">
+<h1>Spangle Banner<a class="headerlink" href="#spangle-banner" title="Link to this heading"></a></h1>
+<p>The spangle banner in the GUI looks at a set of PVs and displays them at all times, regardless of the current configuration. The set of PVs to serve is contained in the blockserver, in a PV called <code class="docutils literal notranslate"><span class="pre">TE:NDWxxxx:CS:BLOCKSERVER:BANNER_DESCRIPTION</span></code>. Use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caget</span> <span class="o">-</span><span class="n">t</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">BANNER_DESCRIPTION</span> <span class="o">|</span> <span class="n">uzhex</span>
+<span class="p">[{</span><span class="s2">&quot;local&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span> <span class="s2">&quot;pv&quot;</span><span class="p">:</span> <span class="s2">&quot;DAE:SIM_MODE&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DAE Simulation mode&quot;</span><span class="p">},</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This description is served as hexed compressed JSON. The items in the list are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">local</span></code>: Whether the GUI should prepend the local instrument’s PV prefix</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the item to display in the GUI</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pv</span></code> the PV to look at</p></li>
+</ul>
+<p>The way that the PVs are displayed in the GUI depends on the alarm state of the PV.</p>
+<p>This ticket introduces the ability to add custom buttons, as well as the original items which display a PV. For displays, a new parameter has been added:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: the width of the item in pixels when displayed in the GUI (limited to between 10 and 500)</p></li>
+</ul>
+<p>Buttons have the following parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name of the item to display as text on the button in the GUI</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pv</span></code>: the PV that the button writes to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">local</span></code>: whether the GUI should prepend the local instrument’s PV prefix</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pvValue</span></code>: the value that the button writes to the PV (must be an integer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">textColour</span></code>: the colour of the text on the button as a hex colour, for example <code class="docutils literal notranslate"><span class="pre">#e0e0e0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buttonColour</span></code>: the colour of the button</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontSize</span></code>: the font size of the text on the button (maximum of 16)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: the width of the button in pixels (limited to between 10 and 1000)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: the height of the button in  pixels (limited to between 10 and 35)</p></li>
+</ul>
+<p>See the <code class="docutils literal notranslate"><span class="pre">xml</span></code> example below for the full structure. The order that the items are placed in the <code class="docutils literal notranslate"><span class="pre">xml</span></code> determines the order that they are placed in the GUI. The items in the GUI are aligned right, so the item at the top of <code class="docutils literal notranslate"><span class="pre">banner.xml</span></code> will be displayed on the furthest right, and the second item will be to the left of that, and so on.
+Banner elements that were previously hard coded have now been moved to <code class="docutils literal notranslate"><span class="pre">banner.xml</span></code>. A new PV for the current configuration name was added to the Block Server in order to do this. Since PVs defined with <code class="docutils literal notranslate"><span class="pre">pcaspy</span></code> do not have a <code class="docutils literal notranslate"><span class="pre">.SEVR</span></code> field, this had to be defined manually in order to stop it being coloured pink in the GUI, see <a class="reference internal" href="../blockserver/BlockServer-Structure.html#blockserver-structure-channel-access"><span class="std std-ref">here</span></a> for details.</p>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>In the settings area, create <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\NDWxxxx\configurations\banner.xml</span></code> with the following example structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;banner xmlns=&quot;http://epics.isis.rl.ac.uk/schema/banner/1.0&quot; xmlns:blk=&quot;http://epics.isis.rl.ac.uk/schema/banner/1.0&quot; xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;
+  &lt;items&gt;
+    &lt;item&gt;
+        &lt;name&gt;DAE Simulation mode&lt;/name&gt;
+        &lt;pv&gt;DAE:SIM_MODE&lt;/pv&gt;
+        &lt;local&gt;true&lt;/local&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;name&gt;Manager mode&lt;/name&gt;
+        &lt;pv&gt;CS:MANAGER&lt;/pv&gt;
+        &lt;local&gt;true&lt;/local&gt;
+    &lt;/item&gt;
+  &lt;/items&gt;
+&lt;/banner&gt;
+</pre></div>
+</div>
+<p>Once this ticket is merged, all instruments should have a <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\NDWxxxx\configurations\banner.xml</span></code>, and the stop motors button will have been moved from the GUI code into <code class="docutils literal notranslate"><span class="pre">banner.xml</span></code>. A typical example of this file is as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="nt">&lt;banner</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://epics.isis.rl.ac.uk/schema/banner/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:blk=</span><span class="s">&quot;http://epics.isis.rl.ac.uk/schema/banner/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;items&gt;</span>
+<span class="w">    </span><span class="nt">&lt;item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;button&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>Stop<span class="w"> </span>All<span class="w"> </span>Motors<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pv&gt;</span>CS:MOT:STOP:ALL<span class="nt">&lt;/pv&gt;</span>
+<span class="w">        </span><span class="nt">&lt;local&gt;</span>true<span class="nt">&lt;/local&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pvValue&gt;</span>1<span class="nt">&lt;/pvValue&gt;</span>
+<span class="w">        </span><span class="nt">&lt;textColour&gt;</span>#000000<span class="nt">&lt;/textColour&gt;</span>
+<span class="w">        </span><span class="nt">&lt;buttonColour&gt;</span>#e0e0e0<span class="nt">&lt;/buttonColour&gt;</span>
+<span class="w">        </span><span class="nt">&lt;fontSize&gt;</span>9<span class="nt">&lt;/fontSize&gt;</span>
+<span class="w">        </span><span class="nt">&lt;width&gt;</span>100<span class="nt">&lt;/width&gt;</span>
+<span class="w">        </span><span class="nt">&lt;height&gt;</span>25<span class="nt">&lt;/height&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/button&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;display&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>Motors<span class="w"> </span>are<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pv&gt;</span>CS:MOT:MOVING:STR<span class="nt">&lt;/pv&gt;</span>
+<span class="w">        </span><span class="nt">&lt;local&gt;</span>true<span class="nt">&lt;/local&gt;</span>
+<span class="w">        </span><span class="nt">&lt;width&gt;</span>170<span class="nt">&lt;/width&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/display&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;display&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>DAE<span class="w"> </span>Simulation<span class="w"> </span>mode<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pv&gt;</span>DAE:SIM_MODE<span class="nt">&lt;/pv&gt;</span>
+<span class="w">        </span><span class="nt">&lt;local&gt;</span>true<span class="nt">&lt;/local&gt;</span>
+<span class="w">        </span><span class="nt">&lt;width&gt;</span>250<span class="nt">&lt;/width&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/display&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;display&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>Manager<span class="w"> </span>mode<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pv&gt;</span>CS:MANAGER<span class="nt">&lt;/pv&gt;</span>
+<span class="w">        </span><span class="nt">&lt;local&gt;</span>true<span class="nt">&lt;/local&gt;</span>
+<span class="w">        </span><span class="nt">&lt;width&gt;</span>250<span class="nt">&lt;/width&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/display&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/item&gt;</span>
+<span class="w">    </span><span class="nt">&lt;item&gt;</span>
+<span class="w">      </span><span class="nt">&lt;display&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>Config<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pv&gt;</span>CS:BLOCKSERVER:CURR_CONFIG_NAME<span class="nt">&lt;/pv&gt;</span>
+<span class="w">        </span><span class="nt">&lt;local&gt;</span>true<span class="nt">&lt;/local&gt;</span>
+<span class="w">        </span><span class="nt">&lt;width&gt;</span>360<span class="nt">&lt;/width&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/display&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/item&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/items&gt;</span>
+<span class="nt">&lt;/banner&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PV-Values.html" class="btn btn-neutral float-left" title="PV Values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Startup-and-Shutdown.html" class="btn btn-neutral float-right" title="Startup and Shutdown" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

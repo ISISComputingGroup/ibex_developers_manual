@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git workflow &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Git and SSH key authentication" href="Making-the-IBEX-workflow-work-with-SSH-authentication.html" />
+    <link rel="prev" title="Useful Git commands" href="Git-Commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-new-modules-via-Git.html">Adding new modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automation-Application.html">Automation Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Getting-started-with-Git-and-GitHub.html">Getting started with git and github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Cleanup.html">Git cleanup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Commands.html">Useful Git commands</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Git workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Making-the-IBEX-workflow-work-with-SSH-authentication.html">Git and SSH key authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="New-Local-Git-Repository.html">New local git repository</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Git-and-GitHub.html">Git and Github</a></li>
+      <li class="breadcrumb-item active">Git workflow</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/git_and_github/Git-workflow.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="git-workflow">
+<h1>Git workflow<a class="headerlink" href="#git-workflow" title="Link to this heading"></a></h1>
+<section id="steps-for-developing-code-with-existing-git-repos">
+<h2>Steps for Developing Code with existing Git Repos<a class="headerlink" href="#steps-for-developing-code-with-existing-git-repos" title="Link to this heading"></a></h2>
+<p>If you are not sure what a git command does, you can take a look at <a class="reference internal" href="Git-Commands.html"><span class="doc std std-doc">git commands</span></a></p>
+</section>
+<section id="development-work">
+<h2>Development work<a class="headerlink" href="#development-work" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Navigate to the appropriate directory in Git Bash</p></li>
+<li><p>Checkout the master branch (if not already in the master branch) <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p></li>
+<li><p>Make sure that the master branch is up to date (varies by repo) <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+<li><p>Create a new branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">[branch-name]</span></code> where <code class="docutils literal notranslate"><span class="pre">branch-name</span></code> is <code class="docutils literal notranslate"><span class="pre">TicketXXX_some_description</span></code></p></li>
+<li><p>Do the development work in the most appropriate editor (e.g. Eclipse for the GUI, notepad++ for .db changes)</p></li>
+<li><p>Update copyright notices on edited files to the current year to read <code class="docutils literal notranslate"><span class="pre">Copyright</span> <span class="pre">(C)</span> <span class="pre">&lt;first</span> <span class="pre">year&gt;</span> <span class="pre">-</span> <span class="pre">&lt;current</span> <span class="pre">year&gt;</span> <span class="pre">...</span></code></p></li>
+<li><p>In Git Bash, add files to the branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;</span></code>, or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> to add all modified files, or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> to add all changed files) and commit (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;commit</span> <span class="pre">message&quot;</span></code>) as appropriate</p></li>
+<li><p>Note: if master has updated,</p>
+<ul>
+<li><p>ensure that the master branch is up to date: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code></p></li>
+<li><p>Merge in the latest master: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">origin/master</span></code></p></li>
+<li><p>Fix any merge errors (if required)</p></li>
+</ul>
+</li>
+<li><p>Push changes using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> (if this is the first time the branch is being pushed, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">[branch-name]</span></code>)</p></li>
+<li><p>Go to GitHub and create the pull request, don’t forget a test plan</p></li>
+<li><p>Bored of being asked for your username and password? Read <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/">this</a>.</p></li>
+<li><p>If you are creating a new submodule for EPICS, find more info here: <a class="reference internal" href="../../iocs/creation/Creating-New-Submodules-in-EPICS.html"><span class="doc std std-doc">Creating New Submodules in EPICS</span></a></p></li>
+</ul>
+</section>
+<section id="reviewing-work-for-the-gui">
+<h2>Reviewing work for the GUI<a class="headerlink" href="#reviewing-work-for-the-gui" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Navigate to the appropriate directory in Git Bash</p></li>
+<li><p>Update the repo: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">update</span></code></p></li>
+<li><p>Checkout the branch with the changes to review: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[branch-name]</span></code></p></li>
+<li><p>Open eclipse</p></li>
+<li><p>Import any new packages</p></li>
+<li><p>Refresh the packages</p></li>
+<li><p>Test the changes</p></li>
+<li><p>If the changes don’t work, or you notice they break something else, talk to the developer and get it corrected</p></li>
+<li><p>Once the tests have been passed, go to GitHub and merge the pull request. There will need to be at least one “approving” review before the merge button is enabled - as the reviewer, you can add your review by clicking on “files changed” and then “review changes”.</p></li>
+<li><p>Click on the delete branch button on the merged page</p></li>
+</ul>
+</section>
+<section id="reviewing-work-for-the-top-of-epics-no-other-related-changes">
+<h2>Reviewing work for the ‘top’ of EPICS (no other related changes)<a class="headerlink" href="#reviewing-work-for-the-top-of-epics-no-other-related-changes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Useful checklist for reviewing java code: <a class="reference external" href="https://dzone.com/articles/java-code-review-checklist">https://dzone.com/articles/java-code-review-checklist</a></p></li>
+<li><p>Check the list of files to be merged on the GitHub PR page - if one of them is <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> then the PR <strong>should not be merged</strong> and needs to be either amended or recreated.</p></li>
+<li><p>Navigate to the appropriate directory in Git Bash</p></li>
+<li><p>Update the repo: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">update</span></code></p></li>
+<li><p>Checkout the branch with the changes to review: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[branch-name]</span></code></p></li>
+<li><p>Test the changes, don’t forget makes if required</p></li>
+<li><p>If the changes don’t work, or you notice they break something else, talk to the developer and get it corrected</p></li>
+<li><p>Once the tests have been passed, go to GitHub and merge the pull request. On most repositories, there will need to be at least one “approving” review before the merge button is enabled - as the reviewer, you can add your review by clicking on “files changed” and then “review changes”.</p></li>
+<li><p>Click on the delete branch button on the merged page</p></li>
+</ul>
+</section>
+<section id="git-workflow-reviewing-epics-submodules">
+<h2>Reviewing work for the submodules of EPICS<a class="headerlink" href="#git-workflow-reviewing-epics-submodules" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Navigate to the appropriate directory in Git Bash</p></li>
+<li><p>If the submodule is not initialised, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span> <span class="pre">--init</span></code> in the directory above</p></li>
+<li><p>Update the repo: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">update</span></code></p></li>
+<li><p>Checkout the branch with the changes to review: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[branch-name]</span></code></p></li>
+<li><p>Build, make, update access to the code as necessary. If changing something in support, don’t forget to make IOC entries as well</p></li>
+<li><p>Test the changes</p></li>
+<li><p>If the changes don’t work, or you notice they break something else, talk to the developer and get it corrected</p></li>
+<li><p>Once the tests have been passed, go to GitHub and merge the pull request and delete the branch</p></li>
+<li><p>Get the merged pull request in repo:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+</ul>
+</li>
+<li><p>Navigate to the ‘top’ EPICS module in Git Bash, note that these changes are undertaken in the master thread</p></li>
+<li><p>Update master in ‘top’</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+</ul>
+</li>
+<li><p>Stage the tested submodules with: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">[tested</span> <span class="pre">merged</span> <span class="pre">submodules]</span></code> (example: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">ioc/master/</span></code> to add <code class="docutils literal notranslate"><span class="pre">EPICS-ioc</span></code>)</p></li>
+<li><p>Commit the updated submodules, with the comment as “Update submodules <list of submodules>”: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Update</span> <span class="pre">submodules</span> <span class="pre">&lt;list</span> <span class="pre">of</span> <span class="pre">submodules&gt;&quot;</span></code></p></li>
+<li><p>Push the changed submodules back to GitHub: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--recurse-submodule=check</span></code>
+NOTE: if you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">push.recurseSubmodules</span> <span class="pre">check</span></code> once, then the above becomes the default push action</p></li>
+</ul>
+</section>
+<section id="updating-all-submodules">
+<h2>Updating all Submodules<a class="headerlink" href="#updating-all-submodules" title="Link to this heading"></a></h2>
+<p>If you want a clean start then you can use a <a class="reference internal" href="../../iocs/compiling/Developer-Server-Build.html"><span class="doc std std-doc">Developer-Server-Build</span></a> rather than an in place git update</p>
+<p>The following command used to be used in the project I leave it here for the minute. I believe that when run from the EPICS directory it updates all submodules by merging in the last commit from origin. This feels like you could have problems if your submodule is on a different branch</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git submodule update --remote --merge
+</pre></div>
+</div>
+<p>A different command, which will get the latest versions of all submodules from github (without merging in any local commits) is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git submodule update --init --recursive --remote
+</pre></div>
+</div>
+<p>Yet another command, which will leave some submodules like adsDriver and others which are forked and would cause a “modified content” warning if running <code class="docutils literal notranslate"><span class="pre">--remote</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git submodule update --recursive
+</pre></div>
+</div>
+</section>
+<section id="updating-the-gui">
+<h2>Updating the GUI<a class="headerlink" href="#updating-the-gui" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Navigate to the appropriate directory in Git Bash</p></li>
+<li><p>Make sure you are in the master directory</p></li>
+<li><p>Get the latest version: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+<li><p>Open eclipse</p></li>
+<li><p>Import any new packages</p></li>
+<li><p>Refresh the packages</p></li>
+</ul>
+</section>
+<section id="updating-epics">
+<h2>Updating EPICS<a class="headerlink" href="#updating-epics" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Navigate to the appropriate directory in Git Bash</p></li>
+<li><p>Make sure you are in the master directory</p></li>
+<li><p>Get the latest version: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+<li><p>Get the latest submodules to be used with the system: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span> <span class="pre">--init</span> <span class="pre">--merge</span></code></p></li>
+<li><p>Rebuild as appropriate</p></li>
+<li><p>If you only want the head files for the submodules leave off the <code class="docutils literal notranslate"><span class="pre">--merge</span></code> from the submodule update</p></li>
+</ul>
+</section>
+<section id="cleaning-up-local-installations-allowing-yourself-to-see-the-wood-or-branches-for-the-trees">
+<h2>Cleaning up local installations (allowing yourself to see the wood, or branches, for the trees)<a class="headerlink" href="#cleaning-up-local-installations-allowing-yourself-to-see-the-wood-or-branches-for-the-trees" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In Git Bash, browse to any repo that might need cleaning up (the GUI is a prime example for this)</p></li>
+<li><p>Update all local branches set to track remote branches (does not merge any changes) : <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">update</span></code></p></li>
+<li><p>Remove local listings of closed branches (can use –dry-run argument just to see what listings would be removed): <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">prune</span> <span class="pre">origin</span></code></p></li>
+<li><p>Check the list of branches: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code></p></li>
+<li><p>Remove any out of date local branches: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">[unused-local-branches]</span></code></p></li>
+</ul>
+</section>
+<section id="steps-for-developing-code-with-new-git-repos">
+<h2>Steps for Developing Code with new Git Repos<a class="headerlink" href="#steps-for-developing-code-with-new-git-repos" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="Adding-new-modules-via-Git.html"><span class="doc std std-doc">Adding new modules</span></a>. If reviewing this you will need to checkout the branch on main EPICS and do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span> <span class="pre">--init</span></code> to initialise the newly created submodule into the tree. Everything else is as normal.</p>
+</section>
+<section id="git-merge-notes-crib-sheet">
+<h2>Git Merge notes crib sheet<a class="headerlink" href="#git-merge-notes-crib-sheet" title="Link to this heading"></a></h2>
+<p>The basic outline of the git merge entries are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+  <span class="n">The</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">local</span> <span class="n">branch</span>
+  <span class="o">=====</span>
+  <span class="n">The</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">master</span>
+  <span class="o">&gt;&gt;&gt;&gt;</span> <span class="n">master</span>
+</pre></div>
+</div>
+<p>If there are any common ancestors, there may be extra blocks in the area to merge.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Git-Commands.html" class="btn btn-neutral float-left" title="Useful Git commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Making-the-IBEX-workflow-work-with-SSH-authentication.html" class="btn btn-neutral float-right" title="Git and SSH key authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

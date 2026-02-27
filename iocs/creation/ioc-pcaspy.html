@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating a pcaspy IOC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Purchasing new equipment" href="../Purchasing-New-Equipment.html" />
+    <link rel="prev" title="Writing an ISIS StreamDevice IOC" href="Writing-An-ISIS-Stream-Device.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Creation.html">IOC Creation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-ioc-to-epics-hardware-list.html">Add IOC to EPICS hardware support list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-IOC-wrapper-VI.html">LvDCOM IOCs (LabVIEW wrapper IOCs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-New-Submodules-in-EPICS.html">Creating new submodules in EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-an-ISIS-StreamDevice-IOC.html">Creating an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Duplicating-IOCs.html">Duplicating IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Finishing-Touches.html">IOC Finishing Touches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Generator.html">IOC Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Writing-An-ISIS-Stream-Device.html">Writing an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating a pcaspy IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Creation.html">IOC Creation</a></li>
+      <li class="breadcrumb-item active">Creating a pcaspy IOC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/creation/ioc-pcaspy.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-pcaspy-ioc">
+<h1>Creating a pcaspy IOC<a class="headerlink" href="#creating-a-pcaspy-ioc" title="Link to this heading"></a></h1>
+<p>IOCs can be served via python using pycaspy. These let you create IOCs with PVs using channel access. They do not work quite like the normal EPICs so this the start of a guide to help create one.</p>
+<section id="main-loop">
+<h2>Main Loop<a class="headerlink" href="#main-loop" title="Link to this heading"></a></h2>
+<p>To Do</p>
+</section>
+<section id="allow-ibex-to-start-the-ioc">
+<h2>Allow IBEX to start the IOC<a class="headerlink" href="#allow-ibex-to-start-the-ioc" title="Link to this heading"></a></h2>
+<p>The easiest way to let ibex start the pycaspy server (or in fact any python script) you need:</p>
+<ol class="arabic simple">
+<li><p>Create dir (use same <a class="reference internal" href="../conventions/IOC-Naming.html"><span class="doc std std-doc">naming rules</span></a> as for other IOCs)</p></li>
+<li><p>Add an empty makefile. Copy the one in LSICORR</p></li>
+<li><p>Create the directory tree: <code class="docutils literal notranslate"><span class="pre">&lt;ioc</span> <span class="pre">name&gt;\iocBoot\ioc&lt;ioc</span> <span class="pre">name&gt;-IOC-01</span></code></p>
+<ol class="arabic simple">
+<li><p>Add a <a class="reference internal" href="IOC-Finishing-Touches.html#ioc-finishing-touches-macros"><span class="std std-ref">standard <code class="docutils literal notranslate"><span class="pre">config.xml</span></code> to the folder</span></a></p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">runIoc.bat</span></code> file which runs the pycas py server with options.</p></li>
+</ol>
+</li>
+<li><p>If needed create a similar tree for a second IOC.</p></li>
+</ol>
+</section>
+<section id="registering-ioc-and-pvs-with-ibex">
+<h2>Registering IOC and PVs with IBEX<a class="headerlink" href="#registering-ioc-and-pvs-with-ibex" title="Link to this heading"></a></h2>
+<p>To make sure that IBEX knows both that your IOC has started and what PVs should be archived and interesting use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EPICS_KIT_ROOT&quot;</span><span class="p">),</span> <span class="s2">&quot;ISIS&quot;</span><span class="p">,</span> <span class="s2">&quot;inst_servers&quot;</span><span class="p">,</span> <span class="s2">&quot;master&quot;</span><span class="p">))</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">server_common.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_ioc_start</span><span class="p">,</span> <span class="n">get_macro_values</span>
+
+<span class="n">register_ioc_start</span><span class="p">(</span><span class="n">REFL_IOC_NAME</span><span class="p">,</span> <span class="n">STATIC_PV_DATABASE</span><span class="p">,</span> <span class="n">PREFIX</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">STATIC_PV_DATABASE</span></code>: is a pv database used to construct the pv. To add a pv info field use entries in the pv for PV_INFO_FIELD_NAME. For example <code class="docutils literal notranslate"><span class="pre">{'pv</span> <span class="pre">name':</span> <span class="pre">{'info_field':</span> <span class="pre">{'archive':</span> <span class="pre">'',</span> <span class="pre">'INTEREST':</span> <span class="pre">'HIGH'},</span> <span class="pre">'type':</span> <span class="pre">'float'}}</span></code> which will archive the val field and register the pv as high interest.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PREFIX</span></code>: is the prefix for the IOC e.g. <code class="docutils literal notranslate"><span class="pre">IN:NDXLARMOR:REFL_01</span></code></p></li>
+</ul>
+</section>
+<section id="accessing-pvs">
+<h2>Accessing PVs<a class="headerlink" href="#accessing-pvs" title="Link to this heading"></a></h2>
+<p>Most IOCs which need to access PVs use the <code class="docutils literal notranslate"><span class="pre">CaChannelWrapper</span></code> in <code class="docutils literal notranslate"><span class="pre">instservers</span></code> file <code class="docutils literal notranslate"><span class="pre">server_common/channel_access.py</span></code>. To do this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EPICS_KIT_ROOT&quot;</span><span class="p">),</span> <span class="s2">&quot;ISIS&quot;</span><span class="p">,</span> <span class="s2">&quot;inst_servers&quot;</span><span class="p">,</span> <span class="s2">&quot;master&quot;</span><span class="p">))</span>
+
+<span class="n">ChannelAccess</span><span class="o">.</span><span class="n">caget</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">BLAH&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mypvprefix</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="accessing-macros-on-start">
+<h2>Accessing Macros on Start<a class="headerlink" href="#accessing-macros-on-start" title="Link to this heading"></a></h2>
+<p>If you want to access the macros on start of a pv then add the following to your runIOC.bat:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">dllPath.bat</span></code>: this adds the dll paths needed to run the icp config command. For example of this file see the reflectometry IOC.</p></li>
+<li><p>Nearer the end put the macros into an environment variable (<code class="docutils literal notranslate"><span class="pre">icpconfigGetMacros</span></code> is defined in <a class="reference internal" href="../tools/icpconfig.html"><span class="doc std std-doc">icpconfig</span></a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    set &quot;GETMACROS=C:\Instrument\Apps\EPICS\support\icpconfig\master\bin\%EPICS_HOST_ARCH%\icpconfigGetMacros.exe&quot;
+    set &quot;MYIOCNAME=&lt;IOC NAME&gt;&quot;
+
+    if &quot;%MACROS%&quot;==&quot;&quot; (
+        REM need this funny syntax to be able to set eol correctly - see google
+        for /f usebackq^ tokens^=*^ delims^=^ eol^= %%a in ( `%GETMACROS% %MYIOCNAME%`  ) do ( set &quot;MACROS=%%a&quot; )
+        echo Defining macros
+    ) else (
+        echo Macros already defined
+    )
+
+    echo Macro JSON is %MACROS%
+</pre></div>
+</div>
+</li>
+<li><p>Inside the IOC you can access the macros with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span><span class="w"> </span><span class="nn">server_common.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_ioc_start</span><span class="p">,</span> <span class="n">get_macro_values</span>
+    <span class="n">get_macro_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Writing-An-ISIS-Stream-Device.html" class="btn btn-neutral float-left" title="Writing an ISIS StreamDevice IOC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Purchasing-New-Equipment.html" class="btn btn-neutral float-right" title="Purchasing new equipment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

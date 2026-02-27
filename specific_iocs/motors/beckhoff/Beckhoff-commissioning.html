@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beckhoff commissioning &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Beckhoff testing" href="Beckhoff-testing.html" />
+    <link rel="prev" title="Beckhoff IOC Architecture" href="Beckhoff-architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Attocube.html">Attocube</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Beckhoff.html">Beckhoff</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Beckhoff-architecture.html">Beckhoff IOC Architecture</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Beckhoff commissioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Beckhoff-testing.html">Beckhoff testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Beckhoff-troubleshooting.html">Beckhoff troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Galil.html">Galil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Motors.html">Motors</a></li>
+          <li class="breadcrumb-item"><a href="../Beckhoff.html">Beckhoff</a></li>
+      <li class="breadcrumb-item active">Beckhoff commissioning</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/beckhoff/Beckhoff-commissioning.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="beckhoff-commissioning">
+<h1>Beckhoff commissioning<a class="headerlink" href="#beckhoff-commissioning" title="Link to this heading"></a></h1>
+<section id="commissioning-steps">
+<h2>Commissioning steps<a class="headerlink" href="#commissioning-steps" title="Link to this heading"></a></h2>
+<p>These steps are for commissioning a Beckhoff on a beamline.</p>
+<section id="networking">
+<h3>Networking<a class="headerlink" href="#networking" title="Link to this heading"></a></h3>
+<p>Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the <code class="docutils literal notranslate"><span class="pre">192.168.1.22X</span></code> range, starting at 1 for the first controller (<code class="docutils literal notranslate"><span class="pre">192.168.1.221</span></code>)</p>
+</section>
+<section id="ads-routes">
+<h3>ADS routes<a class="headerlink" href="#ads-routes" title="Link to this heading"></a></h3>
+<p>To actually communicate via the ADS transport layer you will need to set up a route on the instrument PC. To do so:</p>
+<ol class="arabic simple">
+<li><p>(<strong>these are included in the Windows 10 clone so should already be installed on instrument machines</strong>) Install the XAR tools
+A copy of these will be hosted on <code class="docutils literal notranslate"><span class="pre">&lt;public</span> <span class="pre">share&gt;\third_party_installers\special_drivers\beckhoff\</span></code>. All of the defaults are fine so this should be a case of just clicking through the wizard and installing the drivers that show up.</p></li>
+<li><p>Set up an ADS route on the NDX:</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Right-click</span> <span class="pre">TwinCAT</span> <span class="pre">icon</span> <span class="pre">in</span> <span class="pre">system</span> <span class="pre">tray</span> <span class="pre">-&gt;</span> <span class="pre">Router</span> <span class="pre">-&gt;</span> <span class="pre">Edit</span> <span class="pre">Routes</span> <span class="pre">-&gt;</span> <span class="pre">Add...</span></code> with these settings:</p>
+<ul>
+<li><p>Advanced settings ticked, click the IP Address radio button, then enter the IP address (mentioned above) on box at top. Press the return key after entering this in the box - this seems to work better than pressing the refresh button.</p></li>
+<li><p>Static Target routes and remote routes (default)</p></li>
+<li><p>Everything else can be left as defaults</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>To confirm that this has been set up remote into the controller itself on the aforementioned IP address and check that the route to the NDX has been added automatically. You should not need to manually add a route in the controller.</p></li>
+</ol>
+</section>
+<section id="ioc-setup">
+<h3>IOC setup<a class="headerlink" href="#ioc-setup" title="Link to this heading"></a></h3>
+<p>The IOC (<code class="docutils literal notranslate"><span class="pre">TC_01</span></code>) should in principle be able to talk via ADS at this point but will need setting up in the respective configs.</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">MTRCTRL</span></code> number will need to be given - this is the controller number as shown on the table of motors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Beckhoff_plc_code</span></code> should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to <code class="docutils literal notranslate"><span class="pre">1</span></code> for instruments running the latest code.</p></li>
+<li><p>Number of axes (<code class="docutils literal notranslate"><span class="pre">NUM_AXES</span></code> macro)</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">IP</span></code> and <code class="docutils literal notranslate"><span class="pre">AMSnetID</span></code> of the controller</p></li>
+</ul>
+<section id="beckhoff-manual-commission-step">
+<h4>Fields that aren’t automatically populated<a class="headerlink" href="#beckhoff-manual-commission-step" title="Link to this heading"></a></h4>
+<p>Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are:</p>
+<ul class="simple">
+<li><p>Engineering units (<code class="docutils literal notranslate"><span class="pre">.EGU</span></code>) - <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6855">ticket to automatically populate</a></p></li>
+<li><p>Axis description (<code class="docutils literal notranslate"><span class="pre">.DESC</span></code>) - <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6860">ticket to automatically populate</a></p>
+<ul>
+<li><p>Note, if <code class="docutils literal notranslate"><span class="pre">stDescription</span></code> is actually filled out on a Beckhoff you can use the <code class="docutils literal notranslate"><span class="pre">FORWARD_DESC</span></code> macro set to <code class="docutils literal notranslate"><span class="pre">1</span></code> which will forward the PLC description to the corresponding motor record’s <code class="docutils literal notranslate"><span class="pre">.DESC</span></code> field.</p></li>
+</ul>
+</li>
+<li><p>Soft limits - <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8763">ticket to automatically populate</a></p></li>
+<li><p>Velocities (<code class="docutils literal notranslate"><span class="pre">.VELO</span></code>, <code class="docutils literal notranslate"><span class="pre">.JVEL</span></code>, <code class="docutils literal notranslate"><span class="pre">.VMAX</span></code> and others)</p></li>
+</ul>
+<p>These can be set via a <code class="docutils literal notranslate"><span class="pre">caput</span></code> and will be autosaved thereafter.</p>
+</section>
+<section id="axes-motion-setpoints-jaws">
+<h4>Axes, motion setpoints, jaws<a class="headerlink" href="#axes-motion-setpoints-jaws" title="Link to this heading"></a></h4>
+<p>These are loaded in the usual way, you’ll need to put your <code class="docutils literal notranslate"><span class="pre">axes.cmd</span></code> and <code class="docutils literal notranslate"><span class="pre">motionSetpoints.cmd</span></code> files in <code class="docutils literal notranslate"><span class="pre">motorExtensions\master\settings\&lt;inst&gt;\twincat\</span></code></p>
+</section>
+<section id="jaws">
+<h4>Jaws<a class="headerlink" href="#jaws" title="Link to this heading"></a></h4>
+<p>This is currently done in the same way as any other motion controller where IBEX works out gaps and centres. This logic may move to the controller eventually, in which case we will need to use <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-jaws/blob/master/jawsApp/Db/jaws_alias.substitutions">The Jaws alias <code class="docutils literal notranslate"><span class="pre">.db</span></code></a></p>
+</section>
+<section id="if-a-controller-has-more-than-8-axes">
+<h4>If a controller has more than 8 axes<a class="headerlink" href="#if-a-controller-has-more-than-8-axes" title="Link to this heading"></a></h4>
+<p>If a controller with more than 8 axes is going to be used, the TC IOC will alias records to the next controller number so they are shown in the GUI. For this to work you need to make sure that the next available controller number is not (and never will be, so long as the TC IOC uses it) used.</p>
+</section>
+<section id="beckhoff-arbitrary-fields">
+<h4>Arbitrary fields<a class="headerlink" href="#beckhoff-arbitrary-fields" title="Link to this heading"></a></h4>
+<p>It was decided during <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6916">A meeting with the motion team</a> that extra fields, for example LARMOR’s air signals + bump strips will be exposed via a separate <code class="docutils literal notranslate"><span class="pre">PROG</span></code> file within the PLC. We should load these in from a <code class="docutils literal notranslate"><span class="pre">motorExtensions</span></code> <code class="docutils literal notranslate"><span class="pre">.cmd</span></code> file. Examples for LARMOR and SANS2D can be found in the settings directory of <code class="docutils literal notranslate"><span class="pre">motorExtensions\master\settings</span></code></p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Beckhoff-architecture.html" class="btn btn-neutral float-left" title="Beckhoff IOC Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Beckhoff-testing.html" class="btn btn-neutral float-right" title="Beckhoff testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

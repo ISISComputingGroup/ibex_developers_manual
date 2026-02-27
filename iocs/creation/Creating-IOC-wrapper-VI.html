@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LvDCOM IOCs (LabVIEW wrapper IOCs) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating new submodules in EPICS" href="Creating-New-Submodules-in-EPICS.html" />
+    <link rel="prev" title="Add IOC to EPICS hardware support list" href="Add-ioc-to-epics-hardware-list.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Creation.html">IOC Creation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-ioc-to-epics-hardware-list.html">Add IOC to EPICS hardware support list</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LvDCOM IOCs (LabVIEW wrapper IOCs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-New-Submodules-in-EPICS.html">Creating new submodules in EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-an-ISIS-StreamDevice-IOC.html">Creating an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Duplicating-IOCs.html">Duplicating IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Finishing-Touches.html">IOC Finishing Touches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Generator.html">IOC Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Writing-An-ISIS-Stream-Device.html">Writing an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ioc-pcaspy.html">Creating a pcaspy IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Creation.html">IOC Creation</a></li>
+      <li class="breadcrumb-item active">LvDCOM IOCs (LabVIEW wrapper IOCs)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/creation/Creating-IOC-wrapper-VI.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lvdcom-iocs-labview-wrapper-iocs">
+<h1>LvDCOM IOCs (LabVIEW wrapper IOCs)<a class="headerlink" href="#lvdcom-iocs-labview-wrapper-iocs" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instructions are <strong>NOT accurate</strong> and will need careful editing before they can be used to create a fully functioning IOC and support module ⚠️</p>
+<p>In their current form, it is recommended that they be followed with extreme caution and with expert advice on hand 😟</p>
+</div>
+<p>These are instructions for creating an IOC wrapper for a VI using lvDCOM. It assumes you want to create a “support” type module for lvdcom in ISIS. The Mercury ITC is an example where the below was followed and then an IOC was created using this as a support module.</p>
+<section id="create-isis-support-module">
+<h2>1. Create ISIS Support Module<a class="headerlink" href="#create-isis-support-module" title="Link to this heading"></a></h2>
+<p>I plan to make these into a template (so you will just need to run makeBaseApp.pl and not do the edits), but for now this is the manual way.</p>
+<p>Please take note of the <a class="reference internal" href="../conventions/IOC-Naming.html"><span class="doc std std-doc">IOC naming convention</span></a> before proceeding.</p>
+<ol class="arabic simple">
+<li><p>Create a public repository to work in called EPICS-&lt;device&gt;.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">EPICS\ISIS</span></code> directory create a directory called &lt;device&gt;</p></li>
+<li><p>Add the repository as a submodule and clone it into this directory (i.e. with the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">add</span> <span class="pre">https://github.com/ISISComputingGroup/EPICS-&lt;device&gt;.git</span> <span class="pre">master</span></code>)</p></li>
+<li><p>Create a basic standard file and directory structure either by copying a similar existing module (and then executing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">uninstall</span></code> to remove unnecessary files) or by running <code class="docutils literal notranslate"><span class="pre">makeSupport.pl</span></code>.  Check the results either way.</p></li>
+<li><p>Copy a standard makefile into this directory</p></li>
+</ol>
+<p>Create the IOC in EPICS\IOC\master with (from an EPICS terminal)</p>
+<ol class="arabic simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">EPICS\IOC\master</span></code> directory create a directory called <iocname></p></li>
+<li><p>In the new directory <code class="docutils literal notranslate"><span class="pre">EPICS\IOC\master\&lt;iocname&gt;</span></code>, run the following two commands.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> makeBaseApp.pl –t ioc &lt;iocname&gt;
+ makeBaseApp.pl –i –t ioc &lt;iocname&gt;
+</pre></div>
+</div>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">mynameApp/src/build.mak</span></code> add dbd file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(APPNAME)_DBD += lvDCOM.dbd
+</pre></div>
+</div>
+<p>and libraries</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(APPNAME)_LIBS += lvDCOM 
+$(APPNAME)_LIBS += asyn
+</pre></div>
+</div>
+<p>and system library</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(APPNAME)_SYS_LIBS_WIN32 += msxml2
+</pre></div>
+</div>
+<p>Add the IOC to the makefile in <code class="docutils literal notranslate"><span class="pre">EPICS\ioc\master\Makefile</span></code> e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## modules not to build if no Windows ATL present (depends on Visual Studio compiler)  
+ifneq ($(HAVE_ATL),YES)  
+DIRS_NOTBUILD += ISISDAE MERCURY_ITC STPS350 AG53220A STSR400 DELFTSHEAR DELFTDCMAG DELFTARDUSTEP LVTEST SCIMAG3D HIFIMAG + &lt;iocname&gt;
+endif
+</pre></div>
+</div>
+</section>
+<section id="create-the-xml-configuration-file">
+<h2>2. Create the xml configuration file<a class="headerlink" href="#create-the-xml-configuration-file" title="Link to this heading"></a></h2>
+<p>This is a summary of <a class="reference external" href="http://epics.isis.stfc.ac.uk/doxygen/lvDCOM">more general LvDCOM instructions</a>.</p>
+<ol class="arabic">
+<li><p>Open the VI in lab view.</p></li>
+<li><p>Export strings from the LabVIEW panel (In different version of LabVIEW this is different)</p>
+<ol class="arabic simple">
+<li><p>2010:  Go to Tools menu, Advanced, Export Strings… and uncheck the wizard option for “block diagram strings” and save the export results to a text file e.g. controls.txt (Note: you may need write access to the VI itself to do this, so might have to make a local copy of the VI first)</p></li>
+<li><p>2014:</p>
+<ol class="arabic simple">
+<li><p>Menu -&gt; Tools -&gt; Advanced -&gt; Export Strings…</p></li>
+<li><p>Then save file to (&lt;device&gt;/protocol/controls.txt)</p></li>
+<li><p>Yes to “Export captions for controls without captions?”</p></li>
+<li><p>No to “Export block diagram strings?”</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Generate a corrected xml file. In an epics terminal run in the protocol directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">ISIS</span>\<span class="n">lvDCOM</span>\<span class="n">master</span>\<span class="n">lvDCOMApp</span>\<span class="n">src</span>\<span class="n">fix_xml</span><span class="o">.</span><span class="n">cmd</span> <span class="s2">&quot;controls.txt&quot;</span> <span class="s2">&quot;controls.xml&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Generate lvdcom file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xsltproc</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">ISIS</span>\<span class="n">lvDCOM</span>\<span class="n">master</span>\<span class="n">lvDCOMApp</span>\<span class="n">src</span>\<span class="n">lvstrings2input</span><span class="o">.</span><span class="n">xsl</span> <span class="s2">&quot;controls.xml&quot;</span> <span class="o">&gt;</span> <span class="n">lv_controls</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</li>
+<li><p>Edit lv_controls.xml (see below for example)</p>
+<ol class="arabic simple">
+<li><p>Check the path is correct for the external interface, it should be:<code class="docutils literal notranslate"><span class="pre">&lt;extint</span> <span class="pre">path=&quot;$(LVDCOM=$(TOP))/lvDCOMApp/src/extint/Main/Library/External</span> <span class="pre">Interface</span> <span class="pre">-</span> <span class="pre">Set</span> <span class="pre">Value.vi&quot;/&gt;</span></code></p></li>
+<li><p>Path in vi element needs path to be vi in the llb containing the vi e.g. <code class="docutils literal notranslate"><span class="pre">C:/LabVIEW</span> <span class="pre">Modules/Drivers/Oxford</span> <span class="pre">Instruments/Mercury/Mercury</span> <span class="pre">-</span> <span class="pre">Temperature.llb/&lt;name</span> <span class="pre">of</span> <span class="pre">vi&gt;</span></code></p></li>
+<li><p>Look at TODO’s in this file</p></li>
+<li><p>Remove unneeded controls or states of those controls (e.g. write for read only values)</p></li>
+<li><p>If the value is controlled by an event the <code class="docutils literal notranslate"><span class="pre">extint</span></code> value of set controls should be set to <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code>. This will make it process the value. If one of the value is true you might as well set them all to be true the only advantage is if the are all false it does not need to load the external interface.</p></li>
+</ol>
+</li>
+<li><p>Add protocol file to <code class="docutils literal notranslate"><span class="pre">ISIS/&lt;iocname&gt;App/protocol/Makefile</span></code> as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATA</span> <span class="o">+=</span> <span class="n">lv_controls</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="generate-the-db-file">
+<h2>3. Generate the DB File<a class="headerlink" href="#generate-the-db-file" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>generate db file from an epics terminal in protocol</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xsltproc</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">ISIS</span>\<span class="n">lvDCOM</span>\<span class="n">master</span>\<span class="n">lvDCOMApp</span>\<span class="n">src</span>\<span class="n">lvinput2db</span><span class="o">.</span><span class="n">xsl</span> <span class="n">lv_controls</span><span class="o">.</span><span class="n">xml</span> <span class="o">&gt;</span> <span class="o">..</span>\<span class="n">Db</span>\<span class="n">controls</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add db file to <code class="docutils literal notranslate"><span class="pre">&lt;iocname&gt;App\Db\Makefile</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DB</span> <span class="o">+=</span> <span class="n">controls</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</li>
+<li><p>Edit the DB file. I found I wanted many <code class="docutils literal notranslate"><span class="pre">_RBV</span></code> to be <code class="docutils literal notranslate"><span class="pre">:RBV</span></code> and to get rid of some of the records (see below for example)</p></li>
+</ol>
+</section>
+<section id="edit-to-st-cmd">
+<h2>4. Edit to st.cmd<a class="headerlink" href="#edit-to-st-cmd" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lvDCOMConfigure(&quot;lvfp&quot;,</span> <span class="pre">&quot;frontpanel&quot;,</span> <span class="pre">&quot;${TOP}/data/lv_controls.xml&quot;,</span> <span class="pre">&quot;$(LVDCOM_HOST=)&quot;,</span> <span class="pre">$(LVDCOM_OPTIONS=1),</span> <span class="pre">&quot;$(LVDCOM_PROGID=)&quot;,</span> <span class="pre">&quot;$(LVDCOM_USER=)&quot;,</span> <span class="pre">&quot;$(LVDCOM_PASS=)&quot;)</span></code> before loading common records and <em>after</em> IOC initialization (to enable common macros to be used in <code class="docutils literal notranslate"><span class="pre">lv_controls.xml</span></code>). (see <a class="reference external" href="http://epics.isis.stfc.ac.uk/doxygen/lvDCOM/lvDCOMDriver_8cpp.html#a90fdd61917374a2fed5dd1e2ba6da62b">lvDCOMConfigure documentation</a>).</p></li>
+<li><p>Load the DB file for the IOC using the <code class="docutils literal notranslate"><span class="pre">dbLoadRecords</span></code> command.</p></li>
+</ol>
+</section>
+<section id="edit-config-xml">
+<h2>5. Edit <code class="docutils literal notranslate"><span class="pre">config.xml</span></code><a class="headerlink" href="#edit-config-xml" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Add these macros to <code class="docutils literal notranslate"><span class="pre">config.xml</span></code> to allow them to be configured in the GUI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">macro</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;LVDCOM_OPTIONS&quot;</span> <span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;^\d?\d?$&quot;</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Options that define how the VI is started. Add selected options together to make the final value. 1 - warn if idle, 2 - start if idle, 4 - stop VIs if started on exit, 8 - stop VI on exit. (Default 1)&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">macro</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;LVDCOM_HOST&quot;</span> <span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;^.*$&quot;</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Host on which the vi is running, blank for localhost (Default &#39;&#39;)&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">macro</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;LVDCOM_PROGID&quot;</span> <span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;^.*$&quot;</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;DCOM ProgID, required if connecting to a compiled LabVIEW application (Default &#39;&#39;)&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Don’t add username and password, users can set these in globals.txt</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="run-the-ioc">
+<h2>6. Run the IOC<a class="headerlink" href="#run-the-ioc" title="Link to this heading"></a></h2>
+<p>Run the IOC as normal. The IOC should start with no errors and typing “dbl” will list the PVs. Note: unless the VI was already open it will not be visible. If it is not visible, stop the IOC, load the VI and restart the IOC</p>
+</section>
+<section id="finish-the-workflow">
+<h2>7. Finish the Workflow<a class="headerlink" href="#finish-the-workflow" title="Link to this heading"></a></h2>
+<p>Now return to the IOC workflow to apply <a class="reference internal" href="IOC-Finishing-Touches.html"><span class="doc std std-doc">finishing touches</span></a> like units, PVs of interest and macros.
+Once the ISIS IOC works you should probably now create an IOC linked to this one in ioc follow a similar pattern to a support modules. Remember that if you do this add your new ioc to the Makefile <code class="docutils literal notranslate"><span class="pre">IOCDIRS</span></code> and it does not build if there is no ATL so add it to this list too, i.e. edit <code class="docutils literal notranslate"><span class="pre">EPICS\ioc\master\Makefile</span></code> add to the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ifneq ($(HAVE_ATL),YES)  
+    DIRS_NOTBUILD += ISISDAE MERCURY_ITC STPS350 AG53220A STSR400 DELFTSHEAR DELFTDCMAG DELFTARDUSTEP LVTEST
+    endif
+</pre></div>
+</div>
+</section>
+<section id="example-xml-control-definitions">
+<h2>Example XML control definitions<a class="headerlink" href="#example-xml-control-definitions" title="Link to this heading"></a></h2>
+<p>A numeric indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ind1&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="o">&gt;</span> 
+    <span class="o">&lt;</span><span class="n">read</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GCV&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Some Indicator&quot;</span> <span class="o">/&gt;</span>  
+<span class="o">&lt;/</span><span class="n">param</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>A numeric control:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;cont1&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">read</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Some Control&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GCV&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nb">set</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Some Control&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;SCV&quot;</span> <span class="n">extint</span><span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">param</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>A boolean indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bool_ind&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;int32&quot;</span><span class="o">&gt;</span> 
+    <span class="o">&lt;</span><span class="n">read</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GCV&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Some boolean indicator&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">param</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>A string control:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;strcont1&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">read</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Some String&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GCV&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nb">set</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Some String&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;SCV&quot;</span> <span class="n">extint</span><span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">param</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>An array indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;arrayind1&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float64array&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">read</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;Some Array&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GCV&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">param</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Push a button when a value is set:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;South_X&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;float64&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">read</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GCV&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;South X&quot;</span><span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nb">set</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;SCV&quot;</span> <span class="n">extint</span><span class="o">=</span><span class="s2">&quot;false&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;South X&quot;</span> <span class="n">post_button</span><span class="o">=</span><span class="s2">&quot;Set South X&quot;</span> <span class="n">post_button_wait</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">param</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="example-records">
+<h2>Example records<a class="headerlink" href="#example-records" title="Link to this heading"></a></h2>
+<p>A numeric indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">ai</span><span class="p">,</span> <span class="s2">&quot;$(P)NUM_IND&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynFloat64&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@asyn(ex1,0,0)param_name_from_xml&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;.1 second&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A numeric control:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">ao</span><span class="p">,</span> <span class="s2">&quot;$(P)NUM_CON&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynFloat64&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span>  <span class="s2">&quot;@asyn(ex1,0,0)param_name_from_xml&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A boolean indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">bi</span><span class="p">,</span> <span class="s2">&quot;$(P)BOOL_IND&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynInt32&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@asyn(ex1,0,0)param_name_from_xml&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">ZNAM</span><span class="p">,</span> <span class="s2">&quot;FALSE&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">ONAM</span><span class="p">,</span> <span class="s2">&quot;TRUE&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;.1 second&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A string control (two records - one for readback and one for writing):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">stringin</span><span class="p">,</span> <span class="s2">&quot;$(P)STR&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynOctetRead&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@asyn(ex1,0,0)param_name_from_xml&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;.1 second&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">stringout</span><span class="p">,</span> <span class="s2">&quot;$(P)STRW&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynOctetWrite&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span>  <span class="s2">&quot;@asyn(ex1,0,0)param_name_from_xml&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A numeric array indicator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="s2">&quot;$(P)ARRAY_IND&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynFloat64ArrayIn&quot;</span><span class="p">)</span>
+   <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@asyn(ex1,0,0)param_name_from_xml&quot;</span><span class="p">)</span>
+   <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+   <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;.1 second&quot;</span><span class="p">)</span>
+   <span class="n">field</span><span class="p">(</span><span class="n">NELM</span><span class="p">,</span> <span class="s2">&quot;10&quot;</span><span class="p">)</span>
+   <span class="n">field</span><span class="p">(</span><span class="n">FTVL</span><span class="p">,</span> <span class="s2">&quot;DOUBLE&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>If you are getting file not found errors in your IOC when writing to PVs this will be because the path to the external interface in the generated xml is incorrect.</p>
+<p>You can also use the   <strong>dbior</strong>   command from the IOC prompt to print out the lvDCOM settings currently in use</p>
+</section>
+<section id="fixing-labview-2010-s-registry-settings-to-allow-remote-dcom-access">
+<h2>Fixing LabVIEW 2010’s Registry settings to allow remote DCOM access<a class="headerlink" href="#fixing-labview-2010-s-registry-settings-to-allow-remote-dcom-access" title="Link to this heading"></a></h2>
+<p>It appears that when LabVIEW 2010 is installed it does not register itself correctly in the Windows Registry. This means that it ignores any DCOM settings applied to it via dcomcnfg (see note below); as a result, it uses the general default settings instead.</p>
+<p>Note: dcomcnfg is the DCOM configuration tool which can be launched by typing “dcomcnfg” at the command prompt.</p>
+<p>Without the correction to the Registry, connecting to the machine from a remote lvDCOM IOC starts a second instance of LabVIEW rather than connecting to the existing instance - this is NOT what is wanted.</p>
+<ul class="simple">
+<li><p>Find the CLSID of LabVIEW - you can use dcomcnfg for this or search the registry.</p></li>
+<li><p>Under HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID, find the LabVIEW.exe and copy the AppId</p></li>
+<li><p>Under HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID{LabVIEW GUID from step 1}, add a string called !AppId and set the value to the AppId from above.</p></li>
+<li><p>Open dcomcnfg as Administrator, locate LabVIEW and click properties. Under Identity, set it to launching user then click OK.</p></li>
+</ul>
+</section>
+<section id="connecting-an-ioc-to-a-vi-on-a-different-pc">
+<h2>Connecting an IOC to a VI on a different PC<a class="headerlink" href="#connecting-an-ioc-to-a-vi-on-a-different-pc" title="Link to this heading"></a></h2>
+<p>To connect to a lvDCOM IOC to a VI on a different PC is very straightforward.</p>
+<p>Edit the st.cmd of the IOC to change the lvDCOMConfigure line from something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lvDCOMConfigure</span><span class="p">(</span><span class="s2">&quot;ex1&quot;</span><span class="p">,</span> <span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="s2">&quot;$(TOP)/lvDCOMApp/src/examples/example_lvinput.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lvDCOMConfigure</span><span class="p">(</span><span class="s2">&quot;ex1&quot;</span><span class="p">,</span> <span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="s2">&quot;$(TOP)/lvDCOMApp/src/examples/example_lvinput.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;ndxtestmjc&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;account_name&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course, the account_name and password should be changed to match your system.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Add-ioc-to-epics-hardware-list.html" class="btn btn-neutral float-left" title="Add IOC to EPICS hardware support list" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Creating-New-Submodules-in-EPICS.html" class="btn btn-neutral float-right" title="Creating new submodules in EPICS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

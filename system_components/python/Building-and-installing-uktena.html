@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building and installing Uktena &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Graylog" href="Graylog.html" />
+    <link rel="prev" title="Python (including Uktena, uv)" href="../Python.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building and installing Uktena</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Graylog.html">Graylog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-Circular-Dependencies-Resolution.html">Python Circular Dependencies Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-conventions.html">Python Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-dependencies.html">Python Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-venvs.html">Virtual environments (<code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+      <li class="breadcrumb-item active">Building and installing Uktena</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/python/Building-and-installing-uktena.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="building-and-installing-uktena">
+<h1>Building and installing Uktena<a class="headerlink" href="#building-and-installing-uktena" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The previous <code class="docutils literal notranslate"><span class="pre">genie_python</span></code> repository, which handled both library and distribution, was split into two components in November 2024:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/genie">genie</a>, the library:</p>
+<ul>
+<li><p>An installable pip package, <code class="docutils literal notranslate"><span class="pre">genie_python</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">genie_python</span></code> module itself, i.e. the result of <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">genie_python</span> <span class="pre">import</span> <span class="pre">genie</span></code> in python</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/uktena">uktena</a>, the distribution:</p>
+<ul>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">python.exe</span></code> at a specific version</p></li>
+<li><p>Many pre-installed libraries including <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="docutils literal notranslate"><span class="pre">genie_python</span></code>, <code class="docutils literal notranslate"><span class="pre">ibex_bluesky_core</span></code>, …</p></li>
+</ul>
+</li>
+</ul>
+<p>From the perspective of the uktena python distribution, <code class="docutils literal notranslate"><span class="pre">genie_python</span></code> is “just” another library which happens to be installed alongside many other libraries - there is no special handling of the <code class="docutils literal notranslate"><span class="pre">genie_python</span></code> library in uktena.</p>
+<p>Likewise, the genie library has no reference to uktena, and does not necessarily have to run as part of the uktena distribution.</p>
+</div>
+<hr class="docutils" />
+<section id="setting-up-uktena-python-distribution">
+<h2>Setting up uktena python distribution<a class="headerlink" href="#setting-up-uktena-python-distribution" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Check whether <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3</span></code> already exists.</p>
+<ul>
+<li><p>If it exists and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">get-url</span> <span class="pre">origin</span></code> returns <code class="docutils literal notranslate"><span class="pre">https://github.com/ISISComputingGroup/genie_python.git</span></code>:</p>
+<ul>
+<li><p>Stop IBEX server</p></li>
+<li><p>Remove the entire <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3</span></code> directory</p></li>
+<li><p>Proceed as if <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3</span></code> did not exist</p></li>
+</ul>
+</li>
+<li><p>If it exists and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">get-url</span> <span class="pre">origin</span></code> returns <code class="docutils literal notranslate"><span class="pre">https://github.com/ISISComputingGroup/uktena.git</span></code>:</p>
+<ul>
+<li><p>Perform a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">pull</span></code> in <code class="docutils literal notranslate"><span class="pre">C:\instrument\apps\python3</span></code></p></li>
+</ul>
+</li>
+<li><p>If it does not exist, from a git-enabled command line, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/ISISComputingGroup/uktena.git</span> <span class="pre">C:/Instrument/Apps/Python3</span></code> (or if using ssh authentication <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;github.com:ISISComputingGroup/uktena.git</span></code>).</p></li>
+</ul>
+</li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3\package_builder</span></code></p></li>
+<li><p>Be sure to have 7-Zip installed before processing with the next step.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">dev_build_python.bat</span></code> (You can use the indirection into a file to look back into the console output “ &gt; some_file_name  2&gt;&amp;1”)</p></li>
+</ul>
+<blockquote>
+<div><p>Note: You cannot run <code class="docutils literal notranslate"><span class="pre">dev_build_python.bat</span></code> from an EPICS terminal</p>
+</div></blockquote>
+<section id="first-time">
+<h3>First time<a class="headerlink" href="#first-time" title="Link to this heading"></a></h3>
+<p>The first time you set up python, assuming you’ve never installed it previously, you’ll need to set up an ipython profile.</p>
+<ol class="arabic simple">
+<li><p>From <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3</span></code>, run <code class="docutils literal notranslate"><span class="pre">python.exe</span> <span class="pre">.\Scripts\ipython.exe</span> <span class="pre">profile</span> <span class="pre">create</span></code> (use the EPICSTerm if Command Prompt results in errors)</p></li>
+<li><p>Copy <code class="docutils literal notranslate"><span class="pre">ipython_config.py</span></code> from the <code class="docutils literal notranslate"><span class="pre">package_builder</span></code> directory to <code class="docutils literal notranslate"><span class="pre">%USERPROFILE%\.ipython\profile_default\.</span></code> If the .ipython folder does not exist, create one and inside it make a profile_default folder and paste the file there.</p></li>
+</ol>
+</section>
+</section>
+<section id="development-workflow">
+<h2>Development workflow<a class="headerlink" href="#development-workflow" title="Link to this heading"></a></h2>
+<p>The uktena python distributions uses released versions of all dependencies by default. However, you can install development versions of libraries into it easily using <code class="docutils literal notranslate"><span class="pre">pip</span></code> editable installs.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>If you have not come across optional dependencies like <code class="docutils literal notranslate"><span class="pre">[dev]</span></code> before, read about them <a class="reference external" href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-and-requirements">here</a>.</p>
+</div>
+<section id="dev-process">
+<h3>Dev process<a class="headerlink" href="#dev-process" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Check out the library you want to develop into <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev\some_library</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\python3\python.exe</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">c:\instrument\dev\some_library[dev]</span></code></p></li>
+<li><p>Your uktena python distribution now contains a development install of the relevant library, which can be automatically reloaded (i.e. there is no need to rebuild <code class="docutils literal notranslate"><span class="pre">uktena</span></code> or re-run the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> step after making changes)</p></li>
+</ul>
+<p>For example, to install <code class="docutils literal notranslate"><span class="pre">genie</span></code> in an editable configuration:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/IsisComputingGroup/genie</span> <span class="pre">c:\instrument\dev\genie</span></code> (if it doesn’t already exist)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\python3\python.exe</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">c:\instrument\dev\genie[dev]</span></code></p></li>
+</ul>
+<p>Or to install <code class="docutils literal notranslate"><span class="pre">ibex_bluesky_core</span></code> in an editable configuration:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/IsisComputingGroup/ibex_bluesky_core</span> <span class="pre">c:\instrument\dev\ibex_bluesky_core</span></code> (if it doesn’t already exist)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\python3\python.exe</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">c:\instrument\dev\ibex_bluesky_core[dev]</span></code></p></li>
+</ul>
+<p>Once you have made the changes you want in <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev\&lt;library&gt;</span></code>, they should be committed and pushed from that repository as usual. <code class="docutils literal notranslate"><span class="pre">uktena</span></code> will pick up the changes by default next time the library is released to <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>.</p>
+<p>You can now make changes in <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev\some_library</span></code>.</p>
+<ul class="simple">
+<li><p>Python code changes will be picked up immediately by your development python, no need to re-install the dependency for python-only changes</p></li>
+<li><p>If your changes modify dependencies, you will need to re-run the <code class="docutils literal notranslate"><span class="pre">pip</span></code> command above to pick up the new dependencies</p></li>
+</ul>
+<p>Once you are happy with your changes locally, commit and push them from <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev\some_library</span></code> as usual.</p>
+<ul class="simple">
+<li><p>In order to pick up the changes in future built versions of uktena, the changes will need to be released to pypi.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Our python dependencies, along with many other external dependencies, all define a <code class="docutils literal notranslate"><span class="pre">[dev]</span></code> optional dependency group which contains dev-only dependencies (like linters, documentation build tools, debugging tools and so on). If you are editable-installing an external library, it may use a different convention - consult that library’s documentation or <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> to see which dependency groups are available.</p>
+</div>
+<p>To go back to the released version of the dependencies, you can run <code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\python3\python.exe</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">some_library</span></code> to remove your development version, followed by <code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\python3\python.exe</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">some_library</span></code> to reinstall the released version from pypi.</p>
+<p>If you need to go back to a completely “clean” uktena distribution, you can also re-run <code class="docutils literal notranslate"><span class="pre">dev_build_python.bat</span></code> (but this will be significantly slower than a single uninstall/reinstall).</p>
+</section>
+</section>
+<section id="writing-system-tests">
+<h2>Writing system tests<a class="headerlink" href="#writing-system-tests" title="Link to this heading"></a></h2>
+<p>As well as writing unit tests for genie_python you can write system tests. These are located in the <a class="reference external" href="https://github.com/ISISComputingGroup/genie_python_system_tests">genie_python_system_tests repository</a>. On your local machine run the run_tests.py; on the jenkins machine it will install the latest version of Ibex server and genie and run the tests.</p>
+<p>To use a new config add it to the configs directory, it must start with <code class="docutils literal notranslate"><span class="pre">rcptt_</span></code> so it will be ignored by git in IBEX. In the setup of the test ensure that the config is loaded.</p>
+<p>To run a test in pycharm make sure you set the environment to be the same as your epics environment for the variable: <code class="docutils literal notranslate"><span class="pre">ICPCONFIGROOT</span></code>, <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code>, <code class="docutils literal notranslate"><span class="pre">EPICS_CA_ADDR_LIST</span></code> and <code class="docutils literal notranslate"><span class="pre">EPICS_CA_AUTO_ADDR_LIST</span></code>.</p>
+</section>
+<section id="installing-on-the-instruments">
+<h2>Installing on the instruments<a class="headerlink" href="#installing-on-the-instruments" title="Link to this heading"></a></h2>
+<p>On the instrument connect to the shared drive (\isis\inst<span class="math notranslate nohighlight">\(\Kits\)</span>\CompGroup\ICP\genie_python\[latest version]) and run the genie_python_install.bat file.</p>
+<p>Please check that Notepad++ is set to replace tabs with spaces - it saves a lot of bother later when writing scripts.</p>
+<p>On some computer you may have to <a class="reference internal" href="../../scripting/genie_python/genie_python-Troubleshooting.html"><span class="doc std std-doc">set the core type that the <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">blas</span></code> library uses</span></a>.</p>
+<section id="the-location-of-instrument-specific-scripts">
+<h3>The location of instrument specific scripts<a class="headerlink" href="#the-location-of-instrument-specific-scripts" title="Link to this heading"></a></h3>
+<p>By default when setting an instrument the <code class="docutils literal notranslate"><span class="pre">init_default.py</span></code> file is loaded. This file checks for the existence of a folder called <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\NDX%INSTNAME%\Python</span></code> and adds this to the system path if it does. If this path exists and contains a file called <code class="docutils literal notranslate"><span class="pre">init_%INSTNAME%.py</span></code>, it will load it too.</p>
+<p>As this folder is added to the Python path any other files put in this directory can also be imported into genie_python. Note that this is <em>NOT</em> done automatically it is still necessary to type <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">my_instrument_scripts</span> <span class="pre">import</span> <span class="pre">my_function</span></code>.</p>
+<p>Scripts relating to the operation of the instrument should be kept in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\NDX%INSTNAME%\Python</span></code> too. This means that they can then be versioned in git.User scripts should not be stored here.</p>
+</section>
+<section id="quickly-deploy-minor-changes-to-instruments">
+<h3>Quickly deploy minor changes to instruments<a class="headerlink" href="#quickly-deploy-minor-changes-to-instruments" title="Link to this heading"></a></h3>
+<p>If changes have been made to the genie_python source (and tested!), it can be quicker just to copy the changed files onto the instrument directly rather than wait for the build server.</p>
+<p>The genie_python source can be found in C:\Instrument\Apps\Python\Lib\site-packages\genie_python.
+Restarting genie_python will pick up the changes.</p>
+</section>
+</section>
+<section id="importing-from-arbitrary-locations">
+<h2>Importing from arbitrary locations<a class="headerlink" href="#importing-from-arbitrary-locations" title="Link to this heading"></a></h2>
+<p>You can import modules from anywhere on your machine into genie_python. This is done for example for the shared scans library, which lives in <code class="docutils literal notranslate"><span class="pre">\Instrument\Scripts</span></code> by default.</p>
+<p>To do this, you must first append the location to the system path. The command for this is <code class="docutils literal notranslate"><span class="pre">sys.path.insert(</span> <span class="pre">&lt;path&gt;</span> <span class="pre">)</span></code>. You can now import modules in <code class="docutils literal notranslate"><span class="pre">&lt;path&gt;</span></code> normally.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>See the <a class="reference internal" href="../../scripting/genie_python/genie_python-Troubleshooting.html"><span class="doc std std-doc">genie_python troubleshooting guide</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Python.html" class="btn btn-neutral float-left" title="Python (including Uktena, uv)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Graylog.html" class="btn btn-neutral float-right" title="Graylog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

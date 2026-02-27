@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Things to know as a developer &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Ticket workflows" href="Tickets-and-their-Workflow.html" />
+    <link rel="prev" title="Project Documentation" href="Project-Documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Component-and-Activity-Stewards.html">Component &amp; Activity Stewards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Updates.html">Dependency Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="External-Contributions.html">External Contributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Good-Ticket-Writing.html">Good Ticket Writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-Documentation.html">Project Documentation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Things to know as a developer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tickets-and-their-Workflow.html">Ticket workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Umbrella-Tickets.html">Umbrella tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Understanding-Java-Licensing.html">Understanding Java Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unupdated-dependencies.html">Unupdated dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Dev-Processes.html">Developer Processes</a></li>
+      <li class="breadcrumb-item active">Things to know as a developer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/dev_processes/Things-to-know-as-a-developer.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="things-to-know-as-a-developer">
+<h1>Things to know as a developer<a class="headerlink" href="#things-to-know-as-a-developer" title="Link to this heading"></a></h1>
+<section id="java-licensing">
+<h2>Java licensing<a class="headerlink" href="#java-licensing" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="Understanding-Java-Licensing.html"><span class="doc std std-doc">java licensing</span></a></p>
+</section>
+<section id="update-my-instrument">
+<h2>Update my Instrument<a class="headerlink" href="#update-my-instrument" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../../iocs/compiling/Developer-Updating.html"><span class="doc std std-doc">Developer Updating</span></a></p>
+</section>
+<section id="make-my-build-faster-but-less-safe">
+<h2>Make my Build Faster but less Safe<a class="headerlink" href="#make-my-build-faster-but-less-safe" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../../iocs/compiling/SpeedUpBuilding.html"><span class="doc std std-doc">Speed Up Building</span></a></p>
+</section>
+<section id="a-couple-of-other-building-tricks">
+<h2>A couple of other building tricks<a class="headerlink" href="#a-couple-of-other-building-tricks" title="Link to this heading"></a></h2>
+<section id="run-on-one-thread-to-clearly-see-the-source-of-the-error">
+<h3>Run on one thread to clearly see the source of the error<a class="headerlink" href="#run-on-one-thread-to-clearly-see-the-source-of-the-error" title="Link to this heading"></a></h3>
+<p>Navigate to the directory for the module that is erroring during a build and run: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j1</span></code></p>
+</section>
+<section id="ignore-any-build-errors">
+<h3>Ignore any build errors<a class="headerlink" href="#ignore-any-build-errors" title="Link to this heading"></a></h3>
+<p>Do this when you know that you can safely ignore them, for example, you need a build of a specific IOC and one you won’t be using will be is stopping your build - use with extreme caution! Navigate to the top of the directories and run: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-i</span></code></p>
+</section>
+<section id="no-rule-to-make-target">
+<h3>No rule to make target<a class="headerlink" href="#no-rule-to-make-target" title="Link to this heading"></a></h3>
+<p>This means a Makefile is trying to build something for which an external dependency has been listed and this dependency does not exist and it cannot find a way to generate it. This can be a typo/error in the Makefile itself, but if you have just done an update of many submodules it may mean that one of the auto-generated epics dependencies for the failing module refers to items in another module that now no longer exist. If for example the boost C++ library is updated, MySQL or ISISDAE may fail to build as they use headers from boost that may have been rearranged. If you “make clean uninstall” the failing module it should rebuild everything (including dependencies) and then work. You could also just remove the *.d files (which are auto-generated dependencies) and then make again.</p>
+</section>
+</section>
+<section id="make-notepad-highlight-db-syntax">
+<h2>Make Notepad++ Highlight DB Syntax<a class="headerlink" href="#make-notepad-highlight-db-syntax" title="Link to this heading"></a></h2>
+<p>In Notepad++ Menu -&gt; Language -&gt; Define Your Language
+Then import the file <code class="docutils literal notranslate"><span class="pre">...EPICS\editors\Notepad++\userDefineLang.xml</span></code></p>
+<p>Alternatively, download VSCode and install the epics extension.</p>
+</section>
+<section id="python-conventions">
+<h2>Python conventions<a class="headerlink" href="#python-conventions" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../../system_components/python/Python-conventions.html"><span class="doc std std-doc">Python Conventions</span></a> for more information</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Project-Documentation.html" class="btn btn-neutral float-left" title="Project Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Tickets-and-their-Workflow.html" class="btn btn-neutral float-right" title="Ticket workflows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

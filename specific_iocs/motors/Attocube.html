@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attocube &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Beckhoff" href="Beckhoff.html" />
+    <link rel="prev" title="Motors" href="../Motors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Beckhoff.html">Beckhoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galil.html">Galil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors.html">Motors</a></li>
+      <li class="breadcrumb-item active">Attocube</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/Attocube.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="attocube">
+<h1>Attocube<a class="headerlink" href="#attocube" title="Link to this heading"></a></h1>
+<p><em>Not to be confused with the <a class="reference internal" href="SXD-Attocube.html"><span class="doc std std-doc">SXD Attocube</span></a></em></p>
+<section id="the-controller">
+<h2>The Controller<a class="headerlink" href="#the-controller" title="Link to this heading"></a></h2>
+<p>The Attocube ANC350 Piezo controller was supported in IBEX but is currently mothballed as it’s not actively used on any beamlines. Code is of course in git, see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4488">here</a> for where it was mothballed. The controller can be communicated with over USB or over Ethernet. IBEX uses the Ethernet communications.</p>
+<section id="enabling-ethernet">
+<h3>Enabling Ethernet<a class="headerlink" href="#enabling-ethernet" title="Link to this heading"></a></h3>
+<p>The controller does not come with Ethernet enabled as standard, it must be purchased separately (the hardware is there but the firmware needs it unlocked). Before a new Attocube is installed ensure in good time that the Ethernet control has been purchased. It will either be enabled at the factory or you will be provided a code to enable it. You can enter this code by connecting via USB and using the <code class="docutils literal notranslate"><span class="pre">daisy</span></code> software provided by Attocube on purchase of a controller. This software can also be used to set the IP address and subnet mask. Unfortunately the device uses a static IP, as such you will need to get an IP registered for the hall (talk to Chris about this). This software is in the usual place where we store manuals.</p>
+</section>
+</section>
+<section id="the-driver">
+<h2>The Driver<a class="headerlink" href="#the-driver" title="Link to this heading"></a></h2>
+<p>The driver was originally written by Observatory Sciences, but is now officially being maintained by us. It is quite an old style EPICS motor controller but is functional. It communicates with the device using is a relatively simple binary format, documented below:</p>
+<section id="the-protocol">
+<h3>The Protocol<a class="headerlink" href="#the-protocol" title="Link to this heading"></a></h3>
+<p>This is not meant to be an extensive documentation of the protocol, I merely understood enough to implement a <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-DeviceEmulator/tree/master/lewis_emulators/attocube_anc350">basic emulator</a>. Each packet sent between the device and IOC contains a header with the following information:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Information</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Length</p></td>
+<td><p>4 byte integer, LSB first</p></td>
+<td><p>The length of the rest of the packet <strong>Not including these 4 bytes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Opcode</p></td>
+<td><p>4 byte integer, LSB first</p></td>
+<td><p>The action that the driver wishes to perform 0 for set, 1 for get and 3 for ack</p></td>
+</tr>
+<tr class="row-even"><td><p>Address</p></td>
+<td><p>4 byte integer, LSB first</p></td>
+<td><p>The memory address to read or write to</p></td>
+</tr>
+<tr class="row-odd"><td><p>Index</p></td>
+<td><p>4 byte integer, LSB first</p></td>
+<td><p>Normally the axis that you’re reading/writing to</p></td>
+</tr>
+<tr class="row-even"><td><p>Correlation Number</p></td>
+<td><p>4 byte integer, LSB first</p></td>
+<td><p>Used to match up the response, the driver will increment this for each packet</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="set">
+<h3>Set<a class="headerlink" href="#set" title="Link to this heading"></a></h3>
+<p>When a set is sent to the controller it will look like:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Information</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Header</p></td>
+<td><p>As above.</p></td>
+<td><p>As above.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data</p></td>
+<td><p>Array of 4 byte integers, LSB first</p></td>
+<td><p>The data to actually write.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The response will just be a header with the acknowledgement opcode.</p>
+</section>
+<section id="get">
+<h3>Get<a class="headerlink" href="#get" title="Link to this heading"></a></h3>
+<p>When a get is sent to the controller it will just be a header with the get opcode. The response will be:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Information</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Header</p></td>
+<td><p>As above.</p></td>
+<td><p>As above.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reason</p></td>
+<td><p>4 byte integer, LSB first</p></td>
+<td><p>Whether the get was successful, 0 if all ok</p></td>
+</tr>
+<tr class="row-even"><td><p>Data</p></td>
+<td><p>Array of 4 byte integers, LSB first</p></td>
+<td><p>The data to read from the specified memory address.</p></td>
+</tr>
+</tbody>
+</table>
+<p>So an example of communications may be:</p>
+<p>To controller: <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">01</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">15</span> <span class="pre">04</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">02</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">8b</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span></code></p>
+<p>Reply: <code class="docutils literal notranslate"><span class="pre">18</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">03</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">15</span> <span class="pre">04</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">02</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">8b</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">ca</span> <span class="pre">00</span> <span class="pre">00</span> <span class="pre">00</span></code></p>
+<p>Here the IOC is getting the value of memory address <code class="docutils literal notranslate"><span class="pre">0x0415</span></code> on axis 0, which is the position of the axis. It receives a value of 202 steps.</p>
+<p>This protocol was reverse engineered from the description <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-attocubeANC350/blob/master/anc350App/src/ucprotocol.h">here</a> which gives a lot more information.</p>
+</section>
+</section>
+<section id="the-memory-addresses">
+<h2>The Memory Addresses<a class="headerlink" href="#the-memory-addresses" title="Link to this heading"></a></h2>
+<p>The general protocol mostly just reads and writes to some memory address. There are too many addresses to list here, instead a good reference is at the end of the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-attocubeANC350/blob/master/docs/ANC350_Developers_Manual.pdf">supplied docs</a> or in the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-attocubeANC350/blob/master/anc350App/src/devAnc350.h">code itself</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Motors.html" class="btn btn-neutral float-left" title="Motors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Beckhoff.html" class="btn btn-neutral float-right" title="Beckhoff" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

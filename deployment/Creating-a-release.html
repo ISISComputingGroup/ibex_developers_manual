@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating a release &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating a script generator release" href="release/Creating-a-script-generator-release.html" />
+    <link rel="prev" title="Releases &amp; Deployment" href="../Deployment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating a release</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release/Creating-a-script-generator-release.html">Creating a script generator release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release/Release-based-repository.html">Release Repository on <code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Deploy.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Patch.html">Patching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Future.html">Future Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Deployment.html">Releases &amp; Deployment</a></li>
+      <li class="breadcrumb-item active">Creating a release</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/Creating-a-release.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-release">
+<h1>Creating a release<a class="headerlink" href="#creating-a-release" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="standard-release">
+<h2>Standard Release<a class="headerlink" href="#standard-release" title="Link to this heading"></a></h2>
+<p>Project is ready to be released not for a specific event, e.g. at the end of a sprint. Script Generator version number always differs to the client’s.</p>
+<section id="creating-release-pre-testing-steps">
+<h3>Pre Testing<a class="headerlink" href="#creating-release-pre-testing-steps" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Find out anything that needs to be in the release that isn’t and mark with <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">release</span></code> label. (This does not prevent a release)</p></li>
+<li><p>Ensure the version of <code class="docutils literal notranslate"><span class="pre">cs-studio</span></code> <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.targetplatform/targetplatform.target">referenced in the GUI’s target platform</a>
+is recent enough to include the most recent changes in the
+<a class="reference external" href="https://github.com/ISISComputingGroup/isis_css_top"><code class="docutils literal notranslate"><span class="pre">isis_css_top</span></code> repository</a>.</p></li>
+<li><p>Update the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py">upgrade script</a> to include the latest version (this is done on master). Steps to do this are in <a class="reference internal" href="../tools/Config-Upgrader.html"><span class="doc std std-doc">Config Upgrader in section <em>creating a production upgrade script</em></span></a></p>
+<ol class="arabic simple">
+<li><p>After committing these changes to <code class="docutils literal notranslate"><span class="pre">master</span></code> on the <code class="docutils literal notranslate"><span class="pre">EPICS-upgrade</span></code> submodule, don’t forget to push the new submodule version to <code class="docutils literal notranslate"><span class="pre">master</span></code> on the top <code class="docutils literal notranslate"><span class="pre">EPICS</span></code> branch. This is needed to make sure you changes appear on the release branch created in the next step.</p></li>
+</ol>
+</li>
+<li><p>For packages which are published on <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>, in particular <code class="docutils literal notranslate"><span class="pre">genie_python</span></code> and <code class="docutils literal notranslate"><span class="pre">ibex_bluesky_core</span></code>, create PyPI releases if needed.</p>
+<ol class="arabic simple">
+<li><p>These packages are released by performing a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">x.y.z</span></code> on a checkout of <code class="docutils literal notranslate"><span class="pre">main</span></code>, where <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code> is the new version you want to release. Push the tag using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">tag</span> <span class="pre">x.y.z</span></code>. They will then build in github actions, and prompt to “approve” the release pipeline to PyPI.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">genie</span></code> should be released with a version number matching the main IBEX version number. The release takes around 15 minutes in GHA.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ibex_bluesky_core</span></code> should generally have a minor/patch version incremented for now until we reach v1. The release takes a couple of minutes in GHA.</p></li>
+<li><p><strong>Ensure these releases were successful</strong> by checking on <a class="reference external" href="https://pypi.org/">pypi</a> for the new release number before proceeding.</p></li>
+</ol>
+</li>
+<li><p>Start the Github Actions pipeline <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils/actions/workflows/create-release-branches.yml"><code class="docutils literal notranslate"><span class="pre">create-release-branches</span></code></a>.</p>
+<ul class="simple">
+<li><p>Click on ‘Run workflow’</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> to the new release version (e.g. <code class="docutils literal notranslate"><span class="pre">X.x.m</span></code>).</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">TAG</span></code> if you wish to branch off a commit other than the latest top level <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>. If you do branch off an earlier commit, also set <code class="docutils literal notranslate"><span class="pre">REMOTE</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> as it now does not make sense to verify if you are on the latest submodule versions.</p></li>
+<li><p>The script will then (as selected):</p>
+<ul>
+<li><p>Create the release branches (named <code class="docutils literal notranslate"><span class="pre">Release_X.x.m</span></code> except <code class="docutils literal notranslate"><span class="pre">Release_Script_Gen_X.x.m</span></code> for script generator) for:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EPICS</span></code> and submodules.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IBEX</span> <span class="pre">GUI</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Script</span> <span class="pre">Generator</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Uktena</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Update or add version numbers:</p>
+<ul>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">ioc/master/INSTETC/INSTETC-IOC-01App/Db/svn-revision.db.tmpl</span></code> for <code class="docutils literal notranslate"><span class="pre">EPICS</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.ibex.e4.client/pom.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.ibex.e4.client/META-INF/MANIFEST.mf</span></code> for <code class="docutils literal notranslate"><span class="pre">IBEX</span> <span class="pre">GUI</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.scriptgenerator.client/pom.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.scriptgenerator.client/META-INF/MANIFEST.mf</span></code> for <code class="docutils literal notranslate"><span class="pre">Script</span> <span class="pre">Generator</span></code>.</p></li>
+<li><p>Note: <code class="docutils literal notranslate"><span class="pre">genie_python</span></code> library version numbers are set automatically from the git tag, and no longer need manually updating.</p></li>
+</ul>
+</li>
+<li><p>Push these changes to remote release branch.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Start all of <a class="reference external" href="https://epics-jenkins.isis.rl.ac.uk/view/Release/">these builds</a> in Jenkins.</p></li>
+<li><p>Copy the new version’s release notes (copy &amp; paste) into a new blank <code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">Notes</span> <span class="pre">&quot;X.x.m&quot;</span></code> (where <code class="docutils literal notranslate"><span class="pre">X.x.m</span></code> is the upcoming version) file and clear the contents: Check that all of the merged tickets have also had their <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/pulls">release notes merged</a>. Check that the release notes are as understandable as possible.</p></li>
+<li><p>Create a released version entry in the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md">releases table</a> (including link to release notes) and commit to master.</p></li>
+<li><p>Update the “Latest Stable Release” and “Upcoming release” links on the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX">IBEX wiki homepage</a> to be the new release and commit to master.</p></li>
+<li><p>If applicable, update the dependencies since the last release and add them to the bottom of the release notes. To find the python dependencies list, run a <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code> on a cleanly released <code class="docutils literal notranslate"><span class="pre">uktena</span></code>. Note that you will need to specify the scripts directory to run pip commands. i.e. <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3\Scripts\Pip.exe</span> <span class="pre">freeze</span></code></p></li>
+<li><p>copy the release to the <code class="docutils literal notranslate"><span class="pre">git$</span></code> share on <code class="docutils literal notranslate"><span class="pre">control-svcs</span></code> (see Keeper for the username and password for this), this is so we can set git remotes for hotfixes etc. as part of the deploy. So if release is number 1.2.3</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">robocopy</span> <span class="pre">&quot;\\isis\inst$\Kits$\CompGroup\ICP\Releases\1.2.3\EPICS\.git&quot;</span> <span class="pre">&quot;\\control-svcs.nd.rl.ac.uk\git$\releases\1.2.3\EPICS.git&quot;</span> <span class="pre">/mir</span> <span class="pre">/nfl</span> <span class="pre">/ndl</span></code></p></li>
+<li><p>edit <code class="docutils literal notranslate"><span class="pre">EPICS.git\config</span></code> on the control-svcs version (you can browse straight to the <code class="docutils literal notranslate"><span class="pre">\\control-svcs</span></code> share above)</p>
+<ul>
+<li><p>change <code class="docutils literal notranslate"><span class="pre">bare</span> <span class="pre">=</span> <span class="pre">false</span></code> to <code class="docutils literal notranslate"><span class="pre">bare</span> <span class="pre">=</span> <span class="pre">true</span></code></p></li>
+<li><p>Add an extra section at end of file</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">http</span><span class="p">]</span>
+        <span class="n">receivepack</span> <span class="o">=</span> <span class="n">true</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Do the same for the <code class="docutils literal notranslate"><span class="pre">EPICS32</span></code> 32-bit build, replacing <code class="docutils literal notranslate"><span class="pre">EPICS</span></code> with <code class="docutils literal notranslate"><span class="pre">EPICS32</span></code> everywhere in the commands above.</p></li>
+<li><p>Check release is now listed in <a class="reference external" href="https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases"><code class="docutils literal notranslate"><span class="pre">https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases</span></code></a></p></li>
+<li><p>Run the <a class="reference external" href="https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#instrument_deployyaml"><code class="docutils literal notranslate"><span class="pre">instrument_deploy.yaml</span></code> ansible playbook</a> on any test machines which will be used for manual system testing.</p></li>
+</ol>
+</section>
+<section id="creating-release-testing-steps">
+<h3>Testing<a class="headerlink" href="#creating-release-testing-steps" title="Link to this heading"></a></h3>
+<p>Update <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils</span></code> - this is so the most recent install script will be used for testing and install. You should:</p>
+<ul class="simple">
+<li><p>do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> and check it is on <code class="docutils literal notranslate"><span class="pre">master</span></code> and not e.g. a test or ticket branch</p></li>
+<li><p>do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and check for any changes, if there are post on Teams</p></li>
+<li><p>do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> so you are on the latest <code class="docutils literal notranslate"><span class="pre">master</span></code> branch with no local changes</p></li>
+</ul>
+<p>One or more people should do <a class="reference internal" href="Manual-System-Tests.html"><span class="doc std std-doc">manual system tests, using this page</span></a>.</p>
+</section>
+<section id="creating-release-post-testing-steps">
+<h3>Post Testing<a class="headerlink" href="#creating-release-post-testing-steps" title="Link to this heading"></a></h3>
+<p>These steps should only be done once all changes to a release have been made and we are ready to deploy. Here we are creating a tag
+which will become inconsistent if further changes are made to the release branch. Hence it is important to delete
+the relevant release branch after it has been tagged.</p>
+<ol class="arabic">
+<li><p>Create a release tag in the EPICS, ibex_gui and uktena repositories. For each repo</p>
+<ol class="arabic simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">[REPO_URL]/releases</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">https://github.com/ISISComputingGroup/ibex_gui/releases</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Draft</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">release</span></code></p></li>
+<li><p>Enter the tag version in the format <code class="docutils literal notranslate"><span class="pre">vX.x.p</span></code> and target the release branch</p></li>
+<li><p>Enter the title <code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">version</span> <span class="pre">X.x.p</span></code></p></li>
+<li><p>Add a link to the release notes in the description</p></li>
+<li><p><strong>Delete the release branch</strong> once the release and tag has been created.</p></li>
+</ol>
+</li>
+<li><p>Create release tag from the release branch for each submodules in EPICS, then delete the release branch. To do this, run the following two git commands in top level EPICS (replace <code class="docutils literal notranslate"><span class="pre">X.x.x</span></code> with the release number):</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">foreach</span> <span class="pre">--recursive</span> <span class="pre">&quot;git</span> <span class="pre">fetch</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">tag</span> <span class="pre">Release_ibex_X.x.x</span> <span class="pre">origin/Release_X.x.x</span> <span class="pre">||</span> <span class="pre">exit</span> <span class="pre">0&quot;</span></code> // Create tag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">foreach</span> <span class="pre">--recursive</span> <span class="pre">&quot;git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">tag</span> <span class="pre">Release_ibex_X.x.x</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">--delete</span> <span class="pre">origin</span> <span class="pre">Release_X.x.x</span> <span class="pre">||</span> <span class="pre">exit</span> <span class="pre">0&quot;</span></code> // Push tags and delete release branch</p></li>
+</ol>
+<p><em>Note: you may need to run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">fsck.badEmail</span> <span class="pre">ignore</span></code> for the above step</em></p>
+</li>
+<li><p>Make sure any changes on the release branch are merged back onto master for EPICS, ibex_gui, and uktena (except version numbering)</p></li>
+<li><p>Consider which instruments need this release:</p>
+<ul class="simple">
+<li><p>Breaking release: upgrade everyone</p></li>
+<li><p>Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from</p></li>
+<li><p>Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information">column in instruments table</a>. Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="release/Release-based-repository.html"><span class="doc std std-doc">Create repository for recording instrument changes post release</span></a> the deploy script automatically puts the instrument onto a branch of this repository</p></li>
+</ol>
+</section>
+</section>
+<section id="partial-release">
+<h2>Partial Release<a class="headerlink" href="#partial-release" title="Link to this heading"></a></h2>
+<p>For any release in which GUI version increments but server version does not, ensure the previous server version is added to the release folder via symbolic links or junctions, <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7250">see this ticket</a>.</p>
+</section>
+<section id="patch-release">
+<h2>Patch Release<a class="headerlink" href="#patch-release" title="Link to this heading"></a></h2>
+<p>The is a release when a change needs to be made between standard releases; i.e. a standard release is inappropriate because it includes lots of code which has not been through a code freeze and test.</p>
+<ol class="arabic simple">
+<li><p>Follow all Pre Testing steps above except:</p>
+<ul class="simple">
+<li><p>For step 4 (creating the release branch) instead of creating from master create it from the latest release tag</p></li>
+<li><p>Update GUI Java JRE</p></li>
+<li><p>Finding the most significant change</p></li>
+<li><p>Updating the MySQL and Java being deployed</p></li>
+</ul>
+</li>
+<li><p>Is the code for the bug/enhancement already written?</p>
+<ul class="simple">
+<li><p>No: Make the changes on the branch.</p></li>
+<li><p>Yes: Cherry pick commits needed from the branch with the written code</p></li>
+</ul>
+</li>
+<li><p>Test</p></li>
+<li><p>Release as per a standard release but</p>
+<ol class="arabic simple">
+<li><p>Use this branch instead of master</p></li>
+<li><p>Only include the change you have made in the release notes</p></li>
+<li><p>Copy the release notes issues into the development page</p></li>
+</ol>
+</li>
+<li><p>Merge the new code back into master</p></li>
+</ol>
+</section>
+<section id="adding-late-commits-to-the-release-branch-for-epics">
+<h2>Adding late commits to the release Branch for EPICS<a class="headerlink" href="#adding-late-commits-to-the-release-branch-for-epics" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Test and merge the change into master</p></li>
+<li><p>Create a release branch in the submodule (if it doesn’t exist)</p>
+<ol class="arabic simple">
+<li><p>Navigate to EPICS in github</p></li>
+<li><p>navigate to the submodule</p></li>
+<li><p>Create new branch (this means it will be branched from the release point)</p></li>
+</ol>
+</li>
+<li><p>Switch the branch of the submodule:  <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">Release_X.x.m</span></code></p></li>
+<li><p>Pull the latest release branch:  <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+<li><p>Merge in the ticket <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">XXX</span></code></p></li>
+<li><p>push that branch</p></li>
+<li><p>cd to EPICS</p></li>
+<li><p>checkout release branch and pull</p></li>
+<li><p>update submodule reference, commit and push.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Deployment.html" class="btn btn-neutral float-left" title="Releases &amp; Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="release/Creating-a-script-generator-release.html" class="btn btn-neutral float-right" title="Creating a script generator release" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

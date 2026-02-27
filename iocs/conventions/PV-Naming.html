@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PV naming &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PV units" href="PV-Units-%26-Standards.html" />
+    <link rel="prev" title="Manuals" href="Manuals.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Conventions.html">Conventions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IOC-Descriptions.html">IOC Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Naming.html">IOC Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Startup.html">IOC Startup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-PV-Guide.html">ISIS PV Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Macro-Naming.html">Macro Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manuals.html">Manuals</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PV naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Units-%26-Standards.html">PV units</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Conventions.html">Conventions</a></li>
+      <li class="breadcrumb-item active">PV naming</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/conventions/PV-Naming.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pv-naming">
+<h1>PV naming<a class="headerlink" href="#pv-naming" title="Link to this heading"></a></h1>
+<p>Suggestions for naming of PVs at ISIS.</p>
+<p>Basic idea is to describe function in the PV name, not hardware/technology - the PV name is the purpose of a channel and is abstracted from the underlying hardware; an individual IOC name can however reflect technology/hardware/implementation. Note: do not use the <code class="docutils literal notranslate"><span class="pre">:</span></code> character in an IOC name.</p>
+<p>All characters in names should be uppercase. We will use <code class="docutils literal notranslate"><span class="pre">:</span></code> as hierarchy separator, <code class="docutils literal notranslate"><span class="pre">_</span></code> to delimit distinct characters in device name</p>
+<p>Basic scheme format is <code class="docutils literal notranslate"><span class="pre">Domain:subdomain:technicalarea:device:subdevice:signal</span></code></p>
+<p>PV names are restricted to alphanumerical, plus <code class="docutils literal notranslate"><span class="pre">_</span></code> and <code class="docutils literal notranslate"><span class="pre">:</span></code> so <code class="docutils literal notranslate"><span class="pre">[A-Z0-9_:]*</span></code> Items that might have multiple instances must not end with a number as this would be confused with a 01,02 etc suffix used to enumerate multiple instances.</p>
+<section id="pv-name-length-limit">
+<h2>PV Name length limit<a class="headerlink" href="#pv-name-length-limit" title="Link to this heading"></a></h2>
+<p>Several things can create PV names, which influence the PV limit. The limit of a PV name as far as channel access protocol is concerned is around the size of a UDP packet (so ~1500 chars).</p>
+<p>On the other hand, an epics record can only create PVs of a smaller size, increased from 40 to 60 in 3.14.12 - but that limit doesn’t field names as well.</p>
+<p>Therefore, IOC PVs have a full record name limit of 60, but PVs on channel access servers can have a much longer name.</p>
+</section>
+<section id="private-names">
+<h2>Private names<a class="headerlink" href="#private-names" title="Link to this heading"></a></h2>
+<p>Sometimes we have a need to define PVs which are only used internally by the IOC, and never by outside programs. These “private” names will use a leading underscore on the last logically private element of a hierarchy.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usual temperature setpoint record</span>
+<span class="n">record</span><span class="p">(</span><span class="n">ao</span><span class="p">,</span> <span class="s2">&quot;$(P)TEMP:SP&quot;</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="c1"># Some calculation that does something to the setpoint before it is sent to the device</span>
+<span class="n">record</span><span class="p">(</span><span class="n">calc</span><span class="p">,</span> <span class="s2">&quot;$(P)TEMP:SP:_CALC&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">CALC</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">)</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="c1"># A record which actually writes to the device (after the calculation has been performed)</span>
+<span class="n">record</span><span class="p">(</span><span class="n">ao</span><span class="p">,</span> <span class="s2">&quot;$(P)TEMP:SP:_RAW&quot;</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="naming-convention">
+<h2>Naming convention<a class="headerlink" href="#naming-convention" title="Link to this heading"></a></h2>
+<p>Having followed the <a class="reference internal" href="IOC-Naming.html"><span class="doc std std-doc">IOC-Naming</span></a> the PV will be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PR:INSTXXCR:DEVICEXX_NN:PARAMETER
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>PR (max 2): Instrument prefix TE - test, IN - Instrument</p></li>
+<li><p>INST__CR (max 8): Instrument name max 8 characters. If the instrument name is longer than 8 characters then truncate to 6 characters and use the 2 characters CR16 hash of the instrument name e.g. <code class="docutils literal notranslate"><span class="pre">IRIS_SETUP</span> <span class="pre">=&gt;</span> <span class="pre">IRIS_SE22</span></code></p></li>
+<li><p>DEVICEXX_99 (max 11): Name of the device with the device index after it. Device index is a two digit number</p></li>
+<li><p>PARAMETER (max 36): Parameter in the IOC e.g. a temperature readback or set point</p></li>
+</ul>
+</section>
+<section id="iocs-with-multiple-devices">
+<h2>IOCs with multiple devices<a class="headerlink" href="#iocs-with-multiple-devices" title="Link to this heading"></a></h2>
+<p>For multiple devices, use a 2-letter prefix followed by an unpadded number (e.g. CH1). Note that this rule is not strict; there are a number of IOCs that don’t follow it (e.g. Eurotherms: A01)</p>
+</section>
+<section id="signal-qualifiers">
+<h2>Signal Qualifiers<a class="headerlink" href="#signal-qualifiers" title="Link to this heading"></a></h2>
+<p>These are added after a signal to indicate it is a setpoint etc. So for the TEMP signal</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...:HEATER:TEMP</span></code>: Current temperature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">...:HEATER:TEMP:SP</span></code>: Temperature set point (requested value) – this is the value that was input in software and sent to the equipment. Write to this PV to change a setpoint</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">...:HEATER:TEMP:SP:RBV</span></code>  (read-only): This is the setpoint “readback”  from hardware, which may differ from SP sent above if e.g. the hardware was unable to exactly match the requested value. Also if the SP was changed by some other mechanism (e.g. manually on the hardware) <code class="docutils literal notranslate"><span class="pre">:SP</span></code> would not reflect this, but <code class="docutils literal notranslate"><span class="pre">:SP:RBV</span></code> would</p></li>
+</ul>
+<p>Note:  RBV suffix can be used more generally e.g. For P,I,D values you could have <code class="docutils literal notranslate"><span class="pre">...:P</span></code> and <code class="docutils literal notranslate"><span class="pre">...:P:RBV</span></code></p>
+<p>Note: For comparison, the SNS are using <a class="reference external" href="http://en.wikipedia.org/wiki/CamelCase">camel case</a> i.e.  <code class="docutils literal notranslate"><span class="pre">Temp</span></code>, <code class="docutils literal notranslate"><span class="pre">TempSet</span></code> and <code class="docutils literal notranslate"><span class="pre">TempRB</span></code></p>
+</section>
+<section id="macros">
+<h2>Macros<a class="headerlink" href="#macros" title="Link to this heading"></a></h2>
+<p>All records should start <code class="docutils literal notranslate"><span class="pre">$(P)</span></code> for prefix which can be substituted at load time. Diamond have <code class="docutils literal notranslate"><span class="pre">$(P)$(Q)</span></code> for added flexibility and we may want to use this too</p>
+</section>
+<section id="top-level-domain">
+<h2>Top Level domain<a class="headerlink" href="#top-level-domain" title="Link to this heading"></a></h2>
+<p>Some suggested top level domains – we may not want to use them all</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Prefix</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AC</p></td>
+<td><p>ISIS Accelerator/synchrotron related parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>CS</p></td>
+<td><p>Control system specific top level variables e.g. global IOC related variables</p></td>
+</tr>
+<tr class="row-even"><td><p>TG</p></td>
+<td><p>ISIS Target related parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>IN</p></td>
+<td><p>Instrument related parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>HA</p></td>
+<td><p>Experimental hall/building related parameter (e.g. cabin temperature)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TE</p></td>
+<td><p>Testing domain, used by local EPICS developers</p></td>
+</tr>
+<tr class="row-even"><td><p>ME</p></td>
+<td><p>Movable equipment, equipment not tied to a specific beamline</p></td>
+</tr>
+<tr class="row-odd"><td><p>BL</p></td>
+<td><p>Beamline – used if multiple instruments are sharing a common set of equipment, such as on the muon beamlines pre kicker.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ac-domain">
+<h2>AC Domain<a class="headerlink" href="#ac-domain" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TG:TS1:MOD:H2:TEMP</span></code>: TS1 hydrogen moderator temperature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TG:TS1:MOD:H2:TC01:TEMP</span></code>: Alternative to above as there may be more than one temperature value! Using TC for “thermocouple” |</p></li>
+</ul>
+</section>
+<section id="te-domain">
+<h2>TE Domain<a class="headerlink" href="#te-domain" title="Link to this heading"></a></h2>
+<p>Mostly free format - have developers fedid as second part, then whatever required. In many cases would want to suffix with above scheme to make final integration easier e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TE</span><span class="p">:</span><span class="n">FAA59</span><span class="p">:</span><span class="n">TG</span><span class="p">:</span><span class="n">TS1</span><span class="p">:</span><span class="n">MOD</span><span class="p">:</span><span class="n">H2</span><span class="p">:</span><span class="n">TEMP</span>
+</pre></div>
+</div>
+</section>
+<section id="bl-domain">
+<h2>BL Domain<a class="headerlink" href="#bl-domain" title="Link to this heading"></a></h2>
+<p>This needs to be followed by information about which beamline. For neutron instruments could use the MCR shutter port identifier (N1, N2, N3 etc.) – need to find out what they call the Muon beamline.</p>
+</section>
+<section id="ha-domain">
+<h2>HA Domain<a class="headerlink" href="#ha-domain" title="Link to this heading"></a></h2>
+<p>Should be followed by the hall identifier. We could use <code class="docutils literal notranslate"><span class="pre">HA:TS1:*</span></code> etc, or be more general for possible  use with any building e.g. <code class="docutils literal notranslate"><span class="pre">HA:R55:*</span> </code></p>
+</section>
+<section id="in-domain">
+<h2>IN Domain<a class="headerlink" href="#in-domain" title="Link to this heading"></a></h2>
+<p>Sub domain is full instrument name e.g GEM. If we wish to distinguish the instrument “front end” from the rest, could use <code class="docutils literal notranslate"><span class="pre">*:FE</span></code> sub-domain</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:*</span></code>: Prefix for all variables related to GEM instrument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:SB:*</span></code>: Where to record block (short/friendly) names if we use them</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:MOT:*</span></code>: Motion control equipment - see below</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:VAC:*</span></code>: Vacuum equipment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:CS:*</span></code>: Variables related to instrument control system software - see below</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:PS:*</span></code>: Power supply</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:CHOP:FERMI:*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:SE:*</span></code>: Sample environment not covered elsewhere</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:DET:*</span></code>: Detector related variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:FE:*</span></code>: Instrument “fro``nt end” equipment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:GEM:DAE:*</span></code>: Data acquisition electronics related PVs</p></li>
+</ul>
+</section>
+<section id="the-in-inst-cs-sub-domain">
+<h2>The IN:{INST}:CS sub domain<a class="headerlink" href="#the-in-inst-cs-sub-domain" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:IOC:*</span></code>: Variables describing running IOCs provided by the IOC themselves</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:IOC:{IOCNAME}:AS:*</span></code>: Autosave PVs for IOC {IOCNAME}</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:IOC:{IOCNAME}:DEVIOS:*</span></code>: DevIOStats PVs for IOC {IOCNAME}</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:IOC:{IOCNAME}:MOT:*</span></code>: Motion specific PVs e.g. <code class="docutils literal notranslate"><span class="pre">allstop</span></code> from <code class="docutils literal notranslate"><span class="pre">motorUtils</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:IOC:{IOCNAME}:PS:*</span></code>: ProcServCtrl PVs for IOC {IOCNAME}</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:GATEWAY:EXTERNAL:*</span></code>: Gateway special PVs for the external gateway</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:GATEWAY:BLOCKSERVER:*</span></code>: Gateway special PVs for the blockserver gateway</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:SCAN:ACTIVE</span></code>: where to put scan related variables?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:CS:PS:{IOCNAME}:*</span></code>: variables created by PROCSERVCTRL IOC for starting/stopping IOCs via procServ</p></li>
+</ul>
+</section>
+<section id="the-in-inst-mot-sub-domain">
+<h2>The IN:{INST}:MOT:* sub domain<a class="headerlink" href="#the-in-inst-mot-sub-domain" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:MOT:MTRccmm</span></code>: Epics motor records for motor on controller number cc, motor number mm. These numbers are zero padded to two digits and star from 1 e.g. MTR0101 is the first motor on the first controller</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:MOT:JAWSmm</span></code>:  First set of jaws e.g. JAWS01</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:MOT:DMCcc</span></code>: Galil specific controller variables for controller cc</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN:{INST}:MOT:STOPALL</span></code>: stop all motion</p></li>
+</ul>
+</section>
+<section id="standard-signal-names">
+<h2>Standard signal names<a class="headerlink" href="#standard-signal-names" title="Link to this heading"></a></h2>
+<p>If a value can fluctuate, these refer to the current measured value of a quantity and the suffixes SP and RBV are used to indicated the desired value software requested (setpoint) and the desired value being used in the hardware (RBV)</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signal Name</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Valid Units</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>POS</p></td>
+<td><p>Position</p></td>
+<td><p>M, mm, cm</p></td>
+</tr>
+<tr class="row-odd"><td><p>STAT</p></td>
+<td><p>Status, State</p></td>
+<td><p>Open, Closed, On, Off, Ok, Error</p></td>
+</tr>
+<tr class="row-even"><td><p>CURR</p></td>
+<td><p>Current</p></td>
+<td><p>A, mA, uA</p></td>
+</tr>
+<tr class="row-odd"><td><p>VOLT</p></td>
+<td><p>Voltage</p></td>
+<td><p>kV, V</p></td>
+</tr>
+<tr class="row-even"><td><p>CMD</p></td>
+<td><p>Device command e.g. write to this to perform an action, such as start/stop a run</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SEL</p></td>
+<td><p>Select mode or position</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>TEMP</p></td>
+<td><p>Temperature</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>COUNT</p></td>
+<td><p>Counter value, neutron counts</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>COUNTD</p></td>
+<td><p>Counter value as a distribution, i.e. divided by bin width - so neutron counts per microsecond for example</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>P, I, D</p></td>
+<td><p>P, I, D values on e.g. Eurotherm</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>TOF</p></td>
+<td><p>Time of flight axis for a spectrum</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>TIME</p></td>
+<td><p>An absolute timestamp , preferably in ISO8601 format</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>FIELD</p></td>
+<td><p>Magnetic field</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>PRESSURE</p></td>
+<td><p>Pressure</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>FREQ</p></td>
+<td><p>Frequency of a chopper</p></td>
+<td><p>Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>PHAS</p></td>
+<td><p>Phase of a chopper</p></td>
+<td><p>us</p></td>
+</tr>
+<tr class="row-even"><td><p>PHAS_ERR</p></td>
+<td><p>Error in the phase</p></td>
+<td><p>us</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>Device error output</p></td>
+<td><p>Integer or String values</p></td>
+</tr>
+<tr class="row-even"><td><p>COMP</p></td>
+<td><p>A component for a given composition gradient. Common on high performance liquid chromatography devices.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>FLOWRATE</p></td>
+<td><p>The flow rate of a pump</p></td>
+<td><p>(SI prefix) + L</p></td>
+</tr>
+<tr class="row-even"><td><p>RAMPRATE</p></td>
+<td><p>The ramp rate of a variable</p></td>
+<td><p>(SI unit of variable)/ (s or min)</p></td>
+</tr>
+<tr class="row-odd"><td><p>START</p></td>
+<td><p>For a device with a singular operation (Ramp, Pump etc.,) but a complex initialisation this can be used to start the operation (using a sequenced record etc.,)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>STOP</p></td>
+<td><p>For a device with a singular operation (Ramp, Pump etc.,) but a complex shutdown this can be used to stop the operation (using a sequenced record etc.,)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Manuals.html" class="btn btn-neutral float-left" title="Manuals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PV-Units-%26-Standards.html" class="btn btn-neutral float-right" title="PV units" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

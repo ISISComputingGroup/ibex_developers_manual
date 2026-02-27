@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instron stress rig (GPIB) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Instron stress rig (MiniTower)" href="Instron-stress-rig---MiniTower.html" />
+    <link rel="prev" title="Loading rigs" href="../Loading-Rigs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Instron stress rig (GPIB)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Instron-stress-rig---MiniTower.html">Instron stress rig (MiniTower)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Loading-Rigs.html">Loading rigs</a></li>
+      <li class="breadcrumb-item active">Instron stress rig (GPIB)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/loading_rigs/Instron-stress-rig.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="instron-stress-rig-gpib">
+<h1>Instron stress rig (GPIB)<a class="headerlink" href="#instron-stress-rig-gpib" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page relates to an older-style GPIB-connected stress rig, which we talk to via a GPIB converter box. For documentation about the ethernet-connected rig (i.e. the 100kN rig on ENGIN-X) see <a class="reference internal" href="Instron-stress-rig---MiniTower.html"><span class="doc std std-doc">Instron stress rig (MiniTower)</span></a></p>
+</div>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<p>The Instron stress rig is a National Instruments GPIB device. It requires some special setup to get going:</p>
+<ul class="simple">
+<li><p>The Ethernet GPIB box requires an NI <code class="docutils literal notranslate"><span class="pre">488.2</span></code> (GPIB) driver. This can be installed from <code class="docutils literal notranslate"><span class="pre">\\isis\installs\Installs\Applications\LabVIEW\GPIB-ENET</span> <span class="pre">bits\GPIB</span> <span class="pre">Software</span></code>.</p>
+<ul>
+<li><p>Note, <strong>the version of GPIB MUST be 2.7 (from the share above), later versions WILL NOT WORK WITH THE STRESS RIG!</strong> This is due to some kind of licensing handshake in newer versions of NI <code class="docutils literal notranslate"><span class="pre">488.2</span></code> (GPIB) of which older hardware (such as the stress rig) does not understand.</p></li>
+</ul>
+</li>
+<li><p>Run the installer as an administrator, accept the defaults. It will unzip, then install. It takes a while to install.</p></li>
+<li><p>You then need to map the ENET box. Usually this means going into NI-MAX and finding devices - it should come up (otherwise, you may have to find and enter it’s IP address manually).</p></li>
+<li><p>The driver should now be able to communicate (if not, see troubleshooting section below)</p></li>
+</ul>
+</section>
+<section id="getting-the-rigs-set-up">
+<h2>Getting the rigs set up<a class="headerlink" href="#getting-the-rigs-set-up" title="Link to this heading"></a></h2>
+<p>There are two rigs: 50kN and 100kN.</p>
+<p>To turn on the actuator for the 100kN rig, there are three buttons on the front labelled “O”, “I”, “II”. Press these in order to enable the actuator.</p>
+<p>To turn on the actuator for the 50kN rig, Press and hold the “Hydraulics on” button for at least 10 seconds. You should hear the hydraulic system engage (also, the hydraulic lines will change position slightly as pressurised gas enters the system). Then press actuator “off”, “low”, “high” (in order) to enable the actuator.</p>
+</section>
+<section id="hardware-debugging">
+<h2>Hardware debugging<a class="headerlink" href="#hardware-debugging" title="Link to this heading"></a></h2>
+<section id="hydraulics-keep-tripping-off-and-status-is-oil-too-hot">
+<h3>Hydraulics keep tripping off and status is “oil too hot”<a class="headerlink" href="#hydraulics-keep-tripping-off-and-status-is-oil-too-hot" title="Link to this heading"></a></h3>
+<p>Check if the cooling water circuit for TS1 south side is turned on. If not, the Instron’s oil might heat up too much which causes the hydraulics to trip when moving the rig. This happens regardless of whether IOC, LabVIEW, or manual control is used to move the actuator. Additional symptoms are a rig status of “HYD. PUMP SHUTDOWN” and the red status light on the control panel being solidly on (and not being able to clear it).</p>
+<p>If the cooling water is off, there is a circulation pump that can be used to run the rig in low-force mode: ask the scientists.</p>
+</section>
+<section id="general-comms-failures-stress-rig-in-invalid-state">
+<h3>General comms failures / stress rig in invalid state<a class="headerlink" href="#general-comms-failures-stress-rig-in-invalid-state" title="Link to this heading"></a></h3>
+<p>This can be triggered by sending commands the stress rig doesn’t like, or sending valid commands too quickly. Sometimes the control panel of the stress rig will claim it is simultaneously in two control modes (which is impossible).</p>
+<p>The stress rig can be power cycled using the process below (note: if unsure, check with scientists first, as it may need recalibrating after this process)</p>
+<ul class="simple">
+<li><p>Turn off the stress rig PC (white/beige pc located under the stress rig)</p></li>
+<li><p>Turn off the GPIB box (this looks similar to a router, located under the stress rig near to the stress rig PC)</p></li>
+<li><p>Wait a few seconds</p></li>
+<li><p>Turn on the stress rig PC</p></li>
+<li><p>Wait several minutes. The stress rig will go through a self-test phase. You need to wait for this process to be complete.</p></li>
+<li><p>If you need to calibrate the rig, the following sequence on the console should be used: “Load channel: setup” -&gt; “cal” -&gt; “cal” -&gt; “auto” -&gt; “go” (if you are unsure about this ask the scientists)</p></li>
+<li><p>Turn back on the GPIB box.</p></li>
+<li><p>After the GPIB box has been turned on for a short time (e.g. 1 minute) the driver (LabVIEW or IOC) should be ready to connect.</p></li>
+<li><p>GPIB box LEDs - PWR should be orange, LNK 10/100 should be green. Other LEDs will be flickering depending on connection. Box might have a slightly dodgy connection (not sure about this, but check it) so ensure the LEDs are as described.</p></li>
+</ul>
+</section>
+<section id="weird-comms-issues">
+<h3>Weird comms issues<a class="headerlink" href="#weird-comms-issues" title="Link to this heading"></a></h3>
+<p>The stress rig on ENGIN-X is mapped from both ENGINX and ENGINX_SETUP. <strong>Only one of these computers should talk to the stress rig at a time!</strong> If you get strange comms issues, check that the “other” computer is not also trying to talk at the same time.</p>
+</section>
+<section id="hydraulics-won-t-re-enable-after-panic-stop">
+<h3>Hydraulics won’t re-enable after panic stop<a class="headerlink" href="#hydraulics-won-t-re-enable-after-panic-stop" title="Link to this heading"></a></h3>
+<p>A panic stop sends the <code class="docutils literal notranslate"><span class="pre">C23,0</span></code> command to the stress rig. To quote from the Instron manual:</p>
+<blockquote>
+<div><p>If this command is sent with the Off parameter, actuator manifold pressure is turned Off immediately, and the Actuator On button is disabled.</p>
+</div></blockquote>
+<p>To re-enable the actuator (hydraulics control), first check that the cause of the panic stop is no longer an issue. Then you may need to send the command <code class="docutils literal notranslate"><span class="pre">C23,1</span></code> to the stress rig via the arbitrary command interface on the stress rig OPI once the rig is back in a safe state.</p>
+<p>If the above command fails, restarting the hardware and then the IOC should boot the stress rig back up with the actuator enabled.</p>
+</section>
+</section>
+<section id="driver">
+<h2>Driver<a class="headerlink" href="#driver" title="Link to this heading"></a></h2>
+<p>The stress rig driver uses the following DB files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controls.db</span></code> - provides basic PVs such as stopping the rig, getting the status, changing control channels, etc</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">controls_channel.db</span></code> - provides PVs that are common to each channel (Position, Stress, Strain), e.g. setpoints, readbacks, step times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">controls_channel_specific.db</span></code> - add on PVs for the above - used to add PVs for some channels that don’t exist on others</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">controls_waveform.db</span></code> - provides the PVs dealing with the waveform generator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.db</span></code> - provides the PVs to do with logging to a file</p></li>
+</ul>
+<p>The protocol is defined in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-instron/blob/master/instronSup/devinstron.proto"><code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\support\instron\master\instronSup</span></code></a></p>
+</section>
+<section id="gotchas-unusual-things">
+<h2>Gotchas / Unusual things<a class="headerlink" href="#gotchas-unusual-things" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Every “write” command (commands starting with C or P) must be preceded by <code class="docutils literal notranslate"><span class="pre">P909,1</span></code> (switch to computer control mode) and <code class="docutils literal notranslate"><span class="pre">C904,0</span></code> (disable watchdog). For convenience there is the <code class="docutils literal notranslate"><span class="pre">setControlModeCom</span></code> function in the protocol file which does these for you.</p>
+<ul>
+<li><p>If you forget to do this, the rig’s hydraulics will trip, requiring a physical button push to reset them</p></li>
+</ul>
+</li>
+<li><p>Every “write” command (commands starting with C or P) must be followed by <code class="docutils literal notranslate"><span class="pre">P909,0</span></code> (switch to front panel control mode)</p></li>
+<li><p>We have had issues with PVs dropping off to zero while being read from the stress rig. To solve this, use a <code class="docutils literal notranslate"><span class="pre">:RAW</span></code> record which does a read, and monitor it using <code class="docutils literal notranslate"><span class="pre">CP</span></code> from another record. This fixes the issue of getting zeroes.</p>
+<ul>
+<li><p>Might be a bug in EPICS and/or the interface between the VISA driver and EPICS. At the moment the above solution seems to be the easiest way to cure the symptoms.</p></li>
+</ul>
+</li>
+<li><p>PVs in the stress rig don’t scan by themselves typically, they are triggered from one of two read loops:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">READ_SLOW</span></code> scans at 1 Second interval</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">READ_VAR</span></code> reads at a rate that can be varied by the user</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">READ_VAR</span></code> loop the <code class="docutils literal notranslate"><span class="pre">.1</span> <span class="pre">Second</span></code> option has been removed, this is too fast for the rig to handle</p></li>
+</ul>
+</li>
+<li><p>If something works in LabVIEW but not in EPICS, or vice-versa, NI Input/Output trace (NI Spy) can be very useful to compare the traffic and spot any differences.</p></li>
+<li><p>The waveform generator does not like receiving setpoints in quick succession. This can cause a fault with the following symptoms (see also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2802">https://github.com/ISISComputingGroup/IBEX/issues/2802</a>):</p>
+<ul>
+<li><p>The “remote” light on the hardware control panels remains lit</p></li>
+<li><p>The hardware control panel crashes (it may display that it’s in two control channels simultaneously - this is usually impossible)</p></li>
+<li><p>The hydraulics will trip.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Loading-Rigs.html" class="btn btn-neutral float-left" title="Loading rigs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Instron-stress-rig---MiniTower.html" class="btn btn-neutral float-right" title="Instron stress rig (MiniTower)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUI Coding Conventions &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Instrument &amp; PV switching" href="PV-Switching.html" />
+    <link rel="prev" title="Databinding" href="Databinding.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Activators.html">Activators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html">Adding a plugin or feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Connecting-a-View-to-a-PV.html">Connecting a view to a PV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding.html">Databinding</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GUI Coding Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">Instrument &amp; PV switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Perspectives.html">Perspectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">GUI Coding Conventions</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/GUI-Coding-Conventions.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="gui-coding-conventions">
+<h1>GUI Coding Conventions<a class="headerlink" href="#gui-coding-conventions" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>New conventions should not be added to this document without first being discussed at a
+<a class="reference internal" href="../../processes/meetings/Code-Chats-and-Lightning-Talks.html"><span class="doc std std-doc">code chat</span></a> or a group code-review session.</p>
+</div>
+<section id="style-conventions">
+<h2>Style Conventions<a class="headerlink" href="#style-conventions" title="Link to this heading"></a></h2>
+<p>Unless stated otherwise below, we should follow the standard Java conventions for style where possible.</p>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p>Classes and public methods should be documented using the Javadoc syntax. For example:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * A make-your-own pizza.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This class allows a custom pizza to be order by the customer.</span>
+<span class="cm"> * Note: it does not calculate the price.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CustomPizza</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pizza</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_TOPPINGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Topping</span><span class="o">&gt;</span><span class="w"> </span><span class="n">toppingList</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * The default constructor.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CustomPizza</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">toppingList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Topping</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Add a topping to the pizza.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param topping the topping to add</span>
+<span class="cm">     * @return true if the topping was added</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">addTopping</span><span class="p">(</span><span class="n">Topping</span><span class="w"> </span><span class="n">topping</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toppingList</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX_TOPPINGS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">toppingList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">topping</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For getters, it is acceptable to skip the first sentence and do the following as it saves repetition:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @return true if the block is enabled</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">getEnabled</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">enabled</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Inline comments should have a space between the // and the text, and start with a capital letter:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// This is a good comment</span>
+<span class="w">    </span>
+<span class="c1">//this is a bad comment</span>
+</pre></div>
+</div>
+</section>
+<section id="code-formatting">
+<h2>Code formatting<a class="headerlink" href="#code-formatting" title="Link to this heading"></a></h2>
+<p>For Java use the standard conventions built in to Eclipse.</p>
+<p>An example of what it looks like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">foo2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F.</p>
+</section>
+<section id="naming-conventions">
+<h2>Naming conventions<a class="headerlink" href="#naming-conventions" title="Link to this heading"></a></h2>
+<section id="general">
+<h3>General<a class="headerlink" href="#general" title="Link to this heading"></a></h3>
+<p>We use the <a class="reference external" href="https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html">standard Java naming conventions</a>:</p>
+<ul class="simple">
+<li><p>Class names are CamelCase and usually nouns, e.g. <code class="docutils literal notranslate"><span class="pre">FileReader</span></code> not <code class="docutils literal notranslate"><span class="pre">ReadsFile</span></code></p></li>
+<li><p>Method names are Mixed Case (also known as Lower CamelCase), e.g. <code class="docutils literal notranslate"><span class="pre">sayHello</span></code></p></li>
+<li><p>Package names are lowercase, e.g. <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.dae</span></code></p></li>
+<li><p>Variable names are Mixed Case, e.g. <code class="docutils literal notranslate"><span class="pre">calculateMeanSpeed</span></code></p></li>
+<li><p>Constants are uppercase spaced by underscores, e.g. <code class="docutils literal notranslate"><span class="pre">SECONDS_PER_FORTNIGHT</span></code></p></li>
+</ul>
+</section>
+<section id="getters-and-setters">
+<h3>Getters and Setters<a class="headerlink" href="#getters-and-setters" title="Link to this heading"></a></h3>
+<p>Getters and Setters should follow the JavaBeans convention, namely:</p>
+<ul class="simple">
+<li><p><strong>Getter</strong> - starts with “get”</p></li>
+<li><p><strong>Boolean Getter</strong> - can start with “is” or “get”</p></li>
+<li><p><strong>Setter</strong> - starts with “set”</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">visible</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Point</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getX</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setX</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getY</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setY</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isVisible</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">visible</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setVisible</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">visible</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">visible</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="coding-conventions">
+<h2>Coding Conventions<a class="headerlink" href="#coding-conventions" title="Link to this heading"></a></h2>
+<section id="gui-code-should-use-a-model-view-viewmodel-mvvm-pattern">
+<h3>GUI code should use a model-view-viewmodel (MVVM) pattern<a class="headerlink" href="#gui-code-should-use-a-model-view-viewmodel-mvvm-pattern" title="Link to this heading"></a></h3>
+<p>This maintains a separation between pure GUI code and the back-end. It also makes it easier for us to test our code.
+See the <a class="reference internal" href="../../processes/meetings/Code-Chats-and-Lightning-Talks.html"><span class="doc std std-doc">previous GUI Chat slides</span></a> for more information.</p>
+</section>
+<section id="use-data-binding-for-gui-items">
+<h3>Use data-binding for GUI items<a class="headerlink" href="#use-data-binding-for-gui-items" title="Link to this heading"></a></h3>
+<p>For connecting UI elements to data from the View Model, prefer to use <a class="reference internal" href="Databinding.html"><span class="doc std std-doc">databinding</span></a> where possible.</p>
+</section>
+<section id="don-t-mess-with-finalizers">
+<h3>Don’t mess with finalizers<a class="headerlink" href="#don-t-mess-with-finalizers" title="Link to this heading"></a></h3>
+<p>In Java versions &gt;=9, <code class="docutils literal notranslate"><span class="pre">finalize</span></code> is deprecated and marked for removal from Java. The IBEX checkstyle configuration
+is configured to disallow finalizers - this check must not be disabled or overridden.</p>
+<p>The remaining options for supported clean-up mechanisms (in preference order) are:</p>
+<ul class="simple">
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">AutoCloseable</span></code> and use the class in a try-with-resources statement to ensure the relevant resource is closed</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">Closeable</span></code> and manually call <code class="docutils literal notranslate"><span class="pre">close</span></code> to ensure the relevant resource is closed</p></li>
+<li><p>Refactor to avoid needing to close the resource at all</p></li>
+<li><p>Use a <em>supported</em> automatic clean-up mechanism such as <code class="docutils literal notranslate"><span class="pre">PhantomReference</span></code> or <code class="docutils literal notranslate"><span class="pre">Cleaner</span></code> only as a last resort.
+While these are <em>better</em> than finalizers, they still suffer from high complexity and are tricky to get right.
+In particular, it is easy to accidentally create reference loops meaning that objects will never be cleaned.</p></li>
+</ul>
+</section>
+<section id="return-a-empty-collection-or-stream-not-null">
+<h3>Return a empty collection or stream, not null<a class="headerlink" href="#return-a-empty-collection-or-stream-not-null" title="Link to this heading"></a></h3>
+<p>For methods that return arrays/lists/maps/sets/streams etc. don’t return null. It is cleaner to return an empty
+instance as the calling code does not need to check for null.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Avoids this extra check in the caller</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cars</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cars</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;mustang&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>See Effective Java Item 43 “Return empty arrays or collections, not nulls”</p>
+</section>
+<section id="prefer-stringbuilder-for-string-concatenation">
+<h3>Prefer StringBuilder for string concatenation<a class="headerlink" href="#prefer-stringbuilder-for-string-concatenation" title="Link to this heading"></a></h3>
+<p>Using <code class="docutils literal notranslate"><span class="pre">+</span></code> is fine for, say, joining two or three short strings, but it is inefficient for larger numbers of strings and
+longer strings. Use <code class="docutils literal notranslate"><span class="pre">StringBuilder</span></code> instead.</p>
+<p>See Effective Java Item 51 “Beware the performance of string concatenation”</p>
+</section>
+<section id="prefer-optional-over-null">
+<h3>Prefer <code class="docutils literal notranslate"><span class="pre">Optional</span></code> over <code class="docutils literal notranslate"><span class="pre">null</span></code><a class="headerlink" href="#prefer-optional-over-null" title="Link to this heading"></a></h3>
+<p>New APIs should not return null to indicate a missing value. Instead, return an <code class="docutils literal notranslate"><span class="pre">Optional</span></code> wrapping the value which may
+not exist. Where external code returns null to indicate a missing value, this should be wrapped in an optional as soon
+as reasonable.</p>
+<p>To convert a maybe-null value to an optional, use:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringWhichMightNotExist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">ofNullable</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To convert an Optional to a maybe-null value, use:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mightNotExist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">();</span>
+<span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mightNotExist</span><span class="p">.</span><span class="na">orElse</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="streams">
+<h3>Streams<a class="headerlink" href="#streams" title="Link to this heading"></a></h3>
+<p>Streams should be used where they make an algorithm clearer.</p>
+<p>When using streams, put each operation on its own line.</p>
+<p>Good:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getNames</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getThings</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">thing</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">thing</span><span class="p">.</span><span class="na">getName</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">sorted</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Bad:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getNames</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getThings</span><span class="p">().</span><span class="na">map</span><span class="p">(</span><span class="n">thing</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">thing</span><span class="p">.</span><span class="na">getName</span><span class="p">()).</span><span class="na">filter</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">).</span><span class="na">sorted</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Databinding.html" class="btn btn-neutral float-left" title="Databinding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PV-Switching.html" class="btn btn-neutral float-right" title="Instrument &amp; PV switching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

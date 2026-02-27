@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decision Log &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Processes" href="Dev-Processes.html" />
+    <link rel="prev" title="reusable workflows" href="continuous_integration/reusable_workflows.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Processes.html">Processes</a></li>
+      <li class="breadcrumb-item active">Decision Log</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/Decision-Log.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="decision-log">
+<h1>Decision Log<a class="headerlink" href="#decision-log" title="Link to this heading"></a></h1>
+<p>A place to record decisions:</p>
+<ol class="arabic simple">
+<li><p>Decide format for calibration files. Decided to update LabVIEW and add a header with comments. This is because updating Seci is not a huge amount of work (1/2 day to do all instruments) and we don’t make want to make a halfway house that has to be changed in the future. We don’t want to go as far as allowing manufacturer file directly in EPICs because this is hard; this option can happen in the future.</p></li>
+<li><p>We will not (in general) put <code class="docutils literal notranslate"><span class="pre">&#64;init</span></code> handlers on records. This is because it is hard to do for any records which contain intermediate logic.</p></li>
+<li><p>Flow control macros will be available as a settable macro for devices on which it can be configured. The reason is that if it is set on the device we don’t want to have to change the st.cmd to set the option. The consequences of this is that it allows users to turn flow control on which can cause devices to stall if the device has it switched off. The default should be not to turn it on. Since it is a configurable item it should be in the lists macros that users can set otherwise it is a support call to change this.</p></li>
+<li><p>Manual config upgrades should no be added to the upgrade script not added as a text note to the dev release notes. This means that they should be included in the code so can be reviewed. We may need to version these steps so that we don’t get manual upgrade steps overflowing releases. This is to prevent them getting lost.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">test</span></code> was chosen for the cxx testing framework over <code class="docutils literal notranslate"><span class="pre">cxx</span> <span class="pre">test</span></code> because it is actively developed, unlike cxx test which is a branch that was created for Mantid but no longer used, and it builds on windows.</p></li>
+<li><p>Decided that if a motor is moving when it goes uncommunicative it should remain as moving. This is because this is the current behaviour so will be expected and it is not clear if it is moving or stopped if you can not communicate. In either case, there should be communication alarm on the PVs.</p></li>
+<li><p>Decided to split genie commands into two sets basic and extended. This keeps the simplest commands in a place where users can find them and means they will not have a large choice. Extended commands are for experts and are in a separate module. This will be accessed via <code class="docutils literal notranslate"><span class="pre">g.ext</span></code> users can import this in the usual way if desired. The cons of this is that we are splitting up where advanced users can find commands but this is acceptable because they are advanced users. The other problem is deciding which commands are extended and which are not.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Genie_python</span></code> should be able to deal with PVs but the names of the PVs are not guaranteed they are advanced users only. Commands utilising PVs should have comments stating that it is an extended command and that the PV name may not be stable and that it is better to use a block. Ideally these commands should be placed in the advanced package. The downside is once we let this out then it will be used; however some scripts already do similar things it is better we support officially.</p></li>
+<li><p>An ENGIN-X scientist asked for access to the exp_details database to create reports detailing RB numbers and users on the instrument. They were given read-only access but warned that we didn’t guarantee the schema or the lifetime of the data and it would be better to go through the BusApps API.</p></li>
+<li><p>Create upper case aliases of all blocks and use these in genie_python. This avoids the extra look up of current block names and the communication problem we have seen. The downside is there are more aliases created by and used in the block server and gateway but because there are usually fewer than 100 blocks this performance downside should not matter. The added advantage is that the blockserver is removed as a dependency in <code class="docutils literal notranslate"><span class="pre">caget</span></code>/<code class="docutils literal notranslate"><span class="pre">caset</span></code>.</p></li>
+<li><p>Setting a device to remote mode should <strong>not</strong> be done on IOC start. There should be a clear indication on the OPI that it is in remote mode (where possible) and a button to set it into remote mode. There should also be an alarm on the PV but not at IOC level when the device is in local mode. It was thought that instrument scientists did not know that IOCs were restarting (e.g. when the updated a config for collimator) and so would be surprised at the change in the device.</p>
+<ul class="simple">
+<li><p>Advised by Kathryn, present John, Alistair</p></li>
+<li><p>2019/05/16</p></li>
+</ul>
+</li>
+<li><p>If a setpoint on a device has a range set by the device it should be set up by using DRVH and DRVL. This is in preference to not capping it and letting the device ignore wrong values. The last choice is to add another record on top which intercepts the value and records an error and sends the capped value. The reason is that we would like to capture the range of the device without adding the complication of another record. This is also a similar behaviour to SECI. Finally, we could, in the future, check the value set in a <code class="docutils literal notranslate"><span class="pre">cset</span></code> against these values.</p>
+<ul class="simple">
+<li><p>Present, John, Tom, Aaron, David and Freddie</p></li>
+<li><p>2019/07/05</p></li>
+</ul>
+</li>
+<li><p>It was decided that as part of the motion system on ZOOM a tablet or some other handheld device will be used [see] (<a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2937">https://github.com/ISISComputingGroup/IBEX/issues/2937</a>). This is required as scientists would like to be able to move axes whilst they are inside the light curtain. All safety issues on this will be handled by a deadman’s handle built into the device. In further discussions <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4238">here</a> it was decided that the trying to move the IBEX GUI to something touch friendly would be hard and instead a new cut-down GUI should be produced in Phoebus.</p>
+<ul class="simple">
+<li><p>Present: Thomas, Dom, Kathryn</p></li>
+</ul>
+</li>
+<li><p>It was decided that as part of the parameter limits <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4168">ticket</a> for the script generator we will pass all parameters as strings from java to python and handle them in the python code by providing a decorator to pass casting operations to e.g. <code class="docutils literal notranslate"><span class="pre">&#64;cast_parameters_to(temperature=float,</span> <span class="pre">field=str,</span> <span class="pre">uamps=float)</span></code>. This will allow them to define their own casting operations to deal with funny edge cases in a nice way. It also reduces the amount of edge cases we may find with py4j handling the difference between python and java class.</p>
+<ul class="simple">
+<li><p>Present: James, Tom, Alistair</p></li>
+<li><p>09/12/2019</p></li>
+</ul>
+</li>
+<li><p>We should move towards using virtual environments for our python projects see <a class="reference internal" href="../system_components/python/Python-dependencies.html"><span class="doc std std-doc">here</span></a> for more detail.</p>
+<ul class="simple">
+<li><p>Present: Dom, Tom, Freddie, John</p></li>
+<li><p>19/05/2020</p></li>
+</ul>
+</li>
+<li><p>Genie_python should be kept 2/3 compatible until the block server is converted to python 3 in case it uses it. After this the decision should be revisited to see if we can go purely 3.</p>
+<ul class="simple">
+<li><p>Present: Dom, Freddie, John</p></li>
+<li><p>27/05/2020</p></li>
+</ul>
+</li>
+<li><p>Helium level meters and other such items should be put on the domain “HA” (Hall) with no instrument identifier. So that the pv would be “HA:HLM:LEVEL1” to achieve this the IOC should run with a blank <code class="docutils literal notranslate"><span class="pre">PVPREFIX</span></code> and the IOC should have <code class="docutils literal notranslate"><span class="pre">HA</span></code> in its IOC prefix. This is to make it the same as central services which runs with a blank prefix because it runs IOCs in multiple domains. We don’t need the machine identifies for hall based services because it is not really anything to do with the machine unlike the instrument pvs.</p>
+<ul class="simple">
+<li><p>Present: Alex, John, Kathryn, Freddie, Dom</p></li>
+<li><p>08/07/2020</p></li>
+</ul>
+</li>
+<li><p>Motion setpoints based on bare motors will no longer be supported in IBEX. This is to make the code simpler, as we move towards many multiple axes in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4573">#4573</a> and motion setpoints more robust to motor failure. All motors should support the axes record so this should not be a problem. For more esoteric motors which need to be used on short notice it is fairly easy to either add a motor axes on top of the motor record by adding something on the form<code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">$(SM300CONFIG)/axes.cmd</span></code> or moving the axis to the required positions in a script.</p>
+<ul class="simple">
+<li><p>Present: Dom, John, Kathryn, Tom</p></li>
+<li><p>14/08/2020</p></li>
+</ul>
+</li>
+<li><p>Where to put the script generator release download for scientists. Decision is to put it in github, upload it to the release page, then create a page to link to it with install instructions (either in git hub or github pages). This was chosen because it is likely to be the quickest way of getting something uploaded for people to download, and we need it before cycle. Other choice were our external web server or an STFC sit; both of these would have been slow.</p>
+<ul class="simple">
+<li><p>Present: John, Alistair, Kevin, Bish, Thomas</p></li>
+<li><p>2020/08/25</p></li>
+</ul>
+</li>
+<li><p>How to manage the database architecture to avoid instrument disk filling up. A decision was made that on most instruments the data being logged by the Instrument Archive is not critical to an experiment and so it is ok if it stops logging given a network outage on the instrument (the exception here is on <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5817">Enginx</a>). Therefore we will move the MySQL instance that the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5819">Instrument Archive</a> is pushing to onto a <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5818">central server</a>. This will also be done for the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5820">IOC log messages</a> as they are replicated on logs on the instrument anyway. In the future it would be good to have a small cache on the instrument for some of this data to avoid issues when network is lost.</p>
+<ul class="simple">
+<li><p>Present: Chris M-S, David, Dom, Freddie, John, James, Kathryn, Tom W</p></li>
+<li><p>2020/10/14</p></li>
+</ul>
+</li>
+<li><p>Should we still support a phone app with the MCR news for ISIS staff to use? Decision was made that it’s a lot of development effort to support a mobile app for all platforms and the only benefits it gives over a slack/teams channel is that it doesn’t require a user login. Seeing as everyone on ISIS will have a teams account this doesn’t really apply. We are going to use the teams channel instead and if it would be helpful to use graphs this can be implemented using a python service or similar.</p></li>
+<li><p>In one system test we are testing the restarting of each IOC to test that we do not hit a limit as we did with the 256 limit in procservcontrol. Some IOCs are failing to restart, this may be because there is no hardware to talk to or the PVs we are looking at are autosave pvs and they are not available in the IOC. We have decided to start these IOCs in recsim to try and avoid this as this test is not to test the IOC itself but to test procservcontrol of the IOC. We can then at a later date put more work into the IOCs to make them start and go into alarm correctly.</p></li>
+<li><p>How to manage the <a class="reference external" href="https://github.com/ISISNeutronMuon/InstrumentScripts"><code class="docutils literal notranslate"><span class="pre">InstrumentScripts</span></code></a> repository to make sure the code is kept up to date on all instruments but at the same time be open to Instrument Scientists modifying it. Decision was made <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5858">here</a> to do the following:</p></li>
+</ol>
+<ul class="simple">
+<li><p>When doing a release we will tag a release of Instrument Scripts and release it to all instruments, whether they currently use the library or not</p></li>
+<li><p>We will write an automated service to tell us if instruments have local changes in Instrument Scripts (which should be located in C:\Instrument\scripts), or if they are not on the release tag</p></li>
+<li><p>If instruments do have local changes we will discuss with them getting the changes into master for the next release</p></li>
+<li><p>We will block pushing to master, instead requiring people to make PRs which we will review and check for unexpected side effects to the best of our ability. Other instrument scientists are welcome to contribute to this review process</p>
+<ul>
+<li><p>Present: Bish, Dom, John, Thomas L and Tom W</p></li>
+<li><p>13/11/2020</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="24">
+<li><p>How to manage script definitions for the script generator. See ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5754">https://github.com/ISISComputingGroup/IBEX/issues/5754</a> for newly decided workflow and actions and tickets to be carried out</p></li>
+</ol>
+<ul class="simple">
+<li><p>Present: &#64;Kevin-Woods-Tessella &#64;John-Holt-Tessella &#64;DominicOram &#64;FreddieAkeroyd &#64;ThomasLohnert &#64;Tom-Willemsen</p></li>
+<li><p>Date: 01/12/2020</p></li>
+</ul>
+<ol class="arabic simple" start="25">
+<li><p>We have decided to hide the complexity of using the script generator parameters file from script generator users by removing references to parameter files and tying the two files produced directly to generating scripts. This was captured in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6492">#6492</a>.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Present: James, Kathryn and Dom</p></li>
+<li><p>Date: 12/05/2021</p></li>
+</ul>
+<ol class="arabic simple" start="26">
+<li><p>We decided to put the emulator and ioc tests into the support submodule for each IOC. As well as a number of other repository structure decisions (see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6131">https://github.com/ISISComputingGroup/IBEX/issues/6131</a>)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Present: James, Kathryn, Dom, Freddie, Jack Harper, Chris MS, David and Sam J</p></li>
+<li><p>Date: 03/06/2021</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="continuous_integration/reusable_workflows.html" class="btn btn-neutral float-left" title="reusable workflows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Dev-Processes.html" class="btn btn-neutral float-right" title="Developer Processes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

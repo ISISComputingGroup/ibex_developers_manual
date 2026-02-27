@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Updating an instrument machine (email templates) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Deploy to an instrument machine" href="Deployment-on-an-Instrument-Control-PC.html" />
+    <link rel="prev" title="Deployment" href="../Deploy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Deploy.html">Deployment</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Updating an instrument machine (email templates)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deployment-on-an-Instrument-Control-PC.html">Deploy to an instrument machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Configure-Mini-Inst.html">Configure Mini Inst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client-Release-Tests.html">Client release tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Server-Release-Tests.html">Server Release Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IBEX-Deployment-on-Training-machine.html">Deploy to a training machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Making-an-Instrument-Available-from-the-GUI.html">Adding an instrument to the instrument list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-new-branch-for-IBEX-configurations.html">Creating a new branch for IBEX configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reviewing-Deploy-Tickets.html">Reviewing deploy tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-ISISICP.html">ISISICP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-Java.html">Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Installing-and-Upgrading-MySQL.html">MySQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Patch.html">Patching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Future.html">Future Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Deploy.html">Deployment</a></li>
+      <li class="breadcrumb-item active">Updating an instrument machine (email templates)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/deploy/Updating-Instrument-Machines.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="updating-instrument-email-template">
+<h1>Updating an instrument machine (email templates)<a class="headerlink" href="#updating-instrument-email-template" title="Link to this heading"></a></h1>
+<p>It is important to remember when making any changes to instruments (e.g. installing new IBEX versions, cleaning disk space etc) that they are in (potentially) constant use by the instrument scientists and so they must be properly informed. Below is a template of what to send to scientists, this should be sent from the Experiment Controls email account.</p>
+<p>If most instruments are going to be modified then email the <code class="docutils literal notranslate"><span class="pre">ISIS</span> <span class="pre">Instrument</span> <span class="pre">Scientists</span> <span class="pre">+</span> <span class="pre">Others</span></code> outlook address, if only a subset of instruments are being modified you can use the <code class="docutils literal notranslate"><span class="pre">instrument-</span></code> contact email address from <a class="reference external" href="https://sparrowhawk.nd.rl.ac.uk/footprints/contacts.html#instemail">https://sparrowhawk.nd.rl.ac.uk/footprints/contacts.html#instemail</a></p>
+<section id="updating-instrument-new-release-email-template">
+<h2>New Release<a class="headerlink" href="#updating-instrument-new-release-email-template" title="Link to this heading"></a></h2>
+<p>For a new release of IBEX the following should be sent as soon as possible, at least a week (ideally 2 weeks) before the deployment date:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dear</span> <span class="n">All</span><span class="p">,</span>
+
+<span class="n">We</span> <span class="n">have</span> <span class="n">recently</span> <span class="n">created</span> <span class="n">version</span> <span class="o">**</span><span class="n">X</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="o">**</span> <span class="n">of</span> <span class="n">IBEX</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">looking</span> <span class="n">to</span> <span class="n">install</span> <span class="n">it</span> <span class="n">to</span> <span class="n">the</span> <span class="p">(</span><span class="n">summer</span> <span class="o">|</span> <span class="n">winter</span><span class="p">)</span> <span class="n">group</span><span class="p">,</span> <span class="n">between</span> <span class="o">**</span><span class="n">date</span><span class="o">**</span> <span class="ow">and</span> <span class="o">**</span><span class="n">date</span><span class="o">**</span> <span class="n">which</span> <span class="n">includes</span> <span class="n">the</span> <span class="n">following</span> <span class="n">instruments</span><span class="p">:</span>
+
+<span class="n">The</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">new</span> <span class="n">features</span> <span class="ow">and</span> <span class="n">bug</span> <span class="n">fixes</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">release</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="n">at</span> <span class="o">**</span><span class="n">links</span> <span class="n">to</span> <span class="n">release</span> <span class="n">notes</span> <span class="n">since</span> <span class="n">last</span> <span class="n">deploy</span> <span class="n">to</span> <span class="n">group</span><span class="o">**.</span>
+
+<span class="n">To</span> <span class="n">perform</span> <span class="n">the</span> <span class="n">release</span> <span class="n">we</span> <span class="n">will</span> <span class="n">have</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">the</span> <span class="n">instrument</span> <span class="kn">from</span><span class="w"> </span><span class="nn">taking</span> <span class="n">data</span> <span class="k">for</span> <span class="n">a</span> <span class="n">couple</span> <span class="n">of</span> <span class="n">hours</span><span class="o">.</span> <span class="n">If</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">day</span> <span class="n">you</span> <span class="n">would</span> <span class="n">like</span> <span class="n">us</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">the</span> <span class="n">release</span><span class="p">,</span> <span class="n">you</span> <span class="n">would</span> <span class="n">rather</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">this</span> <span class="n">release</span> <span class="k">for</span> <span class="n">your</span> <span class="n">instrument</span> <span class="ow">or</span> <span class="n">you</span> <span class="n">have</span> <span class="nb">any</span> <span class="n">other</span> <span class="n">concerns</span> <span class="n">please</span> <span class="n">get</span> <span class="ow">in</span> <span class="n">contact</span> <span class="k">with</span> <span class="n">us</span> <span class="n">ASAP</span><span class="o">.</span> <span class="n">If</span> <span class="n">we</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">hear</span> <span class="n">back</span> <span class="kn">from</span><span class="w"> </span><span class="nn">you</span> <span class="n">we</span> <span class="n">will</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">you</span> <span class="n">are</span> <span class="n">happy</span> <span class="k">for</span> <span class="n">us</span> <span class="n">to</span> <span class="n">do</span> <span class="n">this</span> <span class="nb">any</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">above</span> <span class="nb">range</span><span class="o">.</span>
+
+<span class="n">Please</span> <span class="n">note</span> <span class="n">that</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">separate</span> <span class="n">task</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">updates</span> <span class="n">that</span> <span class="n">may</span> <span class="n">be</span> <span class="n">going</span> <span class="n">on</span><span class="p">,</span> <span class="n">we</span> <span class="n">will</span> <span class="n">co</span><span class="o">-</span><span class="n">ordinate</span> <span class="n">between</span> <span class="n">those</span> <span class="n">two</span> <span class="n">tasks</span> <span class="k">as</span> <span class="n">appropriate</span><span class="o">.</span>
+
+<span class="n">Thanks</span><span class="p">,</span>
+<span class="n">ISIS</span> <span class="n">Experiment</span> <span class="n">Controls</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-instrument-hotfix-email-template">
+<h2>Hot-fix<a class="headerlink" href="#updating-instrument-hotfix-email-template" title="Link to this heading"></a></h2>
+<p>In this context a hot fix refers to any modification of an instrument machine that needs to be done at somewhat short notice e.g.:</p>
+<ul class="simple">
+<li><p>Patching a critical bug in some code</p></li>
+<li><p>Clearing up disk space</p></li>
+</ul>
+<p>Hot-fixes may cause disruption to experiments (but less than the issue you are trying to fix) and so to minimise this you should do as much of the following as possible:</p>
+<ul class="simple">
+<li><p>Try to organise for maintenance days</p></li>
+<li><p>Give as much notice to scientists as you can</p></li>
+<li><p>Minimise the number of instruments to modify</p></li>
+</ul>
+<p>The following is a template and will require some modification based on what the issue is you are trying to resolve:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Dear All,
+
+Unfortunately we have recently seen an issue on your instruments where **describe issue here**.
+
+To resolve this issue we will need to **detail fix here**. To do this we will require **stopping taking data? use of remote desktop?** for **time it will take to fix**.
+
+If we do not do this then **how will it affect the user&#39;s experiments**.
+
+Ideally we would like to do this **on maintenance day? ASAP**. Please let us know when would be a suitable time to make this change.
+
+Apologies for any inconvenience,
+ISIS Experiment Controls 
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Deploy.html" class="btn btn-neutral float-left" title="Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Deployment-on-an-Instrument-Control-PC.html" class="btn btn-neutral float-right" title="Deploy to an instrument machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 4 - Theta &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 5 - Parking Components" href="Reflectometry-Config-Training-%E2%80%90-Exercise-5.html" />
+    <link rel="prev" title="Exercise 3 - Modes" href="Reflectometry-Config-Training-%E2%80%90-Exercise-3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Config-Training.html">Reflectometry Config Training</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Overview-%26-Setup.html">Reflectometry Config Training: Overview &amp; Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-1.html">Exercise 1 - Parameters, Drivers, Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-2.html">Exercise 2 - Beamline Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-3.html">Exercise 3 - Modes</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Exercise 4 - Theta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-5.html">Exercise 5 - Parking Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-6.html">Exercise 6 - Optional Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-7.html">Exercise 7 - Engineering Corrections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-8.html">Exercise 8 - The Bench</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+          <li class="breadcrumb-item"><a href="../Config-Training.html">Reflectometry Config Training</a></li>
+      <li class="breadcrumb-item active">Exercise 4 - Theta</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/config_training/Reflectometry-Config-Training-‐-Exercise-4.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-4-theta">
+<h1>Exercise 4 - Theta<a class="headerlink" href="#exercise-4-theta" title="Link to this heading"></a></h1>
+<p>Other than the properties of the sample itself, the reflectivity of surfaces and interfaces between media is dependant on a primary parameter. This parameter is the incident angle of the beam at the sample, also known as Theta. For any given sample, the scientists usually take measurements at 3 or 4 different Theta angles, then stitch the data together to get the complete reflectivity profile.</p>
+<blockquote>
+<div><p>Side note: taking more measurements at finer Theta steps would produce better data. Theoretically, scientists could take measurements at many more discrete angles, stopping and starting data collection in between, however this is impractical due to the added overhead in time and effort required for setting up each measurement. The current approach of measuring a handful of Theta is considered a “good enough” solution.</p>
+<p>In an ideal world, we could sweep scan over the whole Theta range, taking one snapshot of data for the current Theta RBV for every ISIS pulse. Currently this is not possible as our move synchronization is not sophisticated enough to ensure a consistent alignment throughout the sweep. Solving this problem is what we mean when we talk about “Continuous Scanning”.</p>
+</div></blockquote>
+<p>Setting a Theta angle is similar to setting a super mirror angle in that every component downstream from the <code class="docutils literal notranslate"><span class="pre">ThetaComponent</span></code> in the reflectometry config will be subject to the new beam path. There is an important difference however in that Theta is NOT linked to the physical angle of the sample stack. This is because the scientists do not want this angle to ever be set implicitly as it could have severe consequences if the sample is e.g. a large tank of liquid which could accidentally be angled and spill all over the blockhouse. Instead, Theta only sets the positions of downstream components for a theoretical incident angle. To ensure the actual beam follows this beam path, the sample Phi angle needs to be set to match this theoretical beam path, the Theta parameter and component are however entirely separate entities from the Sample component and angle.</p>
+<p>Similarly, the Theta RBV is not derived from the sample Phi axis, but from a axis representing the position of the detector. At ISIS, we have two different types of detectors from a motion point of view:</p>
+<ol class="arabic simple">
+<li><p>Detectors moving on a linear height stage that can tilt towards the beam (SURF, CRISP)</p></li>
+<li><p>Detectors mounted on another component that moves on an arc around the sample (POLREF, INTER, OFFSPEC)</p></li>
+</ol>
+<p>For the former, Theta is calculated via trigonometry, where the Detector Height is the Adjacent, and the distance between Sample and Detector is the Opposite side of the right angle triangle. For the latter, the component the detector is mounted on (= a bench or vacuum tank) will have a rotation axis that we can use as readback.</p>
+<p>From a config point of view, we can provide the <code class="docutils literal notranslate"><span class="pre">ThetaComponent</span></code> with a list of downstream components from which Theta’s RBV can be derived. This is a list as some beamlines may use one of several detectors. Theta will look for the next component in the list that is currently active in the beam and derive it’s angle from it.</p>
+<p>As an example, let’s say SURF has a structure of <code class="docutils literal notranslate"><span class="pre">Beam</span> <span class="pre">Source</span> <span class="pre">-</span> <span class="pre">Sample</span> <span class="pre">-</span> <span class="pre">Point</span> <span class="pre">Detector</span> <span class="pre">-</span> <span class="pre">Linear</span> <span class="pre">Detector</span></code> where both detectors are driven by linear height stages. If both detectors are in the beam, Theta will derive its value from the Point Detector Height axis. If the point detector is parked out of the beam, Theta will derive its value from the Linear Detector Height axis.</p>
+<blockquote>
+<div><p>Side note: The arc detector solution is technically superior as it maintains a constant distance between sample and detector, meaning e.g. Time of Flight is not dependant on Theta. This produces a slight inaccuracy for SURF and CRISP, however due to the optical lever on those beamlines being fairly short the effect is small enough to be ignored.</p>
+</div></blockquote>
+<section id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading"></a></h2>
+<p>In this exercise, let’s add Theta and a detector component from which we can derive its value to our beamline model. For this exercise, we will assume we are using the setup that is found on SURF and CRISP, i.e. a detector that can move up and down on a linear height axis, and tilt towards the beam via a separate rotation axis. (we will look at a bench setup in a later exercise). Add the following to your config:</p>
+<ol class="arabic simple">
+<li><p>Theta Component and Parameter</p></li>
+<li><p>Detector Component and Detector Height &amp; Angle parameters linked to appropriate motor axes (referred to in the motor axis descriptions as <code class="docutils literal notranslate"><span class="pre">Sgl</span> <span class="pre">detector</span></code> = single detector)</p></li>
+<li><p>At this point you can restart the IOC and you should be able to move detector height and angle parameters as with everything we have added previously. Theta should also be there and read <code class="docutils literal notranslate"><span class="pre">NaN</span></code> as we have not yet told it what axis it should derive its value from.</p></li>
+<li><p>Add the detector to Theta’s list of components define its angle. The ThetaComponent provides the methods <code class="docutils literal notranslate"><span class="pre">add_angle_to(component)</span></code> to do this for a linear height axis, or <code class="docutils literal notranslate"><span class="pre">.add_angle_of(component)</span></code> for an arc component.</p></li>
+<li><p>You should now be able to set <code class="docutils literal notranslate"><span class="pre">Theta</span></code> and see it move the detector height &amp; angle. This works the same as the <code class="docutils literal notranslate"><span class="pre">sm_angle</span></code> - you can try setting Theta to 22.5 which should move the detector height axis to the distance between the Theta and detector components, and the angle to 45 deg.</p></li>
+</ol>
+<p>Some tips:</p>
+<ul class="simple">
+<li><p>Theta has it’s own component type, <code class="docutils literal notranslate"><span class="pre">ThetaComponent</span></code>. This component has the added functionality of being able to listen to a different component from which to derive it’s values.</p></li>
+<li><p>The (virtual) Theta component’s coordinates need to match the (real) Sample Components coordinates.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Theta</span></code> parameter itself is just a simple Axis Parameter that should look basically the same as e.g. <code class="docutils literal notranslate"><span class="pre">sm_angle</span></code></p></li>
+<li><p>All parameters should be in all modes - we always need Theta as well as the detector.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reflectometry-Config-Training-%E2%80%90-Exercise-3.html" class="btn btn-neutral float-left" title="Exercise 3 - Modes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reflectometry-Config-Training-%E2%80%90-Exercise-5.html" class="btn btn-neutral float-right" title="Exercise 5 - Parking Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

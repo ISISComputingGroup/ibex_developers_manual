@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlockServer &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Blockserver Structure" href="blockserver/BlockServer-Structure.html" />
+    <link rel="prev" title="Using the alarm server with MySQL" href="alarms/Using-the-alarm-server-with-mysql.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BlockServer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="blockserver/BlockServer-Structure.html">Blockserver Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blockserver/Blockserver-Trouble-Shooting.html">Blockserver troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blockserver/Dynamic-components-%28component-switcher%29.html">Dynamic components (component switcher)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">BlockServer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/BlockServer.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="blockserver">
+<h1>BlockServer<a class="headerlink" href="#blockserver" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>The BlockServer is <strong>responsible</strong> for:</p>
+<ul class="simple">
+<li><p>Creating blocks</p></li>
+<li><p>Creating groups</p></li>
+<li><p>Loading and saving configurations</p></li>
+</ul>
+<p>It can also be used to:</p>
+<ul class="simple">
+<li><p>Start and stop IOCs via ProcServ</p></li>
+</ul>
+<p>See <a class="reference internal" href="blockserver/BlockServer-Structure.html"><span class="doc std std-doc">BlockServer Structure</span></a> for further information.</p>
+<section id="what-it-does">
+<h2>What it does<a class="headerlink" href="#what-it-does" title="Link to this heading"></a></h2>
+<p>The BlockServer is a Channel Access Server (CAS) written in Python using the <a class="reference external" href="https://code.google.com/archive/p/pcaspy/">PCASpy</a> module.
+It provides a number of PVs that allow the blocks to be configured (see below) and configurations to be created and loaded.
+The blocks are PV aliases created using the blocks gateway - a standard <a class="reference internal" href="Gateway.html"><span class="doc std std-doc">channel access gateway</span></a> running on localhost. When a configuration is loaded or the blocks changed then the BlockServer regenerates the PV file for the gateway.</p>
+<p>The PV file is typically stored in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\gwblock.pvlist</span></code> and looks something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INST:CS:SB:MyBlock\([.:].*\)    ALIAS    INST:EUROTHRM_01:TEMP\1
+INST:CS:SB:MYBLOCK\([.:].*\)    ALIAS    INST:EUROTHRM_01:TEMP\1
+INST:CS:SB:MyBlock\(:RC.*\)     ALIAS    INST:CS:MYBLOCK\1
+INST:CS:SB:MYBLOCK\(:RC.*\)     ALIAS    INST:CS:MYBLOCK\1
+</pre></div>
+</div>
+<p>Pattern matching is used so that patterns like BLOCKNAME:SP and BLOCKNAME:SP:RBV can be used, aliases are created for both the case specified by the user and full uppercase so that clients can be case insensitive. Once this file is written the BlockServer will restart the gateway, running as <code class="docutils literal notranslate"><span class="pre">GWBLOCK</span></code>. The <code class="docutils literal notranslate"><span class="pre">RC</span></code> lines are used for <a class="reference internal" href="Run-control.html"><span class="doc std std-doc">Run Control</span></a>, which the BlockServer is also responsible for configuring. Run control PVs live in a separate IOC (which also adds case insensitive aliases) with the <code class="docutils literal notranslate"><span class="pre">CS</span></code> namespace and the gateway moves them into the <code class="docutils literal notranslate"><span class="pre">CS:SB</span></code> namespace. In this way all client interactions with specific blocks are going through <code class="docutils literal notranslate"><span class="pre">GWBLOCK</span></code>.</p>
+<p>It is possible to override the blockserver generation of a <code class="docutils literal notranslate"><span class="pre">gwblock.pvlist</span></code> and block_config.xml for a configuration by setting the <code class="docutils literal notranslate"><span class="pre">configuresBlockGWAndArchiver</span></code> tag to true in the meta.xml file and providing the files in the same directory as the <code class="docutils literal notranslate"><span class="pre">meta.xml</span></code> file. This is used on DETMON to manage a large set of blocks. If the configuration directory does not contain the <code class="docutils literal notranslate"><span class="pre">gwblock.pvlist</span></code> or <code class="docutils literal notranslate"><span class="pre">block_config.xml</span></code> files then the blockserver will instead generate the relevant files even if the <code class="docutils literal notranslate"><span class="pre">configuresBlockGWAndArchiver</span></code> tag is true. If the tag is true and the configuration directory only contains one of the files, the blockserver will use the file the configuration contains and generate the other.</p>
+<p>The BlockServer is also responsible for configuring the blocks archiver to log the current blocks.</p>
+<p>Configurations are saved in a directory with the configuration’s name. The directory contains separate XML files for the blocks, groups, components, IOCs and meta-data that make up the configuration.</p>
+<p>The BlockServer also provides a mechanism for starting and stopping IOCs and retrieving the interesting PVs for the currently running IOCs. The BlockServer can start and stop IOCs that are running inside <a class="reference external" href="http://sourceforge.net/projects/procserv/">ProcServ</a> as ProcServ provides PVs to enable this. The PVs for the currently running IOCs are read directly from a database.</p>
+<p>NOTE: As the BlockServer often needs to send a lot of data via channel access (as a CHAR waveform), it it necessary in some cases to compress the data before sending using zlib. The compressed data is then converted to hex to avoid any null characters been sent across channel access.</p>
+</section>
+<section id="channel-access-commands">
+<h2>Channel Access Commands<a class="headerlink" href="#channel-access-commands" title="Link to this heading"></a></h2>
+<section id="read-commands">
+<h3>Read Commands<a class="headerlink" href="#read-commands" title="Link to this heading"></a></h3>
+<p><strong>BLOCKSERVER:BLOCKNAMES</strong>
+Note: this used by genie_python for checking block names used in CSETs etc. are valid</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCKNAMES
+Returns the block names as compressed and hexed JSON list (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:BLOCK_DETAILS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCK_DETAILS
+TODO: add description
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:BLOCK_RULES</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">BLOCK_RULES</span>
+    <span class="n">Returns</span> <span class="n">the</span> <span class="n">rules</span> <span class="k">for</span> <span class="n">naming</span> <span class="n">blocks</span><span class="o">.</span> <span class="n">Specifically</span><span class="p">,</span> <span class="n">a</span> <span class="n">regex</span> <span class="n">that</span> <span class="n">new</span> <span class="n">blocks</span> <span class="n">must</span> <span class="n">match</span> <span class="ow">and</span> <span class="n">specific</span> <span class="n">blocknames</span> <span class="n">which</span> <span class="n">are</span> <span class="n">disallowed</span> <span class="n">are</span> <span class="n">returned</span><span class="o">.</span>
+    <span class="n">Example</span> <span class="n">JSON</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;regex&quot;</span><span class="p">:</span> <span class="s2">&quot;^[a-zA-Z]</span><span class="se">\\</span><span class="s2">w*$&quot;</span><span class="p">,</span> <span class="s2">&quot;regexMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block name must start with a letter and only contain letters, numbers and underscores&quot;</span><span class="p">,</span> <span class="s2">&quot;disallowed&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;lowlimit&quot;</span><span class="p">,</span> <span class="s2">&quot;highlimit&quot;</span><span class="p">,</span> <span class="s2">&quot;runcontrol&quot;</span><span class="p">,</span> <span class="s2">&quot;wait&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:GROUPS</strong>
+Note: This PV is currently used by the web dashboard</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GROUPS
+Returns the groups and their blocks as a compressed then hexed JSON list of dictionaries (CHAR waveform).
+Example JSON (dehexed and decompressed):
+    &#39;[{&quot;blocks&quot;: [&quot;testblock1&quot;, &quot;testblock2&quot;], &quot;name&quot;: &quot;Example group&quot;, &quot;component&quot;: null},
+      {&quot;blocks&quot;: [&quot;testblock3&quot;, &quot;testblock4&quot;], &quot;name&quot;: &quot;Different group&quot;, &quot;component&quot;: null},
+      {&quot;blocks&quot;: [], &quot;name&quot;: &quot;NONE&quot;, &quot;component&quot;: null}
+     ]&#39;
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:GROUP_RULES</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GROUP_RULES
+TODO: add description
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:CONFIGS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CONFIGS
+Returns a list of the available configurations, including descriptions and the pv associated with the configuration, as compressed then hexed JSON (CHAR waveform)
+Example JSON (dehexed and decompressed):
+	&#39;[{&quot;name&quot;: &quot;Test Config&quot;, &quot;description&quot;: &quot;A test configuration&quot;, &quot;pv&quot;: &quot;TEST_CONFIG&quot;}
+	  {&quot;name&quot;: &quot;Another Config&quot;, &quot;description&quot;: &quot;To test again&quot;, &quot;pv&quot;: &quot;ANOTHER_CONFIG&quot;}
+	  {&quot;name&quot;: &quot;TeSt CoNfIg&quot;, &quot;description&quot;: &quot;This config has the same name&quot;, &quot;pv&quot;: &quot;TEST_CONFIG1&quot;}]&#39;
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:COMPS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:COMPS
+Returns a list of the components available, including descriptions and the pv associated with the configuration, as compressed then hexed JSON (CHAR waveform)
+	&#39;[{&quot;name&quot;: &quot;Test component&quot;, &quot;description&quot;: &quot;A test component&quot;, &quot;pv&quot;: &quot;TEST_COMP&quot;}
+	  {&quot;name&quot;: &quot;Another component&quot;, &quot;description&quot;: &quot;To test again&quot;, &quot;pv&quot;: &quot;ANOTHER_COMP&quot;}
+	  {&quot;name&quot;: &quot;TeSt ComPonent&quot;, &quot;description&quot;: &quot;This component has the same name&quot;, &quot;pv&quot;: &quot;TEST_COMP1&quot;}]&#39;
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:ALL_COMPONENT_DETAILS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:ALL_COMPONENT_DETAILS
+Returns a list of the available components with all their details, as if reading e.g. the current configuration. Read as compressed then hexed JSON (CHAR waveform)
+    [{
+        &quot;blocks&quot;: [{&quot;log_rate&quot;: 30, &quot;log_deadband&quot;: 0.0, &quot;component&quot;: null, &quot;runcontrol&quot;: false, &quot;visible&quot;: true, &quot;pv&quot;: &quot;TE:NDLT882:DAE:BEAMCURRENT&quot;, &quot;name&quot;: &quot;BEAMCURR&quot;, &quot;highlimit&quot;: 0.0, &quot;log_periodic&quot;: true, &quot;lowlimit&quot;: 0.0, &quot;local&quot;: true}], 
+        &quot;groups&quot;: [{&quot;component&quot;: null, &quot;blocks&quot;: [&quot;BEAMCURR&quot;], &quot;name&quot;: &quot;NONE&quot;}], 
+        &quot;iocs&quot;: [{&quot;macros&quot;: [], &quot;pvs&quot;: [{&quot;name&quot;: &quot;NEW_PV&quot;, &quot;value&quot;: &quot;NEW_VALUE&quot;}], &quot;name&quot;: &quot;GALIL_01&quot;, &quot;autostart&quot;: false, &quot;pvsets&quot;: [], &quot;component&quot;: null, &quot;restart&quot;: false, &quot;simlevel&quot;: &quot;recsim&quot;}], 
+        &quot;description&quot;: &quot;pong&quot;, 
+        &quot;component_iocs&quot;: [{&quot;macros&quot;: [], &quot;pvs&quot;: [{&quot;name&quot;: &quot;NEW_PV&quot;, &quot;value&quot;: &quot;NEW_VALUE&quot;}], &quot;name&quot;: &quot;GALIL_01&quot;, &quot;autostart&quot;: false, &quot;pvsets&quot;: [], &quot;component&quot;: null, &quot;restart&quot;: false, &quot;simlevel&quot;: &quot;recsim&quot;}],
+        &quot;components&quot;: [],
+        &quot;history&quot;: [&quot;2017-02-08 16:34:15&quot;],
+        &quot;synoptic&quot;: &quot;&quot;, 
+        &quot;name&quot;: &quot;TEST_COMP2&quot; 
+    },
+    {
+        &quot;blocks&quot;: [],
+        &quot;groups&quot;: [],
+        &quot;iocs&quot;: [{&quot;macros&quot;: [], &quot;pvs&quot;: [], &quot;name&quot;: &quot;CRYVALVE_01&quot;, &quot;autostart&quot;: false, &quot;pvsets&quot;: [], &quot;component&quot;: null, &quot;restart&quot;: true, &quot;simlevel&quot;: &quot;none&quot;}],
+        &quot;description&quot;: &quot;ping&quot;,
+        &quot;component_iocs&quot;: [{&quot;macros&quot;: [], &quot;pvs&quot;: [], &quot;name&quot;: &quot;CRYVALVE_01&quot;, &quot;autostart&quot;: false, &quot;pvsets&quot;: [], &quot;component&quot;: null, &quot;restart&quot;: true, &quot;simlevel&quot;: &quot;none&quot;}],
+        &quot;components&quot;: [], &quot;history&quot;: [&quot;2017-02-08 16:30:40&quot;], 
+        &quot;synoptic&quot;: &quot;&quot;, 
+        &quot;name&quot;: &quot;TEST_COMP1&quot;
+    }
+    , ...]
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:GET_RC_OUT</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_RC_OUT
+Returns a list of the PVs that are outside of their run-control limits as compressed then hexed JSON (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:GET_RC_PARS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_RC_PARS
+Returns a dictionary of the run-control settings for the blocks as compressed then hexed JSON (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:GET_CURR_CONFIG_DETAILS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_CURR_CONFIG_DETAILS
+Returns a compressed and hexed JSON dictionary describing the current configuration or component.
+Example JSON (dehexed and decompressed):
+    &#39;{&quot;iocs&quot;:
+             [{&quot;simlevel&quot;: &quot;None&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE1&quot;, &quot;component&quot;: null},
+              {&quot;simlevel&quot;: &quot;devsim&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE2&quot;, &quot;component&quot;: null}
+             ],
+      &quot;blocks&quot;:
+               [{&quot;name&quot;: &quot;testblock1&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 10, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock2&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 5, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock3&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:EUROTHERM1:RBV&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: false, &quot;log_rate&quot;: 0, &quot;log_deadband&quot;: 1.0}
+               ],
+      &quot;components&quot;:
+                   [{&quot;name&quot;: &quot;comp1&quot;}],
+      &quot;groups&quot;:
+               [{&quot;blocks&quot;: [&quot;testblock1&quot;], &quot;name&quot;: &quot;Group1&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock2&quot;], &quot;name&quot;: &quot;Group2&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock3&quot;], &quot;name&quot;: &quot;NONE&quot;, &quot;component&quot;: null}],
+      &quot;name&quot;: &quot;TESTCONFIG1&quot;,
+	  &quot;description&quot;: &quot;A test configuration&quot;,
+	  &quot;history&quot;: [&quot;2015-02-16&quot;]
+     }&#39;
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:<em>config_pv</em>:GET_CONFIG_DETAILS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:*config_pv*:GET_CONFIG_DETAILS
+Returns a compressed and hexed JSON dictionary describing the configuration with the pv *config_pv*. (To find config pvs use the CONFIGS command)
+Example JSON (dehexed and decompressed):
+    &#39;{&quot;iocs&quot;:
+             [{&quot;simlevel&quot;: &quot;None&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE1&quot;, &quot;component&quot;: null},
+              {&quot;simlevel&quot;: &quot;devsim&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE2&quot;, &quot;component&quot;: null}
+             ],
+      &quot;blocks&quot;:
+               [{&quot;name&quot;: &quot;testblock1&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 10, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock2&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 5, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock3&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:EUROTHERM1:RBV&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: false, &quot;log_rate&quot;: 0, &quot;log_deadband&quot;: 1.0}
+               ],
+      &quot;components&quot;:
+                   [{&quot;name&quot;: &quot;comp1&quot;}],
+      &quot;groups&quot;:
+               [{&quot;blocks&quot;: [&quot;testblock1&quot;], &quot;name&quot;: &quot;Group1&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock2&quot;], &quot;name&quot;: &quot;Group2&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock3&quot;], &quot;name&quot;: &quot;NONE&quot;, &quot;component&quot;: null}],
+      &quot;name&quot;: &quot;TESTCONFIG1&quot;,
+	  &quot;description&quot;: &quot;A test configuration&quot;,
+	  &quot;history&quot;: [&quot;2015-02-16&quot;]
+     }&#39;	
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:<em>component_pv</em>:GET_COMPONENT_DETAILS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:*component_pv*:GET_COMPONENT_DETAILS
+Returns a compressed and hexed JSON dictionary describing the component with the pv *component_pv*. (To find component pvs use the COMPS command)
+Example JSON (dehexed and decompressed):
+    &#39;{&quot;iocs&quot;:
+             [{&quot;simlevel&quot;: &quot;None&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE1&quot;, &quot;component&quot;: null},
+              {&quot;simlevel&quot;: &quot;devsim&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE2&quot;, &quot;component&quot;: null}
+             ],
+      &quot;blocks&quot;:
+               [{&quot;name&quot;: &quot;testblock1&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 10, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock2&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 5, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock3&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:EUROTHERM1:RBV&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: false, &quot;log_rate&quot;: 0, &quot;log_deadband&quot;: 1.0}
+               ],
+      &quot;components&quot;: [],
+      &quot;groups&quot;:
+               [{&quot;blocks&quot;: [&quot;testblock1&quot;], &quot;name&quot;: &quot;Group1&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock2&quot;], &quot;name&quot;: &quot;Group2&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock3&quot;], &quot;name&quot;: &quot;NONE&quot;, &quot;component&quot;: null}],
+      &quot;name&quot;: &quot;TESTCOMP1&quot;,
+	  &quot;description&quot;: &quot;A test component&quot;,
+	  &quot;history&quot;: [&quot;2015-02-16&quot;]
+     }&#39;	
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:BLANK_CONFIG</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLANK_CONFIG
+Returns a compressed and hexed JSON dictionary describing a blank configuration.
+    &#39;{&quot;iocs&quot;: [],
+      &quot;blocks&quot;: [],
+      &quot;components&quot;: [],
+      &quot;groups&quot;: [],
+      &quot;name&quot;: &quot;&quot;,
+	  &quot;description&quot;: &quot;&quot;
+     }&#39;	
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:CONF_DESC_RULES</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CONF_DESC_RULES
+TODO: add description	
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:<em>component_pv</em>:DEPENDENCIES</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:*component_pv*:DEPENDENCIES
+Returns a list of the configurations that contain the component specified in *component_pv*, formatted as compressed then hexed JSON (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SERVER_STATUS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SERVER_STATUS
+TODO: add description
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:BUMPSTRIP_AVAILABLE</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE
+TODO: add description
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:GET_SCREENS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_SCREENS
+Returns a compressed and hexed string containing the XML for the list of the available device screens descriptions (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SCREENS_SCHEMA</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SCREENS_SCHEMA
+Returns a compressed and hexed string containing the devices screens XML schema (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:CURR_CONFIG_NAME</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget %MYPVPREFIX%CS:BLOCKSERVER:CURR_CONFIG_NAME
+Returns a string containing the name of the current configuration (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:NAMES</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:NAMES
+Returns a list of the available synoptics formatted as compressed then hexed JSON (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:<em>synoptic_name</em>:GET</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:*synoptic_name*:GET
+Returns a compressed and hexed string containing the XML for the specified synoptic (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:GET_DEFAULT</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:GET_DEFAULT
+Returns a compressed and hexed string containing the XML for the current synoptic (CHAR waveform)
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:_<em>BLANK_</em>:GET</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:__BLANK__:GET
+TODO: add description
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:SCHEMA</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:SCHEMA
+Returns a compressed and hexed string containing the synoptics XML schema (CHAR waveform)
+</pre></div>
+</div>
+</section>
+<section id="write-commands">
+<h3>Write Commands<a class="headerlink" href="#write-commands" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unless specified otherwise all of these command return OK if they succeed, otherwise they return an error message.</p>
+<p>Some of these commands take a few seconds to process, so if done using caput it might be necessary to increase the timeout.</p>
+</div>
+<p><strong>BLOCKSERVER:LOAD_CONFIG</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:LOAD_CONFIG config1234567890
+Loads the specified configuration. Requires a compressed and hexed JSON string. This automatically restarts the blocks gateway and updates the archiver
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:CLEAR_CONFIG</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:CLEAR_CONFIG clear
+Send any non-null value to clear the current configuration, i.e. remove blocks, groups and IOCs.
+Note: it does not restart the gateway.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:START_IOCS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:START_IOCS config1234567890
+Starts the specified IOC or IOCs. Requires compressed and hexed JSON list of IOCS.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:STOP_IOCS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:STOP_IOCS config1234567890
+Stops the specified IOC or IOCS. Requires compressed and hexed JSON list of IOCS.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:RESTART_IOCS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:RESTART_IOCS config1234567890
+Restarts the specified IOC or IOCs. Requires compressed and hexed JSON list of IOCS.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SET_RC_PARS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_RC_PARS config1234567890
+Edits the run-control settings on a block or blocks. Requires compressed and hexed JSON dictionary of dictionaries with the following parameters:
+    name - the name of the block
+    LOW - the lowlimit
+    HIGH - the highlimit
+    ENABLE - whether run-control is enable for the block
+Example JSON (dehexed and decompressed):
+    &#39;{&quot;testblock&quot;: {&quot;HIGH&quot;: 5, &quot;ENABLE&quot;: true, &quot;LOW&quot;: -5}}&#39;
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SET_CURR_CONFIG_DETAILS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_CURR_CONFIG_DETAILS config1234567890
+Sets the current configuration to the setting specified. Requires compressed and hexed JSON dictionary.
+Example JSON (dehexed and decompressed):
+    &#39;{&quot;iocs&quot;:
+             [{&quot;simlevel&quot;: &quot;None&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE1&quot;, &quot;component&quot;: null},
+              {&quot;simlevel&quot;: &quot;recsim&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE2&quot;, &quot;component&quot;: null}
+             ],
+      &quot;blocks&quot;:
+               [{&quot;name&quot;: &quot;testblock1&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 10, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock2&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 5, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock3&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:EUROTHERM1:RBV&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: false, &quot;log_rate&quot;: 0, &quot;log_deadband&quot;: 1.0}
+               ],
+      &quot;components&quot;:
+                   [{&quot;name&quot;: &quot;comp1&quot;}],
+      &quot;groups&quot;:
+               [{&quot;blocks&quot;: [&quot;testblock1&quot;], &quot;name&quot;: &quot;Group1&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock2&quot;], &quot;name&quot;: &quot;Group2&quot;, &quot;component&quot;: null},
+                {&quot;blocks&quot;: [&quot;testblock3&quot;], &quot;name&quot;: &quot;NONE&quot;, &quot;component&quot;: null}],
+      &quot;name&quot;: &quot;TESTCONFIG1&quot;,
+	  &quot;description&quot;: &quot;A test configuration&quot;,
+	  &quot;history&quot;: [&quot;2015-02-16&quot;]
+     }&#39;
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SAVE_NEW_CONFIG</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_CONFIG config1234567890
+Saves a configuration to XML without affecting the current active configuration.
+This will give an error if trying to overwrite the current active configuration but will allow overwriting of other saved configurations.
+Requires compressed and hexed JSON dictionary.
+
+Example JSON (dehexed and decompressed):
+	&#39;{&quot;iocs&quot;:
+			 [{&quot;simlevel&quot;: &quot;None&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE1&quot;, &quot;component&quot;: null},
+			  {&quot;simlevel&quot;: &quot;recsim&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE2&quot;, &quot;component&quot;: null}
+			 ],
+	  &quot;blocks&quot;:
+               [{&quot;name&quot;: &quot;testblock1&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 10, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock2&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 5, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock3&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:EUROTHERM1:RBV&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: false, &quot;log_rate&quot;: 0, &quot;log_deadband&quot;: 1.0}
+			   ],
+	  &quot;components&quot;:
+				   [{&quot;name&quot;: &quot;comp1&quot;}],
+	  &quot;groups&quot;:
+			   [{&quot;blocks&quot;: [&quot;testblock1&quot;], &quot;name&quot;: &quot;Group1&quot;, &quot;component&quot;: null},
+				{&quot;blocks&quot;: [&quot;testblock2&quot;], &quot;name&quot;: &quot;Group2&quot;, &quot;component&quot;: null},
+				{&quot;blocks&quot;: [&quot;testblock3&quot;], &quot;name&quot;: &quot;NONE&quot;, &quot;component&quot;: null}],
+	  &quot;name&quot;: &quot;TESTCONFIG1&quot;,
+	  &quot;description&quot;: &quot;A test configuration&quot;,
+	  &quot;history&quot;: [&quot;2015-02-16&quot;]
+	 }&#39;
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SAVE_NEW_COMPONENT</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_COMPONENT config1234567890
+Saves a component to XML without affecting the current configuration.
+This will give an error if trying to overwrite components of the current active configuration.
+Requires compressed and hexed JSON dictionary.
+
+Example JSON (dehexed and decompressed):
+	&#39;{&quot;iocs&quot;:
+			 [{&quot;simlevel&quot;: &quot;None&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE1&quot;, &quot;component&quot;: null},
+			  {&quot;simlevel&quot;: &quot;recsim&quot;, &quot;autostart&quot;: true, &quot;restart&quot;: false, &quot;pvsets&quot;: [{&quot;name&quot;: &quot;SET&quot;, &quot;enabled&quot;: &quot;true&quot;}], &quot;pvs&quot;: [], &quot;macros&quot;: [], &quot;name&quot;: &quot;SIMPLE2&quot;, &quot;component&quot;: null}
+			 ],
+	  &quot;blocks&quot;:
+               [{&quot;name&quot;: &quot;testblock1&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 10, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock2&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:SIMPLE:VALUE1&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: true, &quot;log_rate&quot;: 5, &quot;log_deadband&quot;: 0},
+                {&quot;name&quot;: &quot;testblock3&quot;, &quot;local&quot;: true, &quot;pv&quot;: &quot;NDWXXX:xxxx:EUROTHERM1:RBV&quot;, &quot;component&quot;: null, &quot;visible&quot;: true, &quot;log_periodic&quot;: false, &quot;log_rate&quot;: 0, &quot;log_deadband&quot;: 1.0}
+			   ],
+	  &quot;groups&quot;:
+			   [{&quot;blocks&quot;: [&quot;testblock1&quot;], &quot;name&quot;: &quot;Group1&quot;, &quot;component&quot;: null},
+				{&quot;blocks&quot;: [&quot;testblock2&quot;], &quot;name&quot;: &quot;Group2&quot;, &quot;component&quot;: null},
+				{&quot;blocks&quot;: [&quot;testblock3&quot;], &quot;name&quot;: &quot;NONE&quot;, &quot;component&quot;: null}],
+      &quot;components&quot;: [],
+	  &quot;name&quot;: &quot;TESTCOMP1&quot;,
+	  &quot;description&quot;: &quot;A test component&quot;,
+	  &quot;history&quot;: [&quot;2015-02-16&quot;]
+	 }&#39;		 
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:DELETE_CONFIGS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_CONFIGS config1234567890
+Removes a configuration or configurations from the BlockServer and filesystem. Requires a compressed and hexed JSON list of configuration names to remove.
+If this is done in error the configuration can be recovered from version control. For removing one configuration only, create a list of one item.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:DELETE_COMPONENTS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_COMPONENTS config1234567890
+Removes a component or components from the BlockServer and filesystem. Requires a compressed and hexed JSON list of component names to remove.
+If this is done in error the component can be recovered from version control. For removing one component only, create a list of one item.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP
+TODO: add description
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SET_SCREENS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_SCREENS
+Sets a compressed and hexed XML list of available device screens descriptions.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:SET_DETAILS</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:SET_DETAILS config1234567890
+Saves the synoptic with supplied compressed and hexed XML data, saving under the name specified in the XML.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:DELETE</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:DELETE config1234567890
+Removes a synoptic from the BlockServer and filesystem. Requires a compressed and hexed JSON list of synoptics names to remove.
+If this is done in error the synoptic can be recovered from version control. For removing one synoptic only, create a list of one item.
+
+Returns &quot;OK&quot; or an error message (compressed and hexed JSON).
+</pre></div>
+</div>
+<p><strong>SYNOPTICS:<em>synoptic_name</em>:SET</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:*synoptic_name*:SET
+TODO: add descriptions
+</pre></div>
+</div>
+</section>
+</section>
+<section id="archiver-settings">
+<h2>Archiver Settings<a class="headerlink" href="#archiver-settings" title="Link to this heading"></a></h2>
+<p>Blocks can either be set to log periodically or log on change using the JSON “log_periodic” value.</p>
+<p>When log_periodic is true the block will be scanned at the rate given in “log_rate”, if the value has changed it will be logged. The “log_deadband” is ignored.</p>
+<p>When log_periodic is false the block value will be archived whenever the block changes by the deadband given in “log_deadband”. The “log_rate” is ignored.</p>
+</section>
+<section id="the-file-watcher-config-version-control">
+<h2>The File Watcher / Config version control<a class="headerlink" href="#the-file-watcher-config-version-control" title="Link to this heading"></a></h2>
+<p>The file watcher has been removed in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-inst_servers/pull/139">https://github.com/ISISComputingGroup/EPICS-inst_servers/pull/139</a></p>
+<p>Instead, we now have a much simpler system. A background python thread running as part of the blockserver checks if there are any uncommitted changes at a set interval. If it sees any changes, it does the equivalent of a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>. This means that we get a backup at 5 minute intervals of the configuration area</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="alarms/Using-the-alarm-server-with-mysql.html" class="btn btn-neutral float-left" title="Using the alarm server with MySQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="blockserver/BlockServer-Structure.html" class="btn btn-neutral float-right" title="Blockserver Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

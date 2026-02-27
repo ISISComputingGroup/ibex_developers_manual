@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticket workflows &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Umbrella tickets" href="Umbrella-Tickets.html" />
+    <link rel="prev" title="Things to know as a developer" href="Things-to-know-as-a-developer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Component-and-Activity-Stewards.html">Component &amp; Activity Stewards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Updates.html">Dependency Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="External-Contributions.html">External Contributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Good-Ticket-Writing.html">Good Ticket Writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-Documentation.html">Project Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Things-to-know-as-a-developer.html">Things to know as a developer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Ticket workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Umbrella-Tickets.html">Umbrella tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Understanding-Java-Licensing.html">Understanding Java Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unupdated-dependencies.html">Unupdated dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Dev-Processes.html">Developer Processes</a></li>
+      <li class="breadcrumb-item active">Ticket workflows</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/dev_processes/Tickets-and-their-Workflow.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ticket-workflows">
+<h1>Ticket workflows<a class="headerlink" href="#ticket-workflows" title="Link to this heading"></a></h1>
+<section id="ticket-types">
+<h2>Ticket Types<a class="headerlink" href="#ticket-types" title="Link to this heading"></a></h2>
+<p>wf - means workflow and is how the IBEX Project Board decides on which column the ticket is in</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>awaiting</strong></p></td>
+<td><p>Tickets where it is hard to determine when they will be done because they are awaiting hardware, access etc. These tickets should be left on the backlog and pulled into the current sprint when ready. <strong>Not the same as impeded</strong>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>bug</strong></p></td>
+<td><p>A bug in the system reported by either a user or developer</p></td>
+</tr>
+<tr class="row-even"><td><p><strong># (number)</strong></p></td>
+<td><p>Estimate on how long in story points the ticket will take to develop not including review time</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rework</strong></p></td>
+<td><p>Ticket has been through at least one review (with <em>ready</em> developer has changes to make, with <em>in progress</em> developer is working on it, with <em>review</em> developer has finished changes and they need re-reviewing</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>under review</strong></p></td>
+<td><p>Ticket is currently being reviewed</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>urgent</strong></p></td>
+<td><p>Ticket is urgent and should be rushed through the system</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>support</strong></p></td>
+<td><p>Ticket has been generated in response to a support issue for an instrument scientist or instrument problem. These are unscheduled and reactive tickets, but it is useful to keep track of time spent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>wontfix</strong></p></td>
+<td><p>Ticket will not be fixed, it is not needed or too complicated.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>duplicate</strong></p></td>
+<td><p>Ticket is a duplicate of a different ticket and will not be fixed (usually the other ticket is referenced)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>for current release</strong></p></td>
+<td><p>Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>proposal</strong></p></td>
+<td><p>It is proposed that the ticket should be in the next sprint (removed each sprint)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>training</strong></p></td>
+<td><p>Ticket is easy and not urgent, therefore suitable for new starters</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>motion control</strong></p></td>
+<td><p>Ticket may be of interest to the motion control hardware team. Tickets are relevant if they change how we interact with a motion control device or change the workflow for commissioning motion</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ready (wf)</strong></p></td>
+<td><p>Ticket is in the current sprint and can be worked on</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>in progress (wf)</strong></p></td>
+<td><p>Ticket is currently in progress</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>review (wf)</strong></p></td>
+<td><p>Ticket is done and should be review by someone</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>completed (wf)</strong></p></td>
+<td><p>Ticket is complete</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>impeded (wf)</strong></p></td>
+<td><p>Ticket is in progress but cannot be completed because of something else. The reason for impediment should be added to the ticket. This should not be for long.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>fixed (wf)</strong></p></td>
+<td><p>Ticket has been fixed (added at end of sprint only and by the person running the sprint)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>re-request</strong></p></td>
+<td><p>Instrument scientist has requested a ticket and it has been requested by another instrument scientist in the past. A comment should record who asked with a +1.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Needs pair review</strong></p></td>
+<td><p>If a ticket is complicated or has many changes, the ticket should be reviewed by a pair of developers, not just one. Ideally one of the reviewers will already be familiar with the affected area of the code (to help with knowledge sharing). This label can be added at any time. It may be ignored for review of rework unless otherwise stated.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code Review</strong></p></td>
+<td><p>Ticket that could be reviewed by a wider group in a code review session. For particularly large or unique additions.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bucket</strong></p></td>
+<td><p>Items that were proposed in the last proposal round, but were not high enough priority to make it into the sprint. If tickets in ready run out, these tickets should be picked up in preference to other tickets in the backlog. <br> If a “bucket” ticket is required in the next sprint, then add a <code class="docutils literal notranslate"><span class="pre">proposal</span></code> label before the bucket label is removed at the end of the current sprint.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>no_release_notes</strong></p></td>
+<td><p>Items that do not need associated release notes, such as minor tasks that do not affect the code base.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="creation-of-tickets">
+<h2>Creation of Tickets<a class="headerlink" href="#creation-of-tickets" title="Link to this heading"></a></h2>
+<p>Tickets should be created at need by developers as git issues using the IBEX Project Board. Initially, they should <em>not</em> have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possibly be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc. If the ticket is created for a scientist don’t forget to note this in the ticket.</p>
+<p>When creating a ticked put on appropriate labels. When adding a ‘Proposal’ label, also add the ticket to the ‘Planning’ project in ‘Proposals’ column.</p>
+</section>
+<section id="movement-of-tickets">
+<h2>Movement of Tickets<a class="headerlink" href="#movement-of-tickets" title="Link to this heading"></a></h2>
+<p>Developers should pick up a ticket as close to the top of the Ready column as they can (i.e. don’t pick a ticket assigned to someone else).</p>
+<ol class="arabic simple">
+<li><p>Assign the ticket to yourself and move it to in progress.</p></li>
+<li><p>When the ticket is done.</p>
+<ul class="simple">
+<li><p>Create a pull request. If the pull request is in a public repository the PR size bot will automatically assign a label to it based on the number of lines changed. For details see <a class="reference external" href="https://github.com/noqcks/pull-request-size#sizing">https://github.com/noqcks/pull-request-size#sizing</a> . Note that these labels are purely informational for other developers and do not form part of the sprint process (in particular, they are not related to ticket sizes in any way).</p></li>
+<li><p>If the config needs updating either:</p>
+<ul>
+<li><p>Add a change to the config updating script (usually if it affects multiple config/instruments)</p></li>
+<li><p>Add a step to the upgrade script (usually when it is a simple change which affects a single instrument)</p></li>
+<li><p>Go onto the instrument and add the change (be <em>very</em> sure it will not affect anything)</p></li>
+</ul>
+</li>
+<li><p>Create a <strong>pull request</strong> modifying the release notes for the next release.</p>
+<ul>
+<li><p>Edit the file using instructions included on the page (Change types are explained near bottom of the page)</p></li>
+<li><p>Save your changes to a branch under same name as your ticket changes branch and add pull request</p></li>
+<li><p>Include link to your ticket in pull request description</p></li>
+<li><p>Link up your pull request in the ticket as a comment. It is helpful for the reviewer to have a comment clearly listing all of the relevant pull requests and documentation changes, including release notes, that they should review.</p></li>
+</ul>
+</li>
+<li><p>Try to get an informal review to check for glaring problems.</p></li>
+<li><p>Either on the ticket under the Projects section use the drop-down menu to move the ticket to the review column or manually move the ticket to the bottom of the review column (unless it is of high priority, in that case, move it to the top).</p></li>
+</ul>
+</li>
+<li><p>Pick a ticket to review from the top of the review column. Review the ticket and if it is good close it (this will move it to the review complete) and add the complete label. If it needs work then add the rework label and move it back to the top of the ready column (you should inform the assignee that it is back in rework so they know how to prioritise their work). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).</p></li>
+<li><p>Make sure to check the associated <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md">upcoming release notes</a> PR makes sense and merge it.</p></li>
+</ol>
+<p>Sometimes you may want to split a larger ticket into smaller tickets to do this see <a class="reference internal" href="Umbrella-Tickets.html"><span class="doc std std-doc">Umbrella Tickets</span></a>.</p>
+</section>
+<section id="flash-reviews">
+<h2>Flash reviews<a class="headerlink" href="#flash-reviews" title="Link to this heading"></a></h2>
+<p>Some work is very small and doesn’t warrant a full ticket and process e.g. fix a code comment, fix trivial Makefile error stopping build working. Such changes should have no potential side effects and take ~5 minutes to review. The procedure is:</p>
+<ul class="simple">
+<li><p>create a PR</p></li>
+<li><p>post PR into the flash-reviews Teams channel</p></li>
+<li><p>we are using emojis to indicate status and avoid creating a new line that a reply/comment would. We don’t want tickets disappearing off the top of the screen. The emojis to use are:</p>
+<ul>
+<li><p>when somebody is looking at it, they add a “surprised” emoji</p></li>
+<li><p>if you are done and merged, add a “happy”</p></li>
+<li><p>if it is not a flash review and needs further changes, comment on github ticket and add a “sad” face</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="adding-tickets-mid-sprint">
+<h2>Adding tickets Mid Sprint<a class="headerlink" href="#adding-tickets-mid-sprint" title="Link to this heading"></a></h2>
+<p>If you are adding a ticket to the ready column mid-sprint. Please make sure it is added in priority order with estimates attached and unless there is a good reason clear it at standup.</p>
+</section>
+<section id="meeting-where-we-manipulate-tickets">
+<h2>Meeting where we manipulate tickets<a class="headerlink" href="#meeting-where-we-manipulate-tickets" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../meetings/Program-Increment-Planning.html"><span class="doc std std-doc">Program Increment Planning</span></a></p></li>
+<li><p><a class="reference internal" href="../meetings/Backlog-Preparation.html"><span class="doc std std-doc">Backlog Preparation</span></a></p></li>
+<li><p><a class="reference internal" href="../meetings/Sprint-Planning.html"><span class="doc std std-doc">Sprint Planning</span></a></p></li>
+<li><p><a class="reference internal" href="../meetings/Sprint-Review-and-Retro.html"><span class="doc std std-doc">Sprint Review</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Things-to-know-as-a-developer.html" class="btn btn-neutral float-left" title="Things to know as a developer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Umbrella-Tickets.html" class="btn btn-neutral float-right" title="Umbrella tickets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

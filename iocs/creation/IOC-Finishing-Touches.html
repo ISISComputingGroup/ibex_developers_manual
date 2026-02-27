@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IOC Finishing Touches &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Generator" href="IOC-Generator.html" />
+    <link rel="prev" title="Duplicating IOCs" href="Duplicating-IOCs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Creation.html">IOC Creation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-ioc-to-epics-hardware-list.html">Add IOC to EPICS hardware support list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-IOC-wrapper-VI.html">LvDCOM IOCs (LabVIEW wrapper IOCs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-New-Submodules-in-EPICS.html">Creating new submodules in EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-an-ISIS-StreamDevice-IOC.html">Creating an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Duplicating-IOCs.html">Duplicating IOCs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IOC Finishing Touches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Generator.html">IOC Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Writing-An-ISIS-Stream-Device.html">Writing an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ioc-pcaspy.html">Creating a pcaspy IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Creation.html">IOC Creation</a></li>
+      <li class="breadcrumb-item active">IOC Finishing Touches</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/creation/IOC-Finishing-Touches.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ioc-finishing-touches">
+<h1>IOC Finishing Touches<a class="headerlink" href="#ioc-finishing-touches" title="Link to this heading"></a></h1>
+<p>This page documents the finishing touches to make to your IOC to make it function within the IBEX environment.</p>
+<section id="ioc-finishing-touches-interesting-pvs">
+<h2>1. Interesting PVs<a class="headerlink" href="#ioc-finishing-touches-interesting-pvs" title="Link to this heading"></a></h2>
+<p>To have a PV appear in the interest list in IBEX Configurations add the following to the PV record:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>info(INTEREST, &quot;&lt;LEVEL&gt;&quot;)
+</pre></div>
+</div>
+<p>where the level is HIGH, MEDIUM, LOW.</p>
+<p>For records that are of no “interest” do not add an interest info field. For example, intermediate CALC records, SIM records etc.</p>
+<p>Any calc record which is interesting needs <code class="docutils literal notranslate"><span class="pre">field(ASG,</span> <span class="pre">&quot;READONLY&quot;)</span></code> added so it cannot be set by accident.</p>
+</section>
+<section id="ioc-finishing-touches-archive-pvs">
+<h2>2. Archive PVs<a class="headerlink" href="#ioc-finishing-touches-archive-pvs" title="Link to this heading"></a></h2>
+<p>To have a PV automatically archived add the following to the PV record</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>info(archive, &quot;VAL&quot;)
+</pre></div>
+</div>
+<p>This will archive the value of the <code class="docutils literal notranslate"><span class="pre">VAL</span></code> field once per second. The general form is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>info(archive, &quot;&lt;period&gt; &lt;field&gt;&quot;)
+</pre></div>
+</div>
+<p>Where</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* period (defaults to 1):
+    * when +ve - sign up to monitor the pv use the period field to determine a typical delay between samples in seconds 
+    * when -ve - monitor the value the value is the deadband for the system
+* field: the field to monitor on the record
+</pre></div>
+</div>
+<p>Find more information at <a class="reference internal" href="../../system_components/Logging-from-the-archive.html"><span class="doc std std-doc">Logging from the archive</span></a>.</p>
+</section>
+<section id="ioc-finishing-touches-alarm-pvs">
+<h2>3. Alarm PVs<a class="headerlink" href="#ioc-finishing-touches-alarm-pvs" title="Link to this heading"></a></h2>
+<p>If you want a PV to appear in the alarm view (and there should be at least one per IOC so that it can show disconnected) then add:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>info(alarm, &quot;&lt;name of IOC (not including _0X)&gt;&quot;)
+</pre></div>
+</div>
+</section>
+<section id="ioc-finishing-touches-autosave-pvs">
+<h2>4. Autosave PVs<a class="headerlink" href="#ioc-finishing-touches-autosave-pvs" title="Link to this heading"></a></h2>
+<p>PVs can be autosaved so that they save their values and are reloaded when the IOC starts. The value is set before the record is initialised so is only processed using this value if <code class="docutils literal notranslate"><span class="pre">PINI</span></code> is Yes; although waveform records do this differently and will process the record. To do this mark the field with the following info line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>info(autosaveFields, &quot;VAL&quot;)
+</pre></div>
+</div>
+<p>The second argument is the field which is autosaved within the record.</p>
+</section>
+<section id="ioc-finishing-touches-disable-records">
+<h2>5. Disable records<a class="headerlink" href="#ioc-finishing-touches-disable-records" title="Link to this heading"></a></h2>
+<p>It is very useful to be able to turn an IOC on and off by simply writing to a special PV, as it is a lot faster and more convenient than actually restarting the whole IOC. The instructions can be found <a class="reference internal" href="../testing/Disable-records.html"><span class="doc std std-doc">here</span></a> .</p>
+</section>
+<section id="ioc-finishing-touches-essential-fields">
+<h2>6. PVs Have Essential Fields<a class="headerlink" href="#ioc-finishing-touches-essential-fields" title="Link to this heading"></a></h2>
+<p>All PVs should have if appropriate:</p>
+<ul class="simple">
+<li><p>Description (<code class="docutils literal notranslate"><span class="pre">DESC</span></code> field)</p></li>
+<li><p>Unit fields if representing a value (<code class="docutils literal notranslate"><span class="pre">EGU</span></code> field) which may be blank</p>
+<ul>
+<li><p>Units must be in …</p></li>
+</ul>
+</li>
+<li><p>Precision (<code class="docutils literal notranslate"><span class="pre">PREC</span></code>) for records with floating point numbers - is this set correctly for what a user/technician requires</p></li>
+</ul>
+</section>
+<section id="ioc-finishing-touches-setpoints">
+<h2>7. Initialising Setpoints<a class="headerlink" href="#ioc-finishing-touches-setpoints" title="Link to this heading"></a></h2>
+<p>Setpoint pvs should have “undefined field” initialised by adding the following record to the PV:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>field(UDFS, &quot;NO_ALARM&quot;)
+</pre></div>
+</div>
+<p>This means that they can have alarm sensitive borders but will not alarm if they have never been set.</p>
+</section>
+<section id="ioc-finishing-touches-dbchecker">
+<h2>8. Compliance with DBChecker<a class="headerlink" href="#ioc-finishing-touches-dbchecker" title="Link to this heading"></a></h2>
+<p>The build in Jenkins will fail if the rules of the <a class="reference internal" href="../conventions/PV-Units-%26-Standards.html"><span class="doc std std-doc">DBChecker</span></a> script are not satisfied. You might as well check them beforehand to save yourself time later. See linked page for additional information &amp; instructions.</p>
+</section>
+<section id="ioc-finishing-touches-macros">
+<h2>9. Macros and Details<a class="headerlink" href="#ioc-finishing-touches-macros" title="Link to this heading"></a></h2>
+<p>Macros where possible should follow the <a class="reference internal" href="../conventions/Macro-Naming.html"><span class="doc std std-doc">standard names</span></a>. If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. <code class="docutils literal notranslate"><span class="pre">..\EPICS\ioc\master\&lt;IOC</span> <span class="pre">Name&gt;\iocBoot\&lt;IOC</span> <span class="pre">Instance</span> <span class="pre">Name&gt;\config.xml</span></code>). Common macros should be included from <code class="docutils literal notranslate"><span class="pre">..\EPICS\ioc\common\</span></code>.The file is of the form:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="nt">&lt;ioc_config</span><span class="w"> </span><span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;config_part&gt;</span>
+<span class="nt">&lt;ioc_desc&gt;</span>Eurotherm<span class="w"> </span>temperature<span class="w"> </span>controller<span class="nt">&lt;/ioc_desc&gt;</span>
+<span class="nt">&lt;macros&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xi:include</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;../../../COMMON/PORT.xml&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;BAUD&quot;</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;^[0-9]+$&quot;</span><span class="w"> </span><span class="na">description=</span><span class="s">&quot;Serial communication baud rate, defaults to 9600.&quot;</span><span class="w"> </span><span class="na">defaultValue=</span><span class="s">&quot;9600&quot;</span><span class="w"> </span><span class="na">hasDefault=</span><span class="s">&quot;YES&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;BITS&quot;</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;^[0-9]$&quot;</span><span class="w"> </span><span class="na">description=</span><span class="s">&quot;Serial communication number of bits, defaults to 7.&quot;</span><span class="w"> </span><span class="na">defaultValue=</span><span class="s">&quot;7&quot;</span><span class="w"> </span><span class="na">hasDefault=</span><span class="s">&quot;YES&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;PARITY&quot;</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;^(even)|(odd)|(none)$&quot;</span><span class="w"> </span><span class="na">description=</span><span class="s">&quot;Serial communication parity, defaults to even.&quot;</span><span class="w"> </span><span class="na">defaultValue=</span><span class="s">&quot;even&quot;</span><span class="w"> </span><span class="na">hasDefault=</span><span class="s">&quot;YES&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;STOP&quot;</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;^[0-9]$&quot;</span><span class="w"> </span><span class="na">description=</span><span class="s">&quot;Serial communication stop bit, defaults to 1.&quot;</span><span class="w"> </span><span class="na">defaultValue=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">hasDefault=</span><span class="s">&quot;YES&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ADDR_1&quot;</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;^[0-9]{1,2}$&quot;</span><span class="w"> </span><span class="na">description=</span><span class="s">&quot;Address for the 1st Eurotherm on this port e.g. 01. Blank for do not use.&quot;</span><span class="w"> </span><span class="na">hasDefault=</span><span class="s">&quot;UNKNOWN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;LOCAL_CALIB&quot;</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;^(yes)|(no)$&quot;</span><span class="w"> </span><span class="na">description=</span><span class="s">&quot;Use local instrument calibration directory instead of common one? Default is no.&quot;</span><span class="w"> </span><span class="na">defaultValue=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="na">hasDefault=</span><span class="s">&quot;YES&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/macros&gt;</span>
+<span class="nt">&lt;/config_part&gt;</span>
+<span class="nt">&lt;/ioc_config&gt;</span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ioc_desc</span></code> is a short description of the IOC e.g Lakeshore 218 for LKSH218. This field is shown alongside the IOC name in the GUI when adding or editing IOCs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ioc_details</span></code> is more details about the IOC, e.g. link to docs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">macro</span></code> describes a macro settable by a user.</p>
+<ul>
+<li><p>containing <code class="docutils literal notranslate"><span class="pre">name</span></code>, is the name of the macro;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>, the regex for the macro’s value; Useful regex for macros:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">^-?[0-9]+\.?[0-9]*$</span></code>: float with sign</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^[0-9]+\.?[0-9]*$</span></code>: float no sign</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^[0-9]+$</span></code>: integer no sign</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>, a plain text description which is shown to the user.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">defaultValue</span></code>, the default value of the macro, if it exists (this attribute is not required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hasDefault</span></code>, if the macro has a default, either <code class="docutils literal notranslate"><span class="pre">&quot;YES&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;NO&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;UNKNOWN&quot;</span></code>. (Note that <code class="docutils literal notranslate"><span class="pre">UNKNOWN</span></code> exists for legacy reasons, new IOCs should not use it)</p></li>
+</ul>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">config.xml</span></code> support include so if you have several iocs with the same set of macros you don’t need to repeat the file contents. Example GALIL02 (see below) uses GALIL01’s config:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="nt">&lt;ioc_config</span><span class="w"> </span><span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xi:include</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;../iocGALIL-IOC-01/config.xml&quot;</span><span class="w">  </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/ioc_config&gt;</span>
+</pre></div>
+</div>
+<p>Either a full make of the server or running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">iocstartups</span></code> from the EPICS folder will then make the contents of these XML files available to the GUI (after restarting the instrument).</p>
+<p><strong>Tips</strong></p>
+<ul class="simple">
+<li><p>If you want a macro that restricts input to be a byte, so 0-255, then you can use ^<span class="math notranslate nohighlight">\(|^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\)</span> . You can change this so it allows any range of integers of you desire. <a class="reference external" href="https://regex101.com/">This website</a> is a good resource for checking regex expressions.</p></li>
+</ul>
+</section>
+<section id="pv-limits">
+<h2>10. PV Limits<a class="headerlink" href="#pv-limits" title="Link to this heading"></a></h2>
+<p>If a limit on a set point is well defined (i.e., given by a device manual) then the fields <code class="docutils literal notranslate"><span class="pre">DRVH</span></code> “Drive High” and <code class="docutils literal notranslate"><span class="pre">DRVL</span></code> “Drive Low” should be used to constrain the PV set point. The behaviour of these fields is that if a limit is 10.0 and a user inputs 11.0, then the PV will constrain the input to 10.0 and process that value. Records that use limits should also be robustly tested to ensure the behave as expected. An example test:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nd">@parameterized</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span>
+        <span class="p">(</span><span class="s2">&quot;lt_low_limit&quot;</span><span class="p">,</span> <span class="n">CURR_LOW_LIMIT</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;low_limit&quot;</span><span class="p">,</span> <span class="n">CURR_LOW_LIMIT</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;gt_high_limit&quot;</span><span class="p">,</span> <span class="n">CURR_HIGH_LIMIT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;high_limit&quot;</span><span class="p">,</span> <span class="n">CURR_HIGH_LIMIT</span><span class="p">)])</span>
+    <span class="nd">@skip_if_recsim</span><span class="p">(</span><span class="s2">&quot;Behaviour cannot be simulated in Recsim&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_WHEN_voltage_setpoint_is_set_outside_max_limits_THEN_setpoint_within</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">case_value</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">limit_value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ca</span><span class="o">.</span><span class="n">set_pv_value</span><span class="p">(</span><span class="s2">&quot;CURRENT:SP&quot;</span><span class="p">,</span> <span class="n">case_value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ca</span><span class="o">.</span><span class="n">assert_that_pv_is</span><span class="p">(</span><span class="s2">&quot;CURRENT:SP&quot;</span><span class="p">,</span> <span class="n">limit_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="directories-added-to-makefiles">
+<h2>11. Directories added to Makefiles<a class="headerlink" href="#directories-added-to-makefiles" title="Link to this heading"></a></h2>
+<p>Type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">checkdirs</span>
+</pre></div>
+</div>
+<p>at EPICS top level and make sure it completes ok</p>
+</section>
+<section id="add-ioc-to-epics-hardware-list">
+<h2>12. Add IOC to EPICS hardware list<a class="headerlink" href="#add-ioc-to-epics-hardware-list" title="Link to this heading"></a></h2>
+<p>Once the IOC is reviewed and tested with hardware, <a class="reference internal" href="Add-ioc-to-epics-hardware-list.html"><span class="doc std std-doc">add it to the EPICS hardware list</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Duplicating-IOCs.html" class="btn btn-neutral float-left" title="Duplicating IOCs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-Generator.html" class="btn btn-neutral float-right" title="IOC Generator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

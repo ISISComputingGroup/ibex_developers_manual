@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mount or create IBEX VHDs &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tools" href="../../Tools.html" />
+    <link rel="prev" title="Containerising the Archive Appliance" href="Containerising-the-Archiver-Appliance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Deploy.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Patch.html">Patching</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Future.html">Future Workflows</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Containerising-an-IOC.html">Containerising an IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Containerising-the-Archiver-Appliance.html">Containerising the Archive Appliance</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mount or create IBEX VHDs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Future.html">Future Workflows</a></li>
+      <li class="breadcrumb-item active">Mount or create IBEX VHDs</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/future_workflows/Mount-or-create-IBEX-VHDs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mount-or-create-ibex-vhds">
+<h1>Mount or create IBEX VHDs<a class="headerlink" href="#mount-or-create-ibex-vhds" title="Link to this heading"></a></h1>
+<p>The new architecture for deployment is to deploy onto VHDs which will be copied to the desired places and linked in.</p>
+<section id="parts-of-the-system">
+<h2>Parts of the system<a class="headerlink" href="#parts-of-the-system" title="Link to this heading"></a></h2>
+<section id="system-vhd">
+<h3>System VHD<a class="headerlink" href="#system-vhd" title="Link to this heading"></a></h3>
+<p>There needs to be a system VHD, this has been created by Chris and will be detailed <em>CHRIS TODO</em>. This contains windows and user level programs (probably including LabVIEW).</p>
+</section>
+<section id="app-vhd">
+<h3>App VHD<a class="headerlink" href="#app-vhd" title="Link to this heading"></a></h3>
+<p>IBEX applications need to be placed on a disk and these should be generic for all instruments. In practice hot fixes will make them different, we record hotfixes and these are reapplied on upgrade of needed.</p>
+</section>
+<section id="configuration-settings-vhd">
+<h3>Configuration Settings VHD<a class="headerlink" href="#configuration-settings-vhd" title="Link to this heading"></a></h3>
+<p>IBEX settings are placed on a setting VHD, these will be created once when the instrument is converted to use VHDs and after that this will be persisted through IBEX and Windows upgrades. On Upgrade, the configuration will need to be upgraded and the common calibration files need to be updated.</p>
+</section>
+<section id="var-vhd">
+<h3>Var VHD<a class="headerlink" href="#var-vhd" title="Link to this heading"></a></h3>
+<p>These contain part of the system which change often. We are undecided what to do on upgrade:</p>
+<ul class="simple">
+<li><p><em>Either:</em> Create the VHD when migrated and on upgrade truncate the database, move old log files and old autosave files. Then upgrade the database.</p></li>
+<li><p><em>Or:</em> Every upgrade use a new common VHD copy across autosave files (maybe these should live in settings), dump the data schema for interesting tables and reimport it.</p></li>
+</ul>
+<p>For the test system I have gone with the first approach because it was easy. I like the second approach better.</p>
+</section>
+</section>
+<section id="vhd-creation">
+<h2>VHD Creation<a class="headerlink" href="#vhd-creation" title="Link to this heading"></a></h2>
+<section id="create-empty-vhds">
+<h3>Create empty VHDs<a class="headerlink" href="#create-empty-vhds" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Copy the three empty vhdx files (<code class="docutils literal notranslate"><span class="pre">empty_apps.vhdx</span></code>, <code class="docutils literal notranslate"><span class="pre">empty_var.vhdx</span></code>,<code class="docutils literal notranslate"><span class="pre">empty_settings.vhdx</span></code>) to a local disk (from CompGroup\chris) and rename to
+<code class="docutils literal notranslate"><span class="pre">apps.vhdx</span></code>, <code class="docutils literal notranslate"><span class="pre">var.vhdx</span></code> and <code class="docutils literal notranslate"><span class="pre">settings.vhdx</span></code>.</p></li>
+<li><p>These are pre-configured to be 30GB each.</p></li>
+</ol>
+</section>
+<section id="mount-a-vhd">
+<h3>Mount a VHD<a class="headerlink" href="#mount-a-vhd" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Open a command prompt as administrator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diskmgmt.msc</span></code></p></li>
+<li><p>Click Action -&gt; Attach VHD</p>
+<ul class="simple">
+<li><p>I had to click help first</p></li>
+</ul>
+</li>
+<li><p>Select location of VHD</p></li>
+<li><p>Mount <code class="docutils literal notranslate"><span class="pre">Apps.vhdx</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps</span></code> by creating a directory junction from <code class="docutils literal notranslate"><span class="pre">c:\instrument\apps</span></code> to the drive letter of the VHD you mounted</p></li>
+<li><p>Mount <code class="docutils literal notranslate"><span class="pre">Settings.vhdx</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config</span></code> as above</p></li>
+<li><p>Mount <code class="docutils literal notranslate"><span class="pre">Var.vhdx</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\var</span></code> as above</p></li>
+</ol>
+</section>
+<section id="dismounting-vhd">
+<h3>Dismounting VHD<a class="headerlink" href="#dismounting-vhd" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Close the VHD and copy back</p>
+<ol class="arabic simple">
+<li><p>Right click on drive on left at the bottom</p></li>
+<li><p>Detach VHD</p></li>
+<li><p>Copy file back to the source</p></li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+<section id="vhd-creation-jenkins-job">
+<h2>VHD Creation Jenkins Job<a class="headerlink" href="#vhd-creation-jenkins-job" title="Link to this heading"></a></h2>
+<p>There is an <a class="reference external" href="http://epics-jenkins.isis.rl.ac.uk/job/Create_VHD/">automated job in jenkins</a> which builds VHDs from the latest IBEX server/client/python versions.</p>
+<section id="build-server-setup">
+<h3>Build server setup<a class="headerlink" href="#build-server-setup" title="Link to this heading"></a></h3>
+<p>To set up a computer to be able to run the <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade">automated VHD creation script</a>:</p>
+<ul class="simple">
+<li><p>Hyper-V must be enabled on the computer which will be running the script. It can be turned on by searching for “turn windows features on or off” from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn’t already turned on this will require a restart. If you are on Windows 2012, enable it from the Server Manager (by the start button on the desktop) then select Manage -&gt; Add Roles and Features and check the entire Hyper-V tree.</p></li>
+<li><p>Powershell must be upgraded to at least version 5 to support the commands we are using.</p></li>
+<li><p>Set up an environment variable called <code class="docutils literal notranslate"><span class="pre">MYSQL_PASSWORD</span></code> containing the MySQL root user password.</p></li>
+<li><p>In the admin documents area, create an (empty) folder at <code class="docutils literal notranslate"><span class="pre">C:\Users\Administrator\Documents\fake_release_dir\1.0.0</span></code></p></li>
+<li><p>A local python must be installed in <code class="docutils literal notranslate"><span class="pre">C:\Users\Administrator\Documents</span></code>. Note: we do not use the python from the network share here as we are running as Admin.</p></li>
+<li><p>The machine you’re installing this on must be listed in genie_logger.py in the vhd_builder list to avoid writing logs to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Var\logs</span></code> before Var is mounted</p></li>
+</ul>
+<p>These items cannot be automated by jenkins as they need to be the admin user.</p>
+</section>
+<section id="mounting-and-dismounting-vhds-automatically">
+<h3>Mounting and dismounting VHDs automatically<a class="headerlink" href="#mounting-and-dismounting-vhds-automatically" title="Link to this heading"></a></h3>
+<p>Because VHD mounting and dismounting requires admin rights, this is done by a scheduled task running as the admin user. The code run by these scheduled tasks is checked out to <code class="docutils literal notranslate"><span class="pre">C:\Users\Administrator\Documents\ibex_utils\installation_and_upgrade</span></code>, and the bat file which is run is <code class="docutils literal notranslate"><span class="pre">vhd_scheduled_task.bat</span></code>.</p>
+<p>The scheduled tasks run every minute and look for a file which is created by the install script. If this file exists, the tasks will mount/dismount the vhds and then delete the file. Otherwise the tasks do nothing.</p>
+</section>
+<section id="build-artefacts">
+<h3>Build artefacts<a class="headerlink" href="#build-artefacts" title="Link to this heading"></a></h3>
+<p>Empty VHDs are currently taken from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\isis\inst$\Kits$\CompGroup\Chris
+</pre></div>
+</div>
+<p>Once filled with IBEX files, the VHDs are copied to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\isis\inst$\Kits$\CompGroup\ICP\VHDS
+</pre></div>
+</div>
+</section>
+</section>
+<section id="upgrade-ibex-version-on-a-vm-by-copying-vhd">
+<h2>Upgrade IBEX Version on a VM By Copying VHD<a class="headerlink" href="#upgrade-ibex-version-on-a-vm-by-copying-vhd" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The VM set up, running an older version of IBEX, has been located within Hyper-V manager.</p></li>
+<li><p>If you wish, a ‘Checkpoint’ (Right Click -&gt; Checkpoint) can be capture of the current system to allow a way to restore the VM to a functioning state, if required.</p></li>
+<li><p>Ensure that the VM is switched OFF (Right Click -&gt; Turn Off…).</p></li>
+<li><p>Once the State has changed to ‘Off’, Right Click the VM and select ‘Settings…’.</p></li>
+<li><p>Under Hardware -&gt; SCSI Controller, Select the Hard Drive for ‘/apps’.</p></li>
+<li><p>Select ‘Browse…’ and locate the ‘/apps’ drive containing the latest IBEX build.</p></li>
+<li><p>Select ‘Open’, and double check this is the correct drive.</p></li>
+<li><p>Select ‘Apply’ and then ‘OK’.</p></li>
+<li><p>To test that the IBEX has been updated, double click the VM or right click and press ‘Start’.</p></li>
+<li><p>Once the IBEX server has been start, you can check the version within ‘Help’ -&gt; ‘About’ on the toolbar within the IBEX GUI.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Containerising-the-Archiver-Appliance.html" class="btn btn-neutral float-left" title="Containerising the Archive Appliance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../Tools.html" class="btn btn-neutral float-right" title="Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

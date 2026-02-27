@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remote Working (VNC Cloud) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Continuous Integration" href="../Continuous-Integration.html" />
+    <link rel="prev" title="Access to ISIS Instrument Halls" href="Obtaining-access-to-the-Instrument-Hall.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Admin.html">Admin</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Data-Protection.html">Data Protection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Obtaining-access-to-the-Instrument-Hall.html">Access to ISIS Instrument Halls</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Remote Working (VNC Cloud)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Admin.html">Admin</a></li>
+      <li class="breadcrumb-item active">Remote Working (VNC Cloud)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/admin/Remote-Working.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="remote-working-vnc-cloud">
+<h1>Remote Working (VNC Cloud)<a class="headerlink" href="#remote-working-vnc-cloud" title="Link to this heading"></a></h1>
+<section id="proposed-structure-for-vnc-cloud-groups">
+<h2>Proposed structure for VNC Cloud Groups:<a class="headerlink" href="#proposed-structure-for-vnc-cloud-groups" title="Link to this heading"></a></h2>
+<p><img alt="" src="../../_images/Remote-Working-vnc-cloud.png" /></p>
+</section>
+<section id="proposed-procedure-for-setting-up-vnc-cloud-access">
+<h2>Proposed procedure for setting up VNC Cloud access:<a class="headerlink" href="#proposed-procedure-for-setting-up-vnc-cloud-access" title="Link to this heading"></a></h2>
+<p><strong>Owner / Admin (Single Experiment Controls group member)</strong></p>
+<ol class="arabic simple">
+<li><p>Enables “global” Two-Factor Authentication for <em>all</em> users of the VNC Cloud system, in accordance with site security advice.</p></li>
+<li><p>Creates “Machine Groups” in VNC portal all within the ISIS “Team”, one per physical ISIS instrument e.g. “LMX” (See diagram above)</p></li>
+<li><p>Creates “People Groups”, one per instrument (e.g. “LMX Instrument Scientists” or perhaps “LMX Users” containing instrument scientists <em>and</em> external users for simplicity)</p></li>
+<li><p>Grants access to Machine Group to appropriate People Group</p></li>
+<li><p>Invites Instrument Scientists (IS) to create a VNC account via VNC portal (invitation email)</p></li>
+<li><p>Grants “Manager” privilege to IS</p></li>
+<li><p>Adds IS to appropriate People Group(s)</p></li>
+</ol>
+<p><strong>Manager (IS or other ExptCtrl member)</strong></p>
+<ol class="arabic simple">
+<li><p>Creates VNC Cloud account using link in invitation email from Owner/Admin</p></li>
+<li><p>Sends emails to external users via VNC Cloud portal inviting them to create a VNC account</p></li>
+<li><p>Grants “User” privilege to new users</p></li>
+<li><p>Adds users to appropriate People (instrument) Group(s) (and removes when experiment over)</p></li>
+<li><p>(Optional if willing &amp; able) Installs VNC Server on the relevant machine(s) (e.g. NDCxxx &amp; NDLxxx) via conventional VPN and RDP. (Details in “Deployment” section of VNC Cloud portal).  More help in <a class="reference external" href="https://help.realvnc.com/hc/en-us/articles/360002253198-Installing-and-Removing-VNC-Connect#windows-0-0">VNC Article</a></p></li>
+<li><p>Enables “Cloud Connectivity” in Server options. More help in <a class="reference external" href="https://help.realvnc.com/hc/en-us/articles/360002249737-All-About-Cloud-Connections#enabling-cloud-connectivity-on-a-remote-computer-0-1">VNC Article</a></p></li>
+<li><p>Adds “local” computers (viewing, analysis, etc.) to Machine Group(s) (See diagram above)</p></li>
+<li><p>Performs below steps to use VNC client</p></li>
+</ol>
+<p><strong>User (External facility user):</strong></p>
+<ol class="arabic simple">
+<li><p>Creates VNC cloud account using link in invitation email from IS</p></li>
+<li><p>Downloads, installs and runs VNC client.</p></li>
+<li><p>Logs in and is presented with list of machines authorised to connect to</p></li>
+<li><p>Connects to a machine, typically a general access cabin PC (NDCxxx) or analysis machine (NDLxxx)
+<em>[at this point has same access as if physically present in instrument cabin]</em></p></li>
+<li><p>Connects to instrument control computer (NDXxxx) via RDP (if session not already established)</p></li>
+</ol>
+</section>
+<section id="read-write-and-read-only">
+<h2>Read/Write and Read-only<a class="headerlink" href="#read-write-and-read-only" title="Link to this heading"></a></h2>
+<p>The <em>Read Only</em> and <em>Read/Write</em> access is to be controlled by changing the privileges on the viewing machine’s standard instrument user account (ISUA).</p>
+<p>This will be for the simplest case for when the viewing machine is running Windows and has (ISIS instrument) standard local user and admin accounts, although the principal still applies to a Linux analysis machine and other cabin machines.</p>
+<p><strong>Procedure:</strong></p>
+<ol class="arabic simple">
+<li><p>Instrument scientist adds ISUA to access list in “Users and Permissions” section of VNC Server options</p></li>
+<li><p>IS changes permissions in VNC server settings for ISUA to be either R or R/W to suit experiment</p></li>
+<li><p>User runs local VNC client and logs in using their personal account</p></li>
+<li><p>User sees list of available machines and connects to one using ISUA</p></li>
+<li><p>Views (if R only and connection previously established by IS) <strong>OR</strong></p></li>
+<li><p>Connects (if R/W) to screen of instrument control computer via RDP if no active session, or “local” VNC client (as if in cabin in person)</p></li>
+<li><p>Instrument scientist sets privileges of ISUA back to Read Only after experiment ends</p></li>
+<li><p>(Optional) IS removes user from “Instrument People group” in VNC Cloud portal</p></li>
+</ol>
+<p>See <a class="reference external" href="https://help.realvnc.com/hc/en-us/articles/360002253618-Managing-Users-and-Session-Permissions-for-VNC-Server">VNC article</a> for more information.</p>
+<p><strong>NB</strong></p>
+<p>When connecting using an account which has <em>Read Only</em> access, the Users will have <strong><em>no control</em></strong> over the remote computer whatsoever, not even being able to connect to the control machine.  This option is severely limited (by design) and so relies heavily on the IS to create and leave the RDP session to the control machine in a state which will provide sufficient information to their Users.</p>
+<p>The <em>Read / Write</em> option on the other hand, offers <strong><em>full control</em></strong> of the remote computer and so the IS needs to consider carefully the implications of allowing Users to connect with this privilege level.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>If you can connect via cloud VNC but get a blank screen that you can do nothing with, this may be because no monitor is attached to the computer. The cloud VNC mechanism needs to have the vnc server program running in service mode (as a windows service), and this seems to need a screen of some sort. We run VNC server in user mode on the NDX and this is happy just having an active remote desktop session rather than a real screen, but user mode only allows point to point and not cloud connections.</p>
+<p>We have purchased some “screen dongles” that can be used instead of a real monitor, these attach to e.g. a display port adapter port on the PC.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Obtaining-access-to-the-Instrument-Hall.html" class="btn btn-neutral float-left" title="Access to ISIS Instrument Halls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Continuous-Integration.html" class="btn btn-neutral float-right" title="Continuous Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

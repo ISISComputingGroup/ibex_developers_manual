@@ -1,0 +1,1332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IOC Startup Example &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Crash - find function from offset" href="IOC-crash-or-unexpected-termination-%E2%80%90-Find-function-from-windows-module-offset.html" />
+    <link rel="prev" title="General troubleshooting" href="IOC-And-Device-Trouble-Shooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ASYN-Trace-Masks-%28Debugging-IOC%2C-ASYN%29.html">Asyn Trace Masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Walker.html">DLL Dependency Walker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-And-Device-Trouble-Shooting.html">General troubleshooting</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IOC Startup Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#full-log">Full Log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-crash-or-unexpected-termination-%E2%80%90-Find-function-from-windows-module-offset.html">IOC Crash - find function from offset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-flow-control-settings.html">IOC Flow Control Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Log-file-location.html">Log file locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Remote-Debugging-from-Visual-Studio.html">Remote Debugging from Visual Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serial-Bruteforce-script.html">Serial Bruteforce Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serial-Port-Debug.html">Serial Port Debug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestSerialPort.html">TestSerialPort</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Troubleshooting.html">Troubleshooting</a></li>
+      <li class="breadcrumb-item active">IOC Startup Example</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/troubleshooting/IOC-Start-Example.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ioc-startup-example">
+<h1>IOC Startup Example<a class="headerlink" href="#ioc-startup-example" title="Link to this heading"></a></h1>
+<p>The following gives an example of a normal start of SIMPLE IOC running in proc serve with the instrument running. The following splits out all the bits:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">52</span><span class="p">]</span> <span class="o">@@@</span> <span class="n">Restarting</span> <span class="n">child</span> <span class="s2">&quot;SIMPLE&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">52</span><span class="p">]</span> <span class="o">@@@</span>    <span class="p">(</span><span class="k">as</span> <span class="n">C</span><span class="p">:</span>\<span class="n">windows</span>\<span class="n">system32</span>\<span class="n">cmd</span><span class="o">.</span><span class="n">exe</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">52</span><span class="p">]</span> <span class="o">@@@</span> <span class="n">The</span> <span class="n">PID</span> <span class="n">of</span> <span class="n">new</span> <span class="n">child</span> <span class="s2">&quot;SIMPLE&quot;</span> <span class="ow">is</span><span class="p">:</span> <span class="mi">7280</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">52</span><span class="p">]</span> <span class="o">@@@</span> <span class="o">@@@</span> <span class="o">@@@</span> <span class="o">@@@</span> <span class="o">@@@</span>
+</pre></div>
+</div>
+<p>header which shows what has started</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#!../../bin/windows-x64/simple</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## You may have to change simple to something else</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## everywhere it appears in this file</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">envPaths</span>
+</pre></div>
+</div>
+<p>start of st.cmd file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;IOC&quot;</span><span class="p">,</span><span class="s2">&quot;iocsimple&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;TOP&quot;</span><span class="p">,</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;ACCESSSECURITY&quot;</span><span class="p">,</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/support/AccessSecurity/master&quot;</span><span class="p">)</span>
+<span class="o">...&lt;</span><span class="n">snip</span><span class="o">&gt;</span> <span class="o">...</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;IOCSTARTUP&quot;</span><span class="p">,</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/iocstartup&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;ICPBINARYDIR&quot;</span><span class="p">,</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/ICP_Binaries&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>macros which are defined in <code class="docutils literal notranslate"><span class="pre">EPICS\configure\MASTER_RELEASE</span></code> and point to support modules that may be used by the IOC</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">ISIS</span><span class="o">/</span><span class="n">SimpleIoc</span><span class="o">/</span><span class="n">master</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## Register all support components</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">dbLoadDatabase</span> <span class="s2">&quot;dbd/simple.dbd&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">simple_registerRecordDeviceDriver</span> <span class="n">pdbbase</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">iocstartup</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">cmd</span>
+</pre></div>
+</div>
+<p>More st.cmd and then load initial init which sets up configuration info:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[2017-08-16 13:53:54] icpconfigLoad
+[2017-08-16 13:53:54] icpconfigLoad: ioc &quot;SIMPLE&quot; group &quot;SIMPLE&quot; options 0x0 host &quot;NDW1798&quot;
+[2017-08-16 13:53:54] icpconfigLoad: config base (ICPCONFIGBASE) is &quot;C:/Instrument/Settings/config&quot;
+[2017-08-16 13:53:54] icpconfigLoad: config root (ICPCONFIGROOT) is &quot;C:/Instrument/Settings/config/NDW1798/configurations&quot;
+[2017-08-16 13:53:54] icpconfigLoad: * $(SIMULATE)=&quot;0&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFSIM)=&quot;#&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTSIM)=&quot; &quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(SIMSFX)=&quot;&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(DISABLE)=&quot;0&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFDISABLE)=&quot;#&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTDISABLE)=&quot; &quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(DEVSIM)=&quot;0&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFDEVSIM)=&quot;#&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTDEVSIM)=&quot; &quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(RECSIM)=&quot;0&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFRECSIM)=&quot;#&quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTRECSIM)=&quot; &quot; ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(ICPCONFIGDIR)=&quot;C:/Instrument/Settings/config/NDW1798/configurations/configurations/Instron&quot; ({initial default})
+</pre></div>
+</div>
+<p>defaults</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">last</span> <span class="n">configuration</span> <span class="n">was</span> <span class="s2">&quot;Instron&quot;</span> <span class="p">(</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Settings</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">NDW1798</span><span class="o">/</span><span class="n">configurations</span><span class="o">/</span><span class="n">configurations</span><span class="o">/</span><span class="n">Instron</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">configuration</span> <span class="s2">&quot;Instron&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">loading</span> <span class="mi">0</span> <span class="n">component</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="s2">&quot;/configurations/Instron&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">Loading</span> <span class="n">default</span> <span class="n">macros</span> <span class="k">for</span> <span class="s2">&quot;/configurations/Instron&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">Loading</span> <span class="n">IOC</span> <span class="n">sim</span> <span class="n">level</span> <span class="s2">&quot;/configurations/Instron&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">Loading</span> <span class="n">IOC</span> <span class="n">macros</span> <span class="k">for</span> <span class="s2">&quot;/configurations/Instron&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">Loading</span> <span class="n">IOC</span> <span class="n">PVs</span> <span class="k">for</span> <span class="s2">&quot;/configurations/Instron&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">Loading</span> <span class="n">IOC</span> <span class="n">PV</span> <span class="n">sets</span> <span class="k">for</span> <span class="s2">&quot;/configurations/Instron&quot;</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">Cannot</span> <span class="nb">open</span> <span class="n">directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Settings</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">NDW1798</span><span class="o">/</span><span class="n">configurations</span><span class="o">/</span><span class="n">configurations</span><span class="o">/</span><span class="n">Instron</span><span class="o">/</span><span class="n">files</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">Found</span> <span class="mi">0</span> <span class="n">files</span> <span class="k">for</span> <span class="s2">&quot;/configurations/Instron&quot;</span>
+</pre></div>
+</div>
+<p>Last configuration loaded</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[2017-08-16 13:53:54] icpconfigLoad: loading old macro file &quot;C:/Instrument/Settings/config/NDW1798/configurations/globals.txt&quot;
+[2017-08-16 13:53:54] icpconfigLoad: * $(GALILNUMCRATES)=&quot;1&quot; 
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">globals.txt</span></code> macros.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># define a macro with the same name as the IOC name and a blank value. This means we can use a line like</span>
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#  $(IFIOC_GALIL_01=#) to have something that is only executed in GALIL_01 IOC</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># and you can pass to db file via A=1,$(IFIOC)= ,A=2</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># used when loading motorUtils and motors moving</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;IFIOC&quot;</span><span class="p">,</span> <span class="s2">&quot;IFIOC_SIMPLE&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;IFIOC_SIMPLE&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">iocstartup</span><span class="o">/</span><span class="n">asyn</span><span class="o">.</span><span class="n">cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## defaults for asyn drivers</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## Global default is to trace only errors</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## 0=none,0x1=err,0x2=IO_device,0x4=IO_filter,0x8=IO_driver,0x10=flow,0x20=warning</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asynSetTraceMask</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asyn</span><span class="o">.</span><span class="n">cmd</span> <span class="n">line</span> <span class="mi">5</span><span class="p">:</span> <span class="n">Command</span> <span class="n">asynSetTraceMask</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## Global default to send trace output to errlog (missing 3rd arg passes NULL as that parameter)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asynSetTraceFile</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asyn</span><span class="o">.</span><span class="n">cmd</span> <span class="n">line</span> <span class="mi">8</span><span class="p">:</span> <span class="n">Command</span> <span class="n">asynSetTraceFile</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## Global default is to print escaped ascii for any IO_* trace specified above</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## 0=none,1=ascii,2=esc,4=hex</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asynSetTraceIOMask</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asyn</span><span class="o">.</span><span class="n">cmd</span> <span class="n">line</span> <span class="mi">12</span><span class="p">:</span> <span class="n">Command</span> <span class="n">asynSetTraceIOMask</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>async defaults</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">iocstartup</span><span class="o">/</span><span class="n">ioctesting</span><span class="o">.</span><span class="n">cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># If in test dev sim mode set up values</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span> <span class="n">TESTDEVSIM</span> <span class="s2">&quot;#&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># epicsEnvSet &quot;DEVSIM&quot; &quot;1&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># epicsEnvSet &quot;RECSIM&quot; &quot;0&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># stringiftest(&quot;DEVSIM&quot;, &quot;yes&quot;, 2)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># stringiftest(&quot;RECSIM&quot;, &quot;&quot;, 2)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># &lt; C:/Instrument/Var/tmp/test_config.txt</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># If in test rec sim mode</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span> <span class="n">TESTRECSIM</span> <span class="s2">&quot;#&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># epicsEnvSet &quot;DEVSIM&quot; &quot;0&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># epicsEnvSet &quot;RECSIM&quot; &quot;1&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># stringiftest(&quot;DEVSIM&quot;, &quot;&quot;, 2)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># stringiftest(&quot;RECSIM&quot;, &quot;yes&quot;, 2)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># &lt; C:/Instrument/Var/tmp/test_config.txt</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## Create the emulator port macro and set it to either the one given or a spare port:</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># freeIPPort(SPARE_PORT)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># epicsEnvSet &quot;EMULATOR_PORT&quot; </span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># epicsEnvShow(&quot;EMULATOR_PORT&quot;) </span>
+</pre></div>
+</div>
+<p>Set up macros for ioc test framework (including loading macros from the temp file if needed)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## Load record instances</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">iocstartup</span><span class="o">/</span><span class="n">dbload</span><span class="o">.</span><span class="n">cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#dbLoadRecords(&quot;$(TIMESTAMPRECORD)/db/timestamp.db&quot;,&quot;P=$(MYPVPREFIX)$(IOCNAME):&quot;)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/support/devIocStats/master/db/iocAdminSoft.db&quot;</span><span class="p">,</span><span class="s2">&quot;IOC=TE:NDW1798:CS:IOC:SIMPLE:DEVIOS&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#dbLoadRecords(&quot;$(ASUBFUNCTIONS)/db/iocExit.db&quot;,&quot;P=$(MYPVPREFIX),Q=CS:IOC:$(IOCNAME):,IOCNAME=$(IOCNAME)&quot;)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">iocstartup</span><span class="o">/</span><span class="n">autosave</span><span class="o">.</span><span class="n">cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## start autosave.cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restoreSet_Debug</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># status-PV prefix, so save_restore can find its status PV&#39;s.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#epicsEnvSet(&quot;ASPREFIX&quot;,&quot;$(MYPVPREFIX)CS:IOC:$(IOCNAME):AS:&quot;)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;ASPREFIX&quot;</span><span class="p">,</span><span class="s2">&quot;TE:NDW1798:AS:SIMPLE:&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restoreSet_status_prefix</span><span class="p">(</span><span class="s2">&quot;TE:NDW1798:AS:SIMPLE:&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># Ok to save/restore save sets with missing values (no CA connection to PV)?  </span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restoreSet_IncompleteSetsOk</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># Save dated backup files?</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restoreSet_DatedBackupFiles</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># Number of sequenced backup files to write</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restoreSet_NumSeqFiles</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># Time interval between sequenced backups</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restoreSet_SeqPeriodInSeconds</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># specify where save files should be - use a different directory if in simulation mode</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;C:/Instrument/Var/autosave/SIMPLE&quot;</span><span class="p">)</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">set_savefile_path</span><span class="p">(</span><span class="s2">&quot;C:/Instrument/Var/autosave&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## specify what save files should be restored.  Note these files must be</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## in the directory specified in set_savefile_path(), or, if that function</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## has not been called, from the directory current when iocInit is invoked</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## example: set_pass0_restoreFile(&quot;autosave_geiger.sav&quot;)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## restore positions at pass 0 so not passed to hardware</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">##</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## Use     epicsEnvSet(&quot;AUTOSAVEREQ&quot;,&quot;#&quot;)   if you do not have any req files to load</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span>  <span class="n">set_pass0_restoreFile</span><span class="p">(</span><span class="s2">&quot;SIMPLE_positions.sav&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span>  <span class="n">set_pass0_restoreFile</span><span class="p">(</span><span class="s2">&quot;SIMPLE_settings.sav&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># restore settings at pass 1 so passed to hardware</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span>  <span class="n">set_pass1_restoreFile</span><span class="p">(</span><span class="s2">&quot;SIMPLE_settings.sav&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># these values are obtained from info fields in DB files via makeAutosaveFiles() / makeAutosaveFileFromDbInfo()</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">set_pass0_restoreFile</span><span class="p">(</span><span class="s2">&quot;SIMPLE_info_positions.sav&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">set_pass0_restoreFile</span><span class="p">(</span><span class="s2">&quot;SIMPLE_info_settings.sav&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">set_pass1_restoreFile</span><span class="p">(</span><span class="s2">&quot;SIMPLE_info_settings.sav&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#save_restoreSet_CAReconnect(1)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># specify directories in which to to search for included request files</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">set_requestfile_path</span><span class="p">(</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master/iocBoot/iocsimple&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># Autosave status PVs - P must be same as used in save_restoreSet_status_prefix() above</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/support/autosave/master/asApp/Db/save_restoreStatus.db&quot;</span><span class="p">,</span> <span class="s2">&quot;P=TE:NDW1798:AS:SIMPLE:&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## end autosave.cmd</span>
+</pre></div>
+</div>
+<p>setup autosave.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;db/simple.db&quot;</span><span class="p">,</span><span class="s2">&quot;P=TE:NDW1798:SIMPLE:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>IOC db load of records</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">iocstartup</span><span class="o">/</span><span class="n">preiocinit</span><span class="o">.</span><span class="n">cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># write process variable and IOC startup information to database </span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">pvdump</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">pvdump</span><span class="p">:</span> <span class="n">ioc</span> <span class="n">name</span> <span class="ow">is</span> <span class="s2">&quot;SIMPLE&quot;</span> <span class="n">pid</span> <span class="mi">11856</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">pvdump</span><span class="p">:</span> <span class="n">MySQL</span> <span class="n">write</span> <span class="n">of</span> <span class="mi">129</span> <span class="n">PVs</span> <span class="k">with</span> <span class="mi">33</span> <span class="n">info</span> <span class="n">entries</span><span class="p">,</span> <span class="n">plus</span> <span class="mi">307</span> <span class="n">macros</span> <span class="n">took</span> <span class="mf">0.092</span> <span class="n">seconds</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># set up IOC access security</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asSetFilename</span><span class="p">(</span><span class="s2">&quot;C:/Instrument/Apps/EPICS/support/AccessSecurity/master/default.acf&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">asSetSubstitutions</span><span class="p">(</span><span class="s2">&quot;P=TE:NDW1798:,ACF_IH1=localhost,ACF_IH2=localhost,ACF_IH3=localhost,ACF_IH4=localhost&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1"># log to server address EPICS_IOC_LOG_INET listening on port EPICS_IOC_LOG_PORT </span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">#</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;EPICS_IOC_LOG_INET&quot;</span><span class="p">,</span> <span class="s2">&quot;localhost&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">iocLogInit</span><span class="p">()</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">log</span> <span class="n">client</span><span class="p">:</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">log</span> <span class="n">server</span> <span class="n">at</span> <span class="s2">&quot;127.0.0.1:7004&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">ISIS</span><span class="o">/</span><span class="n">SimpleIoc</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">iocBoot</span><span class="o">/</span><span class="n">iocsimple</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">iocInit</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">Starting</span> <span class="n">iocInit</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">############################################################################</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## EPICS R3.15.5</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">## EPICS Base built Jul 10 2017</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="c1">############################################################################</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">entry</span> <span class="k">for</span> <span class="n">file</span> <span class="s1">&#39;SIMPLE_positions.sav&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">Found</span> <span class="n">filename</span> <span class="s1">&#39;SIMPLE_positions.sav&#39;</span> <span class="ow">in</span> <span class="n">restoreFileList</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="o">***</span> <span class="n">restoring</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav&#39;</span> <span class="n">at</span> <span class="n">initHookState</span> <span class="mi">6</span> <span class="p">(</span><span class="n">before</span> <span class="n">record</span><span class="o">/</span><span class="n">device</span> <span class="n">init</span><span class="p">)</span> <span class="o">***</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_positions</span><span class="o">.</span><span class="n">sav</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Trying</span> <span class="n">backup</span> <span class="n">file</span> <span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.savB&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_positions</span><span class="o">.</span><span class="n">savB</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t figure out which seq file is most recent,</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">so</span> <span class="n">I</span><span class="s1">&#39;m just going to start with &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_positions</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Trying</span> <span class="n">backup</span> <span class="n">file</span> <span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_positions</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t find a file to restore from...sevr=info save_restore: ...last tried &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_positions</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;. I give up.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restore</span><span class="p">:</span> <span class="o">**********************************</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open save file.sevr=info reboot_restore: entry for file &#39;</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav</span><span class="s1">&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">Found</span> <span class="n">filename</span> <span class="s1">&#39;SIMPLE_settings.sav&#39;</span> <span class="ow">in</span> <span class="n">restoreFileList</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="o">***</span> <span class="n">restoring</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav&#39;</span> <span class="n">at</span> <span class="n">initHookState</span> <span class="mi">6</span> <span class="p">(</span><span class="n">before</span> <span class="n">record</span><span class="o">/</span><span class="n">device</span> <span class="n">init</span><span class="p">)</span> <span class="o">***</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Trying</span> <span class="n">backup</span> <span class="n">file</span> <span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">savB</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t figure out which seq file is most recent,</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">so</span> <span class="n">I</span><span class="s1">&#39;m just going to start with &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Trying</span> <span class="n">backup</span> <span class="n">file</span> <span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t find a file to restore from...sevr=info save_restore: ...last tried &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;. I give up.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restore</span><span class="p">:</span> <span class="o">**********************************</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open save file.sevr=info reboot_restore: entry for file &#39;</span><span class="n">SIMPLE_info_positions</span><span class="o">.</span><span class="n">sav</span><span class="s1">&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">Found</span> <span class="n">filename</span> <span class="s1">&#39;SIMPLE_info_positions.sav&#39;</span> <span class="ow">in</span> <span class="n">restoreFileList</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="o">***</span> <span class="n">restoring</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_positions.sav&#39;</span> <span class="n">at</span> <span class="n">initHookState</span> <span class="mi">6</span> <span class="p">(</span><span class="n">before</span> <span class="n">record</span><span class="o">/</span><span class="n">device</span> <span class="n">init</span><span class="p">)</span> <span class="o">***</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">done</span> <span class="k">with</span> <span class="n">file</span> <span class="s1">&#39;SIMPLE_info_positions.sav&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">entry</span> <span class="k">for</span> <span class="n">file</span> <span class="s1">&#39;SIMPLE_info_settings.sav&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">Found</span> <span class="n">filename</span> <span class="s1">&#39;SIMPLE_info_settings.sav&#39;</span> <span class="ow">in</span> <span class="n">restoreFileList</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="o">***</span> <span class="n">restoring</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_settings.sav&#39;</span> <span class="n">at</span> <span class="n">initHookState</span> <span class="mi">6</span> <span class="p">(</span><span class="n">before</span> <span class="n">record</span><span class="o">/</span><span class="n">device</span> <span class="n">init</span><span class="p">)</span> <span class="o">***</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">done</span> <span class="k">with</span> <span class="n">file</span> <span class="s1">&#39;SIMPLE_info_settings.sav&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">entry</span> <span class="k">for</span> <span class="n">file</span> <span class="s1">&#39;SIMPLE_settings.sav&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">Found</span> <span class="n">filename</span> <span class="s1">&#39;SIMPLE_settings.sav&#39;</span> <span class="ow">in</span> <span class="n">restoreFileList</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="o">***</span> <span class="n">restoring</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav&#39;</span> <span class="n">at</span> <span class="n">initHookState</span> <span class="mi">7</span> <span class="p">(</span><span class="n">after</span> <span class="n">record</span><span class="o">/</span><span class="n">device</span> <span class="n">init</span><span class="p">)</span> <span class="o">***</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Trying</span> <span class="n">backup</span> <span class="n">file</span> <span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">savB</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t figure out which seq file is most recent,</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">so</span> <span class="n">I</span><span class="s1">&#39;m just going to start with &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Trying</span> <span class="n">backup</span> <span class="n">file</span> <span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open file &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t find a file to restore from...sevr=info save_restore: ...last tried &#39;</span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">SIMPLE</span><span class="o">/</span><span class="n">SIMPLE_settings</span><span class="o">.</span><span class="n">sav0</span><span class="s1">&#39;. I give up.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">save_restore</span><span class="p">:</span> <span class="o">**********************************</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">save_restore</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t open save file.sevr=info reboot_restore: entry for file &#39;</span><span class="n">SIMPLE_info_settings</span><span class="o">.</span><span class="n">sav</span><span class="s1">&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">Found</span> <span class="n">filename</span> <span class="s1">&#39;SIMPLE_info_settings.sav&#39;</span> <span class="ow">in</span> <span class="n">restoreFileList</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="o">***</span> <span class="n">restoring</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_settings.sav&#39;</span> <span class="n">at</span> <span class="n">initHookState</span> <span class="mi">7</span> <span class="p">(</span><span class="n">after</span> <span class="n">record</span><span class="o">/</span><span class="n">device</span> <span class="n">init</span><span class="p">)</span> <span class="o">***</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">reboot_restore</span><span class="p">:</span> <span class="n">done</span> <span class="k">with</span> <span class="n">file</span> <span class="s1">&#39;SIMPLE_info_settings.sav&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">setPVValuesStatic</span> <span class="n">setting</span> <span class="mi">0</span> <span class="n">pvs</span> <span class="p">(</span><span class="n">pre</span> <span class="n">iocInit</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">Duplicated</span> <span class="n">host</span> <span class="s1">&#39;localhost&#39;</span> <span class="ow">in</span> <span class="n">HAG</span> <span class="s1">&#39;instmachine&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">Duplicated</span> <span class="n">host</span> <span class="s1">&#39;localhost&#39;</span> <span class="ow">in</span> <span class="n">HAG</span> <span class="s1">&#39;instmachine&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">Duplicated</span> <span class="n">host</span> <span class="s1">&#39;localhost&#39;</span> <span class="ow">in</span> <span class="n">HAG</span> <span class="s1">&#39;instmachine&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">54</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">Duplicated</span> <span class="n">host</span> <span class="s1">&#39;localhost&#39;</span> <span class="ow">in</span> <span class="n">HAG</span> <span class="s1">&#39;instmachine&#39;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">cas</span> <span class="n">warning</span><span class="p">:</span> <span class="n">Configured</span> <span class="n">TCP</span> <span class="n">port</span> <span class="n">was</span> <span class="n">unavailable</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">cas</span> <span class="n">warning</span><span class="p">:</span> <span class="n">Using</span> <span class="n">dynamically</span> <span class="n">assigned</span> <span class="n">TCP</span> <span class="n">port</span> <span class="mi">60745</span><span class="p">,</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">cas</span> <span class="n">warning</span><span class="p">:</span> <span class="n">but</span> <span class="n">now</span> <span class="n">two</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">servers</span> <span class="n">share</span> <span class="n">the</span> <span class="n">same</span> <span class="n">UDP</span> <span class="n">port</span><span class="o">.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">cas</span> <span class="n">warning</span><span class="p">:</span> <span class="n">Depending</span> <span class="n">on</span> <span class="n">your</span> <span class="n">IP</span> <span class="n">kernel</span> <span class="n">this</span> <span class="n">server</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">cas</span> <span class="n">warning</span><span class="p">:</span> <span class="n">reachable</span> <span class="k">with</span> <span class="n">UDP</span> <span class="n">unicast</span> <span class="p">(</span><span class="n">a</span> <span class="n">host</span><span class="s1">&#39;s IP in EPICS_CA_ADDR_LIST)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">iocRun</span><span class="p">:</span> <span class="n">All</span> <span class="n">initialization</span> <span class="n">complete</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">icpconfigLoad</span><span class="p">:</span> <span class="n">setPVValues</span> <span class="n">setting</span> <span class="mi">0</span> <span class="n">pvs</span> <span class="p">(</span><span class="n">post</span> <span class="n">iocInit</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">EPICS</span><span class="o">/</span><span class="n">iocstartup</span><span class="o">/</span><span class="n">postiocinit</span><span class="o">.</span><span class="n">cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># enable caPutLog to logger on localhost</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># pass 0 to log value changes, pass 1 to log all puts, 2 logs all puts with no filtering on same PV</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">caPutLogInit</span> <span class="s2">&quot;localhost&quot;</span> <span class="s2">&quot;1&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">log</span> <span class="n">client</span><span class="p">:</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">log</span> <span class="n">server</span> <span class="n">at</span> <span class="s2">&quot;127.0.0.1:7011&quot;</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">caPutLog</span><span class="p">:</span> <span class="n">successfully</span> <span class="n">initialized</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># Handle autosave &#39;commands&#39; contained in loaded databases.</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="c1"># file naming needs to agree with autosave.cmd</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">makeAutosaveFileFromDbInfo</span><span class="p">(</span><span class="s2">&quot;SIMPLE_info_settings&quot;</span><span class="p">,</span><span class="s2">&quot;autosaveFields&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">makeAutosaveFileFromDbInfo</span><span class="p">(</span><span class="s2">&quot;SIMPLE_info_positions&quot;</span><span class="p">,</span><span class="s2">&quot;autosaveFields_pass0&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">create_monitor_set</span><span class="p">(</span><span class="s2">&quot;SIMPLE_info_positions.req&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">create_monitor_set</span><span class="p">(</span><span class="s2">&quot;SIMPLE_info_settings.req&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">SIMPLE_info_positions</span><span class="o">.</span><span class="n">sav</span><span class="p">:</span> <span class="mi">63</span> <span class="n">of</span> <span class="mi">63</span> <span class="n">PV</span><span class="s1">&#39;s connected</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">55</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> 
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">56</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> <span class="n">SIMPLE_info_settings</span><span class="o">.</span><span class="n">sav</span><span class="p">:</span> <span class="mi">1</span> <span class="n">of</span> <span class="mi">1</span> <span class="n">PV</span><span class="s1">&#39;s connected</span>
+
+<span class="p">[</span><span class="mi">2017</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">16</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">56</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">info</span> 
+</pre></div>
+</div>
+<p>Initialise and run</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="full-log">
+<h1>Full Log<a class="headerlink" href="#full-log" title="Link to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[2017-08-16 13:53:52] @@@ Restarting child &quot;SIMPLE&quot;
+[2017-08-16 13:53:52] @@@    (as C:\windows\system32\cmd.exe)
+[2017-08-16 13:53:52] @@@ The PID of new child &quot;SIMPLE&quot; is: 7280
+[2017-08-16 13:53:52] @@@ @@@ @@@ @@@ @@@
+[2017-08-16 13:53:54] #!../../bin/windows-x64/simple
+
+[2017-08-16 13:53:54] ## You may have to change simple to something else
+
+[2017-08-16 13:53:54] ## everywhere it appears in this file
+
+[2017-08-16 13:53:54] &lt; envPaths
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;IOC&quot;,&quot;iocsimple&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TOP&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ACCESSSECURITY&quot;,&quot;C:/Instrument/Apps/EPICS/support/AccessSecurity/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;AGILENT33220A&quot;,&quot;C:/Instrument/Apps/EPICS/support/agilent33220A/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;AGILENT3631A&quot;,&quot;C:/Instrument/Apps/EPICS/support/agilent3631A/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;AMINT2L&quot;,&quot;C:/Instrument/Apps/EPICS/support/amint2l/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;AREA_DETECTOR&quot;,&quot;C:/Instrument/Apps/EPICS/support/areaDetector/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ASUBFUNCTIONS&quot;,&quot;C:/Instrument/Apps/EPICS/support/asubFunctions/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ASYN&quot;,&quot;C:/Instrument/Apps/EPICS/support/asyn/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;AUTOSAVE&quot;,&quot;C:/Instrument/Apps/EPICS/support/autosave/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;AXIS&quot;,&quot;C:/Instrument/Apps/EPICS/support/axis/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;BARNDOORS&quot;,&quot;C:/Instrument/Apps/EPICS/support/barndoors/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;BOOST&quot;,&quot;C:/Instrument/Apps/EPICS/libraries/master/boost&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;BUSY&quot;,&quot;C:/Instrument/Apps/EPICS/support/busy/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;CALC&quot;,&quot;C:/Instrument/Apps/EPICS/support/calc/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;CAPUTLOG&quot;,&quot;C:/Instrument/Apps/EPICS/support/caPutLog/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;CCD100&quot;,&quot;C:/Instrument/Apps/EPICS/support/CCD100/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;COMMON&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/Common/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;CRYVALVE&quot;,&quot;C:/Instrument/Apps/EPICS/support/cryValve/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;CSM&quot;,&quot;C:/Instrument/Apps/EPICS/support/csm/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;CURL&quot;,&quot;C:/Instrument/Apps/EPICS/support/curl/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;DANFYSIK8000&quot;,&quot;C:/Instrument/Apps/EPICS/support/danfysikMps8000&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;DAQMXBASE&quot;,&quot;C:/Instrument/Apps/EPICS/support/DAQmxBase/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;DEVIOCSTATS&quot;,&quot;C:/Instrument/Apps/EPICS/support/devIocStats/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ECLAB&quot;,&quot;C:/Instrument/Apps/EPICS/support/ECLab/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;EEMCU&quot;,&quot;C:/Instrument/Apps/EPICS/support/MCAG_Base_Project/master/epics/epicsIOC&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;EFSW&quot;,&quot;C:/Instrument/Apps/EPICS/support/efsw/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;EUROTHERM2K&quot;,&quot;C:/Instrument/Apps/EPICS/support/eurotherm2k/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;FILELIST&quot;,&quot;C:/Instrument/Apps/EPICS/support/FileList/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;FILESERVER&quot;,&quot;C:/Instrument/Apps/EPICS/support/FileServer/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;FINS&quot;,&quot;C:/Instrument/Apps/EPICS/support/FINS/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;FLATBUFFERS&quot;,&quot;C:/Instrument/Apps/EPICS/support/flatbuffers/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;GALIL&quot;,&quot;C:/Instrument/Apps/EPICS/support/galil/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;HAMEG8123&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/Hameg_8123/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;HIDEWINDOW&quot;,&quot;C:/Instrument/Apps/EPICS/support/HideWindow/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;HTMLTIDY&quot;,&quot;C:/Instrument/Apps/EPICS/support/htmltidy/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;HVCAEN&quot;,&quot;C:/Instrument/Apps/EPICS/support/HVCAENx527/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ICPCONFIG&quot;,&quot;C:/Instrument/Apps/EPICS/support/icpconfig/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;INSTRON&quot;,&quot;C:/Instrument/Apps/EPICS/support/instron/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;IP&quot;,&quot;C:/Instrument/Apps/EPICS/support/ip/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;IPAC&quot;,&quot;C:/Instrument/Apps/EPICS/support/ipac/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ISISDAE&quot;,&quot;C:/Instrument/Apps/EPICS/support/isisdae/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;JAWS&quot;,&quot;C:/Instrument/Apps/EPICS/support/jaws/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;JULABO&quot;,&quot;C:/Instrument/Apps/EPICS/support/julabo/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;KHLY2400&quot;,&quot;C:/Instrument/Apps/EPICS/support/Keithley_2400/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;KEPCO&quot;,&quot;C:/Instrument/Apps/EPICS/support/kepco/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LKSH336&quot;,&quot;C:/Instrument/Apps/EPICS/support/lakeshore/master/lakeshore336&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LIBICONV&quot;,&quot;C:/Instrument/Apps/EPICS/support/libiconv/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LIBJSON&quot;,&quot;C:/Instrument/Apps/EPICS/support/libjson/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LIBRDKAFKA&quot;,&quot;C:/Instrument/Apps/EPICS/support/librdkafka/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LIBXML2&quot;,&quot;C:/Instrument/Apps/EPICS/support/libxml2/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LIBXSLT&quot;,&quot;C:/Instrument/Apps/EPICS/support/libxslt/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LINKAM95&quot;,&quot;C:/Instrument/Apps/EPICS/support/linkam95/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;LVDCOM&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/lvDCOM/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MCA&quot;,&quot;C:/Instrument/Apps/EPICS/support/mca/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MAGNET3D&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/magnet3D/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MERCURY_ITC&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/MercuryiTC/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MK2CHOPR&quot;,&quot;C:/Instrument/Apps/EPICS/support/mk2chopper/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MODBUS&quot;,&quot;C:/Instrument/Apps/EPICS/support/modbus/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MOTIONSETPOINTS&quot;,&quot;C:/Instrument/Apps/EPICS/support/motionSetPoints/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MOTOR&quot;,&quot;C:/Instrument/Apps/EPICS/support/motor/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MYSQL&quot;,&quot;C:/Instrument/Apps/EPICS/support/MySQL/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;NEOCERA&quot;,&quot;C:/Instrument/Apps/EPICS/support/neocera/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;NETSHRVAR&quot;,&quot;C:/Instrument/Apps/EPICS/support/NetShrVar/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;NANODAC&quot;,&quot;C:/Instrument/Apps/EPICS/support/nanodac/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;NULLHTTPD&quot;,&quot;C:/Instrument/Apps/EPICS/support/nullhttpd/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;OPENSSL&quot;,&quot;C:/Instrument/Apps/EPICS/support/OpenSSL/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;OPTICS&quot;,&quot;C:/Instrument/Apps/EPICS/support/optics/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PCRE&quot;,&quot;C:/Instrument/Apps/EPICS/support/pcre/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PDR2000&quot;,&quot;C:/Instrument/Apps/EPICS/support/pdr2000/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PIXELMAN&quot;,&quot;C:/Instrument/Apps/EPICS/support/pixelman/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PROCSERVCONTROL&quot;,&quot;C:/Instrument/Apps/EPICS/support/procServControl/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PUGIXML&quot;,&quot;C:/Instrument/Apps/EPICS/support/pugixml/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVCOMPLETE&quot;,&quot;C:/Instrument/Apps/EPICS/support/pvcomplete/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVDUMP&quot;,&quot;C:/Instrument/Apps/EPICS/support/pvdump/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;READASCII&quot;,&quot;C:/Instrument/Apps/EPICS/support/ReadASCII/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ROTSC&quot;,&quot;C:/Instrument/Apps/EPICS/support/rotating_sample_changer/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;RUNCONTROL&quot;,&quot;C:/Instrument/Apps/EPICS/support/RunControl/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;RANDOM&quot;,&quot;C:/Instrument/Apps/EPICS/support/random/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SAMPLECHANGER&quot;,&quot;C:/Instrument/Apps/EPICS/support/sampleChanger/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SLACKING&quot;,&quot;C:/Instrument/Apps/EPICS/libraries/master/slacking&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SNCSEQ&quot;,&quot;C:/Instrument/Apps/EPICS/support/seq/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SKFCHOPPER&quot;,&quot;C:/Instrument/Apps/EPICS/support/SKFChopper/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SPRLG&quot;,&quot;C:/Instrument/Apps/EPICS/support/superlogics/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SQLITE&quot;,&quot;C:/Instrument/Apps/EPICS/support/sqlite/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SSCAN&quot;,&quot;C:/Instrument/Apps/EPICS/support/sscan/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;STD&quot;,&quot;C:/Instrument/Apps/EPICS/support/std/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;STPS350&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/Stanford_PS350/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;STSR400&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS/Stanford_SR400/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;STREAMDEVICE&quot;,&quot;C:/Instrument/Apps/EPICS/support/StreamDevice/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TDKLAMBDAGENESYS&quot;,&quot;C:/Instrument/Apps/EPICS/support/TDKLambdaGenesys/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TEKDMM40X0&quot;,&quot;C:/Instrument/Apps/EPICS/support/Tektronix_DMM_40X0/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TEKAFG3XXX&quot;,&quot;C:/Instrument/Apps/EPICS/support/Tektronix_AFG3XXX/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TEKMSO4104B&quot;,&quot;C:/Instrument/Apps/EPICS/support/Tektronix_MSO_4104B/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TINYXML&quot;,&quot;C:/Instrument/Apps/EPICS/support/TinyXML/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TPG300&quot;,&quot;C:/Instrument/Apps/EPICS/support/TPG/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TPG&quot;,&quot;C:/Instrument/Apps/EPICS/support/TPG/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;TTIEX355P&quot;,&quot;C:/Instrument/Apps/EPICS/support/ttiEX355P/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;UTILITIES&quot;,&quot;C:/Instrument/Apps/EPICS/support/utilities/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;VISADRV&quot;,&quot;C:/Instrument/Apps/EPICS/support/VISAdrv/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;WEBGET&quot;,&quot;C:/Instrument/Apps/EPICS/support/webget/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ZLIB&quot;,&quot;C:/Instrument/Apps/EPICS/support/zlib/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;EV4_BASE&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVDATABASE&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master/pvDatabaseCPP&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVASRV&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master/pvaSrv&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVACLIENT&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master/pvaClientCPP&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVACCESS&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master/pvAccessCPP&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;NORMATIVETYPES&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master/normativeTypesCPP&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVDATA&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master/pvDataCPP&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;PVCOMMON&quot;,&quot;C:/Instrument/Apps/EPICS/support/EPICS_V4/master/pvCommonCPP&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;MK3CHOPPER&quot;,&quot;C:/Instrument/Apps/EPICS/support/mk3chopper/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ONCRPC&quot;,&quot;C:/Instrument/Apps/EPICS/support/oncrpc/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;EPICS_BASE&quot;,&quot;C:/Instrument/Apps/EPICS/base/master&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;EPICS_ROOT&quot;,&quot;C:/Instrument/Apps/EPICS&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;SUPPORT&quot;,&quot;C:/Instrument/Apps/EPICS/support&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ISISSUPPORT&quot;,&quot;C:/Instrument/Apps/EPICS/ISIS&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;IOCSTARTUP&quot;,&quot;C:/Instrument/Apps/EPICS/iocstartup&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ICPBINARYDIR&quot;,&quot;C:/Instrument/Apps/EPICS/ICP_Binaries&quot;)
+
+[2017-08-16 13:53:54] cd C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master
+
+[2017-08-16 13:53:54] ## Register all support components
+
+[2017-08-16 13:53:54] dbLoadDatabase &quot;dbd/simple.dbd&quot;
+
+[2017-08-16 13:53:54] simple_registerRecordDeviceDriver pdbbase
+
+[2017-08-16 13:53:54] &lt; C:/Instrument/Apps/EPICS/iocstartup/init.cmd
+
+[2017-08-16 13:53:54] icpconfigLoad
+
+[2017-08-16 13:53:54] icpconfigLoad: ioc &quot;SIMPLE&quot; group &quot;SIMPLE&quot; options 0x0 host &quot;NDW1798&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: config base (ICPCONFIGBASE) is &quot;C:/Instrument/Settings/config&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: config root (ICPCONFIGROOT) is &quot;C:/Instrument/Settings/config/NDW1798/configurations&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(SIMULATE)=&quot;0&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFSIM)=&quot;#&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTSIM)=&quot; &quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(SIMSFX)=&quot;&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(DISABLE)=&quot;0&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFDISABLE)=&quot;#&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTDISABLE)=&quot; &quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(DEVSIM)=&quot;0&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFDEVSIM)=&quot;#&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTDEVSIM)=&quot; &quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(RECSIM)=&quot;0&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFRECSIM)=&quot;#&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTRECSIM)=&quot; &quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(ICPCONFIGDIR)=&quot;C:/Instrument/Settings/config/NDW1798/configurations/configurations/Instron&quot; ({initial default})
+
+[2017-08-16 13:53:54] icpconfigLoad: last configuration was &quot;Instron&quot; (C:/Instrument/Settings/config/NDW1798/configurations/configurations/Instron)
+
+[2017-08-16 13:53:54] icpconfigLoad: configuration &quot;Instron&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: loading 0 component(s) for &quot;/configurations/Instron&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: Loading default macros for &quot;/configurations/Instron&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC sim level &quot;/configurations/Instron&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC macros for &quot;/configurations/Instron&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC PVs for &quot;/configurations/Instron&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC PV sets for &quot;/configurations/Instron&quot;
+
+[2017-08-16 13:53:54] Cannot open directory: C:/Instrument/Settings/config/NDW1798/configurations/configurations/Instron/files
+
+[2017-08-16 13:53:54] icpconfigLoad: Found 0 files for &quot;/configurations/Instron&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: loading old macro file &quot;C:/Instrument/Settings/config/NDW1798/configurations/globals.txt&quot;
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(GALILNUMCRATES)=&quot;1&quot; (C:/Instrument/Settings/config/NDW1798/configurations/globals.txt)
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(GALIL_01__GALILADDR01)=&quot;130.246.51.169&quot; (C:/Instrument/Settings/config/NDW1798/configurations/globals.txt)
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(GALIL_02__GALILADDR02)=&quot;None&quot; (C:/Instrument/Settings/config/NDW1798/configurations/globals.txt)
+
+[2017-08-16 13:53:54] icpconfigLoad: * $(GALIL_03__GALILADDR03)=&quot;None&quot; (C:/Instrument/Settings/config/NDW1798/configurations/globals.txt)
+
+[2017-08-16 13:53:54] icpconfigLoad: loaded 4 macros from old macro file &quot;C:/Instrument/Settings/config/NDW1798/configurations/globals.txt&quot; (0 ioc, 0 group)
+
+[2017-08-16 13:53:54] # define a macro with the same name as the IOC name and a blank value. This means we can use a line like
+
+[2017-08-16 13:53:54] #  $(IFIOC_GALIL_01=#) to have something that is only executed in GALIL_01 IOC
+
+[2017-08-16 13:53:54] # and you can pass to db file via A=1,$(IFIOC)= ,A=2
+
+[2017-08-16 13:53:54] # used when loading motorUtils and motors moving
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;IFIOC&quot;, &quot;IFIOC_SIMPLE&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;IFIOC_SIMPLE&quot;, &quot; &quot;)
+
+[2017-08-16 13:53:54] &lt; C:/Instrument/Apps/EPICS/iocstartup/asyn.cmd
+
+[2017-08-16 13:53:54] ## defaults for asyn drivers
+
+[2017-08-16 13:53:54] ## Global default is to trace only errors
+
+[2017-08-16 13:53:54] ## 0=none,0x1=err,0x2=IO_device,0x4=IO_filter,0x8=IO_driver,0x10=flow,0x20=warning
+
+[2017-08-16 13:53:54] asynSetTraceMask(&quot;&quot;, -1, 0x1)
+
+[2017-08-16 13:53:54] asyn.cmd line 5: Command asynSetTraceMask not found.
+
+[2017-08-16 13:53:54] ## Global default to send trace output to errlog (missing 3rd arg passes NULL as that parameter)
+
+[2017-08-16 13:53:54] asynSetTraceFile(&quot;&quot;, -1)
+
+[2017-08-16 13:53:54] asyn.cmd line 8: Command asynSetTraceFile not found.
+
+[2017-08-16 13:53:54] ## Global default is to print escaped ascii for any IO_* trace specified above
+
+[2017-08-16 13:53:54] ## 0=none,1=ascii,2=esc,4=hex
+
+[2017-08-16 13:53:54] asynSetTraceIOMask(&quot;&quot;, -1, 0x2)
+
+[2017-08-16 13:53:54] asyn.cmd line 12: Command asynSetTraceIOMask not found.
+
+[2017-08-16 13:53:54] &lt; C:/Instrument/Apps/EPICS/iocstartup/ioctesting.cmd
+
+[2017-08-16 13:53:54] # If in test dev sim mode set up values
+
+[2017-08-16 13:53:54] epicsEnvSet TESTDEVSIM &quot;#&quot;
+
+[2017-08-16 13:53:54] # epicsEnvSet &quot;DEVSIM&quot; &quot;1&quot;
+
+[2017-08-16 13:53:54] # epicsEnvSet &quot;RECSIM&quot; &quot;0&quot;
+
+[2017-08-16 13:53:54] # stringiftest(&quot;DEVSIM&quot;, &quot;yes&quot;, 2)
+
+[2017-08-16 13:53:54] # stringiftest(&quot;RECSIM&quot;, &quot;&quot;, 2)
+
+[2017-08-16 13:53:54] # &lt; C:/Instrument/Var/tmp/test_config.txt
+
+[2017-08-16 13:53:54] # If in test rec sim mode
+
+[2017-08-16 13:53:54] epicsEnvSet TESTRECSIM &quot;#&quot;
+
+[2017-08-16 13:53:54] # epicsEnvSet &quot;DEVSIM&quot; &quot;0&quot;
+
+[2017-08-16 13:53:54] # epicsEnvSet &quot;RECSIM&quot; &quot;1&quot;
+
+[2017-08-16 13:53:54] # stringiftest(&quot;DEVSIM&quot;, &quot;&quot;, 2)
+
+[2017-08-16 13:53:54] # stringiftest(&quot;RECSIM&quot;, &quot;yes&quot;, 2)
+
+[2017-08-16 13:53:54] # &lt; C:/Instrument/Var/tmp/test_config.txt
+
+[2017-08-16 13:53:54] ## Create the emulator port macro and set it to either the one given or a spare port:
+
+[2017-08-16 13:53:54] # freeIPPort(SPARE_PORT)
+
+[2017-08-16 13:53:54] # epicsEnvSet &quot;EMULATOR_PORT&quot; 
+
+[2017-08-16 13:53:54] # epicsEnvShow(&quot;EMULATOR_PORT&quot;) 
+
+[2017-08-16 13:53:54] ## Load record instances
+
+[2017-08-16 13:53:54] &lt; C:/Instrument/Apps/EPICS/iocstartup/dbload.cmd
+
+[2017-08-16 13:53:54] #dbLoadRecords(&quot;$(TIMESTAMPRECORD)/db/timestamp.db&quot;,&quot;P=$(MYPVPREFIX)$(IOCNAME):&quot;)
+
+[2017-08-16 13:53:54] dbLoadRecords(&quot;C:/Instrument/Apps/EPICS/support/devIocStats/master/db/iocAdminSoft.db&quot;,&quot;IOC=TE:NDW1798:CS:IOC:SIMPLE:DEVIOS&quot;)
+
+[2017-08-16 13:53:54] #dbLoadRecords(&quot;$(ASUBFUNCTIONS)/db/iocExit.db&quot;,&quot;P=$(MYPVPREFIX),Q=CS:IOC:$(IOCNAME):,IOCNAME=$(IOCNAME)&quot;)
+
+[2017-08-16 13:53:54] &lt; C:/Instrument/Apps/EPICS/iocstartup/autosave.cmd
+
+[2017-08-16 13:53:54] ## start autosave.cmd
+
+[2017-08-16 13:53:54] save_restoreSet_Debug(0)
+
+[2017-08-16 13:53:54] # status-PV prefix, so save_restore can find its status PV&#39;s.
+
+[2017-08-16 13:53:54] #epicsEnvSet(&quot;ASPREFIX&quot;,&quot;$(MYPVPREFIX)CS:IOC:$(IOCNAME):AS:&quot;)
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;ASPREFIX&quot;,&quot;TE:NDW1798:AS:SIMPLE:&quot;)
+
+[2017-08-16 13:53:54] save_restoreSet_status_prefix(&quot;TE:NDW1798:AS:SIMPLE:&quot;)
+
+[2017-08-16 13:53:54] # Ok to save/restore save sets with missing values (no CA connection to PV)?  
+
+[2017-08-16 13:53:54] save_restoreSet_IncompleteSetsOk(1)
+
+[2017-08-16 13:53:54] # Save dated backup files?
+
+[2017-08-16 13:53:54] save_restoreSet_DatedBackupFiles(1)
+
+[2017-08-16 13:53:54] # Number of sequenced backup files to write
+
+[2017-08-16 13:53:54] save_restoreSet_NumSeqFiles(1)
+
+[2017-08-16 13:53:54] # Time interval between sequenced backups
+
+[2017-08-16 13:53:54] save_restoreSet_SeqPeriodInSeconds(300)
+
+[2017-08-16 13:53:54] # specify where save files should be - use a different directory if in simulation mode
+
+[2017-08-16 13:53:54] mkdir(&quot;C:/Instrument/Var/autosave/SIMPLE&quot;) 
+
+[2017-08-16 13:53:54] set_savefile_path(&quot;C:/Instrument/Var/autosave&quot;, &quot;SIMPLE&quot;)
+
+[2017-08-16 13:53:54] ## specify what save files should be restored.  Note these files must be
+
+[2017-08-16 13:53:54] ## in the directory specified in set_savefile_path(), or, if that function
+
+[2017-08-16 13:53:54] ## has not been called, from the directory current when iocInit is invoked
+
+[2017-08-16 13:53:54] ## example: set_pass0_restoreFile(&quot;autosave_geiger.sav&quot;)
+
+[2017-08-16 13:53:54] ## restore positions at pass 0 so not passed to hardware
+
+[2017-08-16 13:53:54] ##
+
+[2017-08-16 13:53:54] ## Use     epicsEnvSet(&quot;AUTOSAVEREQ&quot;,&quot;#&quot;)   if you do not have any req files to load
+
+[2017-08-16 13:53:54]  set_pass0_restoreFile(&quot;SIMPLE_positions.sav&quot;)
+
+[2017-08-16 13:53:54]  set_pass0_restoreFile(&quot;SIMPLE_settings.sav&quot;)
+
+[2017-08-16 13:53:54] # restore settings at pass 1 so passed to hardware
+
+[2017-08-16 13:53:54]  set_pass1_restoreFile(&quot;SIMPLE_settings.sav&quot;)
+
+[2017-08-16 13:53:54] # these values are obtained from info fields in DB files via makeAutosaveFiles() / makeAutosaveFileFromDbInfo()
+
+[2017-08-16 13:53:54] set_pass0_restoreFile(&quot;SIMPLE_info_positions.sav&quot;)
+
+[2017-08-16 13:53:54] set_pass0_restoreFile(&quot;SIMPLE_info_settings.sav&quot;)
+
+[2017-08-16 13:53:54] set_pass1_restoreFile(&quot;SIMPLE_info_settings.sav&quot;)
+
+[2017-08-16 13:53:54] #save_restoreSet_CAReconnect(1)
+
+[2017-08-16 13:53:54] # specify directories in which to to search for included request files
+
+[2017-08-16 13:53:54] set_requestfile_path(&quot;C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master/iocBoot/iocsimple&quot;, &quot;&quot;)
+
+[2017-08-16 13:53:54] # Autosave status PVs - P must be same as used in save_restoreSet_status_prefix() above
+
+[2017-08-16 13:53:54] dbLoadRecords(&quot;C:/Instrument/Apps/EPICS/support/autosave/master/asApp/Db/save_restoreStatus.db&quot;, &quot;P=TE:NDW1798:AS:SIMPLE:&quot;)
+
+[2017-08-16 13:53:54] ## end autosave.cmd
+
+[2017-08-16 13:53:54] dbLoadRecords(&quot;db/simple.db&quot;,&quot;P=TE:NDW1798:SIMPLE:&quot;)
+
+[2017-08-16 13:53:54] &lt; C:/Instrument/Apps/EPICS/iocstartup/preiocinit.cmd
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] # write process variable and IOC startup information to database 
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] pvdump
+
+[2017-08-16 13:53:54] pvdump: ioc name is &quot;SIMPLE&quot; pid 11856
+
+[2017-08-16 13:53:54] pvdump: MySQL write of 129 PVs with 33 info entries, plus 307 macros took 0.092 seconds
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] # set up IOC access security
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] asSetFilename(&quot;C:/Instrument/Apps/EPICS/support/AccessSecurity/master/default.acf&quot;)
+
+[2017-08-16 13:53:54] asSetSubstitutions(&quot;P=TE:NDW1798:,ACF_IH1=localhost,ACF_IH2=localhost,ACF_IH3=localhost,ACF_IH4=localhost&quot;)
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] # log to server address EPICS_IOC_LOG_INET listening on port EPICS_IOC_LOG_PORT 
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] epicsEnvSet(&quot;EPICS_IOC_LOG_INET&quot;, &quot;localhost&quot;)
+
+[2017-08-16 13:53:54] iocLogInit()
+
+[2017-08-16 13:53:54] log client: connected to log server at &quot;127.0.0.1:7004&quot;
+
+[2017-08-16 13:53:54] cd C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master/iocBoot/iocsimple
+
+[2017-08-16 13:53:54] iocInit
+
+[2017-08-16 13:53:54] sevr=info Starting iocInit
+
+[2017-08-16 13:53:54] ############################################################################
+
+[2017-08-16 13:53:54] ## EPICS R3.15.5
+
+[2017-08-16 13:53:54] ## EPICS Base built Jul 10 2017
+
+[2017-08-16 13:53:54] ############################################################################
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: entry for file &#39;SIMPLE_positions.sav&#39;
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename &#39;SIMPLE_positions.sav&#39; in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav&#39; at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.savB&#39;
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.savB&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t figure out which seq file is most recent,
+
+[2017-08-16 13:53:54] sevr=info save_restore: so I&#39;m just going to start with &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0&#39;
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t find a file to restore from...sevr=info save_restore: ...last tried &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0&#39;. I give up.
+
+[2017-08-16 13:53:54] save_restore: **********************************
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open save file.sevr=info reboot_restore: entry for file &#39;SIMPLE_settings.sav&#39;
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename &#39;SIMPLE_settings.sav&#39; in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav&#39; at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB&#39;
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t figure out which seq file is most recent,
+
+[2017-08-16 13:53:54] sevr=info save_restore: so I&#39;m just going to start with &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t find a file to restore from...sevr=info save_restore: ...last tried &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;. I give up.
+
+[2017-08-16 13:53:54] save_restore: **********************************
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open save file.sevr=info reboot_restore: entry for file &#39;SIMPLE_info_positions.sav&#39;
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename &#39;SIMPLE_info_positions.sav&#39; in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_positions.sav&#39; at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: done with file &#39;SIMPLE_info_positions.sav&#39;
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: entry for file &#39;SIMPLE_info_settings.sav&#39;
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename &#39;SIMPLE_info_settings.sav&#39; in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_settings.sav&#39; at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: done with file &#39;SIMPLE_info_settings.sav&#39;
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: entry for file &#39;SIMPLE_settings.sav&#39;
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename &#39;SIMPLE_settings.sav&#39; in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav&#39; at initHookState 7 (after record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB&#39;
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t figure out which seq file is most recent,
+
+[2017-08-16 13:53:54] sevr=info save_restore: so I&#39;m just going to start with &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open file &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t find a file to restore from...sevr=info save_restore: ...last tried &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0&#39;. I give up.
+
+[2017-08-16 13:53:54] save_restore: **********************************
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can&#39;t open save file.sevr=info reboot_restore: entry for file &#39;SIMPLE_info_settings.sav&#39;
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename &#39;SIMPLE_info_settings.sav&#39; in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from &#39;C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_settings.sav&#39; at initHookState 7 (after record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: done with file &#39;SIMPLE_info_settings.sav&#39;
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] icpconfigLoad: setPVValuesStatic setting 0 pvs (pre iocInit)
+
+[2017-08-16 13:53:54] sevr=info Duplicated host &#39;localhost&#39; in HAG &#39;instmachine&#39;
+
+[2017-08-16 13:53:54] sevr=info Duplicated host &#39;localhost&#39; in HAG &#39;instmachine&#39;
+
+[2017-08-16 13:53:54] sevr=info Duplicated host &#39;localhost&#39; in HAG &#39;instmachine&#39;
+
+[2017-08-16 13:53:54] sevr=info Duplicated host &#39;localhost&#39; in HAG &#39;instmachine&#39;
+
+[2017-08-16 13:53:55] cas warning: Configured TCP port was unavailable.
+
+[2017-08-16 13:53:55] cas warning: Using dynamically assigned TCP port 60745,
+
+[2017-08-16 13:53:55] cas warning: but now two or more servers share the same UDP port.
+
+[2017-08-16 13:53:55] cas warning: Depending on your IP kernel this server may not be
+
+[2017-08-16 13:53:55] cas warning: reachable with UDP unicast (a host&#39;s IP in EPICS_CA_ADDR_LIST)
+
+[2017-08-16 13:53:55] sevr=info iocRun: All initialization complete
+
+[2017-08-16 13:53:55] icpconfigLoad: setPVValues setting 0 pvs (post iocInit)
+
+[2017-08-16 13:53:55] &lt; C:/Instrument/Apps/EPICS/iocstartup/postiocinit.cmd
+
+[2017-08-16 13:53:55] # enable caPutLog to logger on localhost
+
+[2017-08-16 13:53:55] # pass 0 to log value changes, pass 1 to log all puts, 2 logs all puts with no filtering on same PV
+
+[2017-08-16 13:53:55] caPutLogInit &quot;localhost&quot; &quot;1&quot;
+
+[2017-08-16 13:53:55] log client: connected to log server at &quot;127.0.0.1:7011&quot;
+
+[2017-08-16 13:53:55] sevr=info caPutLog: successfully initialized
+
+[2017-08-16 13:53:55] # Handle autosave &#39;commands&#39; contained in loaded databases.
+
+[2017-08-16 13:53:55] # file naming needs to agree with autosave.cmd
+
+[2017-08-16 13:53:55] makeAutosaveFileFromDbInfo(&quot;SIMPLE_info_settings&quot;,&quot;autosaveFields&quot;)
+
+[2017-08-16 13:53:55] makeAutosaveFileFromDbInfo(&quot;SIMPLE_info_positions&quot;,&quot;autosaveFields_pass0&quot;)
+
+[2017-08-16 13:53:55] create_monitor_set(&quot;SIMPLE_info_positions.req&quot;, 5, &quot;&quot;)
+
+[2017-08-16 13:53:55] create_monitor_set(&quot;SIMPLE_info_settings.req&quot;, 30, &quot;&quot;)
+
+[2017-08-16 13:53:55] sevr=info SIMPLE_info_positions.sav: 63 of 63 PV&#39;s connected
+
+[2017-08-16 13:53:55] sevr=info 
+
+[2017-08-16 13:53:56] sevr=info SIMPLE_info_settings.sav: 1 of 1 PV&#39;s connected
+
+[2017-08-16 13:53:56] sevr=info 
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IOC-And-Device-Trouble-Shooting.html" class="btn btn-neutral float-left" title="General troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-crash-or-unexpected-termination-%E2%80%90-Find-function-from-windows-module-offset.html" class="btn btn-neutral float-right" title="IOC Crash - find function from offset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

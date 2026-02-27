@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LET &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LOQ" href="LOQ-Instrument-Details.html" />
+    <link rel="prev" title="LARMOR" href="LARMOR-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ARGUS-Instrument-Details.html">ARGUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHIPIR-Instrument-Details.html">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Instrument-Details.html">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOQ-Instrument-Details.html">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN-Instrument-Details.html">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OFFSPEC-Instrument-Details.html">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PEARL-Instrument-Details.html">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">LET</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/LET-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="let">
+<h1>LET<a class="headerlink" href="#let" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instrument details pages provide historical context about the devices on a specific instrument,
+at the time they were migrated to IBEX. <strong>These pages may not be up to date with the latest instrument
+configuration.</strong></p>
+</div>
+<p>This page collects information that will be useful for the implementation of the IBEX control system on LET.</p>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>LET is a cold neutron multi-chopper spectrometer on TS2 at ISIS. The <a class="reference external" href="http://www.isis.stfc.ac.uk/instruments/let/let6414.html">LET</a> web page describes the background to the instrument.</p>
+</section>
+<section id="control-system">
+<h2>Control System<a class="headerlink" href="#control-system" title="Link to this heading"></a></h2>
+<p>It is proposed to migrate from the SECI control system to the IBEX control system in time for Cycle 2018/04.
+LET does currently use IBEX to control its SKF choppers (but that’s all).</p>
+</section>
+<section id="let-equipment">
+<h2>LET Equipment<a class="headerlink" href="#let-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on LET. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>DAE 2</p></td>
+<td><p>Detector Electronics</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-dae">see DAE note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SKF</p></td>
+<td><p>MB4150-G5</p></td>
+<td><p>Disk Chopper</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-high-speed-skf-disk-chopper">see High-Speed SKF Disk Chopper note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>Mk3</p></td>
+<td><p>Disk Chopper</p></td>
+<td><p>Ethernet</p></td>
+<td><p>.NET</p></td>
+<td><p><a class="reference internal" href="#note-isis-disk-chopper">see ISIS Chopper note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Jaws</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-jaws">see Jaws note</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.pfeiffer-vacuum.com/products/measurement/container.action">Pfeiffer</a></p></td>
+<td><p>TPG300</p></td>
+<td><p>ISIS Vacuum System</p></td>
+<td><p>RS232</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/216">#216</a></p></td>
+<td><p><a class="reference internal" href="#note-pfeiffer">see Pfeiffer note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Eurotherm</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>All models at ISIS</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#note-eurotherm">see Eurotherm  note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>Orange Cryostat</p></td>
+<td><p>Cryogenic System</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-orange-cryostat">see Orange Cryostat note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Oxford Instruments</p></td>
+<td><p>Heliox</p></td>
+<td><p>Dilution Fridge</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3739">#3739</a></p></td>
+<td><p><a class="reference internal" href="#note-oxford-instruments">see Oxford Instruments note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Oxford Instruments</p></td>
+<td><p>Triton</p></td>
+<td><p>Dilution Fridge</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2744">#2744</a></p></td>
+<td><p><a class="reference internal" href="#note-oxford-instruments">see Oxford Instruments note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>???</p></td>
+<td><p>Mezei Flipper</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3738">#3738</a></p></td>
+<td><p><a class="reference internal" href="#note-mezei-neutron-spin-flipper">see Mezei Flipper Notes</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>Furnace</p></td>
+<td><p>High temperature furnace</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-isis-high-temperature-furnace">see Furnace note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Oxford Instruments</p></td>
+<td><p>9T</p></td>
+<td><p>Magnet</p></td>
+<td><p>???</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2765">#2765</a></p></td>
+<td><p><a class="reference internal" href="#note-isis-9t-chopper-magnet">see 9T Magnet note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Oxford Instruments</p></td>
+<td><p>14T</p></td>
+<td><p>Magnet</p></td>
+<td><p>???</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-isis-14t-magnet">see 14T Magnet note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.lakeshore.com/Pages/Home.aspx">Lakeshore</a></p></td>
+<td><p>340</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#note-lakeshore">see Lakeshore note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>ORC</p></td>
+<td><p>Collimator</p></td>
+<td><p>via Galil</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2535">#2535</a></p></td>
+<td><p><a class="reference internal" href="#let-notes">see LET Notes</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>McLennan</p></td>
+<td><p>Sample Changer</p></td>
+<td><p>via Galil</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#let-notes">see LET Notes</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>McLennan</p></td>
+<td><p>Rotation Stage</p></td>
+<td><p>via McLennan</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#let-notes">see LET Notes</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>McLennan-Newport</p></td>
+<td><p>Rotation Stage</p></td>
+<td><p>via McLennan</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#let-notes">see LET Notes</a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="note-dae">
+<h3>Note: DAE<a class="headerlink" href="#note-dae" title="Link to this heading"></a></h3>
+<p>Main Detector banks + several fixed monitors.</p>
+</section>
+<section id="note-high-speed-skf-disk-chopper">
+<h3>Note: High-Speed SKF Disk Chopper<a class="headerlink" href="#note-high-speed-skf-disk-chopper" title="Link to this heading"></a></h3>
+<p>LET currently has 2 high-speed SKF choppers (same as IMAT).  These are currently controlled using a mini-IBEX system.</p>
+<ol class="arabic simple">
+<li><p>SKF G5 choppers also used on IMAT (see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1907">#1907</a>).</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.skf.com/uk/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html">SKF MB4150-G5 Chopper</a></p></li>
+<li><p><a class="reference external" href="http://www.skf.com/uk/products/magnetic-systems/software-downloads/MBScope-Beamline-software.html">MBScope</a> software for SKF magnetic bearing choppers.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="note-isis-disk-chopper">
+<h3>Note: ISIS Disk Chopper<a class="headerlink" href="#note-isis-disk-chopper" title="Link to this heading"></a></h3>
+<p>LET currently has 1 Mk3 ISIS chopper.</p>
+</section>
+<section id="note-jaws">
+<h3>Note: Jaws<a class="headerlink" href="#note-jaws" title="Link to this heading"></a></h3>
+<p>LET has no jaws.</p>
+</section>
+<section id="note-pfeiffer">
+<h3>Note: Pfeiffer<a class="headerlink" href="#note-pfeiffer" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.pfeiffer-vacuum.com/en/products/measurement/modulline/controllers/?detailPdoId=3407">Model TPG 300</a>, used for vacuum system read-back.</p>
+</section>
+<section id="note-eurotherm">
+<h3>Note: Eurotherm<a class="headerlink" href="#note-eurotherm" title="Link to this heading"></a></h3>
+<p>Eurotherms in use on LET.  Used to control temperature of all top-loading CCRs, Orange cryostats, heaters and furnaces.</p>
+</section>
+<section id="note-lakeshore">
+<h3>Note: Lakeshore<a class="headerlink" href="#note-lakeshore" title="Link to this heading"></a></h3>
+<p><br> <strong>NOTE:</strong> this entry added 07-02-2019. <br>
+LET uses a Lakeshore Model 340 cryogenic temperature controller.</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Model-340/Pages/Overview.aspx">Model 340</a>.</p>
+<ul class="simple">
+<li><p>According to the Lakeshore web-site, the Model 340 is now obsolete.  It has been replaced by the models 336 and 350.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="note-orange-cryostat">
+<h3>Note: Orange Cryostat<a class="headerlink" href="#note-orange-cryostat" title="Link to this heading"></a></h3>
+<p>Controlled via Eurotherm.</p>
+</section>
+<section id="note-oxford-instruments">
+<h3>Note: Oxford Instruments<a class="headerlink" href="#note-oxford-instruments" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Dilution fridges: <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/Dilution-Refrigerators.aspx">models</a>.  LET uses both Triton and Heliox dilution fridges</p>
+<ul class="simple">
+<li><p>Triton</p>
+<ul>
+<li><p>Triton LabVIEW Driver : C:\LabVIEW Modules\Drivers\Triton</p></li>
+<li><p>Triton Documentation : C:\LabVIEW Modules\Drivers\Triton\Documentation</p></li>
+<li><p>See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2915">#2915</a></p></li>
+</ul>
+</li>
+<li><p>Heliox</p>
+<ul>
+<li><p>The Heliox dilution fridge is currently (November 2018) broken and is being repaired at Oxford Instruments.  There is no ETA on when it will be fixed.  There are no experiments scheduled to use the Heliox dilution fridge.  Obviously, that will change when the Heliox is repaired.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="note-isis-9t-chopper-magnet">
+<h3>Note: ISIS 9T Chopper Magnet<a class="headerlink" href="#note-isis-9t-chopper-magnet" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/9T-chopper-magnet.aspx">ISIS 9T Chopper Magnet</a>
+See also:<a class="reference internal" href="../../specific_iocs/Cryogenics.html"><span class="doc std std-doc">IBEX Support for 9T chopper magnet</span></a>.</p>
+</section>
+<section id="note-isis-14t-magnet">
+<h3>Note: ISIS 14T Magnet<a class="headerlink" href="#note-isis-14t-magnet" title="Link to this heading"></a></h3>
+<p>LET has, in the past, used the <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/14T-Diffraction-Magnet.aspx">ISIS 14T Magnet</a>.  This magnet is currently being repaired and there is no ETA on when it might return to service.</p>
+</section>
+<section id="note-mezei-neutron-spin-flipper">
+<h3>Note: Mezei Neutron Spin Flipper<a class="headerlink" href="#note-mezei-neutron-spin-flipper" title="Link to this heading"></a></h3>
+<p>The Mezei Neutron Spin Flipper is a collection of devices (power supplies, signal generators &amp; control PC) housed in a mobile rack. The control PC runs a Python script to control the power supplies &amp; signal generators. The Python script accepts a set of simple commands.  The Mezei Neutron Spin Flipper is, at the time of writing, used on LET and POLREF.  In future, it may be used on other instruments too.</p>
+<p>There is a VI to control the PSU, located here: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\POLREF\POLREF</span> <span class="pre">Flipper</span></code>.  It was originally developed by Gareth Howells, but has subsequently been modified by students.  Consult with Goran Nilsson &amp; Andrew Caruana for more details.</p>
+<p><strong>N.B.:</strong> LET plans to use this device in Cycle 2018/04.</p>
+</section>
+<section id="note-isis-high-temperature-furnace">
+<h3>Note: ISIS High temperature furnace<a class="headerlink" href="#note-isis-high-temperature-furnace" title="Link to this heading"></a></h3>
+<p>Controlled via Eurotherm.  Furnaces are used only very rarely on LET.</p>
+</section>
+</section>
+<section id="let-notes">
+<h2>LET Notes<a class="headerlink" href="#let-notes" title="Link to this heading"></a></h2>
+<p>LET has the following specialist systems:</p>
+<ol class="arabic">
+<li><p>LET specific oscillating radial collimator.  Controlled by special program downloaded into Galil.</p>
+<ol class="arabic simple">
+<li><p>See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2535">2535</a></p></li>
+</ol>
+</li>
+<li><p>LET sample changer</p>
+<ul class="simple">
+<li><p>A sample changer has not often been used on LET.  From Cycle 2018/04 LET will be using a sample changer of the same design as the MERLIN sample changer (the two devices should be interchangeable).</p></li>
+</ul>
+</li>
+<li><p>LET rotation stage</p>
+<ul class="simple">
+<li><p>LET has two rotation stages;</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>A McLennan rotation stage (same as MERLIN, used with CCRs &amp; Orange Cryostats))</p></li>
+<li><p>A McLennan-Newport rotation stage (used with the 9T Magnet)</p></li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LARMOR-Instrument-Details.html" class="btn btn-neutral float-left" title="LARMOR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="LOQ-Instrument-Details.html" class="btn btn-neutral float-right" title="LOQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deploy to an instrument machine &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configure Mini Inst" href="Configure-Mini-Inst.html" />
+    <link rel="prev" title="Updating an instrument machine (email templates)" href="Updating-Instrument-Machines.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Deploy.html">Deployment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Updating-Instrument-Machines.html">Updating an instrument machine (email templates)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Deploy to an instrument machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Configure-Mini-Inst.html">Configure Mini Inst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client-Release-Tests.html">Client release tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Server-Release-Tests.html">Server Release Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IBEX-Deployment-on-Training-machine.html">Deploy to a training machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Making-an-Instrument-Available-from-the-GUI.html">Adding an instrument to the instrument list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-new-branch-for-IBEX-configurations.html">Creating a new branch for IBEX configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reviewing-Deploy-Tickets.html">Reviewing deploy tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-ISISICP.html">ISISICP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-Java.html">Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Installing-and-Upgrading-MySQL.html">MySQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Patch.html">Patching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Future.html">Future Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Deploy.html">Deployment</a></li>
+      <li class="breadcrumb-item active">Deploy to an instrument machine</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/deploy/Deployment-on-an-Instrument-Control-PC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="deploy-to-an-instrument-machine">
+<h1>Deploy to an instrument machine<a class="headerlink" href="#deploy-to-an-instrument-machine" title="Link to this heading"></a></h1>
+<p>This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC. Be sure to login as <code class="docutils literal notranslate"><span class="pre">spudulike</span></code> when deploying on instruments.</p>
+<section id="preparatory-steps-for-client-and-server">
+<h2>Preparatory Steps for Client and Server<a class="headerlink" href="#preparatory-steps-for-client-and-server" title="Link to this heading"></a></h2>
+<p>Before the group starts any manual deployments, one developer should run the <a class="reference external" href="https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#instrument_deployyaml"><code class="docutils literal notranslate"><span class="pre">instrument_deploy.yaml</span></code> ansible playbook</a> which currently installs the JDK on instruments. This should be run on the relevant deploy group - the playbook will prompt for the hosts to run it on to avoid accidentally deploying to all instruments. As an example, to deploy to the winter group, enter <code class="docutils literal notranslate"><span class="pre">winter_deploy</span></code> (as specified in the <a class="reference external" href="https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/hosts.yaml">inventory file</a>).
+This playbook has been designed so it is idempotent, ie. if a step has already occurred such as deploying the JDK it will not be repeated.</p>
+<ul class="simple">
+<li><p>Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.</p></li>
+<li><p>Make sure that <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils</span></code> is pointing at <code class="docutils literal notranslate"><span class="pre">master</span></code> and is up to date (i.e. do git pull).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the Git Bash window is not pointing to the ‘master’ branch, you need to register the repository path as a safe directory. Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">--add</span> <span class="pre">safe.directory</span> <span class="pre">'%(prefix)///isis/shares/ISIS_Experiment_Controls_Public/ibex_utils</span></code> in Git Bash to resolve this.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The install will need to access both <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils</span></code> (where the install script is located) and <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\kits$</span></code> (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy.</p>
+<p>On an instrument NDX computer the D: and O: drives will be mapped to the instrument archive and have sufficient access rights, however they can sometimes become disconnected and then things don’t work. So before starting look in windows explorer and if D: and/or O: are showing as Disconnected click on them to reconnect.</p>
+<p>If you do not have either a D: or O: network drive, then you will need to specify network credentials to map the drive via the <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">use</span></code> command.</p>
+</div>
+</section>
+<section id="upgrading-ibex-to-the-latest-version">
+<h2>Upgrading IBEX to the latest version<a class="headerlink" href="#upgrading-ibex-to-the-latest-version" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Ensure the instrument is running and in a setup state</p></li>
+<li><p>Take screenshots of server status, blocks, motors, running VIs, etc. to allow later comparison</p></li>
+<li><p>Ensure all command lines to EPICS or windows accessing the EPICS path are closed (though there is no need to stop the IBEX Server)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\instrument_deploy.bat</span></code> (or for 32-bit releases run with the parameter <code class="docutils literal notranslate"><span class="pre">x86</span></code>)</p>
+<ul class="simple">
+<li><p>you can double click on this, but usually better to drag the path into a new empty cmd window so you don’t miss any errors on abort</p></li>
+<li><p>It will look for the highest version number in the release folder as a source.</p></li>
+<li><p>If you want to install a non-default release you need to set the <code class="docutils literal notranslate"><span class="pre">SUFFIX</span></code> variable in the batch file. For example with <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code> being the current release and <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> being the suffix, it will look for the folder <code class="docutils literal notranslate"><span class="pre">Releases/x.y.z-hotfix</span></code></p></li>
+<li><p>Apart from the below points, just follow instructions - most options should be answered <code class="docutils literal notranslate"><span class="pre">Y</span></code> (yes) to, but if you are unsure on a particular machine ask on technical.</p></li>
+<li><p>Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times</p></li>
+</ul>
+</li>
+<li><p>Compare screenshots taken earlier to current state</p></li>
+</ol>
+<section id="notes-on-steps">
+<h3>Notes on steps<a class="headerlink" href="#notes-on-steps" title="Link to this heading"></a></h3>
+<section id="hotfixes">
+<h4>Hotfixes<a class="headerlink" href="#hotfixes" title="Link to this heading"></a></h4>
+<p>The script runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS</span></code> for uncommitted changes on an instrument.
+These <em>should</em> be documented on <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information--hotfixes">this page</a> and should hopefully all be submitted upstream. If not, ask on technical what to do - we may need to re-patch them after the release has been deployed.</p>
+</section>
+<section id="python-virtual-environments">
+<h4>Python virtual environments<a class="headerlink" href="#python-virtual-environments" title="Link to this heading"></a></h4>
+<p>The script will set up virtual environments for anything that uses the mechanism documented in the <a class="reference internal" href="../../processes/dev_processes/Dependency-Updates.html#dep-update-venvs"><span class="std std-ref">Dependency updates notes.</span></a></p>
+<p>It does this by searching for <code class="docutils literal notranslate"><span class="pre">requirements-frozen.txt</span></code> recursively in the top of EPICS, then uses <code class="docutils literal notranslate"><span class="pre">uv</span></code> to set virtual environments up and install dependencies.</p>
+</section>
+</section>
+</section>
+<section id="restore-ibex-from-backup-s">
+<h2>Restore IBEX from backup(s)<a class="headerlink" href="#restore-ibex-from-backup-s" title="Link to this heading"></a></h2>
+<p>As part of the deployment script, backup zip files will be created in <code class="docutils literal notranslate"><span class="pre">C:\data\old\ibex_backup_&lt;date&gt;</span></code>.
+If you need to go back to a previous backup, you can restore a full backup using the <code class="docutils literal notranslate"><span class="pre">tar</span></code> command, which
+is available in any <code class="docutils literal notranslate"><span class="pre">cmd</span></code> window.</p>
+<p>For example, to restore <code class="docutils literal notranslate"><span class="pre">c:\Instrument\Apps\Python3</span></code> from a backup, run the following in a <code class="docutils literal notranslate"><span class="pre">cmd</span></code> window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">c</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">Python3</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xf</span> <span class="n">c</span><span class="p">:</span>\<span class="n">data</span>\<span class="n">old</span>\<span class="n">ibex_backup_</span><span class="o">&lt;</span><span class="n">date</span><span class="o">&gt;</span>\<span class="n">Python3</span><span class="o">.</span><span class="n">zip</span> <span class="o">-</span><span class="n">C</span> <span class="n">c</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">Python3</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> step fails with the target directory already existing, delete or move it elsewhere
+before restoring the backup.</p>
+<p>If you instead wish to just restore/check the contents of a single file, the backups are standard <code class="docutils literal notranslate"><span class="pre">.zip</span></code>
+archives which can be browsed using any zip tool - for example <code class="docutils literal notranslate"><span class="pre">7-zip</span></code> is relatively convenient and widely
+installed on NDX computers.</p>
+</section>
+<section id="install-ibex-for-the-first-time">
+<h2>Install IBEX for the first time<a class="headerlink" href="#install-ibex-for-the-first-time" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is unlikely to happen now we’ve migrated all instruments from SECI.</p>
+</div>
+<details>
+<summary> Click to expand</summary>
+<ul class="simple">
+<li><p>If an instrument, check D: network drive status as per above <em>Notes on network share access</em></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\instrument_install.bat</span></code> (if you are on a test machine you may have to enter the full DNS path rather than the shorthand)</p>
+<ul>
+<li><p>you can double click on this, but usually better to drag the path into a new empty cmd window so you don’t miss any errors on abort</p></li>
+<li><p>It will look for the highest version number in the release folder as a source.</p></li>
+<li><p>If you want to install a non-default release you need to set the <code class="docutils literal notranslate"><span class="pre">SUFFIX</span></code> variable in the batch file. For example with <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code> being the current release and <code class="docutils literal notranslate"><span class="pre">hotfix</span></code> being the suffix, it will look for the folder <code class="docutils literal notranslate"><span class="pre">Releases/x.y.z-hotfix</span></code></p></li>
+<li><p>Follow the instructions on the command line.</p></li>
+</ul>
+</li>
+<li><p>If needed, shutdown IBEX and <a class="reference internal" href="Upgrade-ISISICP.html"><span class="doc std std-doc">upgrade the ISISICP</span></a>. Remember to run the journal parser installation (Step 8 of upgrading ICP) - this can take some time.</p></li>
+<li><p>After the script has successfully finished and the IBEX server has been started, run <code class="docutils literal notranslate"><span class="pre">instrument_test.bat</span></code> in the same folder and follow the instructions.</p></li>
+</ul>
+</details>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Updating-Instrument-Machines.html" class="btn btn-neutral float-left" title="Updating an instrument machine (email templates)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Configure-Mini-Inst.html" class="btn btn-neutral float-right" title="Configure Mini Inst" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

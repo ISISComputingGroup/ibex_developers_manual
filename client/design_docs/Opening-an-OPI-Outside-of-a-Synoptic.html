@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opening an OPI Outside of a Synoptic &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Script Generator" href="../../Script-Generator.html" />
+    <link rel="prev" title="Configuration and Component Architecture" href="Configuration-and-Component-Architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Design.html">Design Documents</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Client-Architectural-Design.html">Client Architectural Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Configuration-and-Component-Architecture.html">Configuration and Component Architecture</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Opening an OPI Outside of a Synoptic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Design.html">Design Documents</a></li>
+      <li class="breadcrumb-item active">Opening an OPI Outside of a Synoptic</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/design_docs/Opening-an-OPI-Outside-of-a-Synoptic.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opening-an-opi-outside-of-a-synoptic">
+<h1>Opening an OPI Outside of a Synoptic<a class="headerlink" href="#opening-an-opi-outside-of-a-synoptic" title="Link to this heading"></a></h1>
+<section id="names">
+<h2>Names<a class="headerlink" href="#names" title="Link to this heading"></a></h2>
+<p>The suggested name for this is ‘Device Screens’. We will change the terminology currently used in the synoptic from ‘Component’ to ‘Device’ too, for consistency (this avoids ambiguity with a component as part of a configuration).</p>
+<p>Other ideas for names were:</p>
+<ul class="simple">
+<li><p>Component Viewer</p></li>
+<li><p>Components</p></li>
+<li><p>Devices</p></li>
+<li><p>Beam/SE Devices</p></li>
+<li><p>Beam/SE Components</p></li>
+<li><p>Target View</p></li>
+<li><p>Component Targets</p></li>
+<li><p>Target View</p></li>
+<li><p>OPIs</p></li>
+<li><p>Screens</p></li>
+</ul>
+</section>
+<section id="gui-design">
+<h2>GUI Design<a class="headerlink" href="#gui-design" title="Link to this heading"></a></h2>
+<p>The figure below shows a proposed layout for the GUI. This is designed as a first attempt layout, to be similar to the existing synoptic view and hence straightforward to implement. We need to consider how best to open up multiple OPIs on one screen, but this does not necessarily need to exist in the first iteration.</p>
+<p><img alt="OPI View" src="../../_images/IBEX_UI_New_OPI_View.png" /></p>
+<p>Note that the ‘Edit List’ dialogue will look different with the changes for automatically setting defaults and the new way of setting properties.</p>
+</section>
+<section id="blockserver-storage">
+<h2>BlockServer Storage<a class="headerlink" href="#blockserver-storage" title="Link to this heading"></a></h2>
+<p>The BlockServer will be responsible for saving a list of ‘Device Screens’. It is proposed that these are stored as a separate XML file in the configuration or component: <code class="docutils literal notranslate"><span class="pre">NDXXXXX/configurations/my_config/device_screens.xml</span></code>.</p>
+<p>The XML structure will be similar to:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;devices&gt;</span>
+<span class="w">    </span><span class="nt">&lt;device&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>Eurotherm<span class="w"> </span>1<span class="nt">&lt;/name&gt;</span><span class="w">             </span><span class="cm">&lt;!-- The name given by the user --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;key&gt;</span>Eurotherm<span class="nt">&lt;/key&gt;</span><span class="w">                 </span><span class="cm">&lt;!-- The type of device, should match that in opi_info.xml --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;type&gt;</span>OPI<span class="nt">&lt;/type&gt;</span>
+<span class="w">        </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property&gt;</span>
+<span class="w">                </span><span class="nt">&lt;key&gt;</span>EURO<span class="nt">&lt;/key&gt;</span>
+<span class="w">                </span><span class="nt">&lt;value&gt;</span>EUROTHERM1<span class="nt">&lt;/value&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/property&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/properties&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/device&gt;</span>
+<span class="nt">&lt;/devices&gt;</span>
+</pre></div>
+</div>
+<p>A schema for the device screens will be required:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;device&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;sequence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span>
+<span class="w">            </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/element&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span>
+<span class="w">            </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/element&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:targettype&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span>
+<span class="w">            </span><span class="na">minOccurs=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/element&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;properties&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:targetproperties&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;/element&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/sequence&gt;</span>
+<span class="nt">&lt;/complexType&gt;</span>
+
+<span class="nt">&lt;simpleType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;targettype&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;COMPONENT&quot;</span><span class="nt">&gt;&lt;/enumeration&gt;</span>
+<span class="w">        </span><span class="nt">&lt;enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;OPI&quot;</span><span class="nt">&gt;&lt;/enumeration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/restriction&gt;</span>
+<span class="nt">&lt;/simpleType&gt;</span>
+
+<span class="nt">&lt;complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;targetproperty&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;sequence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;&lt;/element&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;&lt;/element&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/sequence&gt;</span>
+<span class="nt">&lt;/complexType&gt;</span>
+
+<span class="nt">&lt;complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;targetproperties&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;sequence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;property&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:targetproperty&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;/element&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/sequence&gt;</span>
+<span class="nt">&lt;/complexType&gt;</span>
+</pre></div>
+</div>
+<p>The device screens will be served up in the same way as the synoptics, JSON over Channel Access. Note the way PVs are named needs to take <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1053">#1053</a>
+into account.</p>
+</section>
+<section id="synoptic-changes">
+<h2>Synoptic changes<a class="headerlink" href="#synoptic-changes" title="Link to this heading"></a></h2>
+<p>Changes should be made once this is complete to use the device screens within the synoptics. This should not be done until the device screens editor and BlockServer changes are completed and well tested. When implementing the changes this should be taken into account though, to make sure synoptics can easily make use of a device screen.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Configuration-and-Component-Architecture.html" class="btn btn-neutral float-left" title="Configuration and Component Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../Script-Generator.html" class="btn btn-neutral float-right" title="Script Generator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

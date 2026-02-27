@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database Server &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Gateways" href="Gateway.html" />
+    <link rel="prev" title="Central archiver appliance" href="Central-archiver-appliance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">Database Server</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/DatabaseServer.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="database-server">
+<h1>Database Server<a class="headerlink" href="#database-server" title="Link to this heading"></a></h1>
+<p>The DatabaseServer is a Channel Access Server (CAS) written in Python using the <a class="reference external" href="https://code.google.com/archive/p/pcaspy/">PCASpy</a> module.</p>
+<p>The DatabaseServer serves the following information from the instrument database:</p>
+<ul class="simple">
+<li><p>Details about the IOCs</p></li>
+<li><p>Names of all the “interesting” PVs for the currently running IOCs</p></li>
+<li><p>Names of the sample and beamline parameter PVs.</p></li>
+</ul>
+<p>It is also updates the database if the run status of an IOC changes.</p>
+<p>The names of the beamline and sample parameter PVs are read from a database.</p>
+<section id="channel-access-commands">
+<h2>Channel Access Commands<a class="headerlink" href="#channel-access-commands" title="Link to this heading"></a></h2>
+<p>To dehex and decompress see <a class="reference internal" href="../iocs/testing/Running-IOCs.html"><span class="doc std std-doc">Reading a Compressed Hex PV</span></a></p>
+<section id="read-commands">
+<h3>Read Commands<a class="headerlink" href="#read-commands" title="Link to this heading"></a></h3>
+<p><strong>BLOCKSERVER:IOCS</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">IOCS</span>
+    <span class="n">Returns</span> <span class="n">a</span> <span class="n">dictionary</span> <span class="n">of</span> <span class="n">IOCs</span><span class="p">,</span> <span class="n">their</span> <span class="n">statuses</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">available</span> <span class="n">macros</span><span class="o">/</span><span class="n">pvsets</span> <span class="k">as</span> <span class="n">compressed</span> <span class="ow">and</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">CHAR</span> <span class="n">waveform</span><span class="p">)</span><span class="o">.</span> 
+    <span class="n">The</span> <span class="n">pattern</span> <span class="n">field</span> <span class="n">of</span> <span class="n">a</span> <span class="n">macro</span> <span class="n">gives</span> <span class="n">the</span> <span class="n">regex</span> <span class="n">of</span> <span class="n">allowed</span> <span class="n">values</span> <span class="k">for</span> <span class="n">that</span> <span class="n">macro</span><span class="o">.</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;{&quot;TPG300_01&quot;: </span>
+            <span class="p">{</span><span class="s2">&quot;running&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+			<span class="s2">&quot;macros&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;COMPORT&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Port used to communicate&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;COM[0-9]+&quot;</span><span class="p">,</span> <span class="s2">&quot;hasDefault&quot;</span><span class="p">:</span> <span class="s2">&quot;NO&quot;</span><span class="p">},</span>
+				<span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TESTMACRO&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A macro I invented for testing&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="s2">&quot;someValue&quot;</span><span class="p">,</span> <span class="s2">&quot;hasDefault&quot;</span><span class="p">:</span> <span class="s2">&quot;YES&quot;</span><span class="p">}]</span>
+			<span class="s2">&quot;pvsets&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Motor Limits&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Motor high and low limits&quot;</span><span class="p">},</span>
+				<span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test Set&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;An example pv set&quot;</span><span class="p">}]</span>
+			<span class="p">},</span>
+          <span class="s2">&quot;SIMPLE&quot;</span><span class="p">:</span> 
+            <span class="p">{</span><span class="s2">&quot;running&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+			<span class="s2">&quot;macros&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TESTMACRO&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A macro I invented for testing&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;hasDefault&quot;</span><span class="p">:</span> <span class="s2">&quot;UNKNOWN&quot;</span><span class="p">}]</span>
+			<span class="s2">&quot;pvsets&quot;</span><span class="p">:</span> <span class="p">[</span>
+				<span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test Set&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;An example pv set&quot;</span><span class="p">}]</span>
+			<span class="p">},</span>
+         <span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:IOCS_NOT_TO_STOP</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">IOCS_NOT_TO_STOP</span>
+    <span class="n">Returns</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">IOCs</span> <span class="n">that</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">stopped</span> <span class="k">as</span> <span class="n">compressed</span> <span class="n">then</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">CHAR</span> <span class="n">waveform</span><span class="p">)</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="s2">&quot;INSTETC&quot;</span><span class="p">,</span> <span class="s2">&quot;PSCTRL&quot;</span><span class="p">,</span> <span class="s2">&quot;ISISDAE&quot;</span><span class="p">,</span> <span class="s2">&quot;BLOCKSVR&quot;</span><span class="p">,</span> <span class="s2">&quot;ARINST&quot;</span><span class="p">,</span> <span class="s2">&quot;ARBLOCK&quot;</span><span class="p">,</span> <span class="s2">&quot;GWBLOCK&quot;</span><span class="p">,</span> <span class="s2">&quot;RUNCTRL&quot;</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:SAMPLE_PARS</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">SAMPLE_PARS</span>
+    <span class="n">Returns</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">the</span> <span class="n">sample</span> <span class="n">parameters</span> <span class="k">as</span> <span class="n">compressed</span> <span class="n">then</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">CHAR</span> <span class="n">waveform</span><span class="p">)</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="s2">&quot;PARS:SAMPLE:AOI&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:SAMPLE:GEOMETRY&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:SAMPLE:HEIGHT&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:SAMPLE:NAME&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PARS:SAMPLE:PHI&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:SAMPLE:THICK&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:SAMPLE:WIDTH&quot;</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:BEAMLINE_PARS</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">BEAMLINE_PARS</span>
+    <span class="n">Returns</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">the</span> <span class="n">beamline</span> <span class="n">parameters</span> <span class="k">as</span> <span class="n">compressed</span> <span class="n">then</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">CHAR</span> <span class="n">waveform</span><span class="p">)</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="s2">&quot;PARS:BL:A1&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:A2&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:A3&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:BCX&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:BCY&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:BEAMSTOP:POS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PARS:BL:CHOPEN:ANG&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:FOEMIRROR&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:JOURNAL:BLOCKS&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:L1&quot;</span><span class="p">,</span> <span class="s2">&quot;PARS:BL:SDD&quot;</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:PVS:INTEREST:HIGH</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">PVS</span><span class="p">:</span><span class="n">INTEREST</span><span class="p">:</span><span class="n">HIGH</span>
+    <span class="n">Gets</span> <span class="n">the</span> <span class="n">details</span> <span class="k">for</span> <span class="n">PVs</span> <span class="k">with</span> <span class="n">an</span> <span class="n">interest</span> <span class="n">level</span> <span class="n">of</span> <span class="s2">&quot;HIGH&quot;</span><span class="o">.</span>
+    <span class="n">Returns</span> <span class="n">a</span> <span class="n">compressed</span> <span class="ow">and</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">interesting</span> <span class="n">PVs</span><span class="o">.</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE1&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;A description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE2&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;Another description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">]</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:PVS:INTEREST:MEDIUM</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">PVS</span><span class="p">:</span><span class="n">INTEREST</span><span class="p">:</span><span class="n">MEDIUM</span>
+    <span class="n">Gets</span> <span class="n">the</span> <span class="n">details</span> <span class="k">for</span> <span class="n">PVs</span> <span class="k">with</span> <span class="n">an</span> <span class="n">interest</span> <span class="n">level</span> <span class="n">of</span> <span class="s2">&quot;MEDIUM&quot;</span><span class="o">.</span>
+    <span class="n">Returns</span> <span class="n">a</span> <span class="n">compressed</span> <span class="ow">and</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">interesting</span> <span class="n">PVs</span><span class="o">.</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE1&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;A description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE2&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;Another description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">]</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:PVS:ACTIVE</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">PVS</span><span class="p">:</span><span class="n">ACTIVE</span>
+    <span class="n">Gets</span> <span class="n">the</span> <span class="n">details</span> <span class="k">for</span> <span class="n">PVs</span> <span class="ow">in</span> <span class="n">running</span> <span class="n">IOCs</span> <span class="k">with</span> <span class="n">an</span> <span class="n">interest</span> <span class="n">level</span> <span class="n">of</span> <span class="s2">&quot;HIGH&quot;</span><span class="o">.</span>
+    <span class="n">Returns</span> <span class="n">a</span> <span class="n">compressed</span> <span class="ow">and</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">interesting</span> <span class="n">PVs</span><span class="o">.</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE1&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;A description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE2&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;Another description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">]</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:PVS:ALL</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">PVS</span><span class="p">:</span><span class="n">ALL</span>
+    <span class="n">Gets</span> <span class="n">the</span> <span class="n">details</span> <span class="k">for</span> <span class="nb">all</span> <span class="k">with</span> <span class="n">an</span> <span class="n">interest</span> <span class="n">level</span><span class="o">.</span>
+    <span class="n">Returns</span> <span class="n">a</span> <span class="n">compressed</span> <span class="ow">and</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">PVs</span><span class="o">.</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE1&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;A description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE2&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;Another description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">]</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><strong>BLOCKSERVER:INTERESTING_PVS:<em>ioc</em>:<em>level</em></strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Command</span><span class="p">:</span> <span class="n">caget</span> <span class="o">-</span><span class="n">S</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">BLOCKSERVER</span><span class="p">:</span><span class="n">INTERESTING_PVS</span><span class="p">:</span><span class="o">*</span><span class="n">ioc</span><span class="o">*</span><span class="p">:</span><span class="o">*</span><span class="n">level</span><span class="o">*</span>
+    <span class="n">Gets</span> <span class="n">the</span> <span class="n">details</span> <span class="k">for</span> <span class="n">PVs</span> <span class="n">within</span> <span class="n">the</span> <span class="n">ioc</span> <span class="o">*</span><span class="n">ioc</span><span class="o">*</span> <span class="ow">and</span> <span class="k">with</span> <span class="n">an</span> <span class="n">interest</span> <span class="n">level</span> <span class="n">of</span> <span class="o">*</span><span class="n">level</span><span class="o">*.</span>
+    <span class="n">Returns</span> <span class="n">a</span> <span class="n">compressed</span> <span class="ow">and</span> <span class="n">hexed</span> <span class="n">JSON</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">interesting</span> <span class="n">PVs</span><span class="o">.</span>
+    <span class="n">Example</span> <span class="n">JSON</span> <span class="p">(</span><span class="n">dehexed</span> <span class="ow">and</span> <span class="n">decompressed</span><span class="p">):</span>
+        <span class="s1">&#39;[</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE1&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;A description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;IN:DEMO:SIMPLE:VALUE2&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">,</span> <span class="s2">&quot;Another description&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMPLE&quot;</span><span class="p">]</span>
+         <span class="p">]</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Central-archiver-appliance.html" class="btn btn-neutral float-left" title="Central archiver appliance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Gateway.html" class="btn btn-neutral float-right" title="Gateways" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calibration files &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuration rules" href="Configuration-Rules.html" />
+    <link rel="prev" title="Settings &amp; Configurations" href="../Settings-and-Configurations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Calibration files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Configuration-Rules.html">Configuration rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Sets.html">PV Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Values.html">PV Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spangle-banner.html">Spangle Banner</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+      <li class="breadcrumb-item active">Calibration files</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/configurations/Calibration-Files.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="calibration-files">
+<h1>Calibration files<a class="headerlink" href="#calibration-files" title="Link to this heading"></a></h1>
+<p>The calibration files are anything that is equipment specific but not how to drive it; they are settings which are common to all instruments. The test for whether a file belongs in this repository is as follows. Imagine changing a file on an instrument; the change should be reflected on the other instruments thus improving their results. There will be some grey areas, for instance, the barn doors on Muon Front end. It is unlikely these calibration setting will be used elsewhere but they could be, and if they were changed it wouldn’t effect anything else, so this is a good place to put them. The actual calibration is done by IEUSG, who going forwards are going to be responsible for handling these files and making sure they’re in the correct format.</p>
+<p>A prime example of this are the temperature sensors which have a calibration of current to temperature. If a mistake is found in the calibration, it should be corrected and pushed to other instruments.</p>
+<p>These files live in a separate upstream repository at:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://gitlab.stfc.ac.uk/isisexperimentcontrols/common.git
+</pre></div>
+</div>
+<p>This repo should be cloned with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://gitlab.stfc.ac.uk/isisexperimentcontrols/common.git C:\Instrument\Settings\config\common
+</pre></div>
+</div>
+<p><em>Note that on an instrument PC these files are located in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\common</span></code></em></p>
+<p>The reason these files are in a separate repository is that they have a different release cycle to the ibex backend (they can be updated mid-experiment where we wouldn’t want to release a whole new experiment backend). It might be possible to place them in the configuration branch for instruments but merging them across instruments would be tricky. They need to be shared because the equipment is shared between experiments.</p>
+<section id="local-calibration-files">
+<h2>Local calibration files<a class="headerlink" href="#local-calibration-files" title="Link to this heading"></a></h2>
+<p>There is the option to use a local calibration directory instead of the common one. This is intended for calibration files which will only ever be used on the local instrument, and usually only temporarily - all other files should be added to the common repository through the calibration file controller. This is set on a per-IOC basis via macro and is currently implemented for Eurotherm and Danfysik IOCs. The directory for local calibration files is <code class="docutils literal notranslate"><span class="pre">/config/&lt;inst</span> <span class="pre">name&gt;/calib/</span></code></p>
+</section>
+<section id="calibration-data-within-the-repo">
+<h2>Calibration Data within the Repo<a class="headerlink" href="#calibration-data-within-the-repo" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">temp_sensors</span></code> - temperature sensor calibration files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">magnets</span></code> - calibration for magnets (mostly Danfysik. Note: magnetic field unit <strong>needs to be Gauss</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">barndoors</span></code> - calibration for motors on barndoors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ramps</span></code> - shared ramp files (mostly for a Eurotherm)</p></li>
+</ol>
+<p>Items <strong>NOT</strong> within the repository</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">motion</span> <span class="pre">set</span> <span class="pre">points</span></code> - calibration for motion set points, e.g. sample changers. These probably do not belong in the repository (after the debate) because they will be changed on an instrument, but if this is pushed to another instrument, the offsets do not make any sense. Some motion set points might be applicable we shall wait and see.</p></li>
+</ol>
+</section>
+<section id="rhfe-temperature-calibration-conversion">
+<h2>RhFe temperature calibration conversion<a class="headerlink" href="#rhfe-temperature-calibration-conversion" title="Link to this heading"></a></h2>
+<section id="convert-from-dab-files-to-txt">
+<h3>Convert from .dab files to .txt<a class="headerlink" href="#convert-from-dab-files-to-txt" title="Link to this heading"></a></h3>
+<p>There is a script designed to convert RhFe temperature sensor calibration files in .dat format.</p>
+<p><strong>Note: The script skips the first 3 lines of the files as they contain metadata.</strong></p>
+<p>Call with <code class="docutils literal notranslate"><span class="pre">%PYTHON3%</span> <span class="pre">file_converter.py</span> <span class="pre">-i</span> <span class="pre">&lt;input_folder&gt;</span> <span class="pre">-o</span> <span class="pre">&lt;output_folder&gt;</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-hl</span> <span class="pre">allows</span> <span class="pre">you</span> <span class="pre">to</span> <span class="pre">specify</span> <span class="pre">the</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">header</span> <span class="pre">lines</span> <span class="pre">a</span> <span class="pre">temp</span> <span class="pre">sensor</span> <span class="pre">file</span> <span class="pre">if</span> <span class="pre">needs</span> <span class="pre">be</span> <span class="pre">(default</span> <span class="pre">is</span> <span class="pre">1)</span></code></p>
+<p>Produces a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file for every walk-able folder under <code class="docutils literal notranslate"><span class="pre">input_folder</span></code> that contains a <code class="docutils literal notranslate"><span class="pre">.dat</span></code> file. The first 3 lines of the <code class="docutils literal notranslate"><span class="pre">.dat</span></code> file are stripped (these are header lines we do not require), for each line we then split by whitespace and take the first two of elements of the produced array and separate them with a comma. These lines are then written to an output file with the name of the folder and the txt extension e.g. <code class="docutils literal notranslate"><span class="pre">F232.txt</span></code>.</p>
+</section>
+<section id="convert-from-curve-files-to-txt">
+<h3>Convert from .curve files to .txt<a class="headerlink" href="#convert-from-curve-files-to-txt" title="Link to this heading"></a></h3>
+<p>There is a script designed to convert RhFe temperature sensor calibration files in .curve format.</p>
+<p><strong>Note: The script skips the first 6 lines of the files as they contain metadata and creates a header in ISIS calibration file format (see below).</strong></p>
+<p>Produces a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file for every walk-able folder under <code class="docutils literal notranslate"><span class="pre">input_folder</span></code> that contains a <code class="docutils literal notranslate"><span class="pre">.curve</span></code> file. The first 6 lines of the <code class="docutils literal notranslate"><span class="pre">.curve</span></code> file are stripped (these are header lines we do not require), a header block in ISIS calibration file format is generated and for each line we then split by whitespace and take the first two of elements of the produced array and separate them with a comma. These lines are then written to an output file with the name of the folder and the txt extension e.g. <code class="docutils literal notranslate"><span class="pre">F232.txt</span></code>.</p>
+<p>Scripts are available at <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts">https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts</a>.</p>
+<p><strong>Note: Ensure that metadata of the new calibration files match with the format of the script you are using before running it. If not, the script may need adjusting to cope with different file formats.</strong></p>
+<p>You will then need to push these files to the common config area and update the files on the instruments using the section below.</p>
+</section>
+</section>
+<section id="updating-calibration-file-on-instruments">
+<h2>Updating Calibration File on Instruments<a class="headerlink" href="#updating-calibration-file-on-instruments" title="Link to this heading"></a></h2>
+<p>If the common calibration file change and they need updating on all instruments, then you can run the <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/calibration_files_updater.py">calibration update script which can be found in ibex utils</a></p>
+</section>
+<section id="calibration-file-format">
+<h2>Calibration file format<a class="headerlink" href="#calibration-file-format" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>First lines start with <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">ISIS</span> <span class="pre">calibration</span></code>.</p></li>
+<li><p>Header block which is a JSON dictionary with <code class="docutils literal notranslate"><span class="pre">#</span></code> before each line. Dictionary entries are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sensor_type</span></code>: a string of the sensor type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">format_version</span></code>: a string of the format number, can be a float. For this version must be 1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conversion_date</span></code>: date for conversion as a string in <code class="docutils literal notranslate"><span class="pre">YYYY/MM/DD</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">column1_name</span></code>: (String) name of the first column.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">column1_units</span></code>: (String) units of the first column <a class="reference internal" href="../../iocs/conventions/PV-Units-%26-Standards.html#pv-units-standards"><span class="std std-ref">should match epics units conventions</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">column2_name</span></code>: (String) name of the second column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">column2_units</span></code>: (String) name of the second column <a class="reference internal" href="../../iocs/conventions/PV-Units-%26-Standards.html#pv-units-standards"><span class="std std-ref">should match epics units conventions</span></a></p></li>
+</ul>
+</li>
+<li><p>Tables of data in two columns separated by a comma</p>
+<ul class="simple">
+<li><p>The first column comprises floats representing temperature.</p></li>
+<li><p>The second column comprises floats representing reading from the sensor.</p></li>
+</ul>
+</li>
+</ol>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h3>
+<p>To set units to <code class="docutils literal notranslate"><span class="pre">C</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ISIS calibration</span>
+<span class="c1"># {</span>
+<span class="c1">#    &quot;sensor_type&quot;: &quot;K-type&quot;,</span>
+<span class="c1">#    &quot;format_version&quot;: &quot;1&quot;,</span>
+<span class="c1">#    &quot;conversion_date&quot;: &quot;2018/06/07&quot;,</span>
+<span class="c1">#    &quot;column1_name&quot;: &quot;Temperature&quot;,</span>
+<span class="c1">#    &quot;column1_units&quot;: &quot;C&quot;,</span>
+<span class="c1">#    &quot;column2_name&quot;: &quot;Voltage&quot;,</span>
+<span class="c1">#    &quot;column2_units&quot;: &quot;mV&quot;</span>
+<span class="c1"># }</span>
+<span class="mf">1.20927230303971000000</span><span class="p">,</span><span class="mf">1.50736314598516000000</span>
+<span class="mf">1.29965829974167000000</span><span class="p">,</span><span class="mf">1.52132663750615000000</span>
+<span class="mf">1.40140216241767000000</span><span class="p">,</span><span class="mf">1.53731669735489000000</span>
+<span class="mf">1.59677148943797000000</span><span class="p">,</span><span class="mf">1.56816244669350000000</span>
+</pre></div>
+</div>
+<p>To set units to <code class="docutils literal notranslate"><span class="pre">K</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ISIS calibration</span>
+<span class="c1"># {</span>
+<span class="c1">#    &quot;sensor_type&quot;: &quot;K-type&quot;,</span>
+<span class="c1">#    &quot;format_version&quot;: &quot;1&quot;,</span>
+<span class="c1">#    &quot;conversion_date&quot;: &quot;2018/06/07&quot;,</span>
+<span class="c1">#    &quot;column1_name&quot;: &quot;Temperature&quot;,</span>
+<span class="c1">#    &quot;column1_units&quot;: &quot;K&quot;,</span>
+<span class="c1">#    &quot;column2_name&quot;: &quot;Voltage&quot;,</span>
+<span class="c1">#    &quot;column2_units&quot;: &quot;mV&quot;</span>
+<span class="c1"># }</span>
+<span class="mf">1.20927230303971000000</span><span class="p">,</span><span class="mf">1.50736314598516000000</span>
+<span class="mf">1.29965829974167000000</span><span class="p">,</span><span class="mf">1.52132663750615000000</span>
+<span class="mf">1.40140216241767000000</span><span class="p">,</span><span class="mf">1.53731669735489000000</span>
+<span class="mf">1.59677148943797000000</span><span class="p">,</span><span class="mf">1.56816244669350000000</span>
+</pre></div>
+</div>
+<p>There is a set of DB records in DB area of ReadAscii that will push any metadata from the file into an epics record. This script has a configurable property name (so you can extract any metadata property from the file) and a configurable default (if the metadata didn’t exist or wasn’t valid).</p>
+<p>Call it using lines similar to the following in the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ReadASCII)/db/get_metadata.db&quot;</span><span class="p">,</span><span class="s2">&quot;DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OUT=$(P)TEMP,OUTF=EGU,NAME=column1_units,DEFAULT=K&quot;</span><span class="p">)</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ReadASCII)/db/get_metadata.db&quot;</span><span class="p">,</span><span class="s2">&quot;DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OUT=$(P)TEMP:SP,OUTF=EGU,NAME=column1_units,DEFAULT=K&quot;</span><span class="p">)</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(ReadASCII)/db/get_metadata.db&quot;</span><span class="p">,</span><span class="s2">&quot;DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OUT=$(P)TEMP:SP:RBV,OUTF=EGU,NAME=column1_units,DEFAULT=K&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="justification-for-isis-format">
+<h3>Justification for ISIS format<a class="headerlink" href="#justification-for-isis-format" title="Link to this heading"></a></h3>
+<p>Freddie, Kathryn, John, Kevin and Tom had a meeting to discuss calibration formats. The meeting decided the following:</p>
+<ul class="simple">
+<li><p>Files will be a two-column format to facilitate using the existing epics <code class="docutils literal notranslate"><span class="pre">cvt</span></code> record</p></li>
+<li><p>Any metadata will be stored in a commented block at the top of the file (the comment delimiter is <code class="docutils literal notranslate"><span class="pre">#</span></code>)</p></li>
+<li><p>The files will start with some identifiable magic bytes. I have chosen <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">ISIS</span> <span class="pre">calibration</span></code></p></li>
+<li><p>Metadata will be stored as a JSON structure</p></li>
+<li><p>The metadata will allow the following core information to be stored</p>
+<ul>
+<li><p>Sensor type so that we know what the sensor plugged in should be</p></li>
+<li><p>Conversion date so that conversion errors can be traced</p></li>
+<li><p>File format version so that we can change the format later</p></li>
+<li><p>Name and units of each column so that we know what the data represents</p></li>
+<li><p>Any arbitrary metadata should be able to be added later</p></li>
+</ul>
+</li>
+</ul>
+<p>As part of the implementation, it was decided in a discussion between John and Tom that the JSON namespace should be a flat dictionary. The advantage of using this approach is that the same script can extract any arbitrary metadata from the file, by providing the key to the dictionary.</p>
+</section>
+<section id="lakeshore">
+<h3>Lakeshore<a class="headerlink" href="#lakeshore" title="Link to this heading"></a></h3>
+<p>Examples of the Lakeshore format can be found on the <a class="reference external" href="https://www.lakeshore.com/resources/product-information">Lakeshore site</a>.</p>
+</section>
+<section id="out-of-range-in-the-calibration-file">
+<h3>Out of range in the calibration file<a class="headerlink" href="#out-of-range-in-the-calibration-file" title="Link to this heading"></a></h3>
+<p>If you above or below the maximum or minimum values in the calibration file, IBEX will interpolate beyond or below these values. Please be sure that you have selected the correct calibration file for your sensor and the sensor range. Readings beyond the calibration range may not be as accurate as those within.</p>
+<p>The Eurotherm OPI alerts the user when you are above or below the maximum or minimum values in the calibration file. This is achieved using an IOC utility.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Settings-and-Configurations.html" class="btn btn-neutral float-left" title="Settings &amp; Configurations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Configuration-Rules.html" class="btn btn-neutral float-right" title="Configuration rules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

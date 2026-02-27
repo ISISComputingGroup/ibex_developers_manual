@@ -1,0 +1,832 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Geometry Components" href="Reflectometry-Geometry-Components.html" />
+    <link rel="prev" title="Composite Driving Layer" href="Reflectometry-Composite-Driving-Layer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Config-Training.html">Reflectometry Config Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Reflectometry-IOC.html">Reflectometry</a></li>
+      <li class="breadcrumb-item active">Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/Reflectometry-Configuration.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h1>
+<section id="an-in-depth-training-course-for-writing-a-reflectometry-configuration-can-be-found-here">
+<h2><a class="reference internal" href="config_training/Reflectometry-Config-Training-%E2%80%90-Overview-%26-Setup.html"><span class="doc std std-doc">An in-depth training course for writing a Reflectometry Configuration can be found here</span></a><a class="headerlink" href="#an-in-depth-training-course-for-writing-a-reflectometry-configuration-can-be-found-here" title="Link to this heading"></a></h2>
+<p>The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in <code class="docutils literal notranslate"><span class="pre">&lt;config</span> <span class="pre">area&gt;/refl/config.py</span></code>.</p>
+<p>This file needs to import relevant classes and methods used for constructing the configuration via the line <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">ReflectometryServer</span> <span class="pre">import</span> <span class="pre">*</span></code>. It should implement a <code class="docutils literal notranslate"><span class="pre">get_beamline</span></code> method, which takes a single <code class="docutils literal notranslate"><span class="pre">macros</span></code> argument, and returns an object of type <code class="docutils literal notranslate"><span class="pre">Beamline</span></code>.</p>
+<p><a class="reference internal" href="#example-configuration">Jump to Example Configuration</a></p>
+</section>
+<section id="reference-manual">
+<h2>Reference Manual<a class="headerlink" href="#reference-manual" title="Link to this heading"></a></h2>
+<p>This section contains an overview of the available building blocks in the form of classes and helper methods, which are used to construct the beamline model.</p>
+<section id="beamline-constants">
+<h3><a class="reference internal" href="Reflectometry-Beamline-Object.html#reflectometry-beamline-constants"><span class="std std-ref">Beamline Constants</span></a><a class="headerlink" href="#beamline-constants" title="Link to this heading"></a></h3>
+<p>These are fixed values which are exposed by the IOC as PVs of the form <code class="docutils literal notranslate"><span class="pre">&lt;PREFIX&gt;:REFL:CONST:&lt;NAME&gt;</span></code>, but cannot be changed at runtime. They follow a naming convention so that they can be read automatically by the shared reflectometry scripting library. The default set of constants the configuration has to define consists of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S1_Z</span></code>: Z coordinate of Slit 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S2_Z</span></code>: Z coordinate of Slit 2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S3_Z</span></code>: Z coordinate of Slit 3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S4_Z</span></code>: Z coordinate of Slit 4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SM_Z</span></code>: Z coordinate of the supermirror</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAMPLE_Z</span></code>: Z coordinate of the sample point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PD_Z</span></code>: Z coordinate of the point detector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S3_MAX</span></code>: Maximum vertical gap for S3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S4_MAX</span></code>: Maximum vertical gap for S4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">THETA</span></code>: Maximum Theta angle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code>: Natural angle of the beam as it enters the blockhouse</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HAS_HEIGHT2</span></code>: Whether the sample stack has a second height stage (<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code> only)</p></li>
+</ul>
+<p>Also for the OPI we need constants:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OPI</span></code>: Value is the directory names in which the OPI link panels are stored. E.g. on CRISP this is set to CRISP and the panels are in <code class="docutils literal notranslate"><span class="pre">&lt;GUI</span> <span class="pre">OPIs&gt;\resources\reflectometry\crisp</span></code>. This allows for different instruments and configs to have different front panels.</p></li>
+</ul>
+<section id="arguments">
+<h4>Arguments<a class="headerlink" href="#arguments" title="Link to this heading"></a></h4>
+<p>Required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the constant (and it’s PV)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: The value it should have</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: A helpful text description</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;MAX_THETA&quot;</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="s2">&quot;Maximum Theta value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="reflectometry-components">
+<h3><a class="reference internal" href="Reflectometry-Geometry-Components.html"><span class="doc std std-doc">Components</span></a><a class="headerlink" href="#reflectometry-components" title="Link to this heading"></a></h3>
+<p>Components are the central building blocks of the configuration. Each of them represents a node of interaction with the beam on the instrument (either passively tracking or actively affecting it). They are also the connective middle layer element between the user-facing beamline parameters and the composite drivers that talk to low level motors.</p>
+<section id="types-of-component">
+<h4>Types of Component<a class="headerlink" href="#types-of-component" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Component</span></code>: Component that manages the linear displacement between the incoming beam and the component without affecting the beam (e.g. a slit)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TiltingComponent</span></code>: Component manages the angle and distance between the incoming beam and the component without affecting the beam. This allows the component to stay perpendicular to the beam as well as centred (e.g. point detector on SURF/CRISP)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReflectingComponent</span></code>: Component manages the angle and distance between the incoming beam and the component, outgoing beam is reflected from this angle (assumes infinitely long reflector at angle and distance from the incoming beam) (e.g. supermirror); If the component is out of the beam it no longer reflects</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BenchComponent</span></code>: Component for a reflectometry bench. The bench has an angle and height of the position which it pivots about, usually the sample, and a seesaw, which is a value added and subtracted from its two jacks. The seesaw axis must always be autosaved because it can not be worked out independently of the angle. The bench is also capable of moving along the beam so that the bench appears to move around an arc centred at the bench pivot (sample position). The usual configuration is that the super mirror tips and this raises the height of the bench pivot and also changes the angle of it; theta just changes the angle of the pivot; see diagram below. For an example of a bench in the configuration <a class="reference internal" href="reflectometry-bench-configuration.html"><span class="doc std std-doc">see this page</span></a></p></li>
+</ul>
+<p><img alt="bench showing how the height and pivot of the bench interact with the bench position" src="../../_images/bench_movement.png" /></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ThetaComponent</span></code>: Component manages the angle between the incoming beam and the outgoing beam at the sample position.</p>
+<ul>
+<li><p>The readback calculates the angle to the theoretical beam intercept of another component (ignoring any positional offset on that component). The component used is the first component on the list of the theta component (as defined in the configuration) that is in the beam. For example, a beamline may contain an analyser followed by a detector. If the analyser is in the beam, theta is the angle of the beam to the analyser, otherwise it is the angle to the detector.</p></li>
+<li><p>The setpoint works in the same way as the ReflectingComponent except that it will update the beam path of components which define its angle even in disabled mode.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h4>Arguments<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>Required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of the component</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup</span></code>:</p>
+<ul>
+<li><p>Most components: The geometry setup for this component as an object of the form <code class="docutils literal notranslate"><span class="pre">PositionAndAngle(y,</span> <span class="pre">z,</span> <span class="pre">angle)</span></code>, where:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: y position of straight through beam</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code>: z position of straight through beam</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: angle at which the linear axis moves</p></li>
+</ul>
+</li>
+<li><p>Bench Component: The bench setup of the form <code class="docutils literal notranslate"><span class="pre">BenchSetup(y,</span> <span class="pre">z,</span> <span class="pre">angle,</span> <span class="pre">jack_front_z,</span> <span class="pre">jack_rear_z,</span> <span class="pre">initial_table_angle,</span> <span class="pre">pivot_to_beam,</span> <span class="pre">min_angle_for_slide,</span> <span class="pre">max_angle_for_slide)</span></code>, where:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: y position of pivot of the bench of straight through beam</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code>: z position of pivot of the bench of straight through beam</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: angle that bench pivot moves along</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jack_front_z</span></code>: distance to the front jack on the bench from the pivot</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jack_rear_z</span></code>: distance to the rear jack on the bench from the pivot</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">initial_table_angle</span></code>: initial table angle (the natural angle of the beam)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pivot_to_beam</span></code>: distance from the pivot of the bench to the beam</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_angle_for_slide</span></code>: is the angle below which the slide will not move any further. This does not include the initial table angle, (e.g. on POLREF it is 0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_angle_for_slide</span></code>: is the angle above which the slide will not move any further. This does not include the initial table angle, (e.g. on POLREF it is 4.8)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="theta-angle-to-of-special-method">
+<h4>Theta Angle to/of Special Method<a class="headerlink" href="#theta-angle-to-of-special-method" title="Link to this heading"></a></h4>
+<p>Once the component is defined that the theta should measure its angle to then it must be set on the theta component with either:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">add_angle_to(&lt;component&gt;)</span></code>: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components <em>position</em> to determine the angle of theta.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_angle_of(&lt;component&gt;)</span></code>: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components <em>angle</em> to determine the angle of theta.</p></li>
+</ul>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">ThetaComponent</span><span class="p">(</span><span class="s2">&quot;theta_component&quot;</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">))</span>
+
+<span class="n">detector</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">TiltingComponent</span><span class="p">(</span><span class="s2">&quot;detector&quot;</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">)))</span>
+<span class="n">theta</span><span class="o">.</span><span class="n">add_angle_to</span><span class="p">(</span><span class="n">detector</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This creates a theta component which points at the detector height.</p>
+<p><a class="reference internal" href="reflectometry-bench-configuration.html"><span class="doc std std-doc">See example</span></a> for an example of the bench component with parameters</p>
+</section>
+</section>
+<section id="reflectometry-beamline-parameters">
+<h3><a class="reference internal" href="Reflectometry-Beamline-Parameters.html"><span class="doc std std-doc">Beamline Parameters</span></a><a class="headerlink" href="#reflectometry-beamline-parameters" title="Link to this heading"></a></h3>
+<p>These are the top-level parameters exposed as PVs of the form <code class="docutils literal notranslate"><span class="pre">&lt;PREFIX&gt;:REFL:PARAM:&lt;NAME&gt;:&lt;SUFFIX&gt;</span></code>, which the users can set via the reflectometry front panel or scripting.</p>
+<section id="types-of-parameter">
+<h4>Types of parameter<a class="headerlink" href="#types-of-parameter" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AxisParameter</span></code>: A parameter which controls the value of this components axis. If the axis is:</p>
+<ul>
+<li><p>POSITION: The position relative to the beam along the linear movement axis (e.g. offset on slit 2 <code class="docutils literal notranslate"><span class="pre">S2OFFSET</span></code>). This is useful for scanning over this axis for alignment</p></li>
+<li><p>ANGLE: The angle of this component relative to the angle of the incoming beam (e.g. angle of the point detector <code class="docutils literal notranslate"><span class="pre">PDANGLE</span></code>)</p></li>
+<li><p>TRANS: The translation position</p></li>
+<li><p>LONG_AXIS: The movement of the component parallel to the beam</p></li>
+<li><p>CHI: The chi rotation angle</p></li>
+<li><p>PSI: The psi rotation angle</p></li>
+<li><p>SEESAW: The seesaw of the component, used with the bench.</p></li>
+<li><p>DISPLACEMENT_HEIGHT: The height of the component relative to gravity. Cannot be set by the user directly, rather this is exposing positions computed by the reflectometry server based on the current beam path</p></li>
+<li><p>DISPLACEMENT_ANGLE: The angle of the component relative to gravity. Cannot be set by the user directly, rather this is exposing positions computed by the reflectometry server based on the current beam path</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">InBeamParameter</span></code>: A multi-state parameter which says whether this component is currently in the beam and tracking, or in parked state and not tracking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DirectParameter</span></code>: A non-tracking parameter (i.e. the value is independent of the current beam path). This currently does not require a <code class="docutils literal notranslate"><span class="pre">Component</span></code> but is instead directly passed a <code class="docutils literal notranslate"><span class="pre">PVWrapper</span></code> through which it talks to the motors.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SlitGapParameter</span></code>: A specific type of <code class="docutils literal notranslate"><span class="pre">DirectParameter</span></code> describing slit gaps (functionally the same)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EnumParameter</span></code>: A parameter which can take multiple values; the value is set as read back on move.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VirtualParameter</span></code>: A parameter that is not actually tied to a motor and does not have any component associated with it. Values passed to this parameter is used as an engineer correction at run time.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h4>Arguments<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<p>Required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the parameter</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">component</span></code> (only for <code class="docutils literal notranslate"><span class="pre">AxisParameter</span></code> and <code class="docutils literal notranslate"><span class="pre">InBeamParameter</span></code>): The component this parameter is for</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">axis</span></code> (only for <code class="docutils literal notranslate"><span class="pre">AxisParameter</span></code>): The axis the parameter points to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> (only for <code class="docutils literal notranslate"><span class="pre">EnumParameter</span></code>): A list of options that the parameter can take, e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;opt1&quot;,</span> <span class="pre">&quot;opt2&quot;]</span></code></p></li>
+</ul>
+<p>Optional:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: A description of this parameter (Default: use parameter <code class="docutils literal notranslate"><span class="pre">name</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autosave</span></code>: Whether the parameter should be <a class="reference internal" href="Reflectometry-Beamline-Parameters.html#reflectometry-parameter-init"><span class="std std-ref">autosaved</span></a> to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. <code class="docutils literal notranslate"><span class="pre">Theta</span></code> and <code class="docutils literal notranslate"><span class="pre">PDOffset</span></code> are inferred from point detector height), all but one of them should be autosaved in order to not lose information on the constituent parts of the axis value on restart. It should also be autosaved if a parameter can be parked out of the beam. (Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rbv_to_sp_tolerance</span></code>: The maximum difference between parameter readback and setpoint values at which it is still considered by the IOC to have arrived at its setpoint. (Default: <code class="docutils literal notranslate"><span class="pre">0.002</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">custom_function</span></code>: A python function that will be run when the parameter is moved to (either as part of a move all, as an individual parameter move or because it is in a mode where another parameter is set). This can be used to set other things in the system that depend on certain parameters, for example INTER uses it to set the wiring table when the point detector is put into and taken out of the beam. The arguments passed are the new value of the setpoint and the original value of the setpoint. To make it future compatible it should also except <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>. If the function returns a string it will be printed to the log.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">characteristic_value</span></code> (only for axis parameters): This allow a characteristic value from a PV to be displayed next to this parameter. The value for this is the PV name without instrument extension, e.g. <code class="docutils literal notranslate"><span class="pre">MOT:MTR0101</span></code>. These are often used to display raw motor values next to positions relative to the beam.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sp_mirrors_rbv</span></code> (only for axis parameters): When set to True the setpoint will take its value from the readback value on any move (either because of a move beamline or because it is in the mode). For example the long axis on INTER moves sometimes but we don’t want to move the motor back instead we want to correct the detector height.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h4>Example<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameter relative to the beam path</span>
+<span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;SM_angle&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">supermirror_component</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Point a parameter at the super mirror components angle. Call the parameter <code class="docutils literal notranslate"><span class="pre">SM_ANGLE</span></code>, resulting in the PV <code class="docutils literal notranslate"><span class="pre">&lt;INSTRUMENT</span> <span class="pre">PREFIX&gt;REFL:PARAM:SM_ANGLE</span></code> and related PVs, e.g. <code class="docutils literal notranslate"><span class="pre">:SP</span></code> to set and move to the value.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameter that is not associated with any component</span>
+<span class="n">VirtualParameter</span><span class="p">(</span><span class="s2">&quot;HEIGHT&quot;</span><span class="p">,</span> <span class="s2">&quot;mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Creates a parameter called <code class="docutils literal notranslate"><span class="pre">HEIGHT</span></code> and has “mm” as a unit of distance.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameter that directly wraps a motor value</span>
+<span class="n">DirectParameter</span><span class="p">(</span><span class="s2">&quot;sample_trans&quot;</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0305&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Create a parameter called <code class="docutils literal notranslate"><span class="pre">SAMPLE_TRANS</span></code> that sets the motor 0305.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">change_dae_tables</span><span class="p">(</span><span class="n">point_detector_in_beam</span><span class="p">,</span> <span class="n">last_point_detector_in_beam</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Change the dae tables. In beam use the point detector tables, out of the beam use multi detector.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        point_detector_in_beam: True point detector is in the beam; False otherwise </span>
+<span class="sd">        last_point_detector_in_beam: Original value before the parameter set</span>
+<span class="sd">    Return:</span>
+<span class="sd">         message to let the user know tables were changed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">genie_python</span><span class="w"> </span><span class="kn">import</span> <span class="n">genie</span> <span class="k">as</span> <span class="n">g</span>
+
+    <span class="n">g</span><span class="o">.</span><span class="n">set_instrument</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">import_instrument_init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">tables</span> <span class="o">=</span> <span class="p">{</span><span class="kc">True</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wiring&quot;</span><span class="p">:</span> <span class="s2">&quot;wiring_pd.dat&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;spectra&quot;</span><span class="p">:</span> <span class="s2">&quot;spectra_pd.dat&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;detector&quot;</span><span class="p">:</span> <span class="s2">&quot;detector_pd.dat&quot;</span><span class="p">},</span>
+              <span class="kc">False</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wiring&quot;</span><span class="p">:</span> <span class="s2">&quot;wiring_multi.dat&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;spectra&quot;</span><span class="p">:</span> <span class="s2">&quot;spectra_multi.dat&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;detector&quot;</span><span class="p">:</span> <span class="s2">&quot;detector_multi.dat&quot;</span><span class="p">}}</span>
+    <span class="k">if</span> <span class="n">point_detector_in_beam</span> <span class="o">!=</span> <span class="n">last_point_detector_in_beam</span><span class="p">:</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">change_tables</span><span class="p">(</span><span class="o">**</span><span class="n">tables</span><span class="p">[</span><span class="n">point_detector_in_beam</span><span class="p">])</span>
+        <span class="k">return</span> <span class="s2">&quot;DAE tables set&quot;</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="o">...</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">InBeamParameter</span><span class="p">(</span><span class="s2">&quot;PDINBEAM&quot;</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span> <span class="n">autosave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">custom_function</span><span class="o">=</span><span class="n">change_dae_tables</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">)</span>
+
+<span class="c1"># sp mirrors rbv</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;LONG&quot;</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span> <span class="n">CHangeAxis</span><span class="o">.</span><span class="n">LONG</span><span class="p">,</span> <span class="n">sp_mirrors_rbv</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(Note: <code class="docutils literal notranslate"><span class="pre">all_modes</span></code> will have been manually defined earlier in the example file as a list of the available modes and is <em>not</em> an in-built value.)</p>
+<p>Here when the point detector goes into or comes out of the beam the DAE tables are changed to be the correct tables.</p>
+</section>
+</section>
+<section id="reflectometry-composite-drivers">
+<h3><a class="reference internal" href="Reflectometry-Composite-Driving-Layer.html"><span class="doc std std-doc">Composite Drivers</span></a><a class="headerlink" href="#reflectometry-composite-drivers" title="Link to this heading"></a></h3>
+<p>These objects link the middle-layer component model to low-level motors.</p>
+<section id="types-of-driver">
+<h4>Types of Driver<a class="headerlink" href="#types-of-driver" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IocDriver</span></code>: The driver for a single axis. This includes moving to a parked value if the component is out of the beam.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h4>Arguments<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<p>Required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">component</span></code>: The source component</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">component_axis</span></code>: the component axis to use</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">motor_axis</span></code>: The physical motor axis as a <code class="docutils literal notranslate"><span class="pre">PVWrapper</span></code> object (see below)</p></li>
+</ul>
+<p>Optional:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">synchronised</span></code>: Whether this driver should be able to alter axis velocity when multiple axes are being moved (used for synchronised beamline movement) (Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">engineering_correction</span></code>: any <a class="reference internal" href="Reflectometry-Composite-Driving-Layer.html#reflectometry-engineering-offset"><span class="std std-ref">corrections</span></a> that should be applied to the motor position (Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">out_of_beam_positions</span></code>: A list of possible <a class="reference internal" href="Reflectometry-Composite-Driving-Layer.html#reflectometry-parking-sequences"><span class="std std-ref">parked positions</span></a> for this axis (Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>). NB if the axis can be parked then any associated parameter will need to be autosaved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pv_wrapper_for_parameter</span></code>: change the PV wrapper based on the value of a parameter. This needs a <code class="docutils literal notranslate"><span class="pre">PVWrapperForParameter(parameter,</span> <span class="pre">value_wrapper_map)</span></code> where</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">parameter</span></code>: is the beamline parameter that the swap is based on</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value_wrapper_map</span></code>: is a dictionary of the value and the wrapper to use. If the parameter is at a value not in this list the original wrapper is used.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h4>Example<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># linear and angular drivers for supermirror with parked position</span>
+<span class="n">IocDriver</span><span class="p">(</span><span class="n">sm_component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0101&quot;</span><span class="p">))</span>
+<span class="n">IocDriver</span><span class="p">(</span><span class="n">sm_component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0102&quot;</span><span class="p">))</span>
+
+<span class="c1"># with parked position</span>
+<span class="n">sm_out_pos</span> <span class="o">=</span> <span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">IODriver</span><span class="p">(</span><span class="n">sm_component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0101&quot;</span><span class="p">),</span> <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">sm_out_pos</span><span class="p">])</span>
+
+<span class="c1"># With wrapper based on parameter</span>
+<span class="n">IocDriver</span><span class="p">(</span><span class="n">s3_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">JawsCentrePVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:JAWS3&quot;</span><span class="p">,</span> <span class="n">is_vertical</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">pv_wrapper_for_parameter</span><span class="o">=</span><span class="n">PVWrapperForParameter</span><span class="p">(</span><span class="n">s3_params</span><span class="p">[</span><span class="s2">&quot;block&quot;</span><span class="p">],</span> <span class="p">{</span><span class="s2">&quot;South&quot;</span><span class="p">:</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:JAWS3:JS:MTR&quot;</span><span class="p">)}))</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="reflectometry-pv-wrappers">
+<h3>PV Wrappers<a class="headerlink" href="#reflectometry-pv-wrappers" title="Link to this heading"></a></h3>
+<p>Wrappers around lower level motors to read, monitor and cache relevant PV values (such as SP/RBV positions, or velocity related fields for synchronising moves).</p>
+<section id="types-of-pv-wrapper">
+<h4>Types of PV Wrapper<a class="headerlink" href="#types-of-pv-wrapper" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MotorPVWrapper</span></code>: Wrapper around a standard motor PV</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JawsGapPVWrapper</span></code>: Wrapper around a Jaws Gap PV</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JawsCentrePVWrapper</span></code>: Wrapper around a Jaws Centre PV. <em>NOTE:</em> this can be used for a slit without a height stage</p></li>
+</ul>
+</section>
+<section id="id6">
+<h4>Arguments<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<p>Required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base_pv</span></code>: The base PV of the axis being driven</p></li>
+</ul>
+<p>Optional:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min_velocity_scale_factor</span></code>: used to compute a minimum motor velocity in case none is set via <code class="docutils literal notranslate"><span class="pre">VBAS</span></code> on the underlying axis. Having a minimum velocity avoids motor stalling. The minimum velocity will be equal to <code class="docutils literal notranslate"><span class="pre">VMAX</span> <span class="pre">/</span> <span class="pre">min_velocity_scale_factor</span></code>. (Default: 100 - i.e. default minimum velocity <code class="docutils literal notranslate"><span class="pre">VMAX</span></code>/100)</p></li>
+</ul>
+</section>
+<section id="id7">
+<h4>Example:<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drive Axis 0101</span>
+<span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0101&quot;</span><span class="p">)</span>
+
+<span class="c1"># Drive Axis JAWS1:HGAP</span>
+<span class="n">SlitGapPVWrapper</span><span class="p">(</span><span class="s2">&quot;JAWS1&quot;</span><span class="p">,</span> <span class="n">is_vertical</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Drive Axis JAWS1:VCENT</span>
+<span class="n">SlitCentrePVWrapper</span><span class="p">(</span><span class="s2">&quot;JAWS1&quot;</span><span class="p">,</span> <span class="n">is_vertical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="modes-of-operation">
+<h3><a class="reference internal" href="Reflectometry-Beamline-Object.html"><span class="doc std std-doc">Modes of Operation</span></a><a class="headerlink" href="#modes-of-operation" title="Link to this heading"></a></h3>
+<p>Modes allow users to switch between different experimental setups more easily. They take the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the mode (e.g. <code class="docutils literal notranslate"><span class="pre">NR</span></code>, <code class="docutils literal notranslate"><span class="pre">Liquid</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beamline_parameters_to_calculate</span></code>: The list of parameters that should automatically track the beam path when this mode is active</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sp_inits</span></code>: A dictionary of <code class="docutils literal notranslate"><span class="pre">parameter:value</span></code> pairs to be applied when entering this mode (Default: empty)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_disabled</span></code>: denotes that this is a special <a class="reference internal" href="Reflectometry-Beamline-Object.html#reflectometry-disabled-mode"><span class="std std-ref">“disabled” mode</span></a>, which means all beam tracking is disabled. This is useful for aligning individual parameters in isolation. (Default: False)</p></li>
+</ul>
+<section id="id8">
+<h4>Example:<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pnr_params</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>  <span class="c1"># A list of all parameters relevant to PNR mode</span>
+<span class="n">pnr_inits</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;SM_inbeam&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="n">BeamlineMode</span><span class="p">(</span><span class="s2">&quot;Polarised NR&quot;</span><span class="p">,</span> <span class="n">pnr_params</span><span class="p">,</span> <span class="n">sp_inits</span><span class="o">=</span><span class="n">pnr_inits</span><span class="p">,</span> <span class="n">is_disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="footprint-calculator">
+<h2><a class="reference internal" href="../Reflectometry-IOC.html#reflectometry-footprint-calculator"><span class="std std-ref">Footprint Calculator</span></a><a class="headerlink" href="#footprint-calculator" title="Link to this heading"></a></h2>
+<p>The footprint calculator provides values for beam footprint and resolution based on the current slit gaps / theta, and exposes them to the front panel and scripting via PVs. It is instantiated by the beamline object if a <code class="docutils literal notranslate"><span class="pre">FootprintSetup</span></code> argument is passed, which defines relevant dimensions on the beamline.</p>
+<p>The footprint setup takes the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pos_s1</span></code>: Z coordinate of slit 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pos_s2</span></code>: Z coordinate of slit 2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pos_s3</span></code>: Z coordinate of slit 3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pos_s4</span></code>: Z coordinate of slit 4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pos_sample</span></code>:  Z coordinate of the sample</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s1vg</span></code>: The vertical <code class="docutils literal notranslate"><span class="pre">SlitGapParameter</span></code> for Slit 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s2vg</span></code>: The vertical <code class="docutils literal notranslate"><span class="pre">SlitGapParameter</span></code> for Slit 2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s3vg</span></code>: The vertical <code class="docutils literal notranslate"><span class="pre">SlitGapParameter</span></code> for Slit 3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s4vg</span></code>: The vertical <code class="docutils literal notranslate"><span class="pre">SlitGapParameter</span></code> for Slit 4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theta</span></code>: The Theta <code class="docutils literal notranslate"><span class="pre">AngleParameter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda_min</span></code>: The minimum lambda for this beamline</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda_max</span></code>: The maximum lambda for this beamline</p></li>
+</ul>
+<section id="id9">
+<h3>Example<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All of these arguments should already have been defined elsewhere in the config:</span>
+<span class="n">footprint_setup</span> <span class="o">=</span> <span class="n">FootprintSetup</span><span class="p">(</span><span class="n">z_s1</span><span class="p">,</span> <span class="n">z_s2</span><span class="p">,</span> <span class="n">z_s3</span><span class="p">,</span> <span class="n">z_s4</span><span class="p">,</span> <span class="n">z_sample</span><span class="p">,</span> <span class="n">s1vg</span><span class="p">,</span> <span class="n">s2vg</span><span class="p">,</span> <span class="n">s3vg</span><span class="p">,</span> <span class="n">s4vg</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">lambda_min</span><span class="p">,</span> <span class="n">lambda_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="beamline">
+<h2><a class="reference internal" href="Reflectometry-Beamline-Object.html"><span class="doc std std-doc">Beamline</span></a><a class="headerlink" href="#beamline" title="Link to this heading"></a></h2>
+<p>The top-level <code class="docutils literal notranslate"><span class="pre">Beamline</span></code> object is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else created in there.</p>
+<p>The beamline object is assembled automatically by the helper functions detailed below.</p>
+<section id="helper-functions">
+<h3>Helper functions<a class="headerlink" href="#helper-functions" title="Link to this heading"></a></h3>
+<p>The reflectometry server provides a set of helper functions to aid writing valid configuration files by automatically building up the top-level beamline object when any of the parts of it mentioned above are created.</p>
+<p><strong>Important note:</strong> Elements added via the helper methods will appear in the beamline in the order in which they appear in the configuration! e.g.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;PD_HEIGHT&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">pd_component</span><span class="p">))</span>
+<span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;THETA&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">theta_component</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This would mean that, if both are changed at the time of a beamline move, the point detector height would be processed before theta, i.e. s3_height would move to the height value that is relative to the beam prior to the move theta value, and therefore the wrong place. Make sure you add elements in the order in which they appear along the beam.</p>
+<p>The following methods are provided:</p>
+</section>
+<section id="add-beam-start">
+<h3><code class="docutils literal notranslate"><span class="pre">add_beam_start</span></code><a class="headerlink" href="#add-beam-start" title="Link to this heading"></a></h3>
+<p>Adds the beam start node.</p>
+<section id="required-arguments">
+<h4>Required arguments:<a class="headerlink" href="#required-arguments" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">beam_start</span></code>: The beam start node as <code class="docutils literal notranslate"><span class="pre">PositionAndAngle</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="add-mode">
+<h3><code class="docutils literal notranslate"><span class="pre">add_mode</span></code><a class="headerlink" href="#add-mode" title="Link to this heading"></a></h3>
+<p>Adds a new mode of operation to the list of all modes.</p>
+<section id="id10">
+<h4>Required arguments:<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the mode</p></li>
+</ul>
+</section>
+<section id="optional-arguments">
+<h4>Optional arguments:<a class="headerlink" href="#optional-arguments" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is_disabled</span></code>: Whether this mode is “disabled mode” (Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+</ul>
+</section>
+</section>
+<section id="add-constant">
+<h3><code class="docutils literal notranslate"><span class="pre">add_constant</span></code><a class="headerlink" href="#add-constant" title="Link to this heading"></a></h3>
+<p>Adds a new beamline constant to the list of all constants.</p>
+<section id="id11">
+<h4>Required arguments:<a class="headerlink" href="#id11" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">constant</span></code>: The <code class="docutils literal notranslate"><span class="pre">BeamlineConstant</span></code> to add</p></li>
+</ul>
+</section>
+</section>
+<section id="add-component">
+<h3><code class="docutils literal notranslate"><span class="pre">add_component</span></code><a class="headerlink" href="#add-component" title="Link to this heading"></a></h3>
+<p>Adds a new component to the list of all components.</p>
+<section id="id12">
+<h4>Required arguments:<a class="headerlink" href="#id12" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">component</span></code>: The <code class="docutils literal notranslate"><span class="pre">Component</span></code> to add</p></li>
+</ul>
+</section>
+<section id="id13">
+<h4>Optional arguments:<a class="headerlink" href="#id13" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code>: lets you insert this component in the position of the given marker instead of at the end of the list.</p></li>
+</ul>
+</section>
+</section>
+<section id="add-component-marker">
+<h3><code class="docutils literal notranslate"><span class="pre">add_component_marker</span></code><a class="headerlink" href="#add-component-marker" title="Link to this heading"></a></h3>
+<p>Adds a new marker which can later be replaced by a component. This lets you define components in a different order to their order inside the beamline object. (see theta component in config below for example)</p>
+</section>
+<section id="add-parameter">
+<h3><code class="docutils literal notranslate"><span class="pre">add_parameter</span></code><a class="headerlink" href="#add-parameter" title="Link to this heading"></a></h3>
+<p>Adds a new parameter to the list of all parameters.</p>
+<section id="id14">
+<h4>Required arguments:<a class="headerlink" href="#id14" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">parameter</span></code>: The <code class="docutils literal notranslate"><span class="pre">BeamlineParameter</span></code> to add</p></li>
+</ul>
+</section>
+<section id="id15">
+<h4>Optional arguments:<a class="headerlink" href="#id15" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">modes</span></code>: A list of <code class="docutils literal notranslate"><span class="pre">BeamlineMode</span></code>s this parameter should be added to (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>), by variable name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode_inits</span></code>: a list of mode init values for this parameter as a list of tuples (<code class="docutils literal notranslate"><span class="pre">BeamlineMode</span></code>, value) (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code>: lets you insert this component in the position of the given marker instead of at the end of the list (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+</section>
+</section>
+<section id="add-parameter-marker">
+<h3><code class="docutils literal notranslate"><span class="pre">add_parameter_marker</span></code><a class="headerlink" href="#add-parameter-marker" title="Link to this heading"></a></h3>
+<p>Adds a new marker which can later be replaced by a parameter. This lets you define parameters in a different order to their order inside the beamline object. (see theta parameter in config below for example)</p>
+</section>
+<section id="add-driver">
+<h3><code class="docutils literal notranslate"><span class="pre">add_driver</span></code><a class="headerlink" href="#add-driver" title="Link to this heading"></a></h3>
+<p>Adds a new composite driver to the list of all drivers.</p>
+<section id="id16">
+<h4>Required arguments:<a class="headerlink" href="#id16" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver</span></code>: The <code class="docutils literal notranslate"><span class="pre">IocDriver</span></code> to add</p></li>
+</ul>
+</section>
+<section id="id17">
+<h4>Optional arguments:<a class="headerlink" href="#id17" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code>: lets you insert this driver in the position of the given marker instead of at the end of the list.</p></li>
+</ul>
+</section>
+</section>
+<section id="add-driver-marker">
+<h3><code class="docutils literal notranslate"><span class="pre">add_driver_marker</span></code><a class="headerlink" href="#add-driver-marker" title="Link to this heading"></a></h3>
+<p>Adds a new marker which can later be replaced by a driver. This lets you define drivers in a different order to their order inside the beamline object.</p>
+</section>
+<section id="add-slit-parameters">
+<h3><code class="docutils literal notranslate"><span class="pre">add_slit_parameters</span></code><a class="headerlink" href="#add-slit-parameters" title="Link to this heading"></a></h3>
+<p>Add jaws-specific parameters and related drivers for a given jawset, i.e. horizontal and vertical gaps and centres.</p>
+<section id="id18">
+<h4>Required arguments:<a class="headerlink" href="#id18" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slit_number</span></code>: The number of the jawset for which to add the parameters; this is the suffix of the JAW so can be <code class="docutils literal notranslate"><span class="pre">1a</span></code> if the jaw pv is `JAWS1A</p></li>
+</ul>
+</section>
+<section id="id19">
+<h4>Optional arguments:<a class="headerlink" href="#id19" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rbv_to_sp_tolerance</span></code>: Tolerance to set in the parameters, shows an alarm if readback value is not within this tolerance of the setpoint</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modes</span></code>: A list of <code class="docutils literal notranslate"><span class="pre">BeamlineMode</span></code>s these parameters should be added to (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode_inits</span></code>: a list of mode init values for these parameters as a list of tuples (<code class="docutils literal notranslate"><span class="pre">BeamlineMode</span></code>, value) (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exclude</span></code>: Do not create parameters for the given individual axes or blades; each must be one of <code class="docutils literal notranslate"><span class="pre">VG</span></code>, <code class="docutils literal notranslate"><span class="pre">VC</span></code>, <code class="docutils literal notranslate"><span class="pre">HG</span></code>, <code class="docutils literal notranslate"><span class="pre">HC</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">W</span></code> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">include_centres</span></code>: Whether parameters for centres should be created or gaps only (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beam_blocker</span></code>: string containing code for beam blocker config, <code class="docutils literal notranslate"><span class="pre">N</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">W</span></code> for each blade which blocks the beam. See <a class="reference internal" href="Reflectometry-Beam-Blocker.html"><span class="doc std std-doc">Reflectometry Beam Blocker</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="reflectometry-as-mode-correction">
+<h3><code class="docutils literal notranslate"><span class="pre">as_mode_correction</span></code><a class="headerlink" href="#reflectometry-as-mode-correction" title="Link to this heading"></a></h3>
+<p>Helper method for you define a constant correction to be applied for specific modes only.</p>
+<section id="id20">
+<h4>Required arguments:<a class="headerlink" href="#id20" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">correction</span></code>: The constant offset to apply as a correction, e.g. <code class="docutils literal notranslate"><span class="pre">-1.5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modes</span></code>: A list of names for modes for which this correction should apply, e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;PNR&quot;,</span> <span class="pre">&quot;PA&quot;]</span></code></p></li>
+</ul>
+</section>
+<section id="id21">
+<h4>Optional arguments:<a class="headerlink" href="#id21" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: The correction to apply for modes not in the list for <code class="docutils literal notranslate"><span class="pre">modes</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">0.0</span></code>)</p></li>
+</ul>
+</section>
+</section>
+<section id="get-configured-beamline">
+<h3><code class="docutils literal notranslate"><span class="pre">get_configured_beamline</span></code><a class="headerlink" href="#get-configured-beamline" title="Link to this heading"></a></h3>
+<p>Returns the whole configured beamline object constructed from the parts added via the above helper methods</p>
+</section>
+<section id="optional-is-set">
+<h3><code class="docutils literal notranslate"><span class="pre">optional_is_set</span></code>:<a class="headerlink" href="#optional-is-set" title="Link to this heading"></a></h3>
+<p>Checks whether a specific optional flag is set via one of the provided IOC macros. This allows you to dynamically change parts of the beamline configuration via macro rather than having to go and edit the configuration file itself.</p>
+<section id="id22">
+<h4>Required arguments:<a class="headerlink" href="#id22" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">optional_id</span></code>: The id of the macro (should be numeric between 1 - 4)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">macros</span></code>: a dictionary of all IOC macros (should be the parameter you pass into <code class="docutils literal notranslate"><span class="pre">get_beamline</span></code> at the top)</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="example-configuration">
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Link to this heading"></a></h2>
+<p>Following is a example of a typical beamline configuration:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_beamline</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns: The beamline object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># FIXED BEAMLINE VALUES</span>
+    <span class="n">lambda_min</span> <span class="o">=</span> <span class="mf">1.4</span>
+    <span class="n">lambda_max</span> <span class="o">=</span> <span class="mf">6.5</span>
+
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;MAX_THETA&quot;</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="s2">&quot;Maximum Theta value&quot;</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;NATURAL_ANGLE&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s2">&quot;Natural angle of the beam&quot;</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;HAS_HEIGHT2&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Second height stage present&quot;</span><span class="p">))</span>
+
+    <span class="c1"># Modes</span>
+    <span class="n">nr</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span><span class="s2">&quot;NR&quot;</span><span class="p">)</span>
+    <span class="n">liquid</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span><span class="s2">&quot;Liquid&quot;</span><span class="p">)</span>
+    <span class="n">disabled</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span><span class="s2">&quot;DISABLED&quot;</span><span class="p">,</span> <span class="n">is_disabled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Slit 1</span>
+    <span class="n">z_s1</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;S1_Z&quot;</span><span class="p">,</span> <span class="n">z_s1</span><span class="p">,</span> <span class="s2">&quot;Slit 1 z position&quot;</span><span class="p">))</span>
+    <span class="n">s1_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">&quot;s1&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_s1</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;S1Offset&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">s1_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">])</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">s1_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0301&quot;</span><span class="p">)))</span>
+    <span class="n">s1_params</span> <span class="o">=</span> <span class="n">add_slit_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Super Mirror</span>
+    <span class="n">z_sm</span> <span class="o">=</span> <span class="mf">747.5</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;SM_Z&quot;</span><span class="p">,</span> <span class="n">z_sm</span><span class="p">,</span> <span class="s2">&quot;Super mirror z position&quot;</span><span class="p">))</span>
+    <span class="n">sm_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">ReflectingComponent</span><span class="p">(</span><span class="s2">&quot;sm&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_sm</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">InBeamParameter</span><span class="p">(</span><span class="s2">&quot;SMInBeam&quot;</span><span class="p">,</span> <span class="n">sm_comp</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+                  <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">],</span> <span class="n">mode_inits</span><span class="o">=</span><span class="p">[(</span><span class="n">nr</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="n">liquid</span><span class="p">,</span> <span class="kc">True</span><span class="p">)])</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;SMOffset&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">sm_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">])</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;SMAngle&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">sm_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">])</span>
+
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">sm_comp</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0406&quot;</span><span class="p">),</span>
+                                  <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="o">-</span><span class="mf">47.0</span><span class="p">)],</span> <span class="n">synchronised</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">sm_comp</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0407&quot;</span><span class="p">),</span> <span class="n">synchronised</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="c1"># S2</span>
+    <span class="n">z_s2</span> <span class="o">=</span> <span class="n">z_sm</span> <span class="o">+</span> <span class="mi">831</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;S2_Z&quot;</span><span class="p">,</span> <span class="n">z_s2</span><span class="p">,</span> <span class="s2">&quot;Slit 2 z position&quot;</span><span class="p">))</span>
+    <span class="n">s2_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">&quot;s2&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_s2</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;S2Offset&quot;</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">s2_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">])</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">s2_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0302&quot;</span><span class="p">)))</span>
+    <span class="n">s2_params</span> <span class="o">=</span> <span class="n">add_slit_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Sample</span>
+    <span class="n">z_sample</span> <span class="o">=</span> <span class="n">z_sm</span> <span class="o">+</span> <span class="mf">1088.3</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;SAMPLE_Z&quot;</span><span class="p">,</span> <span class="n">z_sample</span><span class="p">,</span> <span class="s2">&quot;Sample z position&quot;</span><span class="p">),</span> <span class="p">)</span>
+    <span class="n">sample_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_sample</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;SampOffset&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">sample_comp</span><span class="p">))</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">InBeamParameter</span><span class="p">(</span><span class="s2">&quot;SampInBeam&quot;</span><span class="p">,</span> <span class="n">sample_comp</span><span class="p">))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">sample_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0306&quot;</span><span class="p">),</span>
+                                  <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)]))</span>
+
+    <span class="c1"># Theta</span>
+    <span class="n">theta_comp_marker</span> <span class="o">=</span> <span class="n">add_component_marker</span><span class="p">()</span>
+    <span class="n">theta_param_marker</span> <span class="o">=</span> <span class="n">add_parameter_marker</span><span class="p">()</span>
+
+    <span class="c1"># S3 - example of using slit vertical centre as height</span>
+    <span class="n">z_s3</span> <span class="o">=</span> <span class="n">z_sm</span> <span class="o">+</span> <span class="mf">1399.30</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;S3_Z&quot;</span><span class="p">,</span> <span class="n">z_s3</span><span class="p">,</span> <span class="s2">&quot;Slit 3 z position&quot;</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;S3_MAX&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Maximum S3 opening size&quot;</span><span class="p">))</span>
+    <span class="n">s3_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_s3</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;S3Offset&quot;</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">s3_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">])</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">s3_comp</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">JawsCentrePVWrapper</span><span class="p">(</span><span class="s2">&quot;JAWS3&quot;</span><span class="p">,</span> <span class="n">is_vertical</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">synchronised</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+    <span class="n">s3_params</span> <span class="o">=</span> <span class="n">add_slit_parameters</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="s2">&quot;VC&quot;</span><span class="p">)</span>
+
+    <span class="c1"># S4</span>
+    <span class="n">z_s4</span> <span class="o">=</span> <span class="n">z_sm</span> <span class="o">+</span> <span class="mf">3114.3</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;S4_Z&quot;</span><span class="p">,</span> <span class="n">z_s4</span><span class="p">,</span> <span class="s2">&quot;Slit 4 z position&quot;</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;S4_MAX&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Maximum S4 opening size&quot;</span><span class="p">))</span>
+    <span class="n">s4_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">&quot;vac_back&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_s4</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;VBOffset&quot;</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">s4_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">])</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">s4_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0304&quot;</span><span class="p">)))</span>
+    <span class="n">s4_params</span> <span class="o">=</span> <span class="n">add_slit_parameters</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1"># point detector</span>
+    <span class="n">z_point_detector</span> <span class="o">=</span> <span class="n">z_sm</span> <span class="o">+</span> <span class="mf">3505.8</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;PD_Z&quot;</span><span class="p">,</span> <span class="n">z_point_detector</span><span class="p">,</span> <span class="s2">&quot;Point detector z position&quot;</span><span class="p">))</span>
+    <span class="n">point_detector_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">TiltingComponent</span><span class="p">(</span><span class="s2">&quot;point_detector&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_point_detector</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;PDOffset&quot;</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">point_detector_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">,</span> <span class="n">disabled</span><span class="p">])</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;PDAngle&quot;</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">point_detector_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">,</span> <span class="n">disabled</span><span class="p">])</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">InBeamParameter</span><span class="p">(</span><span class="s2">&quot;PDInBeam&quot;</span><span class="p">,</span> <span class="n">point_detector_comp</span><span class="p">))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">point_detector_comp</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0401&quot;</span><span class="p">),</span>
+                                  <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="mf">285.0</span><span class="p">)]))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">point_detector_comp</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0402&quot;</span><span class="p">),</span> <span class="n">synchronised</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="c1"># multi detector</span>
+    <span class="n">z_multi_detector</span> <span class="o">=</span> <span class="n">z_point_detector</span> <span class="o">+</span> <span class="mi">4007</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">&quot;MD_Z&quot;</span><span class="p">,</span> <span class="n">z_multi_detector</span><span class="p">,</span> <span class="s2">&quot;Multi-detector z position&quot;</span><span class="p">))</span>
+    <span class="n">multi_detector_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">TiltingComponent</span><span class="p">(</span><span class="s2">&quot;md&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_multi_detector</span><span class="p">,</span> <span class="mi">90</span><span class="p">)))</span>
+
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;MDOffset&quot;</span><span class="p">,</span>  <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">multi_detector_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">,</span> <span class="n">disabled</span><span class="p">])</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;MDAngle&quot;</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">multi_detector_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">,</span> <span class="n">disabled</span><span class="p">])</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">InBeamParameter</span><span class="p">(</span><span class="s2">&quot;MDInBeam&quot;</span><span class="p">,</span> <span class="n">multi_detector_comp</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">,</span> <span class="n">disabled</span><span class="p">])</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">multi_detector_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0403&quot;</span><span class="p">),</span> <span class="n">synchronised</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                  <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="mf">98.71</span><span class="p">)]))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">multi_detector_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">&quot;MOT:MTR0404&quot;</span><span class="p">),</span> <span class="n">synchronised</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="c1"># Perform marker replacements</span>
+    <span class="n">theta_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">ThetaComponent</span><span class="p">(</span><span class="s2">&quot;ThetaComp&quot;</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">z_sample</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+                               <span class="n">marker</span><span class="o">=</span><span class="n">theta_comp_marker</span><span class="p">)</span>
+    <span class="n">theta_comp</span><span class="o">.</span><span class="n">add_angle_to</span><span class="p">(</span><span class="n">point_detector_comp</span><span class="p">)</span>
+    <span class="n">theta_comp</span><span class="o">.</span><span class="n">add_angle_to</span><span class="p">(</span><span class="n">multi_detector_comp</span><span class="p">])</span>
+    <span class="n">theta_param_angle</span> <span class="o">=</span> <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;THETA&quot;</span><span class="p">,</span> <span class="n">theta_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">autosave</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">liquid</span><span class="p">,</span> <span class="n">disabled</span><span class="p">],</span>
+                                      <span class="n">marker</span><span class="o">=</span><span class="n">theta_param_marker</span><span class="p">)</span>
+
+    <span class="c1"># Footprint calculator setup</span>
+    <span class="n">add_footprint_setup</span><span class="p">(</span><span class="n">FootprintSetup</span><span class="p">(</span><span class="n">z_s1</span><span class="p">,</span> <span class="n">z_s2</span><span class="p">,</span> <span class="n">z_s3</span><span class="p">,</span> <span class="n">z_s4</span><span class="p">,</span> <span class="n">z_sample</span><span class="p">,</span>
+                                       <span class="n">s1_params</span><span class="p">[</span><span class="s2">&quot;VG&quot;</span><span class="p">],</span> <span class="n">s2_params</span><span class="p">[</span><span class="s2">&quot;VG&quot;</span><span class="p">],</span> <span class="n">s3_params</span><span class="p">[</span><span class="s2">&quot;VG&quot;</span><span class="p">],</span> <span class="n">s4_params</span><span class="p">[</span><span class="s2">&quot;VG&quot;</span><span class="p">],</span>
+                                       <span class="n">theta_param_angle</span><span class="p">,</span>
+                                       <span class="n">lambda_min</span><span class="p">,</span> <span class="n">lambda_max</span><span class="p">))</span>
+
+    <span class="n">add_beam_start</span><span class="p">(</span><span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">get_configured_beamline</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reflectometry-Composite-Driving-Layer.html" class="btn btn-neutral float-left" title="Composite Driving Layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reflectometry-Geometry-Components.html" class="btn btn-neutral float-right" title="Geometry Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

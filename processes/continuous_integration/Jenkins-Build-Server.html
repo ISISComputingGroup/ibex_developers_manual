@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenkins Build Server &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jenkins Trouble Shooting" href="Jenkins-Trouble-Shooting.html" />
+    <link rel="prev" title="Github Actions versus Jenkins" href="GHA_vs_Jenkins.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-new-Windows-machine-to-Jenkins.html">Adding a new Windows machine to Jenkins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GHA_vs_Jenkins.html">Github Actions versus Jenkins</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Jenkins Build Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jenkins-Trouble-Shooting.html">Jenkins Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RHEL-jenkins-linux-dependency-update.html">Updating the RHEL Jenkins Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-Automated-System-Tests.html">Running automated system tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestBuild-Jenkins-Build.html">TestBuild Jenkins Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reusable_workflows.html">reusable workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Continuous-Integration.html">Continuous Integration</a></li>
+      <li class="breadcrumb-item active">Jenkins Build Server</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/continuous_integration/Jenkins-Build-Server.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="jenkins-build-server">
+<h1>Jenkins Build Server<a class="headerlink" href="#jenkins-build-server" title="Link to this heading"></a></h1>
+<p>There is a Jenkins Build Server located at <a class="reference external" href="http://epics-jenkins.isis.rl.ac.uk/">http://epics-jenkins.isis.rl.ac.uk/</a>.</p>
+<p>For information on configuring Jenkins see <a class="reference internal" href="Adding-a-new-Windows-machine-to-Jenkins.html"><span class="doc std std-doc">Adding a new Windows machine to Jenkins</span></a>.</p>
+<section id="what-is-built">
+<h2>What is built<a class="headerlink" href="#what-is-built" title="Link to this heading"></a></h2>
+<section id="epics">
+<h3>EPICS<a class="headerlink" href="#epics" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Builds EPICS itself and the IOCs</p></li>
+<li><p>Runs the unit tests for the BlockServer and the DatabaseServer</p></li>
+<li><p>Runs a Python script as a series of unit tests to check the units in all the EPICS db files</p></li>
+<li><p>If the above was successful the compiled binaries are made available at <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\EPICS</span></code></p></li>
+</ul>
+</section>
+<section id="client">
+<h3>Client<a class="headerlink" href="#client" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The <a class="reference external" href="http://epics-jenkins.isis.rl.ac.uk/job/ibex_gui_pipeline/"><code class="docutils literal notranslate"><span class="pre">ibex_gui</span></code></a> build uses the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch for the <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui">IBEX GUI</a></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ibex_gui_build_PRs</span></code> builds all the PRs for the <code class="docutils literal notranslate"><span class="pre">ibex_gui</span></code> branch</p></li>
+<li><p>The Tycho build is run, which is slightly different to building within Eclipse. This can be run locally by running the <code class="docutils literal notranslate"><span class="pre">build/build.bat</span></code> file that is checked out with the client.</p></li>
+<li><p>The Tycho build also runs the unit tests</p></li>
+<li><p>Jenkins additionally runs CheckStyle and shows a fail build if there is an increase</p></li>
+<li><p>Jenkins builds will bundle the JRE with the client. The version of the JRE bundled is located at <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre</span></code>. This should be updated occasionally.</p></li>
+<li><p>If successful The builds are output to <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\Client</span></code>, including an installer.</p></li>
+</ul>
+</section>
+<section id="genie-python">
+<h3>genie_python<a class="headerlink" href="#genie-python" title="Link to this heading"></a></h3>
+<p>genie_python gets built and put at <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python</span></code>. There is a batch file to do the installation.</p>
+</section>
+</section>
+<section id="setting-up-a-pipeline-build">
+<h2>Setting up a Pipeline Build<a class="headerlink" href="#setting-up-a-pipeline-build" title="Link to this heading"></a></h2>
+<p>Pipeline builds are created by adding a Jenkins file to you root directory and then pointing Jenkins at your repository.</p>
+<section id="jenkins-file">
+<h3>Jenkins File<a class="headerlink" href="#jenkins-file" title="Link to this heading"></a></h3>
+<p>Defines all the steps there is much documentation on line. Start from a previous file which does something similar and edit. Here is an example <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/Jenkinsfile">in the ibex gui</a>. In it the label is the label of the node on which it is to run. The labels are set by editing the node configuration in jenkins.</p>
+<p>Once this is set up create a new pipeline build in Jenkins.</p>
+<ol class="arabic simple">
+<li><p>In jenkins click “New Item”</p></li>
+<li><p>Name the project and select Pipeline</p></li>
+<li><p>Under pipeline from SCM select <code class="docutils literal notranslate"><span class="pre">Git</span></code></p>
+<ol class="arabic simple">
+<li><p>Then add the repository url in and the credentials as ISISBuildServer</p></li>
+<li><p>Set the branch if needed</p></li>
+</ol>
+</li>
+</ol>
+<p>This should now build.</p>
+</section>
+</section>
+<section id="setting-up-a-multi-branch-pipeline">
+<h2>Setting up a Multi-branch pipeline<a class="headerlink" href="#setting-up-a-multi-branch-pipeline" title="Link to this heading"></a></h2>
+<p>Jenkins Multi-branch Pipeline project type enables you to implement different Jenkinsfile for different
+branches of the same project. Additionally, we can make Jenkins to only create and execute pipeline
+for a specific branch.</p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="http://epics-jenkins.isis.rl.ac.uk/">http://epics-jenkins.isis.rl.ac.uk/</a> and log in using your federal ID and password.</p></li>
+<li><p>Click New Item on the top left corner of the dashboard.</p></li>
+<li><p>Enter the name, select Multi-branch pipeline and click OK.</p></li>
+<li><p>Add Display Name and Description (Not mandatory but would be useful)</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Branch</span> <span class="pre">Sources</span></code> tab click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">source</span></code> and select <code class="docutils literal notranslate"><span class="pre">GitHub</span></code></p>
+<ol class="arabic simple">
+<li><p>Choose credentials User ISISBuilder</p></li>
+<li><p>Add Repository HTTPS URL (your git repo)</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Behaviors</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Discover</span> <span class="pre">branches</span></code> select <code class="docutils literal notranslate"><span class="pre">Strategy</span></code> from the drop-down list to be
+<code class="docutils literal notranslate"><span class="pre">Exclude</span> <span class="pre">branches</span> <span class="pre">that</span> <span class="pre">are</span> <span class="pre">also</span> <span class="pre">filed</span> <span class="pre">as</span> <span class="pre">PRs</span></code></p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Behaviors</span></code> click <code class="docutils literal notranslate"><span class="pre">Add</span></code> and choose <code class="docutils literal notranslate"><span class="pre">Filter</span> <span class="pre">by</span> <span class="pre">name</span> <span class="pre">(with</span> <span class="pre">wildcards)</span></code> and fill the <code class="docutils literal notranslate"><span class="pre">Include</span></code> text field
+with <code class="docutils literal notranslate"><span class="pre">Release_*</span></code> or whatever is the release prefix for your release branch and remove the rest of the options.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Strategy</span></code>, click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">property</span></code> and choose <code class="docutils literal notranslate"><span class="pre">Suppress</span> <span class="pre">automatic</span> <span class="pre">SCM</span> <span class="pre">triggering</span></code>.</p></li>
+</ol>
+</li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">Configuration</span></code> tab, <code class="docutils literal notranslate"><span class="pre">Script</span> <span class="pre">Path</span></code> should match the name of your Jenkinsfile</p></li>
+<li><p>Click Save</p></li>
+</ol>
+<p>This will build now. To start the build again click <code class="docutils literal notranslate"><span class="pre">Scan</span> <span class="pre">Repository</span> <span class="pre">Now</span></code></p>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="Jenkins-Trouble-Shooting.html"><span class="doc std std-doc">Jenkins trouble shooting</span></a></p></li>
+<li><p>Jenkins builds use the office 365 connector plugin (<a class="reference external" href="https://github.com/jenkinsci/office-365-connector-plugin">https://github.com/jenkinsci/office-365-connector-plugin</a>) to update the teams channel with build information. Examples of how this can be configured can be found in the Jenkins files of the top-level EPICS repository and the GUI repository.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="GHA_vs_Jenkins.html" class="btn btn-neutral float-left" title="Github Actions versus Jenkins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Jenkins-Trouble-Shooting.html" class="btn btn-neutral float-right" title="Jenkins Trouble Shooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

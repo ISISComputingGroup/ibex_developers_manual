@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motors Trouble Shooting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Add motor to global moving and stop all" href="Adding-motor-IOC-to-global-motor-moving-and-stop-all.html" />
+    <link rel="prev" title="SXD Attocube" href="SXD-Attocube.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Attocube.html">Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Beckhoff.html">Beckhoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galil.html">Galil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors.html">Motors</a></li>
+      <li class="breadcrumb-item active">Motors Trouble Shooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/Motors-Trouble-Shooting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="motors-trouble-shooting">
+<h1>Motors Trouble Shooting<a class="headerlink" href="#motors-trouble-shooting" title="Link to this heading"></a></h1>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Link to this heading"></a></h2>
+<section id="motors-are-hitting-a-hard-limit-in-an-unexpected-place">
+<h3>Motors are hitting a hard limit in an unexpected place<a class="headerlink" href="#motors-are-hitting-a-hard-limit-in-an-unexpected-place" title="Link to this heading"></a></h3>
+<p>This implies that the controller has lost it’s positions. The best thing to here is to rehome the axis. This can be done by selecting the offending motor in the table of motors and pressing the home button. Note that you should home one axis at a time as homing multiple axes in parallel can lead to the operation timing out.</p>
+</section>
+<section id="jaw-blade-s-are-stopping-in-an-unexpected-place">
+<h3>Jaw blade(s) are stopping in an unexpected place<a class="headerlink" href="#jaw-blade-s-are-stopping-in-an-unexpected-place" title="Link to this heading"></a></h3>
+<p>Check if the motor is part of a jaw set. Jaws <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-jaws/pull/20">may define a minimum gap</a>, which sends a stop command to both motors in the jaw set if the current
+gap is smaller than the defined minimum. This occurs both during a standard move, and during a home.</p>
+<p>This calculation may be incorrect if motor positions have been lost. The minimum gap is configured using PVs of the
+form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IN</span><span class="p">:</span><span class="n">INST</span><span class="p">:</span><span class="n">MOT</span><span class="p">:</span><span class="n">JAWS</span><span class="o">&lt;</span><span class="n">N</span><span class="o">&gt;</span><span class="p">:</span><span class="n">VGAP</span><span class="p">:</span><span class="n">MIN</span><span class="p">:</span><span class="n">SP</span>
+</pre></div>
+</div>
+<p>On many instruments, this has been set to <code class="docutils literal notranslate"><span class="pre">-2147483648</span></code> to effectively disable the minimum-gap checking. This can
+also be set temporarily.</p>
+</section>
+<section id="position-needs-to-be-restored">
+<h3>Position needs to be restored<a class="headerlink" href="#position-needs-to-be-restored" title="Link to this heading"></a></h3>
+<p>Note: <a class="reference internal" href="../../tools/archive_tools/Restore-Motor-Positions-from-Archive.html"><span class="doc std std-doc">a script exists for this</span></a></p>
+<p>Positions of the motor can be restored/set without setting an offset. These can be needed if the motor power cycles for example on a power cut. The recommendation is to do a home if possible but if not the position can be set without this.</p>
+<ol class="arabic">
+<li><p>Find the latest value from the archive with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">smpl_time</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">float_val</span> <span class="n">FROM</span> <span class="n">archive</span><span class="o">.</span><span class="n">sample</span> <span class="n">s</span>
+<span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">archive</span><span class="o">.</span><span class="n">channel</span> <span class="n">t</span> <span class="n">ON</span> <span class="n">s</span><span class="o">.</span><span class="n">channel_id</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">channel_id</span>
+<span class="n">WHERE</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span> <span class="n">LIKE</span> <span class="s2">&quot;%MOT:MTR0101%RBV%&quot;</span>
+<span class="n">AND</span> <span class="n">s</span><span class="o">.</span><span class="n">smpl_time</span> <span class="o">&gt;</span> <span class="s2">&quot;2017-11-16 00:00:00&quot;</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">s</span><span class="o">.</span><span class="n">channel_id</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">smpl_time</span> <span class="n">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open the motor details opi for given motor</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Set</span></code> in <code class="docutils literal notranslate"><span class="pre">Calibration</span></code> area</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">User</span></code> <code class="docutils literal notranslate"><span class="pre">MoveAbs</span></code> to the value from the query above</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Use</span></code> in <code class="docutils literal notranslate"><span class="pre">Calibration</span></code> area</p></li>
+<li><p>Make sure you also follow instructions in the section <code class="docutils literal notranslate"><span class="pre">Galil</span> <span class="pre">Controller</span> <span class="pre">is</span> <span class="pre">Off</span> <span class="pre">while</span> <span class="pre">IOC</span> <span class="pre">running</span></code></p></li>
+</ol>
+</section>
+<section id="galil-controller-is-off-while-ioc-running">
+<h3>Galil Controller is Off while IOC running<a class="headerlink" href="#galil-controller-is-off-while-ioc-running" title="Link to this heading"></a></h3>
+<p>When the Galil IOC is off it seems to incorrectly save the wrong state for deenergise off and energise state. This causes the motor to not react as expected. Make sure that these are reset. The way to find these states is to search autosave log with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="n">AUTOONOFF_CMD</span> <span class="o">*</span>
+<span class="n">grep</span> <span class="n">ON_CMD</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Then click the buttons to set it up correctly.</p>
+</section>
+</section>
+<section id="galil-communication">
+<h2>Galil Communication<a class="headerlink" href="#galil-communication" title="Link to this heading"></a></h2>
+<section id="can-not-communicate-with-the-galil">
+<h3>Can not communicate with the Galil<a class="headerlink" href="#can-not-communicate-with-the-galil" title="Link to this heading"></a></h3>
+<p>This is not shown well in the OPI it just has weird values. Look in the log file to check near <code class="docutils literal notranslate"><span class="pre">GalilCreateController</span></code> it says <code class="docutils literal notranslate"><span class="pre">sevr=info</span> <span class="pre">Connected</span> <span class="pre">to</span> <span class="pre">XXX</span> <span class="pre">t</span> <span class="pre">1000</span> <span class="pre">-mg</span> <span class="pre">0,</span> <span class="pre">DMC2280</span> <span class="pre">Rev</span> <span class="pre">1.0o-CM,</span> <span class="pre">46949,</span> <span class="pre">IHB</span> <span class="pre">IHD</span></code> not <code class="docutils literal notranslate"><span class="pre">sevr=major</span> <span class="pre">connect:</span> <span class="pre">5004</span> <span class="pre">OPEN</span> <span class="pre">ERROR.</span>&#160; <span class="pre">Galil::Galil()</span> <span class="pre">failed</span> <span class="pre">to</span> <span class="pre">open</span> <span class="pre">Ethernet</span> <span class="pre">host</span></code></p>
+<p>If it isn’t connected try to ping the control address. If this isn’t alive check, via the serial cable, the Galil address. The command for this is <code class="docutils literal notranslate"><span class="pre">IA?</span></code>.</p>
+</section>
+<section id="no-communication-with-galil-even-on-restart-of-ioc">
+<h3>No communication with Galil even on restart of IOC<a class="headerlink" href="#no-communication-with-galil-even-on-restart-of-ioc" title="Link to this heading"></a></h3>
+<p>If in doubt it is best to plug a serial cable directly into the control box and see if you can see anything. When connected correctly it should give a colon, <code class="docutils literal notranslate"><span class="pre">:</span></code>, after pressing return.
+If you get a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> this means that it has got into an internal configuration mode which you can’t get out of without rebooting the Galil. This has been seen when communicating with 4000 series through the ethernet cable.</p>
+</section>
+<section id="partial-communication-i-can-talk-to-it-using-hyper-term-on-the-instrument-but-driver-does-not-connect">
+<h3>Partial communication I can talk to it using hyper term on the instrument but Driver does not connect<a class="headerlink" href="#partial-communication-i-can-talk-to-it-using-hyper-term-on-the-instrument-but-driver-does-not-connect" title="Link to this heading"></a></h3>
+<p>This may be because the hardware flow control is blocking the communications; the driver sets hardware flow control on. Use the serial sniffer to record data coming to the crate; if there is none this is probably the cause. This can be caused by serial cables which do not have this line internally connected. Use the laptop to find the place where the serial signal is no longer being transmitted and replace cable.</p>
+</section>
+</section>
+<section id="galil-general">
+<h2>Galil General<a class="headerlink" href="#galil-general" title="Link to this heading"></a></h2>
+<section id="the-galil-controller-has-been-power-cycled">
+<h3>The Galil controller has been power cycled<a class="headerlink" href="#the-galil-controller-has-been-power-cycled" title="Link to this heading"></a></h3>
+<p>The Galil driver keeps track of this by setting a variable on the controller via <code class="docutils literal notranslate"><span class="pre">MOT:DMC[controller</span> <span class="pre">number]:PWRDET:SP</span></code> and monitoring the value on the galil. If <code class="docutils literal notranslate"><span class="pre">MOT:DMC[controller</span> <span class="pre">number]:PWRDET:SP</span></code> and <code class="docutils literal notranslate"><span class="pre">MOT:DMC[controller</span> <span class="pre">number]:PWRDET</span></code> diverge then the galil has lost power and the positions may not be correct. This is checked every 5 minutes, and monitored by Nagios. The value is automatically changed after a successful check to avoid burning a value into the galil leading to a power cycle being missed.</p>
+<p>If Nagios is reporting a power cycled galil (<code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">galils</span> <span class="pre">0x</span> <span class="pre">power</span> <span class="pre">check</span> <span class="pre">failed</span></code>), ensure the positions have been corrected (by homing or other means, this may be unnecessary if there are absolute encoders), and clear the error by writing to <code class="docutils literal notranslate"><span class="pre">IN:[INSTRUMENT]:MOT:DMC[controller</span> <span class="pre">number]:PWRDET:RESET:SP</span></code>.</p>
+</section>
+<section id="the-galil-reports-being-at-home-when-it-is-at-a-limit-not-at-the-limit-switch">
+<h3>The Galil reports being at home when it is at a limit, not at the limit switch<a class="headerlink" href="#the-galil-reports-being-at-home-when-it-is-at-a-limit-not-at-the-limit-switch" title="Link to this heading"></a></h3>
+<p>Ensure the limit_as_home flag is correctly set, see <a class="reference internal" href="Galil.html"><span class="doc std std-doc">here</span></a></p>
+</section>
+<section id="something-is-weird-i-want-maximum-debugging">
+<h3>Something is Weird I want Maximum Debugging<a class="headerlink" href="#something-is-weird-i-want-maximum-debugging" title="Link to this heading"></a></h3>
+<p>Maximum debugging can be achieved by adding to your st.cmd:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`epicsEnvSet(&quot;GALIL_DEBUG_FILE&quot;, &quot;galil_debug.txt&quot;)`
+</pre></div>
+</div>
+<p>This will generate a file containing all the commands sent and received from the Galil.</p>
+</section>
+<section id="error-downloading-homing-program">
+<h3>Error Downloading Homing Program<a class="headerlink" href="#error-downloading-homing-program" title="Link to this heading"></a></h3>
+<p>If you are using RS232 then you need to enable software flow control on the galil or you will get messages like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">downloading</span> <span class="n">code</span> <span class="n">model</span> <span class="n">DMC2280</span> <span class="n">Rev</span> <span class="mf">1.0</span><span class="n">o</span><span class="o">-</span><span class="n">CM</span><span class="p">,</span> <span class="n">address</span> <span class="n">COM6</span> <span class="mi">38400</span> <span class="n">msg</span> <span class="mi">1011</span> <span class="n">TIMEOUT</span> <span class="n">ERROR</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>xon/xoff is enabled via a dip switch on the Galil. The Galil must be power cycled if this DIP switch is changed</p>
+</section>
+<section id="the-galil-is-twitching-around-a-position">
+<h3>The Galil is twitching around a position<a class="headerlink" href="#the-galil-is-twitching-around-a-position" title="Link to this heading"></a></h3>
+<p>If the controller has recently been replaced this could be because the jumpers inside the Galil are set incorrectly for the motor type. You will see an error like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Galil::command(&quot;MTH=-2.5&quot;) got ? instead of : response.  TC1 returned &quot;96 SM jumpers must be installed for stepper motors&quot;
+</pre></div>
+</div>
+<p>in the logs. To fix this you must ask electronics to confirm the jumper location inside the controller.</p>
+</section>
+</section>
+<section id="galil-movement-problems">
+<h2>Galil Movement Problems<a class="headerlink" href="#galil-movement-problems" title="Link to this heading"></a></h2>
+<section id="the-axis-will-not-move-a-message-gets-put-in-the-log-of-begin-not-valid-with-motor-off">
+<h3>The axis will not move, a message gets put in the log of “Begin not valid with motor off”<a class="headerlink" href="#the-axis-will-not-move-a-message-gets-put-in-the-log-of-begin-not-valid-with-motor-off" title="Link to this heading"></a></h3>
+<p>There is a Galil specific PV called <code class="docutils literal notranslate"><span class="pre">MTRXXXX_AUTOONOFF_CMD</span></code> which controls whether an axis automatically powers up when given a move (found at the bottom of the motor details OPI). This should normally be <code class="docutils literal notranslate"><span class="pre">On</span></code> so that the motor energises before a move and switches off after a move. In some cases, the motor axis needs to be energised for the whole time, when the axis is under great load or the motor is old. In this case, the auto de-energise should be <code class="docutils literal notranslate"><span class="pre">No</span></code> the energised state should be <code class="docutils literal notranslate"><span class="pre">energise</span></code>. The “motor off deadband” should also be set to a negative number, -1, so that the motor does not turn itself off after a move, this is found in the engineering screen, <code class="docutils literal notranslate"><span class="pre">Motor</span> <span class="pre">off</span> <span class="pre">deadband</span></code>. If you don’t set this to -ve it may not deenergise the motor but this will be unreliable, we think when you don’t have an encoder it won’t deenergise the motor. There is a warning that reads <code class="docutils literal notranslate"><span class="pre">Motor</span> <span class="pre">off</span> <span class="pre">deadband</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">small</span> <span class="pre">enough,</span> <span class="pre">motor</span> <span class="pre">may</span> <span class="pre">deenergise</span> <span class="pre">after</span> <span class="pre">move.</span></code> which will show in this later case.</p>
+<section id="galil-won-t-move-after-stalling-and-does-not-send-motor-pulses-soft-limits">
+<h4>Galil won’t move after stalling and does not send motor pulses - soft limits<a class="headerlink" href="#galil-won-t-move-after-stalling-and-does-not-send-motor-pulses-soft-limits" title="Link to this heading"></a></h4>
+<p>To show the soft limits on the controller use <code class="docutils literal notranslate"><span class="pre">MG</span> <span class="pre">_BLx</span></code> to show reverse limit and <code class="docutils literal notranslate"><span class="pre">MG</span> <span class="pre">_FLx</span></code> to show forward limit in the engineering view OPI.
+It may be that the soft limit is applying a <code class="docutils literal notranslate"><span class="pre">FL</span></code> or <code class="docutils literal notranslate"><span class="pre">BL</span></code> value from the motor record - homing should 0 the motor pulses which will fix this. You can also raise the soft limit from the IBEX table of motors which will raise the <code class="docutils literal notranslate"><span class="pre">FL/BL</span></code> value and enable moves again, provided it does not stall again.</p>
+<section id="disabling-soft-limits">
+<h5>Disabling soft limits<a class="headerlink" href="#disabling-soft-limits" title="Link to this heading"></a></h5>
+<p>To disable soft limits for an axis send <code class="docutils literal notranslate"><span class="pre">BLx=-2147483648</span></code> and <code class="docutils literal notranslate"><span class="pre">FLx=2147483647</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span></code> is the Axis character (<code class="docutils literal notranslate"><span class="pre">A-H</span></code>)</p>
+</section>
+</section>
+</section>
+<section id="the-axis-will-not-move-away-from-a-limit-regardless-of-direction-a-message-gets-put-in-the-log-of-move-failed-wlp-active-or-wrong-limit-protect-stop-motor">
+<h3>The axis will not move away from a limit regardless of direction, a message gets put in the log of “move failed, <code class="docutils literal notranslate"><span class="pre">wlp</span></code> active” or “Wrong limit protect stop motor”<a class="headerlink" href="#the-axis-will-not-move-away-from-a-limit-regardless-of-direction-a-message-gets-put-in-the-log-of-move-failed-wlp-active-or-wrong-limit-protect-stop-motor" title="Link to this heading"></a></h3>
+<p>There is a Galil specific PV called <code class="docutils literal notranslate"><span class="pre">MTRXXXX_WLP_CMD</span></code> which controls whether an axis treats both limits as high and low. The default setting is On, it should be set to Off.</p>
+</section>
+<section id="galil-position-is-not-stable-at-setpoint">
+<h3>Galil position is not stable at setpoint<a class="headerlink" href="#galil-position-is-not-stable-at-setpoint" title="Link to this heading"></a></h3>
+<p>If a Galil is particularly worn, or carries an unusually heavy load, it may not stay where it is after going to a setpoint but sag down slightly. In those cases it might help to turn the “auto de-energise” setting on the Galil off (the PV is <code class="docutils literal notranslate"><span class="pre">MTRXXXX_AUTOONOFF_CMD</span></code>). This setting decides whether the Galil automatically powers off when stationary or not. Note that if this is turned off, the Galil will just stay in whichever state it was last (pv to check: <code class="docutils literal notranslate"><span class="pre">MTRXXXX_ON_STATUS</span></code>), so you may have to manually switch the power on the Galil back on again (pv to set: <code class="docutils literal notranslate"><span class="pre">MTRXXXX_ON_CMD</span></code>), otherwise it will not move.</p>
+<p><strong>Do check with the instrument scientists before you change this.</strong> If a motor is always powered when it is not meant to be, it may overheat.</p>
+</section>
+<section id="galil-is-not-correctly-setting-accelerations">
+<h3>Galil is not correctly setting accelerations<a class="headerlink" href="#galil-is-not-correctly-setting-accelerations" title="Link to this heading"></a></h3>
+<p>The motor record calculates acceleration in quite a different way than used to under SECI. Check that you have set acceleration correctly given that it is defined as <strong>seconds to get between VBAS and VELO</strong> (this means we normally want VBAS to be set to zero.</p>
+<p>There is also a minimum acceleration on galil controllers which is 1024 (in galil units). This means that if you set the acceleration to a very low value, the acceleration might get “rounded up” to a higher value. You can check what the galil believes the acceleration is by issuing <code class="docutils literal notranslate"><span class="pre">MG</span> <span class="pre">_ACA</span></code> for example in the galil engineering view arbitrary command interface.</p>
+</section>
+<section id="the-limits-are-both-made-on-limit-light-are-lit">
+<h3>The limits are both made/on/limit light are lit<a class="headerlink" href="#the-limits-are-both-made-on-limit-light-are-lit" title="Link to this heading"></a></h3>
+<p>This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils. However, there could be other reasons such as in the <a class="reference internal" href="../motor_extensions/IMAT-Lens-Adjustment.html"><span class="doc std std-doc">IMAT Lens Adjustment</span></a></p>
+</section>
+</section>
+<section id="the-motor-is-surrounded-by-a-red-border-in-the-table-of-motors">
+<h2>The motor is surrounded by a red border in the table of motors<a class="headerlink" href="#the-motor-is-surrounded-by-a-red-border-in-the-table-of-motors" title="Link to this heading"></a></h2>
+<p>This indicates that the motor does not believe it is at setpoint. The following algorithm is applied to decide whether the motor is at setpoint or not:</p>
+<ul class="simple">
+<li><p>If the motor is moving, it is always “at setpoint” - this is to prevent red borders during normal moves</p></li>
+<li><p>Otherwise, the absolute difference between VAL and RBV must be less than a tolerance. This tolerance is given by the following (in order of preference):</p>
+<ul>
+<li><p>Retry deadband (<code class="docutils literal notranslate"><span class="pre">RDBD</span></code>) if <code class="docutils literal notranslate"><span class="pre">RDBD</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">MRES</span></code> (the retry deadband cannot be set less than MRES - the motor record prevents this)</p></li>
+<li><p>Setpoint deadband (<code class="docutils literal notranslate"><span class="pre">SPDB</span></code>) if <code class="docutils literal notranslate"><span class="pre">SPDB</span></code> &gt; 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">*</span> <span class="pre">MAX(ABS(ERES),</span> <span class="pre">ABS(MRES))</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>_Note the above is done here: <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-axis/blob/master/axisApp/Db/axis_base.template#L160_">https://github.com/ISISComputingGroup/EPICS-axis/blob/master/axisApp/Db/axis_base.template#L160_</a></p>
+<p>If motion is completing successfully but you still see a border, you might need to increase the tolerance in the first instance by increasing retry deadband. Check with the scientists what an achievable precision is.</p>
+</section>
+<section id="controller-can-communicate-soft-limits-are-fine-but-cannot-move-motor-which-is-showing-a-w1-fault">
+<h2>Controller can communicate, soft limits are fine, but cannot move motor which is showing a W1 fault<a class="headerlink" href="#controller-can-communicate-soft-limits-are-fine-but-cannot-move-motor-which-is-showing-a-w1-fault" title="Link to this heading"></a></h2>
+<p>W1 or W2 fault is a winding fault which can happen to the drive cards of the motor. This has happened a few times on ALF specifically after power has been cut.  This issue shows up as a little red LED on the drive card itself. To fix, power cycle the drive card itself using the off/on toggle switch on the front:
+<img alt="image" src="../../_images/Motors-Trouble-Shooting-w1-fault.png" /></p>
+</section>
+<section id="zoom-pgc">
+<h2>ZOOM PGC<a class="headerlink" href="#zoom-pgc" title="Link to this heading"></a></h2>
+<p>The PGC on ZOOM (MTR0101 and MTR0102) uses absolute encoders. To set these up after a power cycle of the Galil the following must be sent to the device:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SYA</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">SSA</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">0</span><span class="o">&lt;</span><span class="mi">15</span>
+<span class="n">SYB</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">SSB</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">0</span><span class="o">&lt;</span><span class="mi">6</span>
+</pre></div>
+</div>
+<p>(See the <code class="docutils literal notranslate"><span class="pre">Technical</span> <span class="pre">Report</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">use</span> <span class="pre">of</span> <span class="pre">Absolute</span> <span class="pre">Encoders</span> <span class="pre">at</span> <span class="pre">ISIS</span></code> in the manuals area for more information)
+This axis is odd in that the first axis is a normal motor/encoder (albeit with absolute encoders) but the second axis is just an encoder on the same device and is used to detect any motion issues. The pre-move string in the first axis is used to make sure the encoder is correctly set up for that axis but is not long enough to do it for both axes (see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6312">https://github.com/ISISComputingGroup/IBEX/issues/6312</a>). This means if the power gets cycled the second axis may appear not to move until the above settings are reapplied.</p>
+</section>
+<section id="sans2d-tank-will-not-home-move">
+<h2>sans2d tank will not home/move<a class="headerlink" href="#sans2d-tank-will-not-home-move" title="Link to this heading"></a></h2>
+<p>some of the axes on SANS2D are part of the collision avoidance system, which means they are kept in “pause” of SPMG. To home these you need to select home and then on the low level motor screen select “Go” on SPMG to action the home.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SXD-Attocube.html" class="btn btn-neutral float-left" title="SXD Attocube" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Adding-motor-IOC-to-global-motor-moving-and-stop-all.html" class="btn btn-neutral float-right" title="Add motor to global moving and stop all" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

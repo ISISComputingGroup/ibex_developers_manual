@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanford DG645 (Litron Laser Timing) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stanford DG645" href="Stanford-DG645.html" />
+    <link rel="prev" title="Agilent 33220A" href="Agilent-33220A.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Aeroflex.html">Aeroflex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Agilent-33220A.html">Agilent 33220A</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Stanford DG645 (Litron Laser Timing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stanford-DG645.html">Stanford DG645</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tektronix-AFG3XXX.html">Tektronix AFG3XXX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Weeder-WTDAC-M.html">Weeder WTDAC-M</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Signal-Generators.html">Signal Generators</a></li>
+      <li class="breadcrumb-item active">Stanford DG645 (Litron Laser Timing)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/signal_generators/Litron-Laser-Timing-Control-(Stanford-DG645).md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="stanford-dg645-litron-laser-timing">
+<h1>Stanford DG645 (Litron Laser Timing)<a class="headerlink" href="#stanford-dg645-litron-laser-timing" title="Link to this heading"></a></h1>
+<p>Litron Laser Timing Control is an extension of the DG645 IOC made for HIFI to use. It replaces the LabView functionality as described <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6089#issuecomment-2102423879">here</a>. To enable the Litron Timing mode in the DG645 IOC, put ‘LITRON’ in the ‘APPLICATION’ macro.</p>
+<p><img alt="image" src="../../_images/litron_opi.png" /></p>
+<section id="delay-offset">
+<h2>Delay &amp; Offset<a class="headerlink" href="#delay-offset" title="Link to this heading"></a></h2>
+<p>By setting a delay and offset the following calculation is done.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dA_0</span> <span class="pre">=</span> <span class="pre">Delay</span> <span class="pre">+</span> <span class="pre">Offset</span></code> in <code class="docutils literal notranslate"><span class="pre">us</span></code></p>
+<p>Under the following constraints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">mode</span> <span class="ow">is</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">dC_0</span> <span class="o">+</span> <span class="n">Delay</span> <span class="o">+</span> <span class="n">Offset</span> <span class="o">&gt;</span> <span class="mi">39900</span> <span class="n">us</span>
+        <span class="ow">or</span> <span class="n">Delay</span> <span class="o">+</span> <span class="n">Offset</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="n">us</span>
+    <span class="n">then</span><span class="p">:</span>
+        <span class="n">Error</span> <span class="n">State</span>
+  
+<span class="n">Else</span> <span class="k">if</span> <span class="n">mode</span> <span class="ow">is</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">Delay</span> <span class="o">+</span> <span class="n">Offset</span> <span class="o">&gt;</span> <span class="mi">39900</span> <span class="n">us</span>
+        <span class="ow">or</span> <span class="n">dC_0</span> <span class="o">+</span> <span class="n">Delay</span> <span class="o">+</span> <span class="n">Offset</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="n">us</span>
+    <span class="n">then</span><span class="p">:</span>
+        <span class="n">Error</span> <span class="n">State</span>
+</pre></div>
+</div>
+</section>
+<section id="mode">
+<h2>Mode<a class="headerlink" href="#mode" title="Link to this heading"></a></h2>
+<p>When the user tries to set the mode then the following is applied:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">IOC</span> <span class="n">mode</span> <span class="ow">is</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">2</span> <span class="n">then</span><span class="p">:</span>
+    <span class="n">Set</span> <span class="n">device</span> <span class="n">mode</span> <span class="n">to</span> <span class="n">be</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">2</span> <span class="n">respectively</span>
+
+<span class="k">else</span><span class="p">:</span> <span class="c1"># IOC mode is auto</span>
+
+    <span class="k">if</span> <span class="n">Delay</span> <span class="o">&gt;</span> <span class="n">Offset</span> <span class="n">then</span><span class="p">:</span>
+        <span class="n">Set</span> <span class="n">device</span> <span class="n">mode</span> <span class="n">to</span> <span class="mi">1</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Set</span> <span class="n">device</span> <span class="n">mode</span> <span class="n">to</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Note that IOC mode is not the same as device mode. IOC mode refers to a value of <code class="docutils literal notranslate"><span class="pre">auto</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">2</span></code>, the device mode refers to which configuration/setting slot the DG645 is in (0-9). IOC mode 1 and 2 refers to device setting slots 1 and 2.</p>
+<p>As of writing auto mode has not been tested on device/instrument as not yet needed.</p>
+</section>
+<section id="summed-delay">
+<h2>Summed Delay<a class="headerlink" href="#summed-delay" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Summed</span> <span class="pre">Delay</span> <span class="pre">=</span> <span class="pre">dA_0</span> <span class="pre">+</span> <span class="pre">dC_0</span></code></p>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Unlike the DG645 IOC- when the user changes the device mode, we do not restart the IOC. We chose not to as we need to know at any point what the device mode is for error checking- if we restart the IOC then we lose track of what the device mode is.</p></li>
+<li><p>The original specification for Litron Laser Timing Control states that <code class="docutils literal notranslate"><span class="pre">dA_0</span></code> and <code class="docutils literal notranslate"><span class="pre">dC_0</span></code> should be polled at 4Hz. We chose to keep the original polling rate of the DG645 at 1Hz.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Agilent-33220A.html" class="btn btn-neutral float-left" title="Agilent 33220A" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Stanford-DG645.html" class="btn btn-neutral float-right" title="Stanford DG645" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

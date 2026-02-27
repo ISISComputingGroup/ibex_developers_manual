@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Java Licensing &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Unupdated dependencies" href="Unupdated-dependencies.html" />
+    <link rel="prev" title="Umbrella tickets" href="Umbrella-Tickets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Component-and-Activity-Stewards.html">Component &amp; Activity Stewards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Updates.html">Dependency Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="External-Contributions.html">External Contributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Good-Ticket-Writing.html">Good Ticket Writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-Documentation.html">Project Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Things-to-know-as-a-developer.html">Things to know as a developer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tickets-and-their-Workflow.html">Ticket workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Umbrella-Tickets.html">Umbrella tickets</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Understanding Java Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unupdated-dependencies.html">Unupdated dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Dev-Processes.html">Developer Processes</a></li>
+      <li class="breadcrumb-item active">Understanding Java Licensing</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/dev_processes/Understanding-Java-Licensing.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="understanding-java-licensing">
+<h1>Understanding Java Licensing<a class="headerlink" href="#understanding-java-licensing" title="Link to this heading"></a></h1>
+<section id="openjdk">
+<h2>OpenJDK<a class="headerlink" href="#openjdk" title="Link to this heading"></a></h2>
+<p>The OpenJDK is what we use on the IBEX project. The OpenJDK is available under the GNU General Public License (GPL). The license is included in the JDK directory, for reference if required.</p>
+</section>
+<section id="oracle-jdk">
+<h2>Oracle JDK<a class="headerlink" href="#oracle-jdk" title="Link to this heading"></a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>We should <strong>not</strong> need an Oracle JDK for IBEX - we should be using OpenJDK instead.</p>
+<p>Please ensure you thoroughly understand Oracle’s licensing model before installing or using an Oracle JDK (if you must use it).</p>
+<p>This information is left here for completeness only.</p>
+</div>
+<blockquote>
+<div><p>In December 2016, Oracle announced that they would be taking steps to ensure customers using commercial features of Java paid the appropriate license fee (see <a class="reference external" href="http://www.theregister.co.uk/2016/12/16/oracle_targets_java_users_non_compliance/">The Register</a> article).  This announcement has caused some confusion.  The purpose of this page is to clarify Java Licensing for IBEX developers.
+This page merely summarises the key points we, the IBEX development team, need to understand about Java licensing.  For a complete understanding of Java Licensing terms &amp; conditions consult Oracle’s <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/terms/products/index.html">Java SE and Java Embedded Products</a> page.</p>
+<p class="rubric" id="java-se-product-editions">Java SE Product Editions</p>
+<p>Java SE comes in three different product editions. Each product edition provides a different set of functional capabilities, and is intended for different kinds of applications and development scenarios.  The three product editions are:</p>
+<ol class="arabic simple">
+<li><p>Java SE</p></li>
+<li><p>Oracle Java SE Advanced &amp; Oracle Java SE Advanced Desktop</p></li>
+<li><p>Oracle Java SE Suite
+All three product editions contain a mix of free-to-use &amp; free-to-distribute features <em><strong>and</strong></em> <a class="reference internal" href="#java-licensing-features">Commercial Features</a>.  If you only use free-to-use and free-to-distribute features, you do not incur a license fee.  And, of course, if you use Commercial Features, you do incur a license fee.
+It is also important to understand that Oracle does <em><strong>not</strong></em> provide installation programs that correspond directly to these 3 product editions. Depending on which of the products you have licensed, you will need to download one or more installer packages.  Regardless of which product edition you intend to use, you must agree to the terms of the relevant product license.
+Taking these two points into consideration, understanding which features of the various Java SE product editions we use is essential to determining whether ISIS is liable to pay a license fee for its use of Java in IBEX.</p></li>
+</ol>
+<p class="rubric" id="java-se-product-edition">Java SE Product Edition</p>
+<p>The Java SE Product Edition includes the following components:</p>
+<ul class="simple">
+<li><p>Java Runtime Environment (JRE), (Server and regular packages)</p></li>
+<li><p>Java Development Kit (JDK), including the JavaFX Software Development Kit (SDK),</p></li>
+<li><p>JavaFX Runtime,</p></li>
+<li><p>JRockit JDK
+The JRE provides a Java Virtual Machine (JVM), the standard class libraries and other components to run applications written in the Java programming language.  The JDK is a superset of the JRE, and contains everything in the JRE, plus tools such as compilers and debuggers for development.
+JavaFX is a software platform for creating and delivering desktop applications, as well as rich internet applications (RIAs) that can run across a wide variety of devices. JavaFX is intended to replace Swing as the standard GUI library for Java SE, but both are likely to be included for the foreseeable future.  At the present time (March 2017), IBEX does not use JavaFX.
+JRockit is an alternative JVM for Oracle middleware applications.  The JRockit JDK is a development toolkit for creating applications which use the JRockit JVM.  At the present time (March 2017), IBEX does not use JRockit.<br>
+<strong>Note:</strong> JRockit JDK is free to use.  However, applications developed using the JRockit JDK may attract a run-time license fee.  Therefore, we should not use JRockit in IBEX.
+With the exception of those features designated as <a class="reference internal" href="#java-licensing-features">Commercial Features</a>, Java SE can be used for free internally to run applications and may be redistributed in accordance with the <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf">Oracle Binary Code License Agreement for the JAVA SE Platform Products</a> (the “Java BCLA”) - this version of the JAVA BCLA dates from 02-April-2013.</p></li>
+</ul>
+<p class="rubric" id="oracle-java-se-advanced-oracle-java-se-advanced-desktop-product-edition">Oracle Java SE Advanced &amp; Oracle Java SE Advanced Desktop Product Edition</p>
+<p>Java SE Advanced and Java SE Advanced Desktop product editions are both supersets of Java SE.  They include  additional features for so-called “mission critical enterprise client and server deployments of Java”, as well as Java-based applications and solutions from independent software vendors (ISVs).
+The Java SE Advanced and Java SE Advanced Desktop product editions both include Commercial Features.  IBEX does not need to use any of the additional features (commercial or otherwise) provided by Java SE Advanced and Java SE Advanced Desktop.  Therefore, we should not use them.</p>
+<p class="rubric" id="oracle-java-se-suite-product-edition">Oracle Java SE Suite Product Edition</p>
+<p>Java SE Suite is a superset of Oracle Java SE Advanced.  In addition to Java SE Advanced, it includes features for soft real-time applications, based on the JRockit Real Time JVM.
+The Java SE Suite product editions includes Commercial Features.  IBEX does not need to use any of the additional features (commercial or otherwise) provided by Java SE Suite.  Therefore, we should not use it.</p>
+<p class="rubric" id="installation-packages-for-java-se-product-editions">Installation Packages for Java SE Product Editions</p>
+<p>Oracle does not provide installation programs that correspond directly to various Java SE product editions described above. Depending on the products licensed, one or more of the following individual packages must be downloaded:</p>
+<ul class="simple">
+<li><p>JRE (Server or regular packages)</p></li>
+<li><p>JDK</p></li>
+<li><p>Java Advanced Management Console</p></li>
+<li><p>Microsoft Windows Installer (MSI) Enterprise JRE Installer</p></li>
+<li><p>JavaFX Runtime</p></li>
+<li><p>JRockit JDK</p></li>
+<li><p>JRockit Mission Control
+For the purpose of developing IBEX, the only installer packages we need be concerned about are the first two, the JRE and the JDK.  We do not use features provided by the other installer packages, so there is no need to download them.</p></li>
+</ul>
+<p class="rubric" id="java-licensing-features">Commercial Features of Java SE Product Editions</p>
+<p>All of the Java SE product edition included one or more commercial features.  The table below lists each of the commercial features and the product editions that contain those commercial features.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Commercial Feature</p></th>
+<th class="head"><p>Product Editions containing the Commercial Feature</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JRE Usage Tracking</p></td>
+<td><p>JRE (version 7+, 8+)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Java Flight Recorder</p></td>
+<td><p>JDK (versions 7u40+, 8+)</p></td>
+</tr>
+<tr class="row-even"><td><p>Java Mission Control</p></td>
+<td><p>JDK (versions 7u40+, 8+) Java Mission Control</p></td>
+</tr>
+<tr class="row-odd"><td><p>Java Advanced Management Console</p></td>
+<td><p>JDK (versions 8u20+), Java Advanced Management Console</p></td>
+</tr>
+<tr class="row-even"><td><p>MSI Enterprise JRE Installer</p></td>
+<td><p>JDK (versions 8u20+), MSI Enterprise JRE Installer</p></td>
+</tr>
+<tr class="row-odd"><td><p>JRockit Flight Recorder</p></td>
+<td><p>JRockit JDK</p></td>
+</tr>
+<tr class="row-even"><td><p>JRockit Mission Control Console observability</p></td>
+<td><p>JRockit JDK, JRockit Real Time, JRockit Mission Control</p></td>
+</tr>
+<tr class="row-odd"><td><p>JRockit Mission Control Memory Leak Detector observability</p></td>
+<td><p>JRockit JDK, JRockit Real Time, JRockit Mission Control</p></td>
+</tr>
+<tr class="row-even"><td><p>JRockit Real Time, Deterministic GC</p></td>
+<td><p>JRockit JDK, JRockit Real Time, JRockit Mission Control</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Note:</strong> Full details of <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/terms/products/index.html">Java Commercial Features</a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric" id="using-commercial-features-of-java-se">Using Commercial Features of Java SE</p>
+<p>According to the <a class="reference external" href="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html">Java command line options</a> page:  <br>
+<code class="docutils literal notranslate"><span class="pre">-XX:+UnlockCommercialFeatures</span></code>: <em>Use this flag to actively unlock the use of commercial features. Commercial features are the products Oracle Java SE Advanced or Oracle Java SE Suite, as defined at the Java SE Products web page.  If this flag is not specified, then the default is to run the Java Virtual Machine without the commercial features being available. After they are enabled, it is not possible to disable their use at runtime.</em>
+Oracle documentation makes it very clear that we cannot run commercial features of Java without specifying
+the <code class="docutils literal notranslate"><span class="pre">-XX:+UnlockCommercialFeatures</span></code> option on the command line.<br />
+The key word in the above quote is “actively”.  We have to actively choose to use the commercial features of Java.  Obviously, if we do choose to use commercial features of Java, then ISIS becomes liable to pay a license fee.  Therefore, choosing to use commercial features of Java, implies that we seek prior approval to purchase the appropriate Java SE license.</p>
+<p class="rubric" id="ibex-policy-regarding-commercial-features-of-java-se">IBEX Policy Regarding Commercial Features of Java SE</p>
+<p>At the present time, IBEX does not need to use any of the commercial features of Java SE.  Therefore, in developing IBEX, our policy is <strong>TO NOT USE COMMERCIAL FEATURES</strong> of Java SE.  We should never use the <code class="docutils literal notranslate"><span class="pre">-XX:+UnlockCommercialFeatures</span></code> command line option.  Nor should we use the MSI Enterprise JRE Installer.</p>
+<p class="rubric" id="ibex-build-scripts-commercial-features-of-java-se">IBEX Build Scripts &amp; Commercial Features of Java SE</p>
+<p>At the time of writing (2nd March 2017), the IBEX build scripts conform to the above policy.  The scripts used to invoke Java in order to run the IBEX client are generated by the IBEX build server.  The <code class="docutils literal notranslate"><span class="pre">-XX:+UnlockCommercialFeatures</span></code> command line option is <strong>not</strong> included in the configuration of the build script.  See:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/build/build.bat">build.bat</a> and</p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml">pom.xml</a>
+We also use ActiveMQ on the IBEX server.  <a class="reference external" href="http://activemq.apache.org/">ActiveMQ</a> is a Java application (from the <a class="reference external" href="http://www.apache.org/">Apache Software Foundation</a>).  ActiveMQ is invoked via one of two batch files:</p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ActiveMQ/blob/master/bin/activemq.bat"><code class="docutils literal notranslate"><span class="pre">activemq.bat</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ActiveMQ/blob/master/bin/activemq-admin.bat"><code class="docutils literal notranslate"><span class="pre">activemq-admin.bat</span></code></a>
+The <code class="docutils literal notranslate"><span class="pre">-XX:+UnlockCommercialFeatures</span></code> command line option is <strong>not</strong> a feature of either batch file. Given that the Apache SF is dedicated to the provision of open-source software, it seems highly unlikely that they will ever use
+the <code class="docutils literal notranslate"><span class="pre">-XX:+UnlockCommercialFeatures</span></code> command line option.</p></li>
+</ol>
+<p class="rubric" id="reference-material">Reference Material</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FJava%20Licensing">Java Licensing</a> folder on ICP Discussions site.</p></li>
+<li><p><a class="reference external" href="http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf">Oracle Binary Code License Agreement for the JAVA SE Platform Products (02-April-2013)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1915">Ticket: #1915</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Umbrella-Tickets.html" class="btn btn-neutral float-left" title="Umbrella tickets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Unupdated-dependencies.html" class="btn btn-neutral float-right" title="Unupdated dependencies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

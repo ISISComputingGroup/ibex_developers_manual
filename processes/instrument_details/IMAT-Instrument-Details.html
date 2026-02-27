@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMAT &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="INES" href="INES-Instrument-Details.html" />
+    <link rel="prev" title="HRPD" href="HRPD-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ARGUS-Instrument-Details.html">ARGUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHIPIR-Instrument-Details.html">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LET-Instrument-Details.html">LET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOQ-Instrument-Details.html">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN-Instrument-Details.html">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OFFSPEC-Instrument-Details.html">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PEARL-Instrument-Details.html">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">IMAT</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/IMAT-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="imat">
+<h1>IMAT<a class="headerlink" href="#imat" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instrument details pages provide historical context about the devices on a specific instrument,
+at the time they were migrated to IBEX. <strong>These pages may not be up to date with the latest instrument
+configuration.</strong></p>
+</div>
+<p>This page collects information that will be useful for the implementation of the new control system on IMAT.</p>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>The <a class="reference external" href="http://www.isis.stfc.ac.uk/instruments/imat/imat8259.html">IMAT</a> web page describes the background to the instrument.  Additional material is also available on the <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FIMAT&amp;amp;viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3">IMAT sharepoint</a>.</p>
+<p>Slides sets from IMAT operational review of 21st May 2014 are available: <a class="reference external" href="https://stfc365.sharepoint.com/:w:/r/sites/ISISProjects-1015/_layouts/15/Doc.aspx?sourcedoc=%7B7EEAE7AB-97CF-4796-A748-005A427C927D%7D&amp;amp;file=IMAT%20Operational%20Review%2021%20May%202014.docx&amp;amp;action=default&amp;amp;mobileredirect=true&amp;amp;DefaultItemOpen=1">Intro</a>, <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISProjects-1015/IMAT/Forms/AllItems.aspx?id=%2Fsites%2FISISProjects%2D1015%2FIMAT%2FReviews%2FIMAT%20Operational%20Review%20%2DScience%2Epdf&amp;amp;parent=%2Fsites%2FISISProjects%2D1015%2FIMAT%2FReviews">Science</a>, <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISProjects-1015/IMAT/Forms/AllItems.aspx?id=%2Fsites%2FISISProjects%2D1015%2FIMAT%2FReviews%2FIMAT%20engineering%20review%2Epdf&amp;amp;parent=%2Fsites%2FISISProjects%2D1015%2FIMAT%2FReviews">Engineering</a>.</p>
+<p>The presentation <a class="reference external" href="https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Overview.pptx?d=w0f26c96b0f5c498990bdbc63d2725812&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=vHDNlm">IMAT Overview</a> provides an overview of the IMAT system from a computing/control perspective.</p>
+</section>
+<section id="control-system">
+<h2>Control System<a class="headerlink" href="#control-system" title="Link to this heading"></a></h2>
+<p>IMAT will use the IBEX control system.</p>
+</section>
+<section id="data-collection">
+<h2>Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading"></a></h2>
+<p>Discussions regarding IMAT data collection requirements are documented in <a class="reference external" href="https://stfc365.sharepoint.com/:b:/r/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_DataCollection_Storage_Minutes_15Oct2014.pdf?csf=1&amp;amp;web=1&amp;amp;e=ZIstol">Minutes (15/10/2014)</a> and <a class="reference external" href="https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_DataCollection_CCDcamera_28April2015_Notes.docx?d=w38c062e894a94d608ee83c21b6b6ec83&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=AGkdRi">Minutes (28/04/2015)</a>. The <a class="reference external" href="https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_DataCollection_Format_proposal_v2.docx?d=w2ab02b5738a943f0bf194238b2f7347c&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=ZVcvj2">proposed file formats</a> are also documented.</p>
+</section>
+<section id="imat-equipment">
+<h2>IMAT Equipment<a class="headerlink" href="#imat-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on IMAT. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html">SKF</a></p></td>
+<td><p>Double Disc Chopper</p></td>
+<td><p>CHOPPER</p></td>
+<td><p>Ethernet/Modbus</p></td>
+<td><p>#617, #622</p></td>
+<td><p><a class="reference internal" href="#imat-noteskfchoppers"><span class="std std-ref">see SKF Choppers note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html">SKF</a></p></td>
+<td><p>T0 Chopper</p></td>
+<td><p>CHOPPER</p></td>
+<td><p>Ethernet/Modbus</p></td>
+<td><p>#617, #622</p></td>
+<td><p><a class="reference internal" href="#imat-noteskfchoppers"><span class="std std-ref">see SKF Choppers note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html">SKF</a></p></td>
+<td><p>Double Disc Chopper</p></td>
+<td><p>CHOPPER</p></td>
+<td><p>Ethernet/Modbus</p></td>
+<td><p>#617, #622</p></td>
+<td><p><a class="reference internal" href="#imat-noteskfchoppers"><span class="std std-ref">see SKF Choppers note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.pfeiffer-vacuum.com/products/measurement/container.action">Pfeiffer</a></p></td>
+<td><p>TPG 300</p></td>
+<td><p>ISIS Vacuum System</p></td>
+<td><p>RS232</p></td>
+<td><p>#216</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>OMRON PLC</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>TCP/FINS</p></td>
+<td><p>#215</p></td>
+<td><p><a class="reference internal" href="#imat-noteomronplc"><span class="std std-ref">see OMRON PLC note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>Sample Attenuator</p></td>
+<td><p>Pneumatic Actuator</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-notebeamattenuator"><span class="std std-ref">see Beam Attenuator note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>Pin Hole Selector</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>#265</p></td>
+<td><p><a class="reference internal" href="#imat-notepinhole"><span class="std std-ref">see Pinhole Selector note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>JAWS</p></td>
+<td><p>GALIL-based</p></td>
+<td><p>Ethernet</p></td>
+<td><p>#178, #179</p></td>
+<td><p><a class="reference internal" href="#imat-notejaws"><span class="std std-ref">see Jaws note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>Incident Slits</p></td>
+<td><p>GALIL-based</p></td>
+<td><p>Ethernet</p></td>
+<td><p>#178, #179</p></td>
+<td><p><a class="reference internal" href="#imat-noteslits"><span class="std std-ref">see Incident Slits note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>Monitors</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>#265</p></td>
+<td><p><a class="reference internal" href="#imat-notemonitors"><span class="std std-ref">see Incident Slits note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>7-axis Sample Positioning System</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>#435</p></td>
+<td><p><a class="reference internal" href="#imat-notesamplestack"><span class="std std-ref">see Sample Positioning System note</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>Sample Environment</p></td>
+<td><p>Various</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-notesampleenvironment"><span class="std std-ref">see Sample Environment note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>TBD</p></td>
+<td><p>TBD</p></td>
+<td><p>Camera Positioning Robot</p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-notecamerarobot"><span class="std std-ref">see Camera Positioning Robot note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>UC(Berkeley)</p></td>
+<td><p>Camera1</p></td>
+<td><p>Med. Res. CCD Imaging Camera</p></td>
+<td><p>Specific to camera</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-noteberkeleycamera"><span class="std std-ref">see Berkeley Camera note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>CNR</p></td>
+<td><p>Camera2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-notemessinacamera"><span class="std std-ref">see Messina Camera note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CNR</p></td>
+<td><p>Camera Focussing</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-notemessinacamera"><span class="std std-ref">see Messina Camera note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>DAE 2 or 3?</p></td>
+<td><p>Detector Electronics</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-notedae"><span class="std std-ref">see DAE note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mantracourt</p></td>
+<td><p>ADW15</p></td>
+<td><p>Load cell meter</p></td>
+<td><p>RS232 or RS485</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#imat-notemantracourt"><span class="std std-ref">see Mantracourt note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>GALIL</p></td>
+<td><p><a class="reference external" href="http://www.galilmc.com/products/dmc-22x0.php">DMC2280</a></p></td>
+<td><p>Motion Controller</p></td>
+<td><p>Ethernet</p></td>
+<td><p>EPICS</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Newport</p></td>
+<td><p><a class="reference external" href="https://web.archive.org/web/20130828020800/http://search.newport.com:80/?q=*&amp;amp;x2=sku&amp;amp;q2=ILS50PP">M-ILS50PP</a></p></td>
+<td><p>Linear Stage, Stepper Motor</p></td>
+<td><p>Ethernet</p></td>
+<td><p>EPICS</p></td>
+<td><p><a class="reference internal" href="#imat-notenewportmotor"><span class="std std-ref">see Newport Motor note</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="imat-noteskfchoppers">
+<h3>Note: SKF Choppers<a class="headerlink" href="#imat-noteskfchoppers" title="Link to this heading"></a></h3>
+<p>IMAT will have three sets of choppers: a double-disk chopper, a T0 chopper and a second double-disk chopper.  All three SKF choppers use the same control system: see <a class="reference external" href="https://stfc365.sharepoint.com/:b:/r/sites/ISISExperimentControls/ICP%20Discussions/IMAT/892-0117%20Rev%20B%20modbus%20(Updated%202014-10-17).pdf?csf=1&amp;amp;web=1&amp;amp;e=2hiGdW">SKF Modbus/TCP interface</a> for details.  Instrument scientists would like to control choppers as 5 independent disks.  There is also a need to “park” the choppers in the open position (to allow white beam imaging).</p>
+</section>
+<section id="imat-notebeamattenuator">
+<h3>Note: Beam Attenuator<a class="headerlink" href="#imat-notebeamattenuator" title="Link to this heading"></a></h3>
+<p>The purpose of beam attenuator is to protect the sample &amp; camera while either is being positioned.  The time taken to open/close the beam attenuator is about 1s.  Driven by pneumatic actuator between limits (2 limit switches).  Position is In/Out. Must communicate with sample positioner - needs both automatic operation and manual control.  Also communicate with data acquisition (c.f. Pause/resume on SANS2D) and camera system.  See <a class="reference external" href="https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_FastShutter.pptx?d=wa2a41cf369f64b1fa274a4e0eb70ea3b&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=sW7eR2">IMAT Fast Shutter</a> for a diagram. <strong>Note:</strong> the beam attenuator was originally known as the “fast shutter”, but this name is now deprecated. See also: <a class="reference external" href="https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_SampleAttenuator_M5_computing_minutes_29Oct2014.docx?d=wae51b8bfd12a4250ba5fb820de96d8b3&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=IK30Xl">IMAT Sample Attenuator Minutes</a>.</p>
+</section>
+<section id="imat-noteomronplc">
+<h3>Note: OMRON PLC<a class="headerlink" href="#imat-noteomronplc" title="Link to this heading"></a></h3>
+<p>The OMRON PLC will be used to control gate valves and instrument vacuum.  It will also be used for control of the pneumatic actuator for the Beam Attenuator.</p>
+</section>
+<section id="imat-notepinhole">
+<h3>Note: Pinhole Selector<a class="headerlink" href="#imat-notepinhole" title="Link to this heading"></a></h3>
+<p>The Pinhole Selector is a wheel containing mounts for 6 pinhole apertures - set positions for each.  Single axis motion control (stepper motor). Controlled by Galil.  See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_PinHoleSelector.pptx">IMAT Pin Hole Selector</a> for a diagram.  See also: <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/PinholeSelector_2014.pdf">IMAT Pin Hole Selector Details</a> and <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_PinholeSelector_Computing_minutes_28Nov2014.docx">IMAT Pin Hole Selector Minutes</a>.</p>
+</section>
+<section id="imat-notejaws">
+<h3>Note: Jaws<a class="headerlink" href="#imat-notejaws" title="Link to this heading"></a></h3>
+<p>5 x beam-collimating jaw-sets, controlled by Galil. <br>See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Jaws_Collimating_Slits.pptx">IMAT Jaws &amp; Collimating Slits</a> for a diagram.  See also: <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Jaws-Slits_computing_minutes_17Nov2014.docx">IMAT Jaws/Slits Minutes</a></p>
+</section>
+<section id="imat-noteslits">
+<h3>Note: Slits<a class="headerlink" href="#imat-noteslits" title="Link to this heading"></a></h3>
+<p>X-Y slits (2 linear translations), controlled by Galil. <br>See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Jaws_Collimating_Slits.pptx">IMAT Jaws &amp; Collimating Slits</a> for a diagram.</p>
+</section>
+<section id="imat-notemonitors">
+<h3>Note: Monitors<a class="headerlink" href="#imat-notemonitors" title="Link to this heading"></a></h3>
+<p>6 monitors, controlled by Galil. In/Out set positions.</p>
+<ol class="arabic simple">
+<li><p>M1 is positioned immediately upstream of the first double-disk chopper.</p></li>
+<li><p>M2 is positioned immediately upstream of the second double-disk chopper.</p></li>
+<li><p>M3 is positioned immediately downstream of the second double-disk chopper.</p></li>
+<li><p>M4 is positioned immediately downstream of the pin-hole selector.</p></li>
+<li><p>M5 is positioned immediately downstream of the beam attenuator.  See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_M5Monitor.pptx">IMAT M5 Monitor</a> for a diagram of the M5 monitor.</p></li>
+<li><p>M6 position - to be communicated.</p></li>
+</ol>
+</section>
+<section id="imat-notesamplestack">
+<h3>Note: Sample Positioning System<a class="headerlink" href="#imat-notesamplestack" title="Link to this heading"></a></h3>
+<p>Comprises upper and lower stacks.<br>
+Lower stack has X, Y &amp; Z translational degrees of freedom, plus rotational degree of freedom about the Z-axis. Z range = 0-1000mm, X &amp; Y ranges = +/-500mm. Rotation is 0-370 degrees.<br>
+Upper stack will be an “off-the-shelf” tomography stack (3 rotational degrees of freedom). Most axes motors will be controlled by Galil (using Galil 4400 firmware).<br>
+Some axes motors will be controlled by a Beckhoff system (further details required).<br>
+Sample stack needs to communicate with fast shutter.<br>
+See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_SamplePositioning.pptx">IMAT Sample Positioning System</a> for a diagram.</p>
+</section>
+<section id="imat-notesampleenvironment">
+<h3>Note: Sample Environment<a class="headerlink" href="#imat-notesampleenvironment" title="Link to this heading"></a></h3>
+<p>For information about the IMAT sample environment see: <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_SampleEnvironment_Dec2014.pdf">​IMAT Sample Environment</a> and <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_SampleEnvironment_Minutes_17Dec2014.docx">IMAT Sample Environment Minutes</a>.</p>
+</section>
+<section id="imat-notecamerarobot">
+<h3>Note: Camera Positioning Robot<a class="headerlink" href="#imat-notecamerarobot" title="Link to this heading"></a></h3>
+<p>Details of robot positioning system are yet to be decided.  In practice, control of the camera positioning robot may be handled separately from the instrument control system.  See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Camera.pptx">IMAT Camera</a> for a illustration of the concept.</p>
+</section>
+<section id="imat-noteberkeleycamera">
+<h3>Note: Berkeley Camera<a class="headerlink" href="#imat-noteberkeleycamera" title="Link to this heading"></a></h3>
+<p>Medium resolution CCD Imaging Camera.  The camera is being manufactured by UC(Berkeley). Assumption is that this camera will have its own control PC.</p>
+</section>
+<section id="imat-notemessinacamera">
+<h3>Note: Messina Camera<a class="headerlink" href="#imat-notemessinacamera" title="Link to this heading"></a></h3>
+<p>High resolution CCD Imaging Camera.  The camera is being manufactured by CNR (University of Messina). Camera is being manufactured by CNR. Control of Andor i334T is via USB 2.0 connector. Camera will have its own control PC. See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/RevSciInstrum_84_093701_IMAT%20Camera.pdf">IMAT Camera Autofocussing System​</a> for more details.<br>
+Focussing of camera is performed using a 1 x linear motor, controlled by Newport. See <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/RevSciInstrum_84_093701_IMAT%20Camera.pdf">IMAT Camera Autofocussing System​</a>​ for more details.  2 x motors to control mirror tilt.  Further details in the ​<a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_CCD_camera_handbook.pdf">camera handbook</a> and <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_CCD_camera_electronics_handbook.pdf">​camera electronics</a> handbook.</p>
+<p>This camera has its own control PC that runs the IOCs. The hostname can be found in the <code class="docutils literal notranslate"><span class="pre">globals.txt</span></code>.</p>
+</section>
+<section id="imat-notedae">
+<h3>Note: DAE<a class="headerlink" href="#imat-notedae" title="Link to this heading"></a></h3>
+<p>12+ racks for 20K detector elements.</p>
+</section>
+<section id="imat-notemantracourt">
+<h3>Note: Mantracourt<a class="headerlink" href="#imat-notemantracourt" title="Link to this heading"></a></h3>
+<p>Used to measure load on IMAT sample stack .</p>
+</section>
+<section id="imat-notenewportmotor">
+<h3>Note: Newport Motor<a class="headerlink" href="#imat-notenewportmotor" title="Link to this heading"></a></h3>
+<p>Newport Linear Stepper Motor. 50mm linear travel. Used to focus CNR camera.
+Does this motor have its own controller h/w, or does it need a separate controller?
+Further details in the <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_CCD_camera_handbook.pdf">camera handbook</a> and <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_CCD_camera_electronics_handbook.pdf">​camera electronics</a> handbook.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="HRPD-Instrument-Details.html" class="btn btn-neutral float-left" title="HRPD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="INES-Instrument-Details.html" class="btn btn-neutral float-right" title="INES" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

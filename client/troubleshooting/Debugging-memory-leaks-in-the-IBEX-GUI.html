@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debugging memory leaks in the IBEX GUI &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Java Memory and CPU Profiling" href="Java-Resource-Usage-Tools.html" />
+    <link rel="prev" title="GUI Troubleshooting" href="../GUI-Troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Debugging memory leaks in the IBEX GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Java-Resource-Usage-Tools.html">Java Memory and CPU Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Manager-and-Observers-Logging.html">PVManager &amp; Observers Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Pydev-autocomplete-issue.html">PyDEV Autocompletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Slow-reconnection-in-the-GUI.html">Slow PV Reconnections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+      <li class="breadcrumb-item active">Debugging memory leaks in the IBEX GUI</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/troubleshooting/Debugging-memory-leaks-in-the-IBEX-GUI.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="debugging-memory-leaks-in-the-ibex-gui">
+<h1>Debugging memory leaks in the IBEX GUI<a class="headerlink" href="#debugging-memory-leaks-in-the-ibex-gui" title="Link to this heading"></a></h1>
+<p>This page is currently heavily based on <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2017">https://github.com/ISISComputingGroup/IBEX/issues/2017</a>. Please update this as we gain more experience!</p>
+<section id="symptoms">
+<h2>Symptoms<a class="headerlink" href="#symptoms" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Java memory leaks cause high CPU usage rather than the more intuitive high memory usage. The IBEX GUI is limited to a heap size of 1024MB by default. When the heap gets close to it’s maximum size, the garbage collector goes crazy trying to recover memory wherever it can, and therefore uses a lot of CPU.</p></li>
+<li><p>Because of the high CPU usage, the GUI will feel slow and sluggish.</p></li>
+<li><p>When there is no more memory available, java will crash with an <code class="docutils literal notranslate"><span class="pre">OutOfMemoryException</span></code>. Note that this exception might not occur on the GUI thread, and therefore various components running in separate threads might fail before the GUI crashes.</p></li>
+</ul>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Java visual VM (download the GPL-licensed binary from <a class="reference external" href="https://visualvm.github.io/download.html">https://visualvm.github.io/download.html</a> )</p>
+<ul>
+<li><p>If you experience problems trying to run the standalone client where a pop up warning windows notifies you of a JRE problem, try first checking if you have the correct version of Java in your system environment variables and that no older/newer versions exist in addition to the correct version (removing if necessary). Secondly, try the following command next to the VisualVM executable you are having issues with: <code class="docutils literal notranslate"><span class="pre">visualvm.exe</span> <span class="pre">--jdkhome</span> <span class="pre">c:\Progra~1\Eclips~1\jdk-11.0.14.9-hotspot</span></code> changing the version of jdk where applicable to the version you have.</p></li>
+</ul>
+</li>
+<li><p>Eclipse debugger</p></li>
+<li><p>A way to reproduce the issue</p></li>
+</ul>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In the java visual VM, on the left, you should see an <code class="docutils literal notranslate"><span class="pre">Eclipse</span> <span class="pre">(pid</span> <span class="pre">xxxx)</span></code> process. This is either your Eclipse IDE or IBEX. If you’re unsure which is which, look under “Threads” for anything to do with ActiveMQ: This will be IBEX.</p></li>
+<li><p>Reproduce your issue, looking at the heap usage in the java visual vm.</p></li>
+<li><p>A healthy GUI will show heap usage fluctuating quite a lot on a short-term basis, but with no long-term trend.</p></li>
+<li><p>A GUI with a memory leak will also fluctuate in the short term, but will also have a long term trend upwards while the issue is being reproduced.</p></li>
+</ul>
+</section>
+<section id="setup-to-monitor-a-remote-client">
+<h2>Setup to monitor a remote client<a class="headerlink" href="#setup-to-monitor-a-remote-client" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Look in the log file for the client that you want to remotely monitor</p></li>
+<li><p>When the client first starts it will print <code class="docutils literal notranslate"><span class="pre">JMX</span> <span class="pre">url:</span></code> followed by a url that looks a bit like <code class="docutils literal notranslate"><span class="pre">service:jmx:rmi://machine/stub/rO0ABXNyAC5qYXZheC5tYW5hZ2V...</span></code></p></li>
+<li><p>Add a JMX connection in the java visual VM and copy in the whole url</p></li>
+<li><p><strong>WARNING: using this interface you can do harm to the client and thus running experiments! Therefore you should only look at the monitoring graphs and use the sampler. For anything else you must inform the user that it may cause issues</strong></p></li>
+</ul>
+</section>
+<section id="diagnosis-1">
+<h2>Diagnosis 1<a class="headerlink" href="#diagnosis-1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Sampler</span> <span class="pre">-&gt;</span> <span class="pre">Memory</span></code> and look at which objects are using up a lot of heap space. Note that this is only the object, <strong>not</strong> any of the objects that it owns!</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MemoryLeak</span><span class="p">{</span>
+<span class="w">     </span><span class="n">RealMemoryLeak</span><span class="w"> </span><span class="n">thisThingIsReallyBig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reallyBig</span><span class="p">;</span><span class="w"> </span><span class="c1">// Something enormous</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>will <strong>not</strong> make <code class="docutils literal notranslate"><span class="pre">MemoryLeak</span></code> show up as a large object!</p>
+<p>You may also find it useful to look at the instance count of suspicious classes. If some action in the GUI causes the instance count of a class to go up but not down again when closed, this is almost certainly a memory leak (but not necessarily a large memory leak - so it’s possible that it’s not the leak you’re looking for).</p>
+</section>
+<section id="diagnosis-2">
+<h2>Diagnosis 2<a class="headerlink" href="#diagnosis-2" title="Link to this heading"></a></h2>
+<p>Once you have a few candidate objects from above which you think are suspicious, use the eclipse debugger to inspect them at runtime. If you find that they’re very big / contain a lot of items, then your problem has been located. If not, then rinse and repeat Diagnosis 1.</p>
+</section>
+<section id="diagnosis-3">
+<h2>Diagnosis 3<a class="headerlink" href="#diagnosis-3" title="Link to this heading"></a></h2>
+<p>If you have objects which you think should be being garbage collected, but are not, then you can find out why they are being kept around using the Visual VM.</p>
+<ul class="simple">
+<li><p>Reproduce the issue (so that the GUI contains some objects which should have been released)</p></li>
+<li><p>Connect VisualVM</p></li>
+<li><p>Force a garbage collection by clicking the “GC now” button</p></li>
+<li><p>Under the “memory sampler” view, create a heap dump</p></li>
+<li><p>In the heap dump, search for the class that you’re interested in</p></li>
+<li><p>Click the “GC root” button. This may take a few seconds, but will show you the reference chain which is keeping the object in memory</p></li>
+<li><p>You will now need to figure out where you need to “break” this chain, so that the object can be reclaimed. You may need to iterate this process several times if the object is referred to by multiple garbage collection roots. Eventually, once all reference chains from GC roots have been broken, the object should be eligible for GC.</p></li>
+</ul>
+</section>
+<section id="fixing">
+<h2>Fixing<a class="headerlink" href="#fixing" title="Link to this heading"></a></h2>
+<p>Once you’ve diagnosed <em>where</em> the memory leak is, you need to fix it. This may not be obvious at first! There’s not really any generic help that can be given here.</p>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The java garbage collector is responsible for cleaning up dereferenced objects. If your objects aren’t being freed when you click the <code class="docutils literal notranslate"><span class="pre">Perform</span> <span class="pre">GC</span></code> button in java visual VM, then you still have references to them somewhere.</p>
+<ul>
+<li><p>The java garbage collector uses reachability analysis, not reference counting, to test whether an object can be GC’d. The garbage collection “roots” are listed <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.memory.analyzer.doc/gcroots.html">here</a>, but usually in IBEX these will be either statically reachable objects (e.g. singletons) or the current stack frame for each running thread.</p></li>
+</ul>
+</li>
+<li><p>Some things need to be closed before/on garbage collection, for example sockets. Java’s <code class="docutils literal notranslate"><span class="pre">finalize()</span></code> method is called once an object is eligible for GC, but before it is actually GC’d. Beware of using finalizers to perform “cleanup” - in some cases (e.g. closing observables), not running the cleanup will mean the object will still be reachable and so the finalizer will never be run!</p></li>
+</ul>
+</section>
+<section id="observables">
+<h2>Observables<a class="headerlink" href="#observables" title="Link to this heading"></a></h2>
+<p>One common problem that we have repeatedly run into in IBEX is the use of observables. If an observer can be created multiple times, it is <strong>very important</strong> that it gets removed when no longer required. Otherwise, the observable will still have a reference back to the observer, which will prevent both the observer and anything which the observer references from being garbage collected. In other words, this will lead to a memory leak. The only case where is is acceptable for an observable to never be removed is if it is only created a small constant number of times and is necessary for the full lifetime of the client (for example, the instrument list).</p>
+<p>We have considered in the past making the reference from an observable to it’s observers a <code class="docutils literal notranslate"><span class="pre">WeakReference</span></code>, however this does not work in many cases as the observable is often the only reference to the observer, meaning that the observer will be garbage collected and not work.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../GUI-Troubleshooting.html" class="btn btn-neutral float-left" title="GUI Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Java-Resource-Usage-Tools.html" class="btn btn-neutral float-right" title="Java Memory and CPU Profiling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

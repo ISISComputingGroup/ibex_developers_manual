@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Updating your local IBEX EPICS directory &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Libraries to include with order" href="IOC-Libraries-to-include-with-order.html" />
+    <link rel="prev" title="Developer Server Build" href="Developer-Server-Build.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Compiling.html">Compiling</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Build-Arch.html">Build Arch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Building-multiple-architectures-%28e.g.-32-%26-64-bit-builds%29.html">Building multiple architectures (e.g. 32/64-bit builds)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compile-Errors.html">Compile Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Developer-Server-Build.html">Developer Server Build</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Updating your local IBEX EPICS directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Libraries-to-include-with-order.html">IOC Libraries to include with order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Install-Visual-Studio.html">Install Visual Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reducing-Build-Dependencies.html">Reducing build dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Removing-or-Renaming-IOC-module.html">Removing or renaming an IOC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpeedUpBuilding.html">Speed Up Building</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-builds.html">Static Builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Using-Visual-Studio-with-the-EPICS-build-system.html">Using VS with EPICS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Compiling.html">Compiling</a></li>
+      <li class="breadcrumb-item active">Updating your local IBEX EPICS directory</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/compiling/Developer-Updating.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="updating-your-local-ibex-epics-directory">
+<h1>Updating your local IBEX EPICS directory<a class="headerlink" href="#updating-your-local-ibex-epics-directory" title="Link to this heading"></a></h1>
+<section id="using-a-pre-built-distribution">
+<h2>using a pre-built distribution<a class="headerlink" href="#using-a-pre-built-distribution" title="Link to this heading"></a></h2>
+<p>If you just want a clean start then you can use a <a class="reference internal" href="Developer-Server-Build.html"><span class="doc std std-doc">pre-built build server checkout</span></a> as a new starting point. This is by far the easiest - it is the equivalent of deleting your current EPICS directory, doing a clean checkout and then building, just a bit quicker as it has already been built/compiled for you on the build server. If you have no important local changes (i.e. everything is pushed to github) then you will lose nothing and can just swap back to these branches after the new install.</p>
+</section>
+<section id="updating-in-place">
+<h2>updating in-place<a class="headerlink" href="#updating-in-place" title="Link to this heading"></a></h2>
+<p>Here we will update all modules from git to the latest version and then rebuild. This however does not always proceed smoothly, mainly due to issues with the directory tree that is being updated. Some things that can cause problems are:</p>
+<ul class="simple">
+<li><p>a local directory has changed files and git will not want to overwrite these</p></li>
+<li><p>upstream has renamed a directory, git likes to do a delete and re-create, but it cannot do the delete if the directory is not empty (i.e. has some build products like .obj files in it or a subdirectory)</p></li>
+</ul>
+<p>So you need to make sure that your directory tree is in a good state. You can probably do this iteratively after each failure as you update, or you can do it all first.</p>
+<ul class="simple">
+<li><p>make sure all work is pushed. You don’t usually need to reset branches back to master/main, but may be a good point to do this if work is finished</p></li>
+<li><p>particularly after a dependency update where the likelihood of directory name changes is greatest, remove all build products: either <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">uninstall</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">foreach</span> <span class="pre">--recursive</span> <span class="pre">&quot;git</span> <span class="pre">clean</span> <span class="pre">-fdx&quot;</span></code> from top directory. The git command is probably faster, but removes all files not under version control so you need to be sure you haven’t forgotten to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and push something to a remote branch.</p></li>
+</ul>
+<p>To check what branches all your submodules are on:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">foreach</span> <span class="pre">--recursive</span> <span class="pre">&quot;git</span> <span class="pre">branch&quot;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">&quot;^Entering|^\*&quot;</span></code></p>
+<p>If you don’t see either “master” or “detached HEAD” then you need to decide if you really want to be on that branch, or just forgot to swap back after reviewing a ticket. If you are leaving a module on a non main/master branch, it may be worth merging the latest upstream main/master into this branch.</p>
+<p>To update, from a git shell at top do:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git pull
+git submodule init
+git submodule update --init --recursive
+</pre></div>
+</div>
+<p>You can use</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git submodule update --init --recursive --merge
+</pre></div>
+</div>
+<p>if you wish to leave items on their branch and merge in upstream, if you leave off <code class="docutils literal notranslate"><span class="pre">--merge</span></code> you will get switched to a detached HEAD at the upstream version.</p>
+<p>If you want to remove local changes as they are causing issues, you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></code> in a module or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">foreach</span> <span class="pre">--recursive</span> <span class="pre">&quot;git</span> <span class="pre">reset</span> <span class="pre">--hard&quot;</span></code> to do all from the top level.</p>
+<p>For info, Jenkins does the following to update a git tree on a clean build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
+<span class="n">git</span> <span class="n">clean</span> <span class="o">-</span><span class="n">fdx</span> 
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">foreach</span> <span class="o">--</span><span class="n">recursive</span> <span class="s2">&quot;git reset --hard&quot;</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">foreach</span> <span class="o">--</span><span class="n">recursive</span> <span class="s2">&quot;git clean -fdx&quot;</span>
+<span class="n">git</span> <span class="n">fetch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">sync</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span>
+<span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span>
+<span class="n">git</span> <span class="n">clean</span> <span class="o">-</span><span class="n">fdx</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">foreach</span> <span class="o">--</span><span class="n">recursive</span> <span class="s2">&quot;git reset --hard&quot;</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">foreach</span> <span class="o">--</span><span class="n">recursive</span> <span class="s2">&quot;git clean -fdx&quot;</span>
+</pre></div>
+</div>
+<p>Now build IBEX in the usual way. See <a class="reference internal" href="../../processes/dev_processes/Things-to-know-as-a-developer.html"><span class="doc std std-doc">here</span></a> for speeding up a build.</p>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h3>
+<p>typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> should not show unexpected changes being flagged.</p>
+<p>If you get errors, the most likely causes are:</p>
+<ol class="arabic simple">
+<li><p>A file was renamed, but EPICS has not updated its Makefile dependency rules and is still looking for the old one</p></li>
+<li><p>A directory was renamed/deleted, but the original directory is still on your computer because it was not empty</p></li>
+</ol>
+<p>For 1. a “make clean uninstall” in the directory concerned should be enough
+For 2. You need to go to the directory and do a “git status” and remove any “untracked files” that shouldn’t be there. The “git clean” command can be used for this, “git clean -fd” will remove all untracked files and directories. “git clean -fdx” will additionally remove files ignored by <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (such as compiler build output). Some of our submodules now contain submodules of their own, if a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> keeps showing something as modified you may need to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span></code> in this module to update that directory properly.</p>
+<p>In many cases problems will be isolated to a particular module and you do not need to build everything again. If you are about to go home and want to set off a complete rebuild then you can do the following (assuming you have no untracked files you are working on and have forgotten to add to git)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">clean</span> <span class="o">-</span><span class="n">fdx</span>
+    <span class="n">git</span> <span class="n">submodule</span> <span class="n">foreach</span> <span class="o">--</span><span class="n">recursive</span> <span class="s2">&quot;git clean -fdx&quot;</span>
+</pre></div>
+</div>
+<p>this simulates a clean checkout (its actually what Jenkins does too)</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Developer-Server-Build.html" class="btn btn-neutral float-left" title="Developer Server Build" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-Libraries-to-include-with-order.html" class="btn btn-neutral float-right" title="IOC Libraries to include with order" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

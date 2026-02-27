@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Magnetics 2T 3D Vector Magnet &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CP2800 Compressors" href="CP2800-Compressors.html" />
+    <link rel="prev" title="Cryogenics" href="../Cryogenics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Cryogenics.html">Cryogenics</a></li>
+      <li class="breadcrumb-item active">Scientific Magnetics 2T 3D Vector Magnet</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/2T-3D-Vector-magnet.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="scientific-magnetics-2t-3d-vector-magnet">
+<h1>Scientific Magnetics 2T 3D Vector Magnet<a class="headerlink" href="#scientific-magnetics-2t-3d-vector-magnet" title="Link to this heading"></a></h1>
+<p>The system comprises:</p>
+<ul class="simple">
+<li><p>Temperature controllers (optional Lakeshore 336)</p></li>
+<li><p>Temperature monitor (Cryocon 14, Ethernet device)</p></li>
+<li><p>3 power supplies (one for each axis)</p></li>
+<li><p>Helium level gauge</p></li>
+<li><p>Rotation stage (controlled separately by a Galil axis)</p></li>
+<li><p>Motorised needle valve (controlled by Galil analogue output, or Thurlby-Thandar EX355P benchtop PSU)</p></li>
+</ul>
+<section id="large-log-files">
+<h2>Large log files<a class="headerlink" href="#large-log-files" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../../system_components/labview/LabVIEW-errors.html"><span class="doc std std-doc">here</span></a> for mitigations - this is a known LabVIEW issue/bug.</p>
+</section>
+<section id="vi">
+<h2>VI<a class="headerlink" href="#vi" title="Link to this heading"></a></h2>
+<p>There is a manufacturer supplied VI and our own LVDCOM IOC.  There are two versions of the manufacturer’s VI and both are stored in SourceSafe at the following location: <code class="docutils literal notranslate"><span class="pre">\LabVIEW</span> <span class="pre">Modules\Drivers\Scientific</span> <span class="pre">Instruments\3D</span> <span class="pre">Magnet\Source</span> <span class="pre">Code\</span></code>.  One VI has been used on LARMOR and ZOOM and uses the TTi PSU for needle valve control, and the other on POLREF when an analogue output from the Galil was used.  See below for more information.</p>
+<p>The settings for the manufacturer VI are stored (and can be edited) in the plain text file: <code class="docutils literal notranslate"><span class="pre">settings.txt</span></code>.  The COM ports are defined in the first section of the file, but it shouldn’t be necessary to change these.</p>
+</section>
+<section id="ethernet-switch">
+<h2>Ethernet Switch<a class="headerlink" href="#ethernet-switch" title="Link to this heading"></a></h2>
+<p>The magnet control rack has a small Ethernet switch inside to provide network access to the Lakeshore 336 and MOXA (see below).  This will need to be connected to the ISIS network to enable remote control of the magnet.</p>
+</section>
+<section id="moxa-nport">
+<h2>MOXA NPort<a class="headerlink" href="#moxa-nport" title="Link to this heading"></a></h2>
+<p>The rack has its own dedicated MOXA NPort 5616 due to the number of devices it uses.  When the system is moved between instruments, this MOXA is added to the NPort configuration on the local control machine and its ports assigned to COM101-COM116 (so as not to interfere with common equipment).  The control machine IP address should be added to the “accessible IPs list” of the MOXA via the administration webpage (and subsequently removed when the magnet is finished with).  Currently, the settings of the dedicated MOXA are:</p>
+<p>IP address : DHCP reserved and visible on front screen when connected to ISIS network</p>
+<ul class="simple">
+<li><p>Port 1 / COM101 : SMC X PSU</p></li>
+<li><p>Port 2 / COM102 : SMC Y PSU</p></li>
+<li><p>Port 3 / COM103 : SMC Z PSU</p></li>
+<li><p>Port 4 / COM104 : Cryocon 32 temperature controller</p></li>
+<li><p>Port 5 / COM105 : Helium level meter</p></li>
+<li><p>Port 6 / COM106 : TTi EX355P PSU (when required for needle valve control)</p></li>
+</ul>
+</section>
+<section id="rotation-stage">
+<h2>Rotation Stage<a class="headerlink" href="#rotation-stage" title="Link to this heading"></a></h2>
+<p>Standard unit controlled by a Galil axis.  Details:</p>
+<ul class="simple">
+<li><p>+- 370 degrees</p></li>
+<li><p>Motor with encoder</p></li>
+<li><p><strong><em>No</em></strong> limit switches - Do <strong>not</strong> rotate more than 360 degrees too many times or cables will be damaged.</p></li>
+<li><p>Home position defined by an index pulse on the encoder</p></li>
+</ul>
+<p>When this magnet was last installed on ZOOM, one of the slit axes was used for the rotation stage as there are no spare cables in the sample area.  A batch file exists in the <code class="docutils literal notranslate"><span class="pre">configurations\galil</span></code> directory of the <code class="docutils literal notranslate"><span class="pre">settings</span></code> area to set the required PV values for the axis (edit if different axis is used), and a corresponding batch file in the <code class="docutils literal notranslate"><span class="pre">user\users\ZOOM</span></code> directory of the ‘U-drive’ will reinstate the settings for the slit axis when the magnet rotation stage is removed.</p>
+<p><strong>NB</strong> There are plans to install additional cabling into the ZOOM sample area to connect extra motion stages, so this <em>borrowing</em> of an axis may not be needed any longer.  Check before altering PV values.</p>
+</section>
+<section id="needle-valve">
+<h2>Needle Valve<a class="headerlink" href="#needle-valve" title="Link to this heading"></a></h2>
+<p>This is a motorised valve. Historically this has been controlled via an analogue output from a Galil on POLREF and a Thurlby-Thandar Instruments EX355P benchtop PSU on LARMOR and ZOOM.  There are two front panel VIs for this purpose, one for each scenario: <code class="docutils literal notranslate"><span class="pre">Vector-control-v16isis.vi</span></code> for the TTi-EX355P controlled valve and <code class="docutils literal notranslate"><span class="pre">Vector-control-v16isis-Galil-Valve.vi</span></code> for analogue output controlled valve.  Both are in the SourceSafe location mentioned above: <code class="docutils literal notranslate"><span class="pre">\LabVIEW</span> <span class="pre">Modules\Drivers\Scientific</span> <span class="pre">Instruments\3D</span> <span class="pre">Magnet\Source</span> <span class="pre">Code\</span></code>.</p>
+<p>If the PSU is to be used, first it will need to be configured via its own setup VI located in <code class="docutils literal notranslate"><span class="pre">\LabVIEW</span> <span class="pre">Modules\Drivers\Thurlby</span> <span class="pre">EX355P\TH</span> <span class="pre">EX355P</span> <span class="pre">-</span> <span class="pre">System</span> <span class="pre">Functions.llb\TH</span> <span class="pre">EX355P</span> <span class="pre">-</span> <span class="pre">Setup</span> <span class="pre">Dialog.vi</span></code>, with the port from the <code class="docutils literal notranslate"><span class="pre">settings.txt</span></code> file mentioned above.  It will then be possible to check the communication to the PSU via its own front panel VI here: <code class="docutils literal notranslate"><span class="pre">\LabVIEW</span> <span class="pre">Modules\Drivers\Thurlby</span> <span class="pre">EX355P\TH</span> <span class="pre">EX355P</span> <span class="pre">-</span> <span class="pre">System</span> <span class="pre">Functions.llb\TH</span> <span class="pre">EX355P</span> <span class="pre">-</span> <span class="pre">Front</span> <span class="pre">Panel</span> <span class="pre">1.vi</span></code>.  This VI and the main magnet VI cannot be run simultaneously.</p>
+</section>
+<section id="lakeshore-336-temperature-controller">
+<h2>Lakeshore 336 Temperature Controller<a class="headerlink" href="#lakeshore-336-temperature-controller" title="Link to this heading"></a></h2>
+<p>The Lakeshore 336 is an Ethernet device and should therefore be connected to the switch in the magnet control rack.  Its hostname can be found in a settings menu accessed from the front panel.  Communications can be checked by pinging the hostname, or more thoroughly by configuring its VI or IOC/OPI.</p>
+</section>
+<section id="miscellaneous-information">
+<h2>Miscellaneous Information<a class="headerlink" href="#miscellaneous-information" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The system takes approximately 3 days to reach base temperature</p></li>
+</ul>
+</section>
+<section id="schematic-of-system">
+<h2>Schematic of system<a class="headerlink" href="#schematic-of-system" title="Link to this heading"></a></h2>
+<p><img alt="Schematic of system" src="../../_images/3d_vector_magnet_schematic.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Cryogenics.html" class="btn btn-neutral float-left" title="Cryogenics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CP2800-Compressors.html" class="btn btn-neutral float-right" title="CP2800 Compressors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

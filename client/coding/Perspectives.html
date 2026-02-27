@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perspectives &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Static analysis" href="Static-analysis.html" />
+    <link rel="prev" title="Instrument &amp; PV switching" href="PV-Switching.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Activators.html">Activators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html">Adding a plugin or feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Connecting-a-View-to-a-PV.html">Connecting a view to a PV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding.html">Databinding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GUI-Coding-Conventions.html">GUI Coding Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">Instrument &amp; PV switching</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Perspectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">Perspectives</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/Perspectives.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="perspectives">
+<h1>Perspectives<a class="headerlink" href="#perspectives" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are implementing a brand new perspective, first follow the
+<a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html"><span class="doc std std-doc">adding a plugin or feature guide</span></a> to define the new plugin.</p>
+</div>
+<section id="defining-a-perspective">
+<h2>Defining a perspective<a class="headerlink" href="#defining-a-perspective" title="Link to this heading"></a></h2>
+<p>Perspectives are defined in <code class="docutils literal notranslate"><span class="pre">base\uk.ac.stfc.isis.ibex.e4.client\Application.e4xmi</span></code>, under the “snippets” section.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Application.e4xmi</span></code> file controls how a perspective is laid out. This is done using a hierarchy of:</p>
+<ul class="simple">
+<li><p><strong>Part Sash Containers</strong>: these allow multiple items to appear side-by-side, either vertically or horizontally.</p></li>
+<li><p><strong>Part Stacks</strong>: these allow multiple items to appear in a tabbed view.</p></li>
+<li><p><strong>Parts</strong>: these are an individual view. Use a part if the view appears in only one perspective (for example, a DAE
+configuration view, which only appears in the DAE perspective).</p></li>
+<li><p><strong>Placeholders</strong>: an individual view which is shared between multiple perspectives (for example the blocks view).</p></li>
+</ul>
+<p>Part stacks can be defined as “not rendered” in the <code class="docutils literal notranslate"><span class="pre">Application.e4xmi</span></code> - this means they will not be shown at first,
+but the perspective still defines where the part will appear once some other code renders it. Example of this are:</p>
+<ul class="simple">
+<li><p>The plotting view in the scripting perspective, which is only rendered after plotting using matplotlib in the
+scripting console.</p></li>
+<li><p>OPIs in the device screens perspective, which are only rendered once a device screen is clicked on.</p></li>
+</ul>
+</section>
+<section id="keyboard-shortcuts">
+<h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Link to this heading"></a></h2>
+<p>Keyboard shortcuts for changing perspective are also defined in <code class="docutils literal notranslate"><span class="pre">base\uk.ac.stfc.isis.ibex.e4.client\Application.e4xmi</span></code>,
+under “Binding Tables”. These key bindings are linked to commands, which then execute handlers. Both commands and
+handlers are also specified in the <code class="docutils literal notranslate"><span class="pre">Application.e4xmi</span></code>.</p>
+</section>
+<section id="icons">
+<h2>Icons<a class="headerlink" href="#icons" title="Link to this heading"></a></h2>
+<p>Find or create a PNG icon which is appropriately sized (<code class="docutils literal notranslate"><span class="pre">24x24</span></code> pixels). The icon path is specified in the
+<code class="docutils literal notranslate"><span class="pre">Application.e4xmi</span></code> file along with the other properties of a perspective.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you find an icon online, you must ensure it is licensed appropriately and added to the
+<a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.ui.help/resources/iconlicences.txt">list of icon licenses</a>
+which appears using help -&gt; “icon licenses” in the IBEX GUI.</p>
+</div>
+</section>
+<section id="hiding-perspectives">
+<h2>Hiding Perspectives<a class="headerlink" href="#hiding-perspectives" title="Link to this heading"></a></h2>
+<p>Perspectives can be hidden using the preferences -&gt; “select visible perspectives” menu in IBEX. These settings can be
+changed either locally, for a given client session, or remotely, where the set of perspectives to show by default will
+be stored by the IBEX server. If you cannot set remote perspectives, you probably do not have write access to the
+instrument.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>If a new perspective is not being shown in the switcher during development, the GUI may have cached a set of
+perspectives in its workspace. To clear this, go to run -&gt; “run configurations” in Eclipse, and
+ensure that the “clear workspace” option is selected for the IBEX product.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PV-Switching.html" class="btn btn-neutral float-left" title="Instrument &amp; PV switching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Static-analysis.html" class="btn btn-neutral float-right" title="Static analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

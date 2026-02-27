@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cryogenics &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scientific Magnetics 2T 3D Vector Magnet" href="cryogenics/2T-3D-Vector-magnet.html" />
+    <link rel="prev" title="SKF MB4150g5 Chopper" href="choppers/SKF-MB4150g5-Disk-Chopper-Controllers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cryogenics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryogenics/Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+      <li class="breadcrumb-item active">Cryogenics</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/Cryogenics.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="cryogenics">
+<h1>Cryogenics<a class="headerlink" href="#cryogenics" title="Link to this heading"></a></h1>
+<section id="iocs">
+<h2>IOCs<a class="headerlink" href="#iocs" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/ITC-503.html">ITC503</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryogenics/Triton.html">Triton</a></li>
+</ul>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See also <a class="reference internal" href="Temperature-Controllers.html"><span class="doc std std-doc">Temperature controllers</span></a> for other temperature controllers which may be used in cryogenic setups.</p>
+</div>
+</section>
+<section id="cryostats-t-1k">
+<h2>Cryostats (T&gt;1K)<a class="headerlink" href="#cryostats-t-1k" title="Link to this heading"></a></h2>
+<section id="closed-cycle-refrigerators-ccrs">
+<h3>Closed Cycle Refrigerators (CCRs)<a class="headerlink" href="#closed-cycle-refrigerators-ccrs" title="Link to this heading"></a></h3>
+<p>These are controlled using Eurotherms.  No need to communicate directly with the CCR itself.</p>
+</section>
+<section id="orange-cryostats">
+<h3>Orange Cryostats<a class="headerlink" href="#orange-cryostats" title="Link to this heading"></a></h3>
+<p>These are controlled using Eurotherms.  No need to communicate directly with the Cryostat itself.</p>
+</section>
+<section id="variox-blue-cryostats">
+<h3>Variox (Blue) Cryostats<a class="headerlink" href="#variox-blue-cryostats" title="Link to this heading"></a></h3>
+<p>These are manufactured by Oxford Instruments (OI).  They can be controlled by either:</p>
+<ul class="simple">
+<li><p>Oxford Instruments ITC503 (See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1389">#1389</a>, <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3189">#3189</a>) + Oxford Instruments ILM200 (See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1390">#1390</a>)</p></li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li><p>Oxford Instruments Mercury ITC (with level meter expansion card)</p></li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li><p>Oxford Instruments Mercury ITC + standalone level meter such as an Oxford Instruments ILM200</p></li>
+</ul>
+</section>
+<section id="isisstat">
+<h3>ISISStat<a class="headerlink" href="#isisstat" title="Link to this heading"></a></h3>
+<p>Controlled by a Mercury ITC (See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1199">#1199</a>)</p>
+<p>Note: a “Mercury ITC” and an “ITC503” are two different devices (with different drivers). They are both manufactured by Oxford Instruments and control the temperature of a cryostat. The Mercury ITC is the newer model, the ITC503 is the older model. Mercury ITC controllers can take various expansion boards, which I do not believe ITC503 controllers are capable of.</p>
+<p>Our support for Mercury ITC units is not yet fully complete:</p>
+<ul class="simple">
+<li><p>See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1286">#1286</a></p></li>
+<li><p>See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1287">#1287</a></p></li>
+<li><p>See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1392">#1392</a></p></li>
+</ul>
+</section>
+<section id="oxford-flow-through-cryostats">
+<h3>Oxford Flow through Cryostats<a class="headerlink" href="#oxford-flow-through-cryostats" title="Link to this heading"></a></h3>
+<p>EMU use a flow cryostat controlled by an ITC503 temperature controller. There is no special setup of ITC503 required from a computing perspective.</p>
+<p>Other beamlines may use different setups, check with the scientists if unsure.</p>
+</section>
+</section>
+<section id="low-temperature-inserts-t-1k">
+<h2>Low temperature inserts (T&lt;1K)<a class="headerlink" href="#low-temperature-inserts-t-1k" title="Link to this heading"></a></h2>
+<p>All of the inserts in this category are run in a “parasitic” fashion - i.e. they sit inside an outer cryostat which provides cooling to low temperature, and then the insert provides the final stage of cooling to very low temperature.</p>
+<p>The outer cryostat for these inserts can be either a blue cryostat (see above for details) or a cryomagnet (see below for details)</p>
+<section id="mercury-heliox-he3-sorption-refrigerator">
+<h3>Mercury Heliox (He3 sorption refrigerator)<a class="headerlink" href="#mercury-heliox-he3-sorption-refrigerator" title="Link to this heading"></a></h3>
+<p>This insert is capable of reaching temperatures of ~300mK. The H and the outer cryostat use separate physical controllers, which need separate moxa connections and EPICS drivers.</p>
+<p>For further details see <a class="reference internal" href="cryogenics/Mercury-Heliox.html"><span class="doc std std-doc">mercury Heliox</span></a></p>
+</section>
+<section id="triton-dilution-fridge">
+<h3>Triton Dilution Fridge<a class="headerlink" href="#triton-dilution-fridge" title="Link to this heading"></a></h3>
+<p>Triton systems are dilution refrigerators capable of reaching ~30mK. They are controlled by a dedicated PC which sits in a rack. Cryogenics group do a significant amount of setup with these controllers when they arrive on a beamline.</p>
+<p>See <a class="reference internal" href="cryogenics/Triton.html"><span class="doc std std-doc">Triton</span></a> for further details about the triton system</p>
+</section>
+<section id="ice-dilution-fridge">
+<h3>ICE dilution fridge.<a class="headerlink" href="#ice-dilution-fridge" title="Link to this heading"></a></h3>
+<p>This dilution fridge is only used on muon beamlines - usually on MuSr, but occasionally borrowed by EMU. The RIKEN muon instruments (Argus/Chronus) may also use this fridge in the near future. This is currently the only dilution fridge at ISIS which is not controlled by an Oxford Instruments Triton controller.</p>
+<p>For details see <a class="reference internal" href="cryogenics/ICE-Dilution-Fridge.html"><span class="doc std std-doc">ICE dilution fridge</span></a></p>
+</section>
+</section>
+<section id="cryomagnets-cryogenically-cooled-superconducting-magnets">
+<h2>Cryomagnets (cryogenically cooled superconducting magnets)<a class="headerlink" href="#cryomagnets-cryogenically-cooled-superconducting-magnets" title="Link to this heading"></a></h2>
+<p>Most of the magnets in this section can be used instead of a cryostat when using a “parasitic” cooling insert (e.g. Heliox, triton). This is because the magnets must be cooled to low temperatures anyway so that they superconduct, so they also act as the outer cryostat.</p>
+<section id="t-magnet">
+<h3>7.5T magnet<a class="headerlink" href="#t-magnet" title="Link to this heading"></a></h3>
+<p>The 7.5T magnet is controlled by 3 devices:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="cryogenics/Oxford-Instruments-IPS.html"><span class="doc std std-doc">Intelligent Power Supply (IPS)</span></a> (See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1391">#1391</a>). It could also be controlled by a <a class="reference internal" href="cryogenics/Oxford-Instruments-Mercury-IPS.html"><span class="doc std std-doc">Mercury IPS</span></a> but cryogenics group are not using this option at present due to hardware issues with the Mercury IPS.</p></li>
+<li><p><a class="reference internal" href="cryogenics/ITC-503.html"><span class="doc std std-doc">Intelligent Temperature Controller (ITC503)</span></a> (See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1389">#1389</a>, <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3189">#3189</a>). A <a class="reference internal" href="cryogenics/MercuryiTC.html"><span class="doc std std-doc">Mercury ITC</span></a> may be used as a fallback if the ITC503 controller fails, but this is not usual.</p></li>
+<li><p>Intelligent Level Meter (ILM) (See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1390">#1390</a>)</p></li>
+</ul>
+<p>For details including configuration settings, see <a class="reference internal" href="cryogenics/Oxford-Instruments-IPS.html"><span class="doc std std-doc">Oxford Instruments IPS</span></a>.</p>
+<p>See note at the bottom of this page for differences between IBEX and SECI in terms of how this device must be connected.</p>
+</section>
+<section id="t-chopper-magnet">
+<h3>9T “chopper” magnet<a class="headerlink" href="#t-chopper-magnet" title="Link to this heading"></a></h3>
+<p>This system appears to IBEX exactly like the 7.5T magnet discussed above, but with a different maximum field. It is currently dedicated to LET (but not permanently installed).</p>
+<p>Please see the documentation and notes linked above for further details.</p>
+</section>
+<section id="t-3d-vector-magnet">
+<h3>2T 3D Vector magnet<a class="headerlink" href="#t-3d-vector-magnet" title="Link to this heading"></a></h3>
+<p>This is primarily used on SANS and reflectometry beamlines.</p>
+<p>The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own control system for which the manufacturer has provided LabVIEW VIs. We interface with these via lvDCOM (See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1398">#1398</a>).  Detailed information <a class="reference internal" href="cryogenics/2T-3D-Vector-magnet.html"><span class="doc std std-doc">here</span></a>.</p>
+</section>
+<section id="t-hifi-magnet">
+<h3>5T HIFI magnet<a class="headerlink" href="#t-hifi-magnet" title="Link to this heading"></a></h3>
+<p>This is a dedicated system permanently installed on HiFi.</p>
+<p>See <a class="reference internal" href="cryogenics/Cryogenic-SMS-PSU.html"><span class="doc std std-doc">here</span></a> and <a class="reference internal" href="../processes/instrument_details/HIFI_CRYOMAG-Instrument-Details.html"><span class="doc std std-doc">here</span></a> for details</p>
+<p>This magnet does <em>not</em> act as an outer cryostat for any other sample environment that may be used.</p>
+</section>
+<section id="t-birmingham-magnet">
+<h3>17T “Birmingham” magnet<a class="headerlink" href="#t-birmingham-magnet" title="Link to this heading"></a></h3>
+<p>This is a cryomagnet owned by the University of Birmingham, which occasionally travels to various scattering facilities, including ISIS.</p>
+<p>IBEX does not have support for this device at present. Ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4523">#4523</a> contains some details about this device.</p>
+<p>From a brief look at the command set and manual, it appears that all of the magnet control logic occurs in the Birmingham computer, and we simply send it ascii-formatted commands to go to a field. In theory this may be controllable via SDTEST (although a dedicated driver would of course be better).</p>
+</section>
+<section id="t-e18-dilution-fridge-magnet-combination">
+<h3>4T “E18” dilution fridge/magnet combination<a class="headerlink" href="#t-e18-dilution-fridge-magnet-combination" title="Link to this heading"></a></h3>
+<p>This system is a combination of a Oxford Instruments <a class="reference internal" href="cryogenics/Triton.html"><span class="doc std std-doc">triton dilution fridge</span></a> and a 4T cryomagnet driven by a <a class="reference internal" href="cryogenics/Oxford-Instruments-Mercury-IPS.html"><span class="doc std std-doc">Mercury IPS</span></a>. Similar to the distinction between an old-style Oxford instruments ITC503 and a Mercury ITC, the Mercury IPS is the newer model. It is a physically different device to the old-style IPS, but performs the same task.</p>
+<p>For details of the Mercury IPS, see <a class="reference internal" href="cryogenics/Oxford-Instruments-Mercury-IPS.html"><span class="doc std std-doc">Mercury IPS</span></a>. Some further details are also in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4339">#4339</a>.</p>
+</section>
+</section>
+<section id="level-meters">
+<h2>Level meters<a class="headerlink" href="#level-meters" title="Link to this heading"></a></h2>
+<section id="helium-level-gauge">
+<h3>Helium Level Gauge<a class="headerlink" href="#helium-level-gauge" title="Link to this heading"></a></h3>
+<p>Does what it says on the tin - measures the level of helium in a cryostat.</p>
+<ul class="simple">
+<li><p>support for Cryogenics Ltd He Level Gauge  - See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2350">#2350</a></p></li>
+</ul>
+</section>
+<section id="oxford-instruments-intelligent-level-meter-ilm200">
+<h3>Oxford Instruments Intelligent Level Meter (ILM200)<a class="headerlink" href="#oxford-instruments-intelligent-level-meter-ilm200" title="Link to this heading"></a></h3>
+<p>This is another type of level meter, manufactured by Oxford instruments. It is often used in conjunction with ITC503 temperature controllers. It has two channels which can be set up to independently measure Helium and Nitrogen levels.</p>
+<p>Note: the ILM200 only physically measures the levels every 30 minutes, so if looking at the log plotter, there will be steps rather than a smooth downward curve - this is expected.</p>
+<p>See note at the bottom of this page for differences between IBEX and SECI in terms of how this device must be connected.</p>
+</section>
+</section>
+<section id="note-about-oxford-instruments-itc-ilm-ips-controllers">
+<h2>Note about Oxford Instruments ITC/ILM/IPS controllers<a class="headerlink" href="#note-about-oxford-instruments-itc-ilm-ips-controllers" title="Link to this heading"></a></h2>
+<p>These controllers used to be run in a rack with a single serial connection under SECI (this used an ISIS isobus expander crate to split the signals). This is because, in SECI, there was only one process which talked to all of the pieces of equipment (in various combinations).</p>
+<p>In IBEX, support for the individual devices has been written into separate IOCs to increase the flexibility of the drivers. Under Windows, this means that they cannot talk to the same COM port (because each IOC has exclusive access to the port). Therefore, under IBEX, separate connections from the moxa to each bit of kit are required.</p>
+<p>The kit takes 25-way serial cables.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="choppers/SKF-MB4150g5-Disk-Chopper-Controllers.html" class="btn btn-neutral float-left" title="SKF MB4150g5 Chopper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cryogenics/2T-3D-Vector-magnet.html" class="btn btn-neutral float-right" title="Scientific Magnetics 2T 3D Vector Magnet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Galil Driver &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Resetting HOMEVAL" href="Resetting-HOMEVAL.html" />
+    <link rel="prev" title="Multi-Galil IOC" href="Multi-galil-IOC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Attocube.html">Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Beckhoff.html">Beckhoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Galil.html">Galil</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Differences-between-real-Galil-and-simulated-motor.html">Differences between real Galil &amp; Simulated motor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Homing-Routine-Steps.html">Galil Homing Routine steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Instrument-Configuration.html">Galil Instrument Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Userdef-Records.html">Galil Userdef records</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-default-parameters.html">Galil default parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-homing-routines.html">Galil Homing Routines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMAT-tomography-stages.html">IMAT Tomography Stages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Multi-galil-IOC.html">Multi-Galil IOC</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">New Galil Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Resetting-HOMEVAL.html">Resetting <code class="docutils literal notranslate"><span class="pre">HOMEVAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Smoothing-Motor-Readback.html">Smoothing motor readback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Updating-old-galil-driver.html">Updating the old Galil driver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Motors.html">Motors</a></li>
+          <li class="breadcrumb-item"><a href="../Galil.html">Galil</a></li>
+      <li class="breadcrumb-item active">New Galil Driver</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/galil/New-Galil-Driver.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="new-galil-driver">
+<h1>New Galil Driver<a class="headerlink" href="#new-galil-driver" title="Link to this heading"></a></h1>
+<section id="galil-driver-selection-during-ibex-install">
+<h2>Galil driver selection during ibex install<a class="headerlink" href="#galil-driver-selection-during-ibex-install" title="Link to this heading"></a></h2>
+<p>during install/deploy you will be asked to select OLD or NEW galil driver, default is OLD for the moment but <strong>Seek advice</strong> if you are not sure what to select as we will be doing a phased testing schedule. If the instrument is not currently running the new driver then you probably want to select OLD unless testing is planned. Note that both drivers are installed, this choice is what to make the default one on ibex startup. When ibex is not running you can run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">swap_galil</span><span class="o">.</span><span class="n">bat</span> <span class="n">OLD</span>
+</pre></div>
+</div>
+<p>from a command window to swap to the old driver, pass <code class="docutils literal notranslate"><span class="pre">NEW</span></code> as the argument to swap to the new driver instead.</p>
+<p>To help with automatic Jenkins system testing <code class="docutils literal notranslate"><span class="pre">instrument_install_latest_build_only.bat</span></code> selects the NEW driver and does not prompt.</p>
+<section id="notes-on-new-driver">
+<h3>notes on new driver<a class="headerlink" href="#notes-on-new-driver" title="Link to this heading"></a></h3>
+<p>The new galil driver has been merged to master, the old driver is currently on a galil-old branch of the EPICS-galil repository. The new driver does not build with VS2010, the old driver does not work if compiled with anything other than VS2010. As we have moved to VS2019 compilers, the new driver is now the default on master.</p>
+<p>The new driver has not yet been tested fully on an ISIS beamline, though things have changed between the old and new versions changes have been added to make them (hopefully) compatible at the PV and autosave level, thus you should be able to swap between them without issue. The only incompatible changes are:</p>
+<ul class="simple">
+<li><p>the hardware home motor position must now be zero and a motor record offset used to have a non-zero user home value. We had planned to do this change on remaining instruments, we need to complete this work.</p></li>
+<li><p>motor on/off cannot use PREM/POST
+see below for notes on these</p></li>
+</ul>
+<p>Currently an EPICS_galil_old Jenkins job runs on ndhspare53, it builds the galil-old branch with vs2010, deploys this to kits$, and this then gets included in other builds giving you ioc/master/GALIL-OLD etc. A get_old_galil.bat script at top level lets a developer get these files. A swap_galil.bat script will swap between galil drivers on instrument or developer machine, it basically renames directories.</p>
+</section>
+</section>
+<section id="testing-of-new-galil-driver">
+<h2>Testing of new galil driver<a class="headerlink" href="#testing-of-new-galil-driver" title="Link to this heading"></a></h2>
+<section id="testing-galil-old-via-swap-galil">
+<h3>Testing galil-old via swap-galil<a class="headerlink" href="#testing-galil-old-via-swap-galil" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Record motor setup</p></li>
+<li><p>Shutdown ibex</p></li>
+<li><p>Update instrument</p></li>
+<li><p>Run Swap_galil to put on old driver</p></li>
+<li><p>Start ibex</p></li>
+<li><p>check positions etc. all look ok</p></li>
+<li><p>compare current autosave files with ones pre-upgrade.</p></li>
+</ul>
+</section>
+<section id="testing-galil-new-via-swap-galil">
+<h3>Testing galil-new via swap galil<a class="headerlink" href="#testing-galil-new-via-swap-galil" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Record motor setup</p></li>
+<li><p>Shutdown ibex</p></li>
+<li><p>Run Swap_galil to put on new driver</p></li>
+<li><p>Start ibex</p></li>
+<li><p>check positions etc. all look ok</p></li>
+<li><p>compare current autosave files with ones pre-upgrade.</p></li>
+<li><p>Shutdown ibex</p></li>
+<li><p>Run Swap_galil to put back old driver</p></li>
+<li><p>Start ibex</p></li>
+<li><p>check positions etc. all look ok</p></li>
+<li><p>compare current autosave files with ones pre-upgrade.</p></li>
+</ul>
+<p>in <code class="docutils literal notranslate"><span class="pre">ioc/master/GALIL</span></code> there is a file  <code class="docutils literal notranslate"><span class="pre">utils/SetupR3Axis.bat</span></code>  that will initialise the Galil in the ibex office with appropriate parameters so you can move it, run it after you have started the <code class="docutils literal notranslate"><span class="pre">ioc/master/GALIL</span></code> ioc (likely you will only need to run it once as things should then get autosaved locally and applied subsequently)</p>
+</section>
+<section id="changes-from-previous-driver">
+<h3>Changes from previous driver<a class="headerlink" href="#changes-from-previous-driver" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run). If you were using PREM/POST to turn on/off the motor during a move then set MTR0101_AUTOONOFF_CMD etc. to “On” (this has been adjusted in <code class="docutils literal notranslate"><span class="pre">SetupR3Axis.bat</span></code>). If PREM turned a motor on and it remained on (POST did not turn it off) then set MTR0101_ON_CMD instead.</p></li>
+<li><p>In the upstream code GalilStartController() has lost the “display code” argument, for compatibility we have added this back so we <strong>do not</strong> currently need to move the “Thread mask” argument (usually value “3” for us) one position earlier in your local settings/galil/galil*.cmd files. When we have completed the migration on all instruments we may revise this.</p></li>
+<li><p>Home position is now always set to 0, so PVs like MTR0101_HOMEVAL_SP and MTR0101_PHOME_CMD have been removed. See <a class="reference internal" href="Resetting-HOMEVAL.html"><span class="doc std std-doc">Resetting-HOMEVAL</span></a></p></li>
+</ul>
+</section>
+<section id="todo-from-earlier-testing">
+<h3>TODO (from earlier testing)<a class="headerlink" href="#todo-from-earlier-testing" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Unsolicited messages are currently using UDP only, I need to look at adding TCP support</p></li>
+<li><p>Loading the Profile and kinematic axes DBs cause streams of errors (may now be fixed?)</p></li>
+<li><p>Running GalilTest IOC from support/galil/master does not work (may not fix, not really needed)</p></li>
+</ul>
+</section>
+<section id="test-strategy-assuming-testing-on-emma">
+<h3>Test Strategy (Assuming testing on EMMA)<a class="headerlink" href="#test-strategy-assuming-testing-on-emma" title="Link to this heading"></a></h3>
+<p>To confirm that the new driver works we will need to do the following.</p>
+</section>
+<section id="before-testing">
+<h3>Before testing<a class="headerlink" href="#before-testing" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>[x] Copy the autosave files</p></li>
+<li><p>[x] Note down all current motor positions (ideally in raw steps)</p></li>
+</ul>
+</section>
+<section id="general-tests">
+<h3>General Tests<a class="headerlink" href="#general-tests" title="Link to this heading"></a></h3>
+<p>For comparison, use the old driver to take the following data on an axis:</p>
+<ul class="simple">
+<li><p>[x] Home the device</p></li>
+<li><p>[x] Run it to the upper physical limit, measure how long this takes</p></li>
+<li><p>[x] Note the position of the upper limit</p></li>
+<li><p>[x] Re-home, measure how long this takes</p></li>
+<li><p>[x] Run to lower limit and note the lower limit position</p></li>
+</ul>
+<p>Upon switching to new driver</p>
+<ul class="simple">
+<li><p>[ ] Power cycle the galil <strong>Not tried</strong></p></li>
+<li><p>[ ] Reapply the motor positions as previously noted</p></li>
+</ul>
+<p>Under the new driver:</p>
+<ul class="simple">
+<li><p>[x] Repeat the above, confirm the values are the same (to within 0.1 mm for distances and 1 second for time)</p></li>
+<li><p>[x] Confirm the GUI shows high and low limits engaged when the physical switches are activated</p></li>
+<li><p>[x] Home one of axes 1-4 and confirm it runs to forward limit then home. Confirm the GUI displays home</p></li>
+<li><p>[ ] Home axis 5 and confirm it runs straight to home. Confirm the GUI displays home <strong>Home routine did nothing</strong></p></li>
+<li><p>[x] Home one of 7-8 and confirm nothing happens. Confirm the GUI displays home <strong>No movement occurs but the motor counts/encoder counts are reset to zero. This is the same behaviour in both drivers</strong></p></li>
+<li><p>[ ] Confirm that you can move the chopper lifter in and out of the beam <strong>Not tried due to unsure state of the lifter</strong></p></li>
+<li><p>[x] Attempt to move an axis beyond it’s physical limit, confirm that it stops</p></li>
+<li><p>[x] Set soft limits on an axis, confirm that you cannot go outside them</p></li>
+<li><p>[ ] Move the galil over to serial comms as per the procedure in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3546">https://github.com/ISISComputingGroup/IBEX/issues/3546</a> and confirm it still communicates <strong>Could not connect to the com port</strong></p></li>
+</ul>
+</section>
+<section id="tests-specific-to-areas-the-new-driver-has-changed">
+<h3>Tests specific to areas the new driver has changed<a class="headerlink" href="#tests-specific-to-areas-the-new-driver-has-changed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>[ ] Turn on WLP, physically press a limit switch and confirm that you cannot move the motor in either direction <strong>WLP now appears to not work</strong></p></li>
+<li><p>[x] Set both soft limits to zero, confirm that you can move. <strong>Movement is possible but all motor fields go into an alarm state</strong></p></li>
+</ul>
+</section>
+<section id="test-communication-errors">
+<h3>Test Communication Errors<a class="headerlink" href="#test-communication-errors" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>[ ] Turn off Galil control and start IOC: IOC should report comms error on all motors</p></li>
+<li><p>[ ] Connect IOC and then turn off galil: IOC should report comms error on all motors</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Multi-galil-IOC.html" class="btn btn-neutral float-left" title="Multi-Galil IOC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Resetting-HOMEVAL.html" class="btn btn-neutral float-right" title="Resetting HOMEVAL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

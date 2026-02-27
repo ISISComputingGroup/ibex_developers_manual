@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geometry Components &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Glossary" href="Reflectometry-Glossary.html" />
+    <link rel="prev" title="Configuration" href="Reflectometry-Configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Config-Training.html">Reflectometry Config Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Reflectometry-IOC.html">Reflectometry</a></li>
+      <li class="breadcrumb-item active">Geometry Components</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/Reflectometry-Geometry-Components.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="geometry-components">
+<h1>Geometry Components<a class="headerlink" href="#geometry-components" title="Link to this heading"></a></h1>
+<p>A component represents a point of interaction with the beam on the beamline; for example, a slit set or mirror. They form the relationship between:</p>
+<ul class="simple">
+<li><p>the incoming beam: the position in space and angle of the beam which will intersect the components movement</p></li>
+<li><p>outgoing beam: the beam path after the beam has interacted with the component (which may or may not be altered)</p></li>
+<li><p>user set value relative to the beam: where the user would like an object relative to the beam (e.g. for something on the beam 0mm above the beam) on a given axis (e.g. linear / rotational offset)</p></li>
+<li><p>Mantid coordinates: the values for position in the room or of underlying PVs value, often a motor. Theses value don’t change based on moving the beam.</p></li>
+</ul>
+<p>In effect, the component layer is responsible for translating motor values/Mantid coordinates (relative to straight-through beam) to high-level parameter values (relative to current beam path) and vice versa.</p>
+<p>Each component captures the relationships for both set points (where the user wants the beamline to be) and readbacks (where the beamline actually is) separately i.e. the system maintains two separate models of the beam path.</p>
+<p><strong>For more information on implementation specifics see the <a class="reference internal" href="Reflectometry-Configuration.html#reflectometry-components"><span class="std std-ref">Beamline Configuration page</span></a></strong></p>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading"></a></h2>
+<section id="major-classes">
+<h3>Major Classes<a class="headerlink" href="#major-classes" title="Link to this heading"></a></h3>
+<p><img alt="Architecture of the component" src="../../_images/ComponentArchitecture.png" /></p>
+<p>The components contains two major elements the beam path setpoint and beam path readback. The setpoint allows positions to be set from user parameters and these setpoints are translated to setpoints on the motor level. The readback takes motor positions and calculates the user parameters from them. Both setpoint and readback attributes use the tracking beam path calc, and subclasses, to perform the calculations. The tracking beam path calc object that perform the calculation try to be generic for both cases, to differentiate between the motor and user level we use the terms relative to beam, for user parameters, and displacement, for motor parameters. This makes sense for the tracking parameters but less so for the direct parameters, which are relative to the fixed beam so also absolute, e.g. for a TRANS axis the beam is always at 0 so relative and displacement will be the same.</p>
+<p>The tracking beam path calc has a number of component axes representing a single quantity that can change, e.g. slit 2 height. These must have a variety of methods and attributes. The methods allow the axis value to be read and written in various ways, e.g. relative to beam. The attributes set and show the state of the axis, e.g. changing True when the underlying motor is moving. These states are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is_changing</span></code>: an underlying motor is moving</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_changed</span></code>: a set point has been changed but the change has not been sent to the driving layer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alarm</span></code>: the alarm status of the axis, usually a reflection of the underlying motor axis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_in_beam</span></code>: True if this axis in the beam, i.e. not at its parked position</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_out_of_beam_position</span></code>: True if the axis has an out of beam position, these are usually set on the driving layer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">can_define_axis_position_as</span></code>: True if the axis can have its position defined as something else</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autosaved_value</span></code>: The value last read from autosave for this axis</p></li>
+</ul>
+<p>There are two sorts of axes, <code class="docutils literal notranslate"><span class="pre">DirectAxis</span></code> and the <code class="docutils literal notranslate"><span class="pre">BeamPathCalcAxis</span></code>. The <code class="docutils literal notranslate"><span class="pre">DirectAxis</span></code> defines the methods above such that there is no transform between relative and displacement values. The <code class="docutils literal notranslate"><span class="pre">BeamPathCalcAxis</span></code> uses the methods from the <code class="docutils literal notranslate"><span class="pre">TrackingBeamPathCalc</span></code> to calculate the various values. The axis object for tracking case points to the methods needed so is not as clean as it should be; but it is unclear exactly how it should change.</p>
+<p>In general a component is made from multiple axes and can respond to changes in those axes, the bench component does this for instance. The bench component has 3 user parameters height, angle and seesaw and these drives three drivers front jack, rear jack and slide. All of these changeable values are axes. To make this work the component listen for changes to the values and transform the value applying then to the other set of axes. E.g. if the jack motor moves the position is transformed to the height, angle and seesaw user parameters.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">InBeamManager</span></code> is used to coordinate whether a component is in the beam based on all of its axes. This can either be set from a user parameter in which case user axes get set or it can read from the motor axes for the readbacks. A component is out of the beam only if all its motors are at their out of beam positions.</p>
+<p>The most complicated component is the <code class="docutils literal notranslate"><span class="pre">ThetaComponent</span></code> this has two beam calcs one for the readback <code class="docutils literal notranslate"><span class="pre">BeamPathCalcThetaRBV</span></code> and one for the setpoint <code class="docutils literal notranslate"><span class="pre">BeamPathCalcThetaSP</span></code>. The setpoint simply reflects the beam when it reaches the virtual sample point whereas the read back needs to calculate the angle of the component that it is pointed at.</p>
+<p>The final complication is that components that define where theta do not use the readback beam path to calculate there position because this would always be zero, since it defines theta, instead they use the setpoint beam path.</p>
+</section>
+<section id="events">
+<h3>Events<a class="headerlink" href="#events" title="Link to this heading"></a></h3>
+<p>The whole system of readbacks, and to lesser extend setpoints, work on events being passed between the various classes. We have tried very hard not to bind the components to any of part of the system directly so that the component layer can act independently. To so this events are listened to by the observing classes. This has mostly be successful but it does get slightly complicated to understand what the events are and where the go so we will present what events we have and where they go for a typical beamline.</p>
+<section id="defining-triggering-and-observing-an-event">
+<h4>Defining, Triggering and Observing an Event<a class="headerlink" href="#defining-triggering-and-observing-an-event" title="Link to this heading"></a></h4>
+<p>The event is captured using a single class, this can be whatever you need but the future direction is to use a data class (there are still some legacy named tuples). For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span><span class="p">()</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyEvent</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    doc</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">param1</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">type</span> <span class="n">name</span><span class="o">&gt;</span>
+    <span class="n">param2</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">type</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To make a class observable simply add <code class="docutils literal notranslate"><span class="pre">&#64;observable(&lt;event&gt;)</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@observable</span><span class="p">(</span><span class="n">MyEvent</span><span class="p">,</span> <span class="n">OtherEvent</span><span class="p">,</span> <span class="n">ThirdEvent</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IWantToObserveThis</span><span class="p">()</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>When you want to trigger the event in the class use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">trigger_listeners</span><span class="p">(</span><span class="n">MyEvent</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>To observe the event you need a call back function which takes the event as an argument to the instance of the class and this will be called when the event is triggered, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_callback</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">MyEvent</span><span class="p">):</span>
+   <span class="o">....</span>
+
+<span class="n">i_want_to_observe_this</span> <span class="o">=</span> <span class="n">IWantToObserveThis</span><span class="p">()</span>
+<span class="n">i_want_to_observe_this</span><span class="o">.</span><span class="n">add_listener</span><span class="p">(</span><span class="n">my_callback</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="beamline-move-event">
+<h3>Beamline Move Event<a class="headerlink" href="#beamline-move-event" title="Link to this heading"></a></h3>
+<p>A beamline can be moved by the user through three mechanisms (see <a class="reference internal" href="Reflectometry-Beamline-Object.html"><span class="doc std std-doc">beamline object for more detail</span></a>):</p>
+<ol class="arabic simple">
+<li><p>A whole beamline move, in this case all setpoints that are in the mode or have changed are set in turn (i.e. sp becomes the sp:rbv)</p>
+<ul class="simple">
+<li><p>starts from code <code class="docutils literal notranslate"><span class="pre">Beamline._move_for_all_beamline_parameters</span></code></p></li>
+</ul>
+</li>
+<li><p>A single parameter can have its move activates, in this case this set point value is set and beam line is calculated</p>
+<ul class="simple">
+<li><p>starts from parameter but main part of the code is <code class="docutils literal notranslate"><span class="pre">Beamline._move_for_single_beamline_parameters</span></code></p></li>
+</ul>
+</li>
+<li><p>A single parameter is set (<code class="docutils literal notranslate"><span class="pre">SP</span></code> not <code class="docutils literal notranslate"><span class="pre">NO_ACTION</span></code>), this is like a set and then case 2.</p></li>
+</ol>
+<section id="beamline-move-events">
+<h4>Beamline move events<a class="headerlink" href="#beamline-move-events" title="Link to this heading"></a></h4>
+<p><img alt="Beamline movement events" src="../../_images/BeamlineMoveEvents.png" /></p>
+<p>In all cases the move is a <code class="docutils literal notranslate"><span class="pre">set_relative</span></code> on the axis in question. Once the axis has been set correctly if it causes the beampath to change then the <code class="docutils literal notranslate"><span class="pre">BeamPathUpdate</span></code> event in propagated. The beamline picks up this event and then propagates the beampath to the next component which triggers <code class="docutils literal notranslate"><span class="pre">BeamPathUpdate</span></code>, and so on until all components in turn have had their beampath updated. Note that this stops at the component layer the motors will not move until later all the events are processed.</p>
+<p>At some points the set point is used to calculate the readback value, e.g. for components defining theta. In this case the events will also propagate through the RBV beampath sequence.</p>
+</section>
+<section id="motor-readback-change-events">
+<h4>Motor Readback Change Events<a class="headerlink" href="#motor-readback-change-events" title="Link to this heading"></a></h4>
+<p><img alt="Motor position update events" src="../../_images/MotorReadbackChangeEvents.png" /></p>
+<p>The motors can update in several ways that need propagating through the reflectometry IOC. All events are tied to PV monitors which trigger call backs. These callbacks could come in to the system very quickly and we can not afford to process each one so instead we put a callback for the event into a dictionary and just keep the last value recorded. Then in a loop the events are processed. This happens inside the <code class="docutils literal notranslate"><span class="pre">ProcessMonitorEvents</span></code> object. The events treated in this way are:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DMOV</span></code> update this is eventually propagated up the beamline parameters are parameter changing so that a green background can be displayed</p></li>
+<li><p>set point change, this is propagated to the IOC Driver so it is possible to determine if a move will occur (this avoid performing small unneeded moves)</p></li>
+<li><p>rbv change, this is propagated through the beamline sequence to calculate the new positions of all the parameters.</p></li>
+</ol>
+</section>
+<section id="beamline-readback-event-propagation">
+<h4>Beamline Readback Event Propagation<a class="headerlink" href="#beamline-readback-event-propagation" title="Link to this heading"></a></h4>
+<p><img alt="Readback sequence Events" src="../../_images/ReadbackSequenceEvents.png" /></p>
+<p>The readbacks in each component axis are set based on a change in a single readback. This readback change in a component axis will cause the associated parameter to update, and in turn the reflectometry driver, this is more actual value and whether it is now at its setpoint. Then the component triggers a beam path update which will propagate the beamline to the next component, until all components are updated.</p>
+<p>The only special case for this is theta readback also reacts to a <code class="docutils literal notranslate"><span class="pre">PhysicalMove</span></code> update of the component axis which theta depends on. This causes the beampath the be calculated starting at Theta. The beam path update event can not be reused because otherwise a circular loop would result.</p>
+</section>
+</section>
+<section id="other-important-part-of-the-geometry-layer-code">
+<h3>Other Important Part of the Geometry Layer Code<a class="headerlink" href="#other-important-part-of-the-geometry-layer-code" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">LinearMovementCalc</span></code>: Geometry calculations</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reflectometry-Configuration.html" class="btn btn-neutral float-left" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reflectometry-Glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

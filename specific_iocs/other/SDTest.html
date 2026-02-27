@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDTest &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SP300 Potentiostat" href="SP300-Potentiostat.html" />
+    <link rel="prev" title="Rotating Stirrer Rack" href="Rotating-Stirrer-Rack.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AnywhereUSB.html">AnywhereUSB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino-RKNDIO-PLC-control.html">Arduino RKNDIO PLC Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Background-Script-IOC.html">Background Script IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-Hexagon.html">CAEN Hexagon (MUX Data Acquisition Electronics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-v895.html">CAEN v895</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Catalytic-Flow-Reactor.html">Catalytic Flow Reactor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coherent-OBIS-Laser-Remote.html">Coherent OBIS Laser Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ferro-Magnetic_Resonance_equipment.html">Ferro-Magnetic Resonance equipment (FMR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gamry.html">Gamry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Hameg-HM8123.html">Hameg HM8123 programmable counter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Humidity-Controller.html">Humidity Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Inhibitor.html">Inhibitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOTQD-MSH150-Monochromator.html">LOTQD MSH150 Monochromator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LSi-Correlator.html">LSi Correlator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lynx_HPGe_detector.html">Mirion Lynx2 HPGe detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MOXA-e12XX.html">Moxa e12xx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ocean-Optics-DH-2000-Shutter-control.html">Ocean Optics DH-2000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAMAN-Spectrometer.html">RAMAN Spectrometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rotating-Stirrer-Rack.html">Rotating Stirrer Rack</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SDTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SP300-Potentiostat.html">SP300 Potentiostat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stanford-SR850.html">Stanford SR850 Lock In Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thorlabs-FW102C-Filter-Wheel.html">Thorlabs FW102C Filter Wheel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nGEM-detector.html">nGEM Detector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Other.html">Other / Miscellaneous</a></li>
+      <li class="breadcrumb-item active">SDTest</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/other/SDTest.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="sdtest">
+<h1>SDTest<a class="headerlink" href="#sdtest" title="Link to this heading"></a></h1>
+<p>The SDTEST IOCs allow us to set up communications with an arbitrary device on-the-fly. This often happens if an instrument acquires a bit of equipment to achieve a short term goal. We should try and ensure that if a device is to be used long-term that we find out about it early enough to provide a dedicated IOC, or deliver it as soon as practical.</p>
+<p>The serial device test module consists of IOCs called SDTEST_01, SDTEST_02 etc. Each of these can control up to 8 separate serial devices.</p>
+<p>Configuration of the devices is via EPICS macros, which can be defined in the globals.txt file located in c:/Instrument/settings/config/NDXLARMOR/configurations
+This globals.txt file is loaded on IOC startup, so you will need to stop/start the IOC after making a change.</p>
+<p>All macros in globals.txt start with the IOC name followed by two underscores, so SDTEST_01__ for IOC SDTEST_01   Defining a macro  SDTEST_01__NAME3 here will create one that can be referenced as $(NAME3) by IOC SDTEST_01</p>
+<p>Each SDTEST IOC supports 8 devices numbered 1 to 8. Settings for each of these have the device number appended e.g. $(PORT3) is COM/serial port for the third device attached etc.</p>
+<p>Arbitrary string commands can be sent to the device via EPICS process variables, but it is also possible to define a way to send and receive a particular numeric value through a PV. The format of how to send this value and how often to poll for it need to be specified and this is described later.</p>
+<p>By way of example we will consider a power supply. In globals.txt we have:</p>
+<section id="macros">
+<h2>Macros<a class="headerlink" href="#macros" title="Link to this heading"></a></h2>
+<p>Each SDTest IOC supports communication with 8 separate devices on 8 ports. Macros should be suffixed by the device number in the range <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">8</span></code> inclusive (e.g. <code class="docutils literal notranslate"><span class="pre">PORT1</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PORT</span></code>: Communications port (e.g. COM1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BAUD</span></code>: Baud rate (default: 9600)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BITS</span></code>: Message bits (default: 8)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARITY</span></code>: Message parity (default: none)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STOP</span></code>: Number of stop bits (default: 1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLOCAL</span></code>: Output flow control using DSR signal (Y/N, default: Y)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CRTSCTS</span></code>: Hardware flow control (Y/N, default: N)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IXON</span></code>: Software flow control for output (Y/N, default: N)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IXOFF</span></code>: Software flow control for input (Y/N, default: N)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OEOS</span></code>: Output terminator (default: \r\n)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IEOS</span></code>: Input terminator (default: \r\n)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NAME</span></code>: Name of the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SCAN</span></code>: Scan rate (Any valid EPICS scan value (Passive, .1 second, .2 second, .5 second, 1 second, 2 second, 5 second or 10 second)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GETOUT</span></code>: Command for getting the readback</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GETIN</span></code>: Format of the readback</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SETOUTA</span></code>: Command for setpoint</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SETOUTB</span></code>: Secondary setpoint value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SETOUTC</span></code>: Tertiary setpoint value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SETIN</span></code>: Format of the setpoint</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INITOUT</span></code>: Initialisation command</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INITIN</span></code>: Format of init response</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INITP</span></code>: Send an initialisation command (default: NO)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROTO</span></code>: Path to custom protocol file, (default: SDTEST-default.proto)</p></li>
+</ul>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<p>This is an example of <code class="docutils literal notranslate"><span class="pre">globals.txt</span></code> for using SDTest for talking to a Keithley 2000:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SDTEST_01__NAME1=Kiethley2000_1
+SDTEST_01__PORT1=COM5
+SDTEST_01__BAUD1=9600
+SDTEST_01__BITS1=8
+SDTEST_01__PARITY1=none
+SDTEST_01__STOP1=1
+SDTEST_01__IEOS1=\\r       # end of line terminator for input (note \\ to escape \)
+SDTEST_01__OEOS1=\\r       # end of line terminator for output (note \\ to escape \)
+SDTEST_01__SCAN1=.5 second     # scan (polling) rate for reading special numeric value. 
+SDTEST_01__GETOUT1=:MEAS:CURR:DC?    # string to send to read the special numeric value   
+SDTEST_01__GETIN1=&quot;%f&quot;     # expected format of reply to sending string specified in GETOUT
+SDTEST_01__SETOUTA3=PC           # first part of string to send for setting special numeric value
+SDTEST_01__SETOUTB3=0x20         # second part of string to send for setting special numeric value
+SDTEST_01__SETOUTC3=%f           # third part of string to send for setting special numeric value
+SDTEST_01__SETIN3=OK             # expected reply from SETOUT* Use e.g. %*40c to ignore reply
+</pre></div>
+</div>
+<p>As these all start SDTEST_01__ and end in 3 they refer to the third device attached to IOC SDTEST_01
+You do not need to specify all values, here are defaults</p>
+</section>
+<section id="process-variables">
+<h2>Process variables<a class="headerlink" href="#process-variables" title="Link to this heading"></a></h2>
+<p>Process variables defined are of the form {instrument prefix}{ioc name}{device index}{variable} e.g. for the first device (P1) on IOC SDTEST_01</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">NAME</span>          <span class="p">(</span><span class="n">read</span><span class="p">)</span>  <span class="n">short</span> <span class="n">name</span> <span class="n">of</span> <span class="n">device</span> 
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">DEVICE</span>        <span class="p">(</span><span class="n">read</span><span class="p">)</span>  <span class="n">COM</span> <span class="n">port</span> <span class="n">of</span> <span class="n">device</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">INIT</span>          <span class="p">(</span><span class="n">write</span><span class="p">)</span> <span class="n">initialise</span> <span class="n">device</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">COMM</span>          <span class="p">(</span><span class="n">write</span><span class="p">)</span> <span class="n">send</span> <span class="n">arbitrary</span> <span class="n">string</span> <span class="n">to</span> <span class="n">device</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">REPLY</span>         <span class="p">(</span><span class="n">read</span><span class="p">)</span>  <span class="n">reply</span> <span class="kn">from</span><span class="w"> </span><span class="nn">device</span> <span class="n">after</span> <span class="n">sending</span> <span class="n">COMM</span> <span class="n">string</span> <span class="n">above</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">REPLY</span><span class="p">:</span><span class="n">ASYNC</span>   <span class="p">(</span><span class="n">read</span><span class="p">)</span>  <span class="n">continuously</span> <span class="n">monitors</span> <span class="n">serial</span> <span class="n">port</span> <span class="k">for</span> 
+                                             <span class="o">..</span> <span class="n">asynchronous</span> <span class="n">output</span> <span class="p">(</span><span class="mi">40</span> <span class="n">char</span> <span class="n">epics</span> <span class="n">string</span><span class="p">)</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">REPLYWF</span><span class="p">:</span><span class="n">ASYNC</span> <span class="p">(</span><span class="n">read</span><span class="p">)</span>  <span class="n">continuously</span> <span class="n">monitors</span> <span class="n">serial</span> <span class="n">port</span> <span class="k">for</span> <span class="n">asynchronous</span> 
+                                             <span class="o">..</span> <span class="n">output</span> <span class="p">(</span><span class="n">epics</span> <span class="mi">1024</span> <span class="n">char</span> <span class="n">waveform</span><span class="p">)</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">SETVAL</span>        <span class="p">(</span><span class="n">write</span><span class="p">)</span> <span class="n">write</span> <span class="n">a</span> <span class="n">numeric</span> <span class="n">value</span> <span class="n">to</span> <span class="n">device</span> <span class="n">using</span> <span class="n">previously</span> 
+                                             <span class="o">..</span> <span class="n">specified</span> <span class="n">command</span> <span class="nb">format</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">GETVAL</span>        <span class="p">(</span><span class="n">read</span><span class="p">)</span>  <span class="n">numeric</span> <span class="n">value</span> <span class="n">read</span> <span class="kn">from</span><span class="w"> </span><span class="nn">device</span> <span class="p">(</span><span class="n">ususally</span> <span class="n">because</span> 
+                                             <span class="o">..</span> <span class="n">of</span> <span class="n">a</span> <span class="n">periodic</span> <span class="n">SCAN</span><span class="p">)</span>
+<span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">SDTEST_01</span><span class="p">:</span><span class="n">P1</span><span class="p">:</span><span class="n">ASYNREC</span>       <span class="p">(</span><span class="n">write</span><span class="p">)</span> <span class="n">Access</span> <span class="n">to</span> <span class="n">an</span> <span class="n">EPICS</span> 
+                                             <span class="o">..</span> <span class="n">_ASYN</span> <span class="n">Record</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">aps</span><span class="o">.</span><span class="n">anl</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">soft</span><span class="o">/</span><span class="n">asyn</span><span class="o">/</span><span class="n">R4</span><span class="o">-</span><span class="mi">26</span><span class="o">/</span><span class="n">asynRecord</span><span class="o">.</span><span class="n">html</span> 
+</pre></div>
+</div>
+<p>When polling the GETVAL process variable, the the IOC will send <code class="docutils literal notranslate"><span class="pre">$(GETOUT)</span></code> and expect to receive <code class="docutils literal notranslate"><span class="pre">$(GETIN)</span></code>  Within <code class="docutils literal notranslate"><span class="pre">$(GETIN)</span></code> can be printf style format characters to match
+the value being read. For valid format converters see __ <a class="reference external" href="http://epics.web.psi.ch/software/streamdevice/doc/formats.html">http://epics.web.psi.ch/software/streamdevice/doc/formats.html</a></p>
+<p>When writing to the SETVAL process variable, the IOC will construct a string from concatenating <code class="docutils literal notranslate"><span class="pre">$(SETOUTA)</span></code>, <code class="docutils literal notranslate"><span class="pre">$(SETOUTB)</span></code> and <code class="docutils literal notranslate"><span class="pre">$(SETOUTC)</span></code>. The writing format character (e.g. %f)
+must be in SETOUTC, normally only SETOUTA and SETOUTC are specified, sometimes just SETOUTC. SETOUTB is for sending a special character between these two values, such as a space.
+SETOUTA and SETOUTC are quoted strings as per __ <a class="reference external" href="http://epics.web.psi.ch/software/streamdevice/doc/protocol.html">http://epics.web.psi.ch/software/streamdevice/doc/protocol.html</a> whereas SETOUTB can be a byte number such as 0x20 for a space character.  Only use SETOUTB is you have trouble with using SETOUTA and SETOUTC - in particular needing to send a space character between and string
+and a format converter that seems to get stripped otherwise.</p>
+<p>For INIT, macros INITOUT and INITIN</p>
+<p>The ASYN record PV can be useful for diagnostics</p>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
+<p>Typically you would point a block at <code class="docutils literal notranslate"><span class="pre">IN:LARMOR:SDTEST_01:P1:GETVAL</span></code> to get values logged</p>
+</section>
+<section id="sdtest-synoptic-opi">
+<h2>SDTEST Synoptic OPI<a class="headerlink" href="#sdtest-synoptic-opi" title="Link to this heading"></a></h2>
+<p>An OPI file SDTEST.opt exists that opens a display for managing the serial device, which
+includes the option to open an asyn record OPI - see screenshots at bottom
+of _ASYN Record: <a class="reference external" href="http://www.aps.anl.gov/epics/modules/soft/asyn/R4-26/asynRecord.html">http://www.aps.anl.gov/epics/modules/soft/asyn/R4-26/asynRecord.html</a></p>
+</section>
+<section id="more-complex-cases">
+<h2>More complex cases<a class="headerlink" href="#more-complex-cases" title="Link to this heading"></a></h2>
+<p>Can use <code class="docutils literal notranslate"><span class="pre">PROTO</span></code> macro to specify another stream device protocol file rather than  <code class="docutils literal notranslate"><span class="pre">SDTEST-default.proto</span></code></p>
+<p>See <a class="reference external" href="http://epics.web.psi.ch/software/streamdevice/doc/">http://epics.web.psi.ch/software/streamdevice/doc/</a></p>
+<p>because you will load the same DB file, you will need to provide the same functions as <code class="docutils literal notranslate"><span class="pre">SDTEST-default.proto</span></code>  i.e. <code class="docutils literal notranslate"><span class="pre">getValue()</span></code> and <code class="docutils literal notranslate"><span class="pre">setValue()</span></code>
+Place files in <code class="docutils literal notranslate"><span class="pre">$(ICPCONFIGROOT)/SDTEST</span></code> on the machine</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Rotating-Stirrer-Rack.html" class="btn btn-neutral float-left" title="Rotating Stirrer Rack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SP300-Potentiostat.html" class="btn btn-neutral float-right" title="SP300 Potentiostat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

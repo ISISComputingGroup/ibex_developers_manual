@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script Generator testing &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Script Generator Design" href="Script-generator-high-level-design.html" />
+    <link rel="prev" title="Dynamic Scripting" href="IBEX-Script-Generator-Dynamic-Scripting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Script-Generator.html">Script Generator</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IBEX-Script-Generator-Dynamic-Scripting.html">Dynamic Scripting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Script Generator testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Script-generator-high-level-design.html">Script Generator Design</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Script-Generator.html">Script Generator</a></li>
+      <li class="breadcrumb-item active">Script Generator testing</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/script_generator/Script-Generator-Testing-Environment.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="script-generator-testing">
+<h1>Script Generator testing<a class="headerlink" href="#script-generator-testing" title="Link to this heading"></a></h1>
+<p>After the first full release of the script generator testing on personal computers revealed a problem with our current testing standards i.e. running on dev machines ensures we have things like git, Python and the JRE already installed and available impeding our ability to simulate a “home environment”.</p>
+<p>A few options:</p>
+<ul class="simple">
+<li><p>Run up a VM with windows and copy a built version into it for testing (see VM Testing below)</p></li>
+<li><p>Have a “clean” windows server to remote desktop into and copy a built version for testing</p>
+<ul>
+<li><p>We will have to maintain the cleanliness by preventing setup of Java, Git and Python in it</p></li>
+</ul>
+</li>
+</ul>
+<section id="vm-testing">
+<h2>VM Testing<a class="headerlink" href="#vm-testing" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/">https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/</a></p>
+<p>Unzip download and open ova file with virtualbox.</p>
+<p>Create shared folder to put script generator in. Auto mount and make permanent selected.</p>
+<p>Put built script generator into shared folder then copy from there onto VM (Doesn’t like running from shared folder).</p>
+<p>Then test whatever you want.</p>
+<p>Things to check:</p>
+<ul class="simple">
+<li><p>You are using the bundled python</p>
+<ul>
+<li><p>Start task manager and look at the python running the script generator script</p></li>
+</ul>
+</li>
+<li><p>You are using the bundled JRE</p></li>
+<li><p>You are using the bundled git</p></li>
+</ul>
+</section>
+<section id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://windowsdev.azureedge.net/eulas/WindowsDeveloperVirtualMachineEula20151118.pdf">https://windowsdev.azureedge.net/eulas/WindowsDeveloperVirtualMachineEula20151118.pdf</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Section</span> <span class="pre">7</span></code> describes what we are not allowed to use it for</p>
+<ul>
+<li><p>This does not include any of our currently intended purposes</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Section</span> <span class="pre">1</span> <span class="pre">part</span> <span class="pre">c</span></code> worries me slightly</p>
+<ul>
+<li><p>I think we are using it to demonstrate and internally evaluate software on windows</p></li>
+<li><p>I am not sure whether or not this would be classed as a commercial purpose (I think this means as commercial hosting so I believe it is fine if you take into account <code class="docutils literal notranslate"><span class="pre">Exhibit</span> <span class="pre">A</span> <span class="pre">2cv</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Section</span> <span class="pre">4</span></code></p>
+<ul>
+<li><p>We can have a backup copy and reinstall it</p></li>
+<li><p>Does this mean we can keep reinstalling it?</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Exhibit</span> <span class="pre">A</span> <span class="pre">13dii</span></code> “you may not use it after the evaluation period”</p>
+<ul>
+<li><p>Does this mean that we cannot reinstall it or use the same VM?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IBEX-Script-Generator-Dynamic-Scripting.html" class="btn btn-neutral float-left" title="Dynamic Scripting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Script-generator-high-level-design.html" class="btn btn-neutral float-right" title="Script Generator Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

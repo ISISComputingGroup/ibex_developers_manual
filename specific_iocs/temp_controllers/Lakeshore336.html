@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakeshore 336 &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lakeshore 340" href="Lakeshore340.html" />
+    <link rel="prev" title="Julabo" href="Julabo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Ambrell-EASYHeat-Induction-Furnace.html">Ambrell EASYHeat Induction Furnace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automatic-Needle-Valve-Controller.html">Automatic Needle Valve Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eurotherm.html">Eurotherm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-Environment-Monitor.html">ISIS Environment Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="In-Situ-DSC.html">In-situ DSC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Induction-furnace.html">Induction furnace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Julabo.html">Julabo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lakeshore 336</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore340.html">Lakeshore 340</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore350.html">Lakeshore 350</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore372.html">Lakeshore 372</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Neocera-LTC-21.html">Neocera LTC 21</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OMEGA-OME-Wise.html">OMEGA OME-Wise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ral-furnaces.html">RAL Furnaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Temperature-Jump-Apparatus.html">Temperature Jump Apparatus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+      <li class="breadcrumb-item active">Lakeshore 336</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/temp_controllers/Lakeshore336.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lakeshore-336">
+<h1>Lakeshore 336<a class="headerlink" href="#lakeshore-336" title="Link to this heading"></a></h1>
+<p>The Lakeshore 336 is a temperature controller that has four input temperature readings (A, B, C, D) and four heater outputs (1, 2, 3, 4). The user can configure which heater output is paired up with which input.</p>
+<p>This means that the temperature setpoint <code class="docutils literal notranslate"><span class="pre">TEMP1:SP</span></code> (and <code class="docutils literal notranslate"><span class="pre">TEMP1:SP:RBV</span></code>) could be matched to any of the temperature readings <code class="docutils literal notranslate"><span class="pre">TEMP_A</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMP_B</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMP_C</span></code> or <code class="docutils literal notranslate"><span class="pre">TEMP_D</span></code> depending on how the device is setup, and the user can change this dynamically.
+This of course breaks our naming convention the blocks rely on to work. So the IOC has some extra PVs to deal with this, so the user can either rely on the names <code class="docutils literal notranslate"><span class="pre">TEMP_A</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMP_A:SP</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMP_A:SP:RBV</span></code>, or on the names <code class="docutils literal notranslate"><span class="pre">TEMP1</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMP1:SP</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMP1:SP:RBV</span></code>.</p>
+<section id="ioc-setup">
+<h2>IOC Setup<a class="headerlink" href="#ioc-setup" title="Link to this heading"></a></h2>
+<p>When connecting to the real device, the IOC requires its IP address, but the software installed on the device has a bug and does not return the correct IP address. Its network name, however, is correct.</p>
+<p>To use the device, set the <code class="docutils literal notranslate"><span class="pre">HOST</span></code> macro to be the device hostname, e.g. <code class="docutils literal notranslate"><span class="pre">LSCI-336-1</span></code>.</p>
+<section id="troubleshooting-device-not-reachable-for-ioc-using-hostname">
+<h3>Troubleshooting: device not reachable for IOC using hostname<a class="headerlink" href="#troubleshooting-device-not-reachable-for-ioc-using-hostname" title="Link to this heading"></a></h3>
+<p>The Lakeshore 336 has a strange issue where if it travels with some kit (for example the 3D Magnet) it needs to be forced to renew its DHCP lease. To do this, re-select “Ethernet” on the front panel of the device. If the address shown is 172.* then it has failed to connect to the network and defaulted to a private address, re-selecting ethernet should fix this. It may also be it is showing an old address, or one for the wrong experiment hall - reselecting ethernet should fix this. A third problem is that if somehow there are multiple Lakeshores with the same hostname on the network, reselecting will fix by overwriting the current DNS entry, but the other Lakeshore need to be located and renamed.</p>
+<p>If incorrect values are selected, it’s likely the IOC has connected to another Lakeshore with the same hostname, change it on the front panel by pressing 6 (interface), selecting <code class="docutils literal notranslate"><span class="pre">modify</span> <span class="pre">ipconfig</span></code>, then scroll down to the hostname and edit it to something different with the arrow keys.</p>
+</section>
+</section>
+<section id="note-on-implementation">
+<h2>Note on Implementation<a class="headerlink" href="#note-on-implementation" title="Link to this heading"></a></h2>
+<p>The Lakeshore 336 IOC was originally taken from Diamond; the Diamond IOC is on a vendor branch of the support module and uses more functionality on the device than what we actually need (at least, at the time of writing). This means that in the support module you’ll find some template files which we’re not using: refer to the substitutions file in the ioc repo to see which templates we’re using.</p>
+<p>The template files we’re using have been tweaked to fit our needs and have gone through a general PV renaming, to make them consistent with our naming convention. In the template files we’re not using the PVs have NOT been renamed.</p>
+<p><strong>NOTE</strong>
+The device has actually four outputs, two of one type and two of another type. In the original IOC, the functionality common to both types is in the <code class="docutils literal notranslate"><span class="pre">lakeshore336output.template</span></code> file, while the things that are specific to each output type are in separate files, <code class="docutils literal notranslate"><span class="pre">lakeshore336loop.template</span></code> and <code class="docutils literal notranslate"><span class="pre">lakeshore336analog.template</span></code>.</p>
+<p>Now, some PVs (typically mbbi/mbbo) have their definition split in two files: the common fields in the common file, and the type-specific fields in the type-specific file.</p>
+<p>So for example, this is the case for the PV <code class="docutils literal notranslate"><span class="pre">$(P):HEATER$(OUT):RANGE</span></code>: part of it is in <code class="docutils literal notranslate"><span class="pre">lakeshore336output.template</span></code> (for the fields common to both output types) and part in <code class="docutils literal notranslate"><span class="pre">lakeshore336loop.template</span></code> (for the fields specific to the output type we’re using). The file <code class="docutils literal notranslate"><span class="pre">lakeshore336analog.template</span></code> still contains the fields specific to the other output type, it’s just that there the PV appears with a different name because this file didn’t go through our PV renaming!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Julabo.html" class="btn btn-neutral float-left" title="Julabo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lakeshore340.html" class="btn btn-neutral float-right" title="Lakeshore 340" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

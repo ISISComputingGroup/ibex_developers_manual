@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An introduction to unit testing &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mockito" href="Mockito.html" />
+    <link rel="prev" title="Adding tests" href="Adding-Unit-Tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-Unit-Tests.html">Adding tests</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">An introduction to unit testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mockito.html">Mockito</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish.html">Squish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish-BDD.html">Squish BDD Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Test-naming.html">Test naming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">An introduction to unit testing</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/testing/An-Introduction-to-Unit-Testing.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-unit-testing">
+<h1>An introduction to unit testing<a class="headerlink" href="#an-introduction-to-unit-testing" title="Link to this heading"></a></h1>
+<p>To create unit tests for an Eclipse plug-in, a Fragment Project is used.
+When creating a Fragment Project, we assign the plug-in we wish to test as a Host Plug-in.
+Eclipse automatically gives the Fragment access to the classes in the original plug-in.
+In the Fragment Project we implement test classes to test the original plug-in’s implementation.</p>
+<section id="a-simple-example">
+<h2>A simple example<a class="headerlink" href="#a-simple-example" title="Link to this heading"></a></h2>
+<p>Open the wizard for creating a standard plug-in in Eclipse (File-&gt;New-&gt;Plug-in Project) and complete the following
+steps (if values not specified then use the defaults):</p>
+<ul class="simple">
+<li><p>Set “Project name” to <code class="docutils literal notranslate"><span class="pre">org.myexample.plugin</span></code></p></li>
+<li><p>Click “Next”</p></li>
+<li><p>Uncheck “Generate an activator, a Java class that controls the plug-in’s life cycle”</p></li>
+<li><p>Uncheck “This plug-in will make contributions to the UI”</p></li>
+<li><p>Put “No” for “Would you like to create a rich client application?”</p></li>
+<li><p>Click “Finish”</p></li>
+</ul>
+<p>This will create the plug-in. Inside the src folder create a package called <code class="docutils literal notranslate"><span class="pre">org.myexample.plugin.classes</span></code> and add a
+class called StringManipulator. Add the following code to the class:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.myexample.plugin.classes</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StringManipulator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">addStrings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">one</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now create the Fragment Project. Open the Fragment Project wizard under
+File-&gt;New-&gt;Other-&gt;Plug-in Development-&gt;Fragment Project, and complete the following steps:</p>
+<ul class="simple">
+<li><p>Set “Project name” to <code class="docutils literal notranslate"><span class="pre">org.myexample.plugin.tests</span></code> (i.e. the original plug-in name plus <code class="docutils literal notranslate"><span class="pre">.tests</span></code> - this is our naming
+convention)</p></li>
+<li><p>Click “Next”</p></li>
+<li><p>Under “Host Plug-in” click the “Browse” button and select the original plug-in</p></li>
+<li><p>Click “Finish”</p></li>
+</ul>
+<p>Eclipse will now create the Fragment Project. We need to manually add the JUnit plug-in as a dependency for the
+Fragment Project, to do this:</p>
+<ul class="simple">
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code> file</p></li>
+<li><p>Select the “Dependencies” tab</p></li>
+<li><p>Under “Required Plug-ins” click the “Add” button</p></li>
+<li><p>In the dialog, type <code class="docutils literal notranslate"><span class="pre">org.junit</span></code> and select the plug-in listed (it should be version 4+)</p></li>
+<li><p>Click “OK”</p></li>
+<li><p>Save the changes</p></li>
+</ul>
+<p>In the src directory of the Fragment Project create a package called <code class="docutils literal notranslate"><span class="pre">org.myexample.plugin.tests</span></code>.
+Add a class called <code class="docutils literal notranslate"><span class="pre">StringManipulatorTest</span></code> - the name <strong>MUST</strong> end in Test for the build system to recognise it.</p>
+<p>Now create a test, add the following code to the <code class="docutils literal notranslate"><span class="pre">StringManipulatorTest</span></code> class:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.myexample.plugin.tests</span><span class="p">;</span>
+
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.junit.Assert.*</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.Test</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.myexample.plugin.classes.StringManipulator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StringManipulatorTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">add_hello_to_world</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Arrange</span>
+<span class="w">        </span><span class="n">StringManipulator</span><span class="w"> </span><span class="n">strMan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringManipulator</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Act</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strMan</span><span class="p">.</span><span class="na">addStrings</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Assert</span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="s">&quot;HelloWorld&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To run the test right-click on the Fragment Project and select Run As-&gt;JUnit Test. The test should run and fail like so:</p>
+<p><img alt="Failed test" src="../../_images/failed_test.png" /></p>
+<p>The test failed, so there is something wrong with the original code in <code class="docutils literal notranslate"><span class="pre">addStrings</span></code>; fix that by changing:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">addStrings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">one</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>to:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">addStrings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">two</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Now the test should pass if it is run again:</p>
+<p><img alt="Passed test" src="../../_images/passed_test.png" /></p>
+<p>JUnit has many useful features, here are a select few.</p>
+<ul class="simple">
+<li><p>Assertion helpers such as <code class="docutils literal notranslate"><span class="pre">assertTrue</span></code>, <code class="docutils literal notranslate"><span class="pre">assertArrayEquals</span></code>,  <code class="docutils literal notranslate"><span class="pre">assertNotEqual</span></code> and <code class="docutils literal notranslate"><span class="pre">assertNotNull</span></code></p></li>
+<li><p>Assertions that an error is thrown:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nd">@Test</span><span class="p">(</span><span class="n">expected</span><span class="o">=</span><span class="n">IndexOutOfBoundsException</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">raises_IndexOutOfBoundsException</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ArrayList</span><span class="w"> </span><span class="n">emptyList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Setup &amp; teardown methods - marked by the <code class="docutils literal notranslate"><span class="pre">&#64;Before</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;After</span></code> annotations - these are code snippets that are run
+before and after <strong>each</strong> test:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Before</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setUp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Called before each test</span>
+<span class="w">        </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Tom&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Dick&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Harry&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@After</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Called after each test</span>
+<span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">concatenate_names</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Arrange</span>
+<span class="w">        </span><span class="n">StringManipulator</span><span class="w"> </span><span class="n">strMan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringManipulator</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Act</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strMan</span><span class="p">.</span><span class="na">concatenateNames</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Assert</span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="s">&quot;Tom, Dick and Harry&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BeforeClass</span></code> and <code class="docutils literal notranslate"><span class="pre">AfterClass</span></code> - these are run once before the first test and after the last test in a class
+respectively:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nd">@BeforeClass</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">oneTimeSetUp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Perhaps create a dummy file or something shared by more than one test</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@AfterClass</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">oneTimeTearDown</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Clean up</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each test should be independent of other tests; there is no guarantee of the order they are run in.</p>
+</div>
+</section>
+<section id="naming-conventions-for-unit-tests">
+<h2>Naming conventions for unit tests<a class="headerlink" href="#naming-conventions-for-unit-tests" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="Test-naming.html"><span class="doc std std-doc">test naming</span></a>.</p>
+</section>
+<section id="mockito">
+<h2>Mockito<a class="headerlink" href="#mockito" title="Link to this heading"></a></h2>
+<p>Mockito is a framework for creating mock objects that can be substituted for real objects to make testing easier and
+more specific. For example: writing tests that don’t rely on a database, file or network connection being present.</p>
+<p>Like JUnit, it can be used inside a Fragment Project after the dependency is added (<code class="docutils literal notranslate"><span class="pre">org.mockito</span></code>).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more detail &amp; examples on Mockito see <a class="reference internal" href="Mockito.html"><span class="doc std std-doc">here</span></a>, and the upstream documentation
+<a class="reference external" href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html">here</a>.</p>
+</div>
+</section>
+<section id="code-coverage">
+<h2>Code coverage<a class="headerlink" href="#code-coverage" title="Link to this heading"></a></h2>
+<p>It is useful to see what parts of a plug-in’s code are used or not used by the unit tests.
+If a piece of code is not used by the unit tests, then that may mean that an extra test is required.</p>
+<p>To examine code coverage, right-click on the test project and select Coverage As-&gt;JUnit Test.
+This will run the tests and calculate the coverage, the results should look something like this:</p>
+<p><img alt="Coverage result" src="../../_images/coverage_result.png" /></p>
+<p>From the results it can be seen that 63.2% of the StringManipulator code is used by the unit tests.
+The code that isn’t used is highlighted in red - for this example we can see that we need to write a test that tests
+the <code class="docutils literal notranslate"><span class="pre">reverseString</span></code> method.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Code coverage is provided by the <code class="docutils literal notranslate"><span class="pre">EclEmma</span></code> add-on, which is installed by default in the “Eclipse for RCP developers”
+build of the IDE. If it is not already installed, it can be installed from the Eclipse marketplace.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="classnotfoundexception">
+<h3><code class="docutils literal notranslate"><span class="pre">ClassNotFoundException</span></code><a class="headerlink" href="#classnotfoundexception" title="Link to this heading"></a></h3>
+<p>Running the tests in Eclipse might crash with an error like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Class not found org.myexample.plugin.tests.StringManipulatorTest
+java.lang.ClassNotFoundException: org.myexample.plugin.tests.StringManipulatorTest
+    at java.net.URLClassLoader.findClass(Unknown Source)
+    at java.lang.ClassLoader.loadClass(Unknown Source)
+    at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+    at java.lang.ClassLoader.loadClass(Unknown Source)
+    ...
+</pre></div>
+</div>
+<p>This is a known bug and there is a workaround:</p>
+<ul class="simple">
+<li><p>Right-click on the test plug-in, and under “Run As” select “Run Configurations”</p></li>
+<li><p>In the new dialog click on the “Classpath” tab</p></li>
+<li><p>Select “User Entries” and click the “Advanced” button</p></li>
+<li><p>Select “Add Folders” and click “OK”</p></li>
+<li><p>In the new dialog, expand the test plug-in and select the “bin” folder and click “OK”</p></li>
+<li><p>On the original dialog, click “Apply” and then “Run”</p></li>
+<li><p>The tests should now work, and you should be able to re-run them in the normal way</p></li>
+</ul>
+</section>
+<section id="eclipse-is-not-picking-up-new-tests">
+<h3>Eclipse is not picking up new tests<a class="headerlink" href="#eclipse-is-not-picking-up-new-tests" title="Link to this heading"></a></h3>
+<p>If Eclipse is not picking up changes when you add tests, you may need to change the default output folder for tests for
+Maven to pick it up.</p>
+<ul class="simple">
+<li><p>Right-click on the tests plug-in, go to properties, Java build path</p></li>
+<li><p>Change the output folder to target/test-classes (you may need to create this folder first by clicking browse,
+selecting target and adding the test-classes folder)</p></li>
+<li><p>If this does not work try deleting the target/test-classes folder first, if it existed already, and do a clean
+rebuild of the workspace</p></li>
+</ul>
+</section>
+<section id="incompatibleclasschangeerror">
+<h3><code class="docutils literal notranslate"><span class="pre">IncompatibleClassChangeError</span></code><a class="headerlink" href="#incompatibleclasschangeerror" title="Link to this heading"></a></h3>
+<p>If the tests are failing because of an <code class="docutils literal notranslate"><span class="pre">IncompatibleClassChangeError</span></code> error, then the solution is to delete the
+<code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code> folders for both the main plug-in and the corresponding test plug-in, and then re-run the tests.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Adding-Unit-Tests.html" class="btn btn-neutral float-left" title="Adding tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Mockito.html" class="btn btn-neutral float-right" title="Mockito" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

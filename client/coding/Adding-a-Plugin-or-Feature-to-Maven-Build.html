@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding a plugin or feature &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Connecting a view to a PV" href="Connecting-a-View-to-a-PV.html" />
+    <link rel="prev" title="Activators" href="Activators.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Activators.html">Activators</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding a plugin or feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Connecting-a-View-to-a-PV.html">Connecting a view to a PV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding.html">Databinding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GUI-Coding-Conventions.html">GUI Coding Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">Instrument &amp; PV switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Perspectives.html">Perspectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">Adding a plugin or feature</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/Adding-a-Plugin-or-Feature-to-Maven-Build.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-a-plugin-or-feature">
+<h1>Adding a plugin or feature<a class="headerlink" href="#adding-a-plugin-or-feature" title="Link to this heading"></a></h1>
+<p>The steps for adding a plug-in (one small part of IBEX, such as the blocks view) or feature (a larger collection of
+plug-ins, such as CSS) to IBEX are:</p>
+<ul class="simple">
+<li><p>Add the plug-in to <code class="docutils literal notranslate"><span class="pre">feature.base</span></code>:</p>
+<ul>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">feature.xml</span></code> in <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.feature.base</span></code></p></li>
+<li><p>Go to “Included Plug-ins” (or “Included Features”) tab and click “Add…”</p></li>
+<li><p>Find your new plug-in in the list and add it</p></li>
+</ul>
+</li>
+<li><p>Add the plug-in to <code class="docutils literal notranslate"><span class="pre">ibex.product</span></code></p>
+<ul>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">ibex.product</span></code> in <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.e4.client.product</span></code></p></li>
+<li><p>Go to “Configuration” tab and click “Add…” next the “Start Levels” section</p></li>
+<li><p>Find your new plug-in in the list and add it</p></li>
+</ul>
+</li>
+<li><p>Convert the plug-in to a Maven project.</p>
+<ul>
+<li><p>Right-click on the plug-in and select Configure &gt; Convert to Maven Project</p></li>
+<li><p>Click “Finish”. This should create a <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> inside the project.</p></li>
+</ul>
+</li>
+<li><p>Add the new plug-in to the Parent POM</p>
+<ul>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> file in <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.client.tycho.parent</span></code></p></li>
+<li><p>On the overview tab click “Add…” under the Modules section</p></li>
+<li><p>Select the new plug-in from the list</p></li>
+<li><p>Enable the “Update POM parent section in selected projects” option and click “OK”</p></li>
+<li><p>Save it</p></li>
+</ul>
+</li>
+<li><p>Edit the plug-in <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> file</p>
+<ul>
+<li><p>Select the pom.xml file</p></li>
+<li><p>Open the pom.xml tab</p></li>
+<li><p>Change/add the packaging to <code class="docutils literal notranslate"><span class="pre">eclipse-plugin</span></code> (or <code class="docutils literal notranslate"><span class="pre">eclipse-test-plugin</span></code> if it’s a unit test plugin)</p></li>
+<li><p>Remove the build section</p></li>
+<li><p>Remove the <code class="docutils literal notranslate"><span class="pre">groupID</span></code> and version entries outside of parent</p></li>
+<li><p>Verify that the resulting plug-in POM looks like an existing <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> for a similar plugin</p></li>
+</ul>
+</li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Activators.html" class="btn btn-neutral float-left" title="Activators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Connecting-a-View-to-a-PV.html" class="btn btn-neutral float-right" title="Connecting a view to a PV" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

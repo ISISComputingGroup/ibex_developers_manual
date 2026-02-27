@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emulating devices &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Testing framework" href="IOC-Testing-Framework.html" />
+    <link rel="prev" title="Disable records" href="Disable-records.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-sim-records-script.html">Add sim records script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Disable-records.html">Disable records</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Emulating devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Testing-Framework.html">IOC Testing framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Record-Simulation.html">Record simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-IOCs.html">Running IOCs locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-IOCs.html#simulation-mode">Simulation Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Setting-up-googleTest-to-work-with-EPICS-build-process.html">Google Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">Emulating devices</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/testing/Emulating-Devices.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="emulating-devices">
+<h1>Emulating devices<a class="headerlink" href="#emulating-devices" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>You’ve created an IOC to talk to a device, and you want to test it: just borrow an actual piece of hardware and test with that. What if that’s not possible?</p>
+<p><em>The only way to know an IOC will work with an actual device is to use an actual device.</em></p>
+<p>However, we can try and get as close as possible at the development stage. We also might want to make minor changes to an IOC we know that works without all the effort of tracking down an actual piece of hardware. The above principle still applies, but we can still take steps to improve our odds.</p>
+<p>Our emulators are written within the Lewis framework developed at ESS. The purpose of this page is not to replicate the full Lewis documentation, which can be found <a class="reference external" href="https://isiscomputinggroup.github.io/lewis/index.html">here</a>, but to give quick pointers to common actions and describe how it all fits within IBEX.</p>
+<p>Due to some staff turnover Lewis is now maintained by ISIS and ESS collaboratively. Dom has access to pushing release versions of Lewis to pypi.</p>
+</section>
+<section id="get-the-framework">
+<h2>Get the framework<a class="headerlink" href="#get-the-framework" title="Link to this heading"></a></h2>
+<p>Lewis is included as an installed module in genie_python (for Python 3).</p>
+</section>
+<section id="set-up-a-new-emulator">
+<h2>Set up a new emulator<a class="headerlink" href="#set-up-a-new-emulator" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create a subdirectory for your new emulator under <code class="docutils literal notranslate"><span class="pre">support/my_device/master/system_tests/lewis_emulators/</span></code>, for an example see the CCD100.</p></li>
+<li><p>Documentation for how to write a Lewis emulator can be found <a class="reference external" href="https://isiscomputinggroup.github.io/lewis/developer_guide/writing_devices.html">here</a>, and you can refer to the examples in the Lewis library (i.e. <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3\Lib\site-packages\lewis\devices</span></code> and <code class="docutils literal notranslate"><span class="pre">...\examples</span></code>).</p></li>
+<li><p>NOTE: the simple examples <code class="docutils literal notranslate"><span class="pre">simple_device</span></code> and <code class="docutils literal notranslate"><span class="pre">example_motor</span></code> have all the code in a single <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file, but we should stick to a consistent tidy structure like that of the <code class="docutils literal notranslate"><span class="pre">linkam_t95</span></code> emulator, i.e. with separate files for the device itself, its states (if it’s a state machine), and its interfaces.</p></li>
+<li><p>Don’t forget to add <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> files in all of your folders!</p></li>
+<li><p>At the time of writing, the Lewis <code class="docutils literal notranslate"><span class="pre">StreamAdapter.handle_error()</span></code> method does nothing. Please make sure your interface class deriving from <code class="docutils literal notranslate"><span class="pre">StreamAdapter</span></code> prints the content of the error, which makes it easier to understand what’s going on (see for example the <code class="docutils literal notranslate"><span class="pre">iris_cryo_valve</span></code> emulator).</p></li>
+</ol>
+</section>
+<section id="run-the-emulator">
+<h2>Run the emulator<a class="headerlink" href="#run-the-emulator" title="Link to this heading"></a></h2>
+<p>To run from the command line, use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">PYTHON3</span><span class="o">%</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">m</span> <span class="n">lewis</span> <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;stream: {bind_address: localhost, port: 57677}&quot;</span> <span class="o">-</span><span class="n">r</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">10000</span> <span class="o">-</span><span class="n">a</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">support</span>\<span class="n">cryValve</span>\<span class="n">master</span>\<span class="n">system_tests</span> <span class="o">-</span><span class="n">k</span> <span class="n">lewis_emulators</span> <span class="n">iris_cryo_valve</span>
+</pre></div>
+</div>
+<p>where we have picked port 57677 (see Lewis’s doc for defaults). Note that the lewis executable is located in <code class="docutils literal notranslate"><span class="pre">%PYTHON3DIR%\Scripts</span></code>.</p>
+<p><strong>Note:</strong> emulators used to be stored in one repository in <code class="docutils literal notranslate"><span class="pre">support\DeviceEmulator\</span></code> since <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6555">https://github.com/ISISComputingGroup/IBEX/issues/6555</a> emulators should start being moved to live in the support directory for the IOCs that they are testing.</p>
+<p>Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below) or with a simple Python script like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+
+<span class="n">OUT_TERMINATOR</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">57677</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">()</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">cmd</span> <span class="o">+</span> <span class="n">OUT_TERMINATOR</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4096</span><span class="p">)</span>  <span class="c1"># Needs to be longer than the returned message</span>
+    <span class="nb">print</span> <span class="n">data</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="the-backdoor">
+<h3>The backdoor<a class="headerlink" href="#the-backdoor" title="Link to this heading"></a></h3>
+<p>It’s possible to modify the device’s state on the fly as it’s running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation parameters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found <a class="reference external" href="https://isiscomputinggroup.github.io/lewis/user_guide/remote_access_devices.html">here for device access</a> and <a class="reference external" href="https://isiscomputinggroup.github.io/lewis/user_guide/remote_access_simulation.html">here for simulation access</a>.</p>
+<p>The host and port for the backdoor are specified in the <code class="docutils literal notranslate"><span class="pre">-r</span></code> argument at startup:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">PYTHON3</span><span class="o">%</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">m</span> <span class="n">lewis</span> <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;stream: {bind_address: localhost, port: 57677}&quot;</span> <span class="o">-</span><span class="n">r</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">10000</span> <span class="o">-</span><span class="n">a</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">support</span>\<span class="n">cryValve</span>\<span class="n">master</span>\<span class="n">system_tests</span> <span class="o">-</span><span class="n">k</span> <span class="n">lewis_emulators</span> <span class="n">iris_cryo_valve</span>
+</pre></div>
+</div>
+<p>NOTE: at the time of writing, you can’t type <code class="docutils literal notranslate"><span class="pre">localhost</span></code> for the <code class="docutils literal notranslate"><span class="pre">-r</span></code> argument.</p>
+<p>Once the emulator is running, the backdoor can be operated either via the command line through <code class="docutils literal notranslate"><span class="pre">lewis-control</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">PYTHON3DIR</span><span class="o">%</span>\<span class="n">scripts</span>\<span class="n">lewis</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">r</span> <span class="n">localhost</span><span class="p">:</span><span class="o">&lt;</span><span class="n">PORT</span><span class="o">&gt;</span> <span class="n">device</span> <span class="o">&lt;</span><span class="n">EMULATOR</span> <span class="n">FUNCTION</span><span class="o">/</span><span class="n">COMMAND</span><span class="o">/</span><span class="n">VARIABLE</span><span class="o">&gt;</span> <span class="s2">&quot;&lt;ARG1&gt;&quot;</span> <span class="s2">&quot;&lt;ARG2&gt;&quot;</span> <span class="s2">&quot;&lt;ARG...&gt;&quot;</span>
+</pre></div>
+</div>
+<p>or can be scripted, as described in the Lewis documentation.</p>
+<p>Replace each of the sections in <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>s with the relevant values, not including the angle brackets. For example, to call the <code class="docutils literal notranslate"><span class="pre">backdoor_set_channel_property(self,</span> <span class="pre">channel_id,</span> <span class="pre">property_name,</span> <span class="pre">value)</span></code> method on an emulator running on port <code class="docutils literal notranslate"><span class="pre">59254</span></code>, you would write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">PYTHON3DIR</span><span class="o">%</span>\<span class="n">scripts</span>\<span class="n">lewis</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">r</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">59254</span> <span class="n">device</span> <span class="n">backdoor_set_channel_property</span> <span class="s2">&quot;MB1.H0&quot;</span>  <span class="s2">&quot;voltage&quot;</span>  <span class="s2">&quot;10&quot;</span>
+</pre></div>
+</div>
+<p>If you want to control an emulator running from a test, look at the lewis log for the device in <code class="docutils literal notranslate"><span class="pre">Instrument\Var\logs\IOCTestFramework</span></code> and use the port that the <code class="docutils literal notranslate"><span class="pre">ControlServer</span></code> is listening on.</p>
+<p><strong>NOTE</strong>: If an argument is a string that contains words separated by white space characters, then you need to use “‘argument’” instead of “argument”, since otherwise the command line will not interpret it correctly and crash with a SyntaxError.</p>
+<p><strong>NOTE</strong>: The simulation command <code class="docutils literal notranslate"><span class="pre">disconnect_device</span></code> seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">reply</span> <span class="pre">from</span> <span class="pre">device</span> <span class="pre">within</span> <span class="pre">xxx</span> <span class="pre">ms</span></code>. When the emulator is actually stopped, with the simulation <code class="docutils literal notranslate"><span class="pre">stop</span></code> command, the IOC detects that there is really no connection and reports <code class="docutils literal notranslate"><span class="pre">Can't</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">localhost:&lt;port&gt;</span></code>.</p>
+<p><strong>NOTE</strong>: The backdoor does not give access to private variables, so anything prefixed with <code class="docutils literal notranslate"><span class="pre">_</span></code> can not be changed in this way, or through the backdoor in python scripts.</p>
+</section>
+</section>
+<section id="connecting-your-ioc">
+<h2>Connecting your IOC<a class="headerlink" href="#connecting-your-ioc" title="Link to this heading"></a></h2>
+<p>We’ve got our emulator running, now we need to get our IOC talking to it. For this to work it needs to use the standard st.cmd setup so it works with the IOC testing framework. Then in your <code class="docutils literal notranslate"><span class="pre">globals.txt</span></code> do the following:</p>
+<ul class="simple">
+<li><p>Add a line to set the IOC into dev sim <code class="docutils literal notranslate"><span class="pre">&lt;IOC</span> <span class="pre">name&gt;__DEVSIM=1</span></code> (this can go in the configuration)</p></li>
+<li><p>Set the port it should be communicating on (must be free) <code class="docutils literal notranslate"><span class="pre">&lt;IOC</span> <span class="pre">name&gt;__EMULATOR_PORT=57677</span></code></p></li>
+</ul>
+<p>IOC name is the name of the ioc e.g. <code class="docutils literal notranslate"><span class="pre">EUROTHRM_01</span></code></p>
+</section>
+<section id="go">
+<h2>GO!<a class="headerlink" href="#go" title="Link to this heading"></a></h2>
+<p>Start the IOC as normal by running <code class="docutils literal notranslate"><span class="pre">runIOC.bat</span> <span class="pre">st.cmd</span></code>. If everything’s hooked up correctly, you should see a <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">connected</span></code> message in the emulated device console. At the time of writing, Lewis emulators don’t echo requests from the client, but this should be implemented soon. With any luck, the data from the emulator should then be updated to your PVs.</p>
+</section>
+<section id="connecting-an-emulator-to-labview">
+<h2>Connecting an Emulator to LabView<a class="headerlink" href="#connecting-an-emulator-to-labview" title="Link to this heading"></a></h2>
+<p>If we have a pre-existing VI it might be useful to connect it to an emulator to test the emulator functionality is as expected. If the VI talks TCP then just ensure that the port it is talking to is the one that Lewis is served on. If the VI is attempting to talk to a serial connection this is a bit harder and you must do the following:</p>
+<ol class="arabic simple">
+<li><p>Find a MOXA box</p></li>
+<li><p>Create a physical loopback on the MOXA by connecting one port into another using one male serial cable connected to one female serial cable (a plain network cable won’t do)</p></li>
+<li><p>Use NPort (which can be found under <code class="docutils literal notranslate"><span class="pre">\kits$\CompGroup\Utilities</span></code>) to connect to these two ports, noting which COM ports correspond to the loopback</p></li>
+<li><p>Run the emulator (instructions above in “Run the emulator” section)</p></li>
+<li><p>Run the com2tcp.py script found in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-DeviceEmulator/">https://github.com/ISISComputingGroup/EPICS-DeviceEmulator/</a> to create a connection between one COM port and Lewis e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">com2tcp.py</span> <span class="pre">57677</span> <span class="pre">COM12</span></code></p></li>
+<li><p>Connect the VI to the COM port that you haven’t run com2tcp.py on</p></li>
+</ol>
+<p>If the above is not working check that the baud rates/stop bits etc. set in the VI, NPort and com2tcp are all the same. otherwise, look in NI MAX and confirm that the COM ports are showing up under devices and interfaces on the left, if they are not you may need to update NI MAX. Also, note that the port you want to set in the driver VI is the one highlighted below (which can occasionally differ from the actual COM port)
+<img alt="NI MAX" src="../../_images/ni_max.JPG" /></p>
+<p>If you want to test against the LabVIEW VI and you aren’t in a position to create a loopback in the MOXA, there is a VI available which you can use within the communication VI instead of the serial connections.</p>
+<ol class="arabic simple">
+<li><p>Create some room inside the main case</p></li>
+<li><p>On the block diagram, move the reply to the far right of the main case, the read reply button and the command to the far left of the main case</p></li>
+<li><p>Drop a <code class="docutils literal notranslate"><span class="pre">disable</span> <span class="pre">diagram</span></code> structure around the serial communications section</p></li>
+<li><p>In the enabled state, drop in an instance of <code class="docutils literal notranslate"><span class="pre">IBEX</span> <span class="pre">Integration</span> <span class="pre">-</span> <span class="pre">Connect</span> <span class="pre">to</span> <span class="pre">TCP.vi</span></code>, which can be found in the <code class="docutils literal notranslate"><span class="pre">IBEX</span> <span class="pre">Integration.llb</span></code> in the <code class="docutils literal notranslate"><span class="pre">Labview</span> <span class="pre">Modules\Common\Utilities</span></code> directory (if the VI isn’t there, then you need to get an updated version of the repo)</p></li>
+<li><p>Connect the errors, reply, command and so on in the obvious fashion, connect the COM port to the Port In, and create a constant for the mode</p></li>
+<li><p>Change the COM port in the setup dialog to the port of the emulator (this has to be running on localhost at the moment)</p></li>
+<li><p>Run the emulator and VI and they should be talking to each other</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>We haven’t done much with emulators yet, so not much has gone wrong, so please add to this section as you can.</p>
+<ul class="simple">
+<li><p>Telnet server is running, but is not receiving any data from the IOC: Is your st.cmd correct? Try removing the 4 <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">$(IOCSTARTUP)...</span></code> lines, and the <code class="docutils literal notranslate"><span class="pre">drvAsyn{IP,Serial}PortConfigure</span></code> lines and run <code class="docutils literal notranslate"><span class="pre">runIOC.bat</span> <span class="pre">st.cmd</span></code>. Are you getting any error or warning messages? Sort those out first.</p></li>
+<li><p>When connecting to a Lewis emulator via a Telnet client such as PuTTY, beware that Telnet uses <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> as a terminator. If your emulator interface has a different one (like for the <code class="docutils literal notranslate"><span class="pre">linkam_t95</span></code>), the protocol won’t work. You could temporarily use the Telnet terminator instead. Note also that PuTTY sends some extra characters at the start of the communication, so the very first command you send probably won’t work.</p></li>
+<li><p>Note that lewis can’t deal with not having a termination character. If your device doesn’t use a termination character then you will have to temporarily use one while talking to the emulator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">An</span> <span class="pre">error</span> <span class="pre">occurred:</span> <span class="pre">The</span> <span class="pre">setup</span> <span class="pre">'default'</span> <span class="pre">you</span> <span class="pre">tried</span> <span class="pre">to</span> <span class="pre">load</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">specify</span> <span class="pre">a</span> <span class="pre">valid</span> <span class="pre">device</span> <span class="pre">type,</span> <span class="pre">but</span> <span class="pre">the</span> <span class="pre">device</span> <span class="pre">module</span> <span class="pre">'neocera_ltc21'</span> <span class="pre">provides</span> <span class="pre">multiple</span> <span class="pre">device</span> <span class="pre">types</span> <span class="pre">so</span> <span class="pre">that</span> <span class="pre">no</span> <span class="pre">meaningful</span> <span class="pre">default</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">deduced.</span></code>. Possible solutions:</p>
+<ul>
+<li><p>Add device to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> file of package so it can be imported.</p></li>
+<li><p>Ensure that the initial state is one of the states returned by get_state_handlers.</p></li>
+</ul>
+</li>
+<li><p>When I try to launch <code class="docutils literal notranslate"><span class="pre">lewis.exe</span></code> I get the error <code class="docutils literal notranslate"><span class="pre">Fatal</span> <span class="pre">error</span> <span class="pre">in</span> <span class="pre">launcher:</span> <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">create</span> <span class="pre">process</span> <span class="pre">using</span> <span class="pre">'&quot;'</span></code>. When you build Python on Windows, the Python path is baked into the <code class="docutils literal notranslate"><span class="pre">lewis.exe</span></code> executable. If you subsequently say move <code class="docutils literal notranslate"><span class="pre">Python-build</span></code> to <code class="docutils literal notranslate"><span class="pre">Python</span></code> then the path will be incorrect and the executable doesn’t know where to launch from. You can either run lewis as a module e.g. <code class="docutils literal notranslate"><span class="pre">%PYTHON3%</span> <span class="pre">-u</span> <span class="pre">-m</span> <span class="pre">lewis</span></code> or run it by importing it into a python script.</p></li>
+<li><p>When I try to print something from the device emulator, nothing happens. Why?
+Print statements in the device emulator can not print anything to a console when they are ran as part of the IocTestFramework.</p></li>
+<li><p>I want to log something how do I do that?</p>
+<ol class="arabic simple">
+<li><p>include <code class="docutils literal notranslate"><span class="pre">&#64;has_log</span></code> at the top of the class (don’t forget to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">lewis.core.logging</span> <span class="pre">import</span> <span class="pre">has_log</span></code>)</p></li>
+<li><p>use self.log.info(message), self.log.warning(message), self.log.error(message), etc</p></li>
+</ol>
+</li>
+<li><p>When I try to run a device I get the error <code class="docutils literal notranslate"><span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">protocol</span> <span class="pre">stream...</span></code>. This is due to one of the imports in the stream_interface not being valid. Check that they are all correct.</p></li>
+<li><p>When I try to access a variable that I know exists in my emulator, I get an error saying that variable does not exist?</p>
+<ol class="arabic simple">
+<li><p>The lewis backdoor does not give access to private variables, so anything prefixed with <code class="docutils literal notranslate"><span class="pre">_</span></code> cannot be changed in this way.</p></li>
+</ol>
+</li>
+<li><p>If you are using <code class="docutils literal notranslate"><span class="pre">CmdBuilder</span></code> be aware that you should use <code class="docutils literal notranslate"><span class="pre">.eos()</span></code> before <code class="docutils literal notranslate"><span class="pre">.build()</span></code>, <em>especially</em> if you have commands that ‘overlap’. And example of this would be on the Keithley 2700, which has a buffer auto clear setting command, <code class="docutils literal notranslate"><span class="pre">TRAC:CLE:AUTO</span></code>, and a buffer clear command, <code class="docutils literal notranslate"><span class="pre">TRAC:CLE</span></code>. <code class="docutils literal notranslate"><span class="pre">.eos()</span></code> essentially tells the built regex to match the exact command string, rather than some of it.</p></li>
+<li><p>When running the IOC tests with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">ioctests</span></code> you get no output until all the tests are run. This is set in general for all <code class="docutils literal notranslate"><span class="pre">Makefiles</span></code> to avoid interleaved printing when doing a parallel build. To fix this you need to remove the <code class="docutils literal notranslate"><span class="pre">-Otarget</span></code> from the <code class="docutils literal notranslate"><span class="pre">MAKEFLAGS</span></code> environment variable. e.g. run <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">&quot;MAKEFLAGS=-w</span> <span class="pre">-j</span> <span class="pre">6&quot;</span></code> before running the test. This environment variable will be reset back every time you start a new EPICS terminal.</p></li>
+<li><p>Use of <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> python decorator is not supported within <code class="docutils literal notranslate"><span class="pre">stream_interface.py</span></code> and will cause the emulator to fail. Please try to avoid using such decorators in your python scripts for use with emulators as they will cause issues when trying to construct Func-object instances during the build process.</p></li>
+</ul>
+<section id="when-using-an-emulator-with-a-vi">
+<h3>When using an emulator with a VI<a class="headerlink" href="#when-using-an-emulator-with-a-vi" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>If you are having problems getting data into or out of your emulator when using a VI, it could be a comms issue.</p>
+<ul>
+<li><p>Check the baud rate and other serial parameters if using serial</p></li>
+<li><p>Double check the port that your VI is connected to</p></li>
+</ul>
+</li>
+<li><p>The VI may be polling/looping too fast for your emulator. Some VIs are written to go flat out as fast as possible. This may be faster than your python emulator can handle. If you are getting no data from/into the VI, try slowing it down and increasing its loop delays. e.g. the VI controlling the Keithley 2700 was looping every 2ms, and when data was inserted into the emulated device buffer, the VI showed no change. This is because the loop was too fast for the data to be processed properly by the emulator and then VI. The delay was increased to 20ms (still extremely fast for the intended purpose), and the VI and emulator worked (make sure that the increased delay is not unreasonable and the device can still be expected to work properly).</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Disable-records.html" class="btn btn-neutral float-left" title="Disable records" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-Testing-Framework.html" class="btn btn-neutral float-right" title="IOC Testing framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOOM Polariser, Guide and Collimator &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ZOOM Sample Stack" href="ZOOM-sample-stack.html" />
+    <link rel="prev" title="ZOOM Detector motion system" href="ZOOM-DMS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Goniometer-Axes.html">ALF Goniometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Bump-Strip.html">Bump Strips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Collision-Detection-Project.html">Collision Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-soft-motors-to-control-real-motors.html">Motor Coordinate Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Fermi-Chopper-Lifter.html">Fermi chopper lifter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Lens-Adjustment.html">IMAT Lens Adjustment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jaws.html">Jaws</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Sample-Changer.html">MARI Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN%2C-LET-and-WISH-Oscillating-radial-collimators.html">MERLIN, LET and WISH Oscillating Radial Collimators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motion-Set-points.html">Motion Set Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-analyser-towers.html">OSIRIS Analyser Towers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Portable-Eulerian-Cradle.html">Portable Eulerian Cradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Front-Beam-Stop-inhibit-movement.html">SANS2D Front Beam Stop Inhibit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-apertures-and-guides.html">SANS2D Apertures and Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-tank-collision-avoidance.html">SANS2D vacuum tank collision avoidance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sample-Changer-Support-Module.html">SANS Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tosca-sample-positioner.html">TOSCA sample positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-DMS.html">ZOOM Detector motion system</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ZOOM Polariser, Guide and Collimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-sample-stack.html">ZOOM Sample Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors-Extensions.html">Motor Extensions</a></li>
+      <li class="breadcrumb-item active">ZOOM Polariser, Guide and Collimator</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motor_extensions/ZOOM-PGC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="zoom-polariser-guide-and-collimator">
+<h1>ZOOM Polariser, Guide and Collimator<a class="headerlink" href="#zoom-polariser-guide-and-collimator" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This is a single-axis Galil-controlled device that has 3 pre-defined stop positions.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<p>To set up the PGC, complete the following steps:</p>
+<section id="create-the-galil-axis-configuration">
+<h3>Create the Galil axis configuration<a class="headerlink" href="#create-the-galil-axis-configuration" title="Link to this heading"></a></h3>
+<p>Go to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\Config\NDX[DEVICE_NAME]\configurations\galil</span></code> and create a file called <code class="docutils literal notranslate"><span class="pre">motionsetpoints.cmd</span></code> if one doesn’t already exist. Add the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFDMC01) epicsEnvSet &quot;LOOKUPFILE2&quot; &quot;$(ICPCONFIGROOT)/motionSetPoints/pgc.txt&quot;
+$(IFDMC01) motionSetPointsConfigure(&quot;LOOKUPFILE2&quot;,&quot;LOOKUPFILE2&quot;)
+$(IFDMC01) dbLoadRecords(&quot;$(MOTIONSETPOINTS)/db/motionSetPoints.db&quot;,&quot;P=$(MYPVPREFIX)LKUP:PGC:,TARGET_PV1=$(MYPVPREFIX)MOT:MTR0102,TARGET_RBV1=$(MYPVPREFIX)MOT:MTR0102.RBV,TARGET_DONE=$(MYPVPREFIX)MOT:MTR0102.DMOV,TOL=1,LOOKUP=LOOKUPFILE2&quot;)
+
+</pre></div>
+</div>
+<p><strong>Don’t forget to add a new line at the end of the final or the final line won’t be read</strong></p>
+<p>Note that there are several points of customisation here:
+1. The <code class="docutils literal notranslate"><span class="pre">01</span></code> in <code class="docutils literal notranslate"><span class="pre">IFDMC01</span></code> refers to the Galil number. If you are using IOC <code class="docutils literal notranslate"><span class="pre">GALIL_02</span></code> then this should instead be <code class="docutils literal notranslate"><span class="pre">IFDMC02</span></code>
+1. References to <code class="docutils literal notranslate"><span class="pre">MTR0102</span></code> should point to the motor you wish to use. If, for instance, you are using <code class="docutils literal notranslate"><span class="pre">GALIL_06</span></code>, axis 3, this should be <code class="docutils literal notranslate"><span class="pre">MTR0603</span></code>. Be careful to replace all the references, there are 3.
+1. Make sure that the lookup file, <code class="docutils literal notranslate"><span class="pre">LOOKUPFILE2</span></code> is unique in this file. You might have to use a difference name if <code class="docutils literal notranslate"><span class="pre">LOOKUPFILE2</span></code> is already taken. So long as the name is consistent, it will work.</p>
+</section>
+<section id="set-up-the-motion-set-points">
+<h3>Set up the motion set points<a class="headerlink" href="#set-up-the-motion-set-points" title="Link to this heading"></a></h3>
+<p>Create a file called <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\Config\NDX[DEVICE_NAME]\configurations\motionSetPoints\pgc.txt</span></code>. You may have to create the directory as well if it doesn’t exist already. Add the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Polariser</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">Guide</span> <span class="mi">0</span>
+<span class="n">Collimator</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>There are several points of customisation:</p>
+<ol class="arabic simple">
+<li><p>The names provide a guide to which position corresponds to which component. You can name these however you like and will be used to populate the buttons in the OPI.</p></li>
+<li><p>The second column is for the motor positions corresponding to each component. These will have to be set corresponding to the device setup.</p></li>
+</ol>
+</section>
+<section id="set-up-the-opi">
+<h3>Set up the OPI<a class="headerlink" href="#set-up-the-opi" title="Link to this heading"></a></h3>
+<p>Open a PGC OPI as normal either via a synoptic of the devices screen. Typical value for the macros are</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PGC</span></code>: <code class="docutils literal notranslate"><span class="pre">PGC</span></code>. This will only be different if you’ve changed the prefix in <code class="docutils literal notranslate"><span class="pre">motionsetpoints.cmd</span></code>. That is not recommended.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MM</span></code>: <code class="docutils literal notranslate"><span class="pre">MOT:MTR0102</span></code>. This corresponds to the motor record being used for the PGC and, combined with the <code class="docutils literal notranslate"><span class="pre">MOT</span></code> prefix, will correspond to the value you used when setting up <code class="docutils literal notranslate"><span class="pre">motionsetpoints.cmd</span></code></p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ZOOM-DMS.html" class="btn btn-neutral float-left" title="ZOOM Detector motion system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ZOOM-sample-stack.html" class="btn btn-neutral float-right" title="ZOOM Sample Stack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

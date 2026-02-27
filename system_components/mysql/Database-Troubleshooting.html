@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database Troubleshooting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NICOS" href="../Nicos.html" />
+    <link rel="prev" title="Database Schemas" href="Database-Schemas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Database-Schemas.html">Database Schemas</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Database Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../MySQL-Database.html">MySQL database</a></li>
+      <li class="breadcrumb-item active">Database Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/mysql/Database-Troubleshooting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="database-troubleshooting">
+<h1>Database Troubleshooting<a class="headerlink" href="#database-troubleshooting" title="Link to this heading"></a></h1>
+<section id="what-is-generating-all-the-data">
+<h2>What is generating all the data?<a class="headerlink" href="#what-is-generating-all-the-data" title="Link to this heading"></a></h2>
+<p>It is likely ADEL fields on some records are causing a lot of logging. You can run e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">utils</span>\<span class="n">archive_rates</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">host</span><span class="o">=</span><span class="n">ndximat</span>
+</pre></div>
+</div>
+<p>To see which PVs are doing this</p>
+</section>
+<section id="is-the-database-up">
+<h2>Is the Database Up<a class="headerlink" href="#is-the-database-up" title="Link to this heading"></a></h2>
+<p>Look for mysqld.exe task running in task manager or for the service MYSQLXX (currently 80) running. If it is not running log files are in <code class="docutils literal notranslate"><span class="pre">...var\mysql\Data\XXX.err</span></code>. To start it as an admin start the services from the start menu then start the MYSQLXX service.</p>
+</section>
+<section id="database-troubleshooting-reduce-space">
+<h2>Reducing database disc space (Database truncate)<a class="headerlink" href="#database-troubleshooting-reduce-space" title="Link to this heading"></a></h2>
+<p>The database resides on the <code class="docutils literal notranslate"><span class="pre">Var</span></code> instrument disk volume, so can be responsible for this looking full; however there are also IOC log files on this volume that may instead be, or also be, the cause.</p>
+<p><a class="reference external" href="https://control-mon.isis.cclrc.ac.uk/nagios/cgi-bin/status.cgi?servicegroup=mysql_db&amp;amp;style=detail">Always do instruments that are in warning in this Nagios list for their Archive Db</a></p>
+<p>First check with the scientists it is OK to go ahead - send an email to the <code class="docutils literal notranslate"><span class="pre">instrument-</span></code> specific contact list from <a class="reference external" href="https://sparrowhawk.nd.rl.ac.uk/footprints/contacts.html#instemail">https://sparrowhawk.nd.rl.ac.uk/footprints/contacts.html#instemail</a> with something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Subject: Archiving of old logging information on NDX&lt;instrument&gt; to free up disk space
+
+Dear &lt;instrument&gt;,
+
+We would like to do a bit of system maintenance on NDX&lt;instrument&gt; – this is to backup and then archive some diagnostic information in databases that has started to occupy a lot of space. It takes around half an hour to an hour to do this, though we don’t necessarily need to shutdown IBEX during this process, but as the system will pause logging blocks etc. during the time it is best that either:
+- we shutdown ibex for the duration of the backup, or
+- the instrument is in SETUP state and not logging anything critical
+
+Please let us know:
+- when it would be convenient to do this backup
+- if it is OK to shutdown IBEX and then restart afterwards
+- if the instrument is currently RUNNING, any specific instructions e.g. end() run and then begin() a new one after backup 
+
+Regards,
+
+ISIS Experiment Controls
+</pre></div>
+</div>
+<p>Database disc space is taken up by tables stored in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Var\mysql\data</span></code> the space can be regained by truncating the table. This could lose the data and will certainly remove it from the database so be careful. At various stages you will be prompted for the database password it is on the passwords page. This can be done while the EPICS back-end on the instrument is up, but should not be done while data is being collected as some data points may get lost during the process.</p>
+<p>Run the script in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\<span class="n">isis</span>\<span class="n">shares</span>\<span class="n">ISIS_Experiment_Controls_Public</span>\<span class="n">ibex_utils</span>\<span class="n">installation_and_upgrade</span>\<span class="n">truncate_database</span><span class="o">.</span><span class="n">bat</span>
+</pre></div>
+</div>
+<p>Note that you may need the full name of the public share root.</p>
+</section>
+<section id="if-you-wish-to-do-this-manually">
+<h2><em>If you wish to do this manually:</em><a class="headerlink" href="#if-you-wish-to-do-this-manually" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>First create a folder in <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Backups$\stage-deleted\&lt;inst&gt;\YYYY_MM_DD</span></code> - you need to do this from a cmd window not from windows explorer, this is because the file permissions allow create but not delete, but the way windows explorer creates a directory involves a delete. e.g. for LET</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>md  \\isis\inst$\Backups$\stage-deleted\ndxLET\ibex_backup_2023_09_04
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>Now create an SQL dump of the database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;c:\Instrument\Apps\MySQL\bin\mysqldump.exe&quot; -u root -p --all-databases --single-transaction --result-file=\\isis\inst$\Backups$\stage-deleted\&lt;inst&gt;\ibex_backup_YYYY_MM_DD\ibex_db_sqldump_YYYY_MM_DD.sql
+</pre></div>
+</div>
+</li>
+<li><p>Truncate the tables with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;c:\Instrument\Apps\MySQL</span><span class="se">\b</span><span class="s2">in\mysql.exe&quot;</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span> <span class="o">--</span><span class="n">execute</span> <span class="s2">&quot;truncate table msg_log.message;truncate table archive.sample&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>NB Originally this was the message and sample tables bumped to a directory in here, if you are looking for older data.</p>
+</section>
+<section id="moving-the-table-data-files">
+<h2>Moving the Table Data Files<a class="headerlink" href="#moving-the-table-data-files" title="Link to this heading"></a></h2>
+<p>If the tables data file were created in the wrong place they can be moved using the following.</p>
+<ol class="arabic simple">
+<li><p>Open services.msc</p></li>
+<li><p>Ensure that the mysql service is running under <code class="docutils literal notranslate"><span class="pre">NETWORK</span> <span class="pre">SERVICE</span></code> and copy the command line</p></li>
+<li><p>Stop mysql service</p></li>
+<li><p>Open command line in admin mode</p></li>
+<li><p>Remove the old service: <code class="docutils literal notranslate"><span class="pre">&quot;C:\Program</span> <span class="pre">Files\MySQL\MySQL</span> <span class="pre">Server</span> <span class="pre">5.7\bin\mysqld&quot;</span> <span class="pre">--remove</span> <span class="pre">MySQL57</span></code></p></li>
+<li><p>Move the data file from <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\MySQL\data</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Var\mysql\data</span></code></p></li>
+<li><p>Copy the my.ini file into <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Var\mysql\</span></code> from <code class="docutils literal notranslate"><span class="pre">EPICS\SystemSetup</span></code></p></li>
+<li><p>Create a new service: `”C:\Instrument\Apps\MySQL\bin\mysqld” –install MySQL80 –defaults-file=”C:\Instrument\Var\mysql\my.ini”</p></li>
+<li><p>Set the user running the service: LogOn tab -&gt; This account to <code class="docutils literal notranslate"><span class="pre">NETWORK</span> <span class="pre">SERVICE</span></code> no password (this removes the notes and when you click start adds them back in)</p></li>
+<li><p>Start the service</p></li>
+</ol>
+</section>
+<section id="database-fails-to-start-i-need-to-recreate-it">
+<h2>Database fails to start I need to Recreate it<a class="headerlink" href="#database-fails-to-start-i-need-to-recreate-it" title="Link to this heading"></a></h2>
+<p>The commands for recreating the database are in the ibex <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/ibex_install_utils/install_tasks.py">install script in the task <code class="docutils literal notranslate"><span class="pre">_install_latest_mysql8</span></code></a> this is the source. The rough steps are:</p>
+<ol class="arabic simple">
+<li><p>Stop mysqld processes</p></li>
+<li><p>Move the database <code class="docutils literal notranslate"><span class="pre">../instrument/var/mysql</span></code> to <code class="docutils literal notranslate"><span class="pre">old</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">upgrade_mysql.bat</span></code> in <code class="docutils literal notranslate"><span class="pre">&lt;public</span> <span class="pre">share&gt;\ibex_utils\installation_and_upgrade</span></code></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Database-Schemas.html" class="btn btn-neutral float-left" title="Database Schemas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Nicos.html" class="btn btn-neutral float-right" title="NICOS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

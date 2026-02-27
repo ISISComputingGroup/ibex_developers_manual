@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TestSerialPort &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Specific Devices &amp; IOCs" href="../../Specific-IOCs.html" />
+    <link rel="prev" title="Serial Port Debug" href="Serial-Port-Debug.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ASYN-Trace-Masks-%28Debugging-IOC%2C-ASYN%29.html">Asyn Trace Masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Walker.html">DLL Dependency Walker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-And-Device-Trouble-Shooting.html">General troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Start-Example.html">IOC Startup Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Start-Example.html#full-log">Full Log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-crash-or-unexpected-termination-%E2%80%90-Find-function-from-windows-module-offset.html">IOC Crash - find function from offset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-flow-control-settings.html">IOC Flow Control Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Log-file-location.html">Log file locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Remote-Debugging-from-Visual-Studio.html">Remote Debugging from Visual Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serial-Bruteforce-script.html">Serial Bruteforce Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serial-Port-Debug.html">Serial Port Debug</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">TestSerialPort</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Troubleshooting.html">Troubleshooting</a></li>
+      <li class="breadcrumb-item active">TestSerialPort</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/troubleshooting/TestSerialPort.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="testserialport">
+<h1>TestSerialPort<a class="headerlink" href="#testserialport" title="Link to this heading"></a></h1>
+<p>TestSerialPort.exe is built as part of asyn and should be in your path after a config_env.bat</p>
+<p>For full list of options run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TestSerialPort</span><span class="o">.</span><span class="n">exe</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>general syntax is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testSerialPort</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="n">COMPORT</span> <span class="p">[</span><span class="n">outputString</span><span class="p">]</span> <span class="p">[</span><span class="n">outputEos</span><span class="p">]</span> <span class="p">[</span><span class="n">inputEos</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that is COMPORT doesn’t start with the letters <code class="docutils literal notranslate"><span class="pre">COM</span></code> it is considered an IP address and a connection will be made there as per <code class="docutils literal notranslate"><span class="pre">drvAsynIPPortCOnfigure</span></code></p>
+<p>Also asyn only allows up to 2 characters for <code class="docutils literal notranslate"><span class="pre">inputEos</span></code>/<code class="docutils literal notranslate"><span class="pre">outputEos</span></code> (<code class="docutils literal notranslate"><span class="pre">streamDevice</span></code> itself can do more)</p>
+<p>To write a string with \r\n terminator and print reply</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testserialport</span> <span class="n">COM5</span> <span class="s2">&quot;stuff_to_write&quot;</span> <span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>To write string, see reply and also log all serial events (as per WIN32 SetCommMask())</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testserialport</span> <span class="n">COM5</span> <span class="s2">&quot;stuff_to_write&quot;</span> <span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span> <span class="o">--</span><span class="n">eventmask</span><span class="o">=</span><span class="mh">0x1ff</span>
+</pre></div>
+</div>
+<p>To see serial port status (need to have stopped IOC)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testserialport</span> <span class="n">COM5</span> <span class="o">--</span><span class="n">noread</span> <span class="o">--</span><span class="n">report</span><span class="o">=</span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>The command uses escaped characters as per <code class="docutils literal notranslate"><span class="pre">printf/epicsStrnRawFromEscaped</span></code> e.g. for Eurotherm the Stream device <code class="docutils literal notranslate"><span class="pre">\\x05</span></code> (hex) would be written as <code class="docutils literal notranslate"><span class="pre">\\005</span></code> (octal)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testserialport</span> <span class="n">COM7</span> <span class="s2">&quot;</span><span class="se">\004</span><span class="s2">0011PV&quot;</span> <span class="s2">&quot;</span><span class="se">\005</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="se">\003</span><span class="s2">&quot;</span> <span class="o">--</span><span class="n">eventmask</span><span class="o">=</span><span class="mh">0x1ff</span>
+</pre></div>
+</div>
+<p>This program is built using VS2017 and so will not be on the instruments as standard. To use it on a deployment built with VS2010 you will to copy a static VS2017 build of <code class="docutils literal notranslate"><span class="pre">testserialport.exe</span></code> from jenkins.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Serial-Port-Debug.html" class="btn btn-neutral float-left" title="Serial Port Debug" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../Specific-IOCs.html" class="btn btn-neutral float-right" title="Specific Devices &amp; IOCs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

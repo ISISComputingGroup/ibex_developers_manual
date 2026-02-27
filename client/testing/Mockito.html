@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mockito &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Squish" href="System-Testing-with-Squish.html" />
+    <link rel="prev" title="An introduction to unit testing" href="An-Introduction-to-Unit-Testing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-Unit-Tests.html">Adding tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="An-Introduction-to-Unit-Testing.html">An introduction to unit testing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mockito</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish.html">Squish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish-BDD.html">Squish BDD Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Test-naming.html">Test naming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">Mockito</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/testing/Mockito.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mockito">
+<h1>Mockito<a class="headerlink" href="#mockito" title="Link to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>Read the <a class="reference internal" href="An-Introduction-to-Unit-Testing.html"><span class="doc std std-doc">guide to testing in IBEX</span></a> before reading this guide.</p></li>
+<li><p>For more detailed information on Mockito, see
+<a class="reference external" href="https://site.mockito.org/">the Mockito homepage</a> and the
+<a class="reference external" href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html">Mockito documentation</a>.</p></li>
+</ul>
+</div>
+<section id="test-doubles">
+<h2>Test Doubles<a class="headerlink" href="#test-doubles" title="Link to this heading"></a></h2>
+<p>Test doubles are objects that stand in for a real object, for the purposes of unit testing. Terminology varies but
+there are four usual types that are described:</p>
+<ul class="simple">
+<li><p><strong>Dummy</strong> - an object that is passed around but not directly used by the method under test</p></li>
+<li><p><strong>Fake</strong> - a working implementation of a class with a simplified internal implementation, for example an in memory
+database where the production implementation uses a persistent database</p></li>
+<li><p><strong>Stub</strong> - an object that provides a canned answer to a method call</p></li>
+<li><p><strong>Mock</strong> - fake objects which know about which method calls they receive</p></li>
+</ul>
+<p>See <a class="reference external" href="http://martinfowler.com/articles/mocksArentStubs.html">this article</a> for more information. Mockito mostly helps
+with Stub and Mock doubles.</p>
+</section>
+<section id="verifying-interactions">
+<h2>Verifying Interactions<a class="headerlink" href="#verifying-interactions" title="Link to this heading"></a></h2>
+<p>To create a mock object using Mockito, in a way which is type-safe and works with generics, use the <code class="docutils literal notranslate"><span class="pre">&#64;Mock</span></code> annotation:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.mockito.Mock</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.Test</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.runner.RunWith</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.mockito.junit.MockitoJUnitRunner</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.mockito.Mockito.verify</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="nd">@RunWith</span><span class="p">(</span><span class="n">MockitoJUnitRunner</span><span class="p">.</span><span class="na">StrictStubs</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SomeTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Mock</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mockedList</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">myUnitTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// using mock object - it does not throw any &quot;unexpected interaction&quot; exception</span>
+<span class="w">        </span><span class="n">mockedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mockedList</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
+<span class="w">    </span>
+<span class="w">        </span><span class="c1">// selective, explicit, highly readable verification</span>
+<span class="w">        </span><span class="n">verify</span><span class="p">(</span><span class="n">mockedList</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">verify</span><span class="p">(</span><span class="n">mockedList</span><span class="p">).</span><span class="na">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The test class must be annotated with <code class="docutils literal notranslate"><span class="pre">&#64;RunWith(MockitoJUnitRunner.StrictStubs.class)</span></code> - otherwise the <code class="docutils literal notranslate"><span class="pre">&#64;Mock</span></code>
+annotation will not be processed, and the mock object will be <code class="docutils literal notranslate"><span class="pre">null</span></code> during the test.</p>
+</div>
+<p>In the above example, the generic <code class="docutils literal notranslate"><span class="pre">List&lt;String&gt;</span></code> interface is mocked, and has some method calls made on it.
+The verify calls replace the usual assert calls in this unit test, and check the method calls were made.</p>
+<p>For non-generic classes, it is possible to use an older syntax to create the mock inline:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">SomeClass</span><span class="w"> </span><span class="n">mockedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock</span><span class="p">(</span><span class="n">SomeClass</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference external" href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mock.html">Mockito Mock documentation</a>
+contains further details about how to construct mocks for more advanced use-cases.</p>
+</div>
+</section>
+<section id="stubbing-method-calls">
+<h2>Stubbing Method Calls<a class="headerlink" href="#stubbing-method-calls" title="Link to this heading"></a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Mock</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mockedList</span><span class="p">;</span>
+
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">myUnitTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// stubbing appears before the actual execution</span>
+<span class="w">    </span><span class="n">when</span><span class="p">(</span><span class="n">mockedList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;first&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// the following prints &quot;first“</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">mockedList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+<span class="w">    </span><span class="c1">// the following prints &quot;null&quot; because get(999) was not stubbed</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">mockedList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">999</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This time the concrete class <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> is mocked instead of an interface.
+The mocked object returns what is asked of it when the method call is made with identical arguments.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference external" href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html">Mockito documentation</a>
+contains detailed documentation about how Mockito can be used to mock method calls for various cases.</p>
+</div>
+</section>
+<section id="times-method-is-called">
+<h2>Times Method is Called<a class="headerlink" href="#times-method-is-called" title="Link to this heading"></a></h2>
+<p>Mockito has <a class="reference external" href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/verification/VerificationMode.html">several options</a>
+for checking how many times a particular method is called:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">atLeast(int</span> <span class="pre">minNumber)</span></code> at least this many times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atLeastOnce()</span></code> at least once</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atMost(int</span> <span class="pre">maxNumber)</span></code> at most this many times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">never()</span></code> same as <code class="docutils literal notranslate"><span class="pre">times(0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">times(int</span> <span class="pre">number)</span></code> exactly this number of times</p></li>
+</ul>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">times(1)</span></code>.</p>
+</section>
+<section id="any-methods">
+<h2>Any Methods<a class="headerlink" href="#any-methods" title="Link to this heading"></a></h2>
+<p>When verifying method calls, if the value of an argument is not important, Mockito allows you to check that any object
+of a specific type was used as an argument instead.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// The initialisable observer has its update method called once</span>
+<span class="n">verify</span><span class="p">(</span><span class="n">mockObserver</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="p">(</span><span class="mi">1</span><span class="p">)).</span><span class="na">update</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">any</span><span class="p">(</span><span class="n">Exception</span><span class="p">.</span><span class="na">class</span><span class="p">),</span><span class="w"> </span><span class="n">anyBoolean</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>For common types methods such as <code class="docutils literal notranslate"><span class="pre">anyString()</span></code> are available, otherwise <code class="docutils literal notranslate"><span class="pre">any(Object.class)</span></code> can be used. A null
+object will also be matched by using any.
+See the <a class="reference external" href="https://site.mockito.org/javadoc/current/org/mockito/ArgumentMatchers.html">Mockito <code class="docutils literal notranslate"><span class="pre">ArgumentMatchers</span></code></a>
+documentation for more details.</p>
+</section>
+<section id="capturing-values-on-method-calls">
+<h2>Capturing Values on Method Calls<a class="headerlink" href="#capturing-values-on-method-calls" title="Link to this heading"></a></h2>
+<p>If you want to capture the object called in a method, perhaps to check some value, then a captor can be used.
+See the code below for an example of how to do this.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Captor</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="n">ArgumentCaptor</span><span class="o">&lt;</span><span class="n">Exception</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exceptionCaptor</span><span class="p">;</span>
+<span class="nd">@Mock</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="n">InitialisableObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mockObserver</span><span class="p">;</span>
+<span class="nd">@Mock</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="n">Converter</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mockConverter</span><span class="p">;</span>
+
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test_ConvertingObservable_with_conversion_exception</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ConversionException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//Arrange        </span>
+<span class="w">    </span><span class="c1">// initObservable is what our ConvertingObservable looks at, and testObservable we can call set methods on</span>
+<span class="w">    </span><span class="n">TestableObservable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">testObservable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TestableObservable</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">InitialiseOnSubscribeObservable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">initObservable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InitialiseOnSubscribeObservable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">(</span><span class="n">testObservable</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// converter with a stub conversion method</span>
+<span class="w">    </span><span class="n">when</span><span class="p">(</span><span class="n">mockConverter</span><span class="p">.</span><span class="na">convert</span><span class="p">(</span><span class="mi">123</span><span class="p">)).</span><span class="na">thenThrow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ConversionException</span><span class="p">(</span><span class="s">&quot;conversion exception!&quot;</span><span class="p">));</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Object we are really testing</span>
+<span class="w">    </span><span class="n">ConvertingObservable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">convertObservable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConvertingObservable</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">initObservable</span><span class="p">,</span><span class="w"> </span><span class="n">mockConverter</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">//Act</span>
+<span class="w">    </span><span class="n">convertObservable</span><span class="p">.</span><span class="na">addObserver</span><span class="p">(</span><span class="n">mockObserver</span><span class="p">);</span>
+<span class="w">    </span><span class="n">convertObservable</span><span class="p">.</span><span class="na">setSource</span><span class="p">(</span><span class="n">initObservable</span><span class="p">);</span>
+<span class="w">    </span><span class="n">testObservable</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">//Assert</span>
+<span class="w">    </span><span class="c1">// The initialisable observer has its onError message called once, for the ConversionException</span>
+<span class="w">    </span><span class="n">verify</span><span class="p">(</span><span class="n">mockObserver</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="na">onValue</span><span class="p">(</span><span class="n">anyString</span><span class="p">());</span>
+<span class="w">    </span><span class="n">verify</span><span class="p">(</span><span class="n">mockObserver</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="p">(</span><span class="mi">1</span><span class="p">)).</span><span class="na">onError</span><span class="p">(</span><span class="n">exceptionCaptor</span><span class="p">.</span><span class="na">capture</span><span class="p">());</span>
+<span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="s">&quot;conversion exception!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">exceptionCaptor</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>As with the <code class="docutils literal notranslate"><span class="pre">&#64;Mock</span></code> annotation, the <code class="docutils literal notranslate"><span class="pre">&#64;Captor</span></code> annotation will only be processed if the test class is annotated with
+<code class="docutils literal notranslate"><span class="pre">&#64;RunWith(MockitoJUnitRunner.StrictStubs.class)</span></code>.</p>
+</div>
+</section>
+<section id="checking-order-of-method-calls">
+<h2>Checking Order of Method Calls<a class="headerlink" href="#checking-order-of-method-calls" title="Link to this heading"></a></h2>
+<p>Mockito can be used to check the order methods were called in.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">InOrder</span><span class="w"> </span><span class="n">inOrder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inOrder</span><span class="p">(</span><span class="n">firstMock</span><span class="p">,</span><span class="w"> </span><span class="n">secondMock</span><span class="p">);</span>
+<span class="w"> </span>
+<span class="n">inOrder</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">firstMock</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;was called first&quot;</span><span class="p">);</span>
+<span class="n">inOrder</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">secondMock</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;was called second&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="spies">
+<h2>Spies<a class="headerlink" href="#spies" title="Link to this heading"></a></h2>
+<p>Spies can be used to stub a method or verify calls on a real class. Needing to use a partial mock like this might be
+a symptom of problems with code though!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// These are equivalent, but the first is the preferred approach</span>
+<span class="nd">@Spy</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="n">spyOnFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Foo</span><span class="p">(</span><span class="s">&quot;argument&quot;</span><span class="p">);</span>
+<span class="n">Foo</span><span class="w"> </span><span class="n">spyOnFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mockito</span><span class="p">.</span><span class="na">spy</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Foo</span><span class="p">(</span><span class="s">&quot;argument&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<section id="ibex-observable">
+<h3>IBEX Observable<a class="headerlink" href="#ibex-observable" title="Link to this heading"></a></h3>
+<p>Below is a full example, showing how the verification and stubbing can be used to check behaviour of an
+observable.</p>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">InitialiseOnSubscribeObservable</span></code> takes another observable as its argument, gets the current value of
+that observable, and listens for changes. Here we stub the class that <code class="docutils literal notranslate"><span class="pre">InitialiseOnSubscribeObservable</span></code> is observing,
+to simplify the test. The only method call we are testing is <code class="docutils literal notranslate"><span class="pre">getValue()</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">InitialisableObserver</span></code> is also mocked. As part of the test we want to check that it has its <code class="docutils literal notranslate"><span class="pre">update()</span></code> method
+called with a specific set of arguments. We use <code class="docutils literal notranslate"><span class="pre">times(1)</span></code> to specify we want the method called exactly once.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Mock</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="n">InitialisableObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mockObserver</span><span class="p">;</span>
+<span class="nd">@Mock</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="n">CachingObservable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mockObservable</span><span class="p">;</span>
+
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test_InitialiseOnSubscribeObservable_subscription</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//Arrange</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">when</span><span class="p">(</span><span class="n">mockObservable</span><span class="p">.</span><span class="na">getValue</span><span class="p">()).</span><span class="na">thenReturn</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Object we are really testing</span>
+<span class="w">    </span><span class="n">InitialiseOnSubscribeObservable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">initObservable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">                           </span><span class="k">new</span><span class="w"> </span><span class="n">InitialiseOnSubscribeObservable</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">mockObservable</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">//Act</span>
+<span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="n">returned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initObservable</span><span class="p">.</span><span class="na">addObserver</span><span class="p">(</span><span class="n">mockObserver</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">//Assert: The initialisable observer has its update method called once</span>
+<span class="w">    </span><span class="n">verify</span><span class="p">(</span><span class="n">mockObserver</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="p">(</span><span class="mi">1</span><span class="p">)).</span><span class="na">update</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// The InitialiseOnSubscribeObservable has the value returned from the mock observable</span>
+<span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">initObservable</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// A Unsubscriber is returned</span>
+<span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">Unsubscriber</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">returned</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="db-tests-using-answer">
+<h3>DB Tests using <code class="docutils literal notranslate"><span class="pre">Answer</span></code><a class="headerlink" href="#db-tests-using-answer" title="Link to this heading"></a></h3>
+<p>In <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-IocLogServer/blob/master/LogServer/src/test/java/org/isis/logserver/rdb/RdbWritterTests.java"><code class="docutils literal notranslate"><span class="pre">RdbWritterTests</span></code></a>,
+there is an example of using an answer to perform a more complicated return. The answer works like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">when</span><span class="p">(</span><span class="n">mockPreparedStatement</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">()).</span><span class="na">thenAnswer</span><span class="p">(</span><span class="n">resultAndStatement</span><span class="p">.</span><span class="na">new</span><span class="w"> </span><span class="nf">ResultsSetAnswer</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>In this case the answer class is implemented as an inner class of another class, but this is not necessary.
+The answer looks like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ResultsSetAnswer</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Answer</span><span class="o">&lt;</span><span class="n">ResultSet</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ResultSet</span><span class="w"> </span><span class="nf">answer</span><span class="p">(</span><span class="n">InvocationOnMock</span><span class="w"> </span><span class="n">invocation</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Throwable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">openedResultsSet</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">resultSet</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the above example, the <code class="docutils literal notranslate"><span class="pre">Answer</span></code> is used to keep track of the number of times a result set was opened; this <code class="docutils literal notranslate"><span class="pre">Answer</span></code>
+implementation makes that information available in its parent class.</p>
+</section>
+</section>
+<section id="tips-and-advice">
+<h2>Tips and Advice<a class="headerlink" href="#tips-and-advice" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Use mocks to test interactions between a class and a particular interface</p></li>
+<li><p>Use mocks to avoid unit tests touching complex or buggy dependencies</p></li>
+<li><p>Do not mock type you don’t own? Perhaps…</p></li>
+<li><p>Do not mock simple classes or value objects - may as well use the real thing</p></li>
+<li><p>Do not mock everything!</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="An-Introduction-to-Unit-Testing.html" class="btn btn-neutral float-left" title="An introduction to unit testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="System-Testing-with-Squish.html" class="btn btn-neutral float-right" title="Squish" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

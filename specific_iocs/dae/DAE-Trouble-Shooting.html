@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAE Troubleshooting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dae Spectra Updating Problem" href="Dae-Spectra-Updating-Problem.html" />
+    <link rel="prev" title="DAE Pre &amp; Post commands" href="DAE-Pre-and-Post-commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DAE-Live-View.html">Live View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DAE-Normal-Log.html"><code class="docutils literal notranslate"><span class="pre">isisicp</span></code> Standard startup log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DAE-PVs.html">DAE Spectra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DAE-Pre-and-Post-commands.html">DAE Pre &amp; Post commands</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DAE Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dae-Spectra-Updating-Problem.html">Dae Spectra Updating Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Experimental-Runs.html">Experimental Run Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISISICP---enabling-incremental-event-file-creation.html">ISISICP - enabling incremental event file creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Shrinking-ISISICP-Memory-Usage-on-Simulated-DAE-machines.html">Reducing <code class="docutils literal notranslate"><span class="pre">ISISICP</span></code> memory use in simulation mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+      <li class="breadcrumb-item active">DAE Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/dae/DAE-Trouble-Shooting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dae-troubleshooting">
+<h1>DAE Troubleshooting<a class="headerlink" href="#dae-troubleshooting" title="Link to this heading"></a></h1>
+<p><strong>Note:</strong> If your DAE is not starting up correctly and you are struggling to see what the error is while, it might be worth running the IOC via <code class="docutils literal notranslate"><span class="pre">/ioc/ISISDAE/.../runIOC.bat</span></code> as this will give you additional messages compared to running from <code class="docutils literal notranslate"><span class="pre">ProcServ</span></code>.</p>
+<section id="restarting-the-dae-in-ibex">
+<h2>Restarting the DAE in IBEX<a class="headerlink" href="#restarting-the-dae-in-ibex" title="Link to this heading"></a></h2>
+<p>This IOC does not appear in the normal IOC restart list in the IBEX client, first open an EPICS terminal</p>
+<p><code class="docutils literal notranslate"><span class="pre">...\EPICS\epicsterm.bat</span></code></p>
+<p>then run</p>
+<p><code class="docutils literal notranslate"><span class="pre">console</span> <span class="pre">-M</span> <span class="pre">localhost</span> <span class="pre">ISISDAE_01</span></code></p>
+<p>and when connected press <code class="docutils literal notranslate"><span class="pre">Ctrl-x</span></code> once, you should see some restart messages from the IOC. Quit the EPICS term.</p>
+</section>
+<section id="invalid-tcb-start">
+<h2>invalid tcb start<a class="headerlink" href="#invalid-tcb-start" title="Link to this heading"></a></h2>
+<p>It is likely that you are in a muon configuration for the DAE but using a neutron tcb file or vice versa.</p>
+<p>Either change the <a class="reference internal" href="../DAE-and-the-ICP.html#dae-configuration"><span class="std std-ref">tcb file</span></a> you are using or do the following steps to change the DAE type:</p>
+<ol class="arabic simple">
+<li><p>Change the DAE type of your icp_config.xml (in EPICS/ICP_Binaries) to the correct value (1 for DAE2 neutron, 2 for DAE2 muon, 3 for DAE3 neutron, 4 for DAE3 muon).</p></li>
+<li><p>In the same directory edit the isisicp.properties file to use either neutron or muon for <code class="docutils literal notranslate"><span class="pre">isisicp.simulation.detcards.type</span></code></p></li>
+<li><p>Restart the ISISDAE using console in an EPICS terminal and end the isisicp task in the task manager (the ISISDAE should autorestart it)</p></li>
+</ol>
+</section>
+<section id="dae-switches-from-processing-to-unknown-and-never-goes-into-setup-run-can-not-be-ended">
+<h2>DAE switches from processing to Unknown and never goes into SetUp / Run can not be ended<a class="headerlink" href="#dae-switches-from-processing-to-unknown-and-never-goes-into-setup-run-can-not-be-ended" title="Link to this heading"></a></h2>
+<p><em>DAE2</em></p>
+<p>This issue has been observed on LARMOR and TOSCA, accompanied by the following error messages continuously being logged to <code class="docutils literal notranslate"><span class="pre">C:\data\log\icp-&lt;date&gt;.log</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">14</span>  <span class="n">NIVISA</span><span class="p">:</span> <span class="n">Error</span> <span class="s2">&quot;Could not perform operation because of I/O error.&quot;</span> <span class="p">(</span><span class="n">code</span> <span class="mh">0xbfff003e</span><span class="p">)</span> <span class="n">returned</span> <span class="kn">from</span><span class="w"> </span><span class="s2">&quot;viMoveIn32&quot;</span>  <span class="k">while</span> <span class="n">transferring</span> <span class="mi">1001</span> <span class="n">items</span> <span class="n">at</span> <span class="n">VME</span> <span class="n">address</span> <span class="mh">0x18000fa4</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">15</span>  <span class="n">NIVISA</span><span class="p">:</span> <span class="n">Error</span> <span class="s2">&quot;Could not perform operation because of I/O error.&quot;</span> <span class="p">(</span><span class="n">code</span> <span class="mh">0xbfff003e</span><span class="p">)</span> <span class="n">returned</span> <span class="kn">from</span><span class="w"> </span><span class="s2">&quot;viMoveIn32&quot;</span>  <span class="k">while</span> <span class="n">transferring</span> <span class="mi">1001</span> <span class="n">items</span> <span class="n">at</span> <span class="n">VME</span> <span class="n">address</span> <span class="mh">0x18000fa4</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span>  <span class="n">NIVISA</span><span class="p">:</span> <span class="n">Error</span> <span class="s2">&quot;Could not perform operation because of I/O error.&quot;</span> <span class="p">(</span><span class="n">code</span> <span class="mh">0xbfff003e</span><span class="p">)</span> <span class="n">returned</span> <span class="kn">from</span><span class="w"> </span><span class="s2">&quot;viMoveIn32&quot;</span>  <span class="k">while</span> <span class="n">transferring</span> <span class="mi">1001</span> <span class="n">items</span> <span class="n">at</span> <span class="n">VME</span> <span class="n">address</span> <span class="mh">0x18000fa4</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">17</span>  <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">NIVisa</span><span class="p">:</span> <span class="p">[</span><span class="ne">Warning</span><span class="p">]</span> <span class="p">(</span><span class="n">NIVisa</span><span class="p">::</span><span class="n">retryBlock</span><span class="p">)</span> <span class="n">retryBlock</span><span class="p">:</span> <span class="mi">1001</span> <span class="n">items</span> <span class="kn">from</span><span class="w"> </span><span class="nn">address</span> <span class="mh">0x18000fa4</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">17</span>  <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">NIVisa</span><span class="p">:</span> <span class="p">[</span><span class="n">Information</span><span class="p">]</span> <span class="p">(</span><span class="n">NIVisa</span><span class="p">::</span><span class="n">reinit</span><span class="p">)</span> <span class="n">Calling</span> <span class="n">NIVisa</span><span class="p">::</span><span class="n">reinit</span><span class="p">()</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">17</span>  <span class="n">Calling</span> <span class="n">NIVisa</span><span class="p">::</span><span class="n">reinit</span><span class="p">()</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">17</span>  <span class="n">Endian</span> <span class="n">workaround</span> <span class="n">DISABLED</span><span class="p">,</span> <span class="n">blocks</span> <span class="n">transfers</span> <span class="n">DISABLED</span>
+<span class="mi">2017</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span> <span class="mi">20</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">17</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">VXI</span> <span class="n">DAE</span>
+</pre></div>
+</div>
+<p>This was resolved by power cycling the DAE followed by stopping the visa server and running <code class="docutils literal notranslate"><span class="pre">resman</span></code>. Instructions how to reset the DAE can be found in <a class="reference external" href="https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7BFB34A9F9-48C9-4590-A6B0-FDAE2EEA38B0%7D&amp;amp;file=ISISICP%20and%20DAE.pptx&amp;amp;action=edit&amp;amp;mobileredirect=true&amp;amp;DefaultItemOpen=1">these slides</a>.</p>
+<p><em>DAE3</em></p>
+<p>On a DAE3 machine a vendor network library is used rather than NI Visa and the equivalent sorts of errors will have <code class="docutils literal notranslate"><span class="pre">Qx</span></code> or <code class="docutils literal notranslate"><span class="pre">Quixtream</span></code> prefixes. Access from the ISISICP is via the network, so there is no intermediate service/server to restart. Usually the ISISICP will retry failed connections, but check with electronics if there are repeated failures. You can try restarting ISISICP in case the vendor library needs a reload itself. An example of the error message is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Qxtrm_channel</span><span class="p">::</span><span class="n">RDMARead</span> <span class="n">failed</span> <span class="n">rdma2</span> <span class="n">address</span> <span class="mh">0x40010</span> <span class="n">nbytes</span> <span class="mi">4</span><span class="p">(</span><span class="n">Quixtream</span><span class="p">:</span> <span class="n">The</span> <span class="n">timeout</span> <span class="n">period</span> <span class="n">on</span> <span class="n">this</span> <span class="n">channel</span> <span class="n">expired</span> <span class="n">before</span> <span class="n">the</span> <span class="n">transfer</span> <span class="n">commenced</span><span class="o">.</span> <span class="n">Channel</span> <span class="n">status</span><span class="p">:</span> <span class="n">Transfer</span> <span class="n">failed</span><span class="o">.</span> <span class="n">Data</span> <span class="n">packet</span> <span class="ow">not</span> <span class="n">received</span> <span class="n">before</span> <span class="n">timeout</span><span class="o">.</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>In general if you see an error like this or starting with <code class="docutils literal notranslate"><span class="pre">NIVISA</span></code> you should restart the DAE, then <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Contact%20details%20for%20other%20groups.docx">contact electronics</a>.</p>
+</section>
+<section id="dae-doesn-t-seem-to-be-connected-i-want-to-run-without-a-dae-connected">
+<h2>DAE doesn’t seem to be connected/I want to run without a DAE connected<a class="headerlink" href="#dae-doesn-t-seem-to-be-connected-i-want-to-run-without-a-dae-connected" title="Link to this heading"></a></h2>
+<p>The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode run <code class="docutils literal notranslate"><span class="pre">g.set_dae_simulation_mode(True)</span></code> or <code class="docutils literal notranslate"><span class="pre">g.set_dae_simulation_mode(False)</span></code> to unset.</p>
+<p>To change the simulation mode manually, in <code class="docutils literal notranslate"><span class="pre">icp_config.xml</span></code> change the simulate property to 1 (or 0 if turning off simulation mode). <code class="docutils literal notranslate"><span class="pre">icp_config.xml</span></code> can be found in either the “LabVIEW modules” or “ICP Binaries” directory. Stop the DAE IOC from the console, then kill the ISISICP process. Finally, restart the DAE IOC from the console.</p>
+</section>
+<section id="log-file-for-labview-modules-dae">
+<h2>Log file for LabVIEW modules DAE<a class="headerlink" href="#log-file-for-labview-modules-dae" title="Link to this heading"></a></h2>
+<p>IBEX uses  <code class="docutils literal notranslate"><span class="pre">isisicp</span></code> program (located in <code class="docutils literal notranslate"><span class="pre">labview</span> <span class="pre">modules\dae</span></code>) that writes to <code class="docutils literal notranslate"><span class="pre">C:\Data\Export</span> <span class="pre">only\logs\icp\log\icp-&lt;date&gt;log</span></code>. There is an <a class="reference internal" href="DAE-Normal-Log.html"><span class="doc std std-doc">example DAE log in this wiki</span></a>. This is a good place to locate DAE specific issues, not all of the details in this log appear in the ISISDAE IOC log.</p>
+</section>
+<section id="error-pop-up-icp-failed-to-start-your-dae-may-be-switched-off-or-is-missing-cards">
+<h2>Error pop up: <code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">ICP</span> <span class="pre">failed</span> <span class="pre">to</span> <span class="pre">start</span> <span class="pre">-</span> <span class="pre">your</span> <span class="pre">DAE</span> <span class="pre">may</span> <span class="pre">be</span> <span class="pre">switched</span> <span class="pre">OFF</span> <span class="pre">or</span> <span class="pre">is</span> <span class="pre">missing</span> <span class="pre">cards</span> <span class="pre">***</span></code><a class="headerlink" href="#error-pop-up-icp-failed-to-start-your-dae-may-be-switched-off-or-is-missing-cards" title="Link to this heading"></a></h2>
+<p>The DAE unit may be switched off. This is particularly likely during shut down. Change the DAE into simulation mode as described above.</p>
+<p>If the DAE is on then it is likely that it has been power cycled.
+Two possible ways to fix it are:</p>
+<ol class="arabic simple">
+<li><p>Restarting the DAE rack server</p></li>
+<li><p>Via NI MAX, using the following steps:</p>
+<ol class="arabic simple">
+<li><p>Connect to the DAE rack server via Remote Desktop from the NDX machine (the machine should be listed in the Remote Desktop dialog - if not use address 192.168.1.2)</p></li>
+<li><p>Run NI MAX on the DAE rack server</p></li>
+<li><p>Under Software-&gt;NI-VISA X.X.X,  select VISA Server and click “Stop server now” (if you cannot see this button you may be on the wrong tab on the bottom bar)</p></li>
+<li><p>Under “Devices and Interfaces”, select “VXI System” and click “Run the VXI Resources Manager”.</p></li>
+<li><p>Finally, repeat b) but click “Start server now”</p></li>
+</ol>
+</li>
+</ol>
+<p>If on NI MAX the “Run the VXI Resources Manager” button and VISA server buttons are greyed out/not available this is likely a sign that the VISA server cannot talk to the DAE.</p>
+<p>For DAE3 see <code class="docutils literal notranslate"><span class="pre">DAE3</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">start</span></code> below</p>
+</section>
+<section id="blocks-not-being-added-to-nexus-file">
+<h2>Blocks not being added to Nexus file<a class="headerlink" href="#blocks-not-being-added-to-nexus-file" title="Link to this heading"></a></h2>
+<p>This should not occur but has when a database was missing our extra column in the archive. If the sample table in the archive is missing a sample_id, run the following. Note that it can take a while on a database with a large number of rows in that table.
+<code class="docutils literal notranslate"> <span class="pre">&quot;c:\programs</span> <span class="pre">files\wherever...\Mysql.exe&quot;</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">-p</span>&#160; <span class="pre">--execute=&quot;ALTER</span> <span class="pre">TABLE</span> <span class="pre">sample</span> <span class="pre">ADD</span> <span class="pre">COLUMN</span> <span class="pre">sample_id</span> <span class="pre">BIGINT</span> <span class="pre">UNSIGNED</span> <span class="pre">NOT</span> <span class="pre">NULL</span> <span class="pre">PRIMARY</span> <span class="pre">KEY</span> <span class="pre">AUTO_INCREMENT</span> <span class="pre">COMMENT</span> <span class="pre">'Sample</span> <span class="pre">id'&quot;</span> <span class="pre">archive</span></code></p>
+</section>
+<section id="not-enough-crpt-memory">
+<h2>Not enough CRPT memory<a class="headerlink" href="#not-enough-crpt-memory" title="Link to this heading"></a></h2>
+<p>CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogrammed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the <a class="reference internal" href="../DAE-and-the-ICP.html#dae-configuration"><span class="std std-ref">wiring tables</span></a>.</p>
+</section>
+<section id="end-of-run-script-not-working-or-data-not-being-copied-to-the-archive">
+<h2>End of run script not working or data not being copied to the archive<a class="headerlink" href="#end-of-run-script-not-working-or-data-not-being-copied-to-the-archive" title="Link to this heading"></a></h2>
+<p>There is a known bug where starting a run at the same time as the previous run is being saved can be cause the nexus file not to be marked read-only and so not copied to the archive. A <code class="docutils literal notranslate"><span class="pre">NEXUS</span> <span class="pre">ERROR:</span> <span class="pre">ERROR:</span></code> message will appear in the log. See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4977">https://github.com/ISISComputingGroup/IBEX/issues/4977</a></p>
+<p>To fix this and other errors see <a class="reference internal" href="Experimental-Runs.html"><span class="doc std std-doc">experimental runs troubleshooting</span></a></p>
+</section>
+<section id="no-frames-beam-current-registered-by-the-dae">
+<h2>No frames/beam current registered by the DAE<a class="headerlink" href="#no-frames-beam-current-registered-by-the-dae" title="Link to this heading"></a></h2>
+<p>Try switching the timing source to “Internal test clock” (found in experiment setup tab of DAE) and starting a run. If frames are received in this state, it means that the DAE isn’t receiving timing pulses from the central source. If that’s the case, it needs attention from the electronics group (<code class="docutils literal notranslate"><span class="pre">ISIS</span> <span class="pre">Detector</span> <span class="pre">Systems</span> <span class="pre">Group</span></code> in Zoom).  Note, this may occur on more than one beam line so keep an ear open for any other reports - if it does it is likely to be a problem with the PPP signal centrally.</p>
+<p>Don’t forget to switch the timing source back when you’re done!</p>
+<p>Other things to to check in this state are:</p>
+<ul class="simple">
+<li><p>Visit the beamline - (possibly with electronics if suspecting a hardware problem).
+Software usually doesn’t just stop normally when other things are working  - right? :smile:</p></li>
+<li><p>Most importantly, ask the scientists if anything happened around the time of the problem, in a recent case they mentioned someone had moved a cable on an ADC (although this was not the problem!).</p></li>
+<li><p>Look at the lights on the ADC or detector input module cards on the DAE. If no lights flickering, there is no data coming in and this is a good indicator that the HT might be off (a few lights might mean shutter closed or beam off).</p></li>
+<li><p>data/transfer lights on a DAEII, flickering &amp; transfer lights inactive not a good sign.  Could be the link to the PC if transfer lights are not showing activity.</p></li>
+<li><p>If frame/raw counts are not showing up, a good diagnostic is to put the DAE into “Internal Test Clock”.  If this works and frames appear, it is likely that there may be a problem with a Time of Flight signal (this often affects more than one beamline.</p></li>
+</ul>
+</section>
+<section id="my-total-counts-are-low">
+<h2>My total counts are low<a class="headerlink" href="#my-total-counts-are-low" title="Link to this heading"></a></h2>
+<p>Make sure that the timing is appropriate (e.g. a DAE Timing Source of <code class="docutils literal notranslate"><span class="pre">ISIS</span> <span class="pre">(first</span> <span class="pre">TS1)</span></code> will only count the first pulse not all 4). If it is left on “internal test clock” you will receive no uamps at all.</p>
+</section>
+<section id="count-rate-low-across-multiple-instruments">
+<h2>Count rate low (across multiple instruments)<a class="headerlink" href="#count-rate-low-across-multiple-instruments" title="Link to this heading"></a></h2>
+<p>This can be due to an analogue (“PPP”) signal being incorrect, this is an analogue signal that the DAE uses internally to calculate beam current.</p>
+<p>If you see this, DSG group may be the best contacts, they may then pass the issue onto the relevant (accelerator?) teams to investigate more.</p>
+<p>Exact copy-pasted note from the relevant team the last time this happened:</p>
+<blockquote>
+<div><p>[…] the Buffer Unit from the <code class="docutils literal notranslate"><span class="pre">Diags</span></code> Room that sends EIM6 to the HET Racks where it becomes the PPP Signal is loading the new electronics, causing this loss of signal</p>
+</div></blockquote>
+</section>
+<section id="simulation-mode-dae-complains-about-missing-cards">
+<h2>Simulation mode DAE complains about missing cards<a class="headerlink" href="#simulation-mode-dae-complains-about-missing-cards" title="Link to this heading"></a></h2>
+<p>From an issue in Ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3099">https://github.com/ISISComputingGroup/IBEX/issues/3099</a> - example traceback:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">major</span>  <span class="n">setDCEventMode</span><span class="p">:</span> <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">setDCCardMode</span><span class="p">:</span> <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">setDCEventMode</span><span class="p">:</span> <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">setDCCardMode</span><span class="p">:</span> <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">Cannot</span> <span class="n">find</span> <span class="n">card</span> <span class="k">for</span> <span class="n">crate</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">Cannot</span> <span class="n">find</span> <span class="n">card</span> <span class="k">for</span> <span class="n">crate</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">Attempt</span> <span class="n">to</span> <span class="n">use</span> <span class="n">missing</span> <span class="n">detector</span> <span class="n">card</span><span class="o">/</span><span class="n">crate</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span>  <span class="n">Attempt</span> <span class="n">to</span> <span class="n">use</span> <span class="n">missing</span> <span class="n">detector</span> <span class="n">card</span><span class="o">/</span><span class="n">crate</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span> <span class="p">:</span> <span class="ne">Exception</span> <span class="n">occurred</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. To fix edit <code class="docutils literal notranslate"><span class="pre">isisicp.properties</span></code> in LabVIEW modules to create more cards. The number of cards on each crate is given by the maximum missing card for the crate (see log), more crates can be added as well as cards. An example from wish with 3 crates, 10, 10 and 12 card per crate is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">isisicp</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">detcards</span><span class="o">.</span><span class="n">crate0</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">isisicp</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">detcards</span><span class="o">.</span><span class="n">crate1</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">isisicp</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">detcards</span><span class="o">.</span><span class="n">crate2</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="mi">12</span>
+</pre></div>
+</div>
+<p>If you have defined <code class="docutils literal notranslate"><span class="pre">isisisp.datadae.use</span> <span class="pre">=</span> <span class="pre">true</span></code> in <code class="docutils literal notranslate"><span class="pre">isisicp.properties</span></code> then you need to make sure the detector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set <code class="docutils literal notranslate"><span class="pre">isisisp.datadae.use</span> <span class="pre">=</span> <span class="pre">false</span></code></p>
+</section>
+<section id="real-dae-complains-about-missing-cards-but-was-previously-working">
+<h2>Real DAE complains about missing cards (but was previously working)<a class="headerlink" href="#real-dae-complains-about-missing-cards-but-was-previously-working" title="Link to this heading"></a></h2>
+<p>If you see messages like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setDCEventMode</span><span class="p">:</span> <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">1</span>
+<span class="n">setDCCardMode</span><span class="p">:</span> <span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> <span class="mi">1</span>
+<span class="n">Attempt</span> <span class="n">to</span> <span class="n">use</span> <span class="n">missing</span> <span class="n">detector</span> <span class="n">card</span><span class="o">/</span><span class="n">crate</span> <span class="mi">1</span>
+<span class="n">Unknown</span> <span class="n">detector</span> <span class="n">card</span> 
+</pre></div>
+</div>
+<p>when trying to BEGIN on a real DAE, then there are two likely causes:</p>
+<ul class="simple">
+<li><p>you are loading a wiring table that is specifying cards that do no exist, you need to correct the wiring table</p></li>
+<li><p>The ICP has not detected all the cards you believe are present in the DAE, hence they appear to be “missing” or “unknown”</p></li>
+</ul>
+<p>If the wiring table is correct, try a restart of the ISISICP - the DAE is only scanned at program startup, it might be the DAE hardware was not feeling very responsive first time around. If this doesn’t help, then it may be the detector card has failed, or it could be the hardware is in a strange state and needs a reset. Electronics group have programs that can do this.</p>
+<p>If the system is running DAE3, then there is another possible cause. check the log for a line like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Unable</span> <span class="n">to</span> <span class="n">create</span> <span class="n">Quixtream</span> <span class="n">on</span> <span class="n">process20</span><span class="p">:</span> <span class="n">Quixtream</span> <span class="n">Error</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">bind</span> <span class="n">the</span> <span class="n">socket</span> <span class="n">to</span> <span class="n">the</span> <span class="n">local</span> <span class="n">port</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from <code class="docutils literal notranslate"><span class="pre">0xFE00</span></code> (65024) upwards) so a reboot may be the only option.</p>
+</section>
+<section id="real-dae-complains-about-missing-cards-crates-new-card-crate-hardware-has-just-need-added">
+<h2>Real DAE complains about missing cards/crates (new card/crate hardware has just need added)<a class="headerlink" href="#real-dae-complains-about-missing-cards-crates-new-card-crate-hardware-has-just-need-added" title="Link to this heading"></a></h2>
+<p>If a new DAE3 card or DAE2 crate has been added, it may not be picked up automatically. The ISISICP scans “crates”, where for DAE2 this was a full 11 slot VME crate, but for DAE3 each “crate” is actually a physical DAE3 card. So adding a new DAE2 detector card to an existing crate does not require any additional changes, but adding an additional DAE3 card requires a change to <code class="docutils literal notranslate"><span class="pre">icp_config.xml</span></code> in <code class="docutils literal notranslate"><span class="pre">c:\labview</span> <span class="pre">modules\dae</span></code>. If it contained:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">DAEDevice0</span><span class="o">&lt;/</span><span class="n">Name</span><span class="o">&gt;</span>              <span class="o">&lt;</span><span class="n">Val</span><span class="o">&gt;</span><span class="n">ISISDAE0</span><span class="o">&lt;/</span><span class="n">Val</span><span class="o">&gt;</span>      <span class="o">&lt;/</span><span class="n">String</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>this tells it to scan for crate 0. Add an additional line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="n">Name</span><span class="o">&gt;</span><span class="n">DAEDevice1</span><span class="o">&lt;/</span><span class="n">Name</span><span class="o">&gt;</span>              <span class="o">&lt;</span><span class="n">Val</span><span class="o">&gt;</span><span class="n">ISISDAE1</span><span class="o">&lt;/</span><span class="n">Val</span><span class="o">&gt;</span>      <span class="o">&lt;/</span><span class="n">String</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>to also scan for crate 1. For DAE2 the name like <code class="docutils literal notranslate"><span class="pre">ISISDAE0</span></code> refers to an alias for a VISA resource name, for DAE3 just follow the same naming convention but no VISA alias needs creating. The number of <code class="docutils literal notranslate"><span class="pre">DAEDevice*</span></code> lines present should match:</p>
+<ul class="simple">
+<li><p>For DAE2, the number of VME crates</p></li>
+<li><p>For DAE3, the number of DAE3 cards</p></li>
+</ul>
+</section>
+<section id="dae-exception-messages">
+<h2>DAE exception messages<a class="headerlink" href="#dae-exception-messages" title="Link to this heading"></a></h2>
+<p>If you get an error in you IOC log like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">26</span> <span class="mi">17</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">37</span><span class="p">]</span> <span class="n">sevr</span><span class="o">=</span><span class="n">major</span> <span class="n">Win32StructuredException</span> <span class="n">code</span> <span class="mh">0xc0000005</span> <span class="n">pExpCode</span> <span class="mh">0xc0000005</span> <span class="n">pExpAddress</span> <span class="mi">0000000000000000</span>
+<span class="p">[</span><span class="mi">2018</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">26</span> <span class="mi">17</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">37</span><span class="p">]</span> <span class="mi">2018</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">26</span> <span class="mi">17</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mf">36.741</span> <span class="n">IN</span><span class="p">:</span><span class="n">DEMO</span><span class="p">:</span><span class="n">DAE</span><span class="p">:</span><span class="n">AD1</span><span class="p">:</span><span class="n">INTG</span><span class="p">:</span><span class="n">TMIN</span><span class="p">:</span><span class="n">SP</span> <span class="n">devAsynFloat64</span> <span class="n">pPvt</span><span class="o">-&gt;</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">process</span> <span class="n">error</span> <span class="n">isisdaeDriver</span><span class="p">:</span><span class="n">writeFloat64</span><span class="p">:</span> <span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="mi">184</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">INTG_TMIN</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.000000</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">Win32StructuredException</span> <span class="n">code</span> <span class="mh">0xc0000005</span> <span class="n">pExpCode</span> <span class="mh">0xc0000005</span> <span class="n">pExpAddr</span>
+</pre></div>
+</div>
+<p>One cause would be the IOC is trying to call a function in the ISISICP that it can’t find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See <a class="reference internal" href="../../overview/First-Time-Build.html#first-time-install-configure-dae"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="dae3-does-not-start">
+<h2>DAE3 does not start<a class="headerlink" href="#dae3-does-not-start" title="Link to this heading"></a></h2>
+<p>DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used <code class="docutils literal notranslate"><span class="pre">ISISICP</span></code> and looks like DAE2 for most purposes. If everything remains in processing, it may be that the <code class="docutils literal notranslate"><span class="pre">arp</span></code> network entries did not get created - these should be done as a system time boot task. Do <code class="docutils literal notranslate"><span class="pre">arp</span> <span class="pre">-a</span></code> and see if there is an entry for 192.168.1.101 etc.  If not, run <code class="docutils literal notranslate"><span class="pre">set_dae3_arp.bat</span></code> in <code class="docutils literal notranslate"><span class="pre">c:\labview</span> <span class="pre">modules\dae</span></code> as as administrator</p>
+<p>Note that DAE3 does not ping, so the only way to know if it is there is by running <code class="docutils literal notranslate"><span class="pre">qxtalk</span></code> or the <code class="docutils literal notranslate"><span class="pre">isisicp</span></code> (via ibex)</p>
+<p>If IBEX has either been in simulation mode or not running for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the operating system as described in <code class="docutils literal notranslate"><span class="pre">Real</span> <span class="pre">DAE</span> <span class="pre">complains</span> <span class="pre">about</span> <span class="pre">missing</span> <span class="pre">cards</span> <span class="pre">(but</span> <span class="pre">was</span> <span class="pre">previously</span> <span class="pre">working)</span></code> above on this page. You will see errors like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Quixtream</span> <span class="n">Error</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">bind</span> <span class="n">the</span> <span class="n">socket</span> <span class="n">to</span> <span class="n">the</span> <span class="n">local</span> <span class="n">port</span><span class="o">.</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>in the ICP log and some client applications may complain about <code class="docutils literal notranslate"><span class="pre">NULL</span> <span class="pre">Pointer</span></code> errors. The only solution is to reboot the NDX computer.</p>
+</section>
+<section id="error-code-112">
+<h2>Error code 112<a class="headerlink" href="#error-code-112" title="Link to this heading"></a></h2>
+<p>If there is an error code 112 reported in the log it means that the disk (data volume) is full and it can not start the <code class="docutils literal notranslate"><span class="pre">isisicp</span></code> program.</p>
+</section>
+<section id="dae-type-mismatch-error">
+<h2>DAE Type mismatch error<a class="headerlink" href="#dae-type-mismatch-error" title="Link to this heading"></a></h2>
+<p>If you get an error from ISISICP <code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">ISISICP</span> <span class="pre">STARTUP</span> <span class="pre">FAILED</span> <span class="pre">(DAE</span> <span class="pre">type</span> <span class="pre">mistmatch)***</span></code> it means you are running <code class="docutils literal notranslate"><span class="pre">isisicp</span></code> program with the wrong sort of dae ie 2 when you have 3. You need to source the correct version of the code for your type of DAE.</p>
+</section>
+<section id="isisicp-exe-keeps-allocating-4gb-of-memory-and-then-releasing-it">
+<h2>isisicp.exe keeps allocating 4GB of memory and then releasing it<a class="headerlink" href="#isisicp-exe-keeps-allocating-4gb-of-memory-and-then-releasing-it" title="Link to this heading"></a></h2>
+<p>It may be <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3701">https://github.com/ISISComputingGroup/IBEX/issues/3701</a> - you just need to change the archive array table type to MEDIUMBLOB.  Due to a bug in the C++/MySQL connector, each time the database is read, a LONGBLOB’s worth of memory (4GB) is allocated and then released.  By changing to MEDIUMBLOB (16MB), a much smaller amount is used.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\MySQL\bin&gt;</span></code>, run <code class="docutils literal notranslate"><span class="pre">mysql.exe</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">-p</span></code> and enter the MySQL root password when prompted.</p>
+<p>Then run these commands to modify the DB in place:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USE</span> <span class="n">archive</span><span class="p">;</span>
+<span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">sample</span> <span class="n">MODIFY</span> <span class="n">COLUMN</span> <span class="n">array_val</span> <span class="n">MEDIUMBLOB</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> that command rewrites the whole <code class="docutils literal notranslate"><span class="pre">sample</span></code> table, so if the table is big it may take a while. You may wish to consider truncating the <code class="docutils literal notranslate"><span class="pre">sample</span></code> table before doing this (though that may not be possible if it contains useful data)</p>
+</section>
+<section id="instrument-stuck-in-waiting-state">
+<h2>Instrument stuck in <code class="docutils literal notranslate"><span class="pre">WAITING</span></code> state<a class="headerlink" href="#instrument-stuck-in-waiting-state" title="Link to this heading"></a></h2>
+<p>We have observed on a couple of occasions that the DAE got stuck in <code class="docutils literal notranslate"><span class="pre">WAITING</span></code> despite no blocks being outside of runcontrol limits. The cause is yet unclear but in the meantime try:</p>
+<ul class="simple">
+<li><p>force a resync of the system with e.g. for OFFSPEC <code class="docutils literal notranslate"><span class="pre">caput</span> <span class="pre">IN:OFFSPEC:CS:RC:SYNC:SP</span> <span class="pre">1</span></code></p></li>
+<li><p>restart the <code class="docutils literal notranslate"><span class="pre">RUNCTRL_01</span></code> IOC</p></li>
+</ul>
+</section>
+<section id="isisdae-reports-time-regimes-1-and-2-are-incompatible">
+<h2>ISISDAE reports <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">regimes</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">2</span> <span class="pre">are</span> <span class="pre">incompatible</span></code><a class="headerlink" href="#isisdae-reports-time-regimes-1-and-2-are-incompatible" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../DAE-and-the-ICP.html#dae-configuration"><span class="std std-ref">Time regimes</span></a> are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above.</p>
+</section>
+<section id="isisicp-writes-a-corrupted-journal-file">
+<h2>ISISICP writes a corrupted journal file<a class="headerlink" href="#isisicp-writes-a-corrupted-journal-file" title="Link to this heading"></a></h2>
+<p>The symptom is that <code class="docutils literal notranslate"><span class="pre">C:\data\journal_&lt;cycle_number&gt;.xml</span></code> will not be valid xml, it will be truncated at some point. We believe this happens when there are too many blocks set to log into the journal in a particular configuration.</p>
+<p>After switching back to a configuration with fewer blocks, the journal file can be (carefully!) manually edited to remove the corrupt entry. Once this is done, runs should go back into the journal as normal (however, runs done while in the configuration with too many blocks will be lost from the journal).</p>
+<p>Freddie may also have a patched version of the isisicp that fixes this issue.</p>
+</section>
+<section id="my-blocks-aren-t-being-written-to-a-run-title-properly">
+<h2>My blocks aren’t being written to a run title properly<a class="headerlink" href="#my-blocks-aren-t-being-written-to-a-run-title-properly" title="Link to this heading"></a></h2>
+<p>See the documentation in the <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/how_to/Add-blocks-to-run-title.html" title="(in IBEX User Manual)"><span class="xref std std-doc">user manual</span></a></p>
+</section>
+<section id="exception-in-icp-log">
+<h2>Exception in ICP log<a class="headerlink" href="#exception-in-icp-log" title="Link to this heading"></a></h2>
+<p>If the ICP is showing an error in the form of <code class="docutils literal notranslate"><span class="pre">NeXusEventCallback:</span> <span class="pre">[Warning]</span> <span class="pre">(NeXusEventCallback&lt;class</span> <span class="pre">DAE2DetCardPolicy&gt;::allFrameCallback)</span> <span class="pre">Invalid</span> <span class="pre">DAE</span> <span class="pre">time</span> <span class="pre">value</span></code> this indicates a hardware problem. Newer versions of the ISISICP will estimate and then correct the time information based on good data either side of the corrupt data, if these messages are appearing frequently you should get in touch with the electronics group.</p>
+</section>
+<section id="a-measurement-nxs-file-is-being-written-to-the-c-data-area">
+<h2>A <code class="docutils literal notranslate"><span class="pre">measurement.nxs</span></code> file is being written to the <code class="docutils literal notranslate"><span class="pre">C:\data</span></code> area<a class="headerlink" href="#a-measurement-nxs-file-is-being-written-to-the-c-data-area" title="Link to this heading"></a></h2>
+<p>This file is written by the ISISICP on some instruments if they have defined a non-zero “measurement ID”. It is intended to be used for correlating runs. The presence of the file itself is nothing to worry about.</p>
+</section>
+<section id="gap-in-time-in-journal-file-for-run-start-and-end-so-may-think-no-data-has-been-written">
+<h2>Gap in time in journal file for run start and end (so may think No Data has been written)<a class="headerlink" href="#gap-in-time-in-journal-file-for-run-start-and-end-so-may-think-no-data-has-been-written" title="Link to this heading"></a></h2>
+<p>If the instrument is in a WAITING state for the entire run, then the end_time as written in the nexus file/journal will be the same as the start time. The ICP interprets end time as end of neutron data collection, so if this never starts it remains the same as the start time and run duration is 0. All sample environment data will be collected OK in a WAITING state.</p>
+</section>
+<section id="simulated-dae-does-into-vetoing-after-a-pause-resume">
+<h2>Simulated DAE does into VETOING after a PAUSE/RESUME<a class="headerlink" href="#simulated-dae-does-into-vetoing-after-a-pause-resume" title="Link to this heading"></a></h2>
+<p>The symptom is that, when you do a begin the instrument will go into running and look happy, but after you do a pause/resume it will permanently be in vetoing (until the run is ended and the next run is started).</p>
+<p>This is a bug in the ISISICP as it does not simulate hardware period properly.</p>
+<p>Resolution:</p>
+<ul class="simple">
+<li><p>Ensure period mode is not “hardware” (use software)</p></li>
+<li><p>Kill and restart <code class="docutils literal notranslate"><span class="pre">isisicp.exe</span></code> (need to do this as the simulated isisicp can’t change period modes correctly without restarting)</p></li>
+</ul>
+</section>
+<section id="control-program-unable-to-read-from-dae3">
+<h2>Control program unable to read from DAE3<a class="headerlink" href="#control-program-unable-to-read-from-dae3" title="Link to this heading"></a></h2>
+<p>If there are lots of read timeouts, but writes work, then this could be a firewall issue. Try disabling the firewall on the DAE private (192.168.*) network (this is the network that is not the “domain” network on an instrument, often it is called “public”). There should be firewall rules to allow programs access, but something may have gone wrong with them</p>
+</section>
+<section id="beam-current-in-dashboard-oscillating">
+<h2>Beam current in Dashboard oscillating<a class="headerlink" href="#beam-current-in-dashboard-oscillating" title="Link to this heading"></a></h2>
+<p>The beam current in the dashboard is not read from the accelerator, but is calculated from the DAE which records the total amount of proton charge received so far. The software reads the DAE charge value, then reads again after a certain amount of time, and then the difference between these plus the time gap allow an effective beam current to be calculated. By effective I mean it will include running at a slow chopper speed as well as vetos, so with a 25Hz chopper on TS1 you will expect to see roughly half the TS1 accelerator delivered value.</p>
+<p>If the DAE beam current is oscillating but the accelerator is constant, then this can be due to issues with the time or charge component of the calculation. If it is oscillating rapidly, it may be due to some reads taking longer and meaning the “time” value used in the calculation does not correspond to the charges used. Look for DAE read timeouts, or sometimes if a lot of spectra are being displayed in the GUI this can slow down DAE proton reads. If there are a lot of DAE timeouts in the log, contact electronics group.</p>
+<p>If the DAE beam current is incorrect for a period of time rather than rapid oscillations, this is more likely to be due to either vetos or the DAE syncing to the wrong accelerator pulse. HRPD run at 10Hz and were seeing a DAE beam current going to zero for a period of time and then returning to normal. TS1 runs at 50Hz, but 1 pulse in 5 (10Hz) goes to TS2 so if a  10Hz chopper syncs to the missing pulse you will not see any data. It looked like on HRPD this syncing was shifting and occasionally latching onto the empty pulse for a period of time (several minutes). This syncing could be a chopper or DAE issue, probably start with DAE first .</p>
+</section>
+<section id="add-single-run-entry-into-the-journal">
+<h2>Add Single Run Entry into the Journal<a class="headerlink" href="#add-single-run-entry-into-the-journal" title="Link to this heading"></a></h2>
+<p>It is possible to add a single run into the journal database if it was not included for some reason simply run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;c:\labview modules\dae\JournalParser.exe&quot;</span> <span class="o">&lt;</span><span class="n">INSTRUMENT</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="mi">9</span> <span class="n">DIGIT</span> <span class="n">run</span> <span class="n">number</span><span class="o">&gt;</span> <span class="n">cycle_</span><span class="o">&lt;</span><span class="n">cycle</span> <span class="n">number</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="mi">19_3</span><span class="o">&gt;</span> <span class="s2">&quot;c:\data\export only&quot;</span> <span class="o">&lt;</span><span class="n">INSTRUMENT</span> <span class="n">MACHINE</span> <span class="n">HOST</span> <span class="n">NAME</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">&quot;c:\labview</span> <span class="pre">modules\dae\JournalParser.exe&quot;</span> <span class="pre">LOQ</span> <span class="pre">00108032</span> <span class="pre">cycle_19_3</span> <span class="pre">&quot;c:\data\export</span> <span class="pre">only&quot;</span> <span class="pre">NDXLOQ</span></code></p>
+</section>
+<section id="crpt-is-not-initialised-please-set-experiment-parameters">
+<h2>CRPT is not initialised - please set experiment parameters<a class="headerlink" href="#crpt-is-not-initialised-please-set-experiment-parameters" title="Link to this heading"></a></h2>
+<p>Ensure you have loaded the correct Time Channels and Data Acquisition tables in the Experiment setup tab of the DAE perspective. Reloading them causes initialisation. If you do not have any tables do the following:</p>
+<ol class="arabic simple">
+<li><p>Copy the detector, wiring, spectra and TCB tables from the <a class="reference external" href="https://github.com/ISISComputingGroup/system_tests">system tests</a></p></li>
+<li><p>In the GUI go to DAE -&gt; Experiment Setup -&gt; Time Channels, select <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">TCB</span> <span class="pre">file</span></code> and select one of the copied TCB files</p></li>
+<li><p>In DAE -&gt; Experiment Setup -&gt; Data Acquisition, select the wiring, detector and spectra tables</p></li>
+</ol>
+<p>See <a class="reference internal" href="../DAE-and-the-ICP.html#dae-configuration"><span class="std std-ref">here</span></a> to learn more about these files.</p>
+</section>
+<section id="dae-troubleshooting-cannot-see-nexus-files">
+<h2>User Says they Can Not see their Nexus Data files on external machine<a class="headerlink" href="#dae-troubleshooting-cannot-see-nexus-files" title="Link to this heading"></a></h2>
+<p>After a run the data files should be copied to an external archive so that the users can do more processing. If the user can not get these then there can be multiple causes and it depends exactly where they are looking. The first thing to check is that the machine is copying the files correctly in the post
+end run script. The log for this is stored at <code class="docutils literal notranslate"><span class="pre">C:\Data\log\post_command_&lt;day&gt;.log</span></code>. If there is a problem rectify the problem, possible causes are:</p>
+<ul class="simple">
+<li><p>mapped drive (<code class="docutils literal notranslate"><span class="pre">d:</span></code>) is not connected properly: often double clicking on the drive is enough to get it remapped</p></li>
+<li><p>something else: fix and document here</p></li>
+</ul>
+<p>After fixing the issues the files will be copied after the next run is finished. So start and end a run (with a test like title), you may also want to put it in simulation mode if the DAE is switched off. Finally check the files have appeared in <code class="docutils literal notranslate"><span class="pre">&lt;isis</span> <span class="pre">instrument</span> <span class="pre">folder&gt;\&lt;machine</span> <span class="pre">name&gt;\Instrument\data\cycle_&lt;cycle</span> <span class="pre">number&gt;</span></code>.</p>
+</section>
+<section id="dae-server-restart-doesn-t-work-message-when-clicking-start-cannot-start-server-on-port-xxx">
+<h2>DAE Server restart doesn’t work message when clicking start “Cannot start server on port XXX”<a class="headerlink" href="#dae-server-restart-doesn-t-work-message-when-clicking-start-cannot-start-server-on-port-xxx" title="Link to this heading"></a></h2>
+<p>If you need to restart the NI visa server on the host machine and clicking start on the server says can not start server, it may be that the via driver has started in the admin account instead of the user account. Log onto the host machine and quit the NI VXI Resource manager application. This should allow the user accounts server to start.</p>
+</section>
+<section id="id1">
+<h2>Exception in ICP log<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>If the ICP is showing an error in the form of <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">error</span> <span class="pre">(read32)</span></code> this indicates that you have a DAE3 ICP installed. Only a DAE2 ICP has a simulation mode. You should reinstall the ICP from <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\ISISICP\DAE2</span></code>.</p>
+</section>
+<section id="no-environment-cards-in-simulation-mode">
+<h2>No environment cards in simulation mode<a class="headerlink" href="#no-environment-cards-in-simulation-mode" title="Link to this heading"></a></h2>
+<p>In simulation mode the ISISICP should automatically give you 1 environment card. If you see the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="o">-</span> <span class="n">Found</span> <span class="mi">0</span> <span class="n">environment</span><span class="o">/</span><span class="n">period</span> <span class="n">cards</span> <span class="p">(</span><span class="n">must</span> <span class="n">have</span> <span class="n">only</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="mi">0</span> <span class="n">detector</span> <span class="n">cards</span>
+</pre></div>
+</div>
+<p>It can be a sign that the ISISICP is trying to restore from a corrupt save file (which could have been caused by running out of disk space, for example). Delete <code class="docutils literal notranslate"><span class="pre">current.run</span></code>, <code class="docutils literal notranslate"><span class="pre">data.run</span></code>, and the mysqlite db files from <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> and try again (after having made enough disk space).</p>
+</section>
+<section id="cannot-lock-named-mutex-abandoned-isisicp-process-lock">
+<h2>cannot lock named mutex (abandoned): ISISICP_PROCESS_LOCK<a class="headerlink" href="#cannot-lock-named-mutex-abandoned-isisicp-process-lock" title="Link to this heading"></a></h2>
+<p>If you see the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">Application</span><span class="p">:</span> <span class="p">[</span><span class="n">Error</span><span class="p">]</span> <span class="n">System</span> <span class="n">exception</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">lock</span> <span class="n">named</span> <span class="n">mutex</span> <span class="p">(</span><span class="n">abandoned</span><span class="p">):</span> <span class="n">ISISICP_PROCESS_LOCK</span>
+</pre></div>
+</div>
+<p>This is a sign that there may be multiple ISISICP processes running concurrently. Check for any isisicp processes running as the wrong user (e.g. admin).</p>
+<p>It can also be a sign that the ISISICP is trying to restore from a corrupt save file (which could have been caused by running out of disk space, for example). Delete <code class="docutils literal notranslate"><span class="pre">current.run</span></code>, <code class="docutils literal notranslate"><span class="pre">data.run</span></code>, and the mysqlite db files from <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> and try again (after having made enough disk space).</p>
+</section>
+<section id="saved-counts-are-very-low">
+<h2>Saved counts are very low<a class="headerlink" href="#saved-counts-are-very-low" title="Link to this heading"></a></h2>
+<p>In event mode the ISISICP will wait to get a consistent snapshot from all detector cards. If one of the detector cards has a hardware fault, it can cause the saved counts to appear to be very low. The solution in this case is to ask electronics to look into the fault/replace the faulty detector card. See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5835">ticket 5835</a> for further details of this issue.</p>
+</section>
+<section id="dae-internal-test-clock-is-at-wrong-frequency">
+<h2>DAE Internal test clock is at wrong frequency<a class="headerlink" href="#dae-internal-test-clock-is-at-wrong-frequency" title="Link to this heading"></a></h2>
+<p>Originally DAE2 had a fixed 50Hz internal test clock, newer DAE2 cards and DAE3 have a register at address 0x244 that can be set to the frame length in microseconds (so 20000 for TS1, 100000 for TS2). The DAE makes a guess as power on, but may not get this right. The ISISICP will be modified to set this, but in the meanwhile you may need to use the old “dae tester.vi” to set the value</p>
+</section>
+<section id="errors">
+<h2>errors<a class="headerlink" href="#errors" title="Link to this heading"></a></h2>
+<p>An error message like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QXTRM</span><span class="p">:</span> <span class="p">[</span><span class="n">Information</span><span class="p">]</span> <span class="n">QxtrmInterface</span><span class="p">::</span><span class="n">readWithRetry</span> <span class="n">Retrying</span> <span class="n">Null</span> <span class="n">pointer</span>
+</pre></div>
+</div>
+<p>means the control program cannot connect to the DAE. It may be the static ARP addresses have disappeared, or the DAE is switched off, or the DAE has locked up.</p>
+</section>
+<section id="histograms-show-as-disconnected-when-dae-otherwise-appears-to-be-working">
+<h2>Histograms Show as Disconnected when DAE otherwise appears to be working<a class="headerlink" href="#histograms-show-as-disconnected-when-dae-otherwise-appears-to-be-working" title="Link to this heading"></a></h2>
+<p>Sometimes, the four histograms on the DAE display do not show a plot and stay disconnected.  Data is however correctly being read from the DAE and saved to file without problems.  This may occur if the DAE hardware has previously been disconnected or switched off and the ICP has recovered its connection to the DAE apparently successfully.</p>
+<p>The DAE histogram display comes via a different route and does not recover the same way as the data acquisition does.  The solutions is to restart the DAE IOC (instructions above).</p>
+</section>
+<section id="dae-tab-showing-pink-borders">
+<h2>DAE tab showing pink borders<a class="headerlink" href="#dae-tab-showing-pink-borders" title="Link to this heading"></a></h2>
+<p>This seems to be a problem with CSS. To fix, restart the GUI.</p>
+</section>
+<section id="set-a-different-run-number">
+<h2>set a different run number<a class="headerlink" href="#set-a-different-run-number" title="Link to this heading"></a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">labview</span> <span class="pre">modules\dae\service\x64\release</span></code> you can run e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">instctrl</span><span class="o">.</span><span class="n">exe</span> <span class="n">SETVAL</span> <span class="n">RUN_NUMBER</span> <span class="mi">441</span>
+</pre></div>
+</div>
+<p>to set a new run number</p>
+</section>
+<section id="dae-ioc-cannot-start-isisicp">
+<h2>DAE IOC cannot start ISISICP<a class="headerlink" href="#dae-ioc-cannot-start-isisicp" title="Link to this heading"></a></h2>
+<p>When using EPICS ISISDAE if you see errors like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span> <span class="mi">11</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">37</span><span class="p">]</span> <span class="p">(</span><span class="n">Re</span><span class="p">)</span><span class="n">Making</span> <span class="n">local</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">ISISICP</span>
+<span class="p">[</span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span> <span class="mi">11</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">37</span><span class="p">]</span> <span class="n">CoCreateInstance</span><span class="p">()</span> <span class="n">failed</span> <span class="k">with</span> <span class="n">error</span> <span class="o">-</span><span class="mi">2147024809</span><span class="p">,</span> <span class="n">retrying</span> <span class="k">with</span> <span class="n">CLSCTX_ALL</span>
+<span class="p">[</span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span> <span class="mi">11</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">37</span><span class="p">]</span> <span class="n">updateRunStatus</span> <span class="n">exception</span><span class="p">:</span> <span class="n">CoCreateInstance</span> <span class="p">(</span><span class="n">ISISICP</span><span class="p">)</span> <span class="p">:</span> <span class="n">The</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">incorrect</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This likely means that the isisicp did not write the registry entries. This has only been seen on windows server machines.
+To solve, import appropriate isisicp reg file from the isisicp install location (<code class="docutils literal notranslate"><span class="pre">isisicp_icp_binaries.reg</span></code> or <code class="docutils literal notranslate"><span class="pre">isisicp_lv_modules.reg</span></code>) using <code class="docutils literal notranslate"><span class="pre">regedit</span></code></p>
+<p>If you get</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span> <span class="mi">11</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">06</span><span class="p">]</span> <span class="p">(</span><span class="n">Re</span><span class="p">)</span><span class="n">Making</span> <span class="n">local</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">ISISICP</span>
+<span class="p">[</span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span> <span class="mi">11</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">06</span><span class="p">]</span> <span class="n">CoCreateInstance</span><span class="p">()</span> <span class="n">failed</span> <span class="k">with</span> <span class="n">error</span> <span class="o">-</span><span class="mi">2147024891</span><span class="p">,</span> <span class="n">retrying</span> <span class="k">with</span> <span class="n">CLSCTX_ALL</span>
+<span class="p">[</span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span> <span class="mi">11</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">06</span><span class="p">]</span> <span class="p">(</span><span class="n">Re</span><span class="p">)</span><span class="n">Making</span> <span class="n">local</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">ISISICPsevr</span><span class="o">=</span><span class="n">major</span> <span class="n">CoCreateInstance</span> <span class="p">(</span><span class="n">ISISICP</span><span class="p">)</span> <span class="p">:</span> <span class="n">Access</span> <span class="ow">is</span> <span class="n">denied</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This is a dcom access permission, most likely seen in jenkins as they run under a domain rather than local account.
+Again, only seen on windows server. To resolve:</p>
+<ul class="simple">
+<li><p>add account trying to run isisicp to “distributed com users” local windows group</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">dcomcnfg</span></code> command and make sure “distributed com users” has appropriate default permissions (it should already have appropriate limit permissions, but check)</p></li>
+</ul>
+<p>If you get the error “server execution failure” (seen on MUONFE) and also the system log has errors/crashes mentioning <code class="docutils literal notranslate"><span class="pre">visa64.dll</span></code> then you need to copy all the DLL files in <code class="docutils literal notranslate"><span class="pre">c:\labview</span> <span class="pre">modules\dae\service\x64\visa</span></code> into <code class="docutils literal notranslate"><span class="pre">c:\labview</span> <span class="pre">modules\dae\service\x64\release</span></code>. This probably indicates an incompatibility between the system installed visa and what isisicp is expecting. Only seen on MUONFE which runs in simulation mode, so not worried about which visa version being used. If seen on a DAE2 instrument may need more looking at as these machines use visa client-server to the NDH, and the visa versions either end need to match to some level.</p>
+<section id="dae-not-showing-period-changes-in-nexus-data-file-when-running-in-event-mode">
+<h3>DAE not showing period changes in NeXus data file when running in event mode<a class="headerlink" href="#dae-not-showing-period-changes-in-nexus-data-file-when-running-in-event-mode" title="Link to this heading"></a></h3>
+<p>Due to a historical problem with electronic noise causing random period changes, many instruments have a setting enable to set the period number to 1 in event mode data events regardless of what the DAE claims it is. To make the DAE vale be used you will need to edit <code class="docutils literal notranslate"><span class="pre">isisicp.properties</span></code> in <code class="docutils literal notranslate"><span class="pre">c:\labeview</span> <span class="pre">modules\dae</span></code> and add/update the line to be <code class="docutils literal notranslate"><span class="pre">isisicp.badheaderworkaround</span> <span class="pre">=</span> <span class="pre">false</span></code> then restart the <code class="docutils literal notranslate"><span class="pre">isisicp</span></code> process</p>
+</section>
+<section id="cycle-number-not-updating">
+<h3>cycle number not updating<a class="headerlink" href="#cycle-number-not-updating" title="Link to this heading"></a></h3>
+<p>The isis cycle is contained in a local file <code class="docutils literal notranslate"><span class="pre">setcycle.cmd</span></code> on the NDX that is read by the <code class="docutils literal notranslate"><span class="pre">end_of_run.cmd</span></code> which will also update this file to the most recent copy from the mapped o: drive on the NDX. If the cycle number is not updating then:</p>
+<ul class="simple">
+<li><p>sometimes the first run in a cycle gets given the wrong number in the data file, but is put in the correct cycle directory. This is a “feature” as the cycle number is updated as part of copying the file, hence the file will already have been written using the previous number.</p></li>
+<li><p>if all files are in the wrong cycle, either the central copy has not been updated, or the <code class="docutils literal notranslate"><span class="pre">o:</span></code> drive on the instrument has become disconnected so it is not being updated to the latest version</p></li>
+</ul>
+<p>to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials. Then check that <code class="docutils literal notranslate"><span class="pre">o:\setcycle.cmd</span></code> has the correct cycle number.</p>
+</section>
+<section id="journal-has-run-number-in-incorrect-cycle">
+<h3>journal has run number in incorrect cycle<a class="headerlink" href="#journal-has-run-number-in-incorrect-cycle" title="Link to this heading"></a></h3>
+<p>as mentioned above, the cycle number is set by running the <code class="docutils literal notranslate"><span class="pre">setcycle</span></code> command but this is run at run end. When the cycle is updated on <code class="docutils literal notranslate"><span class="pre">o:</span></code> it is often copied to instruments, but if a run is already in progress when the cycle is updated, then the journal will use an incorrect cycle number but the raw file will use a correct one. This issue should be fixed in newer ISISICP but this will take a while to roll out.</p>
+<p>To fix this you need to edit the two cycle XML <code class="docutils literal notranslate"><span class="pre">journal_*_*.xml</span></code> files in <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> involved and move the XML run number block involved from the incorrect XML file to the correct one. Next time a run ends, these updated xml files will get copied to the correct place.</p>
+</section>
+<section id="run-stuck-in-ending-when-using-period-card">
+<h3>run stuck in ending when using period card<a class="headerlink" href="#run-stuck-in-ending-when-using-period-card" title="Link to this heading"></a></h3>
+<p>Check icp log file. If it says “waiting for period card” and beam is off, then the issue is that a default end waits to complete the current period cycles, which if beam is off is not going to happen (no trigger signal for frames). Solution is to type <code class="docutils literal notranslate"><span class="pre">g.end(immediate=True)</span></code> in a python console.</p>
+<p>If the instrument is not using hardware periods via a period card, then the <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> disk area may be full. If it is running in event mode it will get stuck in ending and be be unable to write a data file if it has already filled the disk with raw events. Check nagios and/or the computer. See below.</p>
+</section>
+</section>
+<section id="run-stuck-in-ending-or-data-files-not-being-created">
+<h2>run stuck in ending or data files not being created<a class="headerlink" href="#run-stuck-in-ending-or-data-files-not-being-created" title="Link to this heading"></a></h2>
+<p>If data files are not appearing on the archive or in the instrument journal viewer, it may be the end process has not completed. After an END is issued remaining data is read from the DAE and then a separate thread in the ISISICP process is spawned to complete the end process. To avoid too many of these threads running at once, they all share an internal semaphore. If somethings gets stuck in the ending process, then runs will not complete. You can see this by there being lots of <code class="docutils literal notranslate"><span class="pre">current.run*</span></code>, <code class="docutils literal notranslate"><span class="pre">data.run*</span></code>, and <code class="docutils literal notranslate"><span class="pre">events*.tmp</span></code> files in <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> on the NDX instrument. Normally you should only see files for the current run number and maybe the previous run number if the END is still happening in the background. If you see many more than this it would indicate a problem.</p>
+<p>To resolve the problem you need to restart the ISISICP in failed run recovery mode.</p>
+<ul class="simple">
+<li><p>make sure NDX instrument machine in SETUP</p></li>
+<li><p>edit <code class="docutils literal notranslate"><span class="pre">c:\labview</span> <span class="pre">modules\dae\isisicp.properties</span></code> and add/amend a line to say <code class="docutils literal notranslate"><span class="pre">isisicp.failedends.rerun</span> <span class="pre">=</span> <span class="pre">true</span></code></p></li>
+<li><p>kill the <code class="docutils literal notranslate"><span class="pre">isisicp.exe</span></code> process</p></li>
+<li><p>the process should now restart and re-save the missing runs</p></li>
+<li><p>re-Edit <code class="docutils literal notranslate"><span class="pre">isisicp.properties</span></code> and comment out the <code class="docutils literal notranslate"><span class="pre">isisicp.failedends.rerun</span></code> line so it will not automatically do any reruns on next restart. This is just in case a later run failed to end and crashed the program due to corrupt data, if it tried to re-end this on restart you might get into an infinite isisicp re-end crashing loop.</p></li>
+</ul>
+</section>
+<section id="corrupted-max-database">
+<h2>corrupted MAX database<a class="headerlink" href="#corrupted-max-database" title="Link to this heading"></a></h2>
+<p>for DAE2 systems the VME connection should be visible in the NI measurement and automation explorer, if when you try and view it you get</p>
+<p><img alt="Capture" src="../../_images/DAE-Trouble-Shooting-corrupted-max-database.PNG" /></p>
+<p>you probably need to follow <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8awSAC&amp;amp;l=en-GB">https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8awSAC&amp;l=en-GB</a></p>
+</section>
+<section id="isisicp-program-crashed-and-cannot-restart-c-data-area-full">
+<h2>ISISICP program crashed and cannot restart, <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> area full<a class="headerlink" href="#isisicp-program-crashed-and-cannot-restart-c-data-area-full" title="Link to this heading"></a></h2>
+<p>If you need to recover a system that has filled up its <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> area due to a long event mode run with e.g. noisy detectors then you can use the following. This assumes the scientists do not need the data, you can move the files off instrument but recovery is hard and may not be possible.</p>
+<ul class="simple">
+<li><p>log onto NDX computer</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">stop_ibex_server</span></code></p></li>
+<li><p>open <code class="docutils literal notranslate"><span class="pre">c:\data</span></code> in windows explorer and sort files by name</p></li>
+<li><p>look for a very large <code class="docutils literal notranslate"><span class="pre">eventsYYYYY.tmp</span></code> file, make a note of the <code class="docutils literal notranslate"><span class="pre">YYYYY</span></code> number and then select and <code class="docutils literal notranslate"><span class="pre">shift+delete</span></code> this file (you do not want to move it to recycle bin - make sure the prompt says “permanently delete this file” and not “delete this file”)</p></li>
+<li><p>Also now shift+delete <code class="docutils literal notranslate"><span class="pre">current.run</span></code>, <code class="docutils literal notranslate"><span class="pre">current.runYYYYY</span></code>, <code class="docutils literal notranslate"><span class="pre">data.run</span></code>, <code class="docutils literal notranslate"><span class="pre">data.runYYYYY</span></code></p></li>
+<li><p>open <code class="docutils literal notranslate"><span class="pre">c:\data\events</span></code> and shift+delete the folder <code class="docutils literal notranslate"><span class="pre">run_YYYYY</span></code></p></li>
+<li><p>start ibex again</p></li>
+</ul>
+<p>Hopefully there is either only one <code class="docutils literal notranslate"><span class="pre">eventsYYYYY.tmp</span></code> file, or the most recent one (largest YYYYY number) is also the largest in size. If there are several files making a decision may need a bit more thought. It is possible that a very large run was done earlier which nearly filled up the disk, then a new one was started that pushed it over the limit while the previous one was ending in the background. Check with the scientists if it is ok to delete this earlier bigger run. You should always delete all YYYYY files corresponding to the run that was in progress when the system filled up, but you may also need to handle an earlier YYYYY number set of files to free up enough disk space.</p>
+<p>For info, the <code class="docutils literal notranslate"><span class="pre">eventsYYYYY.tmp</span></code> file is the NeXus HDF5 file being written as the run goes along, and the <code class="docutils literal notranslate"><span class="pre">run_YYYYY</span></code> folder is the raw events read from the electronics. The <code class="docutils literal notranslate"><span class="pre">.tmp</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> during an END is nothing has gone wrong, otherwise raw events can be replayed from <code class="docutils literal notranslate"><span class="pre">run_YYYYY</span></code> to create a NeXus file from scratch</p>
+<p>If the run number comes back incorrectly (like as <code class="docutils literal notranslate"><span class="pre">000001</span></code>) then it means <code class="docutils literal notranslate"><span class="pre">c:\data\recovery.run</span></code> has been corrupted. There are backup weekday copies in c:\data e.g. <code class="docutils literal notranslate"><span class="pre">recovery.run_Thu</span></code> so you can pick one to copy to <code class="docutils literal notranslate"><span class="pre">recovery.run</span></code> however note that this may include an old run number so after restarting you may need to reset the run number (see on this page). Looking at file sizes of <code class="docutils literal notranslate"><span class="pre">recovery.run_*</span></code> to see which looks to be the most recent good one.</p>
+<p>If after the above you get SQLite/selogger database errors in the isisicp log, then stop isisdae/isisicp and delete <code class="docutils literal notranslate"><span class="pre">c:\data\selog.*</span></code> (<code class="docutils literal notranslate"><span class="pre">.sq3</span></code>, <code class="docutils literal notranslate"><span class="pre">.sq3-shm</span></code>, and <code class="docutils literal notranslate"><span class="pre">.sh3-wal</span></code> files)</p>
+</section>
+<section id="sqlite-database-is-very-large">
+<h2>SQLite database is very large<a class="headerlink" href="#sqlite-database-is-very-large" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">selog.sq3</span></code> file in <code class="docutils literal notranslate"><span class="pre">C:/Data</span></code> is used by ISISICP to store log data prior to a run end, it is then purged. It will normally only get very big if a run has not been ended for a long time, which either happens over a shutdown if logging has been left running, or on systems that do not often end runs such as RIKENFE, MUONFE, DETMON, HIFI-CRYOMAG etc. The solution is to begin and end a run, though on HIFI-CRYOMAG the scientist will normally do this themselves once a cycle to keep log data together in the same data file, so consult with them if it needs doing. Ending a run may take a while and will happen in the background, so don’t stop ibex as soon as you get back to SETUP as it will likely not have finished saving. If you need to stop ibex, wait until the data file for the run you have saved appears in the archive.</p>
+</section>
+<section id="instrument-state-keeps-processing-but-always-goes-back-to-unknown">
+<h2>Instrument state keeps ‘Processing’ but always goes back to ‘Unknown’<a class="headerlink" href="#instrument-state-keeps-processing-but-always-goes-back-to-unknown" title="Link to this heading"></a></h2>
+<p>Check to see if you have any errors similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">16</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">49</span><span class="p">]</span> <span class="n">CoCreateInstanceEx</span> <span class="p">(</span><span class="n">ISISICP</span><span class="p">)</span> <span class="p">:</span> <span class="n">Class</span> <span class="ow">not</span> <span class="n">registered</span>
+</pre></div>
+</div>
+<p>If so, you haven’t registered your <code class="docutils literal notranslate"><span class="pre">isisicp.exe</span></code> program with the registry. Follow the steps to <a class="reference internal" href="../../overview/First-Time-Build.html#first-time-install-configure-dae"><span class="std std-ref">Configure DAE for simulation mode on developer’s computer</span></a></p>
+</section>
+<section id="multiple-vxi-devices">
+<h2>Multiple VXI devices<a class="headerlink" href="#multiple-vxi-devices" title="Link to this heading"></a></h2>
+<p>If you have multiple DAE2 VME crates then you will legitimately have multiple VXI devices in NI MAX. However there are cases when you can get two devices showing in MAX but have only one device in reality. This is usually because of either:</p>
+<ul class="simple">
+<li><p>The DAE USB cable has been moved into a different USB port on the PC</p></li>
+<li><p>the DAE NI USB card has been changed</p></li>
+</ul>
+<p>in these cases when the “scan for new hardware” happens on the PC, it thinks it has found a new device. Usually you will have a disconnected VXI0 and a new VXI1 device. To remedy the situation</p>
+<ul class="simple">
+<li><p>stop visa server in NI max</p></li>
+<li><p>delete VXI0</p></li>
+<li><p>rename VXI1 to VXI0 (change the system identifier number in the menu for the device from 1 to 0)</p></li>
+<li><p>start visa server</p></li>
+</ul>
+<p><strong>Full rebuild, if above doesn’t work</strong>:</p>
+<ul class="simple">
+<li><p>stop visa server in NI max</p></li>
+<li><p>delete all VXI* device</p></li>
+<li><p>view refresh</p></li>
+<li><p>as admin run <code class="docutils literal notranslate"><span class="pre">compmgmt.msc</span></code></p></li>
+<li><p>computer management -&gt; device manager -&gt; right click scan for hardware changes on NDH computer name and possibly USB sub tree too</p></li>
+<li><p>close and reopen NIMAX</p></li>
+<li><p>if VXI0 now appears, jump to “add VME device” step below</p></li>
+<li><p>if it is still not showing reboot NDH computer, after reboot visa server may be running again so stop it</p></li>
+<li><p>right click on Frame0 of VXI0 and “add VME device” then choose DAE2 from VME profile</p></li>
+<li><p>start visa server</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="DAE-Pre-and-Post-commands.html" class="btn btn-neutral float-left" title="DAE Pre &amp; Post commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Dae-Spectra-Updating-Problem.html" class="btn btn-neutral float-right" title="Dae Spectra Updating Problem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

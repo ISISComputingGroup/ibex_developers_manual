@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding new modules &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Automation Application" href="Automation-Application.html" />
+    <link rel="prev" title="Git and Github" href="../Git-and-GitHub.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding new modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automation-Application.html">Automation Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Getting-started-with-Git-and-GitHub.html">Getting started with git and github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Cleanup.html">Git cleanup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Commands.html">Useful Git commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-workflow.html">Git workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Making-the-IBEX-workflow-work-with-SSH-authentication.html">Git and SSH key authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="New-Local-Git-Repository.html">New local git repository</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Git-and-GitHub.html">Git and Github</a></li>
+      <li class="breadcrumb-item active">Adding new modules</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/git_and_github/Adding-new-modules-via-Git.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-new-modules">
+<h1>Adding new modules<a class="headerlink" href="#adding-new-modules" title="Link to this heading"></a></h1>
+<p>There are two use cases for adding a submodule:</p>
+<ol class="arabic">
+<li><p>When the code is new, e.g. for a support module for a new device (Marked with <strong>New</strong> below)</p></li>
+<li><p>When importing code from a 3rd Party e.g. a fork of another github project (Marked with <strong>3rd party</strong> below)</p>
+<blockquote>
+<div><p>For most cases, this should be done by forking the repo, as it makes dependency updates <em>much</em> simpler to manage. However, there are instructions included on this page for how to do this without simply forking a repo, covered in 3a “3rd Party Initial Import”. This should only be used in cases where forking is not possible for some extreme edge case. In most cases, forking a repo, creating an “IBEX” branch, and setting that branch as default in our ISISComputingGroup will suffice.</p>
+</div></blockquote>
+</li>
+</ol>
+<section id="create-submodule-in-github">
+<h2>1 Create submodule in GitHub<a class="headerlink" href="#create-submodule-in-github" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create a new GitHub repository using the “new repository” button on <a class="reference external" href="https://github.com/ISISComputingGroup">https://github.com/ISISComputingGroup</a>. Name it and fill in a description. The naming conventions are:</p>
+<ul class="simple">
+<li><p>EPICS submodules should have an “EPICS-” prefix, e.g. for support modules.</p></li>
+</ul>
+</li>
+<li><p>Decide on public or private repository, if you create it private one you can easily make it public later, but there is a limit on how many private repositories we can have at any one time. Repositories should be private if we do not wish to share the code.</p></li>
+<li><p>Start choice:</p>
+<ul class="simple">
+<li><p><strong>3rd Party</strong> Create a blank repository i.e. without a README, licence or <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p></li>
+<li><p><strong>New</strong> Create a repository with a readme, but no <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> or licence. When it is created Use ISIS <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> files.</p></li>
+</ul>
+</li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Repository</span></code></p></li>
+<li><p>Add team access</p>
+<ul class="simple">
+<li><p>Select Settings tab</p></li>
+<li><p>Manage Access (left)</p></li>
+<li><p>Click “Invite teams or people” and add both <code class="docutils literal notranslate"><span class="pre">ICP-Write</span></code> (give this <code class="docutils literal notranslate"><span class="pre">Write</span></code> access) and <code class="docutils literal notranslate"><span class="pre">ICP-WriteAndMerge</span></code> (give this <code class="docutils literal notranslate"><span class="pre">Maintain</span></code> access) to the repository</p></li>
+<li><p>If it is a private repository also add <code class="docutils literal notranslate"><span class="pre">ICP-Read</span></code> as <code class="docutils literal notranslate"><span class="pre">Read</span></code> access</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="get-the-repository">
+<h2>2 Get the repository<a class="headerlink" href="#get-the-repository" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Move to a new branch in the EPICS directory for your ticket.</p></li>
+<li><p>Create a directory root for the submodule, e.g. for Danfysik in support</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="n">EPICS</span><span class="o">/</span><span class="n">support</span>
+    <span class="n">mkdir</span> <span class="n">danfysikMps8000</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Add a Makefile in the directory, copy it from e.g. ../calc/Makefile</p></li>
+<li><p>Adjust the Makefile in the parent directory to include the new module, e.g. add to <code class="docutils literal notranslate"><span class="pre">SUPPDIRS</span></code> in <code class="docutils literal notranslate"><span class="pre">...EPICS\support\Makefile</span></code>.</p></li>
+<li><p>Add all changes to git.</p></li>
+</ol>
+</section>
+<section id="a-3rdparty-initial-import">
+<h2>3a <em>3rdParty</em> Initial import<a class="headerlink" href="#a-3rdparty-initial-import" title="Link to this heading"></a></h2>
+<p>Software imported from outside should use a “vendor branch” so new versions are easy to merge in.</p>
+<ol class="arabic simple">
+<li><p>Create new git repository called master:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="n">EPICS</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">danfysik8000</span>
+    <span class="n">mkdir</span> <span class="n">master</span>
+    <span class="n">cd</span> <span class="n">master</span>
+    <span class="n">git</span> <span class="n">init</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Unpack the initial vendor code. Often unpacking the code on Linux is preferred as there are less line endings issues.</p></li>
+<li><p>If it unpacks to something like 1-11/… then move everything up a level. You want the top level directory to contain the usual EPICS configure and *App directory layout.</p></li>
+<li><p>Delete any files that are not source files or directories e.g. O.Common, O.linux-x86 , top level bin and lib, db that might have got left in.</p></li>
+<li><p>Delete any .svn directories and files that end in a ~ (temporary files). Then add the files and push to GitHub</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+   <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Imported danfysik 8000 version 1.11&quot;</span>
+   <span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">EPICS</span><span class="o">-</span><span class="n">danfysik8000</span><span class="o">.</span><span class="n">git</span>
+   <span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Create the vendor branch</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">vendor</span>
+    <span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="n">vendor_1_11</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Tag of danfysik 8000 import version 1.11&quot;</span>
+    <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">vendor</span>
+    <span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">tags</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Switch to the branch for your ticket (When you create the pull request it can be created from this branch to master):</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">checkout</span> <span class="n">TicketXXX_description</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Make local changes.</p>
+<ul class="simple">
+<li><p>Create a readme.md to say where we got the code originally from</p></li>
+<li><p>Add an initial <code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> and <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (often using a copy from an older repo).</p></li>
+</ul>
+</li>
+<li><p>Make sure it builds. You’ll probably need to update <code class="docutils literal notranslate"><span class="pre">configure/RELEASE</span></code> to be like e.g. <code class="docutils literal notranslate"><span class="pre">../calc/master/configure/RELEASE</span></code>. Also check the Makefile for both *App and *app targets as well as iocBoot and iocboot - on windows this results in a double match due to case insensitivity, so remove the the *app and iocboot</p></li>
+</ol>
+</section>
+<section id="b-new-initial-import">
+<h2>3b <em>New</em> Initial import<a class="headerlink" href="#b-new-initial-import" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Clone the repository in to the correct directory with the directory name master:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="n">EPICS</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">danfysik8000</span>
+    <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/&lt;</span><span class="n">repo</span> <span class="n">name</span><span class="o">&gt;.</span><span class="n">git</span> <span class="n">master</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Switch to the branch for your ticket (When you create the pull request it can be created from this branch to master):</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">checkout</span> <span class="n">TicketXXX_description</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Edit/Create a readme.md to say what the module does</p></li>
+<li><p>Add an initial <code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> and <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (often using a copy from an older repo).</p></li>
+</ol>
+</section>
+<section id="adding-module-as-submodule">
+<h2>4 Adding module as submodule<a class="headerlink" href="#adding-module-as-submodule" title="Link to this heading"></a></h2>
+<p>This should be undertaken by the reviewer as part of the merge process to avoid issues with merge conflicts in epics top caused by IOC master.</p>
+<ol class="arabic">
+<li><p>Add the new repository as a submodule:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">EPICS</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">danfysik8000</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">add</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">EPICS</span><span class="o">-</span><span class="n">danfysikMps8000</span><span class="o">.</span><span class="n">git</span> <span class="n">master</span>
+</pre></div>
+</div>
+<p>note: if the default branch is not <code class="docutils literal notranslate"><span class="pre">master</span></code> e.g. <code class="docutils literal notranslate"><span class="pre">main</span></code> is now the default on github then you must specify this with <code class="docutils literal notranslate"><span class="pre">-b</span></code> e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">git</span> <span class="n">submodule</span> <span class="n">add</span> <span class="o">-</span><span class="n">b</span> <span class="n">main</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">EPICS</span><span class="o">-</span><span class="n">danfysikMps8000</span><span class="o">.</span><span class="n">git</span> <span class="n">master</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">master</span></code> at the end of the command is the local directory name, which we are keeping the same at the moment.
+If you forget to do this, then you can edit <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> at the top level directly and add a <code class="docutils literal notranslate"><span class="pre">branch</span> <span class="pre">=</span> <span class="pre">main</span></code> line to the submodule entry (see other entries in the file for example), then commit and push this change.</p>
+</li>
+<li><p>Add the files generated by adding the submodule</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">EPICS</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span><span class="n">gitmodules</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Add danfysikMps8000 submodule&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Next make sure that the whole thing builds from the support level (this will only work for a vendor branch).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>\<span class="n">EPICS</span>\<span class="n">support</span>
+<span class="n">make</span> <span class="n">danfysikMps8000</span>
+<span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+</li>
+<li><p>Adjust <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> and <code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> to make sure they don’t contain file that you have just built. Check <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">uninstall</span></code> works.</p></li>
+</ol>
+<p>Once all the changes in the submodule are merged, create a commit in EPICS top using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;add</span> <span class="pre">submodule</span> <span class="pre">&lt;module</span> <span class="pre">name&gt;&quot;</span></code>, and then pushing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--recurse-submodule=check</span></code>.</p>
+</section>
+<section id="updating-vendor-branch">
+<h2>Updating vendor branch<a class="headerlink" href="#updating-vendor-branch" title="Link to this heading"></a></h2>
+<p>Here we will update the vendor branch with new code, tag this revision, and then use a separate branch to merge new upstream changes into master</p>
+<p>First create your update branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span> <span class="c1"># or main</span>
+    <span class="n">git</span> <span class="n">pull</span>
+    <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">TicketXXX_update_to_danfysik_1_12</span>
+</pre></div>
+</div>
+<p>now checkout the vendor branch and remove all local files. You need to remove all current files before you unpack the new files or else you will either not pick up files removed in the latest version, or a file that is renamed will not get tracked properly by git as the original will still exist in your local source.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># If in git bash shell:</span>
+    <span class="n">git</span> <span class="n">checkout</span> <span class="n">vendor</span>
+    <span class="n">git</span> <span class="n">pull</span>
+    <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="o">*</span>
+    <span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+    <span class="c1"># now remove any file or directory starting with a `.` but _do not_ remove `.git`</span>
+</pre></div>
+</div>
+<p>Then unpack the new code from the zip/tar into the directory in the same way as above. You’ll have files added, removed and changed to handle. Type  <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>  and remove unwanted added files like binaries and temporary files as described above. Then type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">u</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This will add changed files. Again check with a   <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>  that all is looking right before using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>which adds new and removes deleted files. As a final check run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">status</span> <span class="o">--</span><span class="n">ignored</span>
+</pre></div>
+</div>
+<p>This will show files in the directory currently ignored by git via a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>. As you started from an empty directory, and unpacked a clean vendor release, consider carefully whether these files should actually be added. If they should, you will need to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-f</span></code> to force an add. There are several reasons why files may get ignored when they should be added:</p>
+<ul class="simple">
+<li><p>Windows/Unix case sensitivity difference. A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> may contain <code class="docutils literal notranslate"><span class="pre">db</span></code> or <code class="docutils literal notranslate"><span class="pre">db/</span></code> as a directory to ignore. The top level <code class="docutils literal notranslate"><span class="pre">db</span></code> directory is usually a top level install directory to be ignored, the real files are in the <code class="docutils literal notranslate"><span class="pre">*App/Db</span></code> subdirectory. However as the windows file system is case insensitive git treats <code class="docutils literal notranslate"><span class="pre">db</span></code> and <code class="docutils literal notranslate"><span class="pre">Db</span></code> as the same so just <code class="docutils literal notranslate"><span class="pre">db</span></code> in a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> will incorrectly exclude <code class="docutils literal notranslate"><span class="pre">*App/Db</span></code> files and cause us to miss adding them. We usually change a <code class="docutils literal notranslate"><span class="pre">db</span></code> to something more selective in our local <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> version post merge e.g. <code class="docutils literal notranslate"><span class="pre">/db/</span></code> means only match <code class="docutils literal notranslate"><span class="pre">db</span></code> at top level and not in subdirectories. There may be other case sensitivity issues, but this is the most common one.</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> pattern may be too selective for importing. For example it may exclude <code class="docutils literal notranslate"><span class="pre">*.local</span></code> to ignore files like <code class="docutils literal notranslate"><span class="pre">RELEASE.local</span></code> created later during development, but the distribution has an <code class="docutils literal notranslate"><span class="pre">EXAMPLE_RELEASE.local</span></code> that should be imported by us.</p></li>
+</ul>
+<p>Unless a new file is obviously included by error in the distribution, it is probably best to import everything in the vendor release distribution zip/tar file.</p>
+<p>Finally commit and tag the changes e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Imported danfysik 8000 version 1.12&quot;</span>
+    <span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="n">vendor_1_12</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Tag of danfysik 8000 import version 1.12&quot;</span>
+    <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">vendor</span>
+    <span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">tags</span>
+</pre></div>
+</div>
+<p>Now go back to your ticket branch that was branched from the old master/main and merge in new version of vendor code via tag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">checkout</span> <span class="n">TicketXXX_update_to_danfysik_1_12</span>
+    <span class="n">git</span> <span class="n">pull</span>
+    <span class="n">git</span> <span class="n">merge</span> <span class="n">vendor_1_12</span>
+</pre></div>
+</div>
+<p>And resolve conflicts before committing. Now create a PR to merge <code class="docutils literal notranslate"><span class="pre">TicketXXX_update_to_danfysik_1_12</span></code> branch into main/master</p>
+<section id="important-checking-a-vendor-branch-update">
+<h3>IMPORTANT: checking a vendor branch update<a class="headerlink" href="#important-checking-a-vendor-branch-update" title="Link to this heading"></a></h3>
+<p>First, you need to be sure your tar/zip contained what you expected. If it came from an official release web page, probably fine. If it was just an auto-created github tagged version then it may be missing a lot of files. github will zip up a repository for you, if the repository contains submodules however these will not get included in the auto generated zip. In this cases if you just take the zip file from github you will end up remove lots of files you really wanted to update. If you do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and see loads of files being removed, this may have happened. The epics motor and areaDetector modules are cases where care need to be taken.</p>
+<p>You should confirm the number of changes in your new update branch when compared to the new vendor it is based on looks reasonable. For example if our current master when compared to its original old vendor branch had changed 5 files, then after updating vendor and merging you would expect to see something like the same number of file changes. You can do this via git branch compare: compare current master with old vendor tag, and new update branch with new vendor branch tag. The number of changes will not always be identical in the new vendor branch as we do feed some of our changes back upstream if they are not locally specific hence those changes will not need re-applying and no longer show up as a changed file. If you see a large increase in files differences, this likely indicates a merge issue.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Git-and-GitHub.html" class="btn btn-neutral float-left" title="Git and Github" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Automation-Application.html" class="btn btn-neutral float-right" title="Automation Application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

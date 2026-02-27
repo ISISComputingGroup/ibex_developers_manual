@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Record simulation &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Running IOCs locally" href="Running-IOCs.html" />
+    <link rel="prev" title="IOC Testing framework" href="IOC-Testing-Framework.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-sim-records-script.html">Add sim records script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Disable-records.html">Disable records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Emulating-Devices.html">Emulating devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Testing-Framework.html">IOC Testing framework</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Record simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-IOCs.html">Running IOCs locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-IOCs.html#simulation-mode">Simulation Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Setting-up-googleTest-to-work-with-EPICS-build-process.html">Google Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">Record simulation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/testing/Record-Simulation.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="record-simulation">
+<h1>Record simulation<a class="headerlink" href="#record-simulation" title="Link to this heading"></a></h1>
+<p>EPICS supports the concept of running IOC records in “simulation mode” - here rather than reading input/output from devices
+according to the INP/OUT fields the record will bypass hardware and use an alternative value. We should only need to add this support to records that access hardware, other records should be able to work as normal on these supplied simulated values.</p>
+<p>Simulated values can either be a constant, or can be read/written to another PV location. The principle we will use here is to create a set of dummy records named $(P)SIM:* to which we will read and write values, hence allowing us to join a set and a read together. Initially these dummy records will be “Soft Channel” analogue/binary records which will be joined so that readback and set are connected, in future these records could be pointed at a dummy ioc mechanism to e.g. smoothly ramp.</p>
+<p>Though a simulated motor exists, it is probably still worth doing record simulation for e.g. jaws as it provides a convenient way to test GUIs without having to start additional IOCs</p>
+<p>The EPICS record has to initialise first before simulation mode is enabled internally, and this is where problems can occur. Some drivers will try to read a value from the hardware at record initialisation, and if this fails they leave the record in an error state that stops simulation mode working. If you see PACT is stuck at 1 this is typical of a failed record initialisation. You will either need to fix the device driver, or avoid this record when using recsim.</p>
+<p>There are several cases where recsim doesn’t work properly (or not without significant extra work):</p>
+<ul class="simple">
+<li><p>Records with <code class="docutils literal notranslate"><span class="pre">PINI=&quot;YES&quot;</span></code> - initialisation runs before channel access is active which causes issues.</p></li>
+<li><p>For I/O interrupt records there will be no hardware to trigger, but you can use the SSCN (simulation scan mode)</p></li>
+<li><p>Records that get pushed to from a protocol file, as the protocol file will not be run.</p></li>
+<li><p>MBBI/MBBO records with Soft channel device support. Soft channel doesn’t populate <code class="docutils literal notranslate"><span class="pre">RVAL</span></code>, it is possible to work around this in some simple cases but often the benefit of adding recsim to these records is not worth the time to get it to work.</p></li>
+</ul>
+<p>There is a <a class="reference internal" href="Add-sim-records-script.html"><span class="doc std std-doc">script to help</span></a>.
+First add the following record that will be used to indicate if simulation mode is being used (this will have been done for you if you used the <a class="reference internal" href="../creation/IOC-Generator.html"><span class="doc std std-doc">device generator script</span></a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">bo</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM&quot;</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;Soft Channel&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">ZNAM</span><span class="p">,</span> <span class="s2">&quot;NO&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">ONAM</span><span class="p">,</span> <span class="s2">&quot;YES&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">VAL</span><span class="p">,</span> <span class="s2">&quot;$(RECSIM=0)&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Add to the IOC in the db load (this will have been done for you if you used the <a class="reference internal" href="../creation/IOC-Generator.html"><span class="doc std std-doc">device generator script</span></a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>RECSIM=$(RECSIM=0)
+</pre></div>
+</div>
+<p>next you need to modify any records that talk to real hardware (i.e. those where DTYP is not “Soft Channel” or “Raw Soft Channel”). You add the SIML field (to tell the record whether it should run in simulation mode) and the SIOL fields (to tell it where to read/write values when in simulation mode). For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">ai</span><span class="p">,</span> <span class="s2">&quot;$(P)CURRENT&quot;</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;1 second&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@kepco.proto readActualCurrent $(PORT)&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">EGU</span><span class="p">,</span>  <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SIML</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SIOL</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM:CURRENT&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">ao</span><span class="p">,</span> <span class="s2">&quot;$(P)CURRENT:SP&quot;</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span>  <span class="s2">&quot;@kepco.proto writeCurrent $(PORT)&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">EGU</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SIML</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SIOL</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM:CURRENT:SP PP&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">ai</span><span class="p">,</span> <span class="s2">&quot;$(P)CURRENT:SP:RBV&quot;</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;1 second&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@kepco.proto readSetpointCurrent $(PORT)&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">EGU</span><span class="p">,</span>  <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SIML</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SIOL</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM:CURRENT:SP:RBV&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We now need to add, and join if necessary, the relevant $(P)SIM dummy records. For the moment we will just do a simple join of the records by creating an alias - however by using an alias rather than pointing at a single PV we allow a future option of using a soft IOC to e.g. ramp values smoothly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">ao</span><span class="p">,</span> <span class="s2">&quot;$(P)SIM:CURRENT&quot;</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;Soft Channel&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">alias</span><span class="p">(</span><span class="s2">&quot;$(P)SIM:CURRENT&quot;</span><span class="p">,</span><span class="s2">&quot;$(P)SIM:CURRENT:SP&quot;</span><span class="p">)</span>
+
+<span class="n">alias</span><span class="p">(</span><span class="s2">&quot;$(P)SIM:CURRENT&quot;</span><span class="p">,</span><span class="s2">&quot;$(P)SIM:CURRENT:SP:RBV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To link the simulation to a record that is passively scanning you should add <code class="docutils literal notranslate"><span class="pre">field(FLNK,</span> <span class="pre">&quot;&lt;SOFT_CHANNEL_RECORD&gt;&quot;)</span></code> to the simulation record.</p>
+<p>For more information on fields in simulation records see <a class="reference external" href="https://epics.anl.gov/base/R7-0/6-docs/dbCommonInput.html">here</a> for input records, or <a class="reference external" href="https://epics.anl.gov/base/R7-0/6-docs/dbCommonOutput.html">here</a> for output records.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IOC-Testing-Framework.html" class="btn btn-neutral float-left" title="IOC Testing framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Running-IOCs.html" class="btn btn-neutral float-right" title="Running IOCs locally" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

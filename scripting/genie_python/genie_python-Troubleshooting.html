@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>genie_python Troubleshooting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="genie_python script checking (linting)" href="genie_python-linter.html" />
+    <link rel="prev" title="Genie Python" href="../Genie-Python.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Bluesky-scanning.html">Bluesky</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Genie-Python.html">Genie Python</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="genie_python-linter.html"><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> script checking (linting)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument-scripts.html">Shared Instrument Scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Scripting.html">Scripting (Python)</a></li>
+          <li class="breadcrumb-item"><a href="../Genie-Python.html">Genie Python</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/scripting/genie_python/genie_python-Troubleshooting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="genie-python-troubleshooting">
+<h1><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> Troubleshooting<a class="headerlink" href="#genie-python-troubleshooting" title="Link to this heading"></a></h1>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
+<section id="where-are-the-logs">
+<h3>Where are the logs?<a class="headerlink" href="#where-are-the-logs" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> writes its logs to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\var\logs\genie_python</span></code>.</p>
+</section>
+<section id="what-does-error-caexception-mean-when-it-is-in-the-log">
+<h3>What does <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">CAException</span></code> mean when it is in the log?<a class="headerlink" href="#what-does-error-caexception-mean-when-it-is-in-the-log" title="Link to this heading"></a></h3>
+<p>The following is written to the log when a virtual circuit disconnects from the IOC side:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="mi">2018</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">21</span><span class="n">T15</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span>	<span class="p">(</span><span class="n">CA</span><span class="p">)</span>	<span class="p">(</span><span class="mi">15712</span><span class="p">)</span>	<span class="n">ERROR</span><span class="p">:</span> <span class="n">CAException</span><span class="p">:</span> <span class="nb">type</span><span class="o">=-</span><span class="mi">1</span> <span class="n">state</span><span class="o">=</span><span class="mi">192</span> <span class="n">op</span><span class="o">=</span><span class="mi">5</span> <span class="n">file</span><span class="o">=..</span>\<span class="n">cac</span><span class="o">.</span><span class="n">cpp</span> <span class="n">lineNo</span><span class="o">=</span><span class="mi">1223</span>
+    <span class="mi">2018</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">21</span><span class="n">T15</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">31</span>	<span class="p">(</span><span class="n">CA</span><span class="p">)</span>	<span class="p">(</span><span class="mi">15712</span><span class="p">)</span>	<span class="n">ERROR</span><span class="p">:</span> <span class="n">CAException</span><span class="p">:</span> <span class="nb">type</span><span class="o">=</span><span class="mi">6</span> <span class="n">state</span><span class="o">=</span><span class="mi">192</span> <span class="n">op</span><span class="o">=</span><span class="mi">0</span> <span class="n">file</span><span class="o">=..</span>\<span class="n">getCopy</span><span class="o">.</span><span class="n">cpp</span> <span class="n">lineNo</span><span class="o">=</span><span class="mi">92</span>
+</pre></div>
+</div>
+<p>The time stamp on these are for the first <a class="reference external" href="https://isiscomputinggroup.github.io/genie/genie_python.html#genie.get_pv" title="(in genie_python v0.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pv</span></code></a> call or equivalent after a disconnect.</p>
+</section>
+</section>
+<section id="command-problems">
+<h2>Command problems<a class="headerlink" href="#command-problems" title="Link to this heading"></a></h2>
+<section id="can-not-set-or-get-a-block-reports-disconnected">
+<h3>Can not set or get a block; reports disconnected<a class="headerlink" href="#can-not-set-or-get-a-block-reports-disconnected" title="Link to this heading"></a></h3>
+<p>There can be multiple problems, check:</p>
+<ol class="arabic simple">
+<li><p>Block exists</p></li>
+<li><p>Block is spelt correctly, use <code class="docutils literal notranslate"><span class="pre">b.</span></code> and autocomplete</p></li>
+<li><p>Try getting the underlying PV <code class="docutils literal notranslate"><span class="pre">g.get_pv(&quot;IN:&lt;instrument&gt;:CS:SB:&lt;Block</span> <span class="pre">name&gt;&quot;)</span></code></p></li>
+<li><p>Restart the GUI Python console</p></li>
+</ol>
+</section>
+</section>
+<section id="problems-finding-a-python-interpreter">
+<h2>Problems finding a python interpreter<a class="headerlink" href="#problems-finding-a-python-interpreter" title="Link to this heading"></a></h2>
+<section id="can-t-find-the-uktena-python-distribution">
+<h3>Can’t find the Uktena Python distribution<a class="headerlink" href="#can-t-find-the-uktena-python-distribution" title="Link to this heading"></a></h3>
+<p>If you get an error message similar to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">***</span> <span class="n">Cannot</span> <span class="n">find</span> <span class="n">GENIE</span><span class="o">-</span><span class="n">PYTHON</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">some</span> <span class="n">things</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">likely</span> <span class="n">to</span> <span class="n">work</span> <span class="o">***</span>
+</pre></div>
+</div>
+<p>on running <code class="docutils literal notranslate"><span class="pre">config_env.bat</span></code>, you need to ensure you have the <a class="reference internal" href="../../system_components/Python.html"><span class="doc">Python (including Uktena, uv)</span></a> installed on your system.
+You may need to follow the <a class="reference internal" href="../../system_components/python/Building-and-installing-uktena.html"><span class="doc">Building and installing Uktena</span></a> instructions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As of October 2025, many processes in the IBEX backend depend on the Uktena python distribution. However, we are
+gradually migrating these to use <a class="reference internal" href="../../system_components/python/Python-venvs.html"><span class="doc">python virtual environments</span></a>; the eventual goal is that Uktena will not be required
+for the IBEX server backend.</p>
+</div>
+</section>
+<section id="no-appropriate-venv-has-been-created-for-a-backend-process">
+<h3>No appropriate <code class="docutils literal notranslate"><span class="pre">venv</span></code> has been created for a backend process<a class="headerlink" href="#no-appropriate-venv-has-been-created-for-a-backend-process" title="Link to this heading"></a></h3>
+<p>We are gradually migrating our server-side processes to use <a class="reference internal" href="../../system_components/python/Python-venvs.html"><span class="doc">uv python environments</span></a>.</p>
+<p>These virtual environments are created on instruments <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils/blob/b5998462ddd4d5aa4123e30104166043151cefea/installation_and_upgrade/ibex_install_utils/tasks/system_tasks.py#L146">by the IBEX deployment script</a>. If that step has previously been missed or failed during a deployment, it will need to be re-run.</p>
+<p>If you need to do this manually for one specific module, you may run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rmdir</span> <span class="o">/</span><span class="n">s</span> <span class="o">/</span><span class="n">q</span> <span class="o">.</span><span class="n">venv</span>
+<span class="n">uv</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
+<span class="n">uv</span> <span class="n">pip</span> <span class="n">sync</span> <span class="n">requirements</span><span class="o">-</span><span class="n">frozen</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>at the top-level of the relevant module. Modules using this approach will have a <code class="docutils literal notranslate"><span class="pre">requirements-frozen.txt</span></code>.</p>
+<p>On a developer machine, the virtual environments are created by the <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/developer_update.bat">developer update script</a>; if you are missing virtual environments on your developer machine, you will need to re-run that script.</p>
+</section>
+</section>
+<section id="other-issues">
+<h2>Other Issues<a class="headerlink" href="#other-issues" title="Link to this heading"></a></h2>
+<section id="repeated-error-messages-in-console-while-waiting">
+<h3>Repeated error messages in console while waiting<a class="headerlink" href="#repeated-error-messages-in-console-while-waiting" title="Link to this heading"></a></h3>
+<p>If you get repeated errors of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">11</span><span class="n">T17</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">48</span>	<span class="p">(</span><span class="n">CMD</span><span class="p">)</span>	<span class="p">(</span><span class="mi">17808</span><span class="p">)</span>	<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">11</span> <span class="mi">17</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mf">48.374781</span><span class="p">:</span> <span class="ne">Exception</span> <span class="ow">in</span> <span class="n">waitfor</span> <span class="n">loop</span><span class="p">:</span> <span class="n">UnableToConnectToPVException</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">PV</span> <span class="n">IN</span><span class="p">:</span><span class="n">LARMOR</span><span class="p">:</span><span class="n">DAE</span><span class="p">:</span><span class="n">GOODUAH</span><span class="p">:</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">11</span><span class="n">T17</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">48</span>	<span class="p">(</span><span class="n">CMD</span><span class="p">)</span>	<span class="p">(</span><span class="mi">17808</span><span class="p">)</span>	<span class="mi">2020</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">11</span> <span class="mi">17</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mf">48.512496</span><span class="p">:</span> <span class="ne">Exception</span> <span class="n">cleared</span>
+</pre></div>
+</div>
+<p>You may need to restart the genie_python session. The root cause of this issue is currently unknown. See ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5893">5893</a> for details, including a script which can scan all instruments for occurrences of this issue. If this issue is seen again, please create a new ticket to investigate further and also link it here.</p>
+</section>
+<section id="can-read-local-pvs-but-not-central-pvs">
+<h3>Can read local PVs but not central PVs<a class="headerlink" href="#can-read-local-pvs-but-not-central-pvs" title="Link to this heading"></a></h3>
+<p>Central PVs could include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CS:INSTLIST</span></code> (the instrument list)</p></li>
+<li><p>Accelerator PVs, for example beam current</p></li>
+</ul>
+<p>In one case, this was due to the firewall rule for <code class="docutils literal notranslate"><span class="pre">A:\python3\python.exe</span></code> which had been disabled - a process firewall exception is needed to allow it to receive the UDP name query reply.</p>
+</section>
+<section id="can-t-import-channel-access-modules">
+<h3>Can’t import channel-access modules<a class="headerlink" href="#can-t-import-channel-access-modules" title="Link to this heading"></a></h3>
+<p>If you get an error of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;c:\Jenkins\workspace\System_Tests</span><span class="se">\t</span><span class="s2">est_genie_python_common_imports.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">33</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_attempt_to_import_module_by_name</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+          <span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Instrument\Apps\Python3\Lib\importlib\__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">126</span><span class="p">,</span> <span class="ow">in</span> <span class="n">import_module</span>
+    <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;frozen importlib._bootstrap&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1204</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_gcd_import</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;frozen importlib._bootstrap&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1176</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_find_and_load</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;frozen importlib._bootstrap&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1147</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_find_and_load_unlocked</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;frozen importlib._bootstrap&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">690</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_load_unlocked</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;frozen importlib._bootstrap_external&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">940</span><span class="p">,</span> <span class="ow">in</span> <span class="n">exec_module</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;frozen importlib._bootstrap&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">241</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_call_with_frames_removed</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Instrument\Apps\Python3\Lib\site-packages\setuptools_dso\__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.dsocmd</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSO</span><span class="p">,</span> <span class="n">Extension</span><span class="p">,</span> <span class="n">install</span><span class="p">,</span> <span class="n">build</span><span class="p">,</span> <span class="n">build_dso</span><span class="p">,</span> <span class="n">build_ext</span><span class="p">,</span> <span class="n">bdist_egg</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Instrument\Apps\Python3\Lib\site-packages\setuptools_dso\dsocmd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">729</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">_needs_builddso</span><span class="p">(</span><span class="n">_build</span><span class="p">,</span> <span class="n">right_before</span><span class="o">=</span><span class="s1">&#39;build_clib&#39;</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Instrument\Apps\Python3\Lib\site-packages\setuptools_dso\dsocmd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">715</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_needs_builddso</span>
+    <span class="k">assert</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">Command</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When trying to import channel access libraries (<code class="docutils literal notranslate"><span class="pre">CaChannel</span></code>, <code class="docutils literal notranslate"><span class="pre">pcaspy</span></code>, <code class="docutils literal notranslate"><span class="pre">aioca</span></code>, <code class="docutils literal notranslate"><span class="pre">p4p</span></code> etc), this may be because <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pip</span></code> has previously been run in the same python session. See <a class="reference external" href="https://github.com/pypa/pip/issues/8761">https://github.com/pypa/pip/issues/8761</a> for some details/links. <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pip</span></code> is not generally supported/recommended by python and is a bad idea - if wanting to install packages dynamically, use <code class="docutils literal notranslate"><span class="pre">subprocess</span></code> instead to explicitly spawn a new process which calls pip.</p>
+<p>It’s also technically possible to replace <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pip</span></code> with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">_distutils_hack</span>
+<span class="n">_distutils_hack</span><span class="o">.</span><span class="n">remove_shim</span><span class="p">()</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pip</span>
+</pre></div>
+</div>
+<p>But this is not recommended for obvious reasons.</p>
+</section>
+<section id="pyright-completely-fails-to-run">
+<h3>Pyright completely fails to run<a class="headerlink" href="#pyright-completely-fails-to-run" title="Link to this heading"></a></h3>
+<p>Pyright keeps a cache directory in <code class="docutils literal notranslate"><span class="pre">c:\Users\&lt;user&gt;\.cache\pyright-python</span></code>, this can get corrupted, if it does get corrupted pyright will entirely fail to execute. This cache directory can be deleted (at the cost of the next script-check operation being much slower).</p>
+<p>Error from <a class="reference external" href="https://isiscomputinggroup.github.io/genie/genie_python.html#genie.load_script" title="(in genie_python v0.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">g.load_script</span></code></a> will be a <code class="docutils literal notranslate"><span class="pre">json.decoder.JSONDecodeError</span></code> as pyright does not return JSON in this case (but rather, returns some non-JSON error message).</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Genie-Python.html" class="btn btn-neutral float-left" title="Genie Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="genie_python-linter.html" class="btn btn-neutral float-right" title="genie_python script checking (linting)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

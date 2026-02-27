@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Debt Stand-down &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Meetings - with scientists" href="../Meetings-with-Scientists.html" />
+    <link rel="prev" title="Sprint Review &amp; Retrospective" href="Sprint-Review-and-Retro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Meetings.html">Meetings - internal</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Backlog-Preparation.html">Sprint pre-planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Code-Chats-and-Lightning-Talks.html">Code chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meeting-Roles-and-Rotas.html">Meeting roles &amp; rotas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Program-Increment-Planning.html">Program Increment Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Planning.html">Sprint Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Review-and-Retro.html">Sprint Review &amp; Retrospective</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Technical Debt Stand-down</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Meetings.html">Meetings - internal</a></li>
+      <li class="breadcrumb-item active">Technical Debt Stand-down</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/meetings/Technical-Debt-Stand-down.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="technical-debt-stand-down">
+<h1>Technical Debt Stand-down<a class="headerlink" href="#technical-debt-stand-down" title="Link to this heading"></a></h1>
+<p>A technical debt stand-down day is a day devoted to fixing technical debt in the system. The format is:</p>
+<ol class="arabic simple">
+<li><p>Choose a day where most people are free</p></li>
+<li><p>Choose a topic (See table below)</p></li>
+<li><p>On the day, people pick up tickets when they get in, often working in pairs. There is an extra standup at 4pm to discuss what has been done. This is the moment to choose to either:</p>
+<ul class="simple">
+<li><p>stop working on a ticket (commit everything to a branch and add it to the ticket to be picked up later)</p></li>
+<li><p>move it into the current sprint</p></li>
+<li><p>ensure a ticket is reviewed</p></li>
+</ul>
+</li>
+</ol>
+<p>Try to make sure all tickets by the end of the day are in a good state.</p>
+<section id="ideas-for-topics">
+<h2>Ideas for Topics<a class="headerlink" href="#ideas-for-topics" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Fix script generator errors: <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5500">https://github.com/ISISComputingGroup/IBEX/issues/5500</a></p></li>
+<li><p>Emulator for the compressors</p></li>
+<li><p>Improve genie python unit tests coverage. It is lacking in several complicated pieces of code, such as the genie_change_cache module.</p></li>
+<li><p>Add to IOC numbers so that all IOCs have at least 2</p></li>
+<li><p>Alarming</p>
+<ul>
+<li><p>Web does the same GUI</p></li>
+<li><p>Remove invalid alarm</p></li>
+<li><p>All IOCs should have an beast alarm</p></li>
+</ul>
+</li>
+<li><p>Squish tests <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3707">#3707</a></p></li>
+<li><p>Eclipse/CSS interaction</p></li>
+<li><p>Tech debt tickets</p></li>
+<li><p>Block server exception handling</p></li>
+<li><p>Deployment/release process</p>
+<ul>
+<li><p>Automatically add release numbers based on the name of the release branch</p></li>
+<li><p>On install if only one component is release then fall back to later components e.g. if only 4.4.1 GUI is available install 4.4.0 server and genie_python</p></li>
+<li><p>Automate some manual steps</p></li>
+</ul>
+</li>
+<li><p>Bugs</p></li>
+<li><p>Emulator/IOC tests</p></li>
+<li><p>Excess logging</p></li>
+<li><p>Dataweb/dashboard improvements</p></li>
+<li><p>Server submodule clean</p>
+<ul>
+<li><p>Add readmes to submodules in the server</p></li>
+<li><p>Remove unneeded submodules.</p></li>
+<li><p>Create automated dependency map</p></li>
+<li><p>Think about moving ISIS things to support</p></li>
+</ul>
+</li>
+<li><p>EPICS Make clean uninstall can be successfully performed if old git files exist</p></li>
+<li><p>Fix IOC generator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> unit test coverage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dbchecker</span></code> vs <code class="docutils literal notranslate"><span class="pre">dbunitchecker</span></code> vs <code class="docutils literal notranslate"><span class="pre">dbchanges</span></code></p></li>
+<li><p>Python 3 Compatibility</p></li>
+<li><p>User manual updates e.g. <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2763">https://github.com/ISISComputingGroup/IBEX/issues/2763</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3814">https://github.com/ISISComputingGroup/IBEX/issues/3814</a></p></li>
+<li><p>Update the specific device IOC pages see <a class="reference internal" href="../retrospective-notes/Retrospective-Notes-2020.05.28.html"><span class="doc std std-doc">here</span></a></p></li>
+<li><p>Tidy up code, remove unneeded parts</p>
+<ul>
+<li><p>Discuss what to do with pv sets</p></li>
+</ul>
+</li>
+<li><p>Fix epics unit tests (<a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5539">https://github.com/ISISComputingGroup/IBEX/issues/5539</a>)</p></li>
+</ul>
+</section>
+<section id="missing-documentation">
+<h2>Missing Documentation<a class="headerlink" href="#missing-documentation" title="Link to this heading"></a></h2>
+<p>Section to document missing documentation.</p>
+<ul class="simple">
+<li><p>Area detector <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4362">#4362</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Sprint-Review-and-Retro.html" class="btn btn-neutral float-left" title="Sprint Review &amp; Retrospective" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Meetings-with-Scientists.html" class="btn btn-neutral float-right" title="Meetings - with scientists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

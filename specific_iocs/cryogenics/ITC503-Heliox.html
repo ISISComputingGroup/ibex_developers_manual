@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITC503 (Old-style Heliox) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Oxford Instruments Mercury Heliox" href="Mercury-Heliox.html" />
+    <link rel="prev" title="ITC503" href="ITC-503.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC-503.html">ITC503</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Cryogenics.html">Cryogenics</a></li>
+      <li class="breadcrumb-item active">ITC503 (Old-style Heliox)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/ITC503-Heliox.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="itc503-old-style-heliox">
+<h1>ITC503 (Old-style Heliox)<a class="headerlink" href="#itc503-old-style-heliox" title="Link to this heading"></a></h1>
+<p>Original implementation for use on MuSR 3He refrigerator. The device is a Heliox/ITC503 based refrigerator controlled by the HLX503 IOC.</p>
+<section id="physical-operation-and-situation">
+<h2>Physical operation and situation<a class="headerlink" href="#physical-operation-and-situation" title="Link to this heading"></a></h2>
+<p><img alt="3He Fridge Diagram" src="../../_images/3HeFridgeOps.png" /></p>
+<section id="situation">
+<h3>Situation<a class="headerlink" href="#situation" title="Link to this heading"></a></h3>
+<p>The 3He Refrigerator is also known as the 3He Insert because it is inserted into an outer cryostat. This document is only related to the insert not the outer cryostat, but it is useful to know that the outer cryostat cools the 3He insert to ~1.5K. From the IBEX point of view the insert and outer cryostat are separate pieces of kit. However, it is useful to know that the <code class="docutils literal notranslate"><span class="pre">1KPot</span></code> in the insert is wired to the outer cryostat to control its temperature (we do not control the temperature via the insert). The insert is controlled by 1 ITC503 connected to a “magic box” that is wired to help read and control the various parts of the insert.</p>
+</section>
+<section id="thermometers-and-heaters">
+<h3>Thermometers and heaters<a class="headerlink" href="#thermometers-and-heaters" title="Link to this heading"></a></h3>
+<p>TL;DR 4 thermometers, 2 heaters. We can read 3 thermometers at a time and the ITC503 controls two heaters based on the temperature setpoint and control channel we give it.</p>
+<p>On the insert itself, there are 4 thermometers: the sorb thermometer, the 1K Pot thermometer, the He3Pot “High Temperature” thermometer and the He3Pot “Low Temperature” thermometer. Both the He3Pot thermometers are measuring the same temperature, one is good at measuring low-temperature values the other at high-temperature values.</p>
+<p>There are 3 ports on the magic box to connect the thermometers to (as there are 3 sensor channels in the ITC503 itself). The first sensor is connected to the sorb thermometer, the second to either the He3Pot Low-temperature thermometer or the 1K Pot (these are physically switched on the magic box) and the third is wired to the He3Pot high-temperature thermometer.</p>
+<p>The ITC503 has 1 output and the insert has two heaters (the sorb heater and the he3pot heater). By using the magic box this 1 output is at all times connected to the sorb heater, but only if the ITC503 is controlling based on the He3Pot “High Temperature” sensor then this output is also wired to the he3pot heater.</p>
+</section>
+<section id="operation-behaviour">
+<h3>Operation/Behaviour<a class="headerlink" href="#operation-behaviour" title="Link to this heading"></a></h3>
+<p>TL;DR When you heat the sorb this reduces the pumping efficiency of He3 which cools the He3 pot more.</p>
+<p>The temperature of the He3Pot is defined by how much Helium-3 is being pumped onto the pot. The ITC503 controls the sorb temperature which affects the pumping efficiency of the He3 and as such the temperature of the He3Pot. When the Sorb temperature increases in heat the pumping efficiency is reduced which consequently warms the He3Pot. When the sorb reduces in heat the pumping efficiency is increased so the He3Pot temperature reduces.</p>
+<p>The Sorb sits in the outer cryostat so has a base temperature of about 1.5k that it will sit at when not heated. The ITC503 output is wired at all times to a sorb heater which allows the ITC503 to control the heat of the sorb and when we are controlling based on the He3Pot “High Temperature” sensor then this output is also wired to the he3pot heater.</p>
+</section>
+<section id="regeneration">
+<h3>Regeneration<a class="headerlink" href="#regeneration" title="Link to this heading"></a></h3>
+<p>TL;DR After 24-48 hours of operation the He3 is no longer pumped onto the pot and we have to regenerate it by heating the sorb to ~30K.</p>
+<p>The system is closed-loop because of how expensive Helium-3 is. However, at some point there will not be enough Helium-3 in the pot to create cooling power (it is all in the pump). The symptom of this is that the temperature of the He3Pot to rise to the temperature of the 1K Pot.</p>
+<p>The process that causes the He3 to be pumped onto the He3 Pot is called absorption. This process is reversed when the sorb is at ~30K. To regenerate the He3 we need to heat the sorb to ~30K wait for the He3Pot temperature to reach a certain value and then fast cool the sorb to resume operation.</p>
+</section>
+</section>
+<section id="hlx503-ioc-features">
+<h2>HLX503 IOC Features<a class="headerlink" href="#hlx503-ioc-features" title="Link to this heading"></a></h2>
+<section id="current">
+<h3>Current<a class="headerlink" href="#current" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Communication to one ITC503 with control channels defined for each of the <code class="docutils literal notranslate"><span class="pre">Sorb</span></code>, <code class="docutils literal notranslate"><span class="pre">He3PotHi</span></code> and <code class="docutils literal notranslate"><span class="pre">1KPot</span></code>/<code class="docutils literal notranslate"><span class="pre">He3PotLo</span></code></p></li>
+<li><p>Set He3Pot temperature setpoint</p></li>
+<li><p>Set Sorb temperature setpoint</p></li>
+<li><p>Manual recondense</p></li>
+<li><p>Setting sorb and he3pot pids via tpar file</p></li>
+<li><p>Turn He3Pot Heater Off</p></li>
+<li><p>Graph the He3Pot temperature</p></li>
+<li><p>Monitor He3Pot setpoint, control channel, heater power, heater auto/manual</p></li>
+</ul>
+</section>
+<section id="future">
+<h3>Future<a class="headerlink" href="#future" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6292">Autorecondense</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6349">IOC Restart State</a></p></li>
+</ul>
+</section>
+</section>
+<section id="control-logic">
+<h2>Control Logic<a class="headerlink" href="#control-logic" title="Link to this heading"></a></h2>
+<section id="setting-he3pot-temperature">
+<h3>Setting He3Pot Temperature<a class="headerlink" href="#setting-he3pot-temperature" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>If set temperature &lt; macro for Maximum temperature to operate the Heliox at</p>
+<ul>
+<li><p>If set temperature &gt; macro for maximum temperature to use He3 cooling</p>
+<ul>
+<li><p>Change control channel to <code class="docutils literal notranslate"><span class="pre">He3PotHi</span></code> control channel</p></li>
+</ul>
+</li>
+<li><p>Else</p>
+<ul>
+<li><p>Change control channel to <code class="docutils literal notranslate"><span class="pre">He3PotLo</span></code> control channel</p></li>
+</ul>
+</li>
+<li><p>If Lookup PIDs is on:
+-Look up He3Pot PIDs for the given setpoint and write them to the device</p></li>
+<li><p>Write temperature setpoint</p></li>
+</ul>
+</li>
+<li><p>Else</p>
+<ul>
+<li><p>Temp setpoint in alarm</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="setting-sorb-temperature">
+<h3>Setting Sorb temperature<a class="headerlink" href="#setting-sorb-temperature" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Change control channel to Sorb control channel</p></li>
+<li><p>If Lookup PIDs is on:</p>
+<ul>
+<li><p>Look up SORB PIDs for the given setpoint and write them to the device</p></li>
+</ul>
+</li>
+<li><p>Write temperature setpoint</p></li>
+</ul>
+</section>
+<section id="turning-the-he3pot-heater-off">
+<h3>Turning the He3Pot Heater off<a class="headerlink" href="#turning-the-he3pot-heater-off" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Change control channel to He3Pot</p></li>
+<li><p>Set He3Pot autoheat to False</p></li>
+<li><p>Set He3Pot heater output % to 0</p></li>
+</ul>
+</section>
+<section id="recondensing">
+<h3>Recondensing<a class="headerlink" href="#recondensing" title="Link to this heading"></a></h3>
+<section id="autorecondensing">
+<h4>Autorecondensing<a class="headerlink" href="#autorecondensing" title="Link to this heading"></a></h4>
+<p>Not to be implemented in first pass.</p>
+<p>All of the first set of conditions must be met and at least one of the second set of conditions. If this is the case then a recondense is required.</p>
+<section id="first-set-of-conditions">
+<h5>First set of conditions<a class="headerlink" href="#first-set-of-conditions" title="Link to this heading"></a></h5>
+<p>All must be met before checking second set of conditions.</p>
+<ul class="simple">
+<li><p>ITC503 is using the control channel chosen for the <code class="docutils literal notranslate"><span class="pre">He3PotLo</span></code> in macros</p></li>
+<li><p>Temp setpoint &lt; Maximum temperature to use He3 cooling macro</p></li>
+<li><p>Auto condense enabled by macro</p></li>
+</ul>
+</section>
+<section id="second-set-of-conditions">
+<h5>Second set of conditions<a class="headerlink" href="#second-set-of-conditions" title="Link to this heading"></a></h5>
+<p>Only one of these conditions needs to be met.</p>
+<ul class="simple">
+<li><p>Sorb temperature check is set to on in macros and Sorb temperature &gt; condense threshold for the sorb temperature set in macros</p></li>
+<li><p>He3Pot temperature check is set to on in macros and He3Pot temperature &gt; condense threshold for the He3 Pot temperature set in the macros</p></li>
+<li><p>Temperature error check is set to on in macros and difference between He3Pot temperature setpoint and He3Pot actual temperature &gt; condense threshold for temperature error set in the macros</p></li>
+</ul>
+</section>
+</section>
+<section id="recondense-logic">
+<h4>Recondense Logic<a class="headerlink" href="#recondense-logic" title="Link to this heading"></a></h4>
+<p>TL;DR Heat up the sorb to cause recondense, wait for He3Pot and Sorb to reach given values (showing recondense complete), fast cool the sorb and set the He3Pot to a user given temperature.</p>
+<p>The logic is split into 4 parts. Part 1 initialises the correct state, sets some states on the device, and waits for the Sorb and He3Pot temperatures to match certain criteria. Part 2 does mostly the same but using user-specified values from the macros specifically for part 2. Part 3 fast cools the Sorb, and part 4 is a final clear up.</p>
+<section id="part-1">
+<h5>Part 1<a class="headerlink" href="#part-1" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>Entry</p>
+<ul>
+<li><p>Set the last start of condense time to now</p></li>
+<li><p>Set recondensing status to true</p></li>
+<li><p>Set status of skipped, cancelled and timed out to False</p></li>
+<li><p>Set success status to False</p></li>
+<li><p>Set status to part 1</p></li>
+<li><p>Set to manual heating and 0% heater output</p></li>
+<li><p>Set that we are not using tpar PIDs</p></li>
+<li><p>Set autopid to false</p></li>
+<li><p>Write Sorb PID values given by the user in the macros</p></li>
+<li><p>Change control channel to use Sorb</p></li>
+<li><p>Set temperature setpoint (sorb) to value given by the user in the macros</p></li>
+</ul>
+</li>
+<li><p>Wait until one of the following conditions is met</p>
+<ul>
+<li><p>The user skips the part</p>
+<ul>
+<li><p>Set skipped status to True</p></li>
+<li><p>Set part success status to False</p></li>
+</ul>
+</li>
+<li><p>The user cancels the operation</p>
+<ul>
+<li><p>Set part success and overall success to false</p></li>
+<li><p>Skip to not recondensing</p></li>
+</ul>
+</li>
+<li><p>The operation times out</p>
+<ul>
+<li><p>Set part success to false</p></li>
+<li><p>Skip to the finish</p></li>
+</ul>
+</li>
+<li><p>Sorb temp &gt; User specified sorb condensing temp (from macros) – 0.5 and He3 Pot temperature &lt; User specified condense He3Pot target for part 1</p>
+<ul>
+<li><p>Set that this part was successful</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="part-2-now-not-needed-removed">
+<h5>Part 2 (Now not needed - removed)<a class="headerlink" href="#part-2-now-not-needed-removed" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>Set skipped to false</p></li>
+<li><p>Set status to part 2</p></li>
+<li><p>Wait for the same conditions as in part 1 but using the He3Pot target specified for part 2 in macros</p>
+<ul>
+<li><p>Do same actions for each case</p></li>
+</ul>
+</li>
+<li><p>If part successful then wait for the number of seconds given by the user in the macros</p></li>
+</ul>
+</section>
+<section id="part-3">
+<h5>Part 3<a class="headerlink" href="#part-3" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>Set skipped to False</p></li>
+<li><p>Set status to fast cooling the sorb</p></li>
+<li><p>Change control channel to use Sorb</p></li>
+<li><p>Set sorb heater output to 0%</p></li>
+<li><p>Set sorb temperature setpoint to 0K</p></li>
+<li><p>Wait for the same skipped, cancelled, and timeout conditions and do the same actions or wait for this condition:</p>
+<ul>
+<li><p>Sorb temperature &lt; final sorb temperature specified by the user in macros</p>
+<ul>
+<li><p>Wait for 2 seconds</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="finish">
+<h5>Finish<a class="headerlink" href="#finish" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>This should execute even if timed out, skipped or previous parts are successful, but not cancelled</p></li>
+<li><p>Set status to finishing</p></li>
+<li><p>If all parts have been successful then set overall success to true</p></li>
+<li><p>Set last finish of condense to now</p></li>
+<li><p>If the He3Pot temperature setpoint &gt; the user-specified temperature threshold for He3 operation</p>
+<ul>
+<li><p>User will be notified by the He3Pot temperature setpoint PVs being in alarm if this happens</p></li>
+<li><p>Set He3Pot temperature to default post condense he3pot temp macro</p></li>
+</ul>
+</li>
+<li><p>Else</p>
+<ul>
+<li><p>Set He3Pot temperature to the user-specified temperature setpoint</p></li>
+</ul>
+</li>
+<li><p>Set condensing status to False</p></li>
+<li><p>Reset back to using autopid/tpar file/manually entered values as before recondense</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="comms">
+<h2>Comms<a class="headerlink" href="#comms" title="Link to this heading"></a></h2>
+<p>Controls one ITC503 on an RS232 connection direct into the MOXA.</p>
+<p>Macros with defaults for the ITC503:</p>
+<ul class="simple">
+<li><p>Baud rate e.g. <code class="docutils literal notranslate"><span class="pre">BAUD</span></code></p></li>
+<li><p>Bits e.g. <code class="docutils literal notranslate"><span class="pre">BITS</span></code></p></li>
+<li><p>Parity e.g. <code class="docutils literal notranslate"><span class="pre">PARITY</span></code></p></li>
+<li><p>Stop bit e.g. <code class="docutils literal notranslate"><span class="pre">STOP</span></code></p></li>
+</ul>
+<p>Set control channel and sensor details using macros e.g. SORB_CHANNEL and SORB_SENSOR.</p>
+<p>Further configuration of settings for recondensing and general operations are available (see macros).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ITC-503.html" class="btn btn-neutral float-left" title="ITC503" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Mercury-Heliox.html" class="btn btn-neutral float-right" title="Oxford Instruments Mercury Heliox" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

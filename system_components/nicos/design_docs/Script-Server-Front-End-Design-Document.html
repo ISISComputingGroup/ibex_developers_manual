@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script server front end design document &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Script server design" href="Script-server-design.html" />
+    <link rel="prev" title="Script server back end design document" href="Script-Server-Back-End-Design-Document.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Nicos.html">NICOS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Configuring-a-New-Nicos-Instrument.html">Configuring a new Nicos instrument</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Design-Documents.html">Script Server design documents</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Nicos-evaluation.html">Nicos evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-Server-Back-End-Design-Document.html">Script server back end design document</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Script server front end design document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-server-design.html">Script server design</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scripting-use-cases.html">Scripting use-cases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Developing-NICOS.html">Updating NICOS Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Installing-Nicos-on-Windows.html">Installing Nicos on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-commands.html">NICOS Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-notes.html">NICOS Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Running-Nicos-%28Script-Server%29.html">Running NICOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Testing-Nicos.html">Testing Nicos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../../Nicos.html">NICOS</a></li>
+          <li class="breadcrumb-item"><a href="../Design-Documents.html">Script Server design documents</a></li>
+      <li class="breadcrumb-item active">Script server front end design document</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/nicos/design_docs/Script-Server-Front-End-Design-Document.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="script-server-front-end-design-document">
+<h1>Script server front end design document<a class="headerlink" href="#script-server-front-end-design-document" title="Link to this heading"></a></h1>
+<p>This document is designed to be read in conjunction with the equivalent <a class="reference internal" href="Script-Server-Back-End-Design-Document.html"><span class="doc std std-doc">back-end design document</span></a>.</p>
+<section id="what-it-should-do">
+<h2>What it should do<a class="headerlink" href="#what-it-should-do" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Be able to run as part of the main IBEX client</p></li>
+<li><p>Access the script server for the instrument that IBEX is currently pointing at</p></li>
+<li><p>Read the available commands for the current instrument, including the name, parameters and description.</p></li>
+<li><p>Allow addition of new commands* (optional)</p></li>
+<li><p>Allow the available commands to be used to create a new script via a drag and drop interface. The client will be responsible for converting the available commands into a Python script, and inserting the necessary server call backs.</p></li>
+<li><p>Allow new scripts to be created as hand-written code (i.e. plain text document)</p></li>
+<li><p>Allow scripts to be saved locally, before they are sent to the server</p></li>
+<li><p>Allow scripts to be loaded from disk</p></li>
+<li><p>Script builder scripts will need to be saved as XML, hand-written scripts can be saved as Python, but either can be sent to the server</p></li>
+<li><p>Allow the creation new jobs and send them to the server to be queued</p></li>
+<li><p>Show the current status of the job queue</p></li>
+<li><p>Show the status of the current job (% done, current line etc.)</p></li>
+<li><p>Edit the job queue (e.g. reordered, jobs skipped or repeated)</p></li>
+<li><p>Tell the server to abort or suspend the current job</p></li>
+<li><p>Show the details of currently queued jobs</p></li>
+<li><p>Edit queued jobs</p></li>
+<li><p>Edit the currently running job (optional)</p></li>
+<li><p>Show an estimate of how long a job will take from the server</p></li>
+<li><p>Show the elapsed time for the current job</p></li>
+<li><p>Script validation – can provide feedback on potential issues when creating or editing a job, and an estimate of the length of time the job will take. The main validation and time estimates should be done on the server side. Some basic validation could be done in the client (e.g. parameters have values set).</p></li>
+<li><p>Show if a job has finished successfully or not, and show a detailed error report from the server if a job has failed</p></li>
+<li><p>Be able to run separately from the main IBEX client (optional)</p></li>
+</ul>
+<p>(*) These actions should only be allowed by instrument scientists and the controls teams</p>
+</section>
+<section id="note-on-naming">
+<h2>Note on naming<a class="headerlink" href="#note-on-naming" title="Link to this heading"></a></h2>
+<p>We need to be careful how we name different parts. There is server that is responsible for queuing and running jobs and something responsible for building scripts and sending them to the server. Suggested names for the client are ‘Script Builder’, but we would prefer something to capture the fact it covers building and submitting scripts. Something more abstract such as ‘Scan Engine’ or ‘Autorun’ are other options.</p>
+</section>
+<section id="architectural-design">
+<h2>Architectural design<a class="headerlink" href="#architectural-design" title="Link to this heading"></a></h2>
+<p>The script server front-end is initially planned to be part of the IBEX client, so will be an Eclipse RCP application. The architectural design should follow the design used elsewhere in the GUI, with the model-view-viewmodel pattern and a separation of the business logic in one plugin, and the UI components in another package.
+The script server client should try and avoid relying on any of the other IBEX plugins. The only information the client will need is to know when the instrument has switched, so it will need to implement the InstrumentInfoReceiver interface.</p>
+</section>
+<section id="communication-with-script-server">
+<h2>Communication with script server<a class="headerlink" href="#communication-with-script-server" title="Link to this heading"></a></h2>
+<p>The protocols for communicating with the servers that are currently used are:</p>
+<ul class="simple">
+<li><p>JSON over Channel Access – this is how the BlockServer serves up items such as configurations and synoptics. This generally seems to work well and instrument switching is easy to handle. This might create a large number of PVs if used for the script server. This is not as well suited to making the script server separable from the rest of IBEX.</p></li>
+<li><p>JMS (Java Messaging Service) – this is used by the client to communicate with the alarm server and message log server. This code is mostly from CS Studio so I do not know if we have much experience of using JMS ourselves.</p></li>
+<li><p>JDBC (Java Database Connection) – this is used by the archive engine and the database server for experimental details. It is probably less suitable for communication with a script server as it is not geared towards real time updating. It might be useful for archived information on scripts that have run.</p></li>
+</ul>
+<p>REST would make a good option as it is widely used and easy to implement the Java client, as well as the Python server. It keeps it easy to use multiple clients looking at one server and to write new clients. It would be more difficult to push messages to the client with REST, so the clients may have to poll the server for information on script progress etc.</p>
+<p>JMS can be used with a Python server by means of a broker, such as RabbitMQ or ActiveMQ. This would make supporting multiple clients fairly straightforward still, and allow messages to be pushed to clients. This would require a little more maintenance as it requires setting up the broker server. ZeroMQ is designed for high throughput but does not guarantee messages will be received. This makes it less suitable for this application.</p>
+</section>
+<section id="interface-design">
+<h2>Interface Design<a class="headerlink" href="#interface-design" title="Link to this heading"></a></h2>
+<p>The interface design will most likely follow a similar idea to the one from the SNS ScanServer, shown in figure 1. Figures 2 and 3 show some ideas for a mock-up following similar designs to how other parts of the IBEX client works. If the interface becomes too cluttered the script editor can be made another tab along with ‘Sever Status’ and ‘Server Console’.</p>
+<p><img alt="SNS Scan Server" src="../../../_images/Scan_Server_Annotated.png" />
+<em>Figure 1 - SNS Scan Server</em></p>
+<p><img alt="SNS Scan Server" src="../../../_images/Scan_Server_IBEX_mockup.png" />
+<em>Figure 2: Using the script builder. New commands can be dragged and dropped into the script, and existing commands can have their properties set.</em></p>
+<p><img alt="SNS Scan Server" src="../../../_images/Scan_Server_IBEX_manual_edit_mockup.png" />
+<em>Figure 3: Manually editing a script – commands can still be dragged and dropped as Python commands.</em></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Script-Server-Back-End-Design-Document.html" class="btn btn-neutral float-left" title="Script server back end design document" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Script-server-design.html" class="btn btn-neutral float-right" title="Script server design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

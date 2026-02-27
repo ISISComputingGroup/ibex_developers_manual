@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squish BDD Tools &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Test naming" href="Test-naming.html" />
+    <link rel="prev" title="Squish" href="System-Testing-with-Squish.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-Unit-Tests.html">Adding tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="An-Introduction-to-Unit-Testing.html">An introduction to unit testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mockito.html">Mockito</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish.html">Squish</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Squish BDD Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Test-naming.html">Test naming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">Squish BDD Tools</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/testing/System-Testing-with-Squish-BDD.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="squish-bdd-tools">
+<h1>Squish BDD Tools<a class="headerlink" href="#squish-bdd-tools" title="Link to this heading"></a></h1>
+<section id="bdd-and-gherkin-overview">
+<h2>BDD and Gherkin Overview<a class="headerlink" href="#bdd-and-gherkin-overview" title="Link to this heading"></a></h2>
+<p>Behaviour-Driven Development (BDD) is a software development process that builds on the lessons learnt from Test-Driven
+Development (TDD). BDD focuses on developing a common understanding of the behaviour of an application. More details can
+be found in the <a class="reference external" href="https://cucumber.io/docs/bdd/">cucumber documentation</a> and the
+<a class="reference external" href="https://www.agilealliance.org/glossary/bdd/">Agile Alliance definition of BDD</a>.</p>
+<p>BDD works by describing the behaviours of an application in a language that can be understood by developers and users,
+the <a class="reference external" href="https://cucumber.io/docs/gherkin/reference/">Gherkin language</a>, enabling a conversation on detailed application
+behaviour. This language helps to accurately describe behaviour and provides a way to carefully consider what to build.
+Gherkin is most effective for designing software when combined with other techniques such as low-fidelity prototypes.</p>
+<p>Gherkin also helps to automate testing. The steps in a <code class="docutils literal notranslate"><span class="pre">.feature</span></code> (gherkin) file can be linked to the code that runs the
+test step on the application. Squish supports this with
+<a class="reference external" href="https://www.froglogic.com/squish/features/bdd-behavior-driven-development-testing/">its BDD tools</a>.
+We have made use of this in the script generator for all its Squish testing. These tests can now act as documentation of
+the behaviour of the application and can be used to discuss the intricacies of the behaviour with scientists.</p>
+</section>
+<section id="structure-of-our-tests">
+<h2>Structure of our tests<a class="headerlink" href="#structure-of-our-tests" title="Link to this heading"></a></h2>
+<p>Squish is split up into test suites, the script generator tests are all in the <code class="docutils literal notranslate"><span class="pre">suite_script_gen_tests</span></code>. The test cases
+in this suite are the <code class="docutils literal notranslate"><span class="pre">.feature</span></code> files that describe the behaviour in Gherkin. In general, we define one or more
+features in each file with the <code class="docutils literal notranslate"><span class="pre">Feature:</span></code> tag and each feature has a collection of scenarios denoted by the
+<code class="docutils literal notranslate"><span class="pre">Scenario:</span></code> tag. The feature will have a title and a description and a scenario will have a title that acts as its
+description.</p>
+<p>Each scenario is made up of a set of <code class="docutils literal notranslate"><span class="pre">Given</span></code>, <code class="docutils literal notranslate"><span class="pre">When</span></code>, <code class="docutils literal notranslate"><span class="pre">Then</span></code> steps. These steps can take parameters including whole
+tables and can be ordered in lots of different ways. <code class="docutils literal notranslate"><span class="pre">Given</span></code> generally describes the state the application should be in
+before a user action, <code class="docutils literal notranslate"><span class="pre">When</span></code> describes a user action and <code class="docutils literal notranslate"><span class="pre">Then</span></code> describes verification of the state of the application
+after a user action. More details can be found in the <a class="reference external" href="https://cucumber.io/docs/gherkin/">Gherkin documentation</a> and in
+the <a class="reference external" href="https://www.froglogic.com/squish/features/bdd-behavior-driven-development-testing/">Squish BDD tutorials</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Given</span></code>, <code class="docutils literal notranslate"><span class="pre">When</span></code> and <code class="docutils literal notranslate"><span class="pre">Then</span></code> steps are linked to code which is stored in the test suite resources steps area. For
+example, the <code class="docutils literal notranslate"><span class="pre">then_tooltip.py</span></code> file contains <code class="docutils literal notranslate"><span class="pre">Then</span></code> steps related to tooltip behaviour. Steps are defined like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@Then</span><span class="p">(</span><span class="s2">&quot;the following actions have a tooltip |word|&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+    <span class="n">actions_that_we_expect_have_a_tooltip</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">table</span>
+    <span class="n">do_test_code</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This step takes a table as a parameter (accessed through <code class="docutils literal notranslate"><span class="pre">context.table</span></code>) and a word parameter (described by the
+decorator with <code class="docutils literal notranslate"><span class="pre">|word|</span></code> and passed to the step function as <code class="docutils literal notranslate"><span class="pre">status</span></code>). A step can have multiple decorators of
+<code class="docutils literal notranslate"><span class="pre">&#64;Given</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;When</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;Then</span></code>. There are also more abilities such as using <code class="docutils literal notranslate"><span class="pre">From</span></code> sections and passing data between
+tests through the context variable - details <a class="reference external" href="https://doc.froglogic.com/squish/latest/api.bdt.functions.html">here</a>.</p>
+<p>We do not generally edit the <code class="docutils literal notranslate"><span class="pre">test.py</span></code> file in the test case resources scripts. This script is created by squish and
+handles starting up tests and setting up the hooks. This could be used to start up the client instead of using
+<code class="docutils literal notranslate"><span class="pre">&#64;OnFeatureStart</span></code> to speed up tests and enable us to better structure our features without concern for lengthening
+our tests.</p>
+</section>
+<section id="scenario-and-feature-hooks">
+<h2>Scenario and Feature hooks<a class="headerlink" href="#scenario-and-feature-hooks" title="Link to this heading"></a></h2>
+<p>In the script section of the test suite resources, there is a file named <code class="docutils literal notranslate"><span class="pre">bdd_hooks.py</span></code>. This file contains a number of
+functions hooked into the tests to run at the beginning and end of features. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@OnFeatureStart</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hook</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+    <span class="n">do_hook_code</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Before the scenarios of a feature are run this hook is called by Squish. We utilise <code class="docutils literal notranslate"><span class="pre">&#64;OnFeatureStart</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&#64;OnScenarioStart</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;OnScenarioEnd</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;OnFeatureEnd</span></code> to carry out the test setup and cleanup activities.
+More details under “Performing Actions During Test Execution Via Hooks” in the
+<a class="reference external" href="https://doc.qt.io/squish/behavior-driven-testing.html#performing-actions-during-test-execution-via-hooks">Squish BDD Documentation</a>.</p>
+</section>
+<section id="implementing-a-new-test">
+<h2>Implementing a new test<a class="headerlink" href="#implementing-a-new-test" title="Link to this heading"></a></h2>
+<p>Have you already agreed to a gherkin description of the behaviour required? If so then add it to the test cases either
+as a new feature (there’s a little button labelled BDD in the test cases section of the Squish GUI) or if your feature
+fits well into a feature already in the test suite then include the scenarios in there - this avoids running feature
+start and end code which restarts the client and lengthens the tests, though don’t be afraid to add a new feature if
+it doesn’t fit.</p>
+<p>If you haven’t already agreed on the behaviour, consider creating a design for the feature with gherkin and a
+low-fidelity prototype and reviewing it with other developers and script generator users - this depends on how major
+and well defined the feature is. If you’re not sure, ask the team!</p>
+<p>Now that you have your feature, scenario and steps laid out it’s time to write the test code. Are any of the steps
+already defined in the test suite resources? They may not have the same name but they may have the same
+functionality - you can add a new <code class="docutils literal notranslate"><span class="pre">&#64;Given</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;When</span></code> or <code class="docutils literal notranslate"><span class="pre">&#64;Then</span></code> decorator to the step or rename the step in the test
+case. Any steps that don’t have an already defined test function for you will need to implement, these steps will be
+annotated by Squish in the test case.</p>
+<p>To add the steps you want you can either code them directly by writing a test step function or you can record it.
+If you right-click on a feature or scenario in the test case and click <code class="docutils literal notranslate"><span class="pre">Record</span> <span class="pre">Missing</span> <span class="pre">Steps</span> <span class="pre">in</span> <span class="pre">Feature/Scenario</span></code> then
+the test will execute the steps it knows and then pauses on the steps it doesn’t know to record any button clicks and
+do any verification steps as according to the squish recording tools - see the tutorial
+<a class="reference external" href="https://www.qt.io/quality-assurance/squish/test-creation-and-maintenance#record-and-playback">here</a>.</p>
+<p>After recording, this will insert the step function into a file in the steps section of the test suite resources - often
+this is in a file that doesn’t make sense, if so it should be moved to a more appropriate location.</p>
+<p>Although the recording can be a useful starting point, it often produces brittle step functions; please make use of the
+utilities in the global scripts area to improve the robustness of the test and see <a class="reference internal" href="System-Testing-with-Squish.html"><span class="doc std std-doc">here</span></a> for some hints, tips and
+gotchas.</p>
+</section>
+<section id="running-the-tests">
+<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Link to this heading"></a></h2>
+<p>You can run the whole test suite with the play button located above the test cases next to the new BDD test case button.
+You can also run test cases with the run button next to the case in the case list. You can run features and scenarios
+by right-clicking and pressing run.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="System-Testing-with-Squish.html" class="btn btn-neutral float-left" title="Squish" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Test-naming.html" class="btn btn-neutral float-right" title="Test naming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

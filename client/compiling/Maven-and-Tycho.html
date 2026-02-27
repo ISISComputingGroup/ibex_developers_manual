@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maven and Tycho &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coding" href="../GUI-Coding.html" />
+    <link rel="prev" title="Building the GUI" href="Building-the-GUI.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Building.html">Building</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Building-the-GUI.html">Building the GUI</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Maven and Tycho</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Building.html">Building</a></li>
+      <li class="breadcrumb-item active">Maven and Tycho</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/compiling/Maven-and-Tycho.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="maven-and-tycho">
+<h1>Maven and Tycho<a class="headerlink" href="#maven-and-tycho" title="Link to this heading"></a></h1>
+<p>The IBEX GUI is built using Tycho, which is a Maven plugin used for building Eclipse RCP products.</p>
+<p>This document provides a brief overview of both Maven and Tycho.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../processes/meetings/Code-Chats-and-Lightning-Talks.html"><span class="doc std std-doc">Code chats</span></a> have been given on this topic (
+<a class="reference external" href="https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/ICP%20Discussions/GUI_Chat_Slides/IBEX%20GUI%20build%20system.pptx?d=w74aa3046025f4622bcdeadbdeca9395c&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=aQEGJZ">slides</a>,
+<a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FIBEX%20GUI%20build%20System%20Code%20chat%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview%2E0f53ae8b%2D3184%2D43c1%2D955e%2D039109fcd0e1">recording</a>
+).</p>
+</div>
+<section id="maven">
+<h2>Maven<a class="headerlink" href="#maven" title="Link to this heading"></a></h2>
+<p>The official description:</p>
+<blockquote>
+<div><p><em>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model
+(POM), Maven can manage a project’s build, reporting and documentation from a central piece of information.</em></p>
+</div></blockquote>
+<p>In simple terms, Maven is a build automation tool used primarily for Java projects.</p>
+<p>See the <a class="reference external" href="https://maven.apache.org/guides/getting-started/index.html">getting started guide in the Maven documentation</a>
+for more information about what Maven is.</p>
+<section id="pom-files">
+<h3>POM files<a class="headerlink" href="#pom-files" title="Link to this heading"></a></h3>
+<p>POM files are XML files, called <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>, that describes the software project being built, its dependencies on other
+external modules and components, the build order, directories, and required plug-ins. In many ways, it can be considered
+the equivalent of a C-style Makefile as it defines how the project is built.</p>
+<p>See <a class="reference external" href="https://maven.apache.org/pom.html">the Maven documentation</a> for detailed information on the various sections of a
+<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> in a pure Maven project.</p>
+</section>
+<section id="building-a-maven-project">
+<h3>Building a Maven project<a class="headerlink" href="#building-a-maven-project" title="Link to this heading"></a></h3>
+<p>Maven uses multiple build phases - for example, <code class="docutils literal notranslate"><span class="pre">compile</span></code>, <code class="docutils literal notranslate"><span class="pre">test</span></code>, <code class="docutils literal notranslate"><span class="pre">package</span></code>. If you are really unsure, a good
+default is to run <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">clean</span> <span class="pre">verify</span></code> to build a project; this will clean the project (deleting any old build files),
+and then run compilation, unit tests, packaging, and verification (e.g. checkstyle) phases.</p>
+<p>For more information, see the Maven
+<a class="reference external" href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">build lifecycle documentation</a>.</p>
+</section>
+</section>
+<section id="tycho">
+<h2>Tycho<a class="headerlink" href="#tycho" title="Link to this heading"></a></h2>
+<p>Tycho is a set of Maven plugins and extensions for building Eclipse-based applications with Maven. Tycho allows Maven
+to support building bundles, fragments, features, P2 repositories, RCP applications etc.</p>
+<p>Tycho is used to build the IBEX GUI application.</p>
+<section id="parent-pom">
+<h3>Parent POM<a class="headerlink" href="#parent-pom" title="Link to this heading"></a></h3>
+<p>Maven allows a parent POM to be defined which contains references to the other POM files for the other projects that
+make up an application. This is used in the IBEX GUI because it allows the centralisation of the settings for
+building the application.</p>
+<p>The <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml">IBEX GUI parent <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code></a>
+contains a lot of information, so here is a stripped down version to show the key points:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>CSS_ISIS<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>uk.ac.stfc.isis.ibex.client.tycho.parent<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tycho.version&gt;</span>4.0.9<span class="nt">&lt;/tycho.version&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tycho-repo.url&gt;</span>https://oss.sonatype.org/content/groups/public/<span class="nt">&lt;/tycho-repo.url&gt;</span>
+<span class="w">        </span><span class="nt">&lt;photon-repo.url&gt;</span>http://download.eclipse.org/releases/2024-09<span class="nt">&lt;/photon-repo.url&gt;</span>
+<span class="w">        </span><span class="nt">&lt;photon-updates-repo.url&gt;</span>http://download.eclipse.org/eclipse/updates/4.33<span class="nt">&lt;/photon-updates-repo.url&gt;</span>
+<span class="w">        </span><span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;repositories&gt;</span>
+<span class="w">        </span><span class="nt">&lt;repository&gt;</span>
+<span class="w">            </span><span class="nt">&lt;id&gt;</span>photon-updates<span class="nt">&lt;/id&gt;</span>
+<span class="w">            </span><span class="nt">&lt;layout&gt;</span>p2<span class="nt">&lt;/layout&gt;</span>
+<span class="w">            </span><span class="nt">&lt;url&gt;</span>${photon-updates-repo.url}<span class="nt">&lt;/url&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/repository&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/repositories&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.eclipse.tycho<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>tycho-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;version&gt;</span>${tycho.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">                </span><span class="nt">&lt;extensions&gt;</span>true<span class="nt">&lt;/extensions&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- Other maven plugins omitted such as unit testing and checkstyle --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;modules&gt;</span>
+<span class="w">        </span><span class="nt">&lt;module&gt;</span>../uk.ac.stfc.isis.ibex.client.product<span class="nt">&lt;/module&gt;</span>
+<span class="w">        </span><span class="nt">&lt;module&gt;</span>../uk.ac.stfc.isis.ibex.feature.base<span class="nt">&lt;/module&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- Other modules that make up IBEX would be listed here --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;module&gt;</span>../uk.ac.stfc.isis.ibex.ui.mainmenu.tests<span class="nt">&lt;/module&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/modules&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+<p>Let’s explain the various parts shown:</p>
+<ul class="simple">
+<li><p>At the top we have the standard Maven metadata: <code class="docutils literal notranslate"><span class="pre">groupId</span></code>, <code class="docutils literal notranslate"><span class="pre">artifactId</span></code>, <code class="docutils literal notranslate"><span class="pre">version</span></code>.</p></li>
+<li><p>The properties section is used to define URLs for the Tycho plugin and the Eclipse RCP framework. The versions here
+are updated periodically during <a class="reference internal" href="../../processes/dev_processes/Dependency-Updates.html"><span class="doc std std-doc">dependency updates</span></a></p></li>
+<li><p>The repositories section tells Maven to look for a repository for the Eclipse RCP framework version specified above</p></li>
+<li><p>The build section defines the Maven plugins necessary to build the application. The Tycho plugin entry tells Maven to
+download Tycho and use it as part of the build process</p></li>
+<li><p>The modules section lists the locations of the POM files for the various modules that make up the application. When a
+new module is added to IBEX, it will need to be added to this list.</p></li>
+</ul>
+</section>
+<section id="child-pom">
+<h3>Child POM<a class="headerlink" href="#child-pom" title="Link to this heading"></a></h3>
+<p>A typical child POM look like
+<a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.dashboard/pom.xml">this</a>.
+It is very simple - it points at the parent POM to get most of its information. These is one of these <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> files
+for each module that makes up the IBEX client.</p>
+<p>The packaging type is defined as <code class="docutils literal notranslate"><span class="pre">eclipse-plugin</span></code>; this is a packaging type defined by Tycho. Other Tycho types used in
+IBEX are <code class="docutils literal notranslate"><span class="pre">eclipse-feature</span></code> for features, <code class="docutils literal notranslate"><span class="pre">eclipse-test-plugin</span></code> for fragment projects that define unit tests and
+<code class="docutils literal notranslate"><span class="pre">eclipse-repository</span></code> for configuring builds.</p>
+</section>
+<section id="application-pom">
+<h3>Application POM<a class="headerlink" href="#application-pom" title="Link to this heading"></a></h3>
+<p>In IBEX we define a separate project called <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.e4.client.product</span></code> which defines how the product is
+built. It has a
+<a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.e4.client.product/pom.xml">POM file</a>
+of packaging type <code class="docutils literal notranslate"><span class="pre">eclipse-repository</span></code>.</p>
+<p>The key area is the <code class="docutils literal notranslate"><span class="pre">materialize-products</span></code> section, this tells Tycho to actually create the product. Without this Maven
+will compile &amp; unit test the code, but will not produce an executable.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Building-the-GUI.html" class="btn btn-neutral float-left" title="Building the GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../GUI-Coding.html" class="btn btn-neutral float-right" title="Coding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

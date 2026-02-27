@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARGUS &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CHIPIR" href="CHIPIR-Instrument-Details.html" />
+    <link rel="prev" title="ALF" href="ALF-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ARGUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHIPIR-Instrument-Details.html">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Instrument-Details.html">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LET-Instrument-Details.html">LET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOQ-Instrument-Details.html">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN-Instrument-Details.html">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OFFSPEC-Instrument-Details.html">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PEARL-Instrument-Details.html">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">ARGUS</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/ARGUS-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="argus">
+<h1>ARGUS<a class="headerlink" href="#argus" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instrument details pages provide historical context about the devices on a specific instrument,
+at the time they were migrated to IBEX. <strong>These pages may not be up to date with the latest instrument
+configuration.</strong></p>
+</div>
+<p>This page collects information that will be useful for the implementation of the IBEX control system on ARGUS.</p>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>ARGUS is a general purpose muon spectrometer at ISIS, on TS1. The <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/argus.aspx">ARGUS</a> web page describes the background to the instrument.</p>
+</section>
+<section id="argus-equipment">
+<h2>ARGUS Equipment<a class="headerlink" href="#argus-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on ARGUS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>DAE 2</p></td>
+<td><p>Detector Electronics</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-dae">see DAE note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>???</p></td>
+<td><p>ISIS Vacuum System</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-vacuum-system">see Vacuum System note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pfeiffer</p></td>
+<td><p>TPG300</p></td>
+<td><p>Vacuum Gauge</p></td>
+<td><p>RS-232</p></td>
+<td><p>EPICS</p></td>
+<td><p><a class="reference internal" href="#argus-note-vacuum-system">see Vacuum System note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Eurotherm</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>All models at ISIS</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#argus-note-eurotherm">see Eurotherm  note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Julabo</p></td>
+<td><p>FP-50</p></td>
+<td><p>Water Bath</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-water-baths">see Water Bath note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Julabo</p></td>
+<td><p>FP-52</p></td>
+<td><p>Water Bath</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-water-baths">see Water Bath note</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.kepcopower.com/bop.htm">KEPCO</a></p></td>
+<td><p>BOP 100-10MG</p></td>
+<td><p>Bi-Polar Power Supply</p></td>
+<td><p>RS232</p></td>
+<td><p>#187</p></td>
+<td><p><a class="reference internal" href="#argus-note-kepco">see Kepco note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Kepco</p></td>
+<td><p>BIT 4886</p></td>
+<td><p>I/F card</p></td>
+<td><p>GPIB, RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-kepco">see Kepco note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Thurlby</p></td>
+<td><p>EX355P</p></td>
+<td><p>PSU</p></td>
+<td><p>???</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-thurlby">see Thurlby note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Danfysik</p></td>
+<td><p>8000</p></td>
+<td><p>PSU</p></td>
+<td><p>RS232</p></td>
+<td><p>DFKPS</p></td>
+<td><p><a class="reference internal" href="#argus-note-danfysik">see Danfysik note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>TDK</p></td>
+<td><p>Lambda Genesys</p></td>
+<td><p>PSU</p></td>
+<td><p>RS232</p></td>
+<td><p>TDK_ LAMBDA_ GENESYS</p></td>
+<td><p><a class="reference internal" href="#argus-note-genesys">see Genesys note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Neocera</p></td>
+<td><p>LTC-21</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-neocera">see Neocera note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Oxford Instruments</p></td>
+<td><p>Triton</p></td>
+<td><p>Dilution Fridge</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-oxford-instruments">see Oxford Instruments note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Oxford Instruments</p></td>
+<td><p>Mercury</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-oxford-instruments">see Oxford Instruments note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Oxford Instruments</p></td>
+<td><p></p></td>
+<td><p>Cryogenic Equipment</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-oxford-instruments">see Oxford Instruments note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>LakeShore</p></td>
+<td><p>332</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#argus-note-lakeshore">see LakeShore note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Lakeshore</p></td>
+<td><p>372</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-lakeshore">see Lakeshore note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>LakeShore</p></td>
+<td><p>460</p></td>
+<td><p>Gaussmeter</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#argus-note-lakeshore">see LakeShore note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Cryomagnetics</p></td>
+<td><p>LM500</p></td>
+<td><p>Liquid Cryogen Level Monitor</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-cryomagnetics">see Cryomagnetics note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Leiden Cryogenics</p></td>
+<td><p>GHS-2T-1T-700</p></td>
+<td><p>Dilution Fridge</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#argus-note-leiden-cryogenics">see Leiden Cryogenics note</a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="argus-note-dae">
+<h3>Note: DAE<a class="headerlink" href="#argus-note-dae" title="Link to this heading"></a></h3>
+<p>See multi-detector and single-detector below.</p>
+</section>
+<section id="argus-note-vacuum-system">
+<h3>Note: Vacuum System<a class="headerlink" href="#argus-note-vacuum-system" title="Link to this heading"></a></h3>
+<p>TPG300 support is implemented via <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/216">#216</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2063">#2063</a></p>
+</section>
+<section id="argus-note-eurotherm">
+<h3>Note: Eurotherm<a class="headerlink" href="#argus-note-eurotherm" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ARGUS/ARGUS_Eurotherms.jpg">Eurotherms</a> are used to control temperature Orange Cryostat, CCR and Furnace devices.</p>
+</section>
+<section id="argus-note-water-baths">
+<h3>Note: Water Baths<a class="headerlink" href="#argus-note-water-baths" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Julabo Water Bath</p>
+<ul class="simple">
+<li><p>no information on specific Julabo Water Baths - maybe ARGUS uses water baths from the pool?</p></li>
+<li><p>consult the <a class="reference download internal" download="" href="../../_downloads/9717744c2b013e4525a472d95533dabb/julabo_commands.xlsx"><span class="xref download myst">Julabo commands</span></a> spreadsheet for specific details of which set of commands are used individual water baths.</p></li>
+</ul>
+</li>
+<li><p>See also <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx">Water Baths</a> list</p></li>
+</ol>
+</section>
+<section id="argus-note-kepco">
+<h3>Note: Kepco<a class="headerlink" href="#argus-note-kepco" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.kepcopower.com/bit.htm">Kepco BIT 4886</a> is an interface card for Kepco bi-polar (<a class="reference external" href="http://www.kepcopower.com/bop.htm">BOP</a>) power supplies.  See also <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Drivers\Kepco</span> <span class="pre">4886</span> <span class="pre">Serial</span></code></p></li>
+<li><p><a class="reference external" href="http://www.kepcopower.com/bophimod.htm">Kepco BOP 100-10MG PSU</a>.<br>  See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3005">#3005</a></p></li>
+</ol>
+</section>
+<section id="argus-note-thurlby">
+<h3>Note: Thurlby<a class="headerlink" href="#argus-note-thurlby" title="Link to this heading"></a></h3>
+<p>Thurlby EX355P PSU - see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/155">#155</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/198">#198</a>.</p>
+<p><a class="reference external" href="https://www.aimtti.com/product-category/dc-power-supplies/aim-ex-rseries">Thurlby Thandar Instruments EX355P PSU</a></p>
+</section>
+<section id="argus-note-danfysik">
+<h3>Note: Danfysik<a class="headerlink" href="#argus-note-danfysik" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.danfysik.com/en/products/power-supplies/">Danfysik Power Supplies</a>: model 8000 appears to have been superseded by model 8500.</p></li>
+<li><p><a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FPower%20Supplies&amp;amp;FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&amp;amp;View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D&amp;amp;InitialTabId=Ribbon%2EDocument&amp;amp;VisibilityContext=WSSTabPersistence">User and Software Manuals</a> for System 8500.</p></li>
+<li><p>See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1208">#1208</a> for comms settings.</p></li>
+</ol>
+</section>
+<section id="argus-note-genesys">
+<h3>Note: Genesys<a class="headerlink" href="#argus-note-genesys" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://uk.tdk-lambda.com/products/programmable-power-supplies/">TDK Lambda Genesys Power Supplies</a>.</p></li>
+<li><p><a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FPower%20Supplies&amp;amp;FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&amp;amp;View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D&amp;amp;InitialTabId=Ribbon%2EDocument&amp;amp;VisibilityContext=WSSTabPersistence">Safety, User and Programming Manuals</a> for System 8500.</p></li>
+<li><p>See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/983">#983</a>, <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2276">#2276</a>, <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2458">#2458</a></p></li>
+</ol>
+</section>
+<section id="argus-note-neocera">
+<h3>Note: Neocera<a class="headerlink" href="#argus-note-neocera" title="Link to this heading"></a></h3>
+<p>Low temperature experiments?<a class="reference external" href="http://www.submm.caltech.edu/~sharc/technical/LTC-21%20manual.pdf">Neocera LTC-21 Manual</a></p>
+</section>
+<section id="argus-note-oxford-instruments">
+<h3>Note: Oxford Instruments<a class="headerlink" href="#argus-note-oxford-instruments" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Dilution fridge: <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/Dilution-Refrigerators.aspx">models</a> to be determined.</p>
+<ul class="simple">
+<li><p>Triton LabVIEW Driver : <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Drivers\Triton</span></code></p></li>
+<li><p>Triton Documentation : <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Drivers\Triton\Documentation</span></code></p></li>
+<li><p>See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2915">#2915</a></p></li>
+</ul>
+</li>
+<li><p>Blue Cryostat: <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/Oxford-Variox-Cryostats.aspx">models</a> to be determined.</p></li>
+</ol>
+</section>
+<section id="argus-note-lakeshore">
+<h3>Note: LakeShore<a class="headerlink" href="#argus-note-lakeshore" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Model-332/Pages/Overview.aspx">Model 332</a> temperature controller.  Model 332 has now been superseded by <a class="reference external" href="https://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Model-335/Pages/Overview.aspx">Model 335</a>.</p></li>
+<li><p>On muon instruments, the Triton fridges have an additional Lakeshore controller (the 372) to allow control and continuous readout of the sample temperature (the OI software doesn’t allow this using the in-built Lakeshore, despite the unit having a dedicated channel for the sample thermometry).</p></li>
+<li><p><a class="reference external" href="https://www.lakeshore.com/products/categories/overview/temperature-products/ac-resistance-bridges/model-372-ac-resistance-bridge-temperature-controller">Model 372</a> temperature controller.</p></li>
+<li><p><a class="reference external" href="https://www.lakeshore.com/products/Gaussmeters/Model-460-3-Channel-Gaussmeter/Pages/Overview.aspx">Model 460</a> gaussmeter.  Model 460 has now been superseded by <a class="reference external" href="https://www.lakeshore.com/products/Gaussmeters/F71-F41-teslameters/Pages/Overview.aspx">Model F71</a>.</p></li>
+<li><p>There are <a class="reference external" href="https://epics-controls.org/resources-and-support/modules/hardware-support/">EPICS drivers</a> for a variety of Lakeshore devices.</p></li>
+</ol>
+</section>
+<section id="argus-note-cryomagnetics">
+<h3>Note: Cryomagnetics<a class="headerlink" href="#argus-note-cryomagnetics" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>LM500 model appears to have been superseded by <a class="reference external" href="https://www.cryomagnetics.com/products/model-lm-510-liquid-cryogen-monitor/">Model LM-510 Liquid Cryogen Monitor</a>.  <a class="reference external" href="http://www.cryomagnetics.com/manuals/LM-500c.pdf">Spec sheet for the LM500</a> is still available. See also spec sheets and manual on <a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FCryogenics&amp;amp;FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&amp;amp;View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D&amp;amp;InitialTabId=Ribbon%2EDocument&amp;amp;VisibilityContext=WSSTabPersistence">ICPDiscussions</a>.</p></li>
+</ol>
+</section>
+<section id="argus-note-leiden-cryogenics">
+<h3>Note: Leiden Cryogenics<a class="headerlink" href="#argus-note-leiden-cryogenics" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>ARGUS appears to have a Leiden Dilution Fridge.</p>
+<ol class="arabic simple">
+<li><p>Manufacturer: <a class="reference external" href="https://leiden-cryogenics.com/">Leiden Cryogenics</a></p></li>
+<li><p>Manufacturer VI: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\ARGUS\ARGUS</span> <span class="pre">-</span> <span class="pre">LEIDEN</span> <span class="pre">Dilution</span> <span class="pre">Fridge</span></code></p>
+<ul class="simple">
+<li><p>The VI appears to date from 2004.</p></li>
+<li><p>This model of dilution fridge (the GHS-2T-1T-700) is probably obsolete.  It is no longer listed on the web-site.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="argus-note-mclennan">
+<h3>Note: McLennan<a class="headerlink" href="#argus-note-mclennan" title="Link to this heading"></a></h3>
+<p>Support for McLennan devices is well established (see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1099">#1099</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1100">#1100</a> and subsequent tickets.</p>
+<ul class="simple">
+<li><p>muon instruments don’t use motors in their sample environment</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ALF-Instrument-Details.html" class="btn btn-neutral float-left" title="ALF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CHIPIR-Instrument-Details.html" class="btn btn-neutral float-right" title="CHIPIR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

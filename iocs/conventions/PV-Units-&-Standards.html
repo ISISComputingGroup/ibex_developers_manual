@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PV units &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Creation" href="../Creation.html" />
+    <link rel="prev" title="PV naming" href="PV-Naming.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Conventions.html">Conventions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IOC-Descriptions.html">IOC Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Naming.html">IOC Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Startup.html">IOC Startup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-PV-Guide.html">ISIS PV Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Macro-Naming.html">Macro Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manuals.html">Manuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Naming.html">PV naming</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PV units</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Conventions.html">Conventions</a></li>
+      <li class="breadcrumb-item active">PV units</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/conventions/PV-Units-&-Standards.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pv-units">
+<h1>PV units<a class="headerlink" href="#pv-units" title="Link to this heading"></a></h1>
+<section id="dbchecker">
+<h2>DBChecker<a class="headerlink" href="#dbchecker" title="Link to this heading"></a></h2>
+<p>The DBChecker Python script is a helper file that checks a number of things are true about the PVs used within the project and that the correct syntax is used in db files.</p>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h3>
+<p>From an EPICS terminal in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\ISIS\DbChecker\master</span></code>, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">python3</span><span class="o">%</span> <span class="n">check_db_file</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">d</span> <span class="o">&lt;</span><span class="n">directory</span> <span class="n">to</span> <span class="n">check</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">r</span>
+</pre></div>
+</div>
+</section>
+<section id="capabilities">
+<h3>Capabilities<a class="headerlink" href="#capabilities" title="Link to this heading"></a></h3>
+<p>Current pv error checks are:</p>
+<ul class="simple">
+<li><p>PVs that are labelled as interesting and have type longin, longout, ai or ao must contain a unit field</p></li>
+<li><p>Description fields must contain less than 41 characters</p></li>
+<li><p>All units must conform to unit standards (see below)</p></li>
+<li><p>PVs that are labelled as interesting must have description fields</p></li>
+<li><p>The names of PVs that are labelled as interesting must be capitalised and contain only <code class="docutils literal notranslate"><span class="pre">A-Z</span> <span class="pre">0-9</span> <span class="pre">_</span> <span class="pre">:</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calc</span></code> records that are marked as interesting must have their access security group (<code class="docutils literal notranslate"><span class="pre">ASG</span></code>) set to <code class="docutils literal notranslate"><span class="pre">READONLY</span></code>. This is because if you were to set it directly, the record would not execute its calculation, which is not what we want.</p></li>
+</ul>
+<p>Current pv warning are:</p>
+<ul class="simple">
+<li><p>PVs may not have multiple unit fields</p></li>
+<li><p>PVs that are labelled as interesting and have type longin, longout, ai or ao may not have blank fields</p></li>
+</ul>
+<p>Current syntax errors are:</p>
+<ul class="simple">
+<li><p>Colons not used as main separator</p></li>
+<li><p>Names use characters that are not alphanumeric, an underscore or colon</p></li>
+<li><p>Does not adhere to :SP and SP:RBV format</p></li>
+<li><p>If DUMMYPV and DUMMYPV:SP exists without DUMMYPV:SP:RBV (at least as an alias).</p></li>
+<li><p>If DUMMYPV:SP exists on its own but does not have a SP:RBV alias for DUMMYPV</p></li>
+<li><p>Underscores must not be used in place of : i.e. DUMMYPV_SP</p></li>
+</ul>
+<p>Current syntax warnings are:</p>
+<ul class="simple">
+<li><p>Names not in uppercase</p></li>
+</ul>
+<p>The checker is run at the end of a build on Jenkins and unit tests are failed if any of the error checks fail. Failed warnings will be noted and displayed in the test report but will not result in an unstable build. Syntax errors are currently treated as warnings as some files currently contain large numbers of them.</p>
+</section>
+</section>
+<section id="pv-units-standards">
+<h2>Unit Standards<a class="headerlink" href="#pv-units-standards" title="Link to this heading"></a></h2>
+<p>The unit standards apply to both DB files and <a class="reference internal" href="../../system_components/configurations/Calibration-Files.html"><span class="doc std std-doc">calibration files</span></a>.</p>
+<p>If the unit has a standard alphanumeric unit symbol that has been used. In the case where the usual symbol is not alphanumeric e.g. degree (°), angstrom (Å), the unit is written in full, lower case and singular. The unit may be shortened because CSS will only display 8 characters worth of unit so <code class="docutils literal notranslate"><span class="pre">degree/s^2</span></code> is to long.</p>
+<p>Standard prefixes, [T|G|M|k|m|u|n|p|f], are accepted before all units.</p>
+<p>Units can be constructed from a number of ‘base’ units using a space, forward-slash and caret for multiplication, division and powers respectively. For example a unit for work done could be “N m”, a unit for velocity could be “m/s” and a unit for area “m^2”. This is the same standard as used in <a class="reference external" href="http://linux.die.net/man/3/udunits">udunits</a>.</p>
+<p>For PVs where the units are contestable, for example NUMSPECTRA, a blank units field is acceptable. This will give a warning, but not a failure, when a test is run and so can be discussed at a later date.</p>
+<p>The units within the <code class="docutils literal notranslate"><span class="pre">support/optics/</span></code> path are not checked as they contained a number of ambiguities and are rarely used.</p>
+<section id="supported-units">
+<h3>Supported Units<a class="headerlink" href="#supported-units" title="Link to this heading"></a></h3>
+<p>The project currently contains the following base units:</p>
+<ul class="simple">
+<li><p>A</p></li>
+<li><p>angstrom</p></li>
+<li><p>bar</p></li>
+<li><p>bit</p></li>
+<li><p>byte</p></li>
+<li><p>C</p></li>
+<li><p>cm</p></li>
+<li><p>count</p></li>
+<li><p>degree or deg for short</p></li>
+<li><p>eV</p></li>
+<li><p>event</p></li>
+<li><p>frame</p></li>
+<li><p>hour</p></li>
+<li><p>Hz</p></li>
+<li><p>inch</p></li>
+<li><p>interrupt</p></li>
+<li><p>K</p></li>
+<li><p>L</p></li>
+<li><p>m</p></li>
+<li><p>min</p></li>
+<li><p>minute</p></li>
+<li><p>ohm</p></li>
+<li><p>Oersted</p></li>
+<li></li>
+<li><p>Pa</p></li>
+<li><p>photon</p></li>
+<li><p>pixel</p></li>
+<li><p>radian</p></li>
+<li><p>rpm</p></li>
+<li><p>s</p></li>
+<li><p>torr</p></li>
+<li><p>step or stp for short</p></li>
+<li><p>T</p></li>
+<li><p>V</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PV-Naming.html" class="btn btn-neutral float-left" title="PV naming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Creation.html" class="btn btn-neutral float-right" title="IOC Creation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alarms &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Building the alarm server for MySQL" href="alarms/Building-the-alarm-server-for-mysql.html" />
+    <link rel="prev" title="ActiveMQ" href="ActiveMQ.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Alarms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="alarms/Building-the-alarm-server-for-mysql.html">Building the alarm server for MySQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alarms/Using-the-alarm-server-with-mysql.html">Using the alarm server with MySQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">Alarms</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/Alarms.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="alarms">
+<h1>Alarms<a class="headerlink" href="#alarms" title="Link to this heading"></a></h1>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#useful-links">Useful links</a></p></li>
+<li><p><a class="reference internal" href="#architectural-overview">Architectural overview</a></p></li>
+<li><p><a class="reference internal" href="#jms-server">JMS server</a></p></li>
+<li><p><a class="reference internal" href="#alarm-server">Alarm server</a></p></li>
+<li><p><a class="reference internal" href="#alarm-database">Alarm database</a></p></li>
+<li><p><a class="reference internal" href="#eclipse-clients">Eclipse clients</a></p></li>
+<li><p><a class="reference internal" href="#default-connection-details">Default connection details</a></p></li>
+</ul>
+</section>
+<section id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="alarms/Building-the-alarm-server-for-mysql.html">Building the alarm server for MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alarms/Using-the-alarm-server-with-mysql.html">Using the alarm server with MySQL</a></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="http://cs-studio.sourceforge.net/docbook/ch14.html">CSS book</a></p></li>
+</ul>
+</section>
+<section id="architectural-overview">
+<h2>Architectural overview<a class="headerlink" href="#architectural-overview" title="Link to this heading"></a></h2>
+<p>The architecture of the alarm system as used in CSStudio is presented in detail in <a class="reference external" href="http://cs-studio.sourceforge.net/docbook/ch14.html">Chapter 14</a> of the CSS book. The implementation used by ISIS is very similar though a few features which we do not need have been removed. Overall, the architecture is very similar to that of the <a class="reference internal" href="IOC-message-logging.html"><span class="doc std std-doc">IOC log</span></a>.</p>
+<p>The configuration of an alarm system, that is, the set of PVs which are to be monitored, is stored in a relational database. The configuration can be a flat list of PVs or the PVs can be formed into a hierarchy with systems and sub-systems.</p>
+<p>The alarm server reads the configuration from the database and continuously monitors the specified trigger PVs and detects whenever one of the them goes into an alarm state. When this happens, the server updates the PV’s record in the database and sends a message to all listeners (Eclipse clients) via JMS (Java Message Service).</p>
+<p>For each instrument, there will be a single instance of the alarm server, JMS server and database server, probably all on the same machine.</p>
+</section>
+<section id="jms-server">
+<h2>JMS server<a class="headerlink" href="#jms-server" title="Link to this heading"></a></h2>
+<p>The JMS server implementation used is Apache <a class="reference internal" href="ActiveMQ.html"><span class="doc std std-doc">ActiveMQ</span></a>, an instance of which is started up along with the IOC log server. See the <a class="reference internal" href="IOC-message-logging.html"><span class="doc std std-doc">IOC log</span></a> page for details.</p>
+</section>
+<section id="alarm-server">
+<h2>Alarm Server<a class="headerlink" href="#alarm-server" title="Link to this heading"></a></h2>
+<p>The alarm server can be found in <code class="docutils literal notranslate"><span class="pre">EPICS/CSS/master/AlarmServer</span></code>. Currently it is a pre-built version. It would be useful to have a version with source code that can be modified in Eclipse and built as part of the Jenkins build. Only the plugin ‘org.csstudio.alarm.beast.server’ would be needed.</p>
+<p>The server can be started by running the script ‘run_alarm_server.bat’. The alarm ‘root configuration’ that the server uses is specified as a command-line argument; the name of the root that will be used may be set by editing the value in the ‘config_name.ini’ file. Other settings for the alarm server including the database and JMS server connection settings, are found in the file ‘alarm_server_settings.ini’.</p>
+<p>The settings for which PVs are watched by the alarm server are set using the AlarmServerConfig tool. In a similar way to the <a class="reference internal" href="CSS-Archive-Engine.html"><span class="doc std std-doc">ArchiveEngines</span></a>. The script in <code class="docutils literal notranslate"><span class="pre">AlarmServer\make_alarm_config.py</span></code> creates the xml that the config tool reads and populates the alarm server with. This xml is created based on the running IOCs as specified in the MySQL db.</p>
+<p>There is also a script (procserv_start.bat) to start that alarm server wrapped in procserv, but this doesn’t appear to work correctly at the present time.</p>
+</section>
+<section id="alarm-database">
+<h2>Alarm database<a class="headerlink" href="#alarm-database" title="Link to this heading"></a></h2>
+<p>The alarm server directory, <code class="docutils literal notranslate"><span class="pre">EPICS/CSS/master/AlarmServer</span></code> contains SQL files that can be used to create the appropriate tables (for MySQL, Oracle, and Postgres) in a SQL database for use by the alarm system. Note these files are also contained in the CSS source code, in the plugin org.csstudio.alarm.beast.</p>
+<p>It is also necessary to set up the appropriate database user accounts for the server and for the clients ( see <a class="reference internal" href="#default-connection-details">default connection details</a> below).</p>
+<p>If you are using a MySQL database, simply run the commands in the file ‘ALARM_MYSQL.sql’ to set up the tables and those in ‘MYSQL_USER.sql’ to set up the default user accounts.</p>
+</section>
+<section id="eclipse-clients">
+<h2>Eclipse clients<a class="headerlink" href="#eclipse-clients" title="Link to this heading"></a></h2>
+<p>The target platform includes the feature ‘Alarm Handler UI’ which contains all the code for the alarm UI elements and for interacting with the alarm database and the JMS message server. The following additional plugins are required by this feature:</p>
+<ul class="simple">
+<li><p>org.csstudio.platform.utility.jms</p></li>
+<li><p>org.csstudio.platform.utility.rdb</p></li>
+<li><p>org.csstudio.platform.libs.jms</p></li>
+<li><p>org.csstudio.platform.libs.jdbc</p></li>
+<li><p>org.csstudio.security</p></li>
+<li><p>org.csstudio.security.ui</p></li>
+<li><p>org.csstudio.logging</p></li>
+</ul>
+<p>These are all included in ‘org.csstudio.isis.feature.css, so you shouldn’t have to worry about them.</p>
+<p>Currently the alarm handler functionality is added to the client through the plugin ‘org.csstudio.isis.ui.alarm’. This simply provides a perspective, which contains the ‘Alarm Tree’ widget, to the perspective switcher.</p>
+<p><img alt="Alarm system preferences dialog" src="../_images/Alarm-preferences.png" /></p>
+</section>
+<section id="default-connection-details">
+<h2>Default connection details<a class="headerlink" href="#default-connection-details" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>JMS server address: failover:(tcp://localhost:39990)</p></li>
+<li><p>SQL server address: jdbc:mysql://localhost/ALARM</p></li>
+<li><p>SQL server username (read/write): alarm</p></li>
+<li><p>SQL server password (read/write): $alarm</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ActiveMQ.html" class="btn btn-neutral float-left" title="ActiveMQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="alarms/Building-the-alarm-server-for-mysql.html" class="btn btn-neutral float-right" title="Building the alarm server for MySQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

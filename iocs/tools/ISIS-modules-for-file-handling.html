@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISIS modules for file handling &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LabVIEW Remote" href="Labview-Remote.html" />
+    <link rel="prev" title="IOC Access Security" href="IOC-access-security.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Asyn-Interpose-Functions.html">Asyn Interpose functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AsynEchoDriver.html">Asyn Echo Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Autosave.html">Autosave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Convert-Record.html">Convert record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-State-Machine-%28Sequencer%29.html">Creating a State Machine (Sequencer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Utilities.html">IOC Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-access-security.html">IOC Access Security</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ISIS modules for file handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Labview-Remote.html">LabVIEW Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lua.html">Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serve-file-contents-over-EPICS.html">Serve file contents over EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Template-Substitutions.html">Template Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities-Library.html">Utilities Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aSub-records.html">Asub records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="icpconfig.html">ICP Config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools &amp; Support Modules</a></li>
+      <li class="breadcrumb-item active">ISIS modules for file handling</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tools/ISIS-modules-for-file-handling.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="isis-modules-for-file-handling">
+<h1>ISIS modules for file handling<a class="headerlink" href="#isis-modules-for-file-handling" title="Link to this heading"></a></h1>
+<p>There are currently two ISIS modules that may help select and read files via PVs.</p>
+<section id="filelist">
+<h2>FileList<a class="headerlink" href="#filelist" title="Link to this heading"></a></h2>
+<p>This module will take a base directory and PCRE expression. It will return a compressed JSON list of the files that match the expression within that directory (non-recursively).</p>
+<p>Currently, the constructor for the module must be given the starting PCRE and directory. This method was chosen, rather than defaults being set via PVs, as the directory must be set prior to the PCRE.</p>
+<p>There are three FileList variables that can be connected to PVs:</p>
+<ul class="simple">
+<li><p>DIRBASE - Gives the base directory to search</p></li>
+<li><p>SEARCH - Gives the PCRE expression to search for</p></li>
+<li><p>JARR - Gives the JSON compressed list of valid files
+To connect the list of files to an OPI there is a common script called UpdateFileList.py which should be attached to a combo control. For an example of this see the Kepco OPI.</p></li>
+</ul>
+<p>There is also a db file for selecting calibration files for a record, which is used in the Eurotherm and the Kepco.</p>
+<p>For examples of this modules use see the test IOC within the FileList folder or see the DAE IOC where this is used to select wiring, detector and spectra tables.</p>
+</section>
+<section id="readascii">
+<h2>ReadASCII<a class="headerlink" href="#readascii" title="Link to this heading"></a></h2>
+<p>This module has two main functions:</p>
+<ul class="simple">
+<li><p>Ramp a set point linearly from it’s current value to a new one. This can be controlled through a ramp rate (in EGU/min) and a step rate (in steps/min)</p></li>
+<li><p>Change a selection of other PVs when a set point changes. This is done by opening a file at a given location and using the table within it to change PVs. The module uses one PV as a lookup on the first column of the table and subsequently changes other PVs to match the values in the other columns.</p></li>
+</ul>
+<p>These functions can be turned off and on independently but can be used in conjunction to ramp the lookup PV and change other PVs when it crosses a threshold of the table. Both functions are used in the Eurotherm IOC to change PID and MaxHeater values when the temperature SP is changed. The Kepco IOC only uses the ramping functionality.</p>
+<p>To configure ReadASCII you must have the following in your <code class="docutils literal notranslate"><span class="pre">*.cmd</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ReadASCIIConfigure</span><span class="p">(</span><span class="n">port_name</span><span class="p">,</span> <span class="n">PID_folder</span><span class="p">,</span> <span class="n">steps_per_minute</span><span class="p">,</span> <span class="n">quiet_on_SP</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">port_name</span></code> is a string of the port name, used to refer to ReadASCII in the db</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PID_folder</span></code> is the initial folder used to search for PID lookup files (can be blank if just using ramping)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">steps_per_minute</span></code> is the number of steps the ramp will take per minute (note that the step size is dependant on the rate set at runtime)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quiet_on_SP</span></code> <em>optional</em> can be set to 1 to stop ReadASCII logging on every new set point. This can be useful if you think the set point may end up being changed rapidly e.g. the zero field controller. Defaults to 0 i.e. logging on every set point</p></li>
+</ul>
+<section id="behaviour">
+<h3>Behaviour<a class="headerlink" href="#behaviour" title="Link to this heading"></a></h3>
+<p>Upon startup, ReadASCII will use lookup file to create asynPortDriver parameters and associate them with
+settings table values created also from lookup value.
+IMPORTANT - for ReadASCII to work correctly, the column names (headers) in lookup file must match PV names from .db file.
+For example given field(INP,  “&#64;asyn($(READ),0,1)MH”) the correct header in lookup file should be ‘MH’.
+.db file can be usually found in master/db folder, otherwise no PV will be read/written to.
+ReadASCII has many checks written into it to prevent crashing if lookup file is incorrectly formatted or other unexpected situations occur and allows continued use without crashing, however there are currently no warnings displayed to the user - only errors printed in logs.</p>
+</section>
+<section id="extending">
+<h3>Extending<a class="headerlink" href="#extending" title="Link to this heading"></a></h3>
+<p>It is possible to extend functionality of ReadASCII to use more parameters than currently used (1 setpoint and 4 values - P, I, D, Max).
+If the lookup file contains more columns with proper header names then corresponding PVs will be written to using lookup value table.
+There can be only one setpoint column however. Other parameters, such as LUTON (Check if reading lookup file is on) or RAMPON (Check if ramping is on) are currently hard-coded.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IOC-access-security.html" class="btn btn-neutral float-left" title="IOC Access Security" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Labview-Remote.html" class="btn btn-neutral float-right" title="LabVIEW Remote" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

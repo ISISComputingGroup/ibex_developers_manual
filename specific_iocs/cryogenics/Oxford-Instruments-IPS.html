@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPS &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("True" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll(".mermaid svg");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("True" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mercury IPS" href="Oxford-Instruments-Mercury-IPS.html" />
+    <link rel="prev" title="Mercury iTC - Enhanced cryostat control" href="MercuryiTC-Enhanced-Cryostat-Control.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Cryogenics.html">Cryogenics</a></li>
+      <li class="breadcrumb-item active">IPS</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/Oxford-Instruments-IPS.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ips">
+<h1>IPS<a class="headerlink" href="#ips" title="Link to this heading"></a></h1>
+<p>The Oxford instruments IPS is a cryogenic magnet power supply. <strong>This device can cause a magnet to <a class="reference external" href="https://en.wikipedia.org/wiki/Superconducting_magnet#Magnet_quench">quench</a> if it sends commands while the magnet is in the wrong state! Please be careful when modifying this driver, especially if modifying the state machine.</strong> In particular, the two most obvious states which must be avoided are:</p>
+<ol class="arabic simple">
+<li><p>PSU current != Magnet current and switch heater on</p></li>
+<li><p>Ramping the Magnet current too fast</p></li>
+</ol>
+<p>When configuring the IOC, suggested blocks to create are:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>PV</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Field</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FIELD:USER</span></code></p></td>
+<td><p>This is a composite field block that will choose to display either the persistent field or the power supply field, depending on the status of the switch heater</p></td>
+</tr>
+<tr class="row-odd"><td><p>Magnet_status</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">STS:SYSTEM:FAULT</span></code></p></td>
+<td><p>This is a status readback from the hardware. Should always be “Normal” (Enum: 0). <strong>It is recommended to put run control on this being 0 (set limits -0.5 to 0.5), otherwise it can be difficult for the scientists to see that there is a problem.</strong></p></td>
+</tr>
+</tbody>
+</table>
+<section id="basic-cryomagnet-operation">
+<h2>Basic cryomagnet operation<a class="headerlink" href="#basic-cryomagnet-operation" title="Link to this heading"></a></h2>
+<p>The circuit diagram of a cryogenic magnet with a switch heater looks something like the following:</p>
+<p><img alt="Cryomagnet" src="../../_images/cryomagnet_circuit_diagram.PNG" /></p>
+<p>The basic idea of operation in persistent mode is as follows:</p>
+<ul class="simple">
+<li><p>If the switch heater is turned off, the magnet can be set to a particular current/field by the IPS</p></li>
+<li><p>Once the magnet is set to that current/field, the switch heater can be turned off.</p>
+<ul>
+<li><p>This closes the superconducting switch</p></li>
+<li><p>Because of how cryomagnets behave, you now get a “persistent” current which flows around the superconducting loop formed by the magnet and the switch.</p></li>
+<li><p>Persistent currents are an advantage because they allow much greater stability than a power supply</p></li>
+<li><p>When in persistent mode the IPS can be ramped down and the persistent current within the magnet will keep generating a field.</p></li>
+</ul>
+</li>
+<li><p>Now that there is a persistent current flowing around the magnet/switch, the IPS can be ramped down</p>
+<ul>
+<li><p>This has the advantage that it saves power &amp; cryogens</p></li>
+<li><p>Must set the IPS back to the same current as the magnet before turning the switch heater back on!</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>GOLDEN RULE OF OPERATING THE IPS: Only turn the switch heater on if PSU current == Magnet current</strong></p>
+</section>
+<section id="state-machine">
+<h2>State machine<a class="headerlink" href="#state-machine" title="Link to this heading"></a></h2>
+<p>The IOC implements the following state machine in SNL:</p>
+<ul class="simple">
+<li><p>Initial state</p>
+<ul>
+<li><p>The state that the state machine starts in</p></li>
+<li><p>The machine can get stuck in this state if the field PV is not processed</p></li>
+</ul>
+</li>
+<li><p>At field</p>
+<ul>
+<li><p>This is the state where the magnet is at a particular field (either persistent or not), and is not ramping to anywhere.</p></li>
+<li><p>The activity of the IPS should be “hold” - this instructs the IPS to maintain it’s current output at the present level.</p></li>
+</ul>
+</li>
+<li><p>Set PSU to match magnet</p>
+<ul>
+<li><p>The state machine always sets the IPS to explicitly match the current in the magnet, regardless of whether the current is already matched. This is only technically needed if the magnet was in persistent mode previously, but it doesn’t do any harm to set it explicitly anyway.</p></li>
+<li><p>The activity of the IPS is “Ramp to Setpoint”</p></li>
+</ul>
+</li>
+<li><p>Wait for voltage to stabilize</p>
+<ul>
+<li><p>Once the PSU is at the required current, wait for the voltage to be stable. We define stable as 5 successive readings which are all within a <em>stability voltage</em> of each other. The stability voltage is set as a macro <code class="docutils literal notranslate"><span class="pre">STABILITY_VOLTAGE</span></code> which defaults to 0.1V.</p></li>
+</ul>
+</li>
+<li><p>Turn switch heater on and wait</p>
+<ul>
+<li><p>This state puts the activity back to “Hold”</p></li>
+<li><p>It also instructs the switch heater to turn on and then waits for the heater to warm up</p></li>
+</ul>
+</li>
+<li><p>Set PSU output</p>
+<ul>
+<li><p>At this stage in the state machine, we can begin the ramp to the target field</p></li>
+</ul>
+</li>
+<li><p>[PERSISTENT MODE ONLY] Switch off heater</p>
+<ul>
+<li><p>Once the magnet has reached the target field, it is safe to switch off the switch heater again</p></li>
+<li><p>We wait for the switch to cool back down again (and become superconducting) before moving onto the next state</p></li>
+</ul>
+</li>
+<li><p>[PERSISTENT MODE ONLY] Ramp down PSU</p>
+<ul>
+<li><p>The heater is now OFF (the switch is superconducting), so the PSU is free to ramp down without affecting the field produced by the magnet</p></li>
+<li><p>Set the IPS activity to “Ramp to Zero” and wait for the supplied current to drop to zero</p></li>
+<li><p>At the end of this state, the magnet is set to “persistent” mode.</p></li>
+</ul>
+</li>
+</ul>
+<p>The SNL state machine is also described in the following diagram:</p>
+<pre  class="mermaid">
+        ---
+title: IPS State Machine
+---
+stateDiagram-v2
+    direction TB
+    [*] --&gt; initial
+    at_field: At Field&lt;br&gt;statemachine_pv=1
+    set_psu_to_match_magnet: Set PSU to match magnet&lt;br&gt;statemachine_pv=2
+    wait_for_voltage_to_stabilise: Wait for voltage to stabilise&lt;br&gt;statemachine_pv=3
+    ensure_switch_heater_warm: Ensure switch heater warm&lt;br&gt;statemachine_pv=4
+    set_psu_output: Set PSU output&lt;br&gt;statemachine_pv=5
+    switch_off_heater: Switch off heater&lt;br&gt;statemachine_pv=6
+    ramp_down_psu: Ramp down PSU&lt;br&gt;statemachine_pv=7
+    initial --&gt; at_field: field_setpoint_alarm == 0
+    at_field --&gt; set_psu_to_match_magnet: field_setpoint != field_setpoint_readback&lt;br&gt;&amp;&amp; field_setpoint_alarm == 0&lt;br&gt; &amp;&amp; (heater == 0 || heater == 2)
+    at_field --&gt; set_psu_output: field_setpoint != field_setpoint_readback&lt;br&gt;&amp;&amp; field_setpoint_alarm == 0&lt;br&gt;&amp;&amp; heater == 1
+    set_psu_to_match_magnet --&gt; wait_for_voltage_to_stabilise: field_setpoint_readback == magnet_field&lt;br&gt;&amp;&amp; psu_field == magnet_field&lt;br&gt;&quot;&amp;&amp; ((sweepmode == SWEEP_MODE)&lt;br&gt; || (sweepmode == SWEEP_MODE_ALT))&lt;br&gt;&amp;&amp; (sweep_active == 0)
+    set_psu_to_match_magnet --&gt; set_psu_to_match_magnet: timeout 300s
+    wait_for_voltage_to_stabilise --&gt; ensure_switch_heater_warm: supplyvoltage_stable == 1
+    wait_for_voltage_to_stabilise --&gt; set_psu_to_match_magnet: field_setpoint_readback != field_setpoint_raw
+    wait_for_voltage_to_stabilise --&gt; set_psu_to_match_magnet: timeout 300s
+    ensure_switch_heater_warm --&gt; set_psu_output: activity == ACTIVITY_HOLD&lt;br&gt;&amp;&amp; heater == 1&lt;br&gt; &amp;&amp; heater_ontime_ok == 1
+    ensure_switch_heater_warm --&gt; ensure_switch_heater_warm: timeout heater_wait_time + 30.0s
+    set_psu_output --&gt; switch_off_heater: field_setpoint_readback == field_setpoint&lt;br&gt;&amp;&amp; (field_setpoint == psu_field&lt;br&gt;&amp;&amp; persistent == 1&lt;br&gt;&amp;&amp; (sweep_active == 0)&lt;br&gt;
+    set_psu_output --&gt; at_field: field_setpoint_readback == field_setpoint&lt;br&gt;&amp;&amp; field_setpoint == psu_field&lt;br&gt;&amp;&amp; persistent == 0&lt;br&gt;&amp;&amp; (sweep_active == 0)&lt;br&gt;
+    set_psu_output --&gt; set_psu_output: timeout 300s
+    switch_off_heater --&gt; ramp_down_psu: heater == 0 || heater == 2&lt;br&gt;
+    switch_off_heater --&gt; switch_off_heater: timeout 30s
+    ramp_down_psu --&gt; at_field: psu_field == 0&lt;br&gt;&amp;&amp; (sweep_active == 0) &lt;br&gt;
+    ramp_down_psu --&gt; ramp_down_psu: timeout 300s
+    </pre></section>
+<section id="ioc-notes">
+<h2>IOC notes<a class="headerlink" href="#ioc-notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The IOC does not enter it’s state machine until a setpoint is set.</p>
+<ul>
+<li><p>If a ramp was in progress at the time the IOC was started, the ramp will continue, but no further action will occur (for example, the magnet won’t be set to persistent mode and the heater status won’t be changed).</p></li>
+<li><p>This is done so that there are no assumptions made about the state of the IPS which might be invalid</p></li>
+<li><p>To continue setting the field to the desired value after an IOC restart, simply resend the setpoint</p></li>
+</ul>
+</li>
+<li><p>There are user facing records <code class="docutils literal notranslate"><span class="pre">FIELD:USER</span></code> and <code class="docutils literal notranslate"><span class="pre">FIELD:USER:SP</span></code> which should be used for blocks. This field readback will choose whether to display either the persistent field or the power supply field depending on whether the switch heater is on or not. The setpoint is an alias to <code class="docutils literal notranslate"><span class="pre">FIELD:SP</span></code>.</p></li>
+</ul>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
+<p>There are various IPS units here is a list of the ones we know the settings for (Lab view settings are in <code class="docutils literal notranslate"><span class="pre">...LabVIEW</span> <span class="pre">Modules\Oxford</span> <span class="pre">Software\TESLTRON.INI</span></code>):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>IN LabVIEW</p></th>
+<th class="head"><p>7T Magnet</p></th>
+<th class="head"><p>9T Chopper Magnet (LET)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STABILITY_VOLTAGE</span></code></p></td>
+<td><p>5 voltages are compared and they must differ by less than this to be declared stable</p></td>
+<td><p>hard coded</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MAX_FIELD</span></code></p></td>
+<td><p>Maximum field</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PS0MaxField(2.2K)</span></code> and <code class="docutils literal notranslate"><span class="pre">PS0MaxField(4.2K)</span></code></p></td>
+<td><p>7.0 [1]</p></td>
+<td><p>8.8 [2]</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MAX_SWEEP_RATE</span></code></p></td>
+<td><p>Maximum rate of change of the field in B/min</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PS0MaxSweep(4.2K)</span></code> and <code class="docutils literal notranslate"><span class="pre">PS0MaxSweep(2.2K)</span></code></p></td>
+<td><p>0.399</p></td>
+<td><p>0.3990</p></td>
+</tr>
+</tbody>
+</table>
+<p>[1] - The limit may be lower on some beamlines due to the construction of their sample area. Below are known cases:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Beamline</p></th>
+<th class="head"><p>Maximum field</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ZOOM</p></td>
+<td><p>5.5T</p></td>
+</tr>
+<tr class="row-odd"><td><p>MERLIN</p></td>
+<td><p>2.0T</p></td>
+</tr>
+</tbody>
+</table>
+<p>[2] - Limited by hardware. The IPS is configured to reject any setpoints above 8.8T.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="magnet-won-t-go-to-field-which-has-been-set-activity-is-clamped">
+<h3>Magnet won’t go to field which has been set - “Activity” is “Clamped”<a class="headerlink" href="#magnet-won-t-go-to-field-which-has-been-set-activity-is-clamped" title="Link to this heading"></a></h3>
+<p>Check on the “Advanced” tab of the OPI whether the IPS reports it’s status as “clamped”. If so, the state machine will be unable to proceed because being “clamped” means that the IPS will stay at it’s current output indefinitely. “Clamped” mode is usually used by cryogenics when setting up the magnet, it is potentially undesirable to do this remotely without checking with them first.</p>
+<p>Note: You <em>may</em> be able to get out of a clamped state remotely with <code class="docutils literal notranslate"><span class="pre">caput</span> <span class="pre">%MYPVPREFIX%IPS_01:ACTIVITY:SP</span> <span class="pre">Hold</span></code>, but the old LabVIEW driver did not do this and it is not exposed as a user-facing option in the EPICS driver. <strong>You should double check that this is ok with cryogenics before executing this command! It is potentially dangerous if the magnet has not been fully set up.</strong></p>
+</section>
+<section id="magnet-won-t-go-to-field-sweep-rate-readback-is-zero">
+<h3>Magnet won’t go to field - sweep rate readback is zero<a class="headerlink" href="#magnet-won-t-go-to-field-sweep-rate-readback-is-zero" title="Link to this heading"></a></h3>
+<p>Set the magnet to a non-zero sweep rate (you will need to be in manager mode to do this). Maximum permissible sweep rates are listed in the table above. If unsure, consult the instrument scientists or cryogenics. The IPS itself should limit the sweep rate to safe values in hardware.</p>
+</section>
+<section id="magnet-won-t-respond-to-any-setpoints">
+<h3>Magnet won’t respond to any setpoints<a class="headerlink" href="#magnet-won-t-respond-to-any-setpoints" title="Link to this heading"></a></h3>
+<p>Check remote mode is enabled.</p>
+</section>
+<section id="magnet-system-status-reports-something-other-than-normal-e-g-quenched-or-fault">
+<h3>Magnet system status reports something other than “normal” - e.g. “quenched” or “fault”<a class="headerlink" href="#magnet-system-status-reports-something-other-than-normal-e-g-quenched-or-fault" title="Link to this heading"></a></h3>
+<p>This indicates a hardware fault. Inform instrument scientists that the magnet has a problem and has likely gone to zero field (even if the IPS still claims to be producing a non-zero field). Consult cryogenics for help.</p>
+</section>
+</section>
+<section id="related-documentation">
+<h2>Related Documentation:<a class="headerlink" href="#related-documentation" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://isiscomputinggroup.github.io/ibex_developers_manual/specific_iocs/cryogenics/Oxford-Instruments-Mercury-IPS.html">Oxford Instruments Mercury IPS</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MercuryiTC-Enhanced-Cryostat-Control.html" class="btn btn-neutral float-left" title="Mercury iTC - Enhanced cryostat control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Oxford-Instruments-Mercury-IPS.html" class="btn btn-neutral float-right" title="Mercury IPS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

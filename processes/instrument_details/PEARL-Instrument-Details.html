@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEARL &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="POLARIS" href="POLARIS-Instrument-Details.html" />
+    <link rel="prev" title="OSIRIS" href="OSIRIS-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ARGUS-Instrument-Details.html">ARGUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHIPIR-Instrument-Details.html">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Instrument-Details.html">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LET-Instrument-Details.html">LET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOQ-Instrument-Details.html">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN-Instrument-Details.html">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OFFSPEC-Instrument-Details.html">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">PEARL</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/PEARL-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pearl">
+<h1>PEARL<a class="headerlink" href="#pearl" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instrument details pages provide historical context about the devices on a specific instrument,
+at the time they were migrated to IBEX. <strong>These pages may not be up to date with the latest instrument
+configuration.</strong></p>
+</div>
+<p>This page collects information that will be useful for the implementation of the IBEX control system on PEARL.</p>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>PEARL is a powder diffraction instrument on TS1 at ISIS, dedicated to high-pressure studies.  The <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/pearl.aspx">PEARL</a> web page describes the background to the instrument.</p>
+<section id="pearl-networking">
+<h3>PEARL networking<a class="headerlink" href="#pearl-networking" title="Link to this heading"></a></h3>
+<p>PEARL has a slightly complicated networking situation, where they have some patch panels that propagate through to next to their sample prep/setup cabin.</p>
+<p>To summarise:</p>
+<p>Ports <code class="docutils literal notranslate"><span class="pre">SC0-SC10</span></code> are patched through to the top patch panel in the setup cabin. <code class="docutils literal notranslate"><span class="pre">SC6-9</span></code> are actually on the outside wall of the setup cabin, near where their vacuum tanks live. <code class="docutils literal notranslate"><span class="pre">W269-272</span></code> should patch from the setup cabin to the patch panel at the back of the main cabin.</p>
+<p>Galils, choppers etc are fed through <code class="docutils literal notranslate"><span class="pre">DS31-DS35</span></code> which lives in the little server room down the stairs.</p>
+<p>There is a large patch panel in the main PEARL cabin which links to the blockhouse ports, sat above some Eurotherm racks. The confusing bit - there are also ports that live outside the setup cabin, on the left side above the beamline itself. Ports 1-5 here ALSO route through to the large rack-mounted patch panel which lives in the main cabin. For example, port 3 outside the setup cabin, commonly used for the <code class="docutils literal notranslate"><span class="pre">PACE</span> <span class="pre">5000</span></code> pressure controller, routes to port 3 on the large patch panel (in the rack in the PEARL cabin). This is then fed to the Moxa which is sat above. Each of the ports on the large patch panel have a code that looks like <code class="docutils literal notranslate"><span class="pre">9MC4180</span></code> which means nothing to us - we only care about the patch panel number which is underneath.</p>
+</section>
+</section>
+<section id="pearl-equipment">
+<h2>PEARL Equipment<a class="headerlink" href="#pearl-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on PEARL. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>DAE 2</p></td>
+<td><p>Detector Electronics</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-dae">see DAE note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>Mk3 Chopper</p></td>
+<td><p>Chopper</p></td>
+<td><p>Ethernet/.NET</p></td>
+<td><p>#169</p></td>
+<td><p><a class="reference internal" href="#pearl-note-mk3-chopper">see Mk3 Chopper note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GALIL</p></td>
+<td><p><a class="reference external" href="http://www.galilmc.com/products/dmc-22x0.php">DMC2280</a></p></td>
+<td><p>Motion Controller</p></td>
+<td><p>Ethernet</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#note-galil">see Galil note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.linmot.com/">LINMOT</a></p></td>
+<td><p><a class="reference external" href="http://www.linmot.com/fileadmin//user_upload/Downloads/software-firmware/servo-drives/linmot-talk-1-3-x/UserManual_1r3_e_recent.pdf">P0x-23</a></p></td>
+<td><p>Linear Motors and Motion Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2098">#2098</a></p></td>
+<td><p><a class="reference internal" href="#note-linmot">see LinMot note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>???</p></td>
+<td><p>???</p></td>
+<td><p>1 x 4-blade jaws</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-jaws">see Jaws note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.pfeiffer-vacuum.com/products/measurement/container.action">Pfeiffer</a></p></td>
+<td><p>TPG300</p></td>
+<td><p>ISIS Vacuum System</p></td>
+<td><p>RS232</p></td>
+<td><p>#216</p></td>
+<td><p><a class="reference internal" href="#note-pfeiffer">see Pfeiffer note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Eurotherm</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>All models at ISIS</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#note-eurotherm">see Eurotherm  note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>LakeShore</p></td>
+<td><p>336</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#note-lakeshore">see LakeShore note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>~Oxford Instruments~</p></td>
+<td><p>~ITC503~</p></td>
+<td><p>~Cryogenic System~</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-oxford-instruments">see Oxford Instruments note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sorensen</p></td>
+<td><p>High-PT</p></td>
+<td><p>PSU</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-sorensen">see Sorensen note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pace</p></td>
+<td><p>5000</p></td>
+<td><p>Pressure Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-pace">see Pace note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>PEARL</p></td>
+<td><p>Pressure Cell Controller</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-pressure-cell-controller">see Pressure Cell Controller note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>PEARL</p></td>
+<td><p>MEAS M905 Pressure Transducer</p></td>
+<td><p>RS485</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-pearl-pressure-transducer">see PEARL Pressure Transducer note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>PEARL</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-pearl-temperature-controller">see PEARL Temperature Controller note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>???</p></td>
+<td><p>Cold Valve</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#note-cold-valve">see Cold Valve note</a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="note-dae">
+<h3>Note: DAE<a class="headerlink" href="#note-dae" title="Link to this heading"></a></h3>
+<p>Main Detector banks + one working fixed monitor upstream of sample position.</p>
+</section>
+<section id="note-galil">
+<h3>Note: Galil<a class="headerlink" href="#note-galil" title="Link to this heading"></a></h3>
+<p>PEARL uses Galil controllers.</p>
+</section>
+<section id="note-linmot">
+<h3>Note: LinMot<a class="headerlink" href="#note-linmot" title="Link to this heading"></a></h3>
+<p>PEARL uses LinMot P0x-23 motors, controlled by LinMot drives.<br>
+<a class="reference external" href="http://www.linmot.com/fileadmin//user_upload/Downloads/software-firmware/servo-drives/linmot-talk-1-3-x/UserManual_1r3_e_recent.pdf">LinMot User Manual</a></p>
+<ol class="arabic simple">
+<li><p>Alignment Mirror:  Driven either IN or OUT by a single LinMot axis.</p></li>
+<li><p>Also jaw sets mentioned below</p></li>
+</ol>
+</section>
+<section id="note-jaws">
+<h3>Note: Jaws<a class="headerlink" href="#note-jaws" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Two sets of jaws are driven by LinMot P0x-23 motors…</p></li>
+<li><p>… and one by Galil</p></li>
+<li><p>PEARL has custom screens for controlling the jaws</p>
+<ul class="simple">
+<li><p>See <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\PEARL\PEARL</span> <span class="pre">Jaws\Screens</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="pearl-note-mk3-chopper">
+<h3>Note: ISIS Mk3 Choppers<a class="headerlink" href="#pearl-note-mk3-chopper" title="Link to this heading"></a></h3>
+<p>PEARL has two ISIS Mk3 choppers.</p>
+</section>
+<section id="note-pfeiffer">
+<h3>Note: Pfeiffer<a class="headerlink" href="#note-pfeiffer" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.pfeiffer-vacuum.com/en/products/measurement/activeline/controllers/?detailPdoId=5724">Model TPG 26x</a>, used on the furnace vacuum system</p></li>
+<li><p><a class="reference external" href="https://www.pfeiffer-vacuum.com/en/products/measurement/modulline/controllers/?detailPdoId=3407">Model TPG 300</a>, used on the tank/guide vacuum system</p></li>
+</ol>
+</section>
+<section id="note-eurotherm">
+<h3>Note: Eurotherm<a class="headerlink" href="#note-eurotherm" title="Link to this heading"></a></h3>
+<p>Three Eurotherms in use on PEARL.  Used to control temperature of all top-loading CCR/ He-cryostats and furnaces.</p>
+</section>
+<section id="note-lakeshore">
+<h3>Note: LakeShore<a class="headerlink" href="#note-lakeshore" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.lakeshore.com/products/cryogenic-temperature-controllers/model-336/Pages/Overview.aspx">Model 336</a>:</p></li>
+</ol>
+<p>There are <a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore">EPICS drivers</a> for a variety of Lakeshore temperature controllers.
+Documentation on the Lakeshore 336 IOC setup can be found <a class="reference internal" href="../../specific_iocs/temp_controllers/Lakeshore336.html"><span class="doc std std-doc">here</span></a>.</p>
+</section>
+<section id="note-sorensen">
+<h3>Note: Sorensen<a class="headerlink" href="#note-sorensen" title="Link to this heading"></a></h3>
+<p>Sorensen appear to have been taken over by <a class="reference external" href="http://www.programmablepower.com/brands/sorensen.htm">AMETEK</a>.<br></p>
+<ol class="arabic simple">
+<li><p>VI for Sorensen PSU is here: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\PEARL\PEARL</span> <span class="pre">High-PT</span> <span class="pre">PSU</span> <span class="pre">Controller</span></code></p></li>
+</ol>
+</section>
+<section id="note-oxford-instruments">
+<h3>Note: Oxford Instruments<a class="headerlink" href="#note-oxford-instruments" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Support for OI ITC503 created as part of <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2593">#2593</a></p></li>
+<li><p>No longer used on PEARL.</p></li>
+</ol>
+</section>
+<section id="note-pace">
+<h3>Note: Pace<a class="headerlink" href="#note-pace" title="Link to this heading"></a></h3>
+<p>PACE appear to have been taken over by <a class="reference external" href="https://www.bakerhughesds.com/">Baker Hughes Digital Solutions</a> - specifically, Baker Hughes <a class="reference external" href="https://www.bakerhughesds.com/measurement-sensing/druck-pressure-measurement">Druck</a> subsidiary.  <br></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.bakerhughesds.com/measurement-sensing/pressure-measurement-and-calibration/test-and-calibration/pressure-controllers-pace">Pace 5000 Pneumatic Modular Pressure Controller</a></p></li>
+<li><p>Documentation: <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls\PACE5000</span> <span class="pre">Pressure</span> <span class="pre">Controller</span></code></p></li>
+<li><p>VI for Pace 5000 is located here: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Drivers\PACE</span> <span class="pre">5000</span></code></p></li>
+</ol>
+</section>
+<section id="note-pearl-pressure-transducer">
+<h3>Note: PEARL Pressure Transducer<a class="headerlink" href="#note-pearl-pressure-transducer" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>VI for PEARL Pressure Transducer is here: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\PEARL\PEARL</span> <span class="pre">Pressure</span> <span class="pre">Transducer</span></code></p></li>
+<li><p><strong>MMP 200/210 device is no longer used on PEARL</strong></p></li>
+<li><p>Superseded by M905 (currently connected to Pressure Cell Controller, but would like to be read independently in other experiments)</p></li>
+</ol>
+</section>
+<section id="note-pressure-cell-controller">
+<h3>Note: Pressure Cell Controller<a class="headerlink" href="#note-pressure-cell-controller" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Pressure Controller Repositories</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/EPICS_PearlPressure">Support</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/PEARLPC">IOC</a></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>VI for PEARL Pressure Cell Controller is here: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\PEARL\PEARL</span> <span class="pre">Pressure</span> <span class="pre">Cell</span> <span class="pre">Controller</span></code></p></li>
+</ol>
+</section>
+<section id="note-pearl-temperature-controller">
+<h3>Note: PEARL Temperature Controller<a class="headerlink" href="#note-pearl-temperature-controller" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Based on a <a class="reference external" href="http://www.ni.com/en-gb/support/model.cdaq-9181.html">NI cDAQ 9181</a> device using 9213 Thermocouple module.</p></li>
+<li><p>VI for PEARL Temperature Controller is here: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\PEARL\PEARL</span> <span class="pre">Temperature</span></code></p></li>
+</ol>
+</section>
+<section id="note-cold-valve">
+<h3>Note: Cold Valve<a class="headerlink" href="#note-cold-valve" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>The PEARL ColdValve is a motor driven needle valve that controls the flow of liquid nitrogen through their press.  The motor is driven by a standard Mclennan drive crate.</p></li>
+<li><p>VI for the ISIS Cold Valve is located here: <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Drivers\ISIS</span> <span class="pre">Cold</span> <span class="pre">Valve</span></code></p></li>
+<li><p>They current model will (at some point in the future) be replaced by a new one which the Cryogenics team are making. Both the old and new models will use the same controller.</p></li>
+<li><p>For the avoidance of doubt, the PEARL ColdValve is <em><strong>entirely unrelated</strong></em> to the IRIS CryoValve.</p></li>
+</ol>
+</section>
+<section id="note-camera">
+<h3>Note: Camera<a class="headerlink" href="#note-camera" title="Link to this heading"></a></h3>
+<p>PEARL’s camera is a blackfly model which we communicate with through the <code class="docutils literal notranslate"><span class="pre">areaDetector</span></code> module. There is a generic “webcam” device screen which needs to be set up for this pointing at the <code class="docutils literal notranslate"><span class="pre">PEARLCAM_01</span></code> IOC which lets them start acquiring image data with region of interest functionality.</p>
+</section>
+</section>
+<section id="pearl-notes">
+<h2>PEARL Notes<a class="headerlink" href="#pearl-notes" title="Link to this heading"></a></h2>
+<p>PEARL has the following specialist panels:</p>
+<ol class="arabic simple">
+<li><p>PEARL Sample Alignment</p>
+<ul class="simple">
+<li><p>This is a method to move the sample into position, using ‘nudges’ rather than setpoints</p></li>
+<li><p>see <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\PEARL\PEARL</span> <span class="pre">Alignment</span></code></p></li>
+</ul>
+</li>
+<li><p>PEARL Jaws &amp; Beam Dimensions</p>
+<ul class="simple">
+<li><p>PEARL Beam dimensions.vi (controls all jaw sets 1x Galil &amp; 2x LinMot)</p></li>
+</ul>
+</li>
+</ol>
+<p>Compare with similar systems on GEM and POLARIS.</p>
+<p>PEARL has the following devices under motion control:</p>
+<ol class="arabic simple">
+<li><p>Jaws</p>
+<ul class="simple">
+<li><p>see <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\PEARL\PEARL</span> <span class="pre">Jaws\Screens</span></code></p></li>
+</ul>
+</li>
+<li><p>Rotation stage</p></li>
+<li><p>XYZ stage</p></li>
+<li><p>Diamond Anvil Cell(DAC): uses XYZ stage, rotation stage.  All driven by Galil.</p></li>
+</ol>
+<p>This is a weird <code class="docutils literal notranslate"><span class="pre">Servostep</span></code> box which contains a Galil 4000 series inside. It looks like this:</p>
+<p><img alt="IMG_5182-1" src="../../_images/PEARL-ServoStep.jpg" /></p>
+<p>Compare with similar systems on GEM and POLARIS.</p>
+<p>There are some inaccessible front end jaws on PEARL controlled by the Galil, these are not used but must be kept open for operation. They are homed to the forward limit and seem to typically be kept about 4/5mm inside that position for running. This should be kept in mind when migrating the Galil.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="OSIRIS-Instrument-Details.html" class="btn btn-neutral float-left" title="OSIRIS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="POLARIS-Instrument-Details.html" class="btn btn-neutral float-right" title="POLARIS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

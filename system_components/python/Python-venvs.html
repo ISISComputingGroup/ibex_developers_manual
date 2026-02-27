@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual environments (uv) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Remote IOC Server" href="../Remote-IOCs.html" />
+    <link rel="prev" title="Python Dependencies" href="Python-dependencies.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Building-and-installing-uktena.html">Building and installing Uktena</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Graylog.html">Graylog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-Circular-Dependencies-Resolution.html">Python Circular Dependencies Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-conventions.html">Python Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-dependencies.html">Python Dependencies</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Virtual environments (<code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+      <li class="breadcrumb-item active">Virtual environments (<code class="docutils literal notranslate"><span class="pre">uv</span></code>)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/python/Python-venvs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="uv">
+<h1>Virtual environments (<code class="docutils literal notranslate"><span class="pre">uv</span></code>)<a class="headerlink" href="#uv" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://github.com/astral-sh/uv"><code class="docutils literal notranslate"><span class="pre">uv</span></code></a> is a Python package and project manager. See <a class="reference external" href="https://docs.astral.sh/uv/"><code class="docutils literal notranslate"><span class="pre">uv</span></code>’s docs</a> for more information.</p>
+<p>We are currently considering whether we could use it to split up our python processes and use it for python version management on instrument machines.</p>
+<section id="uv-files">
+<h2><code class="docutils literal notranslate"><span class="pre">uv</span></code> files<a class="headerlink" href="#uv-files" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Instrument\apps\uv\</span></code> is the main installation folder for <code class="docutils literal notranslate"><span class="pre">uv</span></code> itself.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Instrument\apps\uv\snakes</span></code> is the location of individually-versioned python interpreter executables. These are “bare” interpreters, that do not contain any dependencies such as <code class="docutils literal notranslate"><span class="pre">genie_python</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Instrument\var\tmp\uvcache</span></code> is the location of <code class="docutils literal notranslate"><span class="pre">uv</span></code>’s pip download cache. This can safely be deleted and will be recreated as-needed.</p></li>
+</ul>
+</section>
+<section id="installing-uv">
+<h2>Installing <code class="docutils literal notranslate"><span class="pre">uv</span></code><a class="headerlink" href="#installing-uv" title="Link to this heading"></a></h2>
+<p>We have a script which is used in various places to install <code class="docutils literal notranslate"><span class="pre">uv</span></code>. This will install <code class="docutils literal notranslate"><span class="pre">uv</span></code> into <code class="docutils literal notranslate"><span class="pre">c:\Instrument\apps\uv\</span></code> and can be run on instruments, build machines and developer machines.</p>
+<p>To install <code class="docutils literal notranslate"><span class="pre">uv</span></code> run <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\install_or_update_uv.bat</span></code></p>
+<p>For developer machines currently this can be used for things that aren’t in <code class="docutils literal notranslate"><span class="pre">\Instrument\Apps\EPICS\</span></code> such as projects you have in <code class="docutils literal notranslate"><span class="pre">Instrument\dev\</span></code> or for manually running the items below.</p>
+</section>
+<section id="usage-of-uv-in-ibex">
+<h2>Usage of <code class="docutils literal notranslate"><span class="pre">uv</span></code> in IBEX<a class="headerlink" href="#usage-of-uv-in-ibex" title="Link to this heading"></a></h2>
+<section id="ibex-install-scripts">
+<h3>IBEX install scripts<a class="headerlink" href="#ibex-install-scripts" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">uv</span></code> is used for a few things here.</p>
+<p>Firstly, installing the python executable itself onto an instrument machine.</p>
+<p>Secondly, setting up a temporary virtual environment, which gets deleted at the end of the script, for using the deploy scripts themselves.</p>
+</section>
+<section id="build-jobs-e-g-configchecker">
+<h3>Build jobs e.g. ConfigChecker<a class="headerlink" href="#build-jobs-e-g-configchecker" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">uv</span></code> is used for creating a virtual environment for jenkins-run python checks.</p>
+<p>It can be used on Github actions CI, but isn’t currently.</p>
+</section>
+<section id="instrument-processes">
+<h3>Instrument processes<a class="headerlink" href="#instrument-processes" title="Link to this heading"></a></h3>
+<p>We are starting to use <code class="docutils literal notranslate"><span class="pre">uv</span></code> to help us create and manage virtual environments on instrument PCs at deploy time. More information on this can be found in the <a class="reference internal" href="../../processes/dev_processes/Dependency-Updates.html#dep-update-venvs"><span class="std std-ref">Dependency update notes.</span></a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Python-dependencies.html" class="btn btn-neutral float-left" title="Python Dependencies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Remote-IOCs.html" class="btn btn-neutral float-right" title="Remote IOC Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

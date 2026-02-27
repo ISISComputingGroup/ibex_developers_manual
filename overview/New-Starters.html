@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Starter’s Guide &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="First-time install" href="First-Time-Build.html" />
+    <link rel="prev" title="High level architectural design" href="High-Level-Architectural-Design.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Overview.html">Project Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="High-Level-Architectural-Design.html">High level architectural design</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">New Starter’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="First-Time-Build.html">First-time install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Links-and-Resources.html">Links and Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Overview.html">Project Overview</a></li>
+      <li class="breadcrumb-item active">New Starter’s Guide</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/overview/New-Starters.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="new-starter-s-guide">
+<h1>New Starter’s Guide<a class="headerlink" href="#new-starter-s-guide" title="Link to this heading"></a></h1>
+<section id="welcome-to-ibex">
+<h2>Welcome to IBEX!<a class="headerlink" href="#welcome-to-ibex" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#using-the-developer-wiki">Using the Developer Wiki</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#searching-the-codebase">Searching the Codebase</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="#getting-set-up">Getting Set Up</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#using-git">Using Git</a></p></li>
+<li><p><a class="reference internal" href="#creating-useful-shortcuts">Creating Useful Shortcuts</a></p></li>
+<li><p><a class="reference internal" href="#office-admin-links">Office Admin Links</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="#familiarising-with-ibex">Familiarising with IBEX</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#introduction">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#components-and-technical-concepts">Components and Technical Concepts</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="#epics-introduction">EPICS Introduction</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#epics-introduction">Further EPICS</a></p></li>
+<li><p><a class="reference internal" href="#input-output-controller-resources">Input/Output Controller (IOC) Resources</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="#control-system-studio">Control System Studio</a></p></li>
+</ol>
+<p>This page is designed to be used as a comprehensive reference to getting started in the Instrument Controls team. Written by new-ish starters, for the newest starters. It’s a collection of useful resources which will speed up your onboarding and get you developing.</p>
+</section>
+<section id="using-the-developer-wiki">
+<h2>Using the Developer Wiki<a class="headerlink" href="#using-the-developer-wiki" title="Link to this heading"></a></h2>
+<p>There are many how-to guides in the Developer’s manual. Being able to use the wiki is as much a skill as learning to use any of our tools. If you’re stuck, this can be really useful - try searching for different keywords from your ticket.</p>
+<section id="searching-the-codebase">
+<h3>Searching the Codebase<a class="headerlink" href="#searching-the-codebase" title="Link to this heading"></a></h3>
+<p>Another mode of attack is searching through our codebase for particular code snippets, which is equally useful! You don’t need to reinvent the wheel - you can search to see how code has been already written for a similar purpose, find examples of how unfamiliar concepts are used, or see our coding conventions for certain processes. This is also a good way to locate files if you don’t know where they live, but know some keywords they may contain!</p>
+<p>You can do this by searching in <a class="reference external" href="https://github.com/ISISComputingGroup/">ISISComputingGroup</a> and clicking on the ‘Code’ tab (as seen above).</p>
+</section>
+</section>
+<section id="getting-set-up">
+<h2>Getting Set Up<a class="headerlink" href="#getting-set-up" title="Link to this heading"></a></h2>
+<p>First off you’re going to need all the developer tools we use, a copy of the existing codebase, and the Eclipse GUI for IBEX*.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="First-Time-Build.html"><span class="doc std std-doc">Installing the Backend System</span></a></p></li>
+</ul>
+<p>Don’t forget to come back afterwards!</p>
+<section id="using-git">
+<h3>Using Git<a class="headerlink" href="#using-git" title="Link to this heading"></a></h3>
+<p>We use Git for version control of the codebase. For IBEX-flavoured Git resources, see:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../processes/Git-and-GitHub.html"><span class="doc std std-doc">Our Github resources</span></a></p></li>
+<li><p><a class="reference internal" href="../processes/git_and_github/Git-workflow.html"><span class="doc std std-doc">IBEX Git workflow</span></a></p></li>
+</ul>
+<p>If you’re not familiar with it, learn it!</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://try.github.io/">Github’s own Git tutorials</a></p></li>
+<li><p><a class="reference external" href="https://learngitbranching.js.org/">Friendly git sandbox</a> - the ‘remote’ tutorials in particular</p></li>
+<li><p><a class="reference external" href="https://swcarpentry.github.io/git-novice/01-basics/index.html">Nice intro to Git &amp; version control</a></p></li>
+</ul>
+</section>
+<section id="creating-useful-shortcuts">
+<h3>Creating Useful Shortcuts<a class="headerlink" href="#creating-useful-shortcuts" title="Link to this heading"></a></h3>
+<p>There’s a couple files/commands you’ll find yourself using a <em>lot</em>. It’s handy to create desktop shortcuts for these frequently used links:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EPICSTerm</span></code> (The EPICS terminal window where IOCs are built and run)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start_ibex_server</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop_ibex_server</span></code></p></li>
+</ul>
+<p>These can be found in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS</span></code>.</p>
+</section>
+<section id="office-admin-links">
+<h3>Office Admin Links<a class="headerlink" href="#office-admin-links" title="Link to this heading"></a></h3>
+<p>As a new starter you should add your name and picture to the training slides in <code class="docutils literal notranslate"><span class="pre">&lt;shares&gt;\ISIS_Experiment_Controls_Public\training</span></code>. If you do not know where this share is, please ask.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/isis-hub/">ISIS Sharepoint</a> - Shared ISIS documents, manuals, meeting minutes etc</p></li>
+<li><p><a class="reference external" href="https://portal.ssc.rcuk.ac.uk/">Oracle Login</a> - Book leave, create timesheets</p></li>
+<li><p><a class="reference external" href="https://flexiral.stfc.ac.uk/FCDWeb/">Flexi Time</a> - If you’re on Flexi time and need to view/edit your work history</p></li>
+<li><p><a class="reference external" href="https://lmsweb.stfc.ac.uk/moodle/login/index.php">Health &amp; Safety Training</a></p></li>
+</ul>
+<p>Here’s some useful bits and bobs for how our team operates and the conventions we use in our work.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Processes.html"><span class="doc std std-doc">IBEX Processes</span></a> - Logistics of the day-to-day</p></li>
+<li><p><a class="reference external" href="https://github.com/orgs/ISISComputingGroup/projects">IBEX Project Board</a> - Where our tickets live</p></li>
+<li><p><a class="reference internal" href="../processes/dev_processes/Tickets-and-their-Workflow.html"><span class="doc std std-doc">Tickets and their Workflow</span></a></p></li>
+<li><p><a class="reference internal" href="../Tools.html"><span class="doc std std-doc">Useful Tools</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="familiarising-with-ibex">
+<h2>Familiarising with IBEX<a class="headerlink" href="#familiarising-with-ibex" title="Link to this heading"></a></h2>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h3>
+<p>While that’s installing, get to know the IBEX components. Get to know EPICS. It’s the software environment that IBEX uses to control the ISIS instruments.</p>
+<p>Ironically, to get a well-explained overview of what IBEX is, and how to interact with it as a dev, the <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/index.html" title="(in IBEX User Manual)"><span class="xref std std-doc">IBEX user manual</span></a> is a really nice place to start. In particular, see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/Key-Concepts-in-IBEX.html" title="(in IBEX User Manual)"><span class="xref std std-doc">IBEX Key Concepts</span></a></p></li>
+<li><p><a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/IBEX-GUI-Features.html" title="(in IBEX User Manual)"><span>IBEX GUI</span></a></p></li>
+<li><p><a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/How-To.html" title="(in IBEX User Manual)"><span class="xref std std-doc">How To Do Things In IBEX</span></a></p></li>
+</ul>
+<p>There are some training materials available that we use to train scientists on IBEX, which is also a nice way to get started:</p>
+<ul class="simple">
+<li><p>IBEX training: <code class="docutils literal notranslate"><span class="pre">&lt;shares&gt;\ISIS_Experiment_Controls_Public\training</span></code> (if you do not know where the share is, please ask)</p></li>
+</ul>
+</section>
+<section id="components-and-technical-concepts">
+<h3>Components and Technical Concepts<a class="headerlink" href="#components-and-technical-concepts" title="Link to this heading"></a></h3>
+<p>Some pages to read over:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../System-components.html"><span class="doc std std-doc">System Components</span></a></p></li>
+<li><p><a class="reference internal" href="../Tools.html"><span class="doc std std-doc">Useful tools</span></a></p></li>
+</ul>
+<p>Pages to skim over. Read in detail only when needed:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../system_components/Settings-and-Configurations.html"><span class="doc std std-doc">Settings and Configurations</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/wiki">Information for User Scientists</a></p></li>
+</ul>
+<p>Every section after this line contains reference information that you do not necessarily have to read before you do your first ticket, but it is where you should take a look when you find out you need to learn new things in order to do your work.</p>
+</section>
+</section>
+<section id="epics-introduction">
+<h2>EPICS Introduction<a class="headerlink" href="#epics-introduction" title="Link to this heading"></a></h2>
+<p>There is much to learn about EPICS and it can be difficult to know what you’re looking for. You do not have to read these resources until you get to writing your first IOC. Here are some overviews:</p>
+<ul class="simple">
+<li><p>Old but still good overview - <a class="reference external" href="https://epics.anl.gov/docs/GSWE.php">https://epics.anl.gov/docs/GSWE.php</a></p></li>
+<li><p>More recent overview <a class="reference external" href="http://www.aps.anl.gov/epics/docs/training.php">http://www.aps.anl.gov/epics/docs/training.php</a> in particular <a class="reference external" href="http://www.aps.anl.gov/epics/docs/USPAS2014.php">http://www.aps.anl.gov/epics/docs/USPAS2014.php</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/USPAS2014/1-Monday/EPICS_Intro.pdf">Powerpoint EPICS overview</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/USPAS2014.php">Training Course</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-1.pdf">Database Principles (what’s a record? And more)</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-2.pdf">Database Principles II (with examples)</a></p></li>
+</ul>
+<section id="further-epics">
+<h3>Further EPICS<a class="headerlink" href="#further-epics" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_1_EPICSAutomation.pdf">State Notation Language 1</a> <a class="reference external" href="https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf">State Notation Language 2</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf">ASYN/Stream Device overview</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/APS2015.php">YouTube Videos covering the epics.gov.anl slideshows</a></p></li>
+</ul>
+</section>
+<section id="input-output-controller-resources">
+<h3>Input Output Controller Resources<a class="headerlink" href="#input-output-controller-resources" title="Link to this heading"></a></h3>
+<p>When building an IOC, emulator, or writing tests, much can be learned by looking at existing IOCs: these can be found in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\ioc\master</span></code>.</p>
+<p>However, there are also several places online to find good sources for learning and referencing.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../IOCs.html"><span class="doc std std-doc">Creating &amp; Basics of IOCs</span></a> - Our guide to creating IOCs and how they work. Lots of useful tips!</p></li>
+<li><p><a class="reference external" href="http://epics.web.psi.ch/software/streamdevice/doc/protocol.html">Protocol Files and Record Types</a> - Excellent reference for when you’re mixing up your %d’s and %f’s. Bookmark this one!</p></li>
+<li><p><a class="reference external" href="http://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#pv-names-using-program-parameters">Sequencer - State Notation in IOCs</a> - All about implementing a state machine into an IOC, if needed.</p></li>
+</ul>
+</section>
+</section>
+<section id="control-system-studio">
+<h2>Control System Studio<a class="headerlink" href="#control-system-studio" title="Link to this heading"></a></h2>
+<p>We use a number of parts of Control System Studio (CSS) in our GUI (Alarms, Databrowser etc.). Most of these resources require little developer interaction apart from creating Operator Interfaces (OPIs) - GUIs, essentially - for the instrument controllers. It can be useful to create a desktop shortcut of this too.</p>
+<p>Here’s an overview and a get started guide.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../client/opis/OPI-Creation.html"><span class="doc std std-doc">Creating OPIs</span></a> - An introduction for how we use CSS and to set it up on your computer</p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf">Overview of CS-Studio</a></p></li>
+<li><p><a class="reference external" href="http://www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf">Intro to using CS-Studio</a></p></li>
+</ul>
+<p>You can find CSS at <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\CSS\master</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="High-Level-Architectural-Design.html" class="btn btn-neutral float-left" title="High level architectural design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="First-Time-Build.html" class="btn btn-neutral float-right" title="First-time install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omron FINS &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="RIKEN PLC" href="RIKEN-PLC.html" />
+    <link rel="prev" title="OPC UA" href="OPCUA.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../PLCs.html">PLCs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Helium-Recovery-PLC.html">He Recovery PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Vacuum-System.html">MAPS Vacuum System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OPCUA.html">OPC UA</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Omron FINS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-PLC.html">RIKEN PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-PLC.html">SANS2D Vacuum PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Schneider-PLC.html">Schneider PLC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../PLCs.html">PLCs</a></li>
+      <li class="breadcrumb-item active">Omron FINS</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/plcs/Omron-FINS.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="omron-fins">
+<h1>Omron FINS<a class="headerlink" href="#omron-fins" title="Link to this heading"></a></h1>
+<p>Most of the work done by the IOCs for the various FINS PLCs at ISIS consists of reading and writing to various places in the memory of that particular PLC. Some IOCs also perform some internal logic.</p>
+<p>The manuals referenced on this page can be found on the shares drive, in Manuals\OMRON_FINS_PLCs. There you can also find the images on this page.</p>
+<p>The Omron FINS is a PLC controlled via a driver first written at Diamond, see <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-FINS">here</a>. The IOC works by loading an instrument specific <code class="docutils literal notranslate"><span class="pre">FINS_01.cmd</span></code> in <code class="docutils literal notranslate"><span class="pre">configurations/fins</span></code>, which will load an instrument specific <code class="docutils literal notranslate"><span class="pre">db</span></code> from <code class="docutils literal notranslate"><span class="pre">ioc/master/FINS/db</span></code>. The dbs in here are usually created from a number of templates matching specific PLC memory addresses to PVs. This is the case because PLCs used for different applications have different things stored in their memory, and to read/write various pieces of data the IOC needs to know the exact memory address for that data. Each individual PLC has its own memory map, which shows what memory address stores what thing, and each specific IOC is based on that.</p>
+<p>Currently the following specific FINS PLC installations are supported in IBEX:</p>
+<ul class="simple">
+<li><p>IMAT FINS PLC</p></li>
+<li><p>LARMOR air PLC</p></li>
+<li><p><a class="reference internal" href="SANS2D-vacuum-PLC.html"><span class="doc std std-doc">SANS2D vacuum PLC</span></a></p></li>
+<li><p>WISH vacuum PLC</p></li>
+<li><p>ZOOM vacuum PLC</p></li>
+<li><p><a class="reference internal" href="Helium-Recovery-PLC.html"><span class="doc std std-doc">Helium Recovery PLC</span></a> - stores information needed for the Helium Level Monitoring project</p></li>
+<li><p>SANDALS Gate Valve PLC</p></li>
+</ul>
+<section id="omron-fins-writing-ioc">
+<h2>Writing IOCs for FINS PLCs<a class="headerlink" href="#omron-fins-writing-ioc" title="Link to this heading"></a></h2>
+<p>IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need DB records to have an INP field such as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">field(INP,</span>&#160; <span class="pre">&quot;&#64;asyn($(PORT),</span> <span class="pre">$(MEMORY_ADDRESS),</span> <span class="pre">5.0)</span> <span class="pre">FINS_DM_READ&quot;)</span></code></p>
+<p>where the value of <code class="docutils literal notranslate"><span class="pre">$(PORT)</span></code> should usually be PLC, <code class="docutils literal notranslate"><span class="pre">$(MEMORY_ADDRESS)</span></code> is the memory address of the data you want to read/write in the PLC and should be taken from the PLCs memory map, and 5.0 is a timeout. <code class="docutils literal notranslate"><span class="pre">FINS_DM_READ</span></code> is an example FINS command supported by the asyn driver we have from Diamond, and different methods need to be used for different types of data. All the commands supported by the driver are listed <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-FINS/blob/master/FINSApp/src/finsUDP.c">here</a>.</p>
+<p>Some examples of correct DTYP and INP fields for different situations are:</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">field(DTYP,</span> <span class="pre">&quot;asynInt32&quot;)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">field(INP,</span>&#160; <span class="pre">&quot;&#64;asyn(PLC,</span> <span class="pre">$(MEMORY_ADDRESS),</span> <span class="pre">5.0)</span> <span class="pre">FINS_DM_READ&quot;)</span></code></p>
+</li>
+</ol>
+<p>This should be used by mbbi and bi records and also longin records that read 16 bit signed integers from 0 to 32767 or unsigned 16 bit integers.         The asynInt32 interface provides support for 32 bit integers, and the <code class="docutils literal notranslate"><span class="pre">FINS_DM_READ</span></code> command asks the PLC for a 16 bit integer, which is then put into a 32 bit integer in the driver. When that is done, the number is left padded with 8 zeroes, which means it will lose its sign if it is signed and be read as a positive number. Therefore, records that need to read negative integers should not use this pattern.</p>
+<ol class="arabic" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">field(DTYP,</span> <span class="pre">&quot;asynInt16ArrayIn&quot;)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">field(INP,</span>&#160; <span class="pre">&quot;&#64;asyn(PLC,</span> <span class="pre">$(MEMORY_ADDRESS),</span> <span class="pre">5.0)</span> <span class="pre">FINS_DM_READ&quot;)</span></code></p>
+</li>
+</ol>
+<p>This should be used for reading 16 bit signed integers. Using the 16 bit integer array support means the 16 bit signed value will be put into an array of signed 16 bit integers as the first element. This means you will read a one element integer array, and therefore the record reading from hardware needs to be a waveform and have <code class="docutils literal notranslate"><span class="pre">field(NELM,</span> <span class="pre">&quot;1&quot;)</span> <span class="pre">field(FTVL,</span> <span class="pre">&quot;SHORT&quot;)</span></code>. You can then have a user-facing longin record to read from the waveform and store the standalone 16 bit value.</p>
+<ol class="arabic" start="3">
+<li><p><code class="docutils literal notranslate"><span class="pre">field(DTYP,</span> <span class="pre">&quot;asynInt32&quot;)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">field(INP,</span>&#160; <span class="pre">&quot;&#64;asyn(PLC,</span> <span class="pre">$(MEMORY_ADDRESS),</span> <span class="pre">5.0)</span> <span class="pre">FINS_DM_READ_32&quot;)</span></code></p>
+</li>
+</ol>
+<p>This is used for reading 32 bit signed integers.</p>
+<ol class="arabic" start="4">
+<li><p><code class="docutils literal notranslate"><span class="pre">field(DTYP,</span> <span class="pre">&quot;asynFloat64&quot;)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">field(INP,</span>&#160; <span class="pre">&quot;&#64;asyn(PLC,</span> <span class="pre">$(MEMORY_ADDRESS),</span> <span class="pre">5.0)</span> <span class="pre">FINS_DM_READ_32&quot;)</span></code></p>
+</li>
+</ol>
+<p>This is used for reading 32 bit floating point numbers. The asyn interface has support only for 64 bit floating point numbers, but the FINS command asks for 4 bytes (32 bits) and then casts the result to a double.</p>
+</section>
+<section id="the-fins-protocol">
+<h2>The FINS protocol<a class="headerlink" href="#the-fins-protocol" title="Link to this heading"></a></h2>
+<p>The FINS protocol is an applications layer communications protocol designed for industrial applications and made by Omron. FINS stands for Factory Interface Network Service.</p>
+<p>Throughout this guide, when I mention a manual, it can be found on the shares drive in Manuals/OMRON_FINS_PLCs .</p>
+<p>FINS communications can be done over a serial connection or over a network. For serial connections, it uses the Host Link protocol on the Data Link layer of the OSI model. If used over a network, FINS can be used over a wide variety of Data Link layer protocols, including Controller Link and Ethernet. At ISIS, FINS PLC communication is done via Ethernet. FINS PLCs also supports another protocol instead of FINS, called C-mode, which is specialised for Host Link, but we do not use that. For more information, see Section 1 of the Comms Reference manual.</p>
+<p>When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP though is only supported on the CS1W-ETN21 and CJ1W-ETN21 models. The default UDP/TCP port number is 9600.</p>
+<section id="fins-frames">
+<h3>FINS Frames<a class="headerlink" href="#fins-frames" title="Link to this heading"></a></h3>
+<p>When using FINS over UDP, the FINS frame is the part of the UDP packet after the UDP protocol specific header. The first 10 bytes of the FINS command frame represent the FINS frame header, and the rest of the frame represent either a command or a response, which have different formats. For FINS over TCP, after the TCP header and before the FINS frame there is a special FINS/TCP header used by FINS to handle TCP connections.</p>
+<p>Most of the FINS PLCs at ISIS use FINS over TCP, The Helium recovery PLC uses UDP. For more information about FINS in general, look at section 7-1 of the Ethernet manual. Section 7-3 offers detailed information about FINS over UDP.</p>
+<p>There are some very useful diagrams showing the structure of FINS frames and FINS/TCP headers in the same folder as the manuals on the shares drive.</p>
+</section>
+<section id="fins-header">
+<h3>FINS header<a class="headerlink" href="#fins-header" title="Link to this heading"></a></h3>
+<p>The first 10 bytes of the FINS command frame represent the FINS frame header, and the rest of the frame represent the command.</p>
+<p>The structure of the FINS frame header is as follows (each of the elements take up one byte):</p>
+<ul class="simple">
+<li><p>Information Control Field or ICF: Displays whether the frame is for a command or a response, and whether a response is required or not. For our purposes, this byte should <code class="docutils literal notranslate"><span class="pre">0x80</span></code> for a command and <code class="docutils literal notranslate"><span class="pre">0xC1</span></code> for a reply.</p></li>
+<li><p>Reserved or RSV byte: should always be 0.</p></li>
+<li><p>Gate Count or GCT: The number of network bridges the frame needs to pass through. For our purposes, it should always be <code class="docutils literal notranslate"><span class="pre">0x02</span></code>.</p></li>
+<li><p>Destination Network Address or DNA: The address of the network to which the receiver belongs. This address is of the entire network, and not of just the machine, and is different from the IP address. It is 0 for Local Network, and 1 to 127 for remote networks.</p></li>
+<li><p>Destination Node Address or DA1: The node of the receiver, which is an address needed by the FINS protocol, and is different from the IP address. It has values from 0 to 256, with 0 for the local PLC unit and 256 for broadcasting.</p></li>
+<li><p>Destination Unit Address or DA2: The number of the unit of the destination node to which the command is addressed. It will typically be 0, for the CPU unit. A unit is one of the modules mounted on rails that make up the PLC.</p></li>
+<li><p>Source network address or SNA: The network address of the sender. The possible values of SNA are the same as of DNA.</p></li>
+<li><p>Source node address or SA1: The node of the sender. The possible values of SA1 are the same as for DA1.</p></li>
+<li><p>Source unit address or SA2: The unit address of the sender. It will typically be 0, for the CPU unit.</p></li>
+<li><p>Service ID or SID: a number used to identify the FINS processes generating the transmission. It can have values from 0 to 255.</p></li>
+</ul>
+<p>If you need more detail about the FINS header, look at section 7-2 of the Ethernet manual.</p>
+</section>
+<section id="fins-command-body">
+<h3>FINS Command body<a class="headerlink" href="#fins-command-body" title="Link to this heading"></a></h3>
+<p>The first two bytes after the header represent the command code. All the FINS command codes can be found in section 5-1 of the Comms Reference manual. Most of the commands used at ISIS are Memory Area Read, with code <code class="docutils literal notranslate"><span class="pre">0x0101</span></code>, and Memory Area Write, with code <code class="docutils literal notranslate"><span class="pre">0x0102</span></code>.</p>
+<p>The rest of the body consists of command parameters and perhaps data. It can be up to 2000 words in length. The length and format depends on the command code. For reference, in section 5-3 of the Comms Reference Manual you can find the parameter formats and other details for each command.</p>
+<p>The first byte after the command code represents the I/O memory area code. The next three bytes indicate the start address from which it will read or write. Of these three, the first two bytes indicate the memory address of the first word from where to read/write, and the third byte indicates the individual bit from where reading or writing starts. This third byte is 0 for word designated memory addresses, where each word is considered an element. If it is not 0, then each individual bit is considered an element. After this address, two more bytes represent the number of elements to read/write. For write commands, what follows after is the data which you want to write.</p>
+<p>You can find a list of all I/O memory area codes in section 5-2-2 of the Comms Reference manual, and more details about the memory start address in section 5-2-1 of the same manual.</p>
+</section>
+<section id="fins-response-body">
+<h3>FINS response body<a class="headerlink" href="#fins-response-body" title="Link to this heading"></a></h3>
+<p>Just as with the command body, the first two bytes represent the code of the command which is being replied to. After that, two bytes represent the error code. It is 0 for no errors, and all the other error codes are detailed in section 5-1-3 of the Comms Reference Manual. Following the error codes are a number of words equal to the number of words given in the read command representing the data you want to read. For write commands, the response ends with the error code.</p>
+</section>
+<section id="fins-tcp-header">
+<h3>FINS/TCP header<a class="headerlink" href="#fins-tcp-header" title="Link to this heading"></a></h3>
+<p>Unlike UDP, TCP is a connection based protocol. Since a virtual connection needs to be established before you can send packets, for FINS over TCP there is an extra FINS/TCP header before the FINS frame that helps to handle the virtual connection. For establishing a connection, besides the usual TCP packets, the client and server need to exchange FINS node addresses so that the PLC can manage the connections properly.</p>
+<p>The structure of the of the FINS/TCP header is as follows, with each element taking up 4 bytes:</p>
+<ul class="simple">
+<li><p>Header: is always <code class="docutils literal notranslate"><span class="pre">0x46494E53</span></code>, which is ASCII for <code class="docutils literal notranslate"><span class="pre">FINS</span></code>.</p></li>
+<li><p>Length: specifies length of data from the FINS/TCP command code onwards, including the FINS frame as well.</p></li>
+<li><p>Command code: There a couple of commands for FINS/TCP for exchanging node addresses, sending FINS frames and managing errors and connections.</p></li>
+<li><p>Error code: It is 0 for no errors, and for some commands it is not even used.</p></li>
+<li><p>Client Node address: only part of the FINS/TCP header for some commands.</p></li>
+<li><p>Server Node address: only part of the FINS/TCP header for the FINS NODE ADDRESS DATA SEND (SERVER TO CLIENT) command.</p></li>
+</ul>
+<p>The FINS/TCP connections and commands should be handled by the C driver originally written at Diamond and we should not worry about the FINS/TCP header. If you need more information, section 7-4-2 of the Ethernet Manual gives details for each command, and section 7-4-1 gives a more detailed overview about FINS over TCP.</p>
+</section>
+</section>
+<section id="connection">
+<h2>Connection<a class="headerlink" href="#connection" title="Link to this heading"></a></h2>
+<section id="plc-init">
+<h3>PLC init<a class="headerlink" href="#plc-init" title="Link to this heading"></a></h3>
+<p>The fins PLC communication is set up with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">finsUDPInit</span><span class="p">(</span><span class="o">&lt;</span><span class="n">port</span> <span class="n">Name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">address</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">protocol</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">simulate</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>port name: ASYN port name (usually PLC)</p></li>
+<li><p>address: ip address of the PLC</p></li>
+<li><p>protocol: which protocol to use</p>
+<ul>
+<li><p>“TCP”: use TCP communication</p></li>
+<li><p>“TCPNOHEAD”: use TCP comms, but without FINS-TCP header. This is required (and should only be used for) the devsim IOC tests. This mode was added because the emulator framework does not support UDP, only TCP or serial. Normally, using FINS over TCP requires an extra header, but we did not want to complicate the emulator and deal with a header and FINS/TCP commands that EPICS code does not change at all. Therefore, this mode was added as a “hack” to make testing the Helium Recovery PLC easier.</p></li>
+<li><p>anything else: use UDP protocol</p></li>
+</ul>
+</li>
+<li><p>simulate: whether to simulate calls</p>
+<ul>
+<li><p>0: Do not simulate (real device or devsim)</p></li>
+<li><p>1: Simulate (don’t send commands), this is required for recsim as it lets device initialisation complete successfully with no device</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="omron-fins-configuration">
+<h2>Configuration<a class="headerlink" href="#omron-fins-configuration" title="Link to this heading"></a></h2>
+<p>In order to run this IOC and talk to the real PLC, you need to have the correct instrument specific <code class="docutils literal notranslate"><span class="pre">FINS_01.cmd</span></code> in <code class="docutils literal notranslate"><span class="pre">configurations/fins</span></code>. See below an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Init and connect</span>
+<span class="n">finsUDPInit</span><span class="p">(</span><span class="s2">&quot;PLC&quot;</span><span class="p">,</span> <span class="s2">&quot;$(PLC_IP)&quot;</span><span class="p">,</span> <span class="s2">&quot;UDP&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$(PLC_NODE=)&quot;</span><span class="p">)</span>
+
+<span class="c1">## Load our record instances</span>
+<span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$</span><span class="si">{TOP}</span><span class="s2">/db/he-recovery.db&quot;</span><span class="p">,</span><span class="s2">&quot;P=$(MYPVPREFIX),Q=EXAMPLE:&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>In the IBEX GUI, make sure to set the two macros for the FINS IOC, PLC_IP and PLC_NODE. PLC_IP refers to the IP address of the PLC, and the node is a FINS protocol application layer specific address that differentiates between nodes (such as PLCs or host computers). By default, it corresponds to the last byte of the IP address, but for some FINS PLCs this is not the case.</p>
+<p>For running the IOC for testing, see below.</p>
+</section>
+<section id="testing-the-fins-ioc-in-the-ioc-test-framework">
+<h2>Testing the FINS IOC in the Ioc Test Framework<a class="headerlink" href="#testing-the-fins-ioc-in-the-ioc-test-framework" title="Link to this heading"></a></h2>
+<p>In contrast to the normal operation of a FINS PLC, the instrument specific <code class="docutils literal notranslate"><span class="pre">FINS_01.cmd</span></code> file that should be used for the IOC Tests for a FINS PLC should be placed in an instrument specific folder in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/FINS/exampleSettings"><code class="docutils literal notranslate"><span class="pre">ioc\master\FINS\exampleSettings</span></code></a>. This cmd file should have the appropriate <code class="docutils literal notranslate"><span class="pre">finsUDPInit</span></code> calls for devsim or recsim, as detailed below, and also the usual <code class="docutils literal notranslate"><span class="pre">dbLoadRecords</span></code> call to load the instrument specific db.</p>
+<section id="testing-the-fins-ioc-in-devsim">
+<h3>Testing the FINS IOC in DevSim<a class="headerlink" href="#testing-the-fins-ioc-in-devsim" title="Link to this heading"></a></h3>
+<p>If you want to test the IOC for a FINS PLC in devsim mode, you need to add to the FINS_01.cmd file used by that specific FINS IOC the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFDEVSIM) finsUDPInit(&quot;PLC&quot;, &quot;$(PLCIP):$(EMULATOR_PORT=)&quot;, &quot;TCPNOHEAD&quot;, 0, &quot;$(PLCNODE=)&quot;)
+</pre></div>
+</div>
+<p>At the same time, the file should either not have any other <code class="docutils literal notranslate"><span class="pre">finsUDPInit</span></code> call for talking with the real PLC, or have <code class="docutils literal notranslate"><span class="pre">$(IFNOTDEVSIM)</span> <span class="pre">$(IFNOTRECSIM)</span></code> before that call.</p>
+</section>
+<section id="testing-the-fins-ioc-in-recsim">
+<h3>Testing the FINS IOC in RecSim<a class="headerlink" href="#testing-the-fins-ioc-in-recsim" title="Link to this heading"></a></h3>
+<p>If you want to test the IOC for a FINS PLC in recsim mode, you need to add to the FINS_01.cmd file used by that specific FINS IOC the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFRECSIM) finsUDPInit(&quot;PLC&quot;, &quot;$(PLCIP):$(EMULATOR_PORT=)&quot;, &quot;TCPNOHEAD&quot;, 1, &quot;$(PLCNODE=)&quot;)
+</pre></div>
+</div>
+<p>At the same time, the file should either not have any other <code class="docutils literal notranslate"><span class="pre">finsUDPInit</span></code> call for talking with the real PLC, or have <code class="docutils literal notranslate"><span class="pre">$(IFNOTDEVSIM)</span> <span class="pre">$(IFNOTRECSIM)</span></code> before that call.</p>
+</section>
+</section>
+<section id="emulator">
+<h2>Emulator<a class="headerlink" href="#emulator" title="Link to this heading"></a></h2>
+<p>The emulator for FINS PLCs uses the pattern used by the SKF MB340 chopper.</p>
+<p>Because it was written as part of <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5333">https://github.com/ISISComputingGroup/IBEX/issues/5333</a>, currently this emulator only works with the Helium Recovery PLC. The stream interface and response utilities should work with all other FINS PLCs at ISIS, but the device module is specific to helium recovery because it has dictionaries emulating the memory map of that PLC. Currently, there is no way to specify what device to use when testing.</p>
+<p><strong>Note:</strong> The FINS protocol involves reading 16 bit integers, a 32bit read from the driver is actually two consecutive 16 bit reads, similarly for a 32bit float. Though the PLC uses big endian format for its 16bit integers, the least significant part of a 32 bit number is stored first. So we have two big endian 16 bit integers stored in little endian order. The emulator needs to perform some extra logic to handle this.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="OPCUA.html" class="btn btn-neutral float-left" title="OPC UA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="RIKEN-PLC.html" class="btn btn-neutral float-right" title="RIKEN PLC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

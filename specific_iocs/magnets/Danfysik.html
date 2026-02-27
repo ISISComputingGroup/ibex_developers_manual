@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danfysik &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Zero field controller (HIFI)" href="HIFI-Zero-field-controller.html" />
+    <link rel="prev" title="Magnets &amp; Large Power Supplies" href="../Magnets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Danfysik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Zero-field-controller.html">Zero field controller (HIFI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HTS-Magnet.html">HTS Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MuSR-Steering-Magnets.html">MuSR Steering Magnets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Muon-Active-Compensation.html">Muon Active Compensation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Muon-NGS-Power-Supply-Firewall.html">Muon NGPS Power Supply Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NGPS-PSU.html">NGPS Power Supply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Power-Supplies.html">RIKEN Power Supplies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TDK-Lambda-Genesys.html">TDK Lambda Genesys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Transtechnik-Power-Supply.html">Transtechnik Power Supply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Zero-field-controller.html">Zero field controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Zero-field-controller-design.html">Zero field controller design</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+      <li class="breadcrumb-item active">Danfysik</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/magnets/Danfysik.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="danfysik">
+<h1>Danfysik<a class="headerlink" href="#danfysik" title="Link to this heading"></a></h1>
+<p>A type of large power supply for magnets.</p>
+<p>Current four models supported: 8800, 8000, 8500, 9100 and 9700. The <a class="reference internal" href="RIKEN-Power-Supplies.html"><span class="doc std std-doc">RIKEN</span></a> power supplies are also controlled by Danfysiks but these are a special case. Although the 9700 should work with the opi it uses a baud rate of 115200, unlike the 9600 used by other devices. The baud rate macro is not exposed to the GUI and so must be set in the globals.txt, the power supply group are working on getting them switched to 9600 baud.</p>
+<p>All can be in calibrated or uncalibrated mode. Calibration is done within the IOC and enabled via macro. Additionally there is a macro to switch to a local calibration repository instead of the default common one. (see <a class="reference internal" href="../../system_components/configurations/Calibration-Files.html"><span class="doc std std-doc">Calibration Files</span></a> for more info)</p>
+<p>All can be unipolar or bipolar (controlled by the <code class="docutils literal notranslate"><span class="pre">POLARITY</span></code> macro).</p>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<section id="all">
+<h3>All<a class="headerlink" href="#all" title="Link to this heading"></a></h3>
+<p>Set voltage with <code class="docutils literal notranslate"><span class="pre">%MYPVPREFIX%DFKPS_0X:SIM:VOLT</span></code>
+Set current %MYPVPREFIX%DFKPS_01:SIM:RAW</p>
+</section>
+<section id="id1">
+<h3>8000<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Interlock and power status can be testing by setting status PV: <code class="docutils literal notranslate"><span class="pre">%MYPVPREFIX%DFKPS_0X:SIM:STATUS</span></code>. To switch the power on put a <code class="docutils literal notranslate"><span class="pre">!</span></code> as the first character to turn the interlock on place a <code class="docutils literal notranslate"><span class="pre">!</span></code> as the 10th character.</p>
+</section>
+<section id="id2">
+<h3>8800/8500<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Interlock and power status can be testing by setting status PV: <code class="docutils literal notranslate"><span class="pre">%MYPVPREFIX%DFKPS_0X:SIM:STATUS</span></code>. To switch the power off it must be a binary value with 2 digit set (e.g. 2) for the interlock it must be any value which is greater than 3 digit (e.g. 4). The value 6 would trigger both.</p>
+</section>
+</section>
+<section id="connecting-to-an-8500-series-through-serial">
+<h2>Connecting to an 8500 series through serial<a class="headerlink" href="#connecting-to-an-8500-series-through-serial" title="Link to this heading"></a></h2>
+<p>The serial standard (RS232, 422 OR 485) used by a Danfysik 8500 series is determined by the position of a jumper on the control board. This may need to be put in place for a new power supply.</p>
+<p>As the MCR network uses RS422, the jumper position will need to be changed if the PSU was previously controlled by the MCR.</p>
+<p>Only change the <strong>remote line</strong>. The local line changes how the PSU communicates with its front panel.</p>
+<p>The steps to change the serial standard to RS232:</p>
+<ol class="arabic simple">
+<li><p>Contact a technician responsible for the PSU. They will open the control panel for you (behind the built-in display).</p></li>
+<li><p>Move the jumper from either <code class="docutils literal notranslate"><span class="pre">ST10</span></code> or <code class="docutils literal notranslate"><span class="pre">ST11</span></code> to position <code class="docutils literal notranslate"><span class="pre">ST9</span></code> (RS232 only).</p>
+<ul class="simple">
+<li><p>The position of the jumper is illustrated in figure 13 of the 8500 series user manual on the manuals share</p></li>
+<li><p>Which jumpers to short circuit <code class="docutils literal notranslate"><span class="pre">(S/C)</span></code> or leave as open circuit <code class="docutils literal notranslate"><span class="pre">(O/C)</span></code> are given in table 12.</p></li>
+<li><p>Do not change the jumpers listed in table 11.</p></li>
+</ul>
+</li>
+</ol>
+<p>Note: There are two 8500 series which required a null modem on the 25-way connector.</p>
+</section>
+<section id="value-scaling">
+<h2>Value Scaling<a class="headerlink" href="#value-scaling" title="Link to this heading"></a></h2>
+<p>It is worth noting that some Danfysik devices read and write <code class="docutils literal notranslate"><span class="pre">RAW</span></code> values at different scales: given the same <code class="docutils literal notranslate"><span class="pre">CURRENT</span></code> the ratio of <code class="docutils literal notranslate"><span class="pre">RAW</span></code> read:write is 1:10 <strong>except for Danfysik model 8800</strong> where the ratio is 1:1. Configuring the IOC to take this into account is done via two macros <code class="docutils literal notranslate"><span class="pre">factor_read_i</span></code> and <code class="docutils literal notranslate"><span class="pre">factor_write_i</span></code>. The thing to note here is that they are the inverse of each other, i.e. <code class="docutils literal notranslate"><span class="pre">factor_read_i</span></code> = 1 / <code class="docutils literal notranslate"><span class="pre">factor_write_i</span></code> * <code class="docutils literal notranslate"><span class="pre">r:w</span> <span class="pre">ratio</span></code>.</p>
+<p>To give an example, for an uncalibrated Danfysik model 8500:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">factor_write_i</span></code> is <code class="docutils literal notranslate"><span class="pre">1000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">factor_read_i</span></code> is <code class="docutils literal notranslate"><span class="pre">0.01</span></code> (1/1000 * 10)</p></li>
+</ul>
+</section>
+<section id="auto-on-off">
+<h2>Auto On/Off<a class="headerlink" href="#auto-on-off" title="Link to this heading"></a></h2>
+<p>As the name suggests, this setting in the Danfysik IOC controls whether the device should automatically power itself on and off. If auto on/off is disabled, the device should stay in whatever state it is in unless explicitly instructed otherwise. If auto on/off is enabled, the device:</p>
+<ul class="simple">
+<li><p>Should power off if both:</p>
+<ul>
+<li><p>The setpoint readback value is within <code class="docutils literal notranslate"><span class="pre">OFF_TOLERANCE</span></code> of 0</p></li>
+<li><p>The readback value is stable (i.e. has held its value for
+at least 5 seconds)</p></li>
+</ul>
+</li>
+<li><p>Should power on if:</p>
+<ul>
+<li><p>The setpoint readback value is greater than 0 + <code class="docutils literal notranslate"><span class="pre">OFF_TOLERANCE</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Auto on/off gets automatically enabled when using the “sweep to zero and turn off” functionality.</p>
+<p>Auto on/off is part of the workflow for muon instruments, but it is not desired on neutron instruments using Danfysiks and can in fact turn the power supplies off in unsafe ways if configured badly. Thus it should always be switched off on neutron instruments. Note: The DISABLE_AUTOONOFF macro prevents auto on/off from being turned on at all and hides the GUI elements for setting it on. This macro is on by default, but is turned off by the config upgrade script for the EMU instrument, where this feature is desired.</p>
+</section>
+<section id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
+<p>At ioc start, some models of Danfysik need to be explicitly changed into remote mode and/or addressed. The last setpoint and power status must also be resent to the device so that the magnet does not change state as a result of an IOC restart. This is currently being done using autosave. Further details in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1209">https://github.com/ISISComputingGroup/IBEX/issues/1209</a></p>
+</section>
+<section id="loq-sans2d-goudsmit-magnet">
+<h2>LOQ/SANS2D Goudsmit magnet<a class="headerlink" href="#loq-sans2d-goudsmit-magnet" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>This magnet is driven by a 750A power supply, but can only actually take ~600A. The scientists have asked us to apply a limit of 738666 parts per million on this Danfysik (which corresponds to a current of 554A)</p>
+<ul>
+<li><p>This is true on both LOQ and SANS2D (as of May 2019)</p></li>
+</ul>
+</li>
+<li><p>The magnet is calibrated. Calibration tables are start with <code class="docutils literal notranslate"><span class="pre">Goudsmit_magnet</span></code> and are located in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\common\magnets</span></code></p></li>
+<li><p>The magnet can be run in transverse or solenoid modes. As far as IBEX is concerned, this corresponds to a change of calibration files.</p></li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="getting-no-bytes-back-from-the-device">
+<h3>Getting no bytes back from the device<a class="headerlink" href="#getting-no-bytes-back-from-the-device" title="Link to this heading"></a></h3>
+<p>The power supply group have some test software they wrote for communicating with the device. Ask them to try this software and if it doesn’t work it’s likely a wiring issue.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Magnets.html" class="btn btn-neutral float-left" title="Magnets &amp; Large Power Supplies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="HIFI-Zero-field-controller.html" class="btn btn-neutral float-right" title="Zero field controller (HIFI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

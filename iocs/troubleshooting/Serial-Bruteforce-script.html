@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serial Bruteforce Script &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Serial Port Debug" href="Serial-Port-Debug.html" />
+    <link rel="prev" title="Remote Debugging from Visual Studio" href="Remote-Debugging-from-Visual-Studio.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ASYN-Trace-Masks-%28Debugging-IOC%2C-ASYN%29.html">Asyn Trace Masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Walker.html">DLL Dependency Walker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-And-Device-Trouble-Shooting.html">General troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Start-Example.html">IOC Startup Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Start-Example.html#full-log">Full Log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-crash-or-unexpected-termination-%E2%80%90-Find-function-from-windows-module-offset.html">IOC Crash - find function from offset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-flow-control-settings.html">IOC Flow Control Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Log-file-location.html">Log file locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Remote-Debugging-from-Visual-Studio.html">Remote Debugging from Visual Studio</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Serial Bruteforce Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serial-Port-Debug.html">Serial Port Debug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestSerialPort.html">TestSerialPort</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Troubleshooting.html">Troubleshooting</a></li>
+      <li class="breadcrumb-item active">Serial Bruteforce Script</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/troubleshooting/Serial-Bruteforce-script.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="serial-bruteforce-script">
+<h1>Serial Bruteforce Script<a class="headerlink" href="#serial-bruteforce-script" title="Link to this heading"></a></h1>
+<p>The following is a Python script that can be run against devices with unknown comms settings. It will attempt to get a reply out of a device using all available comms settings.</p>
+<p>Note that the script may only get a single character from the device, even if the device responds with many characters. It is likely that several serial settings will reply - further analysis of the device will be required to determine the proper set (e.g. many devices will still give replies even with an incorrect parity or stop bits setting).</p>
+<p>You will need to run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyserial</span></code> before running this script.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">serial</span>
+
+
+<span class="n">COMMAND</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;1OS</span><span class="se">\r</span><span class="s2">&quot;</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s2">&quot;COM1&quot;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">try_send</span><span class="p">(</span><span class="n">baud</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">parity</span><span class="p">,</span> <span class="n">xonxoff</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="n">PORT</span><span class="p">,</span> <span class="n">stopbits</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">bytesize</span><span class="o">=</span><span class="n">bits</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="n">baud</span><span class="p">,</span> <span class="n">parity</span><span class="o">=</span><span class="n">parity</span><span class="p">,</span> <span class="n">xonxoff</span><span class="o">=</span><span class="n">xonxoff</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;trying </span><span class="si">{</span><span class="n">baud</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">stop</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">bits</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">parity</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">xonxoff</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">COMMAND</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="k">except</span> <span class="n">serial</span><span class="o">.</span><span class="n">SerialException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">force</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">baud</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">9600</span><span class="p">,</span> <span class="mi">19200</span><span class="p">,</span> <span class="mi">38400</span><span class="p">,</span> <span class="mi">57600</span><span class="p">,</span> <span class="mi">115200</span><span class="p">,</span> <span class="mi">4800</span><span class="p">,</span> <span class="mi">2400</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">stop</span> <span class="ow">in</span> <span class="p">[</span><span class="n">serial</span><span class="o">.</span><span class="n">STOPBITS_ONE</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">STOPBITS_ONE_POINT_FIVE</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">STOPBITS_TWO</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">bits</span> <span class="ow">in</span> <span class="p">[</span><span class="n">serial</span><span class="o">.</span><span class="n">FIVEBITS</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">SIXBITS</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">SEVENBITS</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">EIGHTBITS</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">parity</span> <span class="ow">in</span> <span class="p">[</span><span class="n">serial</span><span class="o">.</span><span class="n">PARITY_NONE</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">PARITY_EVEN</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">PARITY_ODD</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">PARITY_MARK</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">PARITY_SPACE</span><span class="p">]:</span>
+                    <span class="k">for</span> <span class="n">xonxoff</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+                        <span class="n">try_send</span><span class="p">(</span><span class="n">baud</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">parity</span><span class="p">,</span> <span class="n">xonxoff</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Remote-Debugging-from-Visual-Studio.html" class="btn btn-neutral float-left" title="Remote Debugging from Visual Studio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Serial-Port-Debug.html" class="btn btn-neutral float-right" title="Serial Port Debug" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

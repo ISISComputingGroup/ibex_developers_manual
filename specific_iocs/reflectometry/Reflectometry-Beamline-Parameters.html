@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beamline Parameters &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Composite Driving Layer" href="Reflectometry-Composite-Driving-Layer.html" />
+    <link rel="prev" title="Beamline object" href="Reflectometry-Beamline-Object.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Config-Training.html">Reflectometry Config Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Reflectometry-IOC.html">Reflectometry</a></li>
+      <li class="breadcrumb-item active">Beamline Parameters</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/Reflectometry-Beamline-Parameters.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="beamline-parameters">
+<h1>Beamline Parameters<a class="headerlink" href="#beamline-parameters" title="Link to this heading"></a></h1>
+<p>Beamline parameters represent high-level values a user may wish to set. They can have blocks or the GUI controls pointed at them. These parameters are transformations of low-level motor values. The reflectometry server creates the following PVs for each parameter (where <code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;</span></code> is <code class="docutils literal notranslate"><span class="pre">&lt;PREFIX&gt;:REFL:PARAM:&lt;NAME&gt;</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;</span></code> - Readback: the value as calculated from the low-level motor positions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:SP</span></code> - Setpoint: when set, the reflectometry server will move the parameter this value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:SP:RBV</span></code> - Setpoint read-back: the last value that this parameter was moved to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:SP_NO_ACTION</span></code> - if this is set the setpoint is stored but not applied to the motor until the next time a move is triggered on this parameter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:ACTION</span></code> - moves this parameter to the setpoint</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:RBV:AT_SP</span></code> - True if readback value is within tolerance of the setpoint</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:CHANGED</span></code> - True if this setpoint has changed since the last time this parameter was moved</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:IN_MODE</span></code> - True if the parameter is in the currently active beamline mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:CHANGING</span></code> - True if the parameter readback value is currently changing (i.e. an underlying motor is moving)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;BASE&gt;:DEFINE_POSITION_AS</span></code> - redefines the current parameter readback to the given value (does not move the motor)</p></li>
+</ul>
+<p><strong>For more information on implementation specifics see the <a class="reference internal" href="Reflectometry-Configuration.html#reflectometry-beamline-parameters"><span class="std std-ref">Reflectometry Configuration page</span></a></strong></p>
+<section id="example-of-beam-offset-axis">
+<h2>Example of Beam Offset Axis<a class="headerlink" href="#example-of-beam-offset-axis" title="Link to this heading"></a></h2>
+<p>Some axes are direct in that they set the position from a beam that can not move, e.g. TRANS. In this case the motor value and parameter values are the same since the beam is at zero. In the case of parameters in the plane where the beam can move this can be more complicated to think about here is a diagram of the set point and read back for cases where the beam in moving around (beam is red, component is white and set point is green):</p>
+<p><img alt="Relative parameter with motor positions" src="../../_images/RelativeParameterWithMotor.png" /></p>
+<p>First line of positions is linear axis and second line in rotational.</p>
+</section>
+<section id="theta-readback-calculation">
+<h2>Theta Readback Calculation<a class="headerlink" href="#theta-readback-calculation" title="Link to this heading"></a></h2>
+<p>The theta beam line parameter is special because it depends on other items in the beamline. All other components are independent except for the incoming beam from a previous component.</p>
+<p><strong>Theta readback is</strong>: Half the sum of the incoming angle and outgoing angle at the point where the incoming beam hits the theta movement axis, this point is called the virtual sample point; the point at which you should mount the same to make the reflection. The theta movement axis should usually be identical to the sample movement axis. The incoming beam is calculated from the component before the theta component. The outgoing angle is calculated by using a list of components set on the theta component in the configuration. It find the first component in that list which is in the beam, from this component it calculates theta.:</p>
+<ol class="arabic simple">
+<li><p>Component is on a linear slide: Theta is angle to component. The height of the component is its actual position without any setpoint offset. Theta is the angle of the line from the virtual sample point to the component. NB It does not matter what angle this component is pointing in when calculating theta.</p></li>
+<li><p>Component is on a bench: Theta is the angle of the bench; The bench pivots around the virtual sample point. NB It does not matter what height the bench is at when calculating theta.</p></li>
+</ol>
+<p>For example, on CRISP it is the angle to the first detector which is in the beam. If both detectors are in the beam the point detector is used. The offset to that detector is then taken away from the current position and this is the angle used to calculate theta. From a coding point of view, this means when the readback or setpoint position of a component in this list is updated then the readback is updated.</p>
+</section>
+<section id="theta-setpoint-calculation">
+<h2>Theta Setpoint Calculation<a class="headerlink" href="#theta-setpoint-calculation" title="Link to this heading"></a></h2>
+<p>The setpoint for theta is special because all it does is change the beam path it does not affect any underlying PVs. However in disabled mode, the incoming beam is no longer altered and this means changing theta would have no effect on the component it is pointing at, e.g. changing Theta would not alter the position of the detector. To fix this there is a special route to force an incoming beam path to be set. This should allow the component defining theta to move when theta is changed.</p>
+</section>
+<section id="reflectometry-parameter-init">
+<h2>Parameter Initialisation<a class="headerlink" href="#reflectometry-parameter-init" title="Link to this heading"></a></h2>
+<p>When starting the IOC, the beamline parameter values are initialized. The intended behaviour is that if you restart the reflectometry IOC, it should come back exactly in the state you left it in.</p>
+<ul class="simple">
+<li><p>Readback values are set to their real current values based on the physical motor positions, i.e. they behave the same as they do at any given moment in time the reflectometry IOC is up.</p></li>
+<li><p>Setpoints are initialized in one of two ways, based on what the parameters have their <code class="docutils literal notranslate"><span class="pre">autosave</span></code> attribute set to.</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">autosave=False</span></code>, it will initialise the setpoint based on motor value, i.e. it will be the same as the readback value. This is the default behaviour.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">autosave=True</span></code>, the setpoints will be initialized to a value read from a file in the <code class="docutils literal notranslate"><span class="pre">Instrument\Var</span></code> area. If this affects the beam path (e.g. the autosaved value is the supermirror angle), parameters of components further along the beam path will be computed to be correct given the real motor position and the altered beam path. A parameter’s autosave value is updated in the file every time that parameter is moved.</p></li>
+</ul>
+</li>
+</ul>
+<p>In some cases, autosaved parameters are necessary.</p>
+<p><strong>Example1</strong>:</p>
+<p><img alt="Init Theta" src="../../_images/sp_inits.png" /></p>
+<p>Theta is defined by the angle between the sample point and the next component it is angled to (e.g. the point detector). However, the detector itself can also have an offset parameter that moves it to a given position relative to the beam. On intialisation we only have one value for the height of the detector, however we cannot tell which portion of that height comes from theta and which portion comes from the detector offset parameter without saving one of the two values.</p>
+<p><strong>Example2</strong>:</p>
+<p>A parameter that can be calculated using an axis that can be parked. In this case if the axis has no auto save and is in its parked position when the IOC is started then it is impossible to tell where the user wants it to be when it is in the beam. In this case the server will issue the error <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">&lt;parameter</span> <span class="pre">name&gt;</span> <span class="pre">is</span> <span class="pre">parkable</span> <span class="pre">so</span> <span class="pre">should</span> <span class="pre">have</span> <span class="pre">an</span> <span class="pre">autosave</span> <span class="pre">value</span> <span class="pre">but</span> <span class="pre">doesn't.</span> <span class="pre">Has</span> <span class="pre">been</span> <span class="pre">set</span> <span class="pre">to</span> <span class="pre">0</span> <span class="pre">check</span> <span class="pre">its</span> <span class="pre">value</span></code>, the server will then use zero for the in beam position but you will want to check that it makes sense for this parameter.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reflectometry-Beamline-Object.html" class="btn btn-neutral float-left" title="Beamline object" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reflectometry-Composite-Driving-Layer.html" class="btn btn-neutral float-right" title="Composite Driving Layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

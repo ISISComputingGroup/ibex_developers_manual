@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Component &amp; Activity Stewards &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dependency Updates" href="Dependency-Updates.html" />
+    <link rel="prev" title="Developer Processes" href="../Dev-Processes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Component &amp; Activity Stewards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Updates.html">Dependency Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="External-Contributions.html">External Contributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Good-Ticket-Writing.html">Good Ticket Writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-Documentation.html">Project Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Things-to-know-as-a-developer.html">Things to know as a developer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tickets-and-their-Workflow.html">Ticket workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Umbrella-Tickets.html">Umbrella tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Understanding-Java-Licensing.html">Understanding Java Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unupdated-dependencies.html">Unupdated dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Dev-Processes.html">Developer Processes</a></li>
+      <li class="breadcrumb-item active">Component &amp; Activity Stewards</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/dev_processes/Component-and-Activity-Stewards.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="component-activity-stewards">
+<h1>Component &amp; Activity Stewards<a class="headerlink" href="#component-activity-stewards" title="Link to this heading"></a></h1>
+<p>This page lists the component &amp; activity stewards.</p>
+<section id="what-is-a-component-activity-steward">
+<h2>What is a component / activity steward?<a class="headerlink" href="#what-is-a-component-activity-steward" title="Link to this heading"></a></h2>
+<p>A Component or Activity Steward is the individual responsible for the development and quality of a component or activity.  The role itself is <a class="reference internal" href="#definition-component-steward">defined in more detail</a> below but, in essence, it means that the named individual is responsible for the “well-being” of a component or activity.  Knowing who the relevant steward is means you have a first point of contact for finding out about that particular component or activity.</p>
+<p>After a component/activity has been completed and stable for a cycle then the steward should retire for that activity/component.</p>
+</section>
+<section id="list-of-components-activities-stewards">
+<h2>List of Components/Activities &amp; Stewards<a class="headerlink" href="#list-of-components-activities-stewards" title="Link to this heading"></a></h2>
+<p>The list of components/activities and stewards is not set in stone.  It will change over time.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component/Activity</p></th>
+<th class="head"><p>Steward</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Instrument Migrations</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MUSR Migration</p></td>
+<td><p>LC</p></td>
+</tr>
+<tr class="row-even"><td><p>OFFSPEC Migration</p></td>
+<td><p>JH</p></td>
+</tr>
+<tr class="row-odd"><td><p>HIFI Migration</p></td>
+<td><p>TBC</p></td>
+</tr>
+<tr class="row-even"><td><p>CHRONUS Migration</p></td>
+<td><p>LC &amp; DK</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARGUS Migration</p></td>
+<td><p>LC &amp; DK</p></td>
+</tr>
+<tr class="row-even"><td><p>SXD Migration</p></td>
+<td><p>LJ</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHIPIR Migration</p></td>
+<td><p>JH</p></td>
+</tr>
+<tr class="row-even"><td><p>—</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>IBEX Core components</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Script Server (NICOS)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphing/Scripting</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Script Generator</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>IBEX GUI</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CSS &amp; Phoebus</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>EPICS base and support modules</p></td>
+<td><p>FA</p></td>
+</tr>
+<tr class="row-even"><td><p>Delay tickets</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Blockserver/Other server items</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Linter</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Squish</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Motion Control</p></td>
+<td><p>JH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reflectometry</p></td>
+<td><p>JH</p></td>
+</tr>
+<tr class="row-even"><td><p>Dataweb</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>—</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Other items which impact significantly and directly on IBEX</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector systems monitoring</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>HIFI Cryomagnet</p></td>
+<td><p>LC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Systems (Hardware, OS, etc.)</p></td>
+<td><p>CMS</p></td>
+</tr>
+<tr class="row-even"><td><p>Lewis</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="definition-component-steward">
+<h2>Definition of the role of Component / Activity Steward<a class="headerlink" href="#definition-component-steward" title="Link to this heading"></a></h2>
+<p>The role of Component or Activity Steward is to be the individual responsible for the development and quality of a component or activity.  An example of a component is the Blockserver, or a major part of the IBEX GUI.  An example of an activity might be ensuring that an instrument is ready to migrate to IBEX (i.e. by ensuring that IBEX support the devices used on that instrument).</p>
+<p>Being responsible does not mean that you are the sole developer or the only person who ever works on the component.  Rather it means that you are the individual responsible for the “well-being” of the component, on an on-going basis.  In other words, making sure that the component fulfils and continues to fulfil its requirements, meets quality standards, has up-to-date and accurate documentation, that bugs get fixed, etc.  It may also mean having to liaise with other members of the team, or with colleagues in other groups to make sure that components, services or hardware required by your component are identified, planned and in place at the right time.</p>
+<p>Similarly, for an activity, you are not expected to be the only person who contributes to that activity.  Instead, you are the individual responsible for identifying the actions that need to be taken to complete the activity and helping the team plan the work required.</p>
+<p>In both cases, component or activity, you will be involved in creating or identifying the stories that guide the development of the component or activity and discussing the relative prioritisation of those stories (i.e. when the work should be scheduled).  Depending on your role in the team, you might be responsible for several components or activities.</p>
+<p>In practice, it is likely that you will perform a large fraction of the planning, design, development, testing and documentation, but there is no reason why others should not contribute - after all, two (or even more) heads can be better than one.  The benefit of involving other individuals is that they can propose new ideas, suggest alternative approaches, bring specific expertise or just generally help share the load.  Indeed, it is important that more than one person has knowledge of a component; someone who can take over, if necessary, if you are absent or busy working on something else - you should actively seek to involve others in the development or implementation of your component or activity.</p>
+<p>The Component or Activity Steward does not act alone.  You need to coordinate your activities with other members of the team, including the project manager, keeping them informed about overall progress, events and problems.  For example, explaining to the team the timescales involved, whether specific events have critical timings or dependencies, whether special resources are required.  If you encounter a problem, let people know - they might be able to help.  It is important that others are kept informed about the state of your component or activity, so that they can take account of these matters for their own components or activities.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Dev-Processes.html" class="btn btn-neutral float-left" title="Developer Processes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Dependency-Updates.html" class="btn btn-neutral float-right" title="Dependency Updates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

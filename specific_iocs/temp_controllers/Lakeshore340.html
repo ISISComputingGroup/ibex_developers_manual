@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakeshore 340 &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lakeshore 350" href="Lakeshore350.html" />
+    <link rel="prev" title="Lakeshore 336" href="Lakeshore336.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Ambrell-EASYHeat-Induction-Furnace.html">Ambrell EASYHeat Induction Furnace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automatic-Needle-Valve-Controller.html">Automatic Needle Valve Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eurotherm.html">Eurotherm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-Environment-Monitor.html">ISIS Environment Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="In-Situ-DSC.html">In-situ DSC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Induction-furnace.html">Induction furnace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Julabo.html">Julabo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore336.html">Lakeshore 336</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lakeshore 340</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore350.html">Lakeshore 350</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore372.html">Lakeshore 372</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Neocera-LTC-21.html">Neocera LTC 21</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OMEGA-OME-Wise.html">OMEGA OME-Wise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ral-furnaces.html">RAL Furnaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Temperature-Jump-Apparatus.html">Temperature Jump Apparatus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+      <li class="breadcrumb-item active">Lakeshore 340</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/temp_controllers/Lakeshore340.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lakeshore-340">
+<h1>Lakeshore 340<a class="headerlink" href="#lakeshore-340" title="Link to this heading"></a></h1>
+<p>The Lakeshore 340 is a device used by LET to monitor the temperature of a sample when it is being cooled by a dilution fridge inside the 9T magnet.</p>
+<p>This Lakeshore has four measurement channels, each of which exposes a temperature and a raw measurement (usually a resistance from a thermocouple). The device supports multiple independent temperature control loops, however, we only use one of these loops.</p>
+<p>The device itself has a large amount of functionality, however, the IOC (and corresponding LabVIEW driver) only expose a fraction of it. The functionality exposed by the drivers is:</p>
+<ul class="simple">
+<li><p>Set and read back a temperature setpoint (it only ever sets and reads back the setpoint for control loop 1).</p></li>
+<li><p>Reads 4 temperature channels</p></li>
+<li><p>Reads the “raw” (resistance) measurements from these same 4 channels</p></li>
+<li><p>Set and read P, I and D values</p></li>
+<li><p>Set and read the PID mode (one of <code class="docutils literal notranslate"><span class="pre">Manual</span> <span class="pre">PID</span></code>, <code class="docutils literal notranslate"><span class="pre">Zone</span></code>, <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Loop</span></code>, <code class="docutils literal notranslate"><span class="pre">Auto-tune</span> <span class="pre">PID</span></code>, <code class="docutils literal notranslate"><span class="pre">Auto-tune</span> <span class="pre">PI</span></code> or <code class="docutils literal notranslate"><span class="pre">Auto-tune</span> <span class="pre">P</span></code>)</p></li>
+<li><p>Set and read whether the control loop is on</p></li>
+<li><p>Set and read the maximum temperature setpoint</p></li>
+<li><p>Reads the heater output as a percentage</p></li>
+<li><p>Set and read maximum heater power as a percentage</p></li>
+</ul>
+<p>Terminators are <code class="docutils literal notranslate"><span class="pre">CR</span> <span class="pre">LF</span></code></p>
+<p>The device uses a 9-pin male serial cable (female connector on device) and requires a null modem.</p>
+<section id="excitations">
+<h2>Excitations<a class="headerlink" href="#excitations" title="Link to this heading"></a></h2>
+<p>The MuSR Lakeshore 340 excitations need to be able to be controlled in two ways:</p>
+<ul class="simple">
+<li><p>Set and get the value of the excitation for input A (via the OPI or a block)</p></li>
+<li><p>Define temperature setpoint thresholds and excitation pairs</p></li>
+</ul>
+<section id="excitations-temperature-threshold-file">
+<h3>Excitations Temperature Threshold File<a class="headerlink" href="#excitations-temperature-threshold-file" title="Link to this heading"></a></h3>
+<p>You can find examples in the Lakeshore 340 support module <code class="docutils literal notranslate"><span class="pre">lakeshore340\excitation_thresholds</span></code>. More details <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/device_specific/Lakeshore-340.html" title="(in IBEX User Manual)"><span class="xref std std-doc">here</span></a>.</p>
+</section>
+<section id="excitations-ioc-records-and-algorithm">
+<h3>Excitations IOC records and algorithm<a class="headerlink" href="#excitations-ioc-records-and-algorithm" title="Link to this heading"></a></h3>
+<p>You can view a diagram describing how the original VI worked <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5950#issuecomment-769071044">here</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">asub</span></code> record <code class="docutils literal notranslate"><span class="pre">THRESHOLDS:_CALC</span></code> calculates and sets the thresholds. The function the record contains also checks conditions such as the file containing invalid lines, the file not existing and whether the file is None.txt (the default which says to not do anything).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">THRESHOLDS:_CALC</span></code> record is triggered into processing by the setting of <code class="docutils literal notranslate"><span class="pre">A:TEMP:SP</span></code> and <code class="docutils literal notranslate"><span class="pre">THRESHOLDS:FILE</span></code> (written to via <code class="docutils literal notranslate"><span class="pre">dbpf</span></code> from <code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code>). For how the thresholds file is read see <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/device_specific/Lakeshore-340.html" title="(in IBEX User Manual)"><span class="xref std std-doc">here</span></a> and diagram below. Once the values are calculated they are set into <code class="docutils literal notranslate"><span class="pre">THRESHOLDS:TEMP</span></code> and <code class="docutils literal notranslate"><span class="pre">THRESHOLDS:EXCITATION</span></code> or if there is an error <code class="docutils literal notranslate"><span class="pre">THRESHOLDS:ERROR</span></code>. The IOC then waits for the temperature to reach the setpoint before writing the excitation to <code class="docutils literal notranslate"><span class="pre">EXCITATIONA:SP</span></code>, this mechanism is documented in the diagram below.</p>
+<p><img alt="IOC and flowchart diagram for excitations" src="../../_images/LKSH340ExcitationsEPICS.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Lakeshore336.html" class="btn btn-neutral float-left" title="Lakeshore 336" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lakeshore350.html" class="btn btn-neutral float-right" title="Lakeshore 350" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

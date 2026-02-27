@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MERLIN, LET and WISH Oscillating Radial Collimators &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Motion Set Points" href="Motion-Set-points.html" />
+    <link rel="prev" title="MARI Sample Changer" href="MARI-Sample-Changer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Goniometer-Axes.html">ALF Goniometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Bump-Strip.html">Bump Strips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Collision-Detection-Project.html">Collision Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-soft-motors-to-control-real-motors.html">Motor Coordinate Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Fermi-Chopper-Lifter.html">Fermi chopper lifter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Lens-Adjustment.html">IMAT Lens Adjustment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jaws.html">Jaws</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Sample-Changer.html">MARI Sample Changer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MERLIN, LET and WISH Oscillating Radial Collimators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motion-Set-points.html">Motion Set Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-analyser-towers.html">OSIRIS Analyser Towers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Portable-Eulerian-Cradle.html">Portable Eulerian Cradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Front-Beam-Stop-inhibit-movement.html">SANS2D Front Beam Stop Inhibit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-apertures-and-guides.html">SANS2D Apertures and Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-tank-collision-avoidance.html">SANS2D vacuum tank collision avoidance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sample-Changer-Support-Module.html">SANS Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tosca-sample-positioner.html">TOSCA sample positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-DMS.html">ZOOM Detector motion system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-PGC.html">ZOOM Polariser, Guide and Collimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-sample-stack.html">ZOOM Sample Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors-Extensions.html">Motor Extensions</a></li>
+      <li class="breadcrumb-item active">MERLIN, LET and WISH Oscillating Radial Collimators</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motor_extensions/MERLIN,-LET-and-WISH-Oscillating-radial-collimators.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="merlin-let-and-wish-oscillating-radial-collimators">
+<h1>MERLIN, LET and WISH Oscillating Radial Collimators<a class="headerlink" href="#merlin-let-and-wish-oscillating-radial-collimators" title="Link to this heading"></a></h1>
+<p>The oscillating radial collimator on MERLIN is similar but not quite the same as the one on LET.</p>
+<section id="starting-it">
+<h2>Starting it<a class="headerlink" href="#starting-it" title="Link to this heading"></a></h2>
+<p>Occasionally the oscillating collimator stops oscillating, you can tell because the <code class="docutils literal notranslate"><span class="pre">current</span> <span class="pre">angle</span></code> on the OPI will not be changing.</p>
+<p>To restart this is sometimes tricky try the following:</p>
+<ol class="arabic simple">
+<li><p>On the OPI</p></li>
+<li><p>Click Stop</p></li>
+<li><p>Alter the <code class="docutils literal notranslate"><span class="pre">swept</span> <span class="pre">angle</span></code> and <code class="docutils literal notranslate"><span class="pre">operating</span> <span class="pre">frequency</span></code> to a <strong>valid</strong> and <strong>different</strong> values so it will resend the setting</p>
+<ol class="arabic simple">
+<li><p>The valid values for the swept angle as currently 0-2 (you can see by right click on the input text box and <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">pv</span> <span class="pre">info</span></code>)</p></li>
+<li><p>The valid values of operating frequency are 0-0.5</p></li>
+</ol>
+</li>
+<li><p>Set the swept angle and operating frequency back to the required settings</p></li>
+<li><p>Click start</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Mode</span></code> should now read <code class="docutils literal notranslate"><span class="pre">Homing</span></code> then <code class="docutils literal notranslate"><span class="pre">Oscillating</span></code> and the current angle should start changing.</p>
+<ul class="simple">
+<li><p>this was fairly quick (less than 1 minute)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="hardware-quirks">
+<h2>Hardware quirks:<a class="headerlink" href="#hardware-quirks" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The thread will die if zero is sent for distance and velocity. The driver must ensure that distance and velocity are not sent at IOC start.</p></li>
+<li><p>The oscillation will stop if the galil is power cycled. To restart the oscillation, the galil driver will need to be restarted to re-upload the oscillation code, and then the collimator restarted as usual via it’s OPI. Once the collimator is started via to OPI it will home and then switch to oscillating.</p></li>
+</ul>
+</section>
+<section id="galil-code">
+<h2>Galil Code<a class="headerlink" href="#galil-code" title="Link to this heading"></a></h2>
+<p>The oscillations are managed by the galil code different on <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_Oscillating_Collimator.gmc">LET</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_Oscillating_Collimator_Merlin.gmc">MERLIN</a>. This section is an rough explanation of the code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;************MERLIN Collimator*********</span>
+<span class="s1">&#39;***********************************</span>
+<span class="s1">&#39;DETERMINE INITIAL POSITION</span>
+<span class="s1">&#39;***********************************</span>
+</pre></div>
+</div>
+<p>Comments</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#HOMER</span>
+<span class="s1">&#39;*******STEP 1 - Retract Motor******</span>
+<span class="n">mode</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">MT</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">DC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">1024</span><span class="p">;</span><span class="n">AC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">1024</span><span class="p">;</span><span class="n">SH</span><span class="o">~</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>For homing set up some variables:</p>
+<ul class="simple">
+<li><p>mode (what galil is doing)</p></li>
+<li><p>count (how many oscillations it has performed)</p></li>
+</ul>
+<p>Then set the acceleration and deceleration and switch motor on.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">JP</span> <span class="c1">#HOME, @IN[6]=1</span>
+<span class="n">SP</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">250</span><span class="p">;</span><span class="n">PR</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">2600</span>
+<span class="n">mode</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">BG</span><span class="o">~</span><span class="n">a</span>
+<span class="c1">#INI</span>
+<span class="n">JP</span> <span class="c1">#INI, @IN[6]&lt;&gt;1</span>
+<span class="n">WT</span> <span class="mi">100</span>
+<span class="n">ST</span><span class="o">~</span><span class="n">a</span>
+<span class="n">AM</span><span class="o">~</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>If at home switch then move off it otherwise go directly to <code class="docutils literal notranslate"><span class="pre">HOME</span></code> step.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#HOME</span>
+<span class="s1">&#39;*******STEP 2 - Find Gigital Home*******</span>
+<span class="n">mode</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">AC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">67107840</span><span class="p">;</span><span class="n">DC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">1024</span><span class="p">;</span><span class="n">SP</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">250</span><span class="p">;</span><span class="n">PR</span><span class="o">~</span><span class="n">a</span><span class="o">=-</span><span class="mi">2600</span>
+<span class="n">SH</span><span class="o">~</span><span class="n">a</span><span class="p">;</span><span class="n">BG</span><span class="o">~</span><span class="n">a</span>
+<span class="c1">#HEO</span>
+<span class="n">JP</span> <span class="c1">#HEO, @IN[6]=1</span>
+<span class="n">ST</span><span class="o">~</span><span class="n">a</span>
+<span class="n">AM</span><span class="o">~</span><span class="n">a</span>
+<span class="n">WT100</span>
+</pre></div>
+</div>
+<p>Move in negative direction and stop as soon as we hit the home switch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">1024</span><span class="p">;</span><span class="n">DC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span> <span class="mi">67107840</span><span class="p">;</span><span class="n">SP</span><span class="o">~</span><span class="n">a</span><span class="o">=</span> <span class="mi">20</span><span class="p">;</span><span class="n">PR</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">2600</span>
+<span class="n">SH</span><span class="o">~</span><span class="n">a</span><span class="p">;</span><span class="n">BG</span><span class="o">~</span><span class="n">a</span>
+<span class="c1">#HR</span>
+<span class="n">JP</span> <span class="c1">#HR, @IN[6]&lt;&gt;1</span>
+<span class="n">ST</span><span class="o">~</span><span class="n">a</span>
+<span class="n">AM</span><span class="o">~</span><span class="n">a</span>
+<span class="n">WT1000</span>
+</pre></div>
+</div>
+<p>Move off the home switch and stop as soon as it disengages.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DP</span><span class="o">~</span><span class="n">a</span><span class="o">=-</span><span class="mi">200</span>
+<span class="n">PA</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">SH</span><span class="o">~</span><span class="n">a</span>
+<span class="n">SP</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="mi">1024</span>
+<span class="n">BG</span><span class="o">~</span><span class="n">a</span>
+<span class="n">AM</span><span class="o">~</span><span class="n">a</span>
+<span class="n">WT1000</span>
+</pre></div>
+</div>
+<p>Set the position of the home switch as -200 and move to 1024.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#OSCILSU</span>
+<span class="s1">&#39;****Step 3 - Oscillation Setup*******</span>
+<span class="n">mode</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">AC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="n">accel</span><span class="p">;</span><span class="n">DC</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="n">accel</span><span class="p">;</span><span class="n">SP</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="n">vel</span>
+<span class="n">SH</span><span class="o">~</span><span class="n">a</span>
+<span class="n">PA</span><span class="o">~</span><span class="n">a</span><span class="o">=-</span><span class="n">dist</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">MC</span><span class="o">~</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>Move to half the oscillation distance in the negative direction. See <a class="reference internal" href="#oscillating-collimator-distance-velocity-calculation">below</a> for how distance is calculated.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#OSCIL</span>
+<span class="s1">&#39;****Step 4 - Oscillations************</span>
+<span class="n">time1</span><span class="o">=</span><span class="n">TIME</span>
+<span class="n">SP</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="n">vel</span>
+<span class="n">SH</span><span class="o">~</span><span class="n">a</span><span class="p">;</span><span class="n">PA</span><span class="o">~</span><span class="n">a</span><span class="o">=</span><span class="n">dist</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="n">BG</span><span class="o">~</span><span class="n">a</span><span class="p">;</span>
+<span class="c1">#CHECK1</span>
+<span class="n">JP</span> <span class="c1">#CHECK1, @IN[6]=0</span>
+<span class="n">check</span><span class="o">=</span><span class="n">_RP</span><span class="o">~</span><span class="n">a</span>
+<span class="n">AM</span><span class="o">~</span><span class="n">a</span>
+<span class="n">SH</span><span class="o">~</span><span class="n">a</span><span class="p">;</span><span class="n">PA</span><span class="o">~</span><span class="n">a</span><span class="o">=-</span><span class="n">dist</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="n">BG</span><span class="o">~</span><span class="n">a</span><span class="p">;</span><span class="n">AM</span><span class="o">~</span><span class="n">a</span>
+<span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">time</span><span class="o">=</span><span class="n">TIME</span><span class="o">-</span><span class="n">time1</span>
+<span class="s1">&#39;JP #HOMER, check&gt;125</span>
+<span class="n">JP</span><span class="c1">#OSCIL</span>
+<span class="n">EN</span>
+</pre></div>
+</div>
+<p>Move to positive and then negative positions of oscillation, recording time for total movement. There is a disabled check that we clear the limit switch. Repeat this motion forever. See <a class="reference internal" href="#oscillating-collimator-distance-velocity-calculation">below</a> for how distance is calculated.</p>
+<p>The code on LET is the same except that:</p>
+<ol class="arabic simple">
+<li><p>It uses a different input for the home switch,</p></li>
+<li><p>It performs jogs instead of limited moves</p></li>
+<li><p>The home switch is defined to be at 0 (not -200)</p></li>
+<li><p>It does not switch on the motor before each move</p></li>
+<li><p>After the home and before the setup oscillation it does not move the motor away from the home switch position</p></li>
+</ol>
+</section>
+<section id="oscillating-collimator-distance-velocity-calculation">
+<h2>Distance and Velocity Calculation<a class="headerlink" href="#oscillating-collimator-distance-velocity-calculation" title="Link to this heading"></a></h2>
+<p>The distance and velocity the ORC is asked to move is calculated based on the provided swept angle and frequency. This calculation is done in the db inside <code class="docutils literal notranslate"><span class="pre">motorExtensions</span></code>. The purpose of these calculations is to ensure that twice the swept angle is travelled with a constant velocity. First the time taken for half a cycle, T, is calculated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">freq</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then swept distance in steps, D, is calculated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">Radius</span><span class="o">*</span><span class="p">(</span><span class="n">Steps</span><span class="o">/</span><span class="n">mm</span><span class="p">)</span><span class="o">*</span><span class="n">tan</span><span class="p">(</span><span class="n">swept_angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The required velocity, V, is then calculated based on the equation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">V</span><span class="o">*</span><span class="n">T</span> <span class="o">+</span> <span class="n">D</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>The solution to which is calculated as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">T</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">8</span><span class="o">*</span><span class="p">(</span><span class="n">D</span><span class="o">/</span><span class="n">A</span><span class="p">)))</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>which is sent to the controller as <code class="docutils literal notranslate"><span class="pre">vel</span></code>. From this velocity the distance required to get to this velocity is calculated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D_v</span> <span class="o">=</span> <span class="n">V</span><span class="o">^</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And so the total <code class="docutils literal notranslate"><span class="pre">dist</span></code> sent to the control is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dist</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">D_v</span> <span class="o">+</span> <span class="n">D</span>
+</pre></div>
+</div>
+<p>The explanation for these equations can be seen in the following diagram (courtesy of Ben Withers) <img alt="ORC maths explanation" src="../../_images/ORC.png" /></p>
+<section id="moving-indicators">
+<h3>Moving indicators<a class="headerlink" href="#moving-indicators" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">MOT:OSCCOL:MOVING</span></code> PV (i.e. whether the collimator is moving or not) is calculated differently for MERLIN/LET and WISH.</p>
+<p>Merlin and LET both are fitted with a laser which is plugged into the galil’s digital input. We can deduce the movement of the collimator from whether this PV value (<code class="docutils literal notranslate"><span class="pre">$(P)MOT:DMC01:Galil0Bi5_STATUS</span></code>) is fluctuating or not.
+The Db scans this laser PV every .1 second taking 100 samples, so it takes 10 seconds to calculate collimator movement. For example, if the laser PV has changed value within the last 10 seconds then it is <code class="docutils literal notranslate"><span class="pre">Moving</span></code>, and otherwise reports <code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">moving</span></code>.
+Due to the way movement is calculated, when the laser pv is in alarm, the collimator will report <code class="docutils literal notranslate"><span class="pre">Moving</span></code> but in an <strong>invalid state</strong>.</p>
+<p>WISH is not fitted with this laser, and so uses the already previously existing logic which checks that (largest motor position in last 10s) != (smallest motor position in last 10s).</p>
+</section>
+<section id="wish-specifics">
+<h3>WISH specifics<a class="headerlink" href="#wish-specifics" title="Link to this heading"></a></h3>
+<p>The WISH collimator is slightly unusual in the way that it:</p>
+<ol class="arabic simple">
+<li><p>Does not have timing information in the Galil code, so frequency can not be easily read back. To get around this in the Db it is aliased to the setpoint.</p></li>
+<li><p>Every x amount of oscillations it rotates 360 degrees - this is referred to as a “maintenance rotation”. This is not required on LET/MERLIN as they use different bearing types</p></li>
+<li><p>It calculates the required swept angle using the gearbox ratio etc. rather than the tan of the angle as defined above. The velocity calculations are done in the same way.</p></li>
+</ol>
+<p>There is some logic in the OPI that will show the fields for the maintenance rotation such as how long until the next one and what the set value is before rotating. This is enabled on load of the wish Db file.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MARI-Sample-Changer.html" class="btn btn-neutral float-left" title="MARI Sample Changer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Motion-Set-points.html" class="btn btn-neutral float-right" title="Motion Set Points" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

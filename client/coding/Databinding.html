@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Databinding &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GUI Coding Conventions" href="GUI-Coding-Conventions.html" />
+    <link rel="prev" title="Connecting a view to a PV" href="Connecting-a-View-to-a-PV.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Activators.html">Activators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html">Adding a plugin or feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Connecting-a-View-to-a-PV.html">Connecting a view to a PV</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Databinding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GUI-Coding-Conventions.html">GUI Coding Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">Instrument &amp; PV switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Perspectives.html">Perspectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">Databinding</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/Databinding.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="databinding">
+<h1>Databinding<a class="headerlink" href="#databinding" title="Link to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Connecting-a-View-to-a-PV.html"><span class="doc std std-doc">How to connect a view to a PV</span></a> for a higher-level description of how to pass data from an EPICS
+PV through backend classes (model &amp; view model), and into a UI element.</p></li>
+<li><p><a class="reference external" href="https://github.com/eclipse-platform/eclipse.platform.ui/blob/master/docs/JFaceDataBinding.md">The Eclipse data binding documentation</a>
+has more detailed explanations about advanced data binding options.</p></li>
+</ul>
+</div>
+<section id="backend">
+<h2>Backend<a class="headerlink" href="#backend" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ModelObject</span></code> class is a central helper for data binding in the IBEX GUI, which is implemented by backend classes.
+It provides the following key methods:</p>
+<section id="firepropertychange">
+<h3><code class="docutils literal notranslate"><span class="pre">firePropertyChange</span></code><a class="headerlink" href="#firepropertychange" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">firePropertyChange</span></code> method is used to inform the listeners when the value has changed. A typical implementation of
+a getter and setter in a backend class uses <code class="docutils literal notranslate"><span class="pre">firePropertyChange</span></code> as follows:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">foo</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getFoo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">foo</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFoo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">foo</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">oldValue</span></code> and <code class="docutils literal notranslate"><span class="pre">newValue</span></code> are equal and non-null, then the event is not raised.
+If you want a change to always fire, even if <code class="docutils literal notranslate"><span class="pre">oldValue</span></code> and <code class="docutils literal notranslate"><span class="pre">newValue</span></code> are the same, pass <code class="docutils literal notranslate"><span class="pre">null</span></code> as the <code class="docutils literal notranslate"><span class="pre">oldValue</span></code> to
+<code class="docutils literal notranslate"><span class="pre">firePropertyChange</span></code>.</p>
+<p>Not all listeners will use the <code class="docutils literal notranslate"><span class="pre">newValue</span></code> provided to the change event; some listeners will instead only use the event
+as a trigger to call the explicit getter.</p>
+</section>
+<section id="addpropertychangelistener-removepropertychangelistener">
+<h3><code class="docutils literal notranslate"><span class="pre">addPropertyChangeListener</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">removePropertyChangeListener</span></code><a class="headerlink" href="#addpropertychangelistener-removepropertychangelistener" title="Link to this heading"></a></h3>
+<p>The data-binding framework automatically calls <code class="docutils literal notranslate"><span class="pre">addPropertyChangeListener</span></code> when a UI widget being bound.
+The <code class="docutils literal notranslate"><span class="pre">removePropertyChangeListener</span></code> is called when the widget binding is disposed, for example when the GUI is closed.</p>
+</section>
+</section>
+<section id="frontend">
+<h2>Frontend<a class="headerlink" href="#frontend" title="Link to this heading"></a></h2>
+<p>A typical frontend class binds to its view model, in a constructor, like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">Label</span><span class="w"> </span><span class="n">lblFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">DataBindingContext</span><span class="w"> </span><span class="n">bindingContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataBindingContext</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">bindingContext</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">().</span><span class="na">observe</span><span class="p">(</span><span class="n">lblFoo</span><span class="p">),</span><span class="w"> </span>
+<span class="w">        </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">viewModel</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>For a control that a user can write to, use <code class="docutils literal notranslate"><span class="pre">WidgetProperties.text(SWT.Modify)</span></code>. This will notify the model whenever
+the user input in a control changes.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Create the binding context on the thread which should receive events. For UI code, this is the
+UI thread - so the binding context is normally created in the view’s constructor, alongside instantiating UI elements.
+<strong>Do not create the binding context in a static initializer.</strong></p>
+</div>
+</section>
+<section id="update-strategies">
+<h2>Update strategies<a class="headerlink" href="#update-strategies" title="Link to this heading"></a></h2>
+<p>The call to <code class="docutils literal notranslate"><span class="pre">bindValue</span></code> accepts two optional extra arguments, which are update strategies. These allow extra steps to
+be performed during the databinding operation, for example validation or conversion.</p>
+<p>In a call like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">UpdateValueStrategy</span><span class="w"> </span><span class="n">strategy1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="p">();</span>
+<span class="n">UpdateValueStrategy</span><span class="w"> </span><span class="n">strategy2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="p">();</span>
+<span class="n">bindingContext</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">strategy1</span><span class="p">,</span><span class="w"> </span><span class="n">strategy2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The first strategy is used for data going from the target (UI widget) towards the model; the second strategy is used
+for data coming from the model towards the target (UI widget).</p>
+<section id="validators">
+<h3>Validators<a class="headerlink" href="#validators" title="Link to this heading"></a></h3>
+<p>It is possible to implement validators, which verify that a value is “valid” before passing it onto the model.
+Validators implement the <code class="docutils literal notranslate"><span class="pre">org.eclipse.core.databinding.validation.IValidator</span></code> interface and are assigned to an update
+strategy:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">UpdateValueStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="p">();</span>
+<span class="n">strategy</span><span class="p">.</span><span class="na">setBeforeSetValidator</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyValidator</span><span class="p">());</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/tree/master/base/uk.ac.stfc.isis.ibex.validators/src/uk/ac/stfc/isis/ibex/validators">The <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.validators</span></code> package</a>
+in the GUI contains commonly-used data binding validators which may be used as reference implementations.</p>
+</section>
+<section id="converters">
+<h3>Converters<a class="headerlink" href="#converters" title="Link to this heading"></a></h3>
+<p>Converters are similar to validators in that they are used as part of the update strategy; however, they are used to
+convert either the data from the model or the data sent to the model by the widget. They implement the
+<code class="docutils literal notranslate"><span class="pre">org.eclipse.core.databinding.conversion.Converter</span></code> interface. Similar to validators, they are attached to an update
+strategy:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">UpdateValueStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="p">();</span>
+<span class="n">strategy</span><span class="p">.</span><span class="na">setConverter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyConverter</span><span class="p">());</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="databinding-lists">
+<h2>Databinding lists<a class="headerlink" href="#databinding-lists" title="Link to this heading"></a></h2>
+<p>Most of this is taken care of by the databinding library via <code class="docutils literal notranslate"><span class="pre">ListViewer</span></code> and <code class="docutils literal notranslate"><span class="pre">ObservableListContentProvider</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ListViewer</span><span class="w"> </span><span class="n">myViewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListViewer</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">BORDER</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">V_SCROLL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">SINGLE</span><span class="p">);</span>
+<span class="n">ObservableListContentProvider</span><span class="w"> </span><span class="n">contentProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableListContentProvider</span><span class="p">();</span>
+<span class="n">myViewer</span><span class="p">.</span><span class="na">setContentProvider</span><span class="p">(</span><span class="n">contentProvider</span><span class="p">);</span>
+<span class="n">myViewer</span><span class="p">.</span><span class="na">setInput</span><span class="p">(</span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="s">&quot;names&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">myViewModel</span><span class="p">));</span>
+
+<span class="c1">// To get the List Control itself</span>
+<span class="n">org</span><span class="p">.</span><span class="na">eclipse</span><span class="p">.</span><span class="na">swt</span><span class="p">.</span><span class="na">widget</span><span class="p">.</span><span class="na">List</span><span class="w"> </span><span class="n">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myViewer</span><span class="p">.</span><span class="na">getList</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ListViewer</span></code> is a wrapper around the List control that provides extra functionality and <code class="docutils literal notranslate"><span class="pre">ObservableListContentProvider</span></code>
+makes the databinding work.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="missing-or-incorrectly-named-getter-or-setter-or-incorrectly-named">
+<h3>Missing or incorrectly named getter or setter (or incorrectly named)<a class="headerlink" href="#missing-or-incorrectly-named-getter-or-setter-or-incorrectly-named" title="Link to this heading"></a></h3>
+<p>Behind the scenes the databinding library automatically changes the first character to upper-case and then prepends
+“get” and “set”.</p>
+<p>With something like the following it is import that the name of the property to bind to is cased correctly:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">bindingContext</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">observe</span><span class="p">(</span><span class="n">txtAge</span><span class="p">),</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>This assumes there is a getter and setter called <code class="docutils literal notranslate"><span class="pre">getAge</span></code> and <code class="docutils literal notranslate"><span class="pre">setAge</span></code>.</p>
+<p>For something like <code class="docutils literal notranslate"><span class="pre">getFedId</span></code> the binding code would look like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">bindingContext</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">observe</span><span class="p">(</span><span class="n">txtId</span><span class="p">),</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;fedId&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The ‘f’ of <code class="docutils literal notranslate"><span class="pre">fedId</span></code> is lower-case in this example. It will not work if it is upper-case.</p>
+</div>
+</section>
+<section id="the-getter-or-setter-silently-throws-an-exception">
+<h3>The getter or setter “silently” throws an exception<a class="headerlink" href="#the-getter-or-setter-silently-throws-an-exception" title="Link to this heading"></a></h3>
+<p>If any code in the getter throws an unhandled exception then the binding won’t work because the value cannot be read.
+If a setter throws an unhandled exception before the firing the property change then the listeners will not receive the
+change signal. Both result in the binding being broken.</p>
+<p>If a binding seems to work intermittently then there might be something in the getter or setter causing this, e.g. an
+object used in a getter that switches between being null and initialised based on something else.</p>
+<p>The exceptions will appear in the console inside Eclipse and IBEX, but won’t cause an error pop-up to appear.</p>
+</section>
+<section id="the-binding-works-but-the-initial-value-is-not-put-in-the-widget">
+<h3>The binding works but the initial value is not put in the widget<a class="headerlink" href="#the-binding-works-but-the-initial-value-is-not-put-in-the-widget" title="Link to this heading"></a></h3>
+<p>When the binding first happens it will call the getter to set the widget properties to whatever is in the model.
+If this doesn’t happen, the getter is probably non-existent or not implemented correctly.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Connecting-a-View-to-a-PV.html" class="btn btn-neutral float-left" title="Connecting a view to a PV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GUI-Coding-Conventions.html" class="btn btn-neutral float-right" title="GUI Coding Conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

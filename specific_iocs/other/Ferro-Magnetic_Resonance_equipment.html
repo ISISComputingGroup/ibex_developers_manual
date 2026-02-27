@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferro-Magnetic Resonance equipment (FMR) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Gamry" href="Gamry.html" />
+    <link rel="prev" title="Coherent OBIS Laser Remote" href="Coherent-OBIS-Laser-Remote.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AnywhereUSB.html">AnywhereUSB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino-RKNDIO-PLC-control.html">Arduino RKNDIO PLC Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Background-Script-IOC.html">Background Script IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-Hexagon.html">CAEN Hexagon (MUX Data Acquisition Electronics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-v895.html">CAEN v895</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Catalytic-Flow-Reactor.html">Catalytic Flow Reactor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coherent-OBIS-Laser-Remote.html">Coherent OBIS Laser Remote</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Ferro-Magnetic Resonance equipment (FMR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gamry.html">Gamry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Hameg-HM8123.html">Hameg HM8123 programmable counter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Humidity-Controller.html">Humidity Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Inhibitor.html">Inhibitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOTQD-MSH150-Monochromator.html">LOTQD MSH150 Monochromator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LSi-Correlator.html">LSi Correlator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lynx_HPGe_detector.html">Mirion Lynx2 HPGe detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MOXA-e12XX.html">Moxa e12xx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ocean-Optics-DH-2000-Shutter-control.html">Ocean Optics DH-2000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAMAN-Spectrometer.html">RAMAN Spectrometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rotating-Stirrer-Rack.html">Rotating Stirrer Rack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SDTest.html">SDTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SP300-Potentiostat.html">SP300 Potentiostat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stanford-SR850.html">Stanford SR850 Lock In Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thorlabs-FW102C-Filter-Wheel.html">Thorlabs FW102C Filter Wheel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nGEM-detector.html">nGEM Detector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Other.html">Other / Miscellaneous</a></li>
+      <li class="breadcrumb-item active">Ferro-Magnetic Resonance equipment (FMR)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/other/Ferro-Magnetic_Resonance_equipment.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ferro-magnetic-resonance-equipment-fmr">
+<h1>Ferro-Magnetic Resonance equipment (FMR)<a class="headerlink" href="#ferro-magnetic-resonance-equipment-fmr" title="Link to this heading"></a></h1>
+<section id="description-of-purpose-of-experiment-abstract-of-talk-given-by-principal-investigator-on-01-07-2020">
+<h2>Description of purpose of experiment (Abstract of talk given by principal investigator on 01/07/2020)<a class="headerlink" href="#description-of-purpose-of-experiment-abstract-of-talk-given-by-principal-investigator-on-01-07-2020" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>Ferromagnetic Resonance Spectroscopy</p>
+</div></blockquote>
+<blockquote>
+<div><p>Modern day fast computation necessitates high density data storage systems. This could be achieved through the development of multilayer thin films, consisting of alternating hard and soft magnetic layers, which exhibit magnetic moment exchange coupling at the interfaces. However, Ferromagnetic Resonance (FMR) measures the bulk magnetisation dynamics of a sample and hence cannot probe these interlayer interactions. Therefore, this project aims to explore the capabilities of FMR as a magnetic characterisation technique through the development of three novel sample environments. Firstly, FMR combined with Polarised Neutron Reflectometry, using the beamline POLREF, can map a sample’s magnetisation dynamics at each atomic layer, therefore improving the resolution of magnetic detection. Also, the novel sample environments of variable temperature FMR and temperature gradient FMR offer the potential of investigating the effect of temperature on magnetic moment switching and spin wave formation.</p>
+</div></blockquote>
+</section>
+<section id="equipment">
+<h2>Equipment<a class="headerlink" href="#equipment" title="Link to this heading"></a></h2>
+<p><img alt="20220627_145529" src="../../_images/Ferro-Magnetic-Resonance-equipment.jpg" /></p>
+<p>This is a small collection of devices which internal ISIS users are testing offline, but have used on the POLREF beamline.  They have written a control program in LabVIEW which runs on a separate machine and communicates with these devices.  It handles the setpoints, scan/sweep procedure, analysis and data file generation.</p>
+<p>The individual pieces of equipment are:</p>
+<ul class="simple">
+<li><p>Rohde &amp; Schwartz (ZNB20?) Vector Network Analyser</p></li>
+<li><p>Hirst (GM08?) portable Hall probe</p></li>
+<li><p>Danfysik 858 PSU (when used on POLREF, Danfysik 8000(?) when offline) connected to…</p></li>
+<li><p>…GMW conventional electromagnet (not cryogenic, no direct control required)</p></li>
+</ul>
+<p>The current solution for using the FMR setup on the beamline is that the users’ VI is “wrapped” by an LVDCOM IOC to isolate the code and provide remote communication from the POLREF control machine.  Modifications had to be made to this VI to enable it to be run continuously and make the front panel item names compatible with LVDCOM (remove trailing spaces and scientific notation values e.g. <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Frequency</span> <span class="pre">(300.0e3)</span> </code>).  The equipment PC runs a “Mini-Inst” to enable this LVDCOM IOC to function.</p>
+<p>A bespoke CALAB-based VI was written and runs on the POLREF control machine.  This enables communication with the FMR equipment IOC via CA and provides scripting and logging capabilities in the SECI system.</p>
+<section id="description-of-principal-controls-setpoints-and-indicators-readbacks-with-associated-pvs">
+<h3>Description of principal controls/setpoints and indicators/readbacks with associated PVs<a class="headerlink" href="#description-of-principal-controls-setpoints-and-indicators-readbacks-with-associated-pvs" title="Link to this heading"></a></h3>
+<p>PV naming scheme separates the three devices comprising the FMR system (:PSU:, :PROBE:, :VNA:).  Also the VI itself (:FMR:)</p>
+<section id="power-supply-unit-psu">
+<h4>Power Supply Unit (:PSU:)<a class="headerlink" href="#power-supply-unit-psu" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>VI Control</p></th>
+<th class="head"><p>VI Indicator</p></th>
+<th class="head"><p>Read PV address</p></th>
+<th class="head"><p>Write PV Address</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“Start Ba  (A)”</p></td>
+<td><p></p></td>
+<td><p>BA:START</p></td>
+<td><p>BA:START:SP</p></td>
+<td><p>A</p></td>
+<td><p>Applied magnetic field (B<sub>applied</sub>) at start of sweep, as a current</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Stop Ba  (A)”</p></td>
+<td><p></p></td>
+<td><p>BA:STOP</p></td>
+<td><p>BA:STOP:SP</p></td>
+<td><p>A</p></td>
+<td><p>Applied magnetic field (B<sub>applied</sub>) at end of sweep, as a current</p></td>
+</tr>
+<tr class="row-even"><td><p>“Number of Ba Points”</p></td>
+<td><p></p></td>
+<td><p>BA:POINTS</p></td>
+<td><p>BA:POINTS:SP</p></td>
+<td><p>N/A</p></td>
+<td><p>Number of points in sweep</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Millisecond timer”</p></td>
+<td><p></p></td>
+<td><p>TIMER</p></td>
+<td><p>TIMER:SP</p></td>
+<td><p>ms</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>“Actual Current Level (A) “</p></td>
+<td><p>CURR</p></td>
+<td><p></p></td>
+<td><p>A</p></td>
+<td><p>PSU output current</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>“Current Difference”</p></td>
+<td><p>CURR:DIFF</p></td>
+<td><p></p></td>
+<td><p>A</p></td>
+<td><p>Difference between set current and actual</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>“Delay (ms)”</p></td>
+<td><p>DELAY</p></td>
+<td><p></p></td>
+<td><p>ms</p></td>
+<td><p>Delay between setting and reading current</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>“Loop Number”</p></td>
+<td><p>LOOP</p></td>
+<td><p></p></td>
+<td><p>N/A</p></td>
+<td><p>Sweep step number</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hall-probe-probe">
+<h4>Hall Probe (:PROBE:)<a class="headerlink" href="#hall-probe-probe" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>VI Control</p></th>
+<th class="head"><p>VI Indicator</p></th>
+<th class="head"><p>Read PV address</p></th>
+<th class="head"><p>Write PV Address</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>“Current value “</p></td>
+<td><p>VALUE</p></td>
+<td><p></p></td>
+<td><p>variable</p></td>
+<td><p>Field reading</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>“Range 4”</p></td>
+<td><p>RANGE</p></td>
+<td><p></p></td>
+<td><p>N/A</p></td>
+<td><p>Current range</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>“Mode 4”</p></td>
+<td><p>MODE</p></td>
+<td><p></p></td>
+<td><p>N/A</p></td>
+<td><p>Probe mode</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>“Units 5”</p></td>
+<td><p>UNITS</p></td>
+<td><p></p></td>
+<td><p>N/A</p></td>
+<td><p>Current units</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vector-network-analyser-vna">
+<h4>Vector Network Analyser (:VNA:)<a class="headerlink" href="#vector-network-analyser-vna" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>VI Control</p></th>
+<th class="head"><p>VI Indicator</p></th>
+<th class="head"><p>Read PV address</p></th>
+<th class="head"><p>Write PV Address</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“RF State (T) 2”</p></td>
+<td><p></p></td>
+<td><p>STATE</p></td>
+<td><p>STATE:SP</p></td>
+<td><p>N/A</p></td>
+<td><p>RF on or off</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Start Frequency”</p></td>
+<td><p></p></td>
+<td><p>FREQ:START</p></td>
+<td><p>FREQ:START:SP</p></td>
+<td><p>Hz</p></td>
+<td><p>Frequency at start of sweep</p></td>
+</tr>
+<tr class="row-even"><td><p>“Stop Frequency”</p></td>
+<td><p></p></td>
+<td><p>FREQ:STOP</p></td>
+<td><p>FREQ:STOP:SP</p></td>
+<td><p>Hz</p></td>
+<td><p>Frequency at end of sweep</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Number Of Points”</p></td>
+<td><p></p></td>
+<td><p>FREQ:POINTS</p></td>
+<td><p>FREQ:POINTS:SP</p></td>
+<td><p>N/A</p></td>
+<td><p>Number of steps in frequency sweep per field value</p></td>
+</tr>
+<tr class="row-even"><td><p>“In Port”</p></td>
+<td><p></p></td>
+<td><p>PORT:IN</p></td>
+<td><p>PORT:IN:SP</p></td>
+<td><p>N/A</p></td>
+<td><p>Input port number</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Out Port”</p></td>
+<td><p></p></td>
+<td><p>PORT:OUT</p></td>
+<td><p>PORT:OUT:SP</p></td>
+<td><p>N/A</p></td>
+<td><p>Output port number</p></td>
+</tr>
+<tr class="row-even"><td><p>“Sweep Time”</p></td>
+<td><p></p></td>
+<td><p>SWEEP:TIME</p></td>
+<td><p>SWEEP:TIME:SP</p></td>
+<td><p>s</p></td>
+<td><p>Duration of sweep</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Auto Sweep Time”</p></td>
+<td><p></p></td>
+<td><p>SWEEP:TIME:AUTO</p></td>
+<td><p>SWEEP:TIME:AUTO:SP</p></td>
+<td><p>N/A</p></td>
+<td><p>Automatic sweep time</p></td>
+</tr>
+<tr class="row-even"><td><p>“Milliseconds to wait”</p></td>
+<td><p></p></td>
+<td><p>WAIT</p></td>
+<td><p>WAIT:SP</p></td>
+<td><p>ms</p></td>
+<td><p>Delay between setting frequency and analysing response</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Bandwidth”</p></td>
+<td><p></p></td>
+<td><p>BANDWIDTH</p></td>
+<td><p>BANDWIDTH:SP</p></td>
+<td><p>Hz</p></td>
+<td><p>Analyser resolution bandwidth</p></td>
+</tr>
+<tr class="row-even"><td><p>“Power”</p></td>
+<td><p></p></td>
+<td><p>POWER</p></td>
+<td><p>POWER:SP</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dBm</span></code></p></td>
+<td><p>Analyser signal power</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="main-vi-fmr">
+<h4>Main VI (:FMR:)<a class="headerlink" href="#main-vi-fmr" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>VI Control</p></th>
+<th class="head"><p>VI Indicator</p></th>
+<th class="head"><p>Read PV address</p></th>
+<th class="head"><p>Write PV Address</p></th>
+<th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“Run”</p></td>
+<td><p></p></td>
+<td><p>RUN</p></td>
+<td><p>RUN:SP</p></td>
+<td><p>N/A</p></td>
+<td><p>Run analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>“Activity”</p></td>
+<td><p>ACTIVITY</p></td>
+<td><p></p></td>
+<td><p>N/A</p></td>
+<td><p>Indicates VI running if value oscillates between ON and OFF</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="future-development">
+<h3>Future Development<a class="headerlink" href="#future-development" title="Link to this heading"></a></h3>
+<p>Currently, the users’ FMR VI does not conform to ISIS standards and would need a reasonable amount of work to do so.  Rather than concentrate efforts on this VI, and as POLREF has now been migrated to IBEX, it may be decided to rewrite the FMR control program as a native IOC, or collection of IOCs (c.f. <a class="reference internal" href="../magnets/Zero-field-controller.html"><span class="doc std std-doc">zero field</span></a>) and possibly run a “<a class="reference internal" href="../../system_components/Remote-IOCs.html"><span class="doc std std-doc">remote IOC</span></a>” (c.f. Triton) installation.  At the very least an OPI will be needed to communicate with the LVDCOM VI.  The direction of development will depend on the results of the online tests (and anticipated further offline), how much effort is/will be available from the IBEX team and how much the equipment will be subsequently used.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Coherent-OBIS-Laser-Remote.html" class="btn btn-neutral float-left" title="Coherent OBIS Laser Remote" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Gamry.html" class="btn btn-neutral float-right" title="Gamry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAEN &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Keithley 2290" href="Keithley-2290.html" />
+    <link rel="prev" title="Power supplies" href="../Power-Supplies.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CAEN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Keithley-2290.html">Keithley 2290</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kepco.html">Kepco</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Razorbill-RP100-Strain-Cell-PSU.html">Razorbill RP100 Strain Cell PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Technix-PSU.html">Technix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thurlby-Thandar-TTI-PLP-Power-Supply.html">Thurlby Thandar TTI-PLP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thurlby-Thandar-TTiEX355P-Power-Supply-Unit.html">Thurlby TTI EX355P</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Power-Supplies.html">Power supplies</a></li>
+      <li class="breadcrumb-item active">CAEN</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/power_supplies/CAEN.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="caen">
+<h1>CAEN<a class="headerlink" href="#caen" title="Link to this heading"></a></h1>
+<p>A high voltage power supply normally used for detector electronics.</p>
+<p>There are now two IOCs devoted to the CAEN. An older one from the Canadian light source (HVCAEN) and a newer one from SLAC (HVCAENA). They are communicated with over Ethernet. HVCAEN is used widely and HVCAENA is to be used on DETMON to test it. HVCAENA has more information available including board and crate parameters. Both IOCs have a read-only mode which can be set via macros.</p>
+<section id="hvcaen">
+<h2>HVCAEN<a class="headerlink" href="#hvcaen" title="Link to this heading"></a></h2>
+<section id="communicating-with-multiple-caens-older-ioc">
+<h3>Communicating with multiple CAENs (Older IOC)<a class="headerlink" href="#communicating-with-multiple-caens-older-ioc" title="Link to this heading"></a></h3>
+<p>A single IOC can communicate with up to 8 CAEN crates, this appears to be a limit in the CAEN library as it defines MAX_CRATES as 8 in the library header and has a “too many connections” error code listed in its potential error codes.</p>
+<p>To do this the crates must be added into the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> as so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CAENx527ConfigureCreate</span> <span class="s2">&quot;hv0&quot;</span><span class="p">,</span> <span class="s2">&quot;_IP_ADDR1_&quot;</span>
+<span class="n">CAENx527ConfigureCreate</span> <span class="s2">&quot;hv1&quot;</span><span class="p">,</span> <span class="s2">&quot;_IP_ADDR2_&quot;</span>
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">CAENx527DbLoadRecords</span></code> is called it will then create PVs of the form <code class="docutils literal notranslate"><span class="pre">hv0:_SLOT_:_CHANNEL_</span></code></p>
+</section>
+<section id="pvs">
+<h3>PVs<a class="headerlink" href="#pvs" title="Link to this heading"></a></h3>
+<p>The pv setup is a little weird for this device, it looks like value is the setpoint and <code class="docutils literal notranslate"><span class="pre">value:fbk</span></code> is the readback. So:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pwonoff</span></code>: sets the power
+<code class="docutils literal notranslate"><span class="pre">pwonoff:fbk</span></code>: readback the value (I am unsure whether this is the setpoint or the status)</p>
+</section>
+<section id="simulation-hvcaensim-simulated-caen-older-version-of-the-caen">
+<h3>Simulation/HVCAENSIM Simulated CAEN (older version of the CAEN)<a class="headerlink" href="#simulation-hvcaensim-simulated-caen-older-version-of-the-caen" title="Link to this heading"></a></h3>
+<p>The HVCAEN SIM IOC uses a simulated Caen library to simulate the CAEN. This does not work completely, current it looks like setting anything does not updates the monitor values.</p>
+<p>The SIM also disconnects and reconnects itself every X commands to show that is working.</p>
+<p>Finally it looks like the macros <code class="docutils literal notranslate"><span class="pre">SIM</span></code>, <code class="docutils literal notranslate"><span class="pre">DEVSIM</span></code> and <code class="docutils literal notranslate"><span class="pre">RECSIM</span></code> are not respected so you need to set the SIM PV directly.</p>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h3>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">dbl</span></code> and get mainly standard support IOC PVs check that comms have been established to the given IP address</p>
+<p>If you log in to the console and cannot get an EPICS prompt, the whole console/procserv must be restarted, as typically the <code class="docutils literal notranslate"><span class="pre">Ctrl-X</span></code> option does not work in this situation either</p>
+<p>If you can ping and telnet to the crate, but the EPICS driver cannot connect, the crate may need a (physical) power cycle. This is best done by detector group.</p>
+<p>You can set <code class="docutils literal notranslate"><span class="pre">HVCAENx527Debug</span> <span class="pre">X</span></code> in the console (or via the st.cmd) with X being a debug level e.g. 5 and the IOC will print debugging information based on the level you have given.</p>
+</section>
+</section>
+<section id="hvcaena-newer-ioc">
+<h2>HVCAENA (Newer IOC)<a class="headerlink" href="#hvcaena-newer-ioc" title="Link to this heading"></a></h2>
+<p>Made up of three levels the IOC level (st.cmd, config etc.), the CPP/Db support level and the CAENHVWrapper level. The <code class="docutils literal notranslate"><span class="pre">CAENHVWrapper</span></code> is a vendor library that contains methods to set and get data to/from CAEN crates, it is documented in the pdf files that can be found in the <code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> support module. The CPP support level was created by <a class="reference external" href="https://www6.slac.stanford.edu/">SLAC</a> and has been <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5544">edited by us</a>. The IOC level was created by us to enable use in IBEX.</p>
+<section id="ioc-level">
+<h3>IOC Level<a class="headerlink" href="#ioc-level" title="Link to this heading"></a></h3>
+<p>Currently can communicate with 4 CAEN crates at a time (but very extensible to add more). Set up by defining macros IP_ADDRESS_X and SYS_TYPE_X for X from 0 to 3. Another macro READ_ONLY defines whether we can write to the CAEN crate with 1 for read-only and 0 for read/write.</p>
+<p>A crate is loaded in the st.cmd with calls to the support level:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFIP0_PRESENT) CAENHVAsynSetEpicsPrefix(&quot;$(MYPVPREFIX)$(IOCNAME):HV0:&quot;)
+$(IFIP0_PRESENT) CAENHVAsynConfig(&quot;HV0&quot;,$(SYS_TYPE_0),&quot;$(IP_ADDRESS_0)&quot;,&quot;username&quot;,&quot;password&quot;)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">CAENHVAsynSetEpicsPrefix</span></code> simply sets the pv prefix in the driver.
+<code class="docutils literal notranslate"><span class="pre">CAENHVAsynConfig</span></code> creates a new <code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> object, which loads dbs and creates pvs for system properties, board parameters and channel parameters.</p>
+<p>Read/write is set in the st.cmd for all crates with a call to the support level:</p>
+<p><code class="docutils literal notranslate"><span class="pre">CAENHVAsynReadOnly($(READ_ONLY=0))</span></code> Set READ_ONLY to 1 for read-only and 0 for read/write.</p>
+</section>
+<section id="caenhvasyn-cpp-db-support-level">
+<h3><code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> CPP/Db support level<a class="headerlink" href="#caenhvasyn-cpp-db-support-level" title="Link to this heading"></a></h3>
+<p>See UML below for diagram description.</p>
+<p>At initialisation of the <code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> object, the crates, boards, channels and their properties and parameters are retrieved from the <code class="docutils literal notranslate"><span class="pre">CAENHVWrapper</span></code> and the support objects are populated from this. The process of retrieving and populating objects is kicked off by the creation of the Crate object (call <code class="docutils literal notranslate"><span class="pre">ICrate:create</span></code>).</p>
+<p>From this data, the dbs are loaded. There are templates for records e.g. ai, ao. These templates are loaded <code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> for board parameters, channel parameters and system properties, with fields filled out by passing macros. The read <code class="docutils literal notranslate"><span class="pre">Rd</span></code> records are loaded with a scan rate of 1 second and write/set <code class="docutils literal notranslate"><span class="pre">St</span></code> records are set to scan passive. The loading of dbs can be seen in the <code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> CPP object’s various <code class="docutils literal notranslate"><span class="pre">createParamX</span></code> methods with X being replaced by Binary, Integer etc. This process of loading records is initiated by the <code class="docutils literal notranslate"><span class="pre">CAENHVAsynConfig</span></code> call in the st.cmd.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> object acts as an adapter/facade to the objects it contains: crates, boards, channels. The <code class="docutils literal notranslate"><span class="pre">CAENHVAsyn</span></code> object overrides <code class="docutils literal notranslate"><span class="pre">asynPortDriver</span></code> methods, the overriding methods search through channel parameters, board parameters and system properties to find the value to set or get corresponding to the asyn call reason. These various methods often then make calls to the <code class="docutils literal notranslate"><span class="pre">CAENHVWrapper</span></code>.</p>
+<p><img alt="CAENHVAsyn UML diagram" src="../../_images/CAENHVAsyn.png" /></p>
+</section>
+</section>
+<section id="deployment-of-the-hvcaen-and-hvcaena-for-testing-on-detmon">
+<h2>Deployment of the HVCAEN and HVCAENA for testing on DETMON<a class="headerlink" href="#deployment-of-the-hvcaen-and-hvcaena-for-testing-on-detmon" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Access the <code class="docutils literal notranslate"><span class="pre">EPICS_win10_x64</span></code> build from the instrument and deploy it to the instrument using the install_to_inst.bat script</p></li>
+<li><p>When finished copying run <code class="docutils literal notranslate"><span class="pre">create_icp_binaries.bat</span></code></p></li>
+<li><p>Then copy <code class="docutils literal notranslate"><span class="pre">msvcr100.dll</span></code> (there are a few located around the install but not in the right place) to <code class="docutils literal notranslate"><span class="pre">EPICS/crtl</span></code></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Power-Supplies.html" class="btn btn-neutral float-left" title="Power supplies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Keithley-2290.html" class="btn btn-neutral float-right" title="Keithley 2290" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

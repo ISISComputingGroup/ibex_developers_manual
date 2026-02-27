@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WPI Aladdin Syringe Pump &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="WPI SP2XX Syringe Pump" href="WPI-SP2XX-Syringe-Pump.html" />
+    <link rel="prev" title="NIMA Trough" href="NIMA-Trough.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="BioLogic-MPS-70-4-%28stopped-flow%29.html">BioLogic MPS 70-4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMA4500m-Density-Meter.html">DMA4500m Density Meter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Edwards-Turbo-Instrument-Controller.html">Edwards TIC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JASCO-PU--4180-HPLC-Pump.html">JASCO HPLC Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Knauer-1050-HPLC-Pump.html">Knauer 1050 HPLC Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Knauer-Valve-Unifier.html">Knauer Valve Unifier (VU4.1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Knauer-k-6.html">Knauer K-6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MKS_PR4000B.html">MKS PR4000B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMA-Trough.html">NIMA Trough</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">WPI Aladdin Syringe Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WPI-SP2XX-Syringe-Pump.html">WPI SP2XX Syringe Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Watson-Marlow-323-Peristaltic-Pump.html">Watson-Marlow 323 Peristaltic Pump</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+      <li class="breadcrumb-item active">WPI Aladdin Syringe Pump</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/gas_liquid_handling/WPI-Aladdin-Syringe-Pump.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="wpi-aladdin-syringe-pump">
+<h1>WPI Aladdin Syringe Pump<a class="headerlink" href="#wpi-aladdin-syringe-pump" title="Link to this heading"></a></h1>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p>Documentation is available for the pump at <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls\Manuals\WPI__Aladdin_1000_syringe_pump</span></code></p>
+</section>
+<section id="connection-details">
+<h2>Connection Details<a class="headerlink" href="#connection-details" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>RS-232C Specifications</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Baud rate</p></td>
+<td><p>19200, 9600, 2400, 1200, or 300 Baud</p></td>
+</tr>
+<tr class="row-odd"><td><p>Start bits</p></td>
+<td><p>1 bit</p></td>
+</tr>
+<tr class="row-even"><td><p>Stop bits</p></td>
+<td><p>1 bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parity</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Data length</p></td>
+<td><p>8 bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flow control</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+<p>Command Syntax:</p>
+<ul class="simple">
+<li><p>Communication command is terminated with <CR>.</p></li>
+<li><p>Communication return starts with <STX> and is terminated with <ETX>.</p></li>
+</ul>
+<p>Command float formatting:</p>
+<p>The device requires strict formatting on its floats. The output value must fit 5 characters and be within the range <code class="docutils literal notranslate"><span class="pre">9999.</span> <span class="pre">to</span> <span class="pre">.9999</span></code>.</p>
+</section>
+<section id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h2>
+<section id="networked-pumps">
+<h3>Networked Pumps<a class="headerlink" href="#networked-pumps" title="Link to this heading"></a></h3>
+<p>Multiple pumps can be daisy chained together and controlled via a single IOC. Each pump has an address which can be set using the <code class="docutils literal notranslate"><span class="pre">ID:SP</span></code> record. By default (and in a single pump configuration) this is <code class="docutils literal notranslate"><span class="pre">00</span></code>. IOC now supports talking to up to 4 pumps at the same time without having to modify the <code class="docutils literal notranslate"><span class="pre">ID:SP</span></code>. You can set the macros for ID1 through ID4 in the IOC config and then reference the usual PVs with the :1: through :4: prefixes. E.g. ALDN1000_01:1:…</p>
+<p>A given pump can have it’s own unique address defined. So two pumps might not have the same address. Typically pumps are labelled with a sticker <code class="docutils literal notranslate"><span class="pre">00</span></code>, <code class="docutils literal notranslate"><span class="pre">01</span></code> etc. that will indicate this. If you ever need to change this the pump has an  method that will allow you to define this (refer to the manuals section on the <code class="docutils literal notranslate"><span class="pre">ADR</span></code> method).</p>
+</section>
+<section id="volume-units">
+<h3>Volume Units<a class="headerlink" href="#volume-units" title="Link to this heading"></a></h3>
+<p>The device has it’s own logic for setting the units of volume to be pumped <code class="docutils literal notranslate"><span class="pre">VOLUME:UNITS</span></code> based on the diameter of the syringe installed in the pump <code class="docutils literal notranslate"><span class="pre">DIAMETER</span></code>. In testing it was found that: Diameter &lt;= 14.00mm - uL, Diameter &gt; 14.00mm = mL. A small warning about this has been placed on the OPI to inform users.</p>
+</section>
+<section id="rate-units">
+<h3>Rate Units<a class="headerlink" href="#rate-units" title="Link to this heading"></a></h3>
+<p>The units for the rate can be selected but will only be set when setting the <code class="docutils literal notranslate"><span class="pre">RATE:SP</span></code>. You can resend the same set point to set newly selected rate units.</p>
+</section>
+</section>
+<section id="connection-notes">
+<h2>Connection notes<a class="headerlink" href="#connection-notes" title="Link to this heading"></a></h2>
+<p>Use supplied modem telephone cable into pump port labelled <strong>“computer port”</strong>, then use adapter supplied to connect to a female moxa cable and into moxa box. (There is another port on the pump labelled <em>Network</em> - this is not for the main network, but used if you wish to join pumps together in a “pump network”)</p>
+<p>Note most of these units have been helpfully labelled by the soft matter group, so this should be indicated like so:</p>
+<a class="reference internal image-reference" href="../../_images/WPI_aladdin_1.png"><img alt="../../_images/WPI_aladdin_1.png" src="../../_images/WPI_aladdin_1.png" width="320" />
+</a>
+<p>For one pump it must be given address 0, see below. Additional pumps can be daisy chained using the “network” modem port on the first pump to connect to the “computer” port on a second. The additional pumps must each have a unique address.</p>
+<p>The manual says to power pump on after rs232 cable is attached</p>
+<p>The device has a configurable baud rate. See setup key below</p>
+<p>The device supports two rs232 modes: basic and safe. It looks like LabVIEW uses “basic” and attempts to turn off safe mode. A pump in basic mode can be controlled via an emulator like hyperterm.</p>
+<p>A triangle in top left of LED display is the “rs232 indicator” – indicates valid reception of a command at some point since power on. It looked like this triangle remained after cable was disconnected for example.</p>
+<section id="notes-from-the-setup-key-section-of-manual">
+<h3>Notes from the “setup key” section of manual<a class="headerlink" href="#notes-from-the-setup-key-section-of-manual" title="Link to this heading"></a></h3>
+<p>Hold diameter key to enter setup mode, you will initially get first configuration parameter “PF:” which is power failure mode. It will then cycle through each setup parameter after about 2 seconds.</p>
+<p>To change value of a parameter press an arrow key under value on LED display, to store new value wait two seconds or press any non-arrow key</p>
+<p>The Last two setup parameters are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ad</span></code>  - the pump address, should be 00 for just one pump</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nnnn</span></code> – the baud rate, we use 9600 so make sure this number is displayed there</p></li>
+</ul>
+<p>If r232 error is displayed on LED panel, indicates a timeout in “safe communication mode”. We should not be in this mode anyway.
+Before the pump can operate, it needs to know syringe inside diameter – set this from front panel of device</p>
+</section>
+<section id="terminal-emulator-test">
+<h3>Terminal emulator test<a class="headerlink" href="#terminal-emulator-test" title="Link to this heading"></a></h3>
+<p>If the pump is in basic rs232 mode, connect and send command
+VER
+followed by carriage return, should get a reply with the firmware version details</p>
+</section>
+<section id="enabling-basic-mode-if-in-safe-mode">
+<h3>enabling basic mode if in safe mode<a class="headerlink" href="#enabling-basic-mode-if-in-safe-mode" title="Link to this heading"></a></h3>
+<p>According to manual you need to send the string <code class="docutils literal notranslate"><span class="pre">0x2</span> <span class="pre">0x8</span> <span class="pre">SAF0</span> <span class="pre">0x55</span> <span class="pre">0x43</span> <span class="pre">0x3</span></code> where <code class="docutils literal notranslate"><span class="pre">0x</span></code> represents the hex value of the character to send. It may be this assumes pump address 0, if you want to set a non-zero addressed pump then you may need to prefix SAF0 with the pump address and then calculate the new checksum (which is what 0x55 0x43 is). See manual.</p>
+</section>
+<section id="connection-cables">
+<h3>connection cables<a class="headerlink" href="#connection-cables" title="Link to this heading"></a></h3>
+<p>The manual mentions two connector cables, a “GN-PC” variety to connect to a PC and “GN-NET” variety to connect pumps. A separate rs232 adapter is also mentioned. Check it is a GN-PC telephone cable and not a GN-NET telephone cable to connect to this rs232 adapter, I’m not sure if this is identified ion the cable but i think the GN-PC is dark grey and GN-NET is light grey</p>
+<p>It should look like this:</p>
+<a class="reference internal image-reference" href="../../_images/WPI_aladdin_2.png"><img alt="../../_images/WPI_aladdin_2.png" src="../../_images/WPI_aladdin_2.png" width="320" />
+</a>
+<p>Where the black cable is a Male Moxa cable and the grey cable is plugged into the “PC” port on the pump.</p>
+</section>
+<section id="sockets-on-device">
+<h3>Sockets on device<a class="headerlink" href="#sockets-on-device" title="Link to this heading"></a></h3>
+<p>On the rear of the pump itself are two identical sockets, one labelled “To Computer” and the other “To Network”, both under a heading “RS232” (or words to that effect).  The cable which is ultimately connected to the MOXA needs to be plugged into the “To Computer” socket.  The “To Network” socket is for daisy-chaining pumps together.  If for some reason the IOC is receiving replies identical to those being sent, then it could be that the cable is in the wrong socket.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NIMA-Trough.html" class="btn btn-neutral float-left" title="NIMA Trough" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="WPI-SP2XX-Syringe-Pump.html" class="btn btn-neutral float-right" title="WPI SP2XX Syringe Pump" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

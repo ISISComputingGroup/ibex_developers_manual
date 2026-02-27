@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script server back end design document &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Script server front end design document" href="Script-Server-Front-End-Design-Document.html" />
+    <link rel="prev" title="Nicos evaluation" href="Nicos-evaluation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Nicos.html">NICOS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Configuring-a-New-Nicos-Instrument.html">Configuring a new Nicos instrument</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Design-Documents.html">Script Server design documents</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Nicos-evaluation.html">Nicos evaluation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Script server back end design document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-Server-Front-End-Design-Document.html">Script server front end design document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-server-design.html">Script server design</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scripting-use-cases.html">Scripting use-cases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Developing-NICOS.html">Updating NICOS Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Installing-Nicos-on-Windows.html">Installing Nicos on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-commands.html">NICOS Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-notes.html">NICOS Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Running-Nicos-%28Script-Server%29.html">Running NICOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Testing-Nicos.html">Testing Nicos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../../Nicos.html">NICOS</a></li>
+          <li class="breadcrumb-item"><a href="../Design-Documents.html">Script Server design documents</a></li>
+      <li class="breadcrumb-item active">Script server back end design document</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/nicos/design_docs/Script-Server-Back-End-Design-Document.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="script-server-back-end-design-document">
+<h1>Script server back end design document<a class="headerlink" href="#script-server-back-end-design-document" title="Link to this heading"></a></h1>
+<p>This document should be read alongside the <a class="reference internal" href="Script-Server-Front-End-Design-Document.html"><span class="doc std std-doc">front-end design document</span></a>.</p>
+<section id="what-it-should-do">
+<h2>What it should do<a class="headerlink" href="#what-it-should-do" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Accept multiple clients</p></li>
+<li><p>Serve up a list of available commands for the specified instrument over some protocol. The command should contain command parameters and a description, for example:</p>
+<ul>
+<li><p>Name: <code class="docutils literal notranslate"><span class="pre">set_ei</span></code></p></li>
+<li><p>Parameters: incident energy (double)</p></li>
+<li><p>Description: Positions the choppers to allow the specified incident energy through</p></li>
+</ul>
+</li>
+<li><p>The commands are instrument specific scripts written by the instrument scientists and/or controls team, and are stored on the server</p></li>
+<li><p>New commands can be added relatively quickly without requiring changes to the client</p></li>
+<li><p>Accept and queue up jobs from clients and add them to the job queue</p></li>
+<li><p>Provide feedback on the status of the job queue</p></li>
+<li><p>Provide feedback on the status of the current job (% done, current line etc.)</p></li>
+<li><p>Iterate through the job queue</p></li>
+<li><p>Execute the jobs, one at a time from the queue</p></li>
+<li><p>Allow the job queue to be edited (e.g. reordered, jobs skipped or repeated)</p></li>
+<li><p>Allow the current job to be paused or aborted</p></li>
+<li><p>When a job is paused the next action is to resume it or abort it. It is not possible to run a different job then return to the paused job</p></li>
+<li><p>If the job is paused and the user manually changes the beamline then that change is keep when the job is resumed</p></li>
+<li><p>If a job is aborted it can be run again, but it will start from the beginning; however, it can be edited before being re-run</p></li>
+<li><p>Allow individual jobs to be edited (excluding the current job?)</p></li>
+<li><p>Provide a description of what existing jobs consist of (to allow editing)</p></li>
+<li><p>Provide an estimate of how long a job will take</p></li>
+<li><p>Provide the elapsed time for the current job</p></li>
+<li><p>Run a black-box script as a job (see submitted scripts section below)</p></li>
+<li><p>Provide script validation, e.g. allow a dry run of a script or job</p></li>
+<li><p>Provide robust error handling and reporting</p></li>
+</ul>
+</section>
+<section id="submitted-scripts">
+<h2>Submitted scripts<a class="headerlink" href="#submitted-scripts" title="Link to this heading"></a></h2>
+<p>Different types of script:</p>
+<ul class="simple">
+<li><p>Script server aware – created by a script generator</p>
+<ul>
+<li><p>Loops unwound so each iteration is used to produce a job</p></li>
+<li><p>Each job has tags for providing feedback, such as progress information, to the clients</p></li>
+</ul>
+</li>
+<li><p>Script server aware – written by hand</p>
+<ul>
+<li><p>Includes tags for the script server to provide extra functionality for the script server; such as “pause points” and progress information</p></li>
+</ul>
+</li>
+<li><p>Black-box scripts – written by hand</p>
+<ul>
+<li><p>Contains no information for the script server</p></li>
+<li><p>Script server runs it as a single job but cannot pause it or report progress</p></li>
+<li><p>Can be aborted</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="architectural-design">
+<h2>Architectural design<a class="headerlink" href="#architectural-design" title="Link to this heading"></a></h2>
+<p>Decisions already made:</p>
+<ul class="simple">
+<li><p>Scripts, commands and jobs will be written and run in <code class="docutils literal notranslate"><span class="pre">CPython</span></code></p></li>
+</ul>
+<p>A simple diagram of the design:</p>
+<p><img alt="Back End Design" src="../../../_images/Back_End_Design.png" /></p>
+<p>Commands:</p>
+<ul class="simple">
+<li><p>The instrument specific commands are loaded from a certain area on the NDX</p></li>
+<li><p>The command sources contain documentation describing the command and the parameters</p></li>
+<li><p>The list of commands and their information are served</p></li>
+</ul>
+<p>Jobs:</p>
+<ul class="simple">
+<li><p>The Job Queue contains the jobs to be run</p></li>
+<li><p>The jobs are Python scripts/snippets</p></li>
+<li><p>The Job Manager is responsible for managing the queue and the running of the job</p></li>
+<li><p>For each job the Manager spawns a new* Python process to run the job</p></li>
+<li><p>If the job is configured correctly the Job Manager can query the status of the job</p></li>
+</ul>
+<p>(*) This means there is no state shared between jobs – do we want this?</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Nicos-evaluation.html" class="btn btn-neutral float-left" title="Nicos evaluation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Script-Server-Front-End-Design-Document.html" class="btn btn-neutral float-right" title="Script server front end design document" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

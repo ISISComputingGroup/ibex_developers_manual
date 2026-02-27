@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technix &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Thurlby Thandar TTI-PLP" href="Thurlby-Thandar-TTI-PLP-Power-Supply.html" />
+    <link rel="prev" title="Razorbill RP100 Strain Cell PSU" href="Razorbill-RP100-Strain-Cell-PSU.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="CAEN.html">CAEN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Keithley-2290.html">Keithley 2290</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kepco.html">Kepco</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Razorbill-RP100-Strain-Cell-PSU.html">Razorbill RP100 Strain Cell PSU</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Technix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thurlby-Thandar-TTI-PLP-Power-Supply.html">Thurlby Thandar TTI-PLP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thurlby-Thandar-TTiEX355P-Power-Supply-Unit.html">Thurlby TTI EX355P</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Power-Supplies.html">Power supplies</a></li>
+      <li class="breadcrumb-item active">Technix</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/power_supplies/Technix-PSU.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="technix">
+<h1>Technix<a class="headerlink" href="#technix" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>Technix PSU is a High Voltage Power Supply for the separators on the RIKEN front-end. The analog board executes the instructions and confirms to the user the instruction has been executed by forwarding back to the user the same instruction wave form which was sent.</p>
+<p>Eg. Instruction –&gt; <code class="docutils literal notranslate"><span class="pre">P7,1</span></code> Answer –&gt; <code class="docutils literal notranslate"><span class="pre">P7,1</span></code>.</p>
+</section>
+<section id="command-set">
+<h2>Command Set<a class="headerlink" href="#command-set" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Title</p></th>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OUTPUT VOLTAGE PROGRAMMING</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d1,X</span></code> ( X E [0 ;4095])</p></td>
+<td><p>Sets the voltage.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTPUT CURRENT PROGRAMMING</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d2,X</span></code> ( X E [0 ;4095])</p></td>
+<td><p>Sets the current.</p></td>
+</tr>
+<tr class="row-even"><td><p>OUTPUT VOLTAGE MONITOR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a1</span></code></p></td>
+<td><p>Gets the voltage.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTPUT CURRENT MONITOR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a2</span></code></p></td>
+<td><p>Gets the current.</p></td>
+</tr>
+<tr class="row-even"><td><p>HV ON</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">P5,1</span></code> –&gt; (delay 100 ms) <code class="docutils literal notranslate"><span class="pre">P5,0</span></code></p></td>
+<td><p>Sets HV ON.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HV OF</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">P6,1</span></code> –&gt; (delay 100 ms) <code class="docutils literal notranslate"><span class="pre">P6,0</span></code></p></td>
+<td><p>Sets HV OFF.</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCAL/REMOTE MODE</p></td>
+<td><p>LOCAL:<code class="docutils literal notranslate"><span class="pre">P7,1</span></code> REMOTE:<code class="docutils literal notranslate"><span class="pre">P7,0</span></code></p></td>
+<td><p>Sets local/remote mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>INHIBIT</p></td>
+<td><p>ACTIVE:<code class="docutils literal notranslate"><span class="pre">P8,1</span></code> IDLE:<code class="docutils literal notranslate"><span class="pre">P8,0</span></code></p></td>
+<td><p>Sets inhibit mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>MAINS INFORMATION</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">F</span></code></p></td>
+<td><p>Gets mains information. (F001 mains correct/ F000 mains defective)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMAGE OF THE POWER SUPPLY LOGICAL STATUS</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">E</span></code></p></td>
+<td><p>Gets the status of the device.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="image-of-the-power-supply-logical-reading">
+<h2>Image of the power supply logical reading<a class="headerlink" href="#image-of-the-power-supply-logical-reading" title="Link to this heading"></a></h2>
+<p>The answer is 8 bit coded.</p>
+<p>Status bits information:</p>
+<ul class="simple">
+<li><p>PL1 = 1 voltage regulation</p></li>
+<li><p>PL1 = 0 current regulation</p></li>
+<li><p>PL2 = 1 fault</p></li>
+<li><p>PL2 = 0 No fault</p></li>
+<li><p>PL3 = 1 open interlock</p></li>
+<li><p>PL3 = 0 closed interlock</p></li>
+<li><p>PL4 = 1 Hv-On status</p></li>
+<li><p>PL4 = 0 Hv-Off status</p></li>
+</ul>
+<p>PL5, PL6, PL7, PL8 are input bits corresponding to P5, P6, P7 and P8 instructions ( image of output logical instructions)</p>
+</section>
+<section id="use-and-safety">
+<h2>Use and safety<a class="headerlink" href="#use-and-safety" title="Link to this heading"></a></h2>
+<p>As some of internal parameters are configured by the H.V. generator, we advise:</p>
+<ol class="arabic simple">
+<li><p>Firstly you have to switch on the High Voltage Power Supply by using the front panel.</p></li>
+<li><p>Secondly you have to send an « HV off » RS 232 instruction (P6,1 followed by P6,0).
+So supplied and programmed, it becomes possible to initialize communication to the computer following
+the different instructions listed previously.</p></li>
+</ol>
+<p><strong>WARNING</strong>:
+<em>According to safety rules, a 5 seconds watchdog device is initialized after each instruction. Therefore, if the generator does not receive any instruction at least every five seconds, it will be automatically stopped and switched in local mode.</em></p>
+</section>
+<section id="device-manual">
+<h2>Device Manual<a class="headerlink" href="#device-manual" title="Link to this heading"></a></h2>
+<p>\isis\shares\ISIS_Experiment_Controls\Manuals\Technix power supply</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="cannot-turn-on-power-supply-despite-interlocks-being-clear">
+<h3>Cannot turn on Power supply despite interlocks being clear<a class="headerlink" href="#cannot-turn-on-power-supply-despite-interlocks-being-clear" title="Link to this heading"></a></h3>
+<p>Try switching to local mode, waiting a bit, then remote mode, wait a bit, and finally re-attempt to turn on the HV.</p>
+<p>Note: attempting to do this automatically via the protocol file did not work during hardware testing. Testing on the hardware is required if this is re-attempted.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Razorbill-RP100-Strain-Cell-PSU.html" class="btn btn-neutral float-left" title="Razorbill RP100 Strain Cell PSU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Thurlby-Thandar-TTI-PLP-Power-Supply.html" class="btn btn-neutral float-right" title="Thurlby Thandar TTI-PLP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

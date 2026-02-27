@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAQ (NI cDAQ) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MuSR Rotation control" href="daq/MuSR-Rotation-control.html" />
+    <link rel="prev" title="Reducing ISISICP memory use in simulation mode" href="dae/Shrinking-ISISICP-Memory-Usage-on-Simulated-DAE-machines.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DAQ (NI cDAQ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="daq/MuSR-Rotation-control.html">MuSR Rotation control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="daq/Muon-Separator-Power-Supply.html">Muon Separator Power Supply</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+      <li class="breadcrumb-item active">DAQ (NI cDAQ)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/DAQ.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="daq-ni-cdaq">
+<h1>DAQ (NI cDAQ)<a class="headerlink" href="#daq-ni-cdaq" title="Link to this heading"></a></h1>
+<section id="individual-devices">
+<h2>Individual devices<a class="headerlink" href="#individual-devices" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="daq/MuSR-Rotation-control.html">MuSR Rotation control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daq/Muon-Separator-Power-Supply.html">Muon Separator Power Supply</a></li>
+</ul>
+</div>
+</section>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Link to this heading"></a></h2>
+<p>If a DAQ unit is power cycled, it may need to be reconnected from the National Instruments “MAX” (measurement and automation explorer) software. To do this, open MAX, expand “network devices”, right click the relevant device, and use the “self-test” option, then try reconnecting from IBEX.</p>
+</section>
+<section id="connecting-to-a-cdaq-using-daqmx-and-ni-max">
+<h2>Connecting to a cDAQ using DAQmx and NI-MAX<a class="headerlink" href="#connecting-to-a-cdaq-using-daqmx-and-ni-max" title="Link to this heading"></a></h2>
+<p>You will need:</p>
+<ul class="simple">
+<li><p>Latest version of NI-MAX</p></li>
+<li><p>DAQmx driver installed (see “Device support in NI-DAQmx” section of DAQmx readme for compatibility with cDAQ devices)</p></li>
+</ul>
+<p>To connect to the device from the instrument/your machine see the <a class="reference external" href="https://www.ni.com/getting-started/set-up-hardware/data-acquisition/compactdaq#Configuring%20NI-DAQmx%20for%20CompactDAQ%20Ethernet%20Chassis">National Instruments documentation</a></p>
+<p>You can also connect to a simulated device, see the instructions at <a class="reference external" href="http://www.ni.com/tutorial/3698/en/">http://www.ni.com/tutorial/3698/en/</a>.</p>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Opening “Devices and Interfaces” in the sidebar typically takes several minutes on a computer connected to the RAL network. This is possibly because of the amount of NI hardware on the network.</p></li>
+<li><p>You will need to know the hostname of the cDAQ for the “Find Network NI-DAQmx Devices” dialogue</p></li>
+</ul>
+</section>
+<section id="configuring-a-daq-ioc">
+<h2>Configuring a DAQ IOC<a class="headerlink" href="#configuring-a-daq-ioc" title="Link to this heading"></a></h2>
+<p>The Asyn port for each channel for the daq is defined using the <code class="docutils literal notranslate"><span class="pre">DAQmxConfig</span></code> iocsh command. This is typically located in a st-daq.cmd file next to the device’s st.cmd. The DAQmxBase documentation is here: <a class="reference external" href="https://isiscomputinggroup.github.io/EPICS-DAQmxBase/">https://isiscomputinggroup.github.io/EPICS-DAQmxBase/</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DAQmxConfig</span> <span class="p">(</span> <span class="n">Asyn_port_name</span><span class="p">,</span> <span class="n">physical_channel_address</span><span class="p">,</span> <span class="n">channel_number</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Asyn_port_name</span></code> is name of the Asyn port to be created for this channel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">physical_channel_address</span></code> is the address of the channel on the device you wish to connect to. To obtain this find which input/output you wish to address on the DAQ card. This can be found on the pinout of the specific NI card by clicking the <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Pinout</span></code> button in NI-MAX. For example, <code class="docutils literal notranslate"><span class="pre">cDAQ9181-1234MOD3/ai0</span></code> addresses the third card in chassis <code class="docutils literal notranslate"><span class="pre">cDAQ9181-1234</span></code>, and the second AI channel from that card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">channel_number</span></code> should start from zero, this is used to address each channel within an Asyn port.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_type</span></code> is the data type of the channel (AI, AO, BI, …)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> Some common options are described here. All options can be found in <a class="reference external" href="https://isiscomputinggroup.github.io/EPICS-DAQmxBase/">the documentation for DAQmxBase</a>:</p>
+<ul>
+<li><p>Read mode can be continuous (default), OneShot (get data when record processed), or MONSTER (see below)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> is the frequency (speed) at which samples will be collected</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> is the number of samples DAQmxBase will collect and then return to the IOC.</p></li>
+</ul>
+</li>
+</ul>
+<p>A sample call to DAQmxConfig looks like (taken from separator):
+<code class="docutils literal notranslate"><span class="pre">DAQmxConfig(&quot;R0&quot;,</span> <span class="pre">&quot;cDAQ9181-1234MOD3/ai1&quot;,</span> <span class="pre">1,</span> <span class="pre">&quot;AI&quot;,&quot;N=1000</span> <span class="pre">F=1000&quot;)</span></code></p>
+<p>This configures the third card of chassis <code class="docutils literal notranslate"><span class="pre">cDAQ9181-1234</span></code>, ai input 2. Data acquisition is continuous at a rate of 1000 samples/second collection. The sample size is 1000, so will return around once per second.</p>
+<p>To address this channel in a record, your input field will look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span> <span class="s2">&quot;@asyn(R0 1 5.0) DATA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This accesses channel 1 of port R0, with a 5.0 second timeout.</p>
+</section>
+<section id="design-of-the-daqmx-driver">
+<h2>Design of the DAQmx Driver<a class="headerlink" href="#design-of-the-daqmx-driver" title="Link to this heading"></a></h2>
+<p>The DAQmx driver was originally written by Diamond but is no longer in use by them, meaning it is effectively ours to maintain. It’s written using the old C API for asyn rather than the newer C++ one. At it’s core the driver uses a state machine for configuring and acquiring data and a messaging system for moving between states. The state machine for the configuration is roughly described by the diagram below:</p>
+<p><img alt="DAQmx State Machine" src="../_images/DAQmx_state.png" /></p>
+<p>There are a number of other states after the start state that actually do the data acquisition but these are simpler. The state machine is incredibly hard to reason about as there are two mechanisms to move between states:</p>
+<ul class="simple">
+<li><p>At the beginning of the main loop a message is picked off the queue (if <code class="docutils literal notranslate"><span class="pre">ignoreMsg=0</span></code>). This message is then used to change the state.</p></li>
+<li><p>During the execution of a state the state for the next loop can be changed. This change is regularly overwritten later on in the state’s execution or when the message handling is performed on the next loop.</p></li>
+</ul>
+<p>This means the diagram above is only a rough idea of what is going on. The driver is in dire need of a rewrite, see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5386">https://github.com/ISISComputingGroup/IBEX/issues/5386</a>.</p>
+</section>
+<section id="data-bottlenecking-in-the-daqmxbase-driver-monster-mode">
+<h2>Data bottlenecking in the DAQmxBase driver (Monster mode)<a class="headerlink" href="#data-bottlenecking-in-the-daqmxbase-driver-monster-mode" title="Link to this heading"></a></h2>
+<p>When developing the zero field magnetometer IOC we found that there are significant overheads in the EPICS DAQmx driver when running it in one shot and continuous modes. In these modes the NI task used to take the data is started and stopped with every point/array of data requested (as applicable). This means that each point/array takes ~150 ms to acquire, around 100ms of this is from starting the task and ~50ms to actually take the data.</p>
+<p>We addressed this issue for the zero field magnetometer (which needed consecutive readings very close to each other) by running in ‘monster’ mode. In monster mode the NI data acquisition task is never closed, so the data can be captured at a much faster rate. However, if the requested data rate is too high this can cause a buffer overflow. For the zero field magnetometer on a developer’s machine this occurred at ~100000 data points/second.</p>
+<p>To change the read mode of the DAQ to monster mode, add <code class="docutils literal notranslate"><span class="pre">MONSTER</span></code> to the options in its DAQmxConfig call, for example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">DAQmxConfig(&quot;R0&quot;,</span> <span class="pre">&quot;cDAQ9181-1234MOD3/ai1&quot;,</span> <span class="pre">1,</span> <span class="pre">&quot;AI&quot;,&quot;MONSTER</span> <span class="pre">N=1000</span> <span class="pre">F=1000&quot;)</span></code></p>
+<p>Unlike the other two modes, monster mode needs a call to <code class="docutils literal notranslate"><span class="pre">DAQmxStart(portname)</span></code> at the end of the st.cmd file for the IOC, see the ZFMAGFLD st.cmd for a reference.</p>
+</section>
+<section id="common-errors">
+<h2>Common errors<a class="headerlink" href="#common-errors" title="Link to this heading"></a></h2>
+<p>The DAQmxBase driver used in IBEX can throw a number of errors to the log file. After resolving the issue, the IOC will need rebooting.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### DAQmx ERROR (CreateAI): Device cannot be accessed.  Possible causes:</span>
+<span class="n">Device</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">present</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">system</span><span class="o">.</span>
+<span class="n">Device</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">powered</span><span class="o">.</span>
+<span class="n">Device</span> <span class="ow">is</span> <span class="n">powered</span><span class="p">,</span> <span class="n">but</span> <span class="n">was</span> <span class="n">temporarily</span> <span class="n">without</span> <span class="n">power</span><span class="o">.</span>
+<span class="n">Device</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">chassis</span> <span class="n">driver</span> <span class="n">support</span> <span class="n">may</span> <span class="n">have</span> <span class="n">been</span> <span class="n">removed</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>If this happens immediately on IOC boot, check if the DAQ is connected in NI-MAX. Check the device is reserved in NI-MAX and can be reached over the network. If you believe the device is reachable but has a red cross beside it in NI-MAX, then right-click the device under network devices, unreserve and re-reserve.</p>
+<p>NI-MAX is a piece of software which is installed on the NDX that needs it, available from the start menu on the instrument. It can be very slow when expanding the list of device - be patient.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### DAQmx ERROR (ReadAnalogF64): The specified operation cannot be performed because a task is in the process of being aborted or a device is in the process of being removed from the system. Wait until the abort operation is complete and attempt to perform the operation again.</span>
+</pre></div>
+</div>
+<p>This error usually occurs when the connection between the IOC and DAQ has been interrupted after the IOC has started running normally. Check that the machine running the IOC still has the device reservation and can connect to the DAQ. Restart the IOC.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dae/Shrinking-ISISICP-Memory-Usage-on-Simulated-DAE-machines.html" class="btn btn-neutral float-left" title="Reducing ISISICP memory use in simulation mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="daq/MuSR-Rotation-control.html" class="btn btn-neutral float-right" title="MuSR Rotation control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

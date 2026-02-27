@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script Generator &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Troubleshooting" href="script_generator/Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html" />
+    <link rel="prev" title="Opening an OPI Outside of a Synoptic" href="client/design_docs/Opening-an-OPI-Outside-of-a-Synoptic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Script Generator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="script_generator/Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="script_generator/IBEX-Script-Generator-Dynamic-Scripting.html">Dynamic Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="script_generator/Script-Generator-Testing-Environment.html">Script Generator testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="script_generator/Script-generator-high-level-design.html">Script Generator Design</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Script Generator</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/Script-Generator.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="script-generator">
+<h1>Script Generator<a class="headerlink" href="#script-generator" title="Link to this heading"></a></h1>
+<p>The script generator developed as part of IBEX is held in the same repository as the IBEX client/GUI. The script generator requires both a perspective in the IBEX GUI and a standalone application.</p>
+<p>To achieve this, the script generator can be built in both eclipse and using maven, with minimal packages required from the main GUI codebase. The build system for the standalone application mirrors that of the main IBEX gui, with an independent <code class="docutils literal notranslate"><span class="pre">tycho.parent</span></code>, see <a class="reference internal" href="#the-directory-structure">below</a></p>
+<p>To prevent duplication, the GUI perspective depends wholly on the standalone application.</p>
+<div class="toctree-wrapper compound">
+</div>
+<section id="the-directory-structure">
+<h2>The directory structure<a class="headerlink" href="#the-directory-structure" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Purpose</p></th>
+<th class="head"><p>Location</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Perspective for the IBEX GUI ONLY</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">base/uk.ac.isis.ibex.scriptgenerator</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Standalone app build directories</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">base/uk.ac.isis.scriptgenerator/*</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="eclipse-build">
+<h2>Eclipse build<a class="headerlink" href="#eclipse-build" title="Link to this heading"></a></h2>
+<p>To build and run the app through eclipse, the script generator product is found in <code class="docutils literal notranslate"><span class="pre">base\uk.ac.stfc.isis.scriptgenerator.client.product</span></code>. The instructions for setting up eclipse and loading the target platform (necessary for the script generator) are found in the instructions for the <a class="reference internal" href="client/compiling/Building-the-GUI.html"><span class="doc std std-doc">main IBEX GUI setup</span></a></p>
+<section id="scriptgenerator-enable-perspective">
+<h3>Adding the perspective into the client<a class="headerlink" href="#scriptgenerator-enable-perspective" title="Link to this heading"></a></h3>
+<p>Currently the script generator perspective is not shown or selectable in the main IBEX GUI. It can be re-added by selecting <code class="docutils literal notranslate"><span class="pre">Preferences</span> <span class="pre">&gt;</span> <span class="pre">Select</span> <span class="pre">Visible</span> <span class="pre">Perspectives</span></code> from the IBEX Main Menu.</p>
+</section>
+</section>
+<section id="maven-build">
+<h2>Maven build<a class="headerlink" href="#maven-build" title="Link to this heading"></a></h2>
+<p>To build the standalone app through maven run <code class="docutils literal notranslate"><span class="pre">build\build_script_generator.bat</span></code></p>
+<p>There is a Jenkins pipeline which will build the script generator with every new commit to the IBEX GUI master branch.</p>
+</section>
+<section id="data-structures-in-the-gui">
+<h2>Data structures in the GUI<a class="headerlink" href="#data-structures-in-the-gui" title="Link to this heading"></a></h2>
+<p>Each ‘action’, or step in a script is represented in the GUI as a row. Each cell contains one parameter for an action, which the users change to define their experiment. A complete row of defined parameters should be enough information to run the action once (see <a class="reference internal" href="script_generator/Script-generator-high-level-design.html#scriptgenerator-script-definition"><span class="std std-ref">Script Generator High-Level Design</span></a>)</p>
+<p><img alt="" src="_images/scriptgen.png" /></p>
+<p>The parameter values are stored as strings in the underlying action. These strings are passed to the python process for validation, and to insert them into the output script. When the value of an underlying cell is updated, the GUI is notified by firing a property change (<code class="docutils literal notranslate"><span class="pre">actions</span></code>).</p>
+<p>To change the type of action represented in the table, the singleton drops the current table and replaces it with a new one constructed using the new action type.</p>
+</section>
+<section id="importing-user-supplied-script-definitions">
+<h2>Importing user-supplied script definitions<a class="headerlink" href="#importing-user-supplied-script-definitions" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ScriptDefinitions</span></code> are supplied by instrument scientists in <a class="reference internal" href="script_generator/Script-generator-high-level-design.html#scriptgenerator-script-definition"><span class="std std-ref">this form</span></a>. All the python modules containing an <code class="docutils literal notranslate"><span class="pre">ScriptDefinition</span></code> in a subdirectory are imported and stored in a <code class="docutils literal notranslate"><span class="pre">ScriptDefinitionWrapper</span></code> class. Using an instrument scientist supplied <code class="docutils literal notranslate"><span class="pre">ScriptDefinition</span></code>, a <code class="docutils literal notranslate"><span class="pre">ScriptDefinitionWrapper</span></code> class is created containing the <code class="docutils literal notranslate"><span class="pre">ScriptDefinition</span></code> with helper methods like <code class="docutils literal notranslate"><span class="pre">getParameters</span></code> and <code class="docutils literal notranslate"><span class="pre">parametersValid</span></code> to expose the parameters used in the action and their validation. These <code class="docutils literal notranslate"><span class="pre">ScriptDefinitionWrapper</span></code> classes are collected by the <code class="docutils literal notranslate"><span class="pre">ScriptDefinitionsWrapper</span></code>, which is then passed through the py4j interface to the GUI code.</p>
+<p>On startup of the script generator, the latest versions of the Script Definitions are pulled from <a class="reference external" href="https://github.com/ISISComputingGroup/ScriptDefinitions">this repository</a>. The default location for this repository is in <code class="docutils literal notranslate"><span class="pre">path_to_script_generator\script_definitions</span></code> but can be changed in the <code class="docutils literal notranslate"><span class="pre">plugin_customisation.ini</span></code>. If this directory does not contain the ScriptDefinitions repository on script generator startup, a clone is attempted. If a clone of the ScriptDefintions repository failed from github, a clone is made from a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bundle</span></code> form of the repository, which is shipped with the script generator and is created when the script generator is built.</p>
+<p>Once in the GUI, the script generator table is created by generating <code class="docutils literal notranslate"><span class="pre">ActionParameters</span></code> from the parameter names exposed through the ScriptDefinitions class.</p>
+<p><img alt="Script generator code structure" src="_images/ScriptGenerator.png" /></p>
+</section>
+<section id="checking-the-validity-and-generating-python-scripts">
+<h2>Checking the validity and generating python scripts<a class="headerlink" href="#checking-the-validity-and-generating-python-scripts" title="Link to this heading"></a></h2>
+<p>Generator classes are used to check validity and generate scripts. They use the script definition’s supplied <code class="docutils literal notranslate"><span class="pre">run</span></code> and <code class="docutils literal notranslate"><span class="pre">parameters_valid</span></code> methods to check validity and generate scripts. We do not want to block the execution of the UI thread, and as such, all parameter validity checking and script generation is done by running a Java CompletableFuture and then firing a property change and passing this up the chain to the UI. This allows updates to happen in the background without blocking the UI thread.</p>
+</section>
+<section id="saving-the-parameter-values-and-loading-back-up">
+<h2>Saving the Parameter values and loading back up<a class="headerlink" href="#saving-the-parameter-values-and-loading-back-up" title="Link to this heading"></a></h2>
+<p>Parameters values from the Script Generator can be saved in a file. The file format chosen is JSON due to its flexibility and well-tested parser available for upgrading it using upgrade script in future.</p>
+<p>Parameters are saved as <code class="docutils literal notranslate"><span class="pre">.sgp</span></code> (Script Generator Parameters) files.</p>
+<p>The format of the chosen JSON file is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;version_JSON_format&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;script_generator_version&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;date_and_time&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;script_definition_file_path&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;script_definition_file_git_hash&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;genie_python_version&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;script_definition_content&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;actions&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;action_name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;parameter&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;action_name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;parameter&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+</pre></div>
+</div>
+<p>Note:</p>
+<ul class="simple">
+<li><p>For each action in <code class="docutils literal notranslate"><span class="pre">Actions</span></code> in the JSON file, there is a table in the script generator.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">version</span></code> in the file is the version of the JSON format itself. This will be an integer and not tied to any other version number.</p></li>
+<li><p>configuration_path: this is the path of the configuration file within the git repository. Allowing us to group then by instrument if this becomes useful.</p></li>
+<li><p>configuration_file_git_hash: this is the git hash at the time the config file is used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configuration_content</span></code> contains the actual content of the config file that was used when saving parameters. This is to make sure that the configuration that was used to generate JSON file is the same configuration that is being used to load the data from the JSON file.</p></li>
+</ul>
+<p>We want the JSON in a separate file so that:</p>
+<ul class="simple">
+<li><p>It’s language independent</p></li>
+<li><p>The user is less likely to modify it</p></li>
+<li><p>It would probably easier to upgrade at a later date if the JSON format changes</p></li>
+</ul>
+<p>The generated script file will contain the compressed JSON. The compressed JSON can be used as a back up if the JSON file is lost to retrieve original values. For the MVP reading the JSON from the script will not be done and we will only read the JSON file.</p>
+<p>JSON formats etc. were decided in a meeting on 20/02/2020 attended by Bish, Dom, John, Tom, Alistair and James.</p>
+<p>On 12/05/2021 it was decided by James, Kathryn and Dom to hide this complexity from the user by removing references to parameter files and tying the two files directly to generating scripts. This was captured in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6492">#6492</a>.</p>
+</section>
+<section id="pre-release-install-instructions">
+<h2>Pre-release Install Instructions<a class="headerlink" href="#pre-release-install-instructions" title="Link to this heading"></a></h2>
+<p>As dev:</p>
+<ol class="arabic simple">
+<li><p>Copy build to releases area (this is two part because of the deeply nested python) first copy to icp area then move to releases release number</p></li>
+<li><p>Zip this folder because it is easier to get this on a machine</p></li>
+<li><p>Copy current script definitions git repo to here</p></li>
+<li><p>Then issue following instructions to user:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>These are the instruction to install the beta release of the script_generator. It needs to be installed on a windows machine but does not need ibex running. To install this please do the following:
+
+Either:
+
+    i: Quicker but requires more disk space
+        1. copy the zip file from &lt;add zip path&gt; to somewhere on your local machine.
+        2. Unzip it
+        3. Click on install_script_generator.bat
+        4. Delete zip file and unzipped files     
+
+    ii: Slower but requires less disk space
+       1. Open the folder &lt;location of release&gt;
+       2. Click on install_script_generator.bat
+
+This will take a while to copy the script generator to your machine (it took at least 2 hours). The final directory is ~ 3 Gb and has ~50k files.
+
+1.	Then copy the script definitions to your local machine from &lt;add path to ScriptDefinitions&gt; to c:\ScriptDefinitions
+
+Finally:
+
+1. Create a script dir to save scripts to in `c:\scripts`
+
+You should then be good to go just double click C:\Instrument\Apps\script_generator\ibex-script-generator.exe. If it starts but with an empty window it may be that it failed to load something earlier in that case delete the folder c:\instrument\app\script_generator\workspace and try again.
+
+</pre></div>
+</div>
+</section>
+<section id="script-definitions">
+<h2>Script definitions<a class="headerlink" href="#script-definitions" title="Link to this heading"></a></h2>
+<p>Script definitions are configuration files which specify the following in the script generator:</p>
+<ul class="simple">
+<li><p>How many columns to display and what their names are</p></li>
+<li><p>Any constraints on the data entered under a particular column</p></li>
+<li><p>How to “run” a row of the script generator (i.e. the python code that will eventually be executed)</p></li>
+</ul>
+<p>The script definitions are stored in <code class="docutils literal notranslate"><span class="pre">c:\instrument\settings\ibex_script_generator\scriptdefinitions</span></code>. This location should exist on an instrument control machine. If this location does not exist, the script generator instead looks for a folder named <code class="docutils literal notranslate"><span class="pre">scriptdefinitions</span></code> next to the executable.</p>
+</section>
+<section id="dynamic-scripting">
+<h2>Dynamic Scripting<a class="headerlink" href="#dynamic-scripting" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="script_generator/IBEX-Script-Generator-Dynamic-Scripting.html"><span class="doc std std-doc">See here</span></a></p>
+</section>
+<section id="interested-instruments-groups">
+<h2>Interested instruments/groups<a class="headerlink" href="#interested-instruments-groups" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Muons</p></li>
+<li><p>Reflectometry</p></li>
+<li><p>SANS</p></li>
+<li><p>MARI</p></li>
+<li><p>WISH</p></li>
+<li><p>IMAT</p></li>
+<li><p>HRPD</p></li>
+<li><p>ENGIN-X</p></li>
+<li><p>MERLIN</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="client/design_docs/Opening-an-OPI-Outside-of-a-Synoptic.html" class="btn btn-neutral float-left" title="Opening an OPI Outside of a Synoptic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="script_generator/Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

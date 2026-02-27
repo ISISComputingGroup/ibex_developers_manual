@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Dashboard &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PVWS (PV Web socket)" href="PVWS.html" />
+    <link rel="prev" title="Web Dashboard &amp; Chat" href="../Web.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Web Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVWS.html">PVWS (PV Web socket)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Web.html">Web Dashboard &amp; Chat</a></li>
+      <li class="breadcrumb-item active">Web Dashboard</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/webdashboard/Web-Dashboard.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="web-dashboard">
+<h1>Web Dashboard<a class="headerlink" href="#web-dashboard" title="Link to this heading"></a></h1>
+<p>The web dashboard allows some information about each instrument (currently DAE information and block values) to be viewed in a webpage from both inside and outside the ISIS network.</p>
+<section id="overall-architecture">
+<h2>Overall architecture<a class="headerlink" href="#overall-architecture" title="Link to this heading"></a></h2>
+<p>The <a class="reference external" href="https://isiscomputinggroup.github.io/WebDashboard/">Web Dashboard</a> is very simple in architecture - it uses <a class="reference external" href="https://github.com/ornl-epics/pvws">PVWS</a> to provide EPICS updates via a websocket, then displays these updates with <a class="reference external" href="https://nextjs.org/">NextJS</a> as React components.</p>
+<p>This means the “backend” of the system is just PVWS. Any logic that needs to be done on PVs, for example <code class="docutils literal notranslate"><span class="pre">CS:INSTLIST</span></code> needs parsing as JSON, is done on the user’s web browser. This allows us to deploy the web dashboard as purely static html; currently this is deployed to github pages on a push to <code class="docutils literal notranslate"><span class="pre">main</span></code> using <a class="reference external" href="https://github.com/ISISComputingGroup/WebDashboard/blob/main/.github/workflows/nextjs.yml">this</a> github actions CI/CD workflow.</p>
+<section id="block-history-grafana-and-journals-setup">
+<h3>Block history: Grafana and Journals Setup<a class="headerlink" href="#block-history-grafana-and-journals-setup" title="Link to this heading"></a></h3>
+<p>Docs can be found on the shares at <code class="docutils literal notranslate"><span class="pre">shares\isis_experiment_controls\web_dashboard_history.docx</span></code></p>
+</section>
+<section id="pvws-setup">
+<h3>PVWS setup<a class="headerlink" href="#pvws-setup" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="PVWS.html#pvws"><span class="std std-ref">PVWS (PV Web socket)</span></a></p>
+</section>
+</section>
+<section id="webdashboard-troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#webdashboard-troubleshooting" title="Link to this heading"></a></h2>
+<section id="web-dashboard-showing-outdated-or-incorrect-information">
+<h3>Web dashboard showing outdated or incorrect information<a class="headerlink" href="#web-dashboard-showing-outdated-or-incorrect-information" title="Link to this heading"></a></h3>
+<p>If you cannot subscribe directly to a PV by using the <a class="reference external" href="https://ndaextweb4/pvws/">PVWS homepage</a> ie it gets no update with a value in it, this is likely due to a gateway issue on NDAEXTWEB4, a central gateway issue (on <a class="reference external" href="https://shadow.nd.rl.ac.uk/ibex_sysadmin_manual/systems/linux_support_systems/control-svcs.html" title="(in IBEX Sysadmin's Manual)"><span>control-svcs</span></a>) or an issue with the NDX.</p>
+<p>First VNC into the instrument and find out whether this is happening on the NDX. If it is, your problems are not gateway related.</p>
+<p>If not, then try and <code class="docutils literal notranslate"><span class="pre">caget</span></code> it from your development machine. If this works, it could be a gateway issue. To narrow it down further we can <code class="docutils literal notranslate"><span class="pre">caget</span></code> with <code class="docutils literal notranslate"><span class="pre">EPICS_CA_ADDR_LIST</span></code> set to:</p>
+<ul class="simple">
+<li><p>NDAEXTWEB4’s restricted gateway, to prove whether issue is EPICS level or PVWS level</p></li>
+<li><p>Central gateway, to prove whether issue is at that end</p></li>
+<li><p>An individual instrument directly, bypassing all gateways other than external gateway on each instrument</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Web.html" class="btn btn-neutral float-left" title="Web Dashboard &amp; Chat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PVWS.html" class="btn btn-neutral float-right" title="PVWS (PV Web socket)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

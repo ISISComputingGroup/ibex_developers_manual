@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeting roles &amp; rotas &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Program Increment Planning" href="Program-Increment-Planning.html" />
+    <link rel="prev" title="Code chats" href="Code-Chats-and-Lightning-Talks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Meetings.html">Meetings - internal</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Backlog-Preparation.html">Sprint pre-planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Code-Chats-and-Lightning-Talks.html">Code chats</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Meeting roles &amp; rotas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Program-Increment-Planning.html">Program Increment Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Planning.html">Sprint Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Review-and-Retro.html">Sprint Review &amp; Retrospective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Technical-Debt-Stand-down.html">Technical Debt Stand-down</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Meetings.html">Meetings - internal</a></li>
+      <li class="breadcrumb-item active">Meeting roles &amp; rotas</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/meetings/Meeting-Roles-and-Rotas.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="meeting-roles-rotas">
+<h1>Meeting roles &amp; rotas<a class="headerlink" href="#meeting-roles-rotas" title="Link to this heading"></a></h1>
+<p>It was decided that we would set up a rota for the various roles in IBEX meetings, a rota is below. There is only a single rota for each type of role, although not all roles are needed at all meetings, there is a column then to indicate where in the rota we are. If the person scheduled on the rota isn’t available, then a volunteer will be asked for at the beginning of the meeting and we will continue the rota next time. If you are scheduled for more than one role choose which one you do this time, and you get to do the other one next time. At the moment this should cover for 6 months, and it is not a repeating pattern, and it is subject to change.</p>
+<section id="role-descriptions">
+<h2>Role descriptions:<a class="headerlink" href="#role-descriptions" title="Link to this heading"></a></h2>
+<section id="chair">
+<h3>Chair<a class="headerlink" href="#chair" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Needed for Pre-Planning, Review/Retrospective, and Planning</p></li>
+<li><p>Make sure things happen as per the ticket workflow details for meetings, see the <a class="reference internal" href="../../Processes.html"><span class="doc std std-doc">processes</span></a> page for more details (if they are out of date, update them)</p></li>
+<li><p>Keep the meetings on track (as much as possible)</p></li>
+</ul>
+</section>
+<section id="timekeeper-in-planning">
+<h3>Timekeeper in Planning:<a class="headerlink" href="#timekeeper-in-planning" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Limit discussion of tickets to a maximum of 5 minutes per ticket.</p></li>
+<li><p>Act as moderator for the voting site, deleting estimates between votes, show votes when everyone is ready, and giving brief reminders if some time has passed and some votes have not been cast.</p></li>
+<li><p>Keep an eye on the end time of the meeting - give everyone a five minute warning</p></li>
+<li><p>If the meeting is scheduled for more than an hour to indicate the halfway time to make sure we take a break</p></li>
+</ul>
+</section>
+<section id="timekeeper-in-review">
+<h3>Timekeeper in Review<a class="headerlink" href="#timekeeper-in-review" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>In Review ensure there is enough time for everyone to speak in the hour - this would be an average of 5 minutes per person if everyone was planning to demo</p></li>
+<li><p>Keep an eye on the end time of the meeting - give everyone a five minute warning</p></li>
+<li><p>If the meeting is scheduled for more than an hour to indicate the halfway time to make sure we take a break</p></li>
+</ul>
+</section>
+<section id="note-taker-in-retrospective">
+<h3>Note taker in Retrospective:<a class="headerlink" href="#note-taker-in-retrospective" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Keep notes of the discussed points</p></li>
+<li><p>Add them to the wiki with a link on the <a class="reference internal" href="../Retrospective-Notes.html"><span class="doc std std-doc">main retrospective notes page</span></a></p></li>
+</ul>
+</section>
+<section id="note-taker-in-planning">
+<h3>Note taker in Planning:<a class="headerlink" href="#note-taker-in-planning" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Make notes on tickets of any important information which gets discussed but is not already mentioned on the ticket</p>
+<ul>
+<li><p>This should include acceptance criteria discussed.</p></li>
+</ul>
+</li>
+<li><p>Add a timestamp to tickets of when in the recording the ticket was discussed.</p></li>
+</ul>
+</section>
+<section id="stand-up">
+<h3>Stand up:<a class="headerlink" href="#stand-up" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>This is a weekly role starting on the first working day in that week, with substitutes being decided daily if the named person is unavailable last minute - if you know you are unavailable for the week swap with someone</p></li>
+<li><p>Load and share the web pages as detailed in the tabbed note in the announce channel in the team</p></li>
+<li><p>Ensure everyone present has their chance to share progress, plans, and obstacles</p></li>
+<li><p>If you’re able to, writing a squish test to replace one of the <a class="reference internal" href="../../deployment/Manual-System-Tests.html"><span class="doc std std-doc">Manual system tests</span></a> would be great. If the person running the week before has done so and it hasn’t been reviewed, now would be a good time to review that as well.</p></li>
+</ul>
+</section>
+</section>
+<section id="rotas">
+<h2>Rotas<a class="headerlink" href="#rotas" title="Link to this heading"></a></h2>
+<p>From week commencing 1/12/25, the standup will be hosted by whoever is undertaking first-line support.</p>
+</section>
+<hr class="docutils" />
+<section id="sprint-meetings">
+<h2>Sprint Meetings<a class="headerlink" href="#sprint-meetings" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Meeting</p></th>
+<th class="head"><p>Chair</p></th>
+<th class="head"><p>x for Done</p></th>
+<th class="head"><p>Timekeeper</p></th>
+<th class="head"><p>x for Done</p></th>
+<th class="head"><p>Note taker</p></th>
+<th class="head"><p>x for Done</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2025_03_05_Planning</p></td>
+<td><p>JH</p></td>
+<td><p>X</p></td>
+<td><p>TW</p></td>
+<td><p>X</p></td>
+<td><p>IG</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_03_05_Review/Retro</p></td>
+<td><p>JD</p></td>
+<td><p>X</p></td>
+<td><p>DM</p></td>
+<td><p>X</p></td>
+<td><p>SC</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_04_10_Planning</p></td>
+<td><p>TW</p></td>
+<td><p>X</p></td>
+<td><p>JD</p></td>
+<td><p>X</p></td>
+<td><p>DM</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_04_10_Review/Retro</p></td>
+<td><p>FA</p></td>
+<td><p>X</p></td>
+<td><p>KB</p></td>
+<td><p>X</p></td>
+<td><p>DK</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_05_08_Planning</p></td>
+<td><p>JD</p></td>
+<td><p>X</p></td>
+<td><p>LJ</p></td>
+<td><p>X</p></td>
+<td><p>GR</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_05_08_Review/Retro</p></td>
+<td><p>LC</p></td>
+<td><p>X</p></td>
+<td><p>KB</p></td>
+<td><p>X</p></td>
+<td><p>GR</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_06_12_Planning</p></td>
+<td><p>LJ</p></td>
+<td><p>X</p></td>
+<td><p>CMS</p></td>
+<td><p>X</p></td>
+<td><p>ES</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_06_12_Review/Retro</p></td>
+<td><p>DM</p></td>
+<td><p>X</p></td>
+<td><p>JH</p></td>
+<td><p>X</p></td>
+<td><p>SC</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_07_10_Planning</p></td>
+<td><p>IG</p></td>
+<td><p>X</p></td>
+<td><p>DK</p></td>
+<td><p>X</p></td>
+<td><p>TW</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_07_10_Review/Retro</p></td>
+<td><p>SC</p></td>
+<td><p>X</p></td>
+<td><p>IG</p></td>
+<td><p>X</p></td>
+<td><p>LJ</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_07_31_Planning</p></td>
+<td><p>ES</p></td>
+<td><p>X</p></td>
+<td><p>GR</p></td>
+<td><p>X</p></td>
+<td><p>DM</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_07_31_Review/Retro</p></td>
+<td><p>GR</p></td>
+<td><p>X</p></td>
+<td><p>JH</p></td>
+<td><p>X</p></td>
+<td><p>SC</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_08_28_Planning</p></td>
+<td><p>FA</p></td>
+<td><p>X</p></td>
+<td><p>TW</p></td>
+<td><p>X</p></td>
+<td><p>LC</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_08_28_Review/Retro</p></td>
+<td><p>GR</p></td>
+<td><p>X</p></td>
+<td><p>DM</p></td>
+<td><p>X</p></td>
+<td><p>LJ</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_10_02_Planning</p></td>
+<td><p>TW</p></td>
+<td><p>X</p></td>
+<td><p>FA</p></td>
+<td><p>X</p></td>
+<td><p>IG</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_10_02_Review/Retro</p></td>
+<td><p>JH</p></td>
+<td><p>X</p></td>
+<td><p>TW</p></td>
+<td><p>X</p></td>
+<td><p>KB</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>2025_10_30_Planning</p></td>
+<td><p>KB</p></td>
+<td><p>X</p></td>
+<td><p>LJ</p></td>
+<td><p>X</p></td>
+<td><p>FA</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_10_30_Review/Retro</p></td>
+<td><p>GR</p></td>
+<td><p></p></td>
+<td><p>CMS</p></td>
+<td><p></p></td>
+<td><p>SpC</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025_11_27_Planning</p></td>
+<td><p>FA</p></td>
+<td><p></p></td>
+<td><p>DK</p></td>
+<td><p></p></td>
+<td><p>SC</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025_11_27_Review/Retro</p></td>
+<td><p>SpC</p></td>
+<td><p></p></td>
+<td><p>IG</p></td>
+<td><p></p></td>
+<td><p>DK</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2026_01_08_Planning</p></td>
+<td><p>IG</p></td>
+<td><p></p></td>
+<td><p>KB</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>LJ</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026_01_08_Review/Retro</p></td>
+<td><p>DK</p></td>
+<td><p></p></td>
+<td><p>CMS</p></td>
+<td><p></p></td>
+<td><p>DM</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2026_02_05_Planning</p></td>
+<td><p>CMS</p></td>
+<td><p></p></td>
+<td><p>LJ</p></td>
+<td><p></p></td>
+<td><p>JH</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2026_02_05_Review/Retro</p></td>
+<td><p>IG</p></td>
+<td><p></p></td>
+<td><p>GR</p></td>
+<td><p></p></td>
+<td><p>DK</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Code-Chats-and-Lightning-Talks.html" class="btn btn-neutral float-left" title="Code chats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Program-Increment-Planning.html" class="btn btn-neutral float-right" title="Program Increment Planning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

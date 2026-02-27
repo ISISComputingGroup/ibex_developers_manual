@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beckhoff testing &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Beckhoff troubleshooting" href="Beckhoff-troubleshooting.html" />
+    <link rel="prev" title="Beckhoff commissioning" href="Beckhoff-commissioning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Attocube.html">Attocube</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Beckhoff.html">Beckhoff</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Beckhoff-architecture.html">Beckhoff IOC Architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Beckhoff-commissioning.html">Beckhoff commissioning</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Beckhoff testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Beckhoff-troubleshooting.html">Beckhoff troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Galil.html">Galil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Motors.html">Motors</a></li>
+          <li class="breadcrumb-item"><a href="../Beckhoff.html">Beckhoff</a></li>
+      <li class="breadcrumb-item active">Beckhoff testing</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/beckhoff/Beckhoff-testing.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="beckhoff-testing">
+<h1>Beckhoff testing<a class="headerlink" href="#beckhoff-testing" title="Link to this heading"></a></h1>
+<section id="building-simulating-and-testing-the-code">
+<h2>Building, simulating and testing the code<a class="headerlink" href="#building-simulating-and-testing-the-code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Beckhoff XAR runtime environment <a class="reference external" href="https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_overview/6162419083.html&amp;amp;id=">does not support windows 11</a>. This means that if you are on a Windows 11 development PC, you cannot run the Beckhoff tests.</p>
+<p>Beckhoff XAE (the editor) is supported on Windows 11.</p>
+</div>
+<details>
+<summary>You may need to disable some windows features, such as Hyper-V, Windows Hypervisor Platform etc.
+For reference, here is a working setup and its features (click to expand) </summary>
+<p><img alt="windows features" src="../../../_images/Beckhoff-testing-windows-features.png" /></p>
+<p>To revert this run: <code class="docutils literal notranslate"><span class="pre">Enable-WindowsOptionalFeature</span> <span class="pre">-Online</span> <span class="pre">-FeatureName</span> <span class="pre">Microsoft-Hyper-V</span> <span class="pre">-All</span></code> in an elevated Powershell window.</p>
+</details>
+<p>Beckhoff code can be run as a simulated system on a developer machine by doing the following:</p>
+<ol class="arabic simple">
+<li><p>Clone <code class="docutils literal notranslate"><span class="pre">BeckhoffTestRunner</span></code> using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recurse-submodules</span> <span class="pre">https://github.com/ISISComputingGroup/BeckhoffTestRunner.git</span> <span class="pre">C:\Instrument\Dev\BeckhoffTestRunner\</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">settick.bat</span></code> with admin privileges (this requires a reboot, but do it after the next step)</p></li>
+<li><p>Download and install <strong>VERSION 4024.11</strong>(and no later!) of TwinCAT 3 XAE from <code class="docutils literal notranslate"><span class="pre">&lt;public_share&gt;\installers</span></code>. The XAE is really just a DLL and a Visual Studio plugin. <strong>Reboot after installing.</strong> ~<a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISMechatronics/Shared%20Documents/Forms/AllItems.aspx?viewid=a9a65e76%2D4335%2D479e%2Da1eb%2De12265e5cad6&amp;amp;id=%2Fsites%2FISISMechatronics%2FShared%20Documents%2FTwinCAT%20Development%2FTwinCAT%20Software">TwinCAT 3 XAE</a> If you do not have permission ask IDD~.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> to build the <code class="docutils literal notranslate"><span class="pre">twinCATAutomationTools</span></code> binaries, which then sets up a working simulated PLC.</p></li>
+<li><p>To run a PLC locally you need a license. Open TwinCAT XAE shell, select “open solution” and open <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\BeckhoffTestRunner\PLC_solution\solution.sln</span></code> Navigate in the solution explorer to <code class="docutils literal notranslate"><span class="pre">solution</span> <span class="pre">-&gt;</span> <span class="pre">SYSTEM</span> <span class="pre">-&gt;</span> <span class="pre">License</span></code> - open this and select “7 days trial license”. You may now close the XAE Shell.</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">run_tests.bat</span></code> in the <code class="docutils literal notranslate"><span class="pre">BeckhoffTestRunner</span></code> directory to begin testing. You should notice that your system tray icon turns green which means you are running a simulated PLC and testing against it.</p></li>
+</ol>
+<p><em>NB the IOC tests do not stop the PLC at the end of the run, however this isn’t a problem as the PLC is restarted when the IOC tests start.</em></p>
+<p><em>When you have finished testing/reviewing a PR, it is best to run <code class="docutils literal notranslate"><span class="pre">unsettick.bat</span></code> as admin and reboot - otherwise you will have loads of “time discontinuity detected” messages in IOC logs</em></p>
+</section>
+<section id="other-information-on-testing-and-configuring-a-beckhoff">
+<h2>Other information on testing and configuring a Beckhoff<a class="headerlink" href="#other-information-on-testing-and-configuring-a-beckhoff" title="Link to this heading"></a></h2>
+<section id="using-xae-shell-to-manually-build-a-plc">
+<h3>Using XAE shell to manually build a PLC<a class="headerlink" href="#using-xae-shell-to-manually-build-a-plc" title="Link to this heading"></a></h3>
+<details><summary> manual steps </summary>
+<ol class="arabic simple">
+<li><p>Ensure that you have the following toolbars enabled in the XAE shell (<code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Customize...</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TwinCAT</span> <span class="pre">PLC</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TwinCAT</span> <span class="pre">XAE</span> <span class="pre">Base</span></code></p></li>
+</ul>
+</li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Activate</span> <span class="pre">Configuration</span></code> button <img alt="Activate" src="../../../_images/Activate.PNG" /></p></li>
+<li><p>TwinCAT will ask you to enter a code to get a trial license. You will need to do this once a week.</p></li>
+<li><p>If prompted if you wish to start the system in <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Mode</span></code> click <code class="docutils literal notranslate"><span class="pre">Ok</span></code>. Otherwise start run mode using the button next to <code class="docutils literal notranslate"><span class="pre">Activate</span> <span class="pre">Configuration</span></code> <img alt="Run" src="../../../_images/Run.PNG" /></p></li>
+<li><p>You now have a simulated Beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.</p></li>
+<li><p>To see what is happening inside this PLC in more detail, and to change values, you can use the login button <img alt="Login" src="../../../_images/Login.PNG" /></p></li>
+</ol>
+</details>
+</section>
+</section>
+<section id="simulate-an-instrument">
+<h2>Simulate an Instrument<a class="headerlink" href="#simulate-an-instrument" title="Link to this heading"></a></h2>
+<p>To simulate an instrument’s Beckhoff and make it virtual rather than driving physical motors etc. you need to:</p>
+<ol class="arabic simple">
+<li><p>Follow the above steps</p></li>
+<li><p>find the repo for that particular MCU within <a class="reference external" href="https://github.com/ISIS-Motion-Control">https://github.com/ISIS-Motion-Control</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recurse-submodules</span> <span class="pre">&lt;repo&gt;</span> <span class="pre">&lt;dir&gt;</span></code></p></li>
+<li><p>open up the solution in TwinCAT XAR</p></li>
+<li><p>change the <code class="docutils literal notranslate"><span class="pre">MCU_xxx</span></code> in the dropdown next to “solution” to <code class="docutils literal notranslate"><span class="pre">&lt;local&gt;</span></code></p></li>
+</ol>
+<p>There are a few things we need to disable in XAR in order to get this instance entirely virtual. these are:</p>
+<p>(under the “solution” in the solution explorer)</p>
+<p>License:</p>
+<ol class="arabic simple">
+<li><p>in SYSTEM -&gt; License remove any dongles (these are normally physical USB sticks)</p></li>
+<li><p>generate a “7 days trial license” from the top-level screen</p></li>
+</ol>
+<p>I/O:</p>
+<p>in <code class="docutils literal notranslate"><span class="pre">I/O</span> <span class="pre">-&gt;</span> <span class="pre">Devices</span></code>, disable all devices that show up by right-clicking and selecting “disable”</p>
+<p>Safety:</p>
+<p>in <code class="docutils literal notranslate"><span class="pre">SAFETY</span></code>, disable all safety instances</p>
+<p>Motion:</p>
+<p>in <code class="docutils literal notranslate"><span class="pre">MOTION</span> <span class="pre">-&gt;</span> <span class="pre">NC</span> <span class="pre">-</span> <span class="pre">Task</span> <span class="pre">1</span> <span class="pre">SVB</span></code> go to Axes and then expand all axes, then go to <code class="docutils literal notranslate"><span class="pre">Enc</span></code> and change the “type” to “Simulation encoder”</p>
+<p>After doing all of this you should be able to build the solution from “build” and then hit activate(icon that looks like stairs) and run it locally.</p>
+<section id="continuous-integration">
+<h3>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is currently broken and this documentation will become out-of-date until <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7552">https://github.com/ISISComputingGroup/IBEX/issues/7552</a> is complete to get them running again.</p>
+</div>
+<details><summary>Jenkins</summary>
+<p>Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">BeckhoffTestRunner</span></code> repository that is owned by us and contains the jenkinsfile and other utilities required for CI</p></li>
+<li><p>Every branch on this repository (apart from master) then pulls a different PLC project down (note each project could be from a different repository or from separate branches on the same repository)</p></li>
+<li><p>The jenkinsfile can then do the one or both of the following:</p>
+<ul>
+<li><p>Build the project (currently assumed to be called <code class="docutils literal notranslate"><span class="pre">solution.sln</span></code> at the top of pulled PLC project)</p></li>
+<li><p>Run any <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-IOC_Test_Framework">IOCTestFramework</a> tests (currently assumed to be in a <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder at the top of the pulled PLC project) - these will likely be written by us</p></li>
+</ul>
+</li>
+</ul>
+<p>This means that the workflow for adding new PLC projects into CI is:</p>
+<ol class="arabic simple">
+<li><p>A PLC developer writes their code (making sure the solution is called <code class="docutils literal notranslate"><span class="pre">solution.sln</span></code>)</p></li>
+<li><p>They give us a link to the repo and branch that contains the code</p></li>
+<li><p>We create a new branch on <code class="docutils literal notranslate"><span class="pre">BeckhoffTestRunner</span></code> and modify it to point at their repo</p></li>
+<li><p>At this point they have CI for building their code</p></li>
+<li><p>We make a decision about whether the code requires any system tests and if so add some into their repository</p></li>
+</ol>
+<p>To actually run tests we use the Beckhoff <code class="docutils literal notranslate"><span class="pre">automation</span> <span class="pre">interface</span></code> which can do any of the things you can do in the TwinCAT XAE automatically through DCOM. AC# (Beckhoff do not fully support a Python interface 😢) program (<code class="docutils literal notranslate"><span class="pre">twinCATAutomationTools</span></code>) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:</p>
+<p><img alt="Overview" src="../../../_images/beckhoff_overview.png" /></p>
+<ol class="arabic simple">
+<li><p>Jenkins will pull a branch of <a class="reference external" href="https://github.com/ISISComputingGroup/BeckhoffTestRunner">BeckhoffTestRunner</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build.bat</span></code> is run to do the following:</p>
+<ol class="arabic simple">
+<li><p>Build the <code class="docutils literal notranslate"><span class="pre">TwincatAutomationTools</span></code> solution, <a class="reference external" href="https://github.com/Simon-Cooper/twinCATAutomationTools">twinCATAutomationTools</a></p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">twinCATAutomationTools</span></code> to import the <code class="docutils literal notranslate"><span class="pre">test_config</span></code> into the generic TwinCAT Solution and build the PLC code using the <code class="docutils literal notranslate"><span class="pre">automation</span> <span class="pre">interface</span></code>. This build will also create a <code class="docutils literal notranslate"><span class="pre">*.tpy</span></code> file, which outlines how to connect to the PLC and can be used to configure the IOC itself.</p></li>
+</ol>
+</li>
+<li><p>The IOC test framework is started. This will use the <code class="docutils literal notranslate"><span class="pre">TwinCATAutomationTools</span></code> program to run a local simulated PLC. Then startup and test the Beckhoff TwinCAT in the usual way.</p></li>
+</ol>
+<p>This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside <code class="docutils literal notranslate"><span class="pre">C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start</span> <span class="pre">Menu\Programs\Startup</span></code>.</p>
+<p>The current Beckhoff applications that are being run through <code class="docutils literal notranslate"><span class="pre">tcIOC</span></code> and the CI pipeline discussed above are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC">dummy_PLC</a>- a PLC that does very little, basically used to test that fundamental tcIOC comms works</p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/BeckhoffPLCCode/">old_ISIS_code</a> - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this code can be removed once the jaws are moved on.</p></li>
+<li><p><a class="reference external" href="https://bitbucket.org/europeanspallationsource/tc_generic_structure/">ESS_base_code</a> (now linked to by <code class="docutils literal notranslate"><span class="pre">main</span></code> of the <code class="docutils literal notranslate"><span class="pre">BeckhoffTestRunner</span></code> repository) - this is the collaboration code that we will be using go forward.</p></li>
+</ul>
+<details>
+<summary> MCAG (defunct) - click to expand </summary>
+<p>This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to do the communication and is very specifically designed for motion. There is a simulator which can be run using the following steps:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">EPICS\support\MCAG_Base_Project\master\epics\simulator</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doit.bat</span></code></p></li>
+<li><p>Start the IOC (host macros needs to be set to 127.0.0.1:5024)</p></li>
+</ul>
+<p>~Currently this is only being run on IMAT. It should soon be replaced by the collaboration code.~ - <strong>It has been replaced by the new code, so is now defunct.</strong></p>
+</details>
+</details>
+<section id="currenttime-getcurrenttime-time-discontinuity-detected">
+<h4><code class="docutils literal notranslate"><span class="pre">currentTime::getCurrentTime():</span> <span class="pre">time</span> <span class="pre">discontinuity</span> <span class="pre">detected</span></code><a class="headerlink" href="#currenttime-getcurrenttime-time-discontinuity-detected" title="Link to this heading"></a></h4>
+<p>This is a weird error that seems to occur sometimes when running a Beckhoff simulator on a dev machine. To stop it you need to do run <code class="docutils literal notranslate"><span class="pre">unsettick.bat</span></code> script in <code class="docutils literal notranslate"><span class="pre">tcioc\master</span></code> and reboot. NB this should never happen on an instrument machine as they do not run simulated Beckhoffs.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Beckhoff-commissioning.html" class="btn btn-neutral float-left" title="Beckhoff commissioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Beckhoff-troubleshooting.html" class="btn btn-neutral float-right" title="Beckhoff troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

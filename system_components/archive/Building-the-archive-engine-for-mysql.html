@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building the archive engine for MySQL &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Archive Engine Troubleshooting" href="CSS-Troubleshooting.html" />
+    <link rel="prev" title="CS-Studio Archive Engine" href="../CSS-Archive-Engine.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building the archive engine for MySQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSS-Troubleshooting.html">Archive Engine Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Using-the-archive-engine-with-mysql.html">Using the archive engine with MySQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+      <li class="breadcrumb-item active">Building the archive engine for MySQL</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/archive/Building-the-archive-engine-for-mysql.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="building-the-archive-engine-for-mysql">
+<h1>Building the archive engine for MySQL<a class="headerlink" href="#building-the-archive-engine-for-mysql" title="Link to this heading"></a></h1>
+<section id="setting-up-the-mysql-database">
+<h2>Setting up the MySql database<a class="headerlink" href="#setting-up-the-mysql-database" title="Link to this heading"></a></h2>
+<p>See mysql <a class="reference internal" href="../../deployment/deploy/Installing-and-Upgrading-MySQL.html"><span class="doc std std-doc">installation for installing mysql</span></a></p>
+<p>Create the database using the mysql_schema.txt in <code class="docutils literal notranslate"><span class="pre">...EPICS\CSS\master\ArchiveEngine</span></code> which originates from <code class="docutils literal notranslate"><span class="pre">org.csstudio.archive.rdb\dbd</span></code></p>
+</section>
+<section id="the-archive-configuration-tool">
+<h2>The Archive Configuration Tool<a class="headerlink" href="#the-archive-configuration-tool" title="Link to this heading"></a></h2>
+<p>The startup for <code class="docutils literal notranslate"><span class="pre">arinst</span></code> and <code class="docutils literal notranslate"><span class="pre">arblock</span></code> create configs for the archive engine which look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&lt;</span><span class="n">engineconfig</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">group</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Testing</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+                 <span class="o">&lt;</span><span class="n">channel</span><span class="o">&gt;</span>
+                     <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">test</span><span class="p">:</span><span class="n">rand</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+                     <span class="o">&lt;</span><span class="n">period</span><span class="o">&gt;</span><span class="mf">1.0</span><span class="o">&lt;/</span><span class="n">period</span><span class="o">&gt;</span>
+                     <span class="o">&lt;</span><span class="n">monitor</span><span class="o">/&gt;</span>
+                 <span class="o">&lt;/</span><span class="n">channel</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">group</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">engineconfig</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>There are settings in mysql_settings_block.ini in <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\ArchiveEngine</span></code> and similar for the instrument archiver. If running from Eclipse set these in org.csstudio.archive.config.rdb and open ArchiveConfigTool.product.</p>
+<p>Add the following settings to the “Launching” tab under “Program Arguments” and run as a normal RCP application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">-</span><span class="n">engine</span> <span class="n">my_engine</span> <span class="o">-</span><span class="n">pluginCustomization</span> <span class="n">full_path_here</span>\<span class="n">my_settings</span><span class="o">.</span><span class="n">ini</span> <span class="o">-</span><span class="n">config</span> <span class="n">full_path_here</span>\<span class="n">my_config</span><span class="o">.</span><span class="n">xml</span> <span class="o">-</span><span class="kn">import</span>
+</pre></div>
+</div>
+<p>Or export the configuration tool without the “Program Arguments” and pass everything as command line args.</p>
+<p>Note: in Eclipse, export means creating a standalone executable file.</p>
+<p>List of args:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    -engine my_engine        : Engine Name
+    -config my_config.xml    : XML Engine config file
+    -export                  : export configuration as XML
+    -import                  : import configuration from XML
+    -delete_config           : Delete existing engine config
+    -description &#39;My Engine&#39; : Engine Description
+    -host my.host.org        : Engine Host
+    -port 4812               : Engine Port
+    -replace_engine          : Replace existing engine config, or stop?
+    -steal_channels          : Steal channels from other engine
+    -rdb_url jdbc:...        : RDB URL
+    -rdb_user user           : RDB User
+    -rdb_password password   : RDB Password
+    -rdb_schema schema       : RDB schema (table prefix), ending in &#39;.&#39;
+</pre></div>
+</div>
+<p>When replacing an existing configuration on the server it is necessary to add <code class="docutils literal notranslate"><span class="pre">-replace_engine</span> <span class="pre">-steal_channels</span></code></p>
+</section>
+<section id="the-archive-engine">
+<h2>The Archive Engine<a class="headerlink" href="#the-archive-engine" title="Link to this heading"></a></h2>
+<p>In Eclipse, go to org.csstudio.archive.engine and open <code class="docutils literal notranslate"><span class="pre">ArchiveEngine.product</span></code>.</p>
+<p>Add the following settings to the “Launching” tab under “Program Arguments” and run as a normal RCP application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">-</span><span class="n">engine</span> <span class="n">my_engine</span> <span class="o">-</span><span class="n">pluginCustomization</span> <span class="n">full_path_here</span>\<span class="n">my_settings</span><span class="o">.</span><span class="n">ini</span>
+</pre></div>
+</div>
+<p>The CS-Studio manual says that the port is required for consistency tests but I have found this to cause problems.</p>
+<p>Alternatively, leave the “Program Arguments” blank and edit the plugin_customization.ini in the project to contain the settings.</p>
+<p>If creating a standalone executable, leave “Program Arguments” blank and use command line arguments instead.</p>
+<p>By using the MySQL command line it should be possible to see the database filling up (it appears the update rate is ~30 seconds, so you might  not see any changes initially).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">mysql</span><span class="o">&gt;</span> <span class="n">use</span> <span class="n">archive</span><span class="p">;</span>
+    <span class="n">mysql</span><span class="o">&gt;</span> <span class="n">select</span> <span class="o">*</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sample</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="connecting-from-cs-studio-gui">
+<h2>Connecting from CS-Studio GUI<a class="headerlink" href="#connecting-from-cs-studio-gui" title="Link to this heading"></a></h2>
+<p>If you are using a pre-built package, say from the SNS, then in a running instance, go to “Edit-&gt;Preferences-&gt;CSS Applications-&gt;Trends-&gt;Data Browser” and add your server.</p>
+<p>If you are creating your own CS-Studio application, then you probably need to do something like the following:</p>
+<ul class="simple">
+<li><p>Include org.csstudio.archive.reader.rdb and its dependencies in your CS-Studio product.</p></li>
+<li><p>Create an ini file called plugin_customization.ini and add it to your “product” workspace. It will need to contain something like the following:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    org.csstudio.archive.reader.rdb/url=jdbc:mysql://localhost/archive
+    org.csstudio.archive.reader.rdb/user=report
+    org.csstudio.archive.reader.rdb/password=$report
+    org.csstudio.archive.reader.rdb/schema=
+
+    org.csstudio.trends.databrowser2/url=jdbc:mysql://localhost/archive
+    org.csstudio.trends.databrowser2/archives=RDB|1|jdbc:mysql://localhost/archive
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In the main product file (for example: CSS_ISIS.product) click on the “Launching” tab under “Program Arguments” put:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">-</span><span class="n">engine</span> <span class="n">my_engine</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run as a normal RCP application.</p></li>
+</ul>
+</section>
+<section id="adding-to-epics-server">
+<h2>Adding to EPICS Server<a class="headerlink" href="#adding-to-epics-server" title="Link to this heading"></a></h2>
+<p>To add to epics server:</p>
+<ol class="arabic simple">
+<li><p>Get the latest build off the build server (e.g. <code class="docutils literal notranslate"><span class="pre">E:\Jenkins\workspace\ControlSystemStudio\org.csstudio.sns\repository\target\products</span></code>)</p></li>
+<li><p>Place it in a folder called <code class="docutils literal notranslate"><span class="pre">css_archvive_engine</span></code></p></li>
+<li><p>Zip the folder and call it <code class="docutils literal notranslate"><span class="pre">css_archive_engine-win.x86_64.zip</span></code></p></li>
+<li><p>Copy this to ICP Binaries on to internal server</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../CSS-Archive-Engine.html" class="btn btn-neutral float-left" title="CS-Studio Archive Engine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CSS-Troubleshooting.html" class="btn btn-neutral float-right" title="Archive Engine Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

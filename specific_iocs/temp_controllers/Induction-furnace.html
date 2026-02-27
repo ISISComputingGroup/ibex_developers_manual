@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Induction furnace &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Julabo" href="Julabo.html" />
+    <link rel="prev" title="In-situ DSC" href="In-Situ-DSC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Ambrell-EASYHeat-Induction-Furnace.html">Ambrell EASYHeat Induction Furnace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automatic-Needle-Valve-Controller.html">Automatic Needle Valve Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eurotherm.html">Eurotherm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-Environment-Monitor.html">ISIS Environment Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="In-Situ-DSC.html">In-situ DSC</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Induction furnace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Julabo.html">Julabo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore336.html">Lakeshore 336</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore340.html">Lakeshore 340</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore350.html">Lakeshore 350</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lakeshore372.html">Lakeshore 372</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Neocera-LTC-21.html">Neocera LTC 21</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OMEGA-OME-Wise.html">OMEGA OME-Wise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ral-furnaces.html">RAL Furnaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Temperature-Jump-Apparatus.html">Temperature Jump Apparatus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+      <li class="breadcrumb-item active">Induction furnace</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/temp_controllers/Induction-furnace.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="induction-furnace">
+<h1>Induction furnace<a class="headerlink" href="#induction-furnace" title="Link to this heading"></a></h1>
+<p>Device is being developed by Jakob Ahlburg at Aarhus university.</p>
+<p>Internally it uses several pieces of hardware - a Julabo, a power supply etc but we only talk to an Arduino controller (via serial). The Arduino controller contains the PID controller and all logic that is needed to drive the device at the hardware level.</p>
+<p>Serial command set is on manuals shared drive.</p>
+<section id="blocks">
+<h2>Blocks<a class="headerlink" href="#blocks" title="Link to this heading"></a></h2>
+<p>This furnace can change temperature <strong>extremely</strong> quickly (e.g. 30seconds to ramp from room temperature to ~800C ). When setting up blocks to log temperature, ensure that it is set to “monitor with deadband” rather than “periodic scan for change”, otherwise the heating curve may be missed in the data file and result in confusing output.</p>
+<p>The temperature stability of the furnace is approximately 0.1 - 1.0C depending on temperature and sample. This can be used as a deadband (check with the user what accuracy is required in log files).</p>
+<p>Two temperatures are measured, users will probably want to log both:</p>
+<ul class="simple">
+<li><p>Furnace temperature (thermocouple 1): This is what the PID controller controls on.</p></li>
+<li><p>Sample temperature (thermocouple 2): This is a separate thermocouple attached to the sample. It may read several hundred degrees less than the furnace temperature when the furnace is in operation.</p></li>
+</ul>
+</section>
+<section id="protocol">
+<h2>Protocol<a class="headerlink" href="#protocol" title="Link to this heading"></a></h2>
+<p>The device supports two serial protocols:</p>
+<ul class="simple">
+<li><p>One via the Arduino USB port at 115200 baud. This gives extra debug information but as it is USB we can’t use it with a moxa.</p></li>
+<li><p>One via an additional external RS232 connection at 9600 baud. This is the connection which the IOC uses.</p></li>
+</ul>
+<p>Note: there are some differences in the protocols, so it is not possible to swap the IBEX driver onto the USB connection without modifying the protocol file. Notably, the USB connection will give unsolicited messages containing debug information. We should not need to use the USB connection to control the device.</p>
+</section>
+<section id="arduino-code">
+<h2>Arduino code<a class="headerlink" href="#arduino-code" title="Link to this heading"></a></h2>
+<p>We have been given a (potentially out of date) version of the Arduino code, which is on the share. This can be used as a reference point if needed, but we should not in general need to use it or modify it in any way.</p>
+</section>
+<section id="hardware-notes">
+<h2>Hardware notes<a class="headerlink" href="#hardware-notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>If the device is powered off, it will reply with (semi-consistent) junk on the serial line.</p></li>
+<li><p>The start/stop buttons are just shortcuts for setting the PSU fan, power supply output, oscillation on or off.</p></li>
+<li><p>Usually running an experiment follows the following workflow:</p>
+<ul>
+<li><p>Input a setpoint</p></li>
+<li><p>Start furnace (this will set up several of the parameters on the “advanced” screen automatically - this is done in the hardware)</p></li>
+<li><p>[Change setpoints as required]</p></li>
+<li><p>Stop furnace</p></li>
+<li><p>Most parameters on the “advanced” screen do not need to be changed except by expert users</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="temperature-limits">
+<h2>Temperature limits<a class="headerlink" href="#temperature-limits" title="Link to this heading"></a></h2>
+<p>The furnace can reach very high temperatures, however depending on the melting temperature of the sample holder, the safe maximum temperature varies:
+| Material | Max T (C) |
+| Aluminium | 500 |
+| Steel | 1000 |
+| Graphite | 1600 |
+| Quartz | 1500 |
+| Single crystal sapphire | 1600 |</p>
+<p>Where “safe” refers to the sample holder not melting (it has been confirmed that this is not a personnel safety risk, merely an inconvenient clean-up if it does melt). <strong>These limits are now enforced by the furnace controller, so the IOC merely needs to set the appropriate sample holder material.</strong></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="In-Situ-DSC.html" class="btn btn-neutral float-left" title="In-situ DSC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Julabo.html" class="btn btn-neutral float-right" title="Julabo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graylog &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python Circular Dependencies Resolution" href="Python-Circular-Dependencies-Resolution.html" />
+    <link rel="prev" title="Building and installing Uktena" href="Building-and-installing-uktena.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Building-and-installing-uktena.html">Building and installing Uktena</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Graylog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-Circular-Dependencies-Resolution.html">Python Circular Dependencies Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-conventions.html">Python Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-dependencies.html">Python Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Python-venvs.html">Virtual environments (<code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+      <li class="breadcrumb-item active">Graylog</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/python/Graylog.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="graylog">
+<h1>Graylog<a class="headerlink" href="#graylog" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://docs.graylog.org/">Graylog</a> is a logging framework which has a web interface that enables users to search logs, including custom fields on logs, historically.</p>
+<p>The plan for using Graylog is that we dump everything into it from various sources such as the GUI, blockserver and genie_python. Currently only genie_python uses Graylog. It uses the <code class="docutils literal notranslate"><span class="pre">graypy</span></code> library to do add an extra logging handler.</p>
+<section id="central-graylog-server">
+<h2>Central Graylog server<a class="headerlink" href="#central-graylog-server" title="Link to this heading"></a></h2>
+<p>A Graylog instance is currently running on a dedicated SCD cloud machine. This has been set up using the instructions below with a slightly modified <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</p>
+<p>To access the web interface go to <code class="docutils literal notranslate"><span class="pre">&lt;dns</span> <span class="pre">alias&gt;:9000</span></code> and enter <code class="docutils literal notranslate"><span class="pre">admin</span></code> and the password for the machine. Currently we are using one input per source (genie python, ibex etc) but we could make a source per instrument in the future.</p>
+</section>
+<section id="setting-up-graylog-locally-using-docker">
+<h2>Setting up Graylog locally using docker<a class="headerlink" href="#setting-up-graylog-locally-using-docker" title="Link to this heading"></a></h2>
+<p>Docker and <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code> can be used to spin up a local Graylog server with all the dependencies - to do this use <a class="reference external" href="https://docs.graylog.org/en/4.0/pages/installation/docker.html#persisting-data">this file</a>, call it <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> locally and run <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code>. You can use <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">down</span></code> to kill Graylog and its dependencies this way as well.</p>
+<p>You will need to add a Graylog <code class="docutils literal notranslate"><span class="pre">GELF</span> <span class="pre">UDP</span></code> input on your local instance - this can done using the web interface and can be found under <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">-&gt;</span> <span class="pre">Inputs</span></code>. Defaults can be left as they are, and an input name needs to be given, although the value of this doesn’t matter functionally.</p>
+<p>To access the web interface on a local machine you <em>must</em> use <code class="docutils literal notranslate"><span class="pre">127.0.0.1:9000</span></code> - <code class="docutils literal notranslate"><span class="pre">localhost:9000</span></code> does not seem to work (possibly because of Docker network issues)</p>
+<section id="adding-inputs">
+<h3>Adding inputs<a class="headerlink" href="#adding-inputs" title="Link to this heading"></a></h3>
+<p>Graylog requires inputs to be specified before it starts taking logs. This can be done through the web interface via System -&gt; Inputs</p>
+</section>
+<section id="searching-for-logs">
+<h3>Searching for logs<a class="headerlink" href="#searching-for-logs" title="Link to this heading"></a></h3>
+<p>The search bar can be used to filter out logs containing certain properties, for example the function called from genie_python or the instrument it was run on. This is done like so:</p>
+<p><img alt="Screenshot 2021-09-03 145906" src="../../_images/graylog_screenshot.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Building-and-installing-uktena.html" class="btn btn-neutral float-left" title="Building and installing Uktena" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Python-Circular-Dependencies-Resolution.html" class="btn btn-neutral float-right" title="Python Circular Dependencies Resolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High level architectural design &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="New Starter’s Guide" href="New-Starters.html" />
+    <link rel="prev" title="Project Overview" href="../Overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Overview.html">Project Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">High level architectural design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="New-Starters.html">New Starter’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="First-Time-Build.html">First-time install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Links-and-Resources.html">Links and Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Overview.html">Project Overview</a></li>
+      <li class="breadcrumb-item active">High level architectural design</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/overview/High-Level-Architectural-Design.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="high-level-architectural-design">
+<h1>High level architectural design<a class="headerlink" href="#high-level-architectural-design" title="Link to this heading"></a></h1>
+<p>This document describes the high level design for IBEX. Eventually there should be outlines of the architectural design for each part of the high level design.</p>
+<section id="high-level-design">
+<h2>High Level Design<a class="headerlink" href="#high-level-design" title="Link to this heading"></a></h2>
+<p><img alt="High Level Architecture" src="../_images/high_level_architecture.png" /></p>
+<p>Notes on the figure:</p>
+<ul class="simple">
+<li><p>CA - Channel Access</p></li>
+<li><p>External Gateway - This exposes the PVs running on the NDX server to the rest of the ISIS network, as read-only</p></li>
+<li><p>JDBC - Java Database Connectivity</p></li>
+<li><p>JMS - Java Messaging Service</p></li>
+<li><p>Soft IOC - These IOCs do not talk directly to hardware</p></li>
+</ul>
+</section>
+<section id="clients">
+<h2>Clients<a class="headerlink" href="#clients" title="Link to this heading"></a></h2>
+<p>Clients can run on the NDX machine or elsewhere on the network. The external gateway defines the rules of which network addresses are allowed to read or write from PVs. At ISIS all machines in the blockhouse are allowed to write to PVs, and other machines on the ISIS network have read-only access to PVs.</p>
+</section>
+<section id="ndx-server">
+<h2>NDX Server<a class="headerlink" href="#ndx-server" title="Link to this heading"></a></h2>
+<p>This is the Windows PC running the control software for the instrument (e.g. NDXLARMOR). This machine provides the PVs for the instrument externally, for example on Larmor all the PVs prefixed with <code class="docutils literal notranslate"><span class="pre">IN:LARMOR:</span></code>.</p>
+</section>
+<section id="instrument-hardware">
+<h2>Instrument Hardware<a class="headerlink" href="#instrument-hardware" title="Link to this heading"></a></h2>
+<p>Coming soon…</p>
+</section>
+<section id="low-level-design-documents">
+<h2>Low Level Design Documents<a class="headerlink" href="#low-level-design-documents" title="Link to this heading"></a></h2>
+<p>Below is a list of the lower level architectural design documents.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../system_components/Alarms.html"><span class="doc std std-doc">Alarms</span></a></p></li>
+<li><p><a class="reference internal" href="../system_components/blockserver/BlockServer-Structure.html"><span class="doc std std-doc">BlockServer</span></a></p></li>
+<li><p><a class="reference internal" href="../system_components/mysql/Database-Schemas.html"><span class="doc std std-doc">Database Schemas</span></a></p></li>
+<li><p><a class="reference internal" href="../client/design_docs/Client-Architectural-Design.html"><span class="doc std std-doc">Client</span></a></p></li>
+<li><p><a class="reference internal" href="../system_components/nicos/design_docs/Script-Server-Back-End-Design-Document.html"><span class="doc std std-doc">Script Server Back End Design Document</span></a></p></li>
+<li><p><a class="reference internal" href="../system_components/nicos/design_docs/Script-Server-Front-End-Design-Document.html"><span class="doc std std-doc">Script Server Front End Design Document</span></a></p></li>
+<li><p><a class="reference internal" href="../client/design_docs/Configuration-and-Component-Architecture.html"><span class="doc std std-doc">Configuration &amp; Component Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="../specific_iocs/reflectometry/design_docs/Reflectometers.html"><span class="doc std std-doc">Reflectometers</span></a></p></li>
+<li><p><a class="reference internal" href="../specific_iocs/magnets/Muon-Active-Compensation.html"><span class="doc std std-doc">Muon Active Compensation</span></a></p></li>
+<li><p><a class="reference internal" href="../specific_iocs/temp_controllers/In-Situ-DSC.html"><span class="doc std std-doc">In situ DSC</span></a></p></li>
+</ul>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>The figures are made in the freely available <a class="reference external" href="https://www.yworks.com/products/yed">yEd</a>, and are stored in the images folder when you check out the Wiki.</p>
+</section>
+<section id="nexus-files-and-data">
+<h2>Nexus Files and Data<a class="headerlink" href="#nexus-files-and-data" title="Link to this heading"></a></h2>
+<p>Nexus files are created on run end and hold the spectra data and the block values. The block values are present if logging is enabled on the block. Once the logging is enabled the values get written to the archive database. There is a thread which pulls this data from the MySQL into the SQLite database. On end of run the nexus file is created fro the SQLite database.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Overview.html" class="btn btn-neutral float-left" title="Project Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="New-Starters.html" class="btn btn-neutral float-right" title="New Starter’s Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

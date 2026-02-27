@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKF MB350g3 Chopper &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SKF MB4150g5 Chopper" href="SKF-MB4150g5-Disk-Chopper-Controllers.html" />
+    <link rel="prev" title="MK3 Chopper" href="MK3-Chopper.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Choppers.html">Choppers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="FZJ_DD_Fermi_chopper.html">FZJ Digital Drive Fermi Chopper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FZJ_Fermi_chopper.html">FZJ Fermi Chopper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MK3-Chopper.html">MK3 Chopper</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SKF MB350g3 Chopper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SKF-MB4150g5-Disk-Chopper-Controllers.html">SKF MB4150g5 Chopper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Choppers.html">Choppers</a></li>
+      <li class="breadcrumb-item active">SKF MB350g3 Chopper</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/choppers/SKF-MB350g3-Chopper.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="skf-mb350g3-chopper">
+<h1>SKF MB350g3 Chopper<a class="headerlink" href="#skf-mb350g3-chopper" title="Link to this heading"></a></h1>
+<p>The SKF MB350g3 chopper is a fermi chopper located on the EMMA beamline and was previously used on the LET beamline.  The chopper is mounted on a lifting mechanism detailed <a class="reference internal" href="../motor_extensions/Fermi-Chopper-Lifter.html"><span class="doc std std-doc">here</span></a>.</p>
+<p>It’s possible that the controller may need to be reset (press <code class="docutils literal notranslate"><span class="pre">RESET</span></code> button on front panel) after power-on or other condition.  The display will show <code class="docutils literal notranslate"><span class="pre">INHIBIT</span></code> in this case and <code class="docutils literal notranslate"><span class="pre">READY</span></code> after resetting.  The indicator marked <code class="docutils literal notranslate"><span class="pre">READY</span></code> on the OPI will be initially unlit and then lit afterwards.</p>
+<section id="physical-setup">
+<h2>Physical setup<a class="headerlink" href="#physical-setup" title="Link to this heading"></a></h2>
+<p>Original configuration:
+NDXLET &lt;—Ethernet—&gt; AnyWhereUSB &lt;—USB/RS232—&gt; SeaLevel RS232-RS485 converter &lt;—RS485—&gt; MB350PC</p>
+<p>New configuration:
+NDXLET &lt;—Ethernet—&gt; MOXA NPort &lt;—RS232—&gt; Patton RS232-RS485 converter &lt;—RS485—&gt; MB350PC</p>
+<p>Notes:
+Originally, the passive RS232-RS485 converter could not be made to work correctly despite much effort, so an alternative, more convoluted solution was adopted in the hope that the original design could be reinstated at a later date.  This alternative solution involved a “SeaLevel SeaLink USB serial adapter” (RS232-RS485 converter) connected to a “Digi USBAnywhere” (remote USB hub over Ethernet).</p>
+<p>This worked well for many cycles, however, the USBAnywhere box suddenly developed a regular problem in that it appeared to lose connection to the chopper controllers every couple of days.  Suspected causes are a network scan (either for security or inventory) or a driver issue for the USBAnywhere or SeaCOM converter.  The remedy was to reboot the USBAnywhere box either using the utility on NDXLET or by power-cycling the unit.</p>
+<p>New solution follows the original design to use a passive converter (Patton 2085) in circuit with the serial line between the MOXA and chopper controller.  This removes the dependency on additional Windows drivers for extra hardware (AnyWhere USB &amp; SeaLink) and simplifies the cabling as a MOXA is already present.</p>
+<p>Switch settings for Patton 2085 Converter:</p>
+<p>DCE / DTE switch:  DCE selected</p>
+<p>DIP switches:  (All off originally, but this configuration seems to work also)
+1: Off
+2: Off
+3: On
+4: Off
+5: On
+6: Off
+7: Off
+8: Off</p>
+<p>DB9M Pin to 2085 terminal connections:
+1 -&gt; RCV-
+2 -&gt; RCV+
+3 -&gt; XMT+
+4 -&gt; XMT-
+5 -&gt; G</p>
+</section>
+<section id="software-setup">
+<h2>Software setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<p>From a software setup point of view this can be treated as a standard serial device. It needs a COM port and all the usual COM settings to talk to (Baud, parity etc.). From testing on EMMA, the defaults in st.cmd are ok.</p>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h2>
+<p>The driver for this chopper has a couple of peculiarities:</p>
+<section id="serial-breaks">
+<h3>Serial breaks<a class="headerlink" href="#serial-breaks" title="Link to this heading"></a></h3>
+<p>The device requires the changes in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-asyn/pull/6">https://github.com/ISISComputingGroup/EPICS-asyn/pull/6</a> and the following lines in its st.cmd:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;, -1, &quot;break_duration&quot;, &quot;20&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;, -1, &quot;break_delay&quot;, &quot;20&quot;)
+</pre></div>
+</div>
+<p>These lines tell it to sleep for 20ms and then send a serial break for 20ms after every message. If these items are not done then the chopper will not respond to messages.</p>
+</section>
+<section id="custom-checksum">
+<h3>Custom checksum<a class="headerlink" href="#custom-checksum" title="Link to this heading"></a></h3>
+<p>The device implements a custom checksum algorithm which has been implemented in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-StreamDevice/pull/3">https://github.com/ISISComputingGroup/EPICS-StreamDevice/pull/3</a> and also in the lewis emulator</p>
+</section>
+<section id="packet-format">
+<h3>Packet format<a class="headerlink" href="#packet-format" title="Link to this heading"></a></h3>
+<p>The device sends and receives a modbus-like (but not actually modbus) packet. This is a packet of binary data which contains various data from the chopper</p>
+</section>
+<section id="addressing">
+<h3>Addressing<a class="headerlink" href="#addressing" title="Link to this heading"></a></h3>
+<p>The chopper can be set up on a multi-drop setup. The first byte of every packet to/from the chopper contains the address of the chopper which is an integer between 0 and 15.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MK3-Chopper.html" class="btn btn-neutral float-left" title="MK3 Chopper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SKF-MB4150g5-Disk-Chopper-Controllers.html" class="btn btn-neutral float-right" title="SKF MB4150g5 Chopper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

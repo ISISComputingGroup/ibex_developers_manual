@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TPGx00 &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Reflectometry" href="../Reflectometry-IOC.html" />
+    <link rel="prev" title="TPG36x" href="TPG36x.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="CCD100.html">CCD100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MEASM905-Pressure-Transducer.html">MEASM905 Pressure Transducer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OERCONE.html">OERCONE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Omega_IBTHX.html">Omega IBTHX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PACE5000.html">PACE5000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TPG26x.html">TPG26x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TPG36x.html">TPG36x</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">TPGx00</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Pressure-Monitors.html">Pressure monitors</a></li>
+      <li class="breadcrumb-item active">TPGx00</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/pressure_monitors/TPGx00.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="tpgx00">
+<h1>TPGx00<a class="headerlink" href="#tpgx00" title="Link to this heading"></a></h1>
+<p>A type of device which controls a series of four pressure sensors (A1, A2, A3, A4).</p>
+<p>TPGx00 is shorthand for the TPG 300 and 500 Pfeiffer Vacuum Gauges which use the same <code class="docutils literal notranslate"><span class="pre">TPG300</span></code> IOC. The two models also share the same <code class="docutils literal notranslate"><span class="pre">TPG300.opi</span></code> file, which updates its appearance based on TPG model number.</p>
+<p><strong>To configure the IOC for the 500, define the MODEL macro: it defaults to TPG300</strong></p>
+<p>The TPG300/500 are similar to the <a class="reference internal" href="TPG26x.html"><span class="doc std std-doc">TPG26x</span></a> and <a class="reference internal" href="TPG36x.html"><span class="doc std std-doc">TPG36x</span></a>, but have 4 pressure sensors to read from, and have a slightly more complicated IOC. All TPG manuals can be found in <code class="docutils literal notranslate"><span class="pre">&lt;share&gt;\ISIS_Experiment_Controls\Manuals\Pfeiffer</span> <span class="pre">TPG&lt;xxx&gt;</span></code>.</p>
+<section id="communication">
+<h2>Communication<a class="headerlink" href="#communication" title="Link to this heading"></a></h2>
+<p><strong>The IOC has the macros <code class="docutils literal notranslate"><span class="pre">IPADDR</span></code> and <code class="docutils literal notranslate"><span class="pre">PORT</span></code> to configure communication with the TPG. <code class="docutils literal notranslate"><span class="pre">IPADDR</span></code> can only be used for 500 models, as the 300 does not have an ethernet interface.</strong></p>
+<section id="tpg300">
+<h3>TPG300<a class="headerlink" href="#tpg300" title="Link to this heading"></a></h3>
+<p>The TPG300 communicates over a serial interface via RS232 with the use of an IF 300C plugin interface card.</p>
+</section>
+<section id="tpg500">
+<h3>TPG500<a class="headerlink" href="#tpg500" title="Link to this heading"></a></h3>
+<p>The TPG500 communicates over a serial interface via Ethernet, USB and RS485 (virtual com-port), and RS232 with the use of an IF 300C plugin interface card.</p>
+<p>Pfeiffer has their own ‘Ethernet Configuration Tool’ software which can be used to configure a virtual com-port (see page 32 of the ‘Operating Instructions’ manual), although this software has yet to be used to connect to a TPG500 successfully.</p>
+</section>
+</section>
+<section id="communication-protocol">
+<h2>Communication Protocol<a class="headerlink" href="#communication-protocol" title="Link to this heading"></a></h2>
+<p>First send a command (e.g. ask for the pressure) then the device will return ACK.
+Then send ENQ to get the actual value.</p>
+<p>An example: (S: Send, R: Receive)</p>
+<ol class="arabic simple">
+<li><p>S: <code class="docutils literal notranslate"><span class="pre">&lt;Command&gt;&lt;CR&gt;&lt;LF&gt;</span></code></p></li>
+<li><p>R: <code class="docutils literal notranslate"><span class="pre">&lt;ACK&gt;&lt;CR&gt;&lt;LF&gt;</span></code></p></li>
+<li><p>S: <code class="docutils literal notranslate"><span class="pre">&lt;ENQ&gt;</span></code></p></li>
+<li><p>R: <code class="docutils literal notranslate"><span class="pre">&lt;Data&gt;&lt;CR&gt;&lt;LF&gt;</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>!!! Important that the <code class="docutils literal notranslate"><span class="pre">&lt;ENQ&gt;</span></code> is not terminated with <code class="docutils literal notranslate"><span class="pre">&lt;CR&gt;&lt;LF&gt;</span></code> which would cause the device to report syntax error.</p>
+</div></blockquote>
+</section>
+<section id="talking-to-a-real-device-or-the-emulator">
+<h2>Talking to a real device or the emulator<a class="headerlink" href="#talking-to-a-real-device-or-the-emulator" title="Link to this heading"></a></h2>
+<section id="talking-to-a-real-device">
+<h3>Talking to a real device<a class="headerlink" href="#talking-to-a-real-device" title="Link to this heading"></a></h3>
+<p>TPG300</p>
+<ol class="arabic simple">
+<li><p>Connect it to the moxa and identify the COM port it is linked to through <code class="docutils literal notranslate"><span class="pre">NPort</span> <span class="pre">Administrator</span></code>.</p></li>
+<li><p>Start HTerm and connect to the right COM port with the following settings: <br />
+Baud: 9600, Data: 8, Stop: 1, Parity: None</p></li>
+<li><p>When sending the first command use ASC and CR-LF as <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">on</span> <span class="pre">enter</span></code></p></li>
+<li><p>You should receive an ACK (acknowledgement).</p></li>
+<li><p>Now send the HEX code 05 ENQ command ! Make sure you change the type to HEX and the”Send on enter” to None.</p></li>
+<li><p>The data returned should be what you requested in the first command.</p></li>
+</ol>
+<p>TPG500</p>
+<p>You can use “TCP Terminal” to connect to the IP address of the TPG500 with the port being 8000. Then follow the instructions above but use TCP Terminal instead of HTerm. There won’t be COM port settings as the communication is done through TCP now.</p>
+</section>
+<section id="talking-to-an-emulator">
+<h3>Talking to an emulator<a class="headerlink" href="#talking-to-an-emulator" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="../../iocs/testing/Emulating-Devices.html"><span class="doc std std-doc">this wiki page</span></a> on how to start an emulator. Or alternatively start the tests with the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag to run the emulator and IOC.</p>
+<p>Once it’s running you can read off the IP address and PORT from the lewis start command. Use those in the TCP Term to send instructions directly to the emulator.</p>
+</section>
+</section>
+<section id="differences-between-the-300-and-500">
+<h2>Differences between the 300 and 500<a class="headerlink" href="#differences-between-the-300-and-500" title="Link to this heading"></a></h2>
+<p>The TPG500 is the slightly newer version of the TPG300; the main differences between these two devices is in their communication protocols. See the manuals for what these properties are used for.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>300</p></th>
+<th class="head"><p>500</p></th>
+<th class="head"><p>Affected commands</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Switching Functions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">A,</span> <span class="pre">B</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SPx</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Switching Function assignments</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Assignment,</span> <span class="pre">A1,</span> <span class="pre">A2,</span> <span class="pre">B1,</span> <span class="pre">B1,</span> <span class="pre">A1</span> <span class="pre">self-monitoring,</span> <span class="pre">A2</span> <span class="pre">self-monitoring,</span> <span class="pre">B1</span> <span class="pre">self-monitoring,</span> <span class="pre">B1</span> <span class="pre">self-monitoring</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Off,</span> <span class="pre">A1,</span> <span class="pre">A2,</span> <span class="pre">B1,</span> <span class="pre">B2,</span> <span class="pre">On</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SPx</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Units</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mbar,</span> <span class="pre">Torr,</span> <span class="pre">Pa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hPascal,</span> <span class="pre">mbar,</span> <span class="pre">Torr,</span> <span class="pre">Pa,</span> <span class="pre">Micron,</span> <span class="pre">Volt,</span> <span class="pre">Ampere</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">UNI</span></code>/<code class="docutils literal notranslate"><span class="pre">UNIx</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Some less explicit differences are as follows:</p>
+<ul class="simple">
+<li><p>Communication terminators</p>
+<ul>
+<li><p>The TPG300 manual has a mismatch of <code class="docutils literal notranslate"><span class="pre">&lt;ACK&gt;&lt;CR&gt;&lt;LF&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;ACK&gt;&lt;CR&gt;</span></code> for intermediate acknowledgement terminators. Hardware testing with the 300 has confirmed that <strong>this is a typo</strong> and all commands use <code class="docutils literal notranslate"><span class="pre">&lt;ACK&gt;&lt;CR&gt;&lt;LF&gt;</span></code>. This is the same as the 500, so we can universally use <code class="docutils literal notranslate"><span class="pre">&lt;CR&gt;&lt;LF&gt;</span></code> terminator in the protocol file.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPS</span></code> command</p>
+<ul>
+<li><p>Although the 300 and 500 have a mismatch of switching functions, <code class="docutils literal notranslate"><span class="pre">SPS</span></code> returns status values for all switching functions (e.g. <code class="docutils literal notranslate"><span class="pre">1|2|3|4|A|B</span></code>) for <em>both</em> models. However, we don’t actually care about the return values for switching functions <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> for either model, so these last two values are skipped in the protocol file. Regardless, it’s worth noting that for the 500 the values returned for A and B are:</p>
+<ul>
+<li><p>1 if an automatic function is active for sensor A1 (for SF <code class="docutils literal notranslate"><span class="pre">A</span></code>) or B1 (for SF <code class="docutils literal notranslate"><span class="pre">B</span></code>) and the sensor is ON</p></li>
+<li><p>0 otherwise</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPx</span></code> command</p>
+<ul>
+<li><p>This command returns a couple of parameters, one of which is the ‘switching function assignment’. As noted above, these differ between the 300 and 500, but most importantly, <code class="docutils literal notranslate"><span class="pre">B1</span></code> being repeated twice isn’t a typo - this is specified in the manual (but this is not certain, so will be checked in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7860">#7860</a>). By contrary, the 500 does have a <code class="docutils literal notranslate"><span class="pre">B2</span></code>.</p></li>
+<li><p>For the 500, this command returns an extra parameter which is the ‘ON-Timer’, but we don’t care about this so is skipped in the protocol file.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">TPG300</span></code> IOC currently supports the use following commands with the TPGx00 devices:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Model available</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">Pxx</span></code></strong>, where xx is <code class="docutils literal notranslate"><span class="pre">A1|A2|A3|A4</span></code></p></td>
+<td><p>Both</p></td>
+<td><p>Gets the pressure measurement from the specified channel</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">ERR</span></code></strong></p></td>
+<td><p>300 only</p></td>
+<td><p>Get the error status of the device</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">SPS</span></code></strong></p></td>
+<td><p>300 only</p></td>
+<td><p>Get the statuses of all switching functions <code class="docutils literal notranslate"><span class="pre">1|2|3|4|A|B</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">SPx</span></code></strong>, where x is <code class="docutils literal notranslate"><span class="pre">1|2|3|4</span></code> (+ <code class="docutils literal notranslate"><span class="pre">A|B</span></code> for 300)</p></td>
+<td><p>Both</p></td>
+<td><p>Get/set the threshold settings for a specified switching function</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">UNI</span></code></strong></p></td>
+<td><p>Both</p></td>
+<td><p>Get the unit of measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">UNIx</span></code></strong>, where x is <code class="docutils literal notranslate"><span class="pre">1|2|3</span></code> (+ <code class="docutils literal notranslate"><span class="pre">0|4|5|6</span></code> for 500)</p></td>
+<td><p>Both</p></td>
+<td><p>Set the current unit of measurement</p></td>
+</tr>
+</tbody>
+</table>
+<p>At the moment, there is some level of protection for using invalid commands between devices (e.g. sending a <code class="docutils literal notranslate"><span class="pre">UNI6</span></code> to a TPG300):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$(P)UNITS:SP</span></code> (note: <strong><em>not</em></strong> <code class="docutils literal notranslate"><span class="pre">$(P)UNITS</span></code>) goes into alarm if set outside the states defined for the current model - but only on a TPG300 (this may be due to the fact for an 300, the <code class="docutils literal notranslate"><span class="pre">mbbi</span></code> does not have a defined zero-state, and so cannot default to zero as a 500 can).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$(P)FUNCTION</span></code> has protective PV <code class="docutils literal notranslate"><span class="pre">$(P)FUNCTION:VALID</span></code> which only allows switching function SP/RB PVs to interact with the protocol file IFF <code class="docutils literal notranslate"><span class="pre">$(P)FUNCTION</span></code> is in a ‘valid’ state.</p>
+<ul>
+<li><p>For example, if you try to query the switching function <code class="docutils literal notranslate"><span class="pre">B</span></code> on a TPG500, <code class="docutils literal notranslate"><span class="pre">SPB</span></code> cannot be sent to the TPG. However, as of <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7458">#7458</a>, no alarm is raised if <code class="docutils literal notranslate"><span class="pre">$(P)FUNCTION</span></code> is set to <code class="docutils literal notranslate"><span class="pre">B</span></code>, as is with <code class="docutils literal notranslate"><span class="pre">:UNITS:SP</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="known-issues">
+<h2>Known issues<a class="headerlink" href="#known-issues" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>These issues seem to have been resolved by correcting the communication protocol.
+During transmission when sending the <code class="docutils literal notranslate"><span class="pre">&lt;ENQ&gt;</span></code> ASCII code (hex <code class="docutils literal notranslate"><span class="pre">05</span></code>) it should not be appended by
+the terminators <code class="docutils literal notranslate"><span class="pre">&lt;CR&gt;&lt;LF&gt;</span></code> in contrast to the first command. (See <a class="reference internal" href="#communication-protocol">Communication Protocol</a>)</p>
+</div></blockquote>
+<section id="id1">
+<h3>TPG500<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><s>The TPG500 has some slightly odd behaviour that is worth noting.</s></p>
+<ul class="simple">
+<li><p>Error state</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ERR</span></code> command was added to the <code class="docutils literal notranslate"><span class="pre">TPG300</span></code> IOC as of <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7458">#7458</a>. Upon start-up, the TPG500 enters the default <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">error</span></code> (<code class="docutils literal notranslate"><span class="pre">0000</span></code>) state. However, after the first command is sent to the device, regardless of validity, the device is pushed into a <code class="docutils literal notranslate"><span class="pre">Syntax</span> <span class="pre">error</span></code> (<code class="docutils literal notranslate"><span class="pre">0001</span></code>) state, and this persists for the rest of this power cycle. Thus, the <code class="docutils literal notranslate"><span class="pre">ERR</span></code> command is currently only implemented for the 300, as it doesn’t report anything of use.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPS</span></code> command</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">SPS</span></code> command currently is not accepted by the TPG500 (inconsistently with the manual): <code class="docutils literal notranslate"><span class="pre">SPS</span></code> will receive <code class="docutils literal notranslate"><span class="pre">NAK&gt;&lt;CR&gt;&lt;LF&gt;</span></code>, i.e. negative acknowledgement, which is the same response for syntactically incorrect commands. Oddly, when sent as the <em>very first</em> command after start-up, this command will be accepted as per the manual, but for every attempt after, it will be rejected. Thus, this command is also only implemented for the 300 - for the 500 we can infer this information from the ‘Circuit Assignment’ readback box in the OPI, so it is not necessarily essential.</p></li>
+</ul>
+</li>
+<li><p>Firmware</p>
+<ul>
+<li><p>TPG500s will most likely have software version <code class="docutils literal notranslate"><span class="pre">010100</span></code>. Upgrading the firmware to <code class="docutils literal notranslate"><span class="pre">010300</span></code>, to be inline with minimum version specified by the manual, creates some weird handshake behaviour. Whilst in a persisting <code class="docutils literal notranslate"><span class="pre">Syntax</span> <span class="pre">error</span></code> state as detailed above, the TPG (inconsistently with the manual) will append <code class="docutils literal notranslate"><span class="pre">NAK&gt;&lt;CR&gt;&lt;LF&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">0D</span> <span class="pre">0A</span></code> in hex) to every healthy command. These, however, don’t seem to upset the protocol file, so are relatively harmless.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="TPG36x.html" class="btn btn-neutral float-left" title="TPG36x" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Reflectometry-IOC.html" class="btn btn-neutral float-right" title="Reflectometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

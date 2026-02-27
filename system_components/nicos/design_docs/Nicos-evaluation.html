@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicos evaluation &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Script server back end design document" href="Script-Server-Back-End-Design-Document.html" />
+    <link rel="prev" title="Script Server design documents" href="../Design-Documents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Nicos.html">NICOS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Configuring-a-New-Nicos-Instrument.html">Configuring a new Nicos instrument</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Design-Documents.html">Script Server design documents</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Nicos evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-Server-Back-End-Design-Document.html">Script server back end design document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-Server-Front-End-Design-Document.html">Script server front end design document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-server-design.html">Script server design</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scripting-use-cases.html">Scripting use-cases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Developing-NICOS.html">Updating NICOS Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Installing-Nicos-on-Windows.html">Installing Nicos on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-commands.html">NICOS Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-notes.html">NICOS Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Running-Nicos-%28Script-Server%29.html">Running NICOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Testing-Nicos.html">Testing Nicos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../../Nicos.html">NICOS</a></li>
+          <li class="breadcrumb-item"><a href="../Design-Documents.html">Script Server design documents</a></li>
+      <li class="breadcrumb-item active">Nicos evaluation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/nicos/design_docs/Nicos-evaluation.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="nicos-evaluation">
+<h1>Nicos evaluation<a class="headerlink" href="#nicos-evaluation" title="Link to this heading"></a></h1>
+<p>This is based on the BackendRequirements page.</p>
+<section id="what-it-does">
+<h2>What it does<a class="headerlink" href="#what-it-does" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Supported?</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Accept multiple clients</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Serve up a list of available commands for the specified instrument over some protocol</p></td>
+<td><p>No</p></td>
+<td><p>The current method of finding available commands is through calling a ListCommands() python method. This gives a human readable list and not enough info to construct a sensible client command list. (See further modifications)</p></td>
+</tr>
+<tr class="row-even"><td><p>The commands are instrument specific scripts written by the instrument scientists and/or controls team, and are stored on the server</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>New commands can be added relatively quickly without requiring changes to the client</p></td>
+<td><p>Yes</p></td>
+<td><p>NICOS clients are dumb and only send text to the server that interprets any commands and sends a response. Means that no client updates are required.</p></td>
+</tr>
+<tr class="row-even"><td><p>Accept and queue up jobs from clients and add them to the job queue</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Provide feedback on the status of the job queue</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Provide feedback on the status of the current job (% done, current line etc.)</p></td>
+<td><p>Partial</p></td>
+<td><p>Provides feedback on the current line but not % progress.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Iterate through the job queue</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Execute the jobs, one at a time from the queue</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Allow the job queue to be edited (e.g. reordered, jobs skipped or repeated)</p></td>
+<td><p>No</p></td>
+<td><p>Jobs can be deleted individually and cleared (actually marks jobs to ‘block’ and thus be skipped).</p></td>
+</tr>
+<tr class="row-even"><td><p>Allow the current job to be suspended or aborted</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Allow individual jobs to be edited (excluding the current job?)</p></td>
+<td><p>Yes</p></td>
+<td><p>Jobs can be edited, including the current job, but only commands that have not been run before (e.g. not those previously run in loops)</p></td>
+</tr>
+<tr class="row-even"><td><p>Provide a description of what existing jobs consist of (to allow editing)</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Provide an estimate of how long a job will take</p></td>
+<td><p>Yes</p></td>
+<td><p>A minimum time estimate is given when the script is sent through a dry run but not when properly submitted.</p></td>
+</tr>
+<tr class="row-even"><td><p>Provide the elapsed time for the current job</p></td>
+<td><p>No</p></td>
+<td><p>Logs of when scripts are started are available but not a simple command for elapsed time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run a black-box script as a job (see submitted scripts section below)</p></td>
+<td><p>Yes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Provide script validation, e.g. allow a dry run of a script or job</p></td>
+<td><p>Yes</p></td>
+<td><p>Jobs can be sent through dry runs but there is no validation of code when it is first sent to the server.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="submitted-scripts">
+<h2>Submitted Scripts<a class="headerlink" href="#submitted-scripts" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Supported?</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Script server aware - created by a script generator</p></td>
+<td><p>No</p></td>
+<td><p>There is no back-end support for this but could be implemented in front end.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Script server aware - written by hand</p></td>
+<td><p>Yes</p></td>
+<td><p>NICOS provides a number of commands that are able to pause midway and provide feedback (for example their own sleep method).</p></td>
+</tr>
+<tr class="row-even"><td><p>Black-box scripts - written by hand</p></td>
+<td><p>Yes</p></td>
+<td><p>Any valid Python code can be run on the server, they can also be paused between lines (but not within lines).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="general-nicos-notes">
+<h2>General NICOS notes<a class="headerlink" href="#general-nicos-notes" title="Link to this heading"></a></h2>
+<p>NICOS uses a bespoke protocol across a TCP connection for communication between client and server. Scripts are sent to the server as pure python which are run on the server in a dedicated scripting thread.</p>
+<p>There are a number of functionalities which are in NICOS but are not mentioned in this design document. Some of which may be useful to an ISIS scripting system but some may need to be removed/disabled.</p>
+<ul class="simple">
+<li><p><strong>Setups</strong> - These appear very similar to the concept of configurations under IBEX. They give information on what devices are available and code to be run on instrument start-up. This will most likely be surpassed by configurations in IBEX.</p></li>
+<li><p><strong>Devices</strong> - Comparable to IOCs in IBEX. NICOS has many different types for different devices, as well as some ‘System’ devices such as Experiment and Instrument which provide info on the current experiment and instrument. This will most likely be surpassed by IOCs in IBEX.</p></li>
+<li><p><strong>Server Modes</strong> - NICOS provides a system for managing script permissions. There is one master that is allowed instrument control, a slave which is allowed to view and a maintenance account which is allowed to override control from master. A simulation account is also used for dry runs.</p></li>
+<li><p><strong>Async Commands</strong> - Code can also be asynchronously executed in the currently running script namespace (but outside of the script thread). This gives the ability to quickly change the instrument state on the fly but also brings up the potential for threads fighting for control.</p></li>
+</ul>
+</section>
+<section id="opinions">
+<h2>Opinions<a class="headerlink" href="#opinions" title="Link to this heading"></a></h2>
+<section id="required-nicos-modifications">
+<h3>Required NICOS Modifications<a class="headerlink" href="#required-nicos-modifications" title="Link to this heading"></a></h3>
+<p>In contrast to other systems NICOS is very simple in the way it expects scripts to be inputted as it only requires pure python.  This means that there would be very little work required to start using the system. The following would need to be done at a minimum to get the system working:</p>
+<ul class="simple">
+<li><p>Get the NICOS server running as part of an instrument build</p></li>
+<li><p>Get the NICOS console client  working as part of an IBEX build (not necessarily integrated into the IBEX app)</p></li>
+<li><p>Add genie python commands to the available command list</p></li>
+</ul>
+</section>
+<section id="further-modifications">
+<h3>Further Modifications<a class="headerlink" href="#further-modifications" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Removal of unnecessary features</strong> – Many of NICOS’ features are already implemented differently in our control system and will need to be removed or disabled within NICOS. This may prove difficult depending on how tightly coupled features are to the system, more analysis is required.</p></li>
+<li><p><strong>Provide a programmatic interface for creating ‘server-aware’ commands</strong> – There are commands within NICOS that allow more server control (such as the sleep command that allows pausing midway and reports on how long left to sleep) and a wrapper that does some error checking on commands. However, this may need to be expanded to make it easier for breakpoints and return information to be added to new commands. This could be done with a python object that new commands inherit from? To more accurately allow the server to simulate commands they will also need to be ‘server-aware’</p></li>
+<li><p><strong>Make Genie Python ‘Server Aware’</strong> – For genie python commands to be able to pause mid-command and to send information such as command progress they will need to be rewritten and incorporated into NICOS.</p></li>
+<li><p><strong>GUI</strong> – The NICOS GUI, although good, is written in PyQT and cannot easily be integrated into IBEX. A plugin will have to be written to allow NICOS access. The Scan Server client could be a candidate for this interface but would require large amounts of modification as it is written to provide xml data to the server and not generic python, it would be easier to write a client from scratch. It could be possible to use a PyDev console to connect to NICOS as a start for this but a more graphical interface will be required in the future.</p></li>
+<li><p><strong>Available Commands</strong> - Although the list of commands can be gathered from the server by sending a specific python command this would not be easily parsed by a client to show available commands. This is not an issue for users that are comfortable in using a python command line but will be useful for any simple-to-use ‘Script Builder’ client. To do this a new TCP command will need to be created which provides available commands in a more machine friendly format (e.g. xml). Another option would be to extend the already available ListCommands() method but this would be more complex as it would require to send some Python calls and parse the result before being able to display available commands to the user.</p></li>
+<li><p><strong>Provide more script feedback</strong> – Feedback from the current script is limited  to the script’s contents, what line is currently running and a string describing the current action. Additional information such as % progress and estimated run time should be included.</p></li>
+<li><p><strong>Provide better management of job queue</strong> – Currently the user has the ability to delete items from the queue. This could be expanded to allow copying and moving in the queue.</p></li>
+<li><p><strong>Additional script validation</strong> – Scripts can be validated by users by performing a ‘dry run’, which will also give estimates of how long the script will take. However, there is no guarantee that a user has performed this check before running a script properly.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Design-Documents.html" class="btn btn-neutral float-left" title="Script Server design documents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Script-Server-Back-End-Design-Document.html" class="btn btn-neutral float-right" title="Script server back end design document" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

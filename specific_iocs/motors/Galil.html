@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galil &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Differences between real Galil &amp; Simulated motor" href="galil/Differences-between-real-Galil-and-simulated-motor.html" />
+    <link rel="prev" title="EnginX Sample Positioner" href="EnginX-Sample-Positioner.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Attocube.html">Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Beckhoff.html">Beckhoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Galil</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="galil/Differences-between-real-Galil-and-simulated-motor.html">Differences between real Galil &amp; Simulated motor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Galil-Homing-Routine-Steps.html">Galil Homing Routine steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Galil-Instrument-Configuration.html">Galil Instrument Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Galil-Userdef-Records.html">Galil Userdef records</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Galil-default-parameters.html">Galil default parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Galil-homing-routines.html">Galil Homing Routines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/IMAT-tomography-stages.html">IMAT Tomography Stages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Multi-galil-IOC.html">Multi-Galil IOC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/New-Galil-Driver.html">New Galil Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Resetting-HOMEVAL.html">Resetting <code class="docutils literal notranslate"><span class="pre">HOMEVAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Smoothing-Motor-Readback.html">Smoothing motor readback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="galil/Updating-old-galil-driver.html">Updating the old Galil driver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors.html">Motors</a></li>
+      <li class="breadcrumb-item active">Galil</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/Galil.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="galil">
+<h1>Galil<a class="headerlink" href="#galil" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This page contains information and references regarding the operation and maintenance of the Galil IOC</p>
+</section>
+<section id="useful-references">
+<h2>Useful references<a class="headerlink" href="#useful-references" title="Link to this heading"></a></h2>
+<p>Useful information about the Galil can be found on the following pages:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Motors-Trouble-Shooting.html"><span class="doc std std-doc">Motors Trouble Shooting</span></a></p></li>
+<li><p><a class="reference internal" href="../../iocs/troubleshooting/IOC-And-Device-Trouble-Shooting.html"><span class="doc std std-doc">IOC And Device Trouble Shooting</span></a></p></li>
+<li><p><a class="reference internal" href="galil/Differences-between-real-Galil-and-simulated-motor.html"><span class="doc std std-doc">Differences between real Galil and simulated motor</span></a></p></li>
+<li><p><a class="reference internal" href="galil/Galil-Instrument-Configuration.html"><span class="doc std std-doc">Galil Instrument Configuration</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="../motor_extensions/Axis.html"><span class="doc std std-doc">Axis (Alias)</span></a></p></li>
+<li><p><a class="reference internal" href="../motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End.html"><span class="doc std std-doc">Barndoors and Momentum Slits on MUON Front End</span></a></p></li>
+<li><p><a class="reference internal" href="../motor_extensions/Bump-Strip.html"><span class="doc std std-doc">Bump Strip</span></a></p></li>
+<li><p><a class="reference internal" href="../motor_extensions/Jaws.html"><span class="doc std std-doc">Jaws</span></a></p></li>
+<li><p><a class="reference internal" href="../motor_extensions/Motion-Set-points.html"><span class="doc std std-doc">Motion Set Points</span></a></p></li>
+<li><p><a class="reference internal" href="../motor_extensions/Sample-Changer-Support-Module.html"><span class="doc std std-doc">Sample Changer</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../motor_extensions/Creating-soft-motors-to-control-real-motors.html"><span class="doc std std-doc">Creating soft motors to control real motors</span></a></p></li>
+<li><p><a class="reference internal" href="galil/Galil-default-parameters.html"><span class="doc std std-doc">Galil default parameters</span></a></p></li>
+<li><p><a class="reference internal" href="galil/Galil-homing-routines.html"><span class="doc std std-doc">Galil homing routines</span></a></p></li>
+<li><p><a class="reference internal" href="galil/Galil-Userdef-Records.html"><span class="doc std std-doc">Galil userdef records</span></a></p></li>
+</ul>
+</section>
+<section id="technical-information">
+<h2>Technical information<a class="headerlink" href="#technical-information" title="Link to this heading"></a></h2>
+<section id="manuals">
+<h3>Manuals<a class="headerlink" href="#manuals" title="Link to this heading"></a></h3>
+<p>There are many manuals in the usual place:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">manc2xxx.pdf</span></code>: contains basic commands for the Galil</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dmc2280\man2100.pdf</span></code>: contains some extended commands</p></li>
+</ul>
+</section>
+<section id="galil-startup">
+<h3>Startup<a class="headerlink" href="#galil-startup" title="Link to this heading"></a></h3>
+<p>For each Galil crate in use on the IOC, you should have a corresponding <code class="docutils literal notranslate"><span class="pre">Galilnn.cmd</span></code> file in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\*machine_name*\configurations\galil</span></code>. For example, if I am using galil crate 1 on LARMOR, I have a file called <code class="docutils literal notranslate"><span class="pre">Galil01.cmd</span></code> in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\NDXLARMOR\configurations\galil</span></code></p>
+<p>The file should contain 3 sets of commands:</p>
+</section>
+<section id="configure-galil-crate-1">
+<h3>configure galil crate 1<a class="headerlink" href="#configure-galil-crate-1" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GalilCreateController</span><span class="p">(</span><span class="s2">&quot;Galil&quot;</span><span class="p">,</span> <span class="s2">&quot;$(GALILADDR)&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This initiates the Galil controller program. It takes the following arguments:</p>
+<ul class="simple">
+<li><p>Port name</p></li>
+<li><p>Address: This is typically the macro to the address of the crate and will correspond to the macro name used in the IOC setup for this Galil. This can be:</p>
+<ol class="arabic simple">
+<li><p>An IP address of the form <code class="docutils literal notranslate"><span class="pre">XXX.XXX.XXX.XXX</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">192.168.0.1</span></code></p></li>
+<li><p>An serial port of the form <code class="docutils literal notranslate"><span class="pre">&lt;com</span> <span class="pre">port&gt;</span> <span class="pre">&lt;speed&gt;</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">COM23</span> <span class="pre">38400</span></code></p></li>
+</ol>
+</li>
+<li><p>Update period: The number of ms between polls of the Galil. If this number is set to be negative then the Galil will use synchronous rather than asynchronous polling by default</p></li>
+<li><p>Quiet start: If set to 1, the Galil program will check on startup whether any new code is waiting to be uploaded to the Galil. If not, it will leave any existing control programs running. If set to 0 (or defaulted as in this case) then all threads will be restarted along with the IOC. This is especially relevant for the LET oscillating collimator</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GalilCreateAxis</span><span class="p">(</span><span class="s2">&quot;Galil&quot;</span><span class="p">,</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">GalilCreateAxis</span><span class="p">(</span><span class="s2">&quot;Galil&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These lines create the axis controllers. It takes the following arguments:</p>
+<ul class="simple">
+<li><p>Port name: Same as above</p></li>
+<li><p>Axis name: The name of the axis in the controller (the galil labels axes A-H)</p></li>
+<li><p>Limit as home: Set to zero if the axis has a home switch that it homes to, one if it homes in any other way.</p></li>
+<li><p>Enables string: A comma separated list of digital ports to use for enabling/disabling motors. (Not currently used at ISIS)</p></li>
+<li><p>Switch type: Whether the ports specified on the enables string enable or disable the motor. (Not currently used at ISIS)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GalilStartController</span><span class="p">(</span><span class="s2">&quot;Galil&quot;</span><span class="p">,</span><span class="s2">&quot;$(GALIL)/gmc/galil_Default_Header.gmc;$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc;$(GALIL)/gmc/galil_Default_Footer.gmc!$(GALIL)/gmc/galil_Oscillating_Collimator_Merlin.gmc&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This starts the Galil controller. It takes the following arguments:</p>
+<ul class="simple">
+<li><p>Port name: As before</p></li>
+<li><p>Code file: The code to be uploaded to the Galil</p></li>
+<li><p>Burn program: Whether to burn the program to EEPROM</p></li>
+<li><p>Display code: Whether to display the code being uploaded (1 displays code currently on controller, 2 displays code put on the controller, 3 both)</p></li>
+<li><p>Thread mask: Which threads we expect to be running after code has been delivered (e.g. <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">1+2+4</span></code> for threads 0, 1, and 2)</p></li>
+</ul>
+<p>The largest and most frequently changed of these arguments is the code file. It uses semi colons and exclamation marks to demarcate different sections of the Galil code. It is arranged as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Header</span><span class="p">];[</span><span class="n">Body</span><span class="p">];[</span><span class="n">Footer</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Header: Sets initial conditions on the Galil and initiates the homing programs on thread 1</p></li>
+<li><p>Body: This should be an 8 element list of exclamation mark separated values. Each element is a path to the homing routine used for each axis in sequence A-H. The galil homing [routines are described in this wiki(Galil-homing-routines) and each is found at <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db">Galil homing routines</a></p></li>
+<li><p>Footer: Additional code executed after homing programs have started</p></li>
+</ul>
+<p>As you can see above, we have two programs in the footer, separated by exclamation marks.</p>
+</section>
+<section id="threading">
+<h3>Threading<a class="headerlink" href="#threading" title="Link to this heading"></a></h3>
+<p>Threads 0 and 1 are reserved for homing operations. As described above, thread 0 is where the uploaded code is executed. It delegates the homing programs to thread 1.</p>
+<p>Threads 2-8 are available for other operations but beware of conflicts. For example, the LET oscillating collimator is currently set to run on thread 2 by default.</p>
+<p>By default, the Galil IOC will stop all running threads when it restarts. If you wish for active threads to keep running, then the upload program cannot have changed since the previous launch and the quiet_start parameter must be set in <code class="docutils literal notranslate"><span class="pre">GalilController</span></code> as described above.</p>
+</section>
+<section id="things-that-we-know-run-on-separate-galil-threads">
+<h3>Things that we know run on separate Galil threads:<a class="headerlink" href="#things-that-we-know-run-on-separate-galil-threads" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Oscillating collimator. LET, MERLIN.  Thread number defaults to 2, but can be set via PV</p></li>
+<li><p>Fermi chopper lift. EMMA. Thread number fixed to 5</p></li>
+</ul>
+</section>
+<section id="assigning-ip-addresses">
+<h3>Assigning IP addresses<a class="headerlink" href="#assigning-ip-addresses" title="Link to this heading"></a></h3>
+<p>The IP address of a Galil can only be established using a serial connection. This must be set up.</p>
+<p>As a convention, we use <code class="docutils literal notranslate"><span class="pre">192.168.1.2XX</span></code> where <code class="docutils literal notranslate"><span class="pre">XX</span></code> is the respective number of the Galil crate - ie. <code class="docutils literal notranslate"><span class="pre">192.168.1.201</span></code> for the first crate.</p>
+<p>For a Galil DMC 2280, there are no problems</p>
+<ol class="arabic simple">
+<li><p>Enter the command IA n1,n2,n3,n4 e.g. IA 192,168,1,201</p></li>
+<li><p>Enter the command BN to burn permanently into Galil</p></li>
+</ol>
+<p>For a Galil DMC 4280, the firmware will not retain the IP address. As a result a trick must be used :</p>
+<ol class="arabic simple">
+<li><p>The IP address can not be burnt into the Galil. As a result, a program must be saved into the Galil that assigns the IP address when the Galil is powered up. It must also turn off the DHCP setting as we use a private network for the Galils.</p></li>
+<li><p>Send the following program to the Galil (For the IA command, use the appropriate IP address desired.):</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#AUTO</span>
+<span class="n">DH0</span>
+<span class="n">IA</span> <span class="mi">192</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">201</span>
+<span class="n">EN</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Once entered, the program must be saved into the Galil permanently.</p></li>
+<li><p>Issue command BP (for burn program)</p></li>
+<li><p>Power cycle and the Galil should be available on the network.</p></li>
+<li><p>Please note : do not overwrite the permanent program resident in the Galil. It can be overwritten as long as it is not made permanent. Other programs, such as homing routines can be downloaded into the device but should not be burnt in.</p></li>
+</ol>
+</section>
+<section id="galil-mot-enc-sync">
+<h3>Syncing encoder and motor steps<a class="headerlink" href="#galil-mot-enc-sync" title="Link to this heading"></a></h3>
+<p>The Galil keeps two counters: a motor step counter, and an encoder readback. The motor step counter corresponds to
+how far a given axis should have moved, given the number of motor pulses sent to it. The encoder readback is an
+independent position readback from the encoder.</p>
+<p>These two numbers can get out of sync with each other for various reasons, for example:</p>
+<ul class="simple">
+<li><p>The motor may mechanically stall (motor steps will be sent; some of the sent steps will not cause corresponding motion)</p></li>
+<li><p>Motion may be disabled by a safety system (motor steps will be sent; no physical motion will occur)</p></li>
+<li><p>The encoder may be broken (motor steps will be sent, motion will occur, but will not be registered by the encoder)</p></li>
+</ul>
+<p>In June 2025, in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5220">ticket 5220</a>, it was decided that the encoder
+would be the “source of truth” number used by IBEX (wherever an encoder is present). This means that
+IBEX has been set up to resync the motor position and the encoder readback before every move.</p>
+<p>This is configured using PVs of the form <code class="docutils literal notranslate"><span class="pre">MTR0101_MOT_ENC_SYNC_TOL_SP</span></code>. If the drift between the motor and encoder
+exceeds the limit defined by this PV, then the motor position will be resynced to the encoder readback just before a
+move. The drift is available in PVs of the form <code class="docutils literal notranslate"><span class="pre">MTR0101_MTRENC_DRIFT</span></code>.
+For most axes, a setting equal to <code class="docutils literal notranslate"><span class="pre">ERES</span></code> is appropriate - this re-syncs motor to encoder if they differ by more than one
+encoder pulse (which is the smallest increment accurately measurable).</p>
+<p>A <a class="reference external" href="https://github.com/ISISComputingGroup/InstrumentChecker">config checker test</a> checks that the resync tolerance has
+been set. If you need to disable the resync mechanism for a particular axis, the resync tolerance should be set to an
+explicit large value (e.g. much larger than the total range of travel for the axis).</p>
+<p>A side effect of enabling the resync logic on every axis is that if an encoder fails, and is switched to open loop, it
+will need to be re-homed or re-scanned to have an accurate position. This is because it will have done a resync to the
+broken encoder.
+Even without the resync logic, the open-loop axis may have lost its absolute position, for example due to
+motor record retries.</p>
+</section>
+<section id="limits">
+<h3>Limits<a class="headerlink" href="#limits" title="Link to this heading"></a></h3>
+<p>If the motor is on limits and a move is attempted, you will see a message in the log like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">move</span> <span class="n">begin</span> <span class="n">failure</span> <span class="n">axis</span> <span class="n">X</span> <span class="n">after</span> <span class="n">XXX</span> <span class="n">seconds</span><span class="p">:</span> <span class="o">...</span> <span class="p">[</span><span class="n">Decelerating</span> <span class="ow">or</span> <span class="n">stopped</span> <span class="n">by</span> <span class="n">FWD</span> <span class="n">limit</span> <span class="n">switch</span> <span class="ow">or</span> <span class="n">soft</span> <span class="n">limit</span> <span class="n">FL</span><span class="p">]</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This means that the axis is on a limit, which can be either a hard limit or a soft limit. If it is a hard limit, the
+hard limit indicators in IBEX (<code class="docutils literal notranslate"><span class="pre">.LLS</span></code> and <code class="docutils literal notranslate"><span class="pre">.HLS</span></code> PVs will be active) - this means that a mechanical limit switch is
+engaged, or that an external system has disabled motion (safety systems commonly cause both limits to show engaged).</p>
+<p>If it is a soft limit, these are set in IBEX. For axes where the <a class="reference internal" href="#galil-mot-enc-sync">motor and encoder resync</a>,
+the internal limits in the galil should match closely with the limits set in IBEX. However, if the motor-encoder resync
+tolerance is set very high, it is possible for the internal galil limits to differ from those configured in IBEX.</p>
+</section>
+<section id="checking-historic-galil-parameters">
+<h3>Checking historic Galil parameters<a class="headerlink" href="#checking-historic-galil-parameters" title="Link to this heading"></a></h3>
+<p>It may be useful to check when a Galil parameter was changed. The easiest way to do this is via the <code class="docutils literal notranslate"><span class="pre">autosave</span></code>
+directory, which keeps historic files.</p>
+<p>For example, if you were interested in the setting <code class="docutils literal notranslate"><span class="pre">MENCTYPE_CMD</span></code> on motor <code class="docutils literal notranslate"><span class="pre">0403</span></code>, the following command
+could be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">autosave</span><span class="o">/</span><span class="n">GALIL_04</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">rF</span> <span class="s2">&quot;0403_MENCTYPE_CMD&quot;</span>
+</pre></div>
+</div>
+<p>This will list all autosave files that refer to this setting, along with the value it had at that time.</p>
+<p>For more fine-grained information, the ICP put log files (<code class="docutils literal notranslate"><span class="pre">*_ICPputlog.txt</span></code> - on the archive, or in <code class="docutils literal notranslate"><span class="pre">c:\data\Export</span> <span class="pre">only</span></code>) can equally
+be searched, using a similar command, to find exactly when a setting was changed.</p>
+</section>
+</section>
+<section id="further-information">
+<h2>Further Information<a class="headerlink" href="#further-information" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="galil/Differences-between-real-Galil-and-simulated-motor.html">Differences between real Galil &amp; Simulated motor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Galil-Homing-Routine-Steps.html">Galil Homing Routine steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Galil-Instrument-Configuration.html">Galil Instrument Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Galil-Userdef-Records.html">Galil Userdef records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Galil-default-parameters.html">Galil default parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Galil-homing-routines.html">Galil Homing Routines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/IMAT-tomography-stages.html">IMAT Tomography Stages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Multi-galil-IOC.html">Multi-Galil IOC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/New-Galil-Driver.html">New Galil Driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Resetting-HOMEVAL.html">Resetting <code class="docutils literal notranslate"><span class="pre">HOMEVAL</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Smoothing-Motor-Readback.html">Smoothing motor readback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galil/Updating-old-galil-driver.html">Updating the old Galil driver</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="EnginX-Sample-Positioner.html" class="btn btn-neutral float-left" title="EnginX Sample Positioner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="galil/Differences-between-real-Galil-and-simulated-motor.html" class="btn btn-neutral float-right" title="Differences between real Galil &amp; Simulated motor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

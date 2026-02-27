@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenkins Trouble Shooting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Updating the RHEL Jenkins Node" href="RHEL-jenkins-linux-dependency-update.html" />
+    <link rel="prev" title="Jenkins Build Server" href="Jenkins-Build-Server.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-new-Windows-machine-to-Jenkins.html">Adding a new Windows machine to Jenkins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GHA_vs_Jenkins.html">Github Actions versus Jenkins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jenkins-Build-Server.html">Jenkins Build Server</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Jenkins Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RHEL-jenkins-linux-dependency-update.html">Updating the RHEL Jenkins Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-Automated-System-Tests.html">Running automated system tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestBuild-Jenkins-Build.html">TestBuild Jenkins Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reusable_workflows.html">reusable workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Continuous-Integration.html">Continuous Integration</a></li>
+      <li class="breadcrumb-item active">Jenkins Trouble Shooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/continuous_integration/Jenkins-Trouble-Shooting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="jenkins-trouble-shooting">
+<h1>Jenkins Trouble Shooting<a class="headerlink" href="#jenkins-trouble-shooting" title="Link to this heading"></a></h1>
+<section id="ibex-gui-build-failure">
+<h2>Ibex-Gui build failure<a class="headerlink" href="#ibex-gui-build-failure" title="Link to this heading"></a></h2>
+<section id="lack-of-randomness">
+<h3>Lack of randomness?<a class="headerlink" href="#lack-of-randomness" title="Link to this heading"></a></h3>
+<p>Build stops with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">goal</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">tycho</span><span class="p">:</span><span class="n">tycho</span><span class="o">-</span><span class="n">surefire</span><span class="o">-</span><span class="n">plugin</span><span class="p">:</span><span class="mf">0.20.0</span><span class="p">:</span><span class="n">test</span> <span class="p">(</span><span class="n">default</span><span class="o">-</span><span class="n">test</span><span class="p">)</span> <span class="n">on</span> <span class="n">project</span> <span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">targets</span><span class="o">.</span><span class="n">tests</span><span class="p">:</span> <span class="n">An</span> <span class="n">unexpected</span> <span class="n">error</span> <span class="n">occurred</span> <span class="p">(</span><span class="k">return</span> <span class="n">code</span> <span class="mi">13</span><span class="p">)</span><span class="o">.</span> <span class="n">See</span> <span class="n">log</span> <span class="k">for</span> <span class="n">details</span><span class="o">.</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">Help</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In log file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">InternalError</span><span class="p">:</span> <span class="n">Unexpected</span> <span class="n">CryptoAPI</span> <span class="n">failure</span> <span class="n">generating</span> <span class="n">seed</span>
+</pre></div>
+</div>
+<p>This might be caused by not enough randomness in the system (not sure). It went away once I logged into the server (which appeared to be new) and re-ran the build.</p>
+</section>
+<section id="general">
+<h3>General<a class="headerlink" href="#general" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="no-tests-run">
+<h2>No tests Run<a class="headerlink" href="#no-tests-run" title="Link to this heading"></a></h2>
+<p>Look in console log. We found the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RCPTT</span> <span class="n">Runner</span> <span class="n">version</span><span class="p">:</span> <span class="mf">2.0</span>
+<span class="n">An</span> <span class="n">error</span> <span class="n">has</span> <span class="n">occurred</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span> <span class="n">log</span> <span class="n">file</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">Jenkins</span>\<span class="n">workspace</span>\<span class="n">System_Tests</span>\<span class="n">Results</span>\<span class="n">runner</span><span class="o">-</span><span class="n">workspace</span>\<span class="o">.</span><span class="n">metadata</span>\<span class="o">.</span><span class="n">log</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>In this log it couldn’t read open a given jar file. This appeared to be a problem with the version of RCPPT. So ran manually on <code class="docutils literal notranslate"><span class="pre">reno</span></code> and fixed the problems.</p>
+</section>
+<section id="build-agent-is-offline">
+<h2>Build Agent is OffLine<a class="headerlink" href="#build-agent-is-offline" title="Link to this heading"></a></h2>
+<p>Remote desktop to the machine in question and start the Jenkins slave service using services.msc or using start_jenkins.bat in the Jenkins directory (a shortcut to this should be in the windows programmes start-up directory for the user as well).</p>
+<p>If the service fails to start have a look in <code class="docutils literal notranslate"><span class="pre">C:\Jenkins</span></code> at <code class="docutils literal notranslate"><span class="pre">jenkins-slave.wrapper.log</span></code> it shows what the command line is. Run the command line and see the error then fix it. If it is the path to java this is set in <code class="docutils literal notranslate"><span class="pre">jenkins-slave.xml</span></code>. If you have some time you might try and couple this to the system path so that we no longer need the path in here.</p>
+</section>
+<section id="java-is-out-of-date">
+<h2>Java is out of date<a class="headerlink" href="#java-is-out-of-date" title="Link to this heading"></a></h2>
+<p>If the wrong java path is set then the slave will not start. Update the path to the correct version of java in <code class="docutils literal notranslate"><span class="pre">...\Jenkins\jenkins-slave.xml</span></code>.</p>
+</section>
+<section id="linux-build-node-sl7cloud-is-offline">
+<h2>Linux build node (<code class="docutils literal notranslate"><span class="pre">sl7cloud</span></code>) is offline<a class="headerlink" href="#linux-build-node-sl7cloud-is-offline" title="Link to this heading"></a></h2>
+<p>If the node has rebooted and/or installed updates then it may have removed <code class="docutils literal notranslate"><span class="pre">jenkins</span></code> from its ssh authority. You need to edit <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">vi</span> <span class="pre">/etc/ssh/sshd_config</span></code> and add <code class="docutils literal notranslate"><span class="pre">jenkins</span></code> to the end of the <code class="docutils literal notranslate"><span class="pre">AllowGroups</span></code> line. Then run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">sshd</span> <span class="pre">restart</span></code> on <code class="docutils literal notranslate"><span class="pre">sl7cloud</span></code>. You can then go to the webpage for <code class="docutils literal notranslate"><span class="pre">sl7cloud</span></code> on Jenkins and ask it to <code class="docutils literal notranslate"><span class="pre">relaunch</span> <span class="pre">agent</span></code> on the node.</p>
+<p>To log onto the node you need to <code class="docutils literal notranslate"><span class="pre">ssh</span></code> to its real hostname - you can get this by clicking on the <code class="docutils literal notranslate"><span class="pre">sl7cloud</span></code> node in jenkins, going to <code class="docutils literal notranslate"><span class="pre">configure</span></code> and then you will see a <code class="docutils literal notranslate"><span class="pre">&lt;something&gt;.nubes.stfc.ac.uk</span></code> hostname to use. Log in with fed id, authentication is via certificate. You should be able to sudo from your account.</p>
+<p>Log into the web page <code class="docutils literal notranslate"><span class="pre">https://cloud.stfc.ac.uk/</span></code> for an overview of all our VMs and <code class="docutils literal notranslate"><span class="pre">https://openstack.stfc.ac.uk/</span></code> for a more detailed management interface</p>
+</section>
+<section id="builds-failing-to-check-out">
+<h2>Builds failing to check out<a class="headerlink" href="#builds-failing-to-check-out" title="Link to this heading"></a></h2>
+<p>If a jenkins job (often epics-static-clean on NDWVEGAS) is failing to run and near the start you see something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>21:47:24   &gt; git submodule foreach --recursive git reset --hard # timeout=10
+21:51:27  ERROR: Error fetching remote repo &#39;origin&#39;
+21:51:27  hudson.plugins.git.GitException: Failed to fetch from https://github.com/ISISComputingGroup/EPICS.git
+21:51:27  	at hudson.plugins.git.GitSCM.fetchFrom(GitSCM.java:909)
+21:51:27  	at hudson.plugins.git.GitSCM.retrieveChanges(GitSCM.java:1131)
+21:51:27  	at hudson.plugins.git.GitSCM.checkout(GitSCM.java:1167)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.scm.SCMStep.checkout(SCMStep.java:125)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:93)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:80)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
+21:51:27  	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+21:51:27  	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+21:51:27  	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+21:51:27  	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+21:51:27  	at java.lang.Thread.run(Thread.java:748)
+21:51:27  Caused by: hudson.plugins.git.GitException: Command &quot;git submodule foreach --recursive git reset --hard&quot; returned status code 128:
+</pre></div>
+</div>
+<p>This is usually caused by an <code class="docutils literal notranslate"><span class="pre">index.lock</span></code> file not having been removed correctly during a previous git operation. This file should only exist when git is running, if there are no git processes executing on that repository then there should be no <code class="docutils literal notranslate"><span class="pre">index.lock</span></code> file present.</p>
+<p>You can search the workspace for these files, but there is a now a program to do this for you (which also checks for running git processes). See <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls\git_lock_clean</span></code></p>
+</section>
+<section id="office365connector-matched-status-failure-for-webhook-with-name-office-365">
+<h2>[Office365connector] Matched status ‘FAILURE’ for webhook with name ‘Office 365’.<a class="headerlink" href="#office365connector-matched-status-failure-for-webhook-with-name-office-365" title="Link to this heading"></a></h2>
+<p>This is not an error with the <code class="docutils literal notranslate"><span class="pre">Office365connector</span></code>, it is reporting that the connector is being run because it had been configured to match a ‘FAILURE’ state and the build had failed. You will likely see this message at the end of most failed builds, the real reason for the build failure will be earlier in the jenkins log file.</p>
+</section>
+<section id="builds-not-building-on-1926">
+<h2>Builds not Building on 1926<a class="headerlink" href="#builds-not-building-on-1926" title="Link to this heading"></a></h2>
+<p>Connect to the computer and start the Jenkins Slave, the Beckhoff tests mean this has to be done manually on this system</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Jenkins-Build-Server.html" class="btn btn-neutral float-left" title="Jenkins Build Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="RHEL-jenkins-linux-dependency-update.html" class="btn btn-neutral float-right" title="Updating the RHEL Jenkins Node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

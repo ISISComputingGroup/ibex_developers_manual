@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Config Checker &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Config IOC Finder" href="Config-IOC-Finder.html" />
+    <link rel="prev" title="Common config upgrade steps" href="Common-config-upgrade-steps.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Tools.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Archive-Tools.html">Archive Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CA-snooper.html">CA snooper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Check-db-file.html">Check db file script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Common-config-upgrade-steps.html">Common config upgrade steps</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Config Checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Config-IOC-Finder.html">Config IOC Finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Config-Upgrader.html">Config Upgrader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Moxa-Tools.html">Moxa Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Shared-utility-scripts.html">Shared Utility Scripts (<code class="docutils literal notranslate"><span class="pre">ibex_utils</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools</a></li>
+      <li class="breadcrumb-item active">Config Checker</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/tools/Config-Checker.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="config-checker">
+<h1>Config Checker<a class="headerlink" href="#config-checker" title="Link to this heading"></a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<p>Clone the repository from <a class="reference external" href="https://github.com/ISISComputingGroup/ConfigChecker"><code class="docutils literal notranslate"><span class="pre">https://github.com/ISISComputingGroup/ConfigChecker</span></code></a>. Make sure that the Uktena python distribution is installed in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Python3</span></code>, and then point the <code class="docutils literal notranslate"><span class="pre">call</span></code> command in <code class="docutils literal notranslate"><span class="pre">run_tests.bat</span></code> to that location.</p>
+<p>To set up the config checker to run locally on all instruments:</p>
+<ol class="arabic simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">run_tests.bat</span></code></p></li>
+</ol>
+<p>To set up the config checker to run on a single specified instrument:</p>
+<ol class="arabic simple">
+<li><p>Edit the call to <code class="docutils literal notranslate"><span class="pre">run_tests.py</span></code> in <code class="docutils literal notranslate"><span class="pre">run_tests.bat</span></code> to include (for example) <code class="docutils literal notranslate"><span class="pre">--instrument</span> <span class="pre">DEMO</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">run_tests.bat</span></code></p></li>
+</ol>
+<p>The first time the config checker runs, it will take a short while to clone the configurations and gui repositories locally. These are “working copies” for the config checker script.</p>
+<p><strong>Important:</strong> Don’t point the config checker script at any repository where you have changes you want to keep - it <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span></code>s and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>s it’s working repositories whenever it switches branches!</p>
+</section>
+<section id="skipped-tests">
+<h2>Skipped tests<a class="headerlink" href="#skipped-tests" title="Link to this heading"></a></h2>
+<p>The config checker works by comparing and making assertions about the contents of:</p>
+<ol class="arabic simple">
+<li><p>The settings repository of an instrument</p></li>
+<li><p>The GUI version that the instrument is using (this is determined by the contents of <code class="docutils literal notranslate"><span class="pre">configurations/config_version.txt</span></code></p></li>
+<li><p>The PVs that the instrument is publishing.</p></li>
+</ol>
+<p>In cases where the above information is not accessible, some tests will be skipped. This is so that a single offline instrument would not cause the jenkins build to fail. However, it also means that an instrument needs to be up (and it’s blockserver accessible over channel access) for all the tests to run.</p>
+<p>If an instrument does not have <code class="docutils literal notranslate"><span class="pre">configurations/config_version.txt</span></code>, any test relying on knowing the GUI version will be skipped. Instead you will get a single failing test saying that the above file did not exist. It is possible that fixing that failure will cause a new set of failures to appear, because the tests that depend on that file can now be run as opposed to skipping.</p>
+</section>
+<section id="fixing-config-checker-issues">
+<h2>Fixing config checker issues<a class="headerlink" href="#fixing-config-checker-issues" title="Link to this heading"></a></h2>
+<p>Fixing config checker issues should generally be done in agreement with the instrument scientist.</p>
+<p>Here are some possible resolutions to some failures. Not all possible failures are listed below:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Failure</p></th>
+<th class="head"><p>Possible resolution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Config version is wrong</p></td>
+<td><p>Check why config version and server version are different. Run upgrade script.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unable to check out git tag for a release</p></td>
+<td><p>The tag it tries to check out comes from <code class="docutils literal notranslate"><span class="pre">c:\instrument\settings\config\ndxXXXX\configurations\config_version.txt</span></code>.<br /><br />If that file points at an invalid release, correct it.<br /><br />If it points at a valid release, you may need to fetch the tag locally using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">--tags</span></code> in the appropriate directory under configchecker (or alternatively doing a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-fqdx</span></code> will force configchecker to reclone all appropriate repos next time it runs).</p></td>
+</tr>
+<tr class="row-even"><td><p>There should not be more than one ‘config_version.txt’ file in the repository.</p></td>
+<td><p>Remove extra version.txt file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Component <blah> contained unexpected files in its directory</p></td>
+<td><p>Check with the scientist whether we can move these files to a <code class="docutils literal notranslate"><span class="pre">data/old</span></code> directory or similar.</p></td>
+</tr>
+<tr class="row-even"><td><p>Component <blah> did not contain the required config file <blah></p></td>
+<td><p>Check if this config actually loads in IBEX. If not, remove or move to <code class="docutils literal notranslate"><span class="pre">data/old</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Configuration contained multiple instances of ioc</p></td>
+<td><p>Check this configuration and remove any duplicated instances of an IOC.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading"></a></h2>
+<p>The config checker runs in Python’s unittest framework and provides XML test reports, which can be found in <code class="docutils literal notranslate"><span class="pre">test-reports/&lt;instrument&gt;</span></code></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Common-config-upgrade-steps.html" class="btn btn-neutral float-left" title="Common config upgrade steps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Config-IOC-Finder.html" class="btn btn-neutral float-right" title="Config IOC Finder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

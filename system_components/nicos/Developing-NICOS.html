@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Updating NICOS Version &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Installing Nicos on Windows" href="Installing-Nicos-on-Windows.html" />
+    <link rel="prev" title="Scripting use-cases" href="design_docs/Scripting-use-cases.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Nicos.html">NICOS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Configuring-a-New-Nicos-Instrument.html">Configuring a new Nicos instrument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Design-Documents.html">Script Server design documents</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Updating NICOS Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Installing-Nicos-on-Windows.html">Installing Nicos on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NICOS-commands.html">NICOS Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NICOS-notes.html">NICOS Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-Nicos-%28Script-Server%29.html">Running NICOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Testing-Nicos.html">Testing Nicos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../Nicos.html">NICOS</a></li>
+      <li class="breadcrumb-item active">Updating NICOS Version</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/nicos/Developing-NICOS.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="updating-nicos-version">
+<h1>Updating NICOS Version<a class="headerlink" href="#updating-nicos-version" title="Link to this heading"></a></h1>
+<p>We have <a class="reference external" href="https://github.com/ISISComputingGroup/nicos">forked nicos</a> and added it as a submodule of EPICS at ISIS\ScriptServer\master. To update the version IBEX uses, fetch changes from upstream of the fork onto a branch and then create a PR for that branch.</p>
+<section id="previously-we-pinned-a-commit-of-nicos-and-used-the-following-process-to-update-nicos">
+<h2>Previously we pinned a commit of nicos and used the following process to update nicos<a class="headerlink" href="#previously-we-pinned-a-commit-of-nicos-and-used-the-following-process-to-update-nicos" title="Link to this heading"></a></h2>
+<p><strong>This is no longer our process for updating but has been kept in case the for is not successful and we need to switch back</strong></p>
+<p>The (read-only copy) of the NICOS repository is at <code class="docutils literal notranslate"><span class="pre">git://trac.frm2.tum.de/home/repos/git/frm2/nicos/nicos-core.git</span></code>. We keep a submodule that points to this repo as part of EPICS base, to update the version IBEX uses you need only go to the submodule, pull the version you want and then follow the instructions as per <a class="reference internal" href="../../processes/git_and_github/Git-workflow.html#git-workflow-reviewing-epics-submodules"><span class="std std-ref">here</span></a>.</p>
+<p>There is some general NICOS documentation <a class="reference external" href="https://forge.frm2.tum.de/nicos/doc/nicos-master/">here</a></p>
+</section>
+<section id="developing-nicos">
+<h2>Developing NICOS<a class="headerlink" href="#developing-nicos" title="Link to this heading"></a></h2>
+<p>We have <a class="reference external" href="https://github.com/ISISComputingGroup/nicos">forked nicos</a> and added it as a submodule of EPICS at ISIS\ScriptServer\master. To make changes commit them to this repository and then talk to the FRM team to get changes pushed back up to their repository.</p>
+</section>
+<section id="previously-we-pinned-a-commit-of-nicos-and-used-the-following-process-to-contribute">
+<h2>Previously we pinned a commit of nicos and used the following process to contribute:<a class="headerlink" href="#previously-we-pinned-a-commit-of-nicos-and-used-the-following-process-to-contribute" title="Link to this heading"></a></h2>
+<p><strong>This is no longer our process for contributing but has been kept in case the for is not successful and we need to switch back</strong></p>
+<p>NICOS is stored at FRM using a git/<a class="reference external" href="https://www.gerritcodereview.com/">Gerrit system</a>. Some of their processes are documented <a class="reference external" href="https://forge.frm2.tum.de/wiki/projects:nicos:index">here</a>. Gerrit in general is a wrapper around git and uses very different workflows as those used in IBEX and github in general. To give you some idea from the Gerrit documentation:</p>
+<blockquote>
+<div><p>As Gerrit implements the entire SSH and Git server stack within its own process space, Gerrit maintains complete control over how the repository is updated, and what responses are sent to the git push client invoked by the end-user, or by repo upload. This allows Gerrit to provide magical refs, such as refs/for/* for new change submission and refs/changes/* for change replacement. When a push request is received to create a ref in one of these namespaces Gerrit performs its own logic to update the database, and then lies to the client about the result of the operation. A successful result causes the client to believe that Gerrit has created the ref, but in reality Gerrit hasn’t created the ref at all.</p>
+</div></blockquote>
+<p>The FRM guide to getting set up with Gerrit is <a class="reference external" href="https://forge.frm2.tum.de/wiki/services:gerrit:using_git_gerrit">here</a>.</p>
+<p>Once set-up the workflow for adding new work to NICOS is:</p>
+<ul class="simple">
+<li><p>Create one commit with all changes</p></li>
+<li><p>Push it to Gerrit using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">HEAD:refs/for/master</span></code> (the FRM guide shows you how to put this in your git config)</p></li>
+<li><p>Changes will be reviewed in the FRM Gerrit system (<a class="reference external" href="https://forge.frm2.tum.de/review/q/status:open">https://forge.frm2.tum.de/review/q/status:open</a>)</p></li>
+<li><p>Any changes that come from reviews should be added to the same commit using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-amend</span></code></p></li>
+</ul>
+<p>As hinted in the above paragraph, this isn’t actually one commit but only looks like it to the user. You can see changes that have been made (including when commits have been amended as patch sets) on the review, for example <a class="reference external" href="https://forge.frm2.tum.de/review/#/c/18861/4">here</a>. To checkout a specific commit you should use the commands specified in the download section of that page (the commit hash mentioned on the page is a lie).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="design_docs/Scripting-use-cases.html" class="btn btn-neutral float-left" title="Scripting use-cases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Installing-Nicos-on-Windows.html" class="btn btn-neutral float-right" title="Installing Nicos on Windows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

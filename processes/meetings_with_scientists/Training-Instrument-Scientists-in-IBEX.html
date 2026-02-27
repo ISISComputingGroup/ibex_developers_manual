@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Instrument Scientists in IBEX &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project Management" href="../Pm.html" />
+    <link rel="prev" title="Regular Demos of IBEX to Scientists" href="Regular-Demos-of-IBEX-to-Scientists.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Regular-Demos-of-IBEX-to-Scientists.html">Regular Demos of IBEX to Scientists</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Training Instrument Scientists in IBEX</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+      <li class="breadcrumb-item active">Training Instrument Scientists in IBEX</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/meetings_with_scientists/Training-Instrument-Scientists-in-IBEX.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="training-instrument-scientists-in-ibex">
+<h1>Training Instrument Scientists in IBEX<a class="headerlink" href="#training-instrument-scientists-in-ibex" title="Link to this heading"></a></h1>
+<p>From time-to-time, we run IBEX and genie_python training courses.  This page collects information that you will need to organise and run the IBEX and genie_python train courses.</p>
+<section id="when-should-we-run-ibex-and-genie-python-train-courses">
+<h2>When should we run IBEX and genie_python train courses?<a class="headerlink" href="#when-should-we-run-ibex-and-genie-python-train-courses" title="Link to this heading"></a></h2>
+<p>There is never an ideal time to run IBEX and genie_python train courses.  Running training courses during cycle is difficult, because scientists are usually heavily involved with their instruments.  Running training courses out of cycle is difficult, because scientists use the opportunity to take holidays, attend conferences, catch up on other work …</p>
+<p>The best compromise is to run IBEX and genie_python train courses during the shutdown, shortly before the start of a new cycle.  Why shortly before the start of a new cycle?  Because, people tend to forget what they have learned unless they have an opportunity to put it into practice.  So, as a rule of thumb, try to schedule the course 2-3 weeks before the start of cycle.  You could also run the courses during the week before cycle, but you might need this time to make final adjustments to instruments, so try to avoid this time if possible.</p>
+<p>Because training has to be synchronised with ISIS cycles, you need to think about planning training sessions well in advance - 3-6 months in advance.</p>
+</section>
+<section id="recording-that-a-person-would-like-to-attend-the-next-training-session">
+<h2>Recording that a Person would like to attend the next Training Session<a class="headerlink" href="#recording-that-a-person-would-like-to-attend-the-next-training-session" title="Link to this heading"></a></h2>
+<p>We record people who would like to attend the next training session by listing them on a ticket entitled “TRAINING: Invites for next session”</p>
+</section>
+<section id="training-materials">
+<h2>Training materials<a class="headerlink" href="#training-materials" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.mantidproject.org/Documentation">Mantid</a></p></li>
+<li><p><a class="reference internal" href="../../overview/Links-and-Resources.html"><span class="doc std std-doc">IBEX</span></a></p>
+<ul>
+<li><p>There are various slides at the end of the material: “Reference card”, “GUI Reference Card” and “Useful Locations”. These are supposed to provide a brief reference of the major IBEX features, GUI elements and a memo sheet for folder locations respectively. Print off a copy of each for each delegate.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/scripting/Genie-Python-Training.html" title="(in IBEX User Manual)"><span>Genie Python Training Course</span></a></p></li>
+</ul>
+</section>
+<section id="planning-the-ibex-and-genie-python-training-courses">
+<h2>Planning the IBEX and genie_python training courses<a class="headerlink" href="#planning-the-ibex-and-genie-python-training-courses" title="Link to this heading"></a></h2>
+<p>This section summarises the steps you will need to consider when planning the IBEX and genie_python training courses.</p>
+<section id="check-with-the-mantid-team">
+<h3>Check with the Mantid team<a class="headerlink" href="#check-with-the-mantid-team" title="Link to this heading"></a></h3>
+<p>The Mantid team regularly run a Mantid course and an Introduction to  Python courses.  Check with the Mantid team to discover their plans.  You can often collaborate of training activities.  It is very useful if the Mantid team can deliver the Introduction to  Python course, prior to the genie_python with IBEX course.</p>
+</section>
+<section id="select-a-date-for-the-training">
+<h3>Select a date for the training<a class="headerlink" href="#select-a-date-for-the-training" title="Link to this heading"></a></h3>
+<p>As noted above, select a date for the training 2-3 weeks ahead of the cycle.  You may need to select 2 or 3 dates and only make a final decision when you know availability of the venue.  You might also need to book a day or so either side of your chosen date, to allow for set-up and clear-up before/after the course.</p>
+<p>Typically we run the introduction as 9:00-12:00, and Introduction to <code class="docutils literal notranslate"><span class="pre">genie_python</span></code> as 13:00-17:00. This has worked well in the past. We have experimented with balancing the time as 9:00-12:30 and 13:00-17:00 but it made the morning feel long and the afternoon feel short.</p>
+</section>
+<section id="advertise-the-training-course">
+<h3>Advertise the training course<a class="headerlink" href="#advertise-the-training-course" title="Link to this heading"></a></h3>
+<p>Tell instrument scientists and visiting scientists of the proposed dates for the training course and invite them to sign up to attend.  Scientists will typically need 2-3 months advance notice, so make sure you tell them early.  Make sure you tell scientists to respond by a cut-off date - otherwise, it can be tricky trying to squeeze people in if they respond only 2-3 days before the course is due to run.</p>
+<ol class="arabic simple">
+<li><p>During this step check for general training tickets on the backlog because any people who need to be invited will be listed here.</p></li>
+</ol>
+</section>
+<section id="decide-which-training-venue-to-use">
+<h3>Decide which training venue to use<a class="headerlink" href="#decide-which-training-venue-to-use" title="Link to this heading"></a></h3>
+<p>Recent training courses have been presented in R80 (rooms CR16 &amp; CR17) and in the Central Design Facility (CDF) suite in the Atlas Building.  The CDF is a dedicated training and collaborative design facility, operated by RAL Space.  If you wish to use the CDF, you need to book it with RAL Space. The CDF currently has 14 work stations. Historically, attendance has fluctuated between <code class="docutils literal notranslate"><span class="pre">&lt;50%</span></code> and <code class="docutils literal notranslate"><span class="pre">100%</span></code> of those who sign up. It is possible to pair program on the training course. Feedback on this has been mixed so it is best not to overbook courses.</p>
+<p>To book the CDF Suite:</p>
+<ul class="simple">
+<li><p>Contact Will Grainger at RAL Space.  Will administers CDF activities.  Tell him which days you’d like to run the training.  Will will tell you if those days are available.</p></li>
+<li><p>Contact Chris Gibbins.  Chris is the IT guy for the CDF.  Chris can help you install IBEX and genie_python images on the dedicated PCs in the CDF suite. Chris prefers to have &gt;1 week notice to set up the machines. <strong>If using the CDF suite, it is wise to book the CDF for at least half a day before the training course, so that we have an opportunity to install IBEX on the machines. Otherwise, the room may be in use, preventing installs.</strong></p></li>
+</ul>
+<p>To use CR16 &amp; CR17 in R80</p>
+<ul class="simple">
+<li><p>Book CR16 &amp; CR17 via Outlook.  These rooms are heavily used, so you need to book early to get the dates you want.</p></li>
+<li><p>Contact Facilities IT to arrange to have laptops made available to the training delegates.  You will also need to coordinate with Facilities IT to get IBEX &amp; genie_python installed on each laptop.</p></li>
+</ul>
+<p>To do it remotely</p>
+<ul class="simple">
+<li><p>Ask Chris MS to create some virtual machines and install a training system on them as below</p></li>
+<li><p>If you do not have enough VMs then ask users to use IDAAS to log in to DEMO (test that you can do this first). Make sure that you make people aware that this means they may be “fighting” over the same server.</p></li>
+<li><p>Contact the participants and let them know how to log in to&gt;  these machines</p></li>
+<li><p>Last time we ran remotely we did it in these 4 sessions:</p>
+<ol class="arabic simple">
+<li><p>Introduction to IBEX:</p>
+<ul>
+<li><p>How to start/stop everything</p></li>
+<li><p>What do the different perspectives do</p></li>
+<li><p>A basic overview of what’s going on behind the scenes</p></li>
+</ul>
+</li>
+<li><p>Configurations and Synoptics:</p>
+<ul>
+<li><p>How to create and edit configurations</p></li>
+<li><p>How to create and edit components</p></li>
+<li><p>How to create and edit synoptics</p></li>
+</ul>
+</li>
+<li><p>genie_python and Scripting in IBEX:</p>
+<ul>
+<li><p>Basic genie_python commands</p></li>
+<li><p>User and instrument scripts</p></li>
+<li><p>The script server/script generator</p></li>
+</ul>
+</li>
+<li><p>Converting between open genie and genie_python:</p>
+<ul>
+<li><p>The major differences between the languages</p></li>
+<li><p>Some example conversions</p></li>
+<li><p>Hands on conversion of a selection of SANS2D user scripts</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="review-the-training-course-materials">
+<h3>Review the training course materials<a class="headerlink" href="#review-the-training-course-materials" title="Link to this heading"></a></h3>
+<p>Make sure you review the training course materials.  Have any new features been added to IBEX or genie_python that might require a change to the course content or are their training tickets on the backlog which should be considered?  if so, update the course.  It is a good idea to run through the course materials even if there have been no significant changes - just to re-familiarise yourself with the course contents.</p>
+</section>
+<section id="send-delegate-list-to-cdf">
+<h3>Send Delegate list to CDF<a class="headerlink" href="#send-delegate-list-to-cdf" title="Link to this heading"></a></h3>
+<p>If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Will Grainger) the names of each of the delegates, so that they can arrange access (e.g. swipe passes) to the Atlas building.  RAL Space need 2-weeks notice to do this.  A simple spreadsheet naming each delegate, their e-mail and indicating if the individual is a member of ISIS staff is sufficient.</p>
+</section>
+<section id="e-mail-course-joining-instructions-to-all-delegates">
+<h3>E-mail course joining instructions to all delegates<a class="headerlink" href="#e-mail-course-joining-instructions-to-all-delegates" title="Link to this heading"></a></h3>
+<p>1-2 weeks before the training course is due to run, send an e-mail to all delegates, telling them how to join the course.  Make sure you tell them:</p>
+<ul class="simple">
+<li><p>where the course is being held (building, room number)</p></li>
+<li><p>which day(s) the course is running</p></li>
+<li><p>start time, finish time (e.g. if the course is due to start at 9:00AM, tell delegates to arrive at 8:45AM, so that the inevitable late-comers don’t disrupt things too much).</p></li>
+<li><p>any other joining instructions (e.g. who to call if they get lost)</p></li>
+</ul>
+</section>
+<section id="set-up-and-check-the-venue-facilities">
+<h3>Set up and check the venue &amp; facilities<a class="headerlink" href="#set-up-and-check-the-venue-facilities" title="Link to this heading"></a></h3>
+<section id="general">
+<h4>General<a class="headerlink" href="#general" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>At least a week before the course, book any tea or coffee requirements with catering.  Start navigating from the <a class="reference external" href="https://staff.stfc.ac.uk/core/catering/Pages/default.aspx">Catering page</a> on the staff intranet site to plan catering.<br />
+This will lead you to the web-site of the <a class="reference external" href="https://www.ralcatering.com/">current catering franchise holder</a>, from where you can place an order.
+Typically we book:</p>
+<ul>
+<li><p>Coffee/tea (80%/20%) for 9am and 1pm. Usually we include some biscuits and a bottle of water</p></li>
+<li><p>We typically don’t book lunch since most people leave to do other things over the break.</p></li>
+<li><p>You will need a project code to book with catering. Ask one of the managers (e.g. Freddie Akeroyd) to provide one if you need it.</p></li>
+</ul>
+</li>
+<li><p>A day or two before the course runs, visit the venue to make sure everything is ready.  You do not want to be trying to sort out problems 5 minutes before the course is due to start.  Things to check are:</p>
+<ul>
+<li><p>are the desks arranged as you want them?</p></li>
+<li><p>are the audio-visual system (e.g. projector) working correctly?</p></li>
+<li><p>are the laptops/workstations properly setup and working?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cdf-specific">
+<h4>CDF specific<a class="headerlink" href="#cdf-specific" title="Link to this heading"></a></h4>
+<p>The workstations at the CDF are generated by cloning a template machine. The source machine will need setting up a few days before to allow time for cloning. Contact Chris Gibbins a week before the training course to arrange a suitable time. The template machine will need the following software installed:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.mysql.com/downloads/">MySQL</a></p>
+<ul>
+<li><p>Visual c++ redistributable. MySQL may manage to install this itself. Otherwise you’ll need to download and install it manually. Be sure to get the architecture that matches MySQL (presumably 64-bit)</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://notepad-plus-plus.org/">Notepad++</a></p></li>
+<li><p><a class="reference external" href="https://java.com/en/download/">Java</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/download/win">Git</a></p></li>
+<li><p>IBEX (server + client)</p></li>
+<li><p><a class="reference external" href="http://download.mantidproject.org/">Mantid</a> (if appropriate)</p></li>
+<li><p><a class="reference external" href="https://sourceforge.net/projects/mantid/files/Sample%20Data/TrainingCourseData.zip/download">Mantid training data</a></p></li>
+<li><p>IBEX training configurations</p>
+<ul>
+<li><p>Clone using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">http://spudulike&#64;control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git</span> <span class="pre">[MACHINE_NAME]</span></code></p></li>
+<li><p>Switch to branch <code class="docutils literal notranslate"><span class="pre">NDXTRAIN</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Before cloning the machine, it is helpful to apply the following settings to avoid having to do it individually:</p>
+<ul class="simple">
+<li><p>Set the DAE to use appropriate TCB, wiring, spectra and detector tables from the configs. Verify you can start a run on the base machine</p></li>
+<li><p>Set notepad++ to <a class="reference external" href="https://stackoverflow.com/questions/455037/convert-tabs-to-spaces-in-notepad">replace tabs with spaces</a></p></li>
+<li><p>Create desktop shortcuts for IBEX client + server</p></li>
+</ul>
+<p>The following changes should be applied to each of the workstations individually:</p>
+<ul class="simple">
+<li><p>Change the resolution from 4K to 1080p</p></li>
+<li><p>Rename the instrument config folder in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config</span></code> to match the machine name</p></li>
+<li><p>Rename the <code class="docutils literal notranslate"><span class="pre">init_inst_name.py</span></code> file in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\[machine</span> <span class="pre">name]\Python\inst</span></code> to match the instrument name</p></li>
+<li><p>Delete the <code class="docutils literal notranslate"><span class="pre">.settings</span></code> directory in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Client\configuration</span></code>. This will empty the IBEX preference store and notably make sure it starts up pointing at the local instrument rather than the machine it was cloned from.</p></li>
+<li><p>Change the PV prefixes on the PVs associated with the Eurotherm component in the training synoptic to match each training machine</p></li>
+<li><p>Make sure you can successfully start a run</p></li>
+<li><p>Make sure that you can successfully start a scripting session</p></li>
+<li><p>Stop the IBEX server (else it won’t work properly for the next person who logs in)</p></li>
+</ul>
+<p>We may be able to automate all of those steps. For the time being the first three can be accomplished via a script. The following was a non-generic script that I used for the January 2018 training. I haven’t refined it yet in anticipation that we can do something more comprehensive with AutoIt+Python in the future.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">delete_stored_gui_settings</span><span class="p">():</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Instrument&quot;</span><span class="p">,</span> <span class="s2">&quot;Apps&quot;</span><span class="p">,</span> <span class="s2">&quot;Client&quot;</span><span class="p">,</span> <span class="s2">&quot;configuration&quot;</span><span class="p">,</span> <span class="s2">&quot;.settings&quot;</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rename_config_folder</span><span class="p">():</span>
+    <span class="n">root_config_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Instrument&quot;</span><span class="p">,</span> <span class="s2">&quot;Settings&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">)</span>
+    <span class="n">possible_config_folders</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_config_folder</span><span class="p">,</span> <span class="s2">&quot;DESKTOP-NP89I4S&quot;</span><span class="p">),</span>
+                               <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_config_folder</span><span class="p">,</span> <span class="s2">&quot;DESKTOP-NT4N3KQ&quot;</span><span class="p">)]</span>
+    <span class="n">config_folder</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">possible_config_folders</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">p</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">config_folder</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_config_folder</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rename_script_module_initializer</span><span class="p">():</span>
+    <span class="n">script_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Instrument&quot;</span><span class="p">,</span> <span class="s2">&quot;Settings&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">(),</span> <span class="s2">&quot;Python&quot;</span><span class="p">)</span>
+    <span class="n">files_to_delete</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_folder</span><span class="p">,</span> <span class="s2">&quot;init_desktoc9.py&quot;</span><span class="p">),</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_folder</span><span class="p">,</span> <span class="s2">&quot;init_deskto24.py&quot;</span><span class="p">),</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_folder</span><span class="p">,</span> <span class="s2">&quot;init_desktoc9.pyc&quot;</span><span class="p">),</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_folder</span><span class="p">,</span> <span class="s2">&quot;init_deskto24.pyc&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files_to_delete</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">possible_init_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_folder</span><span class="p">,</span> <span class="s2">&quot;init_desktop_np89i4s.py&quot;</span><span class="p">),</span>
+                           <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_folder</span><span class="p">,</span> <span class="s2">&quot;init_desktop_nt4n3kq.py&quot;</span><span class="p">)]</span>
+    <span class="n">init_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">possible_init_paths</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">p</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">init_path</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_folder</span><span class="p">,</span> <span class="s2">&quot;init_</span><span class="si">{}</span><span class="s2">.py&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">())))</span>
+
+
+<span class="n">delete_stored_gui_settings</span><span class="p">()</span>
+<span class="n">rename_config_folder</span><span class="p">()</span>
+<span class="n">rename_script_module_initializer</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Regular-Demos-of-IBEX-to-Scientists.html" class="btn btn-neutral float-left" title="Regular Demos of IBEX to Scientists" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Pm.html" class="btn btn-neutral float-right" title="Project Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

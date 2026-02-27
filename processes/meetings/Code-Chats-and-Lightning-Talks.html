@@ -1,0 +1,767 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code chats &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Meeting roles &amp; rotas" href="Meeting-Roles-and-Rotas.html" />
+    <link rel="prev" title="Sprint pre-planning" href="Backlog-Preparation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Meetings.html">Meetings - internal</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Backlog-Preparation.html">Sprint pre-planning</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Code chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meeting-Roles-and-Rotas.html">Meeting roles &amp; rotas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Program-Increment-Planning.html">Program Increment Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Planning.html">Sprint Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Review-and-Retro.html">Sprint Review &amp; Retrospective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Technical-Debt-Stand-down.html">Technical Debt Stand-down</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Meetings.html">Meetings - internal</a></li>
+      <li class="breadcrumb-item active">Code chats</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/meetings/Code-Chats-and-Lightning-Talks.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="code-chats">
+<h1>Code chats<a class="headerlink" href="#code-chats" title="Link to this heading"></a></h1>
+<p>Code chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend, or talk about general coding practices.</p>
+<section id="upcoming-code-chats">
+<h2>Upcoming Code Chats<a class="headerlink" href="#upcoming-code-chats" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Basics of Epic DBs</p></td>
+<td><p>TBD</p></td>
+<td><p>TBD</p></td>
+</tr>
+</tbody>
+</table>
+<section id="books-and-article-ideas-for-technical-book-club">
+<h3>Books and article ideas for technical book club<a class="headerlink" href="#books-and-article-ideas-for-technical-book-club" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Peopleware</p></li>
+<li><p>Clean code</p></li>
+<li><p>The Pragmatic Programmer</p></li>
+<li><p>The Effective Engineer</p></li>
+<li><p>Design Patterns: Elements of Reusable Object-Oriented Software</p></li>
+<li><p>Refactoring</p></li>
+<li><p>The Agile Manifesto</p></li>
+<li><p>Fluent Python</p></li>
+<li><p>Effective Python</p></li>
+</ul>
+</section>
+<section id="proposed-future-code-chats">
+<h3>Proposed Future Code Chats<a class="headerlink" href="#proposed-future-code-chats" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Idea</p></th>
+<th class="head"><p>Proposed Speaker</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IBEX Project Management</p></td>
+<td><p>Kathryn</p></td>
+</tr>
+<tr class="row-odd"><td><p>LUA</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>BDD/DDD</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Software design techniques in our processes</p></td>
+<td><p>Aaron</p></td>
+</tr>
+<tr class="row-even"><td><p>The HIFI Cryomag</p></td>
+<td><p>Lilith/Kathryn</p></td>
+</tr>
+<tr class="row-odd"><td><p>Design Patterns in IBEX</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>Datastreaming</p></td>
+<td><p>Dolica/Jack/Matt</p></td>
+</tr>
+<tr class="row-odd"><td><p>LVDCOM</p></td>
+<td><p>Freddie</p></td>
+</tr>
+<tr class="row-even"><td><p>IBEX UI Design</p></td>
+<td><p>Thomas Löhnert</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jenkins, testing and our build processes</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>asyncio and asynchronous programming in Python 3</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Script Server and Nicos</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>CAEN v895 Discriminator</p></td>
+<td><p>Freddie</p></td>
+</tr>
+<tr class="row-odd"><td><p>MuSR conversion retrospective</p></td>
+<td><p>Jack/Tom</p></td>
+</tr>
+<tr class="row-even"><td><p>BCC Cryogenics Course 2021</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Java 17 LTS</p></td>
+<td><p>TBC</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="proposed-repeated-code-chats">
+<h3>Proposed Repeated Code Chats<a class="headerlink" href="#proposed-repeated-code-chats" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Idea</p></th>
+<th class="head"><p>Proposed Speaker</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Observables and Writables in IBEX</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dynamic Layouts in SWT</p></td>
+<td><p>Thomas Löhnert</p></td>
+</tr>
+<tr class="row-even"><td><p>Databinding</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mocking in Python and Java</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>Checkstyle Quiz</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maven, Tycho and Surefire</p></td>
+<td><p>Tom Willemsen?</p></td>
+</tr>
+<tr class="row-even"><td><p>IOC Testing Framework &amp; Emulators</p></td>
+<td><p>Tom Willemsen?</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="previous-code-chats">
+<h2>Previous Code Chats<a class="headerlink" href="#previous-code-chats" title="Link to this heading"></a></h2>
+<p>The presentation slides for previous code chats are <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides&amp;amp;viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3">available here</a>.</p>
+<details>
+  <summary>Previous code chats</summary>
+<section id="id1">
+<h3>2015<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data Binding (two parts) (Contains info on MVVM)</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Sept 2015</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mockito</p></td>
+<td><p>Ian Bush</p></td>
+<td><p>Sept 2015</p></td>
+</tr>
+<tr class="row-even"><td><p>Java Classes</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Sept 2015</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eclipse RCP (two parts)</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Oct 2015</p></td>
+</tr>
+<tr class="row-even"><td><p>Java Collections, Iterators and Streams</p></td>
+<td><p>David Keymer</p></td>
+<td><p>Nov 2015</p></td>
+</tr>
+<tr class="row-odd"><td><p>Design Patterns in IBEX</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Dec 2015</p></td>
+</tr>
+<tr class="row-even"><td><p>Eclipse Extensions</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Dec 2015</p></td>
+</tr>
+<tr class="row-odd"><td><p>Observables and Writables in IBEX (two parts)</p></td>
+<td><p>Ian Bush</p></td>
+<td><p>Dec 2015</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h3>2016<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Final</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Jan 2016</p></td>
+</tr>
+<tr class="row-odd"><td><p>Java Quiz</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Jan 2016</p></td>
+</tr>
+<tr class="row-even"><td><p>Checkstyle Quiz</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Jan 2016</p></td>
+</tr>
+<tr class="row-odd"><td><p>The SNS Scan Server</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Jan 2016</p></td>
+</tr>
+<tr class="row-even"><td><p>Testing with RCPTT (the basics)</p></td>
+<td><p>Ian Bush</p></td>
+<td><p>April 2016</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maven and Tycho (two parts)</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>April 2016</p></td>
+</tr>
+<tr class="row-even"><td><p>Javadoc</p></td>
+<td><p>Kathryn Baker</p></td>
+<td><p>Aug 2016</p></td>
+</tr>
+<tr class="row-odd"><td><p>Synchronized &amp; Volatile</p></td>
+<td><p>Thomas Lohnert</p></td>
+<td><p>Aug 2016</p></td>
+</tr>
+<tr class="row-even"><td><p>RCPTT - Tips and Tricks</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Aug 2016</p></td>
+</tr>
+<tr class="row-odd"><td><p>User Interface Heuristics</p></td>
+<td><p>Thomas Lohnert</p></td>
+<td><p>Nov 2016</p></td>
+</tr>
+<tr class="row-even"><td><p>How to Read ISIS LabVIEW Drivers</p></td>
+<td><p>Kathryn Baker</p></td>
+<td><p>Nov 2016</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h3>2017<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MVVM Pattern</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Feb 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>Collision Detection</p></td>
+<td><p>Jon Elmer</p></td>
+<td><p>Feb 2017</p></td>
+</tr>
+<tr class="row-even"><td><p>IOC Testing Framework &amp; Emulators</p></td>
+<td><p>Tom Willemsen</p></td>
+<td><p>Jul 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>Motion Control Axis Testing</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Jul 2017</p></td>
+</tr>
+<tr class="row-even"><td><p>Pythonic vs Non-Pythonic</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Sep 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python Style Checking &amp; Flake8</p></td>
+<td><p>Samuel Jackson</p></td>
+<td><p>Sep 2017</p></td>
+</tr>
+<tr class="row-even"><td><p>Eclipse 4 Migration</p></td>
+<td><p>Adrian Potter</p></td>
+<td><p>Sep 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alignment Automation on ALF</p></td>
+<td><p>Thomas Löhnert</p></td>
+<td><p>Sep 2017</p></td>
+</tr>
+<tr class="row-even"><td><p>Code Reviews</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Oct 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dynamic Layouts in SWT</p></td>
+<td><p>Thomas Löhnert</p></td>
+<td><p>Oct 2017</p></td>
+</tr>
+<tr class="row-even"><td><p>The DAE</p></td>
+<td><p>Freddie Akeroyd</p></td>
+<td><p>Nov 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>The HIFI Cryomag</p></td>
+<td><p>Eilidh Southren</p></td>
+<td><p>Nov 2017</p></td>
+</tr>
+<tr class="row-even"><td><p>Python 2 vs. Python 3</p></td>
+<td><p>David Keymer</p></td>
+<td><p>Dec 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>The RB Numbering System</p></td>
+<td><p>Matt Clarke</p></td>
+<td><p>Dec 2017</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h3>2018<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>System Testing with Squish</p></td>
+<td><p>Adrian Potter</p></td>
+<td><p>Jan 2018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Threading</p></td>
+<td><p>Tom Willemsen</p></td>
+<td><p>Jan 2018</p></td>
+</tr>
+<tr class="row-even"><td><p>Galil Motors</p></td>
+<td><p>Kathryn Baker</p></td>
+<td><p>Feb 2018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Grafana</p></td>
+<td><p>Aidan McComb</p></td>
+<td><p>Feb 2018</p></td>
+</tr>
+<tr class="row-even"><td><p>AutoIt</p></td>
+<td><p>Chris Moreton-Smith</p></td>
+<td><p>Apr 2018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nicos</p></td>
+<td><p>Dominic Oram</p></td>
+<td><p>Apr 2018</p></td>
+</tr>
+<tr class="row-even"><td><p>SScanSS</p></td>
+<td><p>Stephen Nneji</p></td>
+<td><p>Aug 2018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reflectometry</p></td>
+<td><p>John Holt</p></td>
+<td><p>Aug 2018</p></td>
+</tr>
+<tr class="row-even"><td><p>Java 8</p></td>
+<td><p>Tom Willemsen</p></td>
+<td><p>Sep 2018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Introduction to Beckhoff Motors (Layers, Onions and Ogres)</p></td>
+<td><p>Simon Cooper</p></td>
+<td><p>Oct 2018</p></td>
+</tr>
+<tr class="row-even"><td><p>Experience as a new starter</p></td>
+<td><p>Aaron Long</p></td>
+<td><p>Nov 2018</p></td>
+</tr>
+<tr class="row-odd"><td><p>Christmas Special: Bell ringing</p></td>
+<td><p>Debbie Greenfield</p></td>
+<td><p>Dec 2018</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h3>2019<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Convert Record Changes</p></td>
+<td><p>Liam Panchaud</p></td>
+<td><p>Mar 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>Technical debt: Configurations</p></td>
+<td><p>Thomas Löhnert</p></td>
+<td><p>Mar 2019</p></td>
+</tr>
+<tr class="row-even"><td><p>ACCU Conference Recap</p></td>
+<td><p>Michal / Jack</p></td>
+<td><p>April 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>Queued State Machine</p></td>
+<td><p>Kathryn</p></td>
+<td><p>April 2019</p></td>
+</tr>
+<tr class="row-even"><td><p>Cryogenics</p></td>
+<td><p>Tom</p></td>
+<td><p>May 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beckhoff Code Camp Recap</p></td>
+<td><p>Dom</p></td>
+<td><p>May 2019</p></td>
+</tr>
+<tr class="row-even"><td><p>EPICS Spring Meeting 2019 Recap</p></td>
+<td><p>Aaron &amp; David</p></td>
+<td><p>June 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>Graduate Placement Retrospective</p></td>
+<td><p>Sophie Kirkham</p></td>
+<td><p>June 2019</p></td>
+</tr>
+<tr class="row-even"><td><p>Controls at the ESS</p></td>
+<td><p>Michael Hart</p></td>
+<td><p>July 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>Datastreaming</p></td>
+<td><p>Jack Harper</p></td>
+<td><p>July 2019</p></td>
+</tr>
+<tr class="row-even"><td><p>How data moves at ISIS</p></td>
+<td><p>Chris</p></td>
+<td><p>Sep 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>Migration to Python 3</p></td>
+<td><p>James</p></td>
+<td><p>Sep 2019</p></td>
+</tr>
+<tr class="row-even"><td><p>Java 11</p></td>
+<td><p>Tom</p></td>
+<td><p>Oct 2019</p></td>
+</tr>
+<tr class="row-odd"><td><p>EPICS 7</p></td>
+<td><p>Freddie</p></td>
+<td><p>Nov 2019</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h3>2020<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The IBEX Script Generator</p></td>
+<td><p>James</p></td>
+<td><p>Jan ‘20</p></td>
+</tr>
+<tr class="row-odd"><td><p>NeXus</p></td>
+<td><p>Freddie</p></td>
+<td><p>11th March ‘20</p></td>
+</tr>
+<tr class="row-even"><td><p>System Testing With Squish</p></td>
+<td><p>Dom</p></td>
+<td><p>May ‘20</p></td>
+</tr>
+<tr class="row-odd"><td><p>How to Read ISIS LabVIEW Drivers</p></td>
+<td><p>Kathryn Baker</p></td>
+<td><p>6th August ‘20</p></td>
+</tr>
+<tr class="row-even"><td><p>Review techniques</p></td>
+<td><p>Tom, Dom, James</p></td>
+<td><p>3rd September ‘20</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAQMx and Moxa DIO devices</p></td>
+<td><p>Alistair</p></td>
+<td><p>28th September ‘20</p></td>
+</tr>
+<tr class="row-even"><td><p>Deploying EPICS with Ansible</p></td>
+<td><p>CLF Controls team</p></td>
+<td><p>19th October ‘20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Helium Level Monitoring</p></td>
+<td><p>Kathryn/Mihai</p></td>
+<td><p>19th November ‘20</p></td>
+</tr>
+<tr class="row-even"><td><p>Handover: Client Build System</p></td>
+<td><p>Tom</p></td>
+<td><p>10th December ‘20</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h3>2021<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cryogenics handover</p></td>
+<td><p>Tom Willemsen</p></td>
+<td><p>2nd February ‘21</p></td>
+</tr>
+<tr class="row-odd"><td><p>RIKEN refurbishment</p></td>
+<td><p>Kevin</p></td>
+<td><p>8th of March 21</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h3>2022<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+<th class="head"><p>Recording</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Github Universe</p></td>
+<td><p>Jack Allen</p></td>
+<td><p>14/01/22</p></td>
+<td><p>Not Recorded</p></td>
+</tr>
+<tr class="row-odd"><td><p>ISISICP/DAE</p></td>
+<td><p>Freddie</p></td>
+<td><p>31/03/22</p></td>
+<td><p><a class="reference external" href="https://stfc365-my.sharepoint.com/:v:/r/personal/jack_harper_stfc_ac_uk/Documents/Recordings/Code%20chat%20(ISISICP_DAE)-20220331_140431-Meeting%20Recording.mp4?csf=1&amp;amp;web=1&amp;amp;e=ccVfMJ">Recorded here.</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Motion in Ibex</p></td>
+<td><p>Jack Harper</p></td>
+<td><p>27/04/22</p></td>
+<td><p>Not Recorded</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/JackEAllen/Docusaurus_L_and_D">Docusaurus</a></p></td>
+<td><p>Jack Allen</p></td>
+<td><p>24/06/22</p></td>
+<td><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FDocusaurus%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview">Recorded here.</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SANS/TRANS Instrument Scripts</p></td>
+<td><p>Thomas Cottee Meldrum</p></td>
+<td><p>21/07/22</p></td>
+<td><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FSANS%20TRANS%20Instrument%20Scripts%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview">Recorded here.</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>IOC Testing Framework &amp; Emulators</p></td>
+<td><p>Tom Willemsen</p></td>
+<td><p>23/08/22</p></td>
+<td><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FEmulators%20and%20IOC%20Testing%20Framework%20Codechat%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview">Recorded here.</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Ibex Gui Build System (Maven)</p></td>
+<td><p>Tom Willemsen</p></td>
+<td><p>22/11/22</p></td>
+<td><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FIBEX%20GUI%20build%20System%20Code%20chat%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview">Recorded here.</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h3>2024<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+<th class="head"><p>Recording</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Java Debug Option &amp; the GUI Singleton</p></td>
+<td><p>Sudeepta Chakraborty</p></td>
+<td><p>08/03/24</p></td>
+<td><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5FChat%5FJava%5FDebug%5FOption%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview">Part 1.</a> <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5FChat%5FThe%5FGUI%5FSingleton%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview">Part 2.</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>How Virtual Machines and VHDs can speed up IBEX deployment</p></td>
+<td><p>Chris</p></td>
+<td><p>29/04/24</p></td>
+<td><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5Fchat%5FHow%5FVirtual%5FMachines%5Fand%5FVHDs%5Fcan%5Fspeed%5Fup%5FIBEX%5Fdeployment%2Emp4&amp;amp;referrer=StreamWebApp%2EWeb&amp;amp;referrerScenario=AddressBarCopied%2Eview%2E5b2105eb%2D3914%2D4d48%2Da5db%2D1f77539e7b7b">Recorded here.</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bluesky</p></td>
+<td><p>Tom Willemsen</p></td>
+<td><p>21/08</p></td>
+<td><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/GUI_Chat_Slides/Bluesky.pptx">Slides</a> <a class="reference external" href="https://stfc365.sharepoint.com/:v:/r/sites/ISISExperimentControls/ICP%20Discussions/GUI_Chat_Slides/Bluesky.mp4?csf=1&amp;amp;web=1&amp;amp;e=IVGFha">talk</a></p></td>
+</tr>
+</tbody>
+</table>
+</details>
+</section>
+</section>
+<section id="lightning-talks">
+<h2>Lightning Talks<a class="headerlink" href="#lightning-talks" title="Link to this heading"></a></h2>
+<p>Lightning talks are a chance to share smaller bits of interesting information after standup at the end of a sprint.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>Presenter</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rust</p></td>
+<td><p>Jack Harper</p></td>
+<td><p>23/03/2022</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Interactive Staging</p></td>
+<td><p>Lowri Jenkins</p></td>
+<td><p>10/08/2022</p></td>
+</tr>
+<tr class="row-even"><td><p>Speeduino</p></td>
+<td><p>Jack Harper</p></td>
+<td><p>10/08/2022</p></td>
+</tr>
+</tbody>
+</table>
+<p>All presentations should be uploaded to the SharePoint site <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides&amp;amp;viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3">here</a> (There is a subfolder for lightning talks) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Backlog-Preparation.html" class="btn btn-neutral float-left" title="Sprint pre-planning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Meeting-Roles-and-Rotas.html" class="btn btn-neutral float-right" title="Meeting roles &amp; rotas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

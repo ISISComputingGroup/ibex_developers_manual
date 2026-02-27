@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPI Programming tips &amp; limitations &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Debugging CSS Views" href="../css_other/Debugging-CSS.html" />
+    <link rel="prev" title="OPI creation" href="OPI-Creation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="OPI-Creation.html">OPI creation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">OPI Programming tips &amp; limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../css_other/Debugging-CSS.html">Debugging CSS Views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../css_other/Malformed-URL-errors.html">Malformed URL errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../css_other/PV-Connection-Layer.html">PV Connection Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+      <li class="breadcrumb-item active">OPI Programming tips &amp; limitations</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/opis/OPI-programming-tips-and-limitations.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opi-programming-tips-limitations">
+<h1>OPI Programming tips &amp; limitations<a class="headerlink" href="#opi-programming-tips-limitations" title="Link to this heading"></a></h1>
+<section id="opening-a-new-opi">
+<h2>Opening a new Opi<a class="headerlink" href="#opening-a-new-opi" title="Link to this heading"></a></h2>
+<p>CSS can display one or more windows, each of which can be divided into multiple views, each of
+which can contain multiple tabs, so there is huge flexibility but CSS has its own ideas about
+how to do things, which introduce some annoying limitations.</p>
+<p>CSS allows you to open a new opi in many locations:</p>
+<ul class="simple">
+<li><p>In place of the current Opi</p></li>
+<li><p>In a new window</p></li>
+<li><p>As a new tab in the current view</p></li>
+<li><p>As a new tab in the top, bottom, left or right views of the current window</p></li>
+</ul>
+<p>What it does not allow you to do is to replace the contents of another view.
+Therefore you cannot have a window with navigation controls in the top view
+that change the opi shown
+in the main view. They can only create new tabs in the main view</p>
+<p>Alternatively the opi can be shown in a linking container</p>
+</section>
+<section id="linking-containers">
+<h2>Linking Containers<a class="headerlink" href="#linking-containers" title="Link to this heading"></a></h2>
+<p>The contents of the linking container can be changed dynamically by setting the ‘opi_file’ property.</p>
+<p>The macros seen by the contents of the container can be set by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">org.csstudio.opibuilder.scriptUtil</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataUtil</span>
+<span class="o">...</span>
+<span class="n">macros</span> <span class="o">=</span> <span class="n">DataUtil</span><span class="o">.</span><span class="n">createMacrosInput</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">macros</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;VALUE&#39;</span><span class="p">)</span>
+<span class="n">container</span><span class="o">.</span><span class="n">setPropertyValue</span><span class="p">(</span><span class="s1">&#39;macros&#39;</span><span class="p">,</span> <span class="n">macros</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>but the new macros only take effect when a new opi is loaded. If the new opi has the same name as the previous one, nothing is loaded and the new macros do not take effect. To force a reload, set ‘opi_file’ to the empty string then back to its old value.</p>
+<p>(Isabella: from within CSS scripts, it works by simply re-setting the ‘opi_file’ property with forcing the fire option set to true:</p>
+<p><code class="docutils literal notranslate"><span class="pre">widgetController.setPropertyValue(&quot;opi_file&quot;,</span> <span class="pre">widgetController.getPropertyValue(&quot;opi_file&quot;),</span> <span class="pre">true)</span></code></p>
+<p>)</p>
+<p>When an opi is displayed in a linking container, scripts on the opi display widget do not get run because the display widget is not loaded. The contents of the display widget instead become children of the linking container. If you want a script to run in these circumstances it has to hang off one of the child widgets.</p>
+</section>
+<section id="the-css-object-model-as-viewed-from-python">
+<h2>The CSS object model as viewed from Python<a class="headerlink" href="#the-css-object-model-as-viewed-from-python" title="Link to this heading"></a></h2>
+<p>This is largely undocumented. The help in CSS/BOY says little and Google can find little.
+The only way I was able to find out how to manipulate the actions on a button was to view the java source on <a class="reference external" href="https://github.com/ControlSystemStudio/cs-studio/tree/master/applications">GitHub</a>. The Python objects simply expose the public Java methods.</p>
+<p>It is possible to use any java module or method from python code in an OPI. For example, instead of:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: this is BAD - do not do this!</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">doSomething</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>which would block the UI thread for 1 second, we can import some CS-Studio and core Java classes from python directly, and do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correct approach</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">org.csstudio.ui.util.thread</span><span class="w"> </span><span class="kn">import</span> <span class="n">UIBundlingThread</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">java.lang</span><span class="w"> </span><span class="kn">import</span> <span class="n">Thread</span><span class="p">,</span> <span class="n">Runnable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">org.eclipse.swt.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Display</span>
+<span class="n">currentDisplay</span> <span class="o">=</span> <span class="n">Display</span><span class="o">.</span><span class="n">getCurrent</span><span class="p">()</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">WorkerThread</span><span class="p">(</span><span class="n">Runnable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+        <span class="k">class</span><span class="w"> </span><span class="nc">UITask</span><span class="p">(</span><span class="n">Runnable</span><span class="p">):</span>
+            <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="n">widget</span><span class="o">.</span><span class="n">doSomething</span><span class="p">()</span>
+        <span class="n">UIBundlingThread</span><span class="o">.</span><span class="n">getInstance</span><span class="p">()</span><span class="o">.</span><span class="n">addRunnable</span><span class="p">(</span><span class="n">currentDisplay</span><span class="p">,</span> <span class="n">UITask</span><span class="p">())</span>
+        
+<span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">WorkerThread</span><span class="p">(),</span> <span class="s2">&quot;some_thread_name&quot;</span><span class="p">)</span>
+<span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Which will <em>not</em> block the UI thread for 1 second, as it’s 1 second wait is in a different thread (it then uses <code class="docutils literal notranslate"><span class="pre">UIBundlingThread.addRunnable</span></code> to get back onto the UI thread once the wait is finished).</p>
+</section>
+<section id="changing-actions">
+<h2>Changing actions<a class="headerlink" href="#changing-actions" title="Link to this heading"></a></h2>
+<p>The list of actions on a button is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">actionList</span> <span class="o">=</span> <span class="n">myButton</span><span class="o">.</span><span class="n">getPropertyValue</span><span class="p">(</span><span class="s1">&#39;actions&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getActionsList</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This is a Java list which can be subscripted and has methods like add() and clear().</p>
+<p>If you have an existing action, new write PV actions can be created:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">sourceList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
+<span class="n">action</span><span class="o">.</span><span class="n">setPropertyValue</span><span class="p">(</span><span class="s1">&#39;pv_name&#39;</span><span class="p">,</span> <span class="s1">&#39;loc://myPV&#39;</span><span class="p">)</span>
+<span class="n">action</span><span class="o">.</span><span class="n">setPropertyValue</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">valueToSet</span><span class="p">)</span>
+<span class="n">action</span><span class="o">.</span><span class="n">setPropertyValue</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;What appears in the menu&#39;</span><span class="p">)</span>
+<span class="n">actionList</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For some reason new open opi action created in this way do not work, but existing open opi actions can be altered and added to a different button:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span><span class="o">.</span><span class="n">setPropertyValue</span><span class="p">(</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">action</span><span class="o">.</span><span class="n">setPropertyValue</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;What appears in the menu&#39;</span><span class="p">)</span>
+<span class="n">action</span><span class="o">.</span><span class="n">setPropertyValue</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;my.opi&#39;</span><span class="p">)</span>
+<span class="n">actionList</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the synoptic view I have a hidden button with actions than can be reused.</p>
+</section>
+<section id="running-a-script-on-page-load">
+<h2>Running a script on page load<a class="headerlink" href="#running-a-script-on-page-load" title="Link to this heading"></a></h2>
+<p>You can make a script run on page load by setting it to trigger from a PV called <code class="docutils literal notranslate"><span class="pre">loc://$(DID)_CONST_1(1)</span></code> and making sure it executes even if there are errors.</p>
+<p><img alt="image" src="../../_images/opi_script_options_1.png" /></p>
+<p><img alt="" src="../../_images/opi_script_options_2.png" /></p>
+</section>
+<section id="storing-state">
+<h2>Storing State<a class="headerlink" href="#storing-state" title="Link to this heading"></a></h2>
+<p>Occasionally it makes sense to store some state in the OPI, e.g. which traces the user has made visible on the OPI. To do this you can use local PVs of the form <code class="docutils literal notranslate"><span class="pre">loc://MY_PV</span></code>. These can be written and read to like normal PVs.</p>
+<p><code class="docutils literal notranslate"><span class="pre">loc://</span></code> PVs get initialized to null, but you can provide an explicit initialization value by including it in parentheses e.g. <code class="docutils literal notranslate"><span class="pre">loc://my_pv(123)</span></code> would initialize <code class="docutils literal notranslate"><span class="pre">loc://my_pv</span></code> to <code class="docutils literal notranslate"><span class="pre">123</span></code>.</p>
+<p>Local PVs (prefixed with <code class="docutils literal notranslate"><span class="pre">loc://</span></code>) usually have <em>application level</em> scope, i.e. a local PV with the same name will have the same value from all OPIs within IBEX. While this can be useful (e.g. to share state between OPIs), it can also be problematic for OPIs where we expect to have multiple instances of the OPI open.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">$(DID)</span></code> macro is a unique-per-opi-view identifier which can be inserted into local PV names to ensure that multiple instances of the same OPI do not conflict with each other.</p>
+</section>
+<section id="creating-new-widgets">
+<h2>Creating new widgets<a class="headerlink" href="#creating-new-widgets" title="Link to this heading"></a></h2>
+<p>Given an existing widget of the correct type, new widgets can be created and added to a container.</p>
+<p>The following will create a new widget of the same type as Label0 and set some of its properties:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">getWidget</span><span class="p">(</span><span class="s1">&#39;Label0&#39;</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">getModel</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s1">&#39;NewLabel&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setX</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setY</span><span class="p">(</span><span class="mi">142</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setWidth</span><span class="p">(</span><span class="mi">163</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The model has set and get methods for the widget properties, or <code class="docutils literal notranslate"><span class="pre">group.getWidget('NewLabel')</span></code> can be used to obtain the widget so its properties can be set using <code class="docutils literal notranslate"><span class="pre">setPropertyValue()</span></code>.</p>
+<p>The widget can be removed using <code class="docutils literal notranslate"><span class="pre">group.removeChildByName('NewLabel')</span></code></p>
+<p>Note that for dynamically create widgets that do not normally have click actions (e.g. the grouping containers that I use to fake transparent buttons), it seems to be impossible to hook an action to a left click but it is possible to add them to the right click menu.</p>
+</section>
+<section id="threading">
+<h2>Threading<a class="headerlink" href="#threading" title="Link to this heading"></a></h2>
+<p>Bear in mind that both scripts and rules run <strong>in the GUI thread</strong> this can lead to unresponsiveness if you are doing a lot of work in them. You can write multithreaded scripts, see the jaws_display.opi for an example of this.</p>
+<p>Note that it is a programming error to call <code class="docutils literal notranslate"><span class="pre">sleep</span></code> or other similar functions directly in an OPI script - these will completely block the UI thread every time the script executes. Instead, use a threading pattern and only call <code class="docutils literal notranslate"><span class="pre">sleep</span></code> in a non-UI thread if you need an arbitrary wait in OPI scripts. <code class="docutils literal notranslate"><span class="pre">UIBundlingThread.addRunnable</span></code> can be used to get back onto the UI thread after the sleep is complete.</p>
+</section>
+<section id="utilities">
+<h2>Utilities<a class="headerlink" href="#utilities" title="Link to this heading"></a></h2>
+<p>Seven utility classes are provided, but there seems to be no way to get to some of them in the online help other than to know their names and search for them:</p>
+<ul>
+<li><p>ConsoleUtil has methods for writing debug messages to the console.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">org.csstudio.opibuilder.scriptUtil</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConsoleUtil</span>
+<span class="n">ConsoleUtil</span><span class="o">.</span><span class="n">writeInfo</span><span class="p">(</span><span class="n">value</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataUtil</span></code> has the <code class="docutils literal notranslate"><span class="pre">createMacrosInput</span></code> method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FileUtil</span></code> has methods for reading and writing files and displaying an open file dialog. There is also a <code class="docutils literal notranslate"><span class="pre">saveFileDialog</span></code> method that has been omitted from the online help.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GUIUtil</span></code> has a yes/no dialog and methods for going to full screen or compact mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PVUtil</span></code></p></li>
+<li><p>!ScriptUtil</p></li>
+<li><p>!WidgetUtil</p></li>
+</ul>
+</section>
+<section id="performance-limitations">
+<h2>Performance limitations<a class="headerlink" href="#performance-limitations" title="Link to this heading"></a></h2>
+<p>We have found that OPIs perform poorly on initial opening once you get past a few hundred widgets being rendered simultaneously.</p>
+<p>At the time of writing, here are some representative numbers of widgets on a variety of OPIs. Note that widgets in tabs which are not shown don’t count as they don’t get rendered immediately.</p>
+<ul class="simple">
+<li><p>Eurotherm: 58 widgets</p></li>
+<li><p>ICE fridge (with complex schematic): 92 widgets</p></li>
+<li><p>Reflectometry front panel: 135 widgets</p></li>
+<li><p>CS-Studio “large” performance test: 200 widgets</p></li>
+<li><p>Table of motors OPI attempt: 674 widgets - took ~15 seconds to open on NDXSCIDEMO</p></li>
+</ul>
+<p>See also section below on improving the performance of rules, if your OPI contains significant numbers of rules (e.g. more than 10). If your OPI contains significant numbers of rules, you need to ensure that all rule conditions have an associated fast-path handler.</p>
+</section>
+<section id="implementing-your-own-widgets-in-cs-studio-code">
+<h2>Implementing your own widgets in CS-Studio code<a class="headerlink" href="#implementing-your-own-widgets-in-cs-studio-code" title="Link to this heading"></a></h2>
+<p><em>Note: this is a significant undertaking; check with other developers that this is the correct solution before going down this route</em></p>
+<p>Firstly, you will need to import the CS-Studio code into eclipse by following the instructions <a class="reference external" href="https://github.com/ISISComputingGroup/isis_css_top/blob/master/README.md">here</a></p>
+<p>The code for most widgets is defined in <code class="docutils literal notranslate"><span class="pre">cs-studio\applications\opibuilder\opibuilder-plugins\org.csstudio.opibuilder.widget</span></code>, you will need to import this project into eclipse if you haven’t already.</p>
+<p>The code follows an MVVM-like pattern, where the mapping is:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">xxxModel</span></code> -&gt; model</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xxxEditPart</span></code> -&gt; viewmodel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xxxFigure</span></code> -&gt; view</p></li>
+</ul>
+<p>As an easy way to get started, I suggest copying the above 3 classes from the most similar widget type and then editing them to suit your needs.</p>
+<p>To get your new widget to show up in CSS’ menus, it needs to be added to the extension point <code class="docutils literal notranslate"><span class="pre">org.csstudio.opibuilder.widget</span></code> in <code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code>.</p>
+<p>To use a PV value, use a string with the special value <code class="docutils literal notranslate"><span class="pre">$(pv_value)</span></code>. This gets substituted for the actual value at runtime.</p>
+<p>Most figures are implemented using the <code class="docutils literal notranslate"><span class="pre">draw2d</span></code> framework, which is a graphics toolkit. In general it allows a higher level of flexibility than RCP for drawing arbitrary shapes etc, with the disadvantage that this additional flexibility makes it more complex. It is also possible to implement a figure using an RCP widget - see for example <code class="docutils literal notranslate"><span class="pre">WebBrowserFigure</span></code> in <code class="docutils literal notranslate"><span class="pre">cs-studio\applications\opibuilder\opibuilder-plugins\org.csstudio.opibuilder.widgets.rcp</span></code>.</p>
+</section>
+<section id="getting-a-macro-value-in-a-script">
+<h2>Getting a macro value in a script<a class="headerlink" href="#getting-a-macro-value-in-a-script" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">display.getMacroValue(&quot;MY_MACRO&quot;)</span></code></p>
+<p>However, if your macro name is constant, it is better to use a local pv as a trigger for the script, which happens to be initialized to the value of the relevant macro. e.g. use a local PV like <code class="docutils literal notranslate"><span class="pre">loc://$(DID)_some_name(&quot;$(MACRO)&quot;)</span></code> - you can then use this as <code class="docutils literal notranslate"><span class="pre">pvStr0</span></code> as usual in your script/rule.</p>
+</section>
+<section id="hotfixing-an-opi">
+<h2>Hotfixing an OPI<a class="headerlink" href="#hotfixing-an-opi" title="Link to this heading"></a></h2>
+<p>OPIs can be hotfixed on an instrument PC, with a built client, by modifying the OPI files in:
+<code class="docutils literal notranslate"><span class="pre">\&lt;built</span> <span class="pre">client</span> <span class="pre">location,</span> <span class="pre">usually</span> <span class="pre">\instrument\apps\client_e4\&gt;\plugins\uk.ac.stfc.isis.ibex.opis_1.0.0.SNAPSHOT\resources</span></code> - this means you do not have to copy the entire client over, just the <code class="docutils literal notranslate"><span class="pre">.opi</span></code> file. You may also need to modify <code class="docutils literal notranslate"><span class="pre">opi_info.xml</span></code>, also in this folder, if you are adding a new OPI or modifying macros passed to an OPI.</p>
+</section>
+<section id="improving-the-runtime-performance-of-rules-in-opis">
+<h2>Improving the runtime performance of rules in OPIs<a class="headerlink" href="#improving-the-runtime-performance-of-rules-in-opis" title="Link to this heading"></a></h2>
+<p>As of <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7212">ticket 7212</a>, we are using a custom <code class="docutils literal notranslate"><span class="pre">ScriptStore</span></code> implementation in cs-studio called <code class="docutils literal notranslate"><span class="pre">RhinoWithFastPathScriptStore</span></code>. By default, CS-Studio uses a script store called <code class="docutils literal notranslate"><span class="pre">RhinoScriptStore</span></code>.</p>
+<p>The primary difference is that <code class="docutils literal notranslate"><span class="pre">RhinoWithFastPath</span></code> will <em>attempt</em> to implement rules in pure java, without needing to call into javascript. This saves a significant amount of memory and CPU time. However, there are a number of limitations:</p>
+<ul class="simple">
+<li><p>All conditions in a rule must be listed either in <code class="docutils literal notranslate"><span class="pre">FAST_PATH_EXPRESSIONS</span></code> in <code class="docutils literal notranslate"><span class="pre">RhinoWithFastPathScriptStore</span></code> (in CS-Studio), or be added by the ibex client in <code class="docutils literal notranslate"><span class="pre">addFastPathHandlers</span></code> in <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java</span></code></p>
+<ul>
+<li><p>Note that fast path expressions are an exact string match, so <code class="docutils literal notranslate"><span class="pre">pvInt0</span> <span class="pre">==</span> <span class="pre">0</span></code> is a different fast-path condition to <code class="docutils literal notranslate"><span class="pre">pvInt0==0</span></code>.</p></li>
+</ul>
+</li>
+<li><p>If a rule uses the “output expression” feature of CSS, then all output expressions must <em>also</em> be listed in <code class="docutils literal notranslate"><span class="pre">FAST_PATH_EXPRESSIONS</span></code> (or added by the ibex client in <code class="docutils literal notranslate"><span class="pre">Opi.java</span></code> as above). This is currently limited to output expressions of boolean type.</p></li>
+<li><p>Fast-path expressions can only use their linked PVs as variables - it is not currently possible to depend on the <code class="docutils literal notranslate"><span class="pre">widget</span></code> or macros directly. For example it is not currently possible to write a fast-path expression for <code class="docutils literal notranslate"><span class="pre">widget.getValue()</span> <span class="pre">==</span> <span class="pre">1</span></code>.</p></li>
+</ul>
+<p>If the above conditions are true, javascript will be bypassed and a pure java implementation used instead. The pure java implementation is significantly more performant in terms of CPU and memory use. The javascript implementation (Rhino) is used as a fallback if the above conditions are not true. This approach lets us be fully compatible with all CS-Studio rules &amp; <code class="docutils literal notranslate"><span class="pre">.opi</span></code> files (which can use completely arbitrary javascript fragments as their conditions), while still getting significant performance gains on most rules in practice.</p>
+<p>You can generate a list of all rule expressions used in IBEX by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-roP<span class="w"> </span><span class="s2">&quot;bool_exp=\&quot;.*?\&quot;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr
+</pre></div>
+</div>
+<p>from a git bash terminal in <code class="docutils literal notranslate"><span class="pre">ibex_gui/base/uk.ac.stfc.isis.ibex.opis/resources</span></code>. The vast majority of our rules use a small number of simple expressions - such as <code class="docutils literal notranslate"><span class="pre">pvInt0</span> <span class="pre">==</span> <span class="pre">0</span></code> - these are the expressions which are good candidates for a “fast-path” expression.</p>
+<p>On OPIs which have had significant performance issues, such as the reflectometry OPI, <em>all</em> rule expressions should have an associated fast-path handler, and should not use the “output expression” feature of CS-Studio. This ensures that all rules in this OPI do not use the javascript rules implementation.</p>
+<section id="checking-which-rules-execute-in-js">
+<h3>Checking which rules execute in JS<a class="headerlink" href="#checking-which-rules-execute-in-js" title="Link to this heading"></a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java</span></code>, call <code class="docutils literal notranslate"><span class="pre">RhinoWithFastPathScriptStore.setLogScriptsUsingJS(true)</span></code>. This will log the script content the first time a rule is loaded and executes via the slow (JS interpreter) path.</p>
+</section>
+<section id="forcing-js-execution-of-all-rules">
+<h3>Forcing JS execution of all rules<a class="headerlink" href="#forcing-js-execution-of-all-rules" title="Link to this heading"></a></h3>
+<p>If you need to execute <em>all</em> rules in JS (e.g. a major bug is found in <code class="docutils literal notranslate"><span class="pre">RhinoWithFastPathScriptStore</span></code>), it can be entirely disabled by editing <code class="docutils literal notranslate"><span class="pre">org.csstudio.opibuilder/java_script_engine=RHINO_WITH_FAST_PATH</span></code> to <code class="docutils literal notranslate"><span class="pre">org.csstudio.opibuilder/java_script_engine=RHINO</span></code> in <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini</span></code>.</p>
+<p>Note that you will need to increase the GUI heap size parameter if this is done, particularly on reflectometers, as the reflectometry OPI uses huge numbers of rules which cause excessive memory consumption under javascript.</p>
+</section>
+</section>
+<section id="importing-scripts-into-other-scripts">
+<h2>Importing scripts into other scripts<a class="headerlink" href="#importing-scripts-into-other-scripts" title="Link to this heading"></a></h2>
+<p>If you need complicated scripts with imports - first consider the design of your OPI. Most OPIs should aim not to require any scripts at all, for example by moving logic into the IOC layer.</p>
+<p>However, in some cases it is useful to be able to create generic scripts and import them into other scripts. The CS-Studio Jython instance does not allow access to <code class="docutils literal notranslate"><span class="pre">__file__</span></code>, so it is not always possible to add a known import directory to python’s path.</p>
+<p>The workaround is to use something like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">java.lang.System</span><span class="w"> </span><span class="kn">import</span> <span class="n">getProperty</span> <span class="k">as</span> <span class="n">getJavaSystemProperty</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">resources_dir</span> <span class="o">=</span> <span class="n">getJavaSystemProperty</span><span class="p">(</span><span class="s2">&quot;ibex.opis.resources_directory&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resources_dir</span><span class="p">,</span> <span class="s2">&quot;HV&quot;</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">))</span>
+<span class="c1"># ... import from HV.Scripts.something</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ibex.opis.resources_directory</span></code> property is set from Java before any OPIs load in <code class="docutils literal notranslate"><span class="pre">base/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java</span></code></p>
+<p>Note that hard-coding a path like <code class="docutils literal notranslate"><span class="pre">c:\instrument\dev\ibex_gui\...\resources</span></code> would fail on an instrument as the client will be installed in a different location - so this system property <strong>must</strong> be used instead.</p>
+<p>Note that bi and mbbi records that you are trying to use with an LED in an OPI will not work unless the values are 0 and 1. This is because the LED ignores the bit and ENUM settings and On state and Off State and goes of ONLY the PVName attribute.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="OPI-Creation.html" class="btn btn-neutral float-left" title="OPI creation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../css_other/Debugging-CSS.html" class="btn btn-neutral float-right" title="Debugging CSS Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

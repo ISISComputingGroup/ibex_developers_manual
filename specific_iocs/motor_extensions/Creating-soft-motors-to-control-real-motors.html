@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motor Coordinate Transformations &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fermi chopper lifter" href="Fermi-Chopper-Lifter.html" />
+    <link rel="prev" title="Collision Detection" href="Collision-Detection-Project.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Goniometer-Axes.html">ALF Goniometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Bump-Strip.html">Bump Strips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Collision-Detection-Project.html">Collision Detection</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Motor Coordinate Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Fermi-Chopper-Lifter.html">Fermi chopper lifter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Lens-Adjustment.html">IMAT Lens Adjustment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jaws.html">Jaws</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Sample-Changer.html">MARI Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN%2C-LET-and-WISH-Oscillating-radial-collimators.html">MERLIN, LET and WISH Oscillating Radial Collimators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motion-Set-points.html">Motion Set Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-analyser-towers.html">OSIRIS Analyser Towers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Portable-Eulerian-Cradle.html">Portable Eulerian Cradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Front-Beam-Stop-inhibit-movement.html">SANS2D Front Beam Stop Inhibit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-apertures-and-guides.html">SANS2D Apertures and Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-tank-collision-avoidance.html">SANS2D vacuum tank collision avoidance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sample-Changer-Support-Module.html">SANS Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tosca-sample-positioner.html">TOSCA sample positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-DMS.html">ZOOM Detector motion system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-PGC.html">ZOOM Polariser, Guide and Collimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-sample-stack.html">ZOOM Sample Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors-Extensions.html">Motor Extensions</a></li>
+      <li class="breadcrumb-item active">Motor Coordinate Transformations</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motor_extensions/Creating-soft-motors-to-control-real-motors.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="motor-coordinate-transformations">
+<h1>Motor Coordinate Transformations<a class="headerlink" href="#motor-coordinate-transformations" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This page details how to write soft <code class="docutils literal notranslate"><span class="pre">motor</span></code> records that control two hard <code class="docutils literal notranslate"><span class="pre">motor</span></code> records with a <code class="docutils literal notranslate"><span class="pre">transform</span></code> record converting between the two coordinate systems in between. This is based on experiences writing the Larmor beamstop controller (now defunct) which has two Galil motor axes representing the angle of the arm (<code class="docutils literal notranslate"><span class="pre">theta</span></code>) and a horizontal (<code class="docutils literal notranslate"><span class="pre">w</span></code>) position which is controlled by two soft motors in a Cartesian coordinate system (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>). This system is complicated by the fact that the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis in Cartesian space is related to both the <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">theta</span></code> axes of the motors.</p>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading"></a></h2>
+<p>And example of two soft motors with a non-trivial coordinate transform in between taken from the Larmor beamstop is given below. In this example <code class="docutils literal notranslate"><span class="pre">$(MTR1)</span></code> and <code class="docutils literal notranslate"><span class="pre">$(MTR2)</span></code> are the real <code class="docutils literal notranslate"><span class="pre">motor</span></code> record (defined by the Galil IOC config) and <code class="docutils literal notranslate"><span class="pre">ARM:X</span></code> and <code class="docutils literal notranslate"><span class="pre">ARM:Y</span></code> are soft <code class="docutils literal notranslate"><span class="pre">motor</span></code> records.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">motor</span><span class="p">,</span> <span class="s2">&quot;$(P)ARM:X&quot;</span><span class="p">)</span> 
+<span class="p">{</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">LOCK</span><span class="p">,</span> <span class="s2">&quot;YES&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;X axis position&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;Soft Channel&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span> <span class="s2">&quot;$(P)CONVERTXY.C PP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">RDBL</span><span class="p">,</span> <span class="s2">&quot;$(P)CONVERTXY.F CP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">STOO</span><span class="p">,</span> <span class="s2">&quot;$(P)ARM:MOTORS:STOP.A  PP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">DINP</span><span class="p">,</span> <span class="s2">&quot;$(P)ARM:MOTORS:DMOV CP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">URIP</span><span class="p">,</span> <span class="s2">&quot;Yes&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">MRES</span><span class="p">,</span><span class="s2">&quot;0.001&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">RRES</span><span class="p">,</span><span class="s2">&quot;1.000&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">TWV</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">RTRY</span><span class="p">,</span><span class="s2">&quot;0&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">EGU</span><span class="p">,</span><span class="s2">&quot;mm&quot;</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">motor</span><span class="p">,</span><span class="s2">&quot;$(P)ARM:Y&quot;</span><span class="p">)</span> 
+<span class="p">{</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">LOCK</span><span class="p">,</span> <span class="s2">&quot;YES&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;Y axis position&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span><span class="s2">&quot;Soft Channel&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span> <span class="s2">&quot;$(P)CONVERTXY.D PP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">RDBL</span><span class="p">,</span><span class="s2">&quot;$(P)CONVERTXY.G CP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">STOO</span><span class="p">,</span><span class="s2">&quot;$(P)ARM:MOTORS:STOP.B  PP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">DINP</span><span class="p">,</span><span class="s2">&quot;$(P)ARM:MOTORS:DMOV CP MS&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">URIP</span><span class="p">,</span> <span class="s2">&quot;Yes&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">MRES</span><span class="p">,</span><span class="s2">&quot;0.001&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">RRES</span><span class="p">,</span><span class="s2">&quot;1.000&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">TWV</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">RTRY</span><span class="p">,</span><span class="s2">&quot;0&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">EGU</span><span class="p">,</span><span class="s2">&quot;mm&quot;</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">transform</span><span class="p">,</span> <span class="s2">&quot;$(P)CONVERTXY&quot;</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;Transform X then Y&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">ASG</span><span class="p">,</span> <span class="s2">&quot;READONLY&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">INPA</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR1) CP MS&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INPB</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR2).DRBV CP MS&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INPE</span><span class="p">,</span> <span class="s2">&quot;$(ARMLEN)&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">CLCF</span><span class="p">,</span> <span class="s2">&quot;COS(A)*E + B&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">CLCG</span><span class="p">,</span> <span class="s2">&quot;SIN(A)*E&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">CLCH</span><span class="p">,</span> <span class="s2">&quot;ASIN(D/E)&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">CLCI</span><span class="p">,</span> <span class="s2">&quot;C - SQRT(E**2 - D**2)&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">OUTH</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR1) PP&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">OUTI</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR2).DVAL PP&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>There are several fields that need to be considered. The most important fields in the soft <code class="docutils literal notranslate"><span class="pre">motor</span></code> records are the <code class="docutils literal notranslate"><span class="pre">OUT</span></code>, <code class="docutils literal notranslate"><span class="pre">RDBL</span></code>, <code class="docutils literal notranslate"><span class="pre">STOO</span></code>, and <code class="docutils literal notranslate"><span class="pre">DINP</span></code> fields.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">RDBL</span></code> field reads the current position of the transformed motor positions from the <code class="docutils literal notranslate"><span class="pre">transform</span></code> record</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">OUT</span></code> field writes out the soft motor position to the <code class="docutils literal notranslate"><span class="pre">transform</span></code> record</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">STOO</span></code> field writes out a bit indicating if the user has requested the motors stop, this needs to be transformed to both the underlying motors.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DINP</span></code> field reads in a bit indicating if the underlying motors have stopped moving, this needs to read from both the underlying motors.</p></li>
+</ul>
+<p>The former two fields can be linked directly to a single <a class="reference external" href="https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Transform"><code class="docutils literal notranslate"><span class="pre">transform</span></code></a> record. A <code class="docutils literal notranslate"><span class="pre">transform</span></code> record can handle both the conversion to and from the soft motor’s coordinate system. In the above example, the fields <code class="docutils literal notranslate"><span class="pre">CLCF</span></code> and <code class="docutils literal notranslate"><span class="pre">CLCG</span></code> transform the raw <code class="docutils literal notranslate"><span class="pre">motor</span></code> positions to the soft motor positions. <code class="docutils literal notranslate"><span class="pre">CLCH</span></code> and <code class="docutils literal notranslate"><span class="pre">CLCI</span></code> compute the inverse transform from soft motors to the underlying`motors.</p>
+<p>For the latter two fields, two additional records are required if the axes of the soft motors are defined by a combination of the underlying motors. These should output a combination of the states from both underlying motors. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">transform</span><span class="p">,</span> <span class="s2">&quot;$(P)ARM:MOTORS:STOP&quot;</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="n">field</span><span class="p">(</span><span class="n">CLCC</span><span class="p">,</span> <span class="s2">&quot;A || B&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">CLCD</span><span class="p">,</span> <span class="s2">&quot;A || B&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">OUTC</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR1).STOP PP&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">OUTD</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR2).STOP PP&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">PINI</span><span class="p">,</span> <span class="s2">&quot;YES&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">calc</span><span class="p">,</span> <span class="s2">&quot;$(P)ARM:MOTORS:DMOV&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INPA</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR1).DMOV CP&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INPB</span><span class="p">,</span> <span class="s2">&quot;$(P)$(MTR2).DMOV CP&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">CALC</span><span class="p">,</span> <span class="s2">&quot;A &amp;&amp; B&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Must include MDEL to avoid a race condition when setting</span>
+    <span class="c1"># either of the soft motors to the position they&#39;re already at</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">MDEL</span><span class="p">,</span> <span class="s2">&quot;-1&quot;</span><span class="p">)</span> 
+    <span class="n">field</span><span class="p">(</span><span class="n">PINI</span><span class="p">,</span> <span class="s2">&quot;YES&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-using-the-ioctestframework">
+<h2>Testing using the IocTestFramework<a class="headerlink" href="#testing-using-the-ioctestframework" title="Link to this heading"></a></h2>
+<p>The beamstop uses galil controllers for the underlying motors. Galils do not have an emulator in the IOC test framework. Instead galils have a simulation mode which can be turned on which can be used as a sort of pseudo-emulator. When experimenting with running a galil controller though the IOC test framework I found I needed to be careful of the following things:</p>
+<ul class="simple">
+<li><p>That the flags enabling simulation mode have been turn on at some point during the galil startup. Specifically the following macros should be set:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">epicsEnvSet</span> <span class="n">SIMULATE</span> <span class="s2">&quot;1&quot;</span>
+  <span class="n">epicsEnvSet</span> <span class="n">IFSIM</span> <span class="s2">&quot; &quot;</span>
+  <span class="n">epicsEnvSet</span> <span class="n">IFNOTSIM</span> <span class="s2">&quot;#&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>That the autosave feature of the galil device is turned off. If this is not disabled then it is possible for previous device state to interfere with the state of the tests. For example the limits from a previous galil run might be saved which may affect whether the test can successfully move to a given position.</p></li>
+<li><p>That the device is run in dev sim mode, but without any lewis emulator. The example command for the beamstop in the <code class="docutils literal notranslate"><span class="pre">run_all_tests.bat</span></code> is:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">call</span> <span class="o">%</span><span class="n">PYTHON</span><span class="o">%</span> <span class="s2">&quot;</span><span class="si">%E</span><span class="s2">PICS_KIT_ROOT%\support\IocTestFramework\master</span><span class="se">\r</span><span class="s2">un_tests.py&quot;</span> <span class="o">-</span><span class="n">pf</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span>  <span class="o">-</span><span class="n">d</span> <span class="n">xybeamstop</span> <span class="o">-</span><span class="n">p</span> <span class="o">%</span><span class="n">EPICS_KIT_ROOT</span><span class="o">%</span>\<span class="n">ioc</span>\<span class="n">master</span>\<span class="n">GALIL</span>\<span class="n">iocBoot</span>\<span class="n">iocGALIL</span><span class="o">-</span><span class="n">IOC</span><span class="o">-</span><span class="mi">01</span>
+</pre></div>
+</div>
+</section>
+<section id="known-issues">
+<h2>Known issues<a class="headerlink" href="#known-issues" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>For the <code class="docutils literal notranslate"><span class="pre">DMOV</span></code> record the monitor deadband (<code class="docutils literal notranslate"><span class="pre">MDEL</span></code>) field needed to be defined as <code class="docutils literal notranslate"><span class="pre">-1</span></code> to avoid a race condition where the pulse from <code class="docutils literal notranslate"><span class="pre">1-0-1</span></code> would happen so fast that the soft motors would get stuck in the moving state forever. I also found I needed to set a delay on the motors (<code class="docutils literal notranslate"><span class="pre">DLY</span></code>) and a scan of about 1 second to prevent the soft motors missing the stop pulse from one or both motors.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Collision-Detection-Project.html" class="btn btn-neutral float-left" title="Collision Detection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Fermi-Chopper-Lifter.html" class="btn btn-neutral float-right" title="Fermi chopper lifter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

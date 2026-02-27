@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Common Eclipse tasks &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Eclipse RCP" href="Eclipse-RCP.html" />
+    <link rel="prev" title="Common Eclipse issues" href="Common-Eclipse-Issues.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Checkstyle-setup.html">Checkstyle setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Common-Eclipse-Issues.html">Common Eclipse issues</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Common Eclipse tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eclipse-RCP.html">Eclipse RCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eclipse-logging.html">Eclipse logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eclipse-preferences.html">Eclipse preferences</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Eclipse.html">Eclipse</a></li>
+      <li class="breadcrumb-item active">Common Eclipse tasks</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/eclipse/Common-Eclipse-Tasks.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="common-eclipse-tasks">
+<h1>Common Eclipse tasks<a class="headerlink" href="#common-eclipse-tasks" title="Link to this heading"></a></h1>
+<section id="add-a-new-plugin">
+<h2>Add A New Plugin<a class="headerlink" href="#add-a-new-plugin" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>In Eclipse IDE, File Menu &gt; New &gt; Plugin Project.</p></li>
+<li><p>Give the Project a name, e.g. <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.foo</span></code>. If it is a UI plugin, it should have a “ui” in the top part of the name e.g. <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.ui.foo</span></code></p></li>
+<li><p>For location, select the base source code folder, e.g., <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\Client\base\uk.ac.stfc.isis.ibex.foo</span></code>, rather than the default option (which will probably be the workspace).</p></li>
+<li><p>Click next.</p></li>
+<li><p>Make sure ‘Generate an activator, a Java…’ is checked.</p></li>
+<li><p>If this is to be a UI plugin, check ‘This plug-in will make contributions to the UI’. This will cause the Activator to extend <code class="docutils literal notranslate"><span class="pre">AbstractUIPlugin</span></code> rather than <code class="docutils literal notranslate"><span class="pre">BundleActivator</span></code>. Plugins that contribute to the UI in any way such as by adding a preference page or menu item, need to be UI plugins</p></li>
+<li><p>Click finish.</p></li>
+<li><p>In the plugin <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.feature.base</span></code>, open <code class="docutils literal notranslate"><span class="pre">feature.xml</span></code> and go to the ‘Plug-ins’ tab. Add your new plugin to the plug-ins list.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">pom.xml</span> <span class="pre">file</span></code> to the plugin so that it can be built with maven. This should be the same as the pom file in every other project; the only thing you’ll need to change is the plugin’s name (the <code class="docutils literal notranslate"><span class="pre">artifactId</span></code>). The contents should be as below. Other sections of the pom follow will be inherited from <code class="docutils literal notranslate"><span class="pre">org.csstudio.isis.tycho.parent</span></code> and so don’t need to be explicitly included:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 </span>
+<span class="s">      http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>uk.ac.stfc.isis.ibex.foo<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;packaging&gt;</span>eclipse-plugin<span class="nt">&lt;/packaging&gt;</span>
+<span class="w">  </span><span class="nt">&lt;parent&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>CSS_ISIS<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>uk.ac.stfc.isis.ibex.client.tycho.parent<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;relativePath&gt;</span>../uk.ac.stfc.isis.ibex.client.tycho.parent<span class="nt">&lt;/relativePath&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/parent&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>In the plugin <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.client.tycho.parent</span></code>, add your new plugin to the list of modules (you may have to do this manually in the XML view).</p></li>
+</ol>
+</section>
+<section id="easy-plugin-access">
+<h2>Easy Plugin Access<a class="headerlink" href="#easy-plugin-access" title="Link to this heading"></a></h2>
+<p>One option to enable easy access to your plug-in object is to use the singleton pattern. Declare a static variable in your plug-in class for the singleton. Store the first (and only) instance of the plug-in class in the singleton when it is created. Then access the singleton when needed through a static <code class="docutils literal notranslate"><span class="pre">getDefault()</span></code> method. Your Activator class should look something like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Activator</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractUIPlugin</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PLUGIN_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;org.csstudio.isis.ui.logger&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Activator</span><span class="w"> </span><span class="n">plugin</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Activator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Activator</span><span class="w"> </span><span class="nf">getDefault</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">plugin</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">BundleContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">start</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="n">BundleContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">stop</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="force-plugin-to-start-at-eclipse-startup">
+<h2>Force Plugin To Start At Eclipse Startup<a class="headerlink" href="#force-plugin-to-start-at-eclipse-startup" title="Link to this heading"></a></h2>
+<p>Normally plugins are loaded lazily, i.e., the first time they are actually needed. It can be useful to force a plugin to start when the program launches.</p>
+<p>In your plugin:</p>
+<ol class="arabic simple">
+<li><p>Make a class called, e.g., <code class="docutils literal notranslate"><span class="pre">org.csstudio.isis.foo.FooStartup</span></code> that extends the Eclipse interface, <code class="docutils literal notranslate"><span class="pre">IStartup</span></code>. Override the public method <code class="docutils literal notranslate"><span class="pre">earlyStartup()</span></code>, with blank implementation.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">META-INF</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Extensions</span></code> tab. Make sure “Show only extension points from required plug-ins” is unchecked.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Add</span></code> and type: <code class="docutils literal notranslate"><span class="pre">org.eclipse.ui.startup</span></code>.</p></li>
+<li><p>In the Extension element details, select the startup, <code class="docutils literal notranslate"><span class="pre">FooStartup</span></code>, class you created earlier.</p></li>
+</ol>
+</section>
+<section id="running-a-background-job">
+<h2>Running A Background Job<a class="headerlink" href="#running-a-background-job" title="Link to this heading"></a></h2>
+<p>In Eclipse, Jobs are units of runnable work that can be scheduled to be run with the job manager. Once a job has completed, it can be scheduled to run again (jobs are reusable). You might want to use a job to prevent UI freeze, i.e., if clicking a button performs a long operation or calculation, you still want the UI to respond while performing the operation. You might also use a job if a task needs to run continuously in the background for the lifetime of the program (as is the case for the JMS handler thread that receives messages from the IOC log server).</p>
+<p>A job can be prepared as follows:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Job</span><span class="w"> </span><span class="n">fooJob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Job</span><span class="p">(</span><span class="s">&quot;My Foo Job&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">IStatus</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">IProgressMonitor</span><span class="w"> </span><span class="n">monitor</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fooCalculator</span><span class="p">.</span><span class="na">performLongTask</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Status</span><span class="p">.</span><span class="na">OK_STATUS</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The string passed to the constructor will be the name of the thread that you will see if you are debugging the application.</p>
+<p>The job can be started with:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fooJob</span><span class="p">.</span><span class="na">schedule</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>More details can be found in the <a class="reference external" href="http://www.vogella.com/tutorials/EclipseJobs/article.html">Vogella tutorial</a>.</p>
+</section>
+<section id="updating-the-ui-without-data-binding">
+<h2>Updating The UI (Without Data Binding)<a class="headerlink" href="#updating-the-ui-without-data-binding" title="Link to this heading"></a></h2>
+<p>Where possible, you should use the Eclipse data binding framework to update UI elements (see <a class="reference external" href="http://www.vogella.com/tutorials/EclipseDataBinding/article.html">Vogella databinding tutorial</a>; however in some cases this is not convenient or possible.</p>
+<p>The display of UI elements is not handled in the main execution thread but in a separate UI thread. Consequently, if you attempt to alter the display of any UI element from the main thread, you will get an Invalid Thread Access exception. We can overcome this limitation by calling the <code class="docutils literal notranslate"><span class="pre">Display.asyncExec()</span></code>, which passes a runnable command to the UI thread and asks for it to be run at the next available opportunity.</p>
+<p>As an example, if you had a UI class, FooDisplay, which had a method, <code class="docutils literal notranslate"><span class="pre">setLabelText()</span></code>, you might implement it as follows:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FooDisplay</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Canvas</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Label</span><span class="w"> </span><span class="n">fooLabel</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setLabelText</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Display</span><span class="p">.</span><span class="na">getDefault</span><span class="p">().</span><span class="na">asyncExec</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Runnable</span><span class="p">()</span><span class="w"> </span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nd">@Override</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">fooLabel</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="add-a-new-perspective">
+<h2>Add A New Perspective<a class="headerlink" href="#add-a-new-perspective" title="Link to this heading"></a></h2>
+<p>Instructions on adding a new perspective can be found <a class="reference internal" href="../coding/Perspectives.html"><span class="doc std std-doc">here</span></a>.</p>
+</section>
+<section id="add-a-preference-page">
+<h2>Add A Preference Page<a class="headerlink" href="#add-a-preference-page" title="Link to this heading"></a></h2>
+<p>Many plugins may have options that you want the user of the client to be able to configure. The simplest way to achieve this is to have the plugin contribute a preference page to the client’s preference window.</p>
+<ol class="arabic">
+<li><p>Make sure your plugin contributes to the UI, i.e., that its activator class extends <code class="docutils literal notranslate"><span class="pre">AbstractUIPlugin</span></code>, not <code class="docutils literal notranslate"><span class="pre">BundleActivator</span></code>, and that it has a static <code class="docutils literal notranslate"><span class="pre">getDefault()</span></code> method.</p></li>
+<li><p>In your plugin, add a new preference package, called e.g., <code class="docutils literal notranslate"><span class="pre">org.csstudio.isis.foo.preferences</span></code>.</p></li>
+<li><p>Create a new class called e.g., <code class="docutils literal notranslate"><span class="pre">FooPreferenceConstants</span></code>, which will store tags and default values for each preference in your plugin. In the below example, we specify tags and defaults for a String preference called name and a integer preference called count. The tags are used internally by eclipse to refer to the preference and will not be displayed to the user:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FooPreferenceConstants</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TAG_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fooName&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TAG_COUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fooCount&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">DEFAULT_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This is my foo name!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DEFAULT_COUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a new class called e.g., <code class="docutils literal notranslate"><span class="pre">FooPreferenceInitializer</span></code>, that extends <code class="docutils literal notranslate"><span class="pre">AbstractPreferenceInitializer</span></code>, which will set the default values of each preference:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FooPreferenceInitializer</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractPreferenceInitializer</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initializeDefaultPreferences</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">IPreferenceStore</span><span class="w"> </span><span class="n">store</span><span class="w"> </span>
+<span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">Activator</span><span class="p">.</span><span class="na">getDefault</span><span class="p">().</span><span class="na">getPreferenceStore</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">store</span><span class="p">.</span><span class="na">setDefault</span><span class="p">(</span><span class="n">FooPreferenceConstants</span><span class="p">.</span><span class="na">TAG_NAME</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">FooPreferenceConstants</span><span class="p">.</span><span class="na">DEFAULT_NAME</span><span class="p">);</span>
+<span class="w">        </span><span class="n">store</span><span class="p">.</span><span class="na">setDefault</span><span class="p">(</span><span class="n">FooPreferenceConstants</span><span class="p">.</span><span class="na">TAG_COUNT</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">FooPreferenceConstants</span><span class="p">.</span><span class="na">DEFAULT_COUNT</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add a new preference page class called, e.g., <code class="docutils literal notranslate"><span class="pre">FooPreferencePage</span></code>, and have it extend the Eclipse class <code class="docutils literal notranslate"><span class="pre">FieldEditorPreferencePage</span></code> and implement the interface <code class="docutils literal notranslate"><span class="pre">IWorkbenchPreferencePage</span></code>.</p></li>
+<li><p>Add a constructor and implementations of the functions <code class="docutils literal notranslate"><span class="pre">creatFieldEditors()</span></code> and <code class="docutils literal notranslate"><span class="pre">init()</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FooPreferencePage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FieldEditorPreferencePage</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">IWorkbenchPreferencePage</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">FooPreferencePage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">GRID</span><span class="p">);</span>
+<span class="w">        </span><span class="n">setPreferenceStore</span><span class="p">(</span><span class="n">Activator</span><span class="p">.</span><span class="na">getDefault</span><span class="p">().</span><span class="na">getPreferenceStore</span><span class="p">());</span>
+<span class="w">        </span><span class="n">setDescription</span><span class="p">(</span><span class="s">&quot;Settings for Foo.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createFieldEditors</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">addField</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringFieldEditor</span><span class="p">(</span><span class="n">FooPreferenceConstants</span><span class="p">.</span><span class="na">TAG_NAME</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="s">&quot;Foo Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getFieldEditorParent</span><span class="p">()));</span>
+<span class="w">        </span><span class="n">addField</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringFieldEditor</span><span class="p">(</span><span class="n">FooPreferenceConstants</span><span class="p">.</span><span class="na">TAG_COUNT</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="s">&quot;Foo Count&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getFieldEditorParent</span><span class="p">()));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">IWorkbench</span><span class="w"> </span><span class="n">workbench</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open the plugins <code class="docutils literal notranslate"><span class="pre">plugin.xml</span></code> and navigate to the Extensions tab.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Add the extension <code class="docutils literal notranslate"><span class="pre">org.eclipse.core.runtime.preferences</span></code>.</p></li>
+<li><p>To this, add a new <code class="docutils literal notranslate"><span class="pre">Initializer</span></code> and set its class as <code class="docutils literal notranslate"><span class="pre">FooPreferenceInitializer</span></code>.</p></li>
+<li><p>Add the extension <code class="docutils literal notranslate"><span class="pre">org.eclipse.ui.preferencePages</span></code>.</p></li>
+<li><p>To this, add a new <code class="docutils literal notranslate"><span class="pre">Page</span></code> and set its class to <code class="docutils literal notranslate"><span class="pre">FooPreferencePage</span></code>. You can also set the <code class="docutils literal notranslate"><span class="pre">name</span></code>, which will displayed in the UI.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">plugin.xml</span></code> should look like the following:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?eclipse version=&quot;3.4&quot;?&gt;</span>
+<span class="nt">&lt;plugin&gt;</span>
+<span class="w">   </span><span class="nt">&lt;extension</span><span class="w"> </span><span class="na">point=</span><span class="s">&quot;org.eclipse.core.runtime.preferences&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;initializer</span><span class="w"> </span>
+<span class="w">        </span><span class="na">class=</span><span class="s">&quot;org.csstudio.isis.foo.preferences.FooPreferenceInitializer&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/initializer&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+<span class="w">   </span><span class="nt">&lt;extension</span><span class="w"> </span><span class="na">point=</span><span class="s">&quot;org.eclipse.ui.preferencePages&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;page</span>
+<span class="w">        </span><span class="na">class=</span><span class="s">&quot;org.csstudio.isis.foo.preferences.FooPreferencePage&quot;</span>
+<span class="w">        </span><span class="na">id=</span><span class="s">&quot;org.csstudio.isis.foo.preferences.FooPreferencePage&quot;</span>
+<span class="w">        </span><span class="na">name=</span><span class="s">&quot;Foo Preferences&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/page&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
+<p>When you start the client, the Foo preference page should now appear in the Eclipse Preferences window. Changes made by the user will be persisted to file automatically by the Eclipse framework and will be reloaded next time the user starts the client.</p>
+<p>For more details see the <a class="reference external" href="http://www.vogella.com/tutorials/EclipsePreferences/article.html">Vogella preferences tutorial</a>.</p>
+</section>
+<section id="add-a-menu">
+<h2>Add A Menu<a class="headerlink" href="#add-a-menu" title="Link to this heading"></a></h2>
+<p>Sometimes it may be necessary to add a new menu item to the menu bar in the Eclipse client so you can open some sort of dialog window or perform some other action. If you want the menu item to open a dialog, make sure you already have a <code class="docutils literal notranslate"><span class="pre">Dialog</span></code> class prepared in your plugin.</p>
+<ol class="arabic">
+<li><p>Create a class that extends <code class="docutils literal notranslate"><span class="pre">org.eclipse.core.commands.IHandler</span></code>; call it something like <code class="docutils literal notranslate"><span class="pre">FooHandler</span></code>. Add the unimplemented methods.</p></li>
+<li><p>Make <code class="docutils literal notranslate"><span class="pre">isEnabled()</span></code> and <code class="docutils literal notranslate"><span class="pre">isHandled()</span></code> return <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p>Make <code class="docutils literal notranslate"><span class="pre">execute()</span></code> instantiate and open your dialog (or perform whatever other action you have in mind):</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FooHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IHandler</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addHandlerListener</span><span class="p">(</span><span class="n">IHandlerListener</span><span class="w"> </span><span class="n">handlerListener</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dispose</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="n">ExecutionEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ExecutionException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Shell</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlatformUI</span><span class="p">.</span><span class="na">getWorkbench</span><span class="p">().</span><span class="na">getActiveWorkbenchWindow</span><span class="p">().</span><span class="na">getShell</span><span class="p">();</span>
+<span class="w">        </span><span class="n">FooDialog</span><span class="w"> </span><span class="n">dialog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FooDialog</span><span class="p">(</span><span class="n">shell</span><span class="p">);</span>
+<span class="w">        </span><span class="n">dialog</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEnabled</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isHandled</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">removeHandlerListener</span><span class="p">(</span><span class="n">IHandlerListener</span><span class="w"> </span><span class="n">handlerListener</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open the plugins <code class="docutils literal notranslate"><span class="pre">plugin.xml</span></code> and navigate to the Extensions tab.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Add the extension <code class="docutils literal notranslate"><span class="pre">org.eclipse.ui.commands</span></code>.</p></li>
+<li><p>To this, add a new <code class="docutils literal notranslate"><span class="pre">command</span></code>. Set the <code class="docutils literal notranslate"><span class="pre">id</span></code>, give it a <code class="docutils literal notranslate"><span class="pre">name</span></code>, and set the <code class="docutils literal notranslate"><span class="pre">defaultHandler</span></code> to the <code class="docutils literal notranslate"><span class="pre">FooHandler</span></code> class that you made earlier.</p></li>
+<li><p>Add the extension <code class="docutils literal notranslate"><span class="pre">org.eclipse.ui.menus</span></code>.</p></li>
+<li><p>To this, add a new <code class="docutils literal notranslate"><span class="pre">menuContribution</span></code>; set the <code class="docutils literal notranslate"><span class="pre">locationURI</span></code> to <code class="docutils literal notranslate"><span class="pre">menu:org.eclipse.ui.main.menu</span></code>.</p></li>
+<li><p>To this, add a new <code class="docutils literal notranslate"><span class="pre">menu</span></code>. Give it an <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">label</span></code> (this will be displayed on the menu bar).</p></li>
+<li><p>To the <code class="docutils literal notranslate"><span class="pre">menu</span></code>, add a new <code class="docutils literal notranslate"><span class="pre">command</span></code>. Set the <code class="docutils literal notranslate"><span class="pre">commandId</span></code> to be the <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">of</span> <span class="pre">the</span> </code>command`` you created earlier and give it a label that will be displayed in the menu on the UI;</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">plugin.xml</span></code> should now resemble:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?eclipse version=&quot;3.4&quot;?&gt;</span>
+<span class="nt">&lt;plugin&gt;</span>
+<span class="w">   </span><span class="nt">&lt;extension</span><span class="w"> </span><span class="na">point=</span><span class="s">&quot;org.eclipse.ui.menus&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;menuContribution</span>
+<span class="w">            </span><span class="na">allPopups=</span><span class="s">&quot;false&quot;</span>
+<span class="w">            </span><span class="na">locationURI=</span><span class="s">&quot;menu:org.eclipse.ui.main.menu&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;menu</span><span class="w"> </span><span class="na">label=</span><span class="s">&quot;Foo Menu&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;command</span>
+<span class="w">                  </span><span class="na">commandId=</span><span class="s">&quot;org.csstudio.isis.foo.command&quot;</span>
+<span class="w">                  </span><span class="na">label=</span><span class="s">&quot;Foo Menu Item&quot;</span>
+<span class="w">                  </span><span class="na">style=</span><span class="s">&quot;push&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/command&gt;</span>
+<span class="w">         </span><span class="nt">&lt;/menu&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/menuContribution&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+<span class="w">   </span><span class="nt">&lt;extension</span><span class="w"> </span><span class="na">point=</span><span class="s">&quot;org.eclipse.ui.commands&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;command</span>
+<span class="w">            </span><span class="na">defaultHandler=</span><span class="s">&quot;org.csstudio.isis.foo.FooHandler&quot;</span>
+<span class="w">            </span><span class="na">id=</span><span class="s">&quot;org.csstudio.isis.foo.command&quot;</span>
+<span class="w">            </span><span class="na">name=</span><span class="s">&quot;Do Foo&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/command&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
+<p>The menu should now be visible in the client UI. For more details see the <a class="reference external" href="http://www.vogella.com/tutorials/EclipseCommands/article.html">Vogella menus tutorial</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Common-Eclipse-Issues.html" class="btn btn-neutral float-left" title="Common Eclipse issues" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Eclipse-RCP.html" class="btn btn-neutral float-right" title="Eclipse RCP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

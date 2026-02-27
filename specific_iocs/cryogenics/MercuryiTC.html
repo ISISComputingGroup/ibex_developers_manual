@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercury iTC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mercury iTC - Enhanced cryostat control" href="MercuryiTC-Enhanced-Cryostat-Control.html" />
+    <link rel="prev" title="Oxford Instruments Mercury Heliox" href="Mercury-Heliox.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Cryogenics.html">Cryogenics</a></li>
+      <li class="breadcrumb-item active">Mercury iTC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/MercuryiTC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mercury-itc">
+<h1>Mercury iTC<a class="headerlink" href="#mercury-itc" title="Link to this heading"></a></h1>
+<p>The Mercury iTC is a configurable temperature controller from oxford instruments ( <a class="reference external" href="http://lmu.web.psi.ch/docu/manuals/bulk_manuals/OxfordInstruments/Dolly_Mark_II/Mercury_iTC_manual_Issue_05.pdf">Manual</a> ).</p>
+<p>It contains various slots into each slot a variety of devices can be placed. For the purposes of this document the motherboard is treated as a slot too, it contains a temperature sensor and a heater.</p>
+<p>Types of daughter boards are:</p>
+<ul class="simple">
+<li><p>temperature sensor</p></li>
+<li><p>Heater</p></li>
+<li><p>Auxiliary board (general purpose and stepper motors)</p></li>
+<li><p>Pressure sensor</p></li>
+<li><p>Cryogen</p></li>
+<li><p>GPIB board (communications)</p></li>
+</ul>
+<section id="communications">
+<h2>Communications<a class="headerlink" href="#communications" title="Link to this heading"></a></h2>
+<p>The device should be talked to via serial (RS232 / ISOBUS in OI terms) at a baud rate of 57600. This is variable on the front panel, but <strong>only while the device is in local mode</strong> (when the box in the bottom left of the home screen <strong><em>doesn’t</em></strong> have an orange background).</p>
+<p>The configuration screens look like:</p>
+<p><img alt="Comms general" src="../../_images/comms1.jpg" />
+<img alt="Comms detailed" src="../../_images/comms2.jpg" /></p>
+</section>
+<section id="driver">
+<h2>Driver<a class="headerlink" href="#driver" title="Link to this heading"></a></h2>
+<p>Currently, the driver only measures and sets the following:</p>
+<ul class="simple">
+<li><p>Temperature</p></li>
+<li><p>He Level</p></li>
+<li><p>Pressure</p></li>
+</ul>
+<p>and allows control of:</p>
+<ul class="simple">
+<li><p>Pressure based on temperature (used initially for the little blue cryostat)</p></li>
+</ul>
+<p>There is a section on each below as well as how to set the communication settings.</p>
+<section id="temperature">
+<h3>Temperature<a class="headerlink" href="#temperature" title="Link to this heading"></a></h3>
+<section id="mercury-itc-setup">
+<h4>Setup<a class="headerlink" href="#mercury-itc-setup" title="Link to this heading"></a></h4>
+<p>To activate a card you must set the related IOC macro. The following macros set the <I> for the possible IOC slot:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro</p></th>
+<th class="head"><p>IOC Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MERCURY_01__TEMP_1</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MERCURY_01__TEMP_2</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:2</p></td>
+</tr>
+<tr class="row-even"><td><p>MERCURY_01__TEMP_3</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:3</p></td>
+</tr>
+<tr class="row-odd"><td><p>MERCURY_01__TEMP_4</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:4</p></td>
+</tr>
+<tr class="row-even"><td><p>MERCURY_01__LEVEL_1</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:LEVEL:1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MERCURY_01__LEVEL_2</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:LEVEL:2</p></td>
+</tr>
+<tr class="row-even"><td><p>MERCURY_01__PRESSURE_1</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:PRESSURE:1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MERCURY_01__PRESSURE_2</p></td>
+<td><p>%MYPVPREFIX%MERCURY_01:PRESSURE:2</p></td>
+</tr>
+<tr class="row-even"><td><p>etc</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>To find out what values these macros should take, connect the mercury IOC and check the “System” tab on the opi, which will list the cards which are currently present.</p>
+<p>Example: If the list of Temperature cards displayed on the system tab is [“MB1.T1”, “DB1.T1”, “DB2.T1”] you should set the following macros:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMP_1</span></code>: <code class="docutils literal notranslate"><span class="pre">MB1.T1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMP_2</span></code>: <code class="docutils literal notranslate"><span class="pre">DB1.T1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMP_3</span></code>: <code class="docutils literal notranslate"><span class="pre">DB2.T1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMP_4</span></code>: (empty string)</p></li>
+</ul>
+</section>
+<section id="important-pvs">
+<h4>Important PVs<a class="headerlink" href="#important-pvs" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMP</span></code> Current temperature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMP:SP</span></code> Setpoint for temperature controller</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMP:SP:RV</span></code> Read back of the set temperature point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NAME</span></code> Name associated with the card</p></li>
+</ul>
+</section>
+</section>
+<section id="he-level">
+<h3>He Level<a class="headerlink" href="#he-level" title="Link to this heading"></a></h3>
+<p>The helium level can be monitored by setting the macro <code class="docutils literal notranslate"><span class="pre">LEVEL_N</span></code> to point at the correct vi in a similar fashion to the temperature.</p>
+</section>
+<section id="pressure">
+<h3>Pressure<a class="headerlink" href="#pressure" title="Link to this heading"></a></h3>
+<p>A pressure card can be monitored by setting the macro <code class="docutils literal notranslate"><span class="pre">PRESSURE_N</span></code> to point at the correct vi in a similar fashion to the temperature.</p>
+</section>
+<section id="software-pressure-control">
+<h3>Software Pressure Control<a class="headerlink" href="#software-pressure-control" title="Link to this heading"></a></h3>
+<p>The little blue cryostat has a software pressure control mode to save Helium. The pressure set point, and in turn the needle value opening range, is set based on the set point and current temperature. There is a PV to set this to be on for the Mercury, in addition this will turn on Temperature PID, heater and pressure flow rate automatic settings and turn off the temperature flow rate automatic setting. The pressure will be set base on four regimes based on the temperature - setpoint:</p>
+<ul class="simple">
+<li><p>Less than - 2x the temperature deadband: Pressure is set to <code class="docutils literal notranslate"><span class="pre">minimum</span> <span class="pre">pressure</span></code>. The idea is to let the cell warm up as quickly as possible.</p></li>
+<li><p>from -2x to -1x the deadband: Pressure is set to the value for the temperature from the table. The cell needs to warm up but more slowly.</p></li>
+<li><p>from -1x to 1x the deadband: Pressure is set to the value for the temperature from the table + a ramp is added from the offset to 0. Cell is the right temperature reduce the offset we used for extra cooling to be 0.</p></li>
+<li><p>above the deadband: Pressure is set to the value for the temperature from the table + offset + a value proportion to the square of the gain * distance above deadband the temperature is. Increase the pressure to cool the cell as quickly as possible reducing extra cool as we get near the deadband.</p></li>
+</ul>
+<p>Temperature pressures are then coerced to be between a minimum and maximum pressure.</p>
+<p><img alt="Comms detailed" src="../../_images/SPC.png" /></p>
+<p>To enable the full auto control the FULL_AUTO_PRESSURE1` macros must be set.</p>
+<p>A full list of macros to set are:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPC_PRESSURE_X</p></td>
+<td><p>blank</p></td>
+<td><p>The index of the pressure card to control for temperature card X</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPC_MIN_PRESSURE</p></td>
+<td><p>0</p></td>
+<td><p>Minimum pressure allowed</p></td>
+</tr>
+<tr class="row-even"><td><p>SPC_MAX_PRESSURE</p></td>
+<td><p>-</p></td>
+<td><p>Maximum pressure allowed</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPC_TEMP_DEADBAND</p></td>
+<td><p>-</p></td>
+<td><p>Deadband for the temperature and setpoint</p></td>
+</tr>
+<tr class="row-even"><td><p>SPC_OFFSET</p></td>
+<td><p>-</p></td>
+<td><p>Offset from which the ramp is reduced</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPC_OFFSET_DURATION</p></td>
+<td><p>-</p></td>
+<td><p>Time in minutes over which the offset is reduced</p></td>
+</tr>
+<tr class="row-even"><td><p>SPC_GAIN</p></td>
+<td><p>-</p></td>
+<td><p>Gain term for the extra pressure</p></td>
+</tr>
+</tbody>
+</table>
+<p>The pressures for the various temperature setpoints are read from <code class="docutils literal notranslate"><span class="pre">...Settings\config\common\other_devices\little_blue_cryostat.txt</span></code></p>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<p>In this example, the front panel (home screen) on the Mercury looks like:</p>
+<p><img alt="front panel showing 6 areas" src="../../_images/front_panel.jpg" /></p>
+<p>NB The device should be in remote mode this is indicated by the <em>i</em> (bottom left) having an orange background.
+This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI has a heater attached to the second temperature.</p>
+<p>The temperature controls are on the 1st and 2nd temperature and so on the first and second tab on the mercury device screen. NB the device screen also needs these macros set.</p>
+<p>For info here is a detailed temp loop:</p>
+<p><img alt="detailed front board" src="../../_images/detailed_temp_board.jpg" /></p>
+</section>
+</section>
+<section id="opi">
+<h2>OPI<a class="headerlink" href="#opi" title="Link to this heading"></a></h2>
+<p>The OPI has macros that relate to the macros set at the IOC level.</p>
+</section>
+<section id="outdated-macros">
+<h2>Outdated Macros<a class="headerlink" href="#outdated-macros" title="Link to this heading"></a></h2>
+<p>There are some MercuryiTCs which are using outdated macros (in the format <code class="docutils literal notranslate"><span class="pre">VI_</span></code>…). See below for where these are located.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Instrument</strong></p></th>
+<th class="head"><p><strong>Configuration/Component</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LET</p></td>
+<td><p>LET_Mercury</p></td>
+</tr>
+<tr class="row-odd"><td><p>OSIRIS</p></td>
+<td><p>OSIRIS_Mercury</p></td>
+</tr>
+<tr class="row-even"><td><p>MAPS</p></td>
+<td><p>mercury_itc</p></td>
+</tr>
+<tr class="row-odd"><td><p>GEM</p></td>
+<td><p>Mercury_cryostat</p></td>
+</tr>
+<tr class="row-even"><td><p>SANDALS</p></td>
+<td><p>GEM_mercury</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS</p></td>
+<td><p>triton</p></td>
+</tr>
+<tr class="row-even"><td><p>ZOOM</p></td>
+<td><p>isisstat</p></td>
+</tr>
+<tr class="row-odd"><td><p>LARMOR</p></td>
+<td><p>ISISSTAT</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you use one of these MercuryiTCs could you please:</p>
+<ul class="simple">
+<li><p>add and configure the new macros if they have not yet been added</p></li>
+<li><p>configure the new macros if they exist but have not yet been configured</p></li>
+</ul>
+<p>The new macros and how to configure them can be found in <a class="reference internal" href="#mercury-itc-setup">Setup</a> section above:</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="mercury-doesn-t-communicate">
+<h3>Mercury doesn’t communicate<a class="headerlink" href="#mercury-doesn-t-communicate" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>One issue we have seen is that when the Mercury is transferred between instruments, or during some initial configuration, a user will change values like the Baud rate. It’s good practice to check the devices settings (baud rate etc).</p></li>
+<li><p>Ensure that it is set to remote mode. On the front panel the <em>i</em>, bottom left, should have an orange background.</p></li>
+</ol>
+</section>
+<section id="pressure-card-won-t-read-heater-voltage-correctly">
+<h3>Pressure card won’t read heater voltage correctly<a class="headerlink" href="#pressure-card-won-t-read-heater-voltage-correctly" title="Link to this heading"></a></h3>
+<p>This may be accompanied by an error in the ioc log:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2019</span><span class="o">/</span><span class="mi">12</span><span class="o">/</span><span class="mi">15</span> <span class="mi">16</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mf">04.417</span> <span class="n">TE</span><span class="p">:</span><span class="n">NDW1799</span><span class="p">:</span><span class="n">MERCURY_01</span><span class="p">:</span><span class="n">PRESSURE</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="n">HEATER</span><span class="p">:</span><span class="n">VOLT</span> <span class="n">devAsynFloat64</span> <span class="n">process</span> <span class="n">read</span> <span class="n">error</span> <span class="n">lvDCOMDriver</span><span class="p">:</span><span class="n">readFloat64</span><span class="p">:</span> <span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">HEATER</span><span class="p">:</span><span class="n">VOLT</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.000000</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">LabVIEW</span> <span class="p">:</span> <span class="n">parameter</span> <span class="o">%</span><span class="n">p</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">VI</span><span class="s1">&#39;s connector pane. : IDispat</span>
+</pre></div>
+</div>
+<p>If this is the case, you need to get the latest version of <code class="docutils literal notranslate"><span class="pre">Mercury</span> <span class="pre">-</span> <span class="pre">Pressure.vi</span></code> from sourcesafe. Older versions had two parameters with the same name, which LvDCOM could not cope with correctly.</p>
+</section>
+<section id="cannot-input-ioc-macros-of-the-form-mb0-t1">
+<h3>Cannot input IOC macros of the form <code class="docutils literal notranslate"><span class="pre">MB0.T1</span></code><a class="headerlink" href="#cannot-input-ioc-macros-of-the-form-mb0-t1" title="Link to this heading"></a></h3>
+<p>You may need to rebuild ioc startups on the instrument - Release 7.1.0 initially shipped with a regex which was too restrictive and did not allow <code class="docutils literal notranslate"><span class="pre">.</span></code> as a character.</p>
+<p>To do this:</p>
+<ul class="simple">
+<li><p>Ensure it is ok to shutdown ibex temporarily (i.e. check with scientist and ensure script/dae is not running)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">stop_ibex_server.bat</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">iocstartups</span></code> from <code class="docutils literal notranslate"><span class="pre">C:\instrument\apps\epics</span></code> (it is ok if this complains about some missing directories)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">start_ibex_server.bat</span></code></p></li>
+</ul>
+</section>
+<section id="mercury-is-not-talking-to-any-cards">
+<h3>Mercury is not talking to any cards<a class="headerlink" href="#mercury-is-not-talking-to-any-cards" title="Link to this heading"></a></h3>
+<p>Ensure that IOC macros have been set which correctly correspond to the cards in the mercury itself. You can check which cards are currently in the mercury by looking at the “system” tab in the opi. The macros should be strings of a form similar to “DB1.T1”</p>
+</section>
+<section id="mercury-is-not-reading-a-heater-needle-valve-correctly-on-a-temperature-pressure-card">
+<h3>Mercury is not reading a heater/needle valve correctly on a temperature/pressure card<a class="headerlink" href="#mercury-is-not-reading-a-heater-needle-valve-correctly-on-a-temperature-pressure-card" title="Link to this heading"></a></h3>
+<p>In the details screen of the OPI, check that the <code class="docutils literal notranslate"><span class="pre">associated</span> <span class="pre">heater</span> <span class="pre">channel</span></code> (for heaters) or <code class="docutils literal notranslate"><span class="pre">associated</span> <span class="pre">aux</span> <span class="pre">channel</span></code> (for needle valves) is not None. If it is None, check with the scientist/cryogenics whether a heater/needle valve should be configured for this channel.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Mercury-Heliox.html" class="btn btn-neutral float-left" title="Oxford Instruments Mercury Heliox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MercuryiTC-Enhanced-Cryostat-Control.html" class="btn btn-neutral float-right" title="Mercury iTC - Enhanced cryostat control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

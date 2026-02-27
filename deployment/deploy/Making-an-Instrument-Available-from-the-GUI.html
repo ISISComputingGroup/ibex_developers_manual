@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding an instrument to the instrument list &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating a new branch for IBEX configurations" href="Creating-a-new-branch-for-IBEX-configurations.html" />
+    <link rel="prev" title="Deploy to a training machine" href="IBEX-Deployment-on-Training-machine.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Deploy.html">Deployment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Updating-Instrument-Machines.html">Updating an instrument machine (email templates)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deployment-on-an-Instrument-Control-PC.html">Deploy to an instrument machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Configure-Mini-Inst.html">Configure Mini Inst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client-Release-Tests.html">Client release tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Server-Release-Tests.html">Server Release Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IBEX-Deployment-on-Training-machine.html">Deploy to a training machine</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding an instrument to the instrument list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-new-branch-for-IBEX-configurations.html">Creating a new branch for IBEX configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reviewing-Deploy-Tickets.html">Reviewing deploy tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-ISISICP.html">ISISICP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-Java.html">Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Installing-and-Upgrading-MySQL.html">MySQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Patch.html">Patching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Future.html">Future Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Deploy.html">Deployment</a></li>
+      <li class="breadcrumb-item active">Adding an instrument to the instrument list</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/deploy/Making-an-Instrument-Available-from-the-GUI.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-an-instrument-to-the-instrument-list">
+<h1>Adding an instrument to the instrument list<a class="headerlink" href="#adding-an-instrument-to-the-instrument-list" title="Link to this heading"></a></h1>
+<p>The new instrument must be added to the list of available instruments so that users can control it from the Ibex GUI. The list of available instruments is stored in a PV called <code class="docutils literal notranslate"><span class="pre">CS:INSTLIST</span></code>, which runs on the beam status IOC, and is therefore independent of any specific instrument.</p>
+<p>The content of the PV is a string in json format, compressed and hexed, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;LARMOR&quot;</span><span class="p">,</span> <span class="s2">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;NDXLARMOR&quot;</span><span class="p">,</span> <span class="s2">&quot;pvPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;IN:LARMOR:&quot;</span><span class="p">,</span> <span class="s2">&quot;isScheduled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ALF&quot;</span><span class="p">,</span> <span class="s2">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;NDXALF&quot;</span><span class="p">,</span> <span class="s2">&quot;pvPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;IN:ALF:&quot;</span><span class="p">,</span> <span class="s2">&quot;isScheduled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DEMO&quot;</span><span class="p">,</span> <span class="s2">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;NDXDEMO&quot;</span><span class="p">,</span> <span class="s2">&quot;pvPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;IN:DEMO:&quot;</span><span class="p">,</span> <span class="s2">&quot;isScheduled&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;IMAT&quot;</span><span class="p">,</span> <span class="s2">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;NDXIMAT&quot;</span><span class="p">,</span> <span class="s2">&quot;pvPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;IN:IMAT:&quot;</span><span class="p">,</span> <span class="s2">&quot;isScheduled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MUONFE&quot;</span><span class="p">,</span> <span class="s2">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;NDEMUONFE&quot;</span><span class="p">,</span> <span class="s2">&quot;pvPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;IN:MUONFE:&quot;</span><span class="p">,</span> <span class="s2">&quot;isScheduled&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ZOOM&quot;</span><span class="p">,</span> <span class="s2">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;NDXZOOM&quot;</span><span class="p">,</span> <span class="s2">&quot;pvPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;IN:ZOOM:&quot;</span><span class="p">,</span> <span class="s2">&quot;isScheduled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;IRIS&quot;</span><span class="p">,</span> <span class="s2">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;NDXIRIS&quot;</span><span class="p">,</span> <span class="s2">&quot;pvPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;IN:IRIS:&quot;</span><span class="p">,</span> <span class="s2">&quot;isScheduled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>To add a new instrument to this list proceed as follows:</p>
+<ol class="arabic simple">
+<li><p>Create a new git issue for adding the instrument to the list (for traceability)</p></li>
+<li><p>Check the current PV value from an EPICS terminal: <code class="docutils literal notranslate"><span class="pre">caget</span> <span class="pre">-t</span> <span class="pre">-S</span> <span class="pre">CS:INSTLIST|uzhex</span></code></p></li>
+<li><p>Edit the instrument list update script to include the new instrument <code class="docutils literal notranslate"><span class="pre">...EPICS\ISIS\inst_servers\master\scripts\set_instrument_list.py</span></code></p></li>
+<li><p>Create a pull request and get it flash reviewed.</p></li>
+<li><p>Run the script.</p></li>
+<li><p>Verify that all the instruments are picked up by the GUI (e.g. there are no parsing errors): <code class="docutils literal notranslate"><span class="pre">IBEX</span> <span class="pre">-&gt;</span> <span class="pre">Switch</span> <span class="pre">Instrument</span></code> and that they have the correct alarm server and configuration loaded.</p></li>
+<li><p>Verify that the web dashboard for the instruments still works</p></li>
+</ol>
+<section id="restricting-the-gui-to-switching-to-a-reduced-set-of-instruments">
+<h2>Restricting the GUI to switching to a reduced set of instruments<a class="headerlink" href="#restricting-the-gui-to-switching-to-a-reduced-set-of-instruments" title="Link to this heading"></a></h2>
+<p>On the IDaaS machines we need to be able to limit the instruments that a user can switch to in the GUI, to protect the data of other users. This is performed by adding a whitelist to the instrument preferences supplier. This needs to be applied for each VM group that needs to be restricted.</p>
+<p>This shouldn’t get overwritten during the RPM deploy as the preferences folder is created by the GUI when it first starts, and isn’t in the build.</p>
+<ol class="arabic simple">
+<li><p>Locate the preferences supplier in the VM group (<code class="docutils literal notranslate"><span class="pre">Client_E4\plugins\uk.ac.stfc.isis.ibex.instrument_1.0.0.SNAPSHOT\resources\allowed_groups.conf</span></code>).</p></li>
+<li><p>Add the following line to the preferences file, replacing the instrument names for those which the users of this group are allowed to access:
+<code class="docutils literal notranslate"><span class="pre">MUONS,SANS</span></code></p>
+<ul class="simple">
+<li><p>This would allow the GUI to only switch to MUON or SANS instruments from the switch instrument dialogue</p></li>
+<li><p>The definitive list of group names is in the instrument list, set by <code class="docutils literal notranslate"><span class="pre">inst_servers\scripts\set_instrument_list.py</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IBEX-Deployment-on-Training-machine.html" class="btn btn-neutral float-left" title="Deploy to a training machine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Creating-a-new-branch-for-IBEX-configurations.html" class="btn btn-neutral float-right" title="Creating a new branch for IBEX configurations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

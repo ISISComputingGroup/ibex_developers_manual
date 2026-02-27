@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installing Nicos on Windows &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NICOS Commands" href="NICOS-commands.html" />
+    <link rel="prev" title="Updating NICOS Version" href="Developing-NICOS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Nicos.html">NICOS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Configuring-a-New-Nicos-Instrument.html">Configuring a new Nicos instrument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Design-Documents.html">Script Server design documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Developing-NICOS.html">Updating NICOS Version</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Installing Nicos on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NICOS-commands.html">NICOS Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NICOS-notes.html">NICOS Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-Nicos-%28Script-Server%29.html">Running NICOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Testing-Nicos.html">Testing Nicos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../Nicos.html">NICOS</a></li>
+      <li class="breadcrumb-item active">Installing Nicos on Windows</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/nicos/Installing-Nicos-on-Windows.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="installing-nicos-on-windows">
+<h1>Installing Nicos on Windows<a class="headerlink" href="#installing-nicos-on-windows" title="Link to this heading"></a></h1>
+<p>You can find a broad introduction to Nicos <a class="reference external" href="http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-master/dirhtml/">here</a>.</p>
+<p>The Nicos source was written primarily for Linux and so things can be a bit more difficult on Windows.</p>
+<section id="install-genie-python">
+<h2>Install Genie python<a class="headerlink" href="#install-genie-python" title="Link to this heading"></a></h2>
+<p>As we intend to integrate with IBEX, we are going to work with Genie Python. You can use any Python 2 (2.6 or higher) distribution instead, though some steps may vary between 32 and 64-bit versions.</p>
+<p>Genie Python can be installed by following the instructions <a class="reference internal" href="../../overview/First-Time-Build.html"><span class="doc std std-doc">here</span></a>.</p>
+<p>For the remainder of this wiki, when we refer to Python, it is Genie Python and all commands launched using Python should use the Genie Python executable.</p>
+</section>
+<section id="clone-the-nicos-repository">
+<h2>Clone the Nicos repository<a class="headerlink" href="#clone-the-nicos-repository" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">nicos-core.git</span></code> repository is a submodule of the EPICS repository under <code class="docutils literal notranslate"><span class="pre">EPICS\ISIS\ScriptServer\nicos-core</span></code>.
+Make sure you have it in your system.</p>
+</section>
+<section id="install-c-compiler-for-python-2-7">
+<h2>Install C++ compiler for Python 2.7<a class="headerlink" href="#install-c-compiler-for-python-2-7" title="Link to this heading"></a></h2>
+<p>Install the Microsoft Visual C++ compiler for Python 2.7, which can be downloaded <a class="reference external" href="http://aka.ms/vcpython27">here</a>.</p>
+</section>
+<section id="install-sip">
+<h2>Install sip<a class="headerlink" href="#install-sip" title="Link to this heading"></a></h2>
+<p>sip allows Python to access C/C++ libraries as Python modules. Unfortunately, the site does not provide a “wheel” installation package for Python 2 so we’ll need to compile from source.</p>
+<section id="set-up-environment-variables">
+<h3>Set up environment variables<a class="headerlink" href="#set-up-environment-variables" title="Link to this heading"></a></h3>
+<p>If you are already running an EPICS terminal, you should skip this step as the necessary environment variables are set as standard. If you’re using a standard command prompt, you should continue with this section.</p>
+<p>We’re going to use Visual Studio 2010 to run the make file and install sip, so install it if you don’t already have it. Any recent version of Visual Studio should suffice.</p>
+<p>You may need to update some of the following paths based on your Visual Studio version and install location.</p>
+<p>To set your environment variables correctly, run</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat&quot; amd64
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">amd64</span></code> option sets the environment to use 64-bit tools. This is important because Genie Python is distributed as a 64-bit version of Python. If you wish to use a 32-bit version of Python, remove this option and use the defaults.</p>
+<p>You should now be able to run <code class="docutils literal notranslate"><span class="pre">nmake</span></code> successfully from the command line.</p>
+</section>
+<section id="installing-sip-from-source">
+<h3>Installing <strong>sip</strong> from source<a class="headerlink" href="#installing-sip-from-source" title="Link to this heading"></a></h3>
+<p>Download the Windows source zip for <strong>sip</strong> from <a class="reference external" href="https://www.riverbankcomputing.com/software/sip/download">here</a> and extract it to a local directory. Navigate to that directory and run the following command (using the same Python as is used for Genie e.g. <code class="docutils literal notranslate"><span class="pre">c:\Instrument\Apps\Python3\python.exe</span></code>)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>...\python.exe configure.py
+</pre></div>
+</div>
+<p>This will generate the necessary make file.</p>
+<p>Next (from the same directory) run</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nmake
+</pre></div>
+</div>
+<p>then</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nmake install
+</pre></div>
+</div>
+<p>With any luck, sip is now installed in your version of Genie Python.</p>
+<section id="trouble-shooting">
+<h4>Trouble shooting<a class="headerlink" href="#trouble-shooting" title="Link to this heading"></a></h4>
+<p>If you receive the error <code class="docutils literal notranslate"><span class="pre">NMAKE</span> <span class="pre">:</span> <span class="pre">fatal</span> <span class="pre">error</span> <span class="pre">U1065:</span> <span class="pre">invalid</span> <span class="pre">option</span> <span class="pre">'-'</span></code> the environment variable <code class="docutils literal notranslate"><span class="pre">MAKEFLAGS</span></code> has been set to something undesirable. Blank it with <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">MAKEFLAGS=</span></code></p>
+</section>
+</section>
+</section>
+<section id="get-other-required-python-libraries">
+<h2>Get other required Python libraries<a class="headerlink" href="#get-other-required-python-libraries" title="Link to this heading"></a></h2>
+<p>From the location of nicos-core, run the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">...</span>\<span class="n">Python</span>\<span class="n">scripts</span>\<span class="n">pip</span><span class="o">.</span><span class="n">exe</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p><em>Last time this didn’t work for me and I got the error <code class="docutils literal notranslate"><span class="pre">Fatal</span> <span class="pre">error</span> <span class="pre">in</span> <span class="pre">launcher:</span> <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">create</span> <span class="pre">process</span> <span class="pre">using</span> <span class="pre">'&quot;'</span></code>. In this case running <code class="docutils literal notranslate"><span class="pre">...\Python\python.exe</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> worked instead.</em></p>
+<p>This will grab all of the required Python libraries for Nicos. Then run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>...\Python\scripts\pip.exe install --extra-index-url https://forge.frm2.tum.de/simple  nicos-pyctl
+</pre></div>
+</div>
+<p>The installation for the Nicoslivewidget will fail. That’s expected. Isabella and I tried hard to get the live widget to work to no avail. It means the live view will be unavailable when you launch the Nicos gui. As we don’t intend to use that part of Nicos in IBEX, we’ve chosen to proceed without further attempts to resolve this issue.</p>
+</section>
+<section id="check-nicos-is-installed-correctly">
+<h2>Check Nicos is installed correctly<a class="headerlink" href="#check-nicos-is-installed-correctly" title="Link to this heading"></a></h2>
+<p>Navigate to</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>...\nicos-core\bin
+</pre></div>
+</div>
+<p>and run</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>...\Python\python.exe nicos-demo
+</pre></div>
+</div>
+<p>This will launch the Nicos demo, which is comprised of several services, including a server monitoring window and the main Nicos gui.</p>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>If you see errors about version numbers, it is because Nicos is trying to use <code class="docutils literal notranslate"><span class="pre">git</span></code> in the shell. You can fix this either by adding git to your PATH variables, or by launching the Nicos demo from a git-enabled bash.</p></li>
+<li><p>On error: <code class="docutils literal notranslate"><span class="pre">Starting</span> <span class="pre">NICOS</span> <span class="pre">demo</span> <span class="pre">system,</span> <span class="pre">please</span> <span class="pre">wait:</span> <span class="pre">cacheFatal</span> <span class="pre">error</span> <span class="pre">while</span> <span class="pre">initializing:</span> <span class="pre">Setup</span> <span class="pre">cache</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist</span> <span class="pre">(setup</span> <span class="pre">paths</span> <span class="pre">are</span> <span class="pre">C:\Instrument\nicos-core\custom\NDW1407\setups)</span></code> this is an environment variable set wrongly. Rerun this from a new (standard non-EPICS) command line terminal</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Developing-NICOS.html" class="btn btn-neutral float-left" title="Updating NICOS Version" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NICOS-commands.html" class="btn btn-neutral float-right" title="NICOS Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

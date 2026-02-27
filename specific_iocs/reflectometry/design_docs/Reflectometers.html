@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflectometry Design &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Science" href="Reflectometers-Science.html" />
+    <link rel="prev" title="Reflectometry Design Documents" href="../Design-Docs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Config-Training.html">Reflectometry Config Training</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Design-Docs.html">Reflectometry Design Documents</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Reflectometry Design</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometers-Science.html">Science</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+          <li class="breadcrumb-item"><a href="../Design-Docs.html">Reflectometry Design Documents</a></li>
+      <li class="breadcrumb-item active">Reflectometry Design</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/design_docs/Reflectometers.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="reflectometry-design">
+<h1>Reflectometry Design<a class="headerlink" href="#reflectometry-design" title="Link to this heading"></a></h1>
+<p>The aim of the reflectometer project is to allow users of the reflectometers to have a common and easy experience to set the position of items on the beam line. The setup is fairly complex because there are multiple items that need to be coordinated to make a measurement. This page should give an overview of what is going on and the user cases that are needed.</p>
+<p>The image below shows a schematic of the inside of the block house for a typical reflectometer. (Note that all angles in the diagram are strongly exaggerated for clarity)</p>
+<p><img alt="Reflectometer Schematic" src="../../../_images/refl_beamline_setup1.PNG" /></p>
+<ul class="simple">
+<li><p>The beam travels from the neutron target on the left to the detector on the right, bouncing off a sample along the way.</p></li>
+<li><p>Theta is the main parameter we care about in reflectometry experiments.</p></li>
+<li><p>Different experiments may require different beamline setups which may affect the beam path. (e.g. adding a mirror in this instance)</p></li>
+<li><p>Whenever the beam path is modified, we want equipment to automatically track the beam as appropriate for the currently active configuration. Coordinating motion at the beamline level in this way is the primary purpose of our reflectometry system.</p></li>
+</ul>
+<section id="related-pages-for-more-detail">
+<h2>Related pages for more detail<a class="headerlink" href="#related-pages-for-more-detail" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Reflectometry-Glossary.html"><span class="doc std std-doc">Reflectometer glossary and commonly used phrases</span></a></p></li>
+<li><p><a class="reference internal" href="Reflectometers-Science.html"><span class="doc std std-doc">Setup and science behind the experiment</span></a>: What science is trying to achieve</p></li>
+<li><p><a class="reference internal" href="../Reflectometers-Beam-Height-Calc.html"><span class="doc std std-doc">Reflectometers Beam Height Calculation</span></a>: Calculate motor positions easily</p></li>
+<li><p><a class="reference internal" href="../Reflectometry-Configuration.html"><span class="doc std std-doc">Reflectometry-Configuration</span></a>: Configuration documentation</p></li>
+<li><p><a class="reference internal" href="../../Reflectometry-IOC.html"><span class="doc std std-doc">Reflectometry IOC</span></a></p></li>
+<li><p><a class="reference internal" href="../../Reflectometry-IOC.html"><span class="doc std std-doc">Architecture</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="../Reflectometry-Beamline-Object.html"><span class="doc std std-doc">Beamline</span></a>: Coordinating object</p></li>
+<li><p><a class="reference internal" href="../Reflectometry-Beamline-Parameters.html"><span class="doc std std-doc">User Parameters</span></a>: How user parameters work, including definition of theta</p></li>
+<li><p><a class="reference internal" href="../Reflectometry-Geometry-Components.html"><span class="doc std std-doc">Components</span></a>: Calculation of positions from user parameters</p></li>
+<li><p><a class="reference internal" href="../Reflectometry-Composite-Driving-Layer.html"><span class="doc std std-doc">Driving layer</span></a>: Driving of motors (including engineering corrections, synchronisation and out of beam positions)</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../Reflectometry-Testing.html"><span class="doc std std-doc">Reflectometry Testing</span></a></p></li>
+<li><p><a class="reference internal" href="../Reflectometry-Troubleshooting-and-FAQ.html"><span class="doc std std-doc">Reflectometry Troubleshooting and FAQ</span></a></p></li>
+</ul>
+</section>
+<section id="components-in-a-mode">
+<h2>Components in a mode<a class="headerlink" href="#components-in-a-mode" title="Link to this heading"></a></h2>
+<p>Table of our understanding for each mode what is in the beam and what is tracking the beam. States are:</p>
+<ul class="simple">
+<li><p>O: Out of the beam</p></li>
+<li><p>I: In the beam but not tracking it</p></li>
+<li><p>T: In the beam and tracking it</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>S1</p></th>
+<th class="head"><p>Polariser</p></th>
+<th class="head"><p>S2</p></th>
+<th class="head"><p>sample stack</p></th>
+<th class="head"><p>ideal sample point</p></th>
+<th class="head"><p>S3</p></th>
+<th class="head"><p>analyser</p></th>
+<th class="head"><p>S4</p></th>
+<th class="head"><p>Detector</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NR (Neutron reflecting)</p></td>
+<td><p>T</p></td>
+<td><p>O</p></td>
+<td><p>T</p></td>
+<td><p>I</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>O</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>polarised</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>I</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>O</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>In sim language</p>
+<p>Mode | S1 Height above beam |  Polariser angle and height above</p>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading"></a></h2>
+<section id="answered">
+<h3>Answered<a class="headerlink" href="#answered" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Is the ideal sample point x position fixes?</p>
+<ul class="simple">
+<li><p>Yes. The beam coming in will hit any pre-sample active components and the height of the sample point is the point at which the beam reaches this x coordinate.</p></li>
+</ul>
+</li>
+<li><p>I think each mode of operation sets up fixed rules and relations and this is what we need to capture.</p></li>
+<li><p>We need to calculate both the positions based on composite parameters and composite parameters based on the positions of the components, is this right?</p>
+<ul class="simple">
+<li><p>Yes, it would be strange not to have this readback</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>What happens if the beam having hit the super mirror does not hit the sample axis?</p>
+<ul class="simple">
+<li><p>apart from pathological cases, beam going straight up or backwards, there is always a point that the sample axis is hit</p></li>
+</ul>
+</li>
+<li><p>What happens if the detector is not looking at the sample point?</p>
+<ul class="simple">
+<li><p>Nothing, but a warning in this case would be useful.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Does the beam always go forwards?</p>
+<ul class="simple">
+<li><p>Yes, on reflectometers the beam always goes forward.</p></li>
+</ul>
+</li>
+<li><p>Are there any corrections to the idealised model, at that level?</p>
+<ul class="simple">
+<li><p>No</p></li>
+</ul>
+</li>
+<li><p>What does an analyser do to the beam? Is it an active component? How does it affect the measurement of theta?</p>
+<ul class="simple">
+<li><p>Yes it is an active component on some beam lines (depends on type). It doesn’t effect the measurement of theta; although if you are calculating the readback the outgoing beam goes to the analyser not the detector.</p></li>
+</ul>
+</li>
+<li><p>How are slits measured (along the arc or along there length)?</p>
+<ul class="simple">
+<li><p>In the end it doesn’t really matter but they are measured along their length.</p></li>
+</ul>
+</li>
+<li><p>Room coordinates are these ok as we defined them?</p>
+<ul class="simple">
+<li><p>Maybe, they should be the same as Mantid default.</p></li>
+</ul>
+</li>
+<li><p>Coordinates: according to IDFs, ZYX on <code class="docutils literal notranslate"><span class="pre">INTER</span></code>, <code class="docutils literal notranslate"><span class="pre">SURF</span></code>, <code class="docutils literal notranslate"><span class="pre">OFFSPEC</span></code> is XZY on <code class="docutils literal notranslate"><span class="pre">CRISP</span></code>, <code class="docutils literal notranslate"><span class="pre">POLREF</span></code>. We use the former. Is this a problem?</p>
+<ul class="simple">
+<li><p>Convention from <code class="docutils literal notranslate"><span class="pre">INTER</span></code> etc. is correct.</p></li>
+</ul>
+</li>
+<li><p>Currently, the theta readback displays the angle to the detector but if the detector is set to be above the beam the readback is still to the detector and so the theta sp and readback do not agree. What should we do:</p>
+<ol class="arabic simple">
+<li><p>Don’t allow displacement relative to the beam to be set on components which interface with Theta</p></li>
+<li><p>Use the difference between the beam intercept and the position for the setpoint and add this to the read back position</p></li>
+<li><p>Do nothing this is the correct behaviour and is telling the instrument scientist they are not measuring what they think they are</p></li>
+</ol>
+<ul class="simple">
+<li><p><em>Answer</em> 2</p></li>
+</ul>
+</li>
+<li><p>Will you want to do individual moves while another move is going on?</p>
+<ul class="simple">
+<li><p>Yes</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="answered-06-2020">
+<h3>Answered 06/2020<a class="headerlink" href="#answered-06-2020" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Beam block, turn on beam block mode what do you expect to happen? What can we control - yes I know this is th 3rd iteration of this
+-The way they use it is to set gaps, horizontal and vertical, then turn off the gap calcs. Then move the non-blocking blade as far as possible out of the way and then move the blocking blade to desired position, e.g. South blade to -1.</p>
+<ul class="simple">
+<li><p>On CRISP the bottom blade needs to track the beam</p></li>
+<li><p>In blocking mode it should have an offset from the beam</p></li>
+</ul>
+</li>
+<li><p>Change engineering correction based on mode how does this work</p>
+<ul class="simple">
+<li><p>Already thought internally about this and solution is read backs update and then they will be shown to be not in position. If parameter is in mode position is corrected next move, if not they will continue to be shown to be wrong.</p></li>
+</ul>
+</li>
+<li><p>CRISP: What is the position for S4? (found it in Mantid IDF, but values differ from those in VI - assumption is VI is correct)</p>
+<ul class="simple">
+<li><p>Vi is correct</p></li>
+</ul>
+</li>
+<li><p>Do we need to reflect SP of motors into Reflectometry server</p>
+<ul class="simple">
+<li><p>Alarm on sp not same as RBV is good. OK?</p></li>
+<li><p>Would like the explanation to appear in the status box ticket added but low priority <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5486">#5486</a></p></li>
+</ul>
+</li>
+<li><p>#5456: Are there lots of configs and scripts to convert, which ones?</p>
+<ul class="simple">
+<li><p>Do this together when transferring POLREF but configs needs are anything ending <code class="docutils literal notranslate"><span class="pre">_HCM</span></code> or <code class="docutils literal notranslate"><span class="pre">_SCM</span></code> and all sub configs <code class="docutils literal notranslate"><span class="pre">SUB_POLREF</span></code> and polref flipper component to see the flipper mode.</p></li>
+</ul>
+</li>
+<li><p>Can we have the dance script for POLREF?</p>
+<ul class="simple">
+<li><p>yes called dance_gcl in network scripts area under user test</p></li>
+</ul>
+</li>
+<li><p>Ask about vertical CHI for FOM/SAMPLE again</p>
+<ul class="simple">
+<li><p>Sample:</p>
+<ul>
+<li><p>In horizontal mode:</p>
+<ul>
+<li><p>sample angle - phi</p></li>
+<li><p>sample roll - psi</p></li>
+<li><p>sample yaw - chi</p></li>
+</ul>
+</li>
+<li><p>In vertical mode:</p>
+<ul>
+<li><p>sample angle - chi</p></li>
+<li><p>sample roll - psi</p></li>
+<li><p>sample yaw - phi</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Detector:</p>
+<ul>
+<li><p>In horizontal mode:</p>
+<ul>
+<li><p>detector angle - theta</p></li>
+</ul>
+</li>
+<li><p>In vertical mode:</p>
+<ul>
+<li><p>detector angle - bench slide</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Super mirror:</p>
+<ul>
+<li><p>In horizontal mode:</p>
+<ul>
+<li><p>straight</p></li>
+</ul>
+</li>
+<li><p>In vertical mode:</p>
+<ul>
+<li><p>same as before but PSI is PSI + 90 we would like this to be 0 if it is easy</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Ask about where horizontal/vertical gaps should be and what labels on vertical config</p>
+<ul class="simple">
+<li><p>More generally how does this apply to all components</p></li>
+<li><p>Keep vertical as vertical for slits but collimation slits needs to be indicated. Ideally swapping in OPI swap positions of horizontal and vertical slits</p></li>
+<li><p>Need to add parameters <code class="docutils literal notranslate"><span class="pre">s#hg</span></code> to run angle. Footprint calculator needs to be setup for vertical slits</p></li>
+</ul>
+</li>
+<li><p>Are there different park position dependent on the mode</p>
+<ul class="simple">
+<li><p>No (apart from laser mode)</p></li>
+</ul>
+</li>
+<li><p>How to get pixel 280 out is it a numbered spectra</p>
+<ul class="simple">
+<li><p>just a specific spectra number</p></li>
+</ul>
+</li>
+<li><p>Clash conditions on POLREF</p>
+<ul class="simple">
+<li><p>Guide rails on flipper stage and slit 2 clash with sample table (including something on the table)</p></li>
+<li><p>Slit 2 height stage hits a cross bar if too low</p></li>
+<li><p>j1, j2 and h are all related because horizontal stage can fall off jacks if j1 or j2 are different</p></li>
+</ul>
+</li>
+<li><p>Homing of motors what can and what can’t</p>
+<ul class="simple">
+<li><p>all apart from bench jacks</p></li>
+</ul>
+</li>
+<li><p>Bump strips what does it do</p>
+<ul class="simple">
+<li><p>Switches off all motor amplifiers but this means that the motors relax and so after this has happened you need to reposition all motors to where they were. In SECI this mean pressing the move button. There is also a message that appears on both the motor table and on the refl server saying that this has happened. Added ticket</p></li>
+</ul>
+</li>
+<li><p>Bender offspec analyser: Which motor drives chi? Do you need to change motor settings?</p>
+<ul class="simple">
+<li><p>Driven by the Huber motor</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Design-Docs.html" class="btn btn-neutral float-left" title="Reflectometry Design Documents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reflectometers-Science.html" class="btn btn-neutral float-right" title="Science" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

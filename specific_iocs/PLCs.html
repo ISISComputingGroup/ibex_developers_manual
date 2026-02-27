@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLCs &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="He Recovery PLC" href="plcs/Helium-Recovery-PLC.html" />
+    <link rel="prev" title="nGEM Detector" href="other/nGEM-detector.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PLCs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plcs/Helium-Recovery-PLC.html">He Recovery PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plcs/MAPS-Vacuum-System.html">MAPS Vacuum System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plcs/OPCUA.html">OPC UA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plcs/Omron-FINS.html">Omron FINS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plcs/RIKEN-PLC.html">RIKEN PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plcs/SANS2D-vacuum-PLC.html">SANS2D Vacuum PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plcs/Schneider-PLC.html">Schneider PLC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+      <li class="breadcrumb-item active">PLCs</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/PLCs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="plcs">
+<h1>PLCs<a class="headerlink" href="#plcs" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>A PLC (programmable logic controller) is a device that is capable of doing near real-time control of a number of inputs and outputs. They’re used throughout ISIS to do control that needs to happen very quickly or very reliably/safely e.g. if a vessel is under vacuum make sure it cannot move. In general IBEX doesn’t need to worry about what logic the PLC is performing but just needs to read and write to various memory addresses on the device to make sure it performs the correct logic.</p>
+</section>
+<section id="what-is-a-plc">
+<h2>What is a PLC?<a class="headerlink" href="#what-is-a-plc" title="Link to this heading"></a></h2>
+<p>PLCs, or programmable logic controllers, are specialised, ruggedized computers used in the control of manufacturing processes. They replaced previous electrical relays, which were large, heavy, unreliable and had to be physically rewired if there needed to be a change in the logic of the control process. Since PLCs are a type of computers, they can be reprogrammed by writing new software.</p>
+<p>PLCs are usually composed of a CPU, Input modules, output modules, communication equipment, and a power supply. Input modules are responsible for taking input from devices (such as sensors, etc), translating that signal to a digital signal that the CPU can understand , as well as removing electrical noise. The output modules do a similar job, but instead they handle the output signal coming from the PLC towards devices such as solenoid valves, on/off buttons, and others. They translate the binary output of the CPU to a digital or analogue signal that the output device can understand. Each input/output port or module enable the PLC to take input and give output to a wide array of specific devices that may use different communication protocols. The communication equipment is an interface that allows the computer to be controlled and reprogrammed by users. It can be as simple as a USB port that allows a regular laptop to connect to it. Through this communication equipment the PLC can also have remote input or output, that comes from a different place that at the point of use.</p>
+<p>All of these components are installed in a chassis or rack. There are two main types of PLCs in this regard: fixed and modular. Fixed PLCs are all-in-one machines that come with a fixed set of inputs and outputs. They are fairly small, can be installed easily, cheap and also include a small screen that can be used for manually programming the PLC. Modular PLCs are formed out of a series of connected modules that are bought separately. They are installed on a rack or clipped on a rail attached to a wall. A modular PLC has at least a CPU module and a power supply. The input and output modules can be added sideways and removed when not needed. Therefore, modular PLCs can be very flexible as you can configure their I/O to be exactly what you need.</p>
+<p>The computer software used to program PLCs is often proprietary and supplied by the manufacturer. The same is for the removable I/O modules.
+Although the programming software is often proprietary, the programming language used usually follows one of five IEEE standards: ladder diagram, sequential function charts, function block diagram, instruction list, or structured text. Ladder diagrams are the most popular, as it is a graphical programming language based on ladder logic. This type of logic was used when designing electrical relays, and thus ladder diagrams are easy to use for electrical engineers. Structured text is a text based programming language, with syntax similar to C. Instruction list is a text based language that is similar to assembly programming languages.</p>
+<p>As mentioned above, a PLC is a type of computer that is specialised for controlling industrial processes. A PC can also be used for this. However, a PLC is specially designed for this type of job, has specialised modules from manufacturers with experience in this area, it does not have normal peripherals of a PC that are unnecessary for its job such as mice, keyboards, monitors, and is more rugged so that it can operate in environments with electrical noise, vibrations, etc. It is designed with more reliability on both a hardware and software level. PLCs have a minimal Operating System whose only job is to run the PLC code sequentially. PLC programming languages are more suited for applications in controls engineering, and more accessible for engineers in this area.</p>
+</section>
+<section id="models">
+<h2>Models<a class="headerlink" href="#models" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plcs/Helium-Recovery-PLC.html">He Recovery PLC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plcs/MAPS-Vacuum-System.html">MAPS Vacuum System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plcs/OPCUA.html">OPC UA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plcs/Omron-FINS.html">Omron FINS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plcs/RIKEN-PLC.html">RIKEN PLC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plcs/SANS2D-vacuum-PLC.html">SANS2D Vacuum PLC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plcs/Schneider-PLC.html">Schneider PLC</a></li>
+</ul>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>A <a class="reference internal" href="motors/Beckhoff.html"><span class="doc std std-doc">Beckhoff</span></a> is also a generic PLC, though we usually treat it as a motion controller.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="other/nGEM-detector.html" class="btn btn-neutral float-left" title="nGEM Detector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plcs/Helium-Recovery-PLC.html" class="btn btn-neutral float-right" title="He Recovery PLC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

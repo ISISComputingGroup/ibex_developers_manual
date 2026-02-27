@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero field controller design &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Motors" href="../Motors.html" />
+    <link rel="prev" title="Zero field controller" href="Zero-field-controller.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Danfysik.html">Danfysik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Zero-field-controller.html">Zero field controller (HIFI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HTS-Magnet.html">HTS Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MuSR-Steering-Magnets.html">MuSR Steering Magnets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Muon-Active-Compensation.html">Muon Active Compensation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Muon-NGS-Power-Supply-Firewall.html">Muon NGPS Power Supply Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NGPS-PSU.html">NGPS Power Supply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Power-Supplies.html">RIKEN Power Supplies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TDK-Lambda-Genesys.html">TDK Lambda Genesys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Transtechnik-Power-Supply.html">Transtechnik Power Supply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Zero-field-controller.html">Zero field controller</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Zero field controller design</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+      <li class="breadcrumb-item active">Zero field controller design</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/magnets/Zero-field-controller-design.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="zero-field-controller-design">
+<h1>Zero field controller design<a class="headerlink" href="#zero-field-controller-design" title="Link to this heading"></a></h1>
+<p>This page describes our understanding of the requirements for the MUON zero-field controller and serves as documentation for how the system was designed (and therefore, why certain choices were made in the implementation).</p>
+<p>If you only need troubleshooting information rather than design details, see <a class="reference internal" href="Zero-field-controller.html"><span class="doc std std-doc">Zero field controller</span></a></p>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>On a muon instrument, the purpose of the MUON zero-field controller is to maintain a constant (not necessarily zero) magnetic field in the region surrounding the sample. The field should be maintained as external magnetic fields change (i.e. another instrument switches on their magnet). This is achieved by measuring the magnetic field at a fixed sample point. The field should be stable at around the <code class="docutils literal notranslate"><span class="pre">mG</span></code> level and needs updating at a frequency of ~1Hz.</p>
+<p>The magnetic field in the sample region is generated by electromagnets (except on HIFI where they are shims to superconducting magnets). The magnetic field is generated by 3 coils perpendicular to each other, so there are 3 different currents that need controlling.  A magnetometer is used to measure the magnetic field (in <code class="docutils literal notranslate"><span class="pre">mG</span></code>) in the sample region; this is called the fixed sensor.  The magnetometer provides 3 magnetic field readings; one for the z component (along the beam), one for the y component (vertical and perpendicular to the beam) and x (parallel to the floor).  The fixed sensor is close to but not at the sample position.</p>
+<p>On different instruments there is slightly different equipment:</p>
+<ul class="simple">
+<li><p>EMU, MuSR, ARGUS, CHRONUS</p>
+<ul>
+<li><p>Magnetometer: flux gate (has lower maximum field than the hall probes) connected to a NI 9125 cDAQ</p></li>
+<li><p>Magnets: Conventional magnets attached to Kepco power supplies</p>
+<ul>
+<li><p>which model of Kepco?</p></li>
+</ul>
+</li>
+<li><p>Manual probe: ? not sure but we are not converting this now</p></li>
+</ul>
+</li>
+<li><p>HIFI</p>
+<ul>
+<li><p>Magnetometer: Group 3 hall probes connected to a DTM161</p></li>
+<li><p>Magnets: Superconducting, shim values set from 0 field are used as offsets in these magnets</p></li>
+<li><p>Manual probe: LS201 hall probe</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="existing-muon-zero-field-controller">
+<h2>Existing MUON zero-field controller<a class="headerlink" href="#existing-muon-zero-field-controller" title="Link to this heading"></a></h2>
+<p>All five muon instruments: ARGUS, CHRONUS, EMU, HIFI and MuSR use a zero-field controller, implemented as a collection of LabVIEW VIs.</p>
+<p>There appear to be 3 variants of the MUON zero-field controller:</p>
+<ol class="arabic simple">
+<li><p>EMU and MuSR both use one variant of the MUON zero-field controller.  This variant can be found in the folder <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Muon</span> <span class="pre">Magnets\Zero</span> <span class="pre">Field</span> <span class="pre">Controller</span></code>.</p></li>
+<li><p>ARGUS and CHRONUS both use a second variant of the MUON zero-field controller.  This variant can be found in the folder <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\ARGUS\Zero</span> <span class="pre">Field</span> <span class="pre">Controller</span></code>.  This variant is similar to the one used by EMU and MuSR.</p></li>
+<li><p>HIFI has its own unique MUON zero-field controller. This variant is included in the Group 3 Hall probe VI at <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Instruments\HIFI\Group3</span> <span class="pre">Hall</span> <span class="pre">probe</span></code>. The behaviour of this VI needs to be validated. Note that this includes extra coefficients to allow for the shape of the gradients between the two sets of hall probes.</p></li>
+</ol>
+<section id="operation">
+<h3>Operation<a class="headerlink" href="#operation" title="Link to this heading"></a></h3>
+<p>The zero-field controller operates in one of two required modes, <strong><em>manual</em></strong> and <strong><em>auto-feedback</em></strong> (dead reckoning will not be required).</p>
+<section id="manual-mode">
+<h4>Manual Mode<a class="headerlink" href="#manual-mode" title="Link to this heading"></a></h4>
+<p>In Manual mode, the user must adjust the currents manually to achieve the desired magnetic field.
+The typical procedure is:</p>
+<ul class="simple">
+<li><p>Set Auto feedback mode</p></li>
+<li><p>Take muon measurements in zero field</p></li>
+<li><p>Set Manual mode – this maintains the same currents as have just been used in auto, so the field remains zero (for now)</p></li>
+<li><p>Apply a moderate field with the instrument’s main magnet (this could be above the maximum of the flux gate magnetometer, but small enough that the stray field we’ve compensated off would be significant)</p></li>
+<li><p>Take muon measurements in this exact applied field.</p></li>
+<li><p>Turn off the main magnet. The field will be back to near zero (possible offsets due to the external interfering fields having changed recently, or remnant magnetisation somewhere)</p></li>
+<li><p>Re-set Auto Mode. The feedback resumes starting with the currents that were in use in Manual, and smoothly reaches a good zero value.</p></li>
+<li><p>Take more zero field measurements.</p></li>
+</ul>
+</section>
+<section id="auto-feedback-mode">
+<h4>Auto-Feedback Mode<a class="headerlink" href="#auto-feedback-mode" title="Link to this heading"></a></h4>
+<p>In Auto-Feedback mode, the user specifies the desired field (in <code class="docutils literal notranslate"><span class="pre">mG</span></code>) and a feedback loop continually adjusts the current supplied by the PSUs to achieve and maintain the desired magnetic field.</p>
+</section>
+</section>
+</section>
+<section id="zero-field-set-up-procedure">
+<h2>Zero field set up procedure:<a class="headerlink" href="#zero-field-set-up-procedure" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Calibrate the system (to relate current to field, undertaken via the <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Zero</span> <span class="pre">Field.vi</span></code> within SECI):</p>
+<ul class="simple">
+<li><p>Check for a huge stray field</p>
+<ul>
+<li><p>Ensure that the absolute maximum of the fields are &lt; 4000 mG 2 seconds after setting a current of 0, if it isn’t the magnet is not in range, and there is a huge stray field</p></li>
+<li><p>Calculate the magnitude of the field at this point (square root of the sum of the squared fields)</p></li>
+</ul>
+</li>
+<li><p>For each magnet and for a range of currents</p>
+<ul>
+<li><p>Measure the magnetic field at the fixed sample position</p></li>
+</ul>
+</li>
+<li><p>Plot field against the current</p>
+<ul>
+<li><p>21 evenly spaced steps of between the lower current limit and upper current limit, with a 2-second wait before taking the field reading in all three dimensions</p></li>
+</ul>
+</li>
+<li><p>Perform linear regression to work out the calibration coefficients (1 per axis).</p>
+<ul>
+<li><p>If the result is linear (falls in a tolerance for the RMS - tolerance TBD) these values should be displayed to the user for them to be inputted into the config</p></li>
+<li><p>If not linear the user should be warned, warnings still to be defined from the VI</p></li>
+</ul>
+</li>
+<li><p>Check that the noise ratios are acceptable at 0 field in manual mode (3-second delay for settling)</p>
+<ul>
+<li><p>Set field to 0</p></li>
+<li><p>Put controller in manual mode</p></li>
+<li><p>Wait 3 seconds</p></li>
+<li><p>20 readings a second apart</p></li>
+<li><p>Calculate the variance for each field</p></li>
+<li><p>Calculate the manual RMS value (<code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">root</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">variance</span> <span class="pre">for</span> <span class="pre">each</span> <span class="pre">field</span></code>)</p></li>
+<li><p>The system is noisy if the RMS value &gt; 5</p></li>
+</ul>
+</li>
+<li><p>Check that the noise ratios are acceptable at 0 field in auto feedback mode (6-second delay for settling)</p>
+<ul>
+<li><p>Set field to 0</p></li>
+<li><p>Put controller in auto feedback mode</p></li>
+<li><p>Wait 3 seconds</p></li>
+<li><p>20 readings a second apart</p></li>
+<li><p>Calculate the variance for each field</p></li>
+<li><p>Calculate the manual RMS value (<code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">root</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">variance</span> <span class="pre">for</span> <span class="pre">each</span> <span class="pre">field</span></code>)</p></li>
+<li><p>The system is noisy if the RMS value &gt; 5</p></li>
+</ul>
+</li>
+<li><p>Plot the noise fields against time</p></li>
+<li><p>This is performed once or twice a cycle</p></li>
+<li><p>NB Coefficients should not be set automatically; scientists will take these numbers and save them later.</p></li>
+</ul>
+</li>
+<li><p>Measure offsets (to compensate for the stray field gradients):</p>
+<ul class="simple">
+<li><p>Place a portable probe at the sample position</p></li>
+<li><p>Set the field to 0</p></li>
+<li><p>Update the offsets so that the portable probe measures 0.</p>
+<ul>
+<li><p>The offsets should be printed to the user so that they can update them in the config</p></li>
+</ul>
+</li>
+<li><p>This is performed regularly</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="zero-field-controller-feedback-loop">
+<h2>Zero-Field Controller Feedback Loop<a class="headerlink" href="#zero-field-controller-feedback-loop" title="Link to this heading"></a></h2>
+<p>The zero-field controller feedback loop uses the following inputs:</p>
+<ul class="simple">
+<li><p><strong>M</strong> – measured magnetic field (it has three components: longitudinal (L), transverse (T) &amp; vertical (V))</p>
+<ul>
+<li><p>in IBEX this should use X, Y, Z, with Z being along the beam, y is vertical transverse and X is horizontal transverse.</p></li>
+</ul>
+</li>
+<li><p><strong>O</strong> – Offset (to compensate for sensor placement)</p></li>
+<li><p><em><strong>C</strong></em> – orientation matrix, derived from engineering drawing, this the direction of the field produced by each coil and because the coils are at right angles has +1, -1 and 0 as its components.</p></li>
+<li><p><strong>S</strong> – setpoints requested</p></li>
+<li><p><strong>P</strong> – magnetic field produced by a coil for a current. Measured in <code class="docutils literal notranslate"><span class="pre">A/mG</span></code> using the calibration procedure.</p></li>
+<li><p>p – proportional value (feedback fiddle factor)</p></li>
+<li><p><strong>I</strong> – current on magnets</p></li>
+<li><p><strong>I’</strong> - new current to send</p></li>
+</ul>
+<p>Quantities in bold are vector quantities.  Quantities in italic, bold are matrix quantities.</p>
+<p>The new current to send is calculated as: <br>
+<strong>I’</strong> = (<strong>S</strong> - (<strong>M</strong> - <strong>O</strong>) . <em><strong>C</strong></em>) . <strong>P</strong> * p + <strong>I</strong></p>
+<p>The following quantities are:</p>
+<ul class="simple">
+<li><p><strong>Mc</strong> = (<strong>M</strong> - <strong>O</strong>) . <em><strong>C</strong></em> is the corrected field - turns measured field in the basis of the magnetometer into fields produced by the magnet in the basis of the magnets.</p></li>
+<li><p><strong>Mc</strong> - <strong>S</strong>  is the difference between the current field and required field</p></li>
+<li><p>(<strong>Mc</strong> - <strong>S</strong>) . <strong>P</strong> * p  is the change required in the current for this iteration (in current version may need to multiply through by time between samples).</p></li>
+</ul>
+<section id="maximum-current">
+<h3>Maximum Current<a class="headerlink" href="#maximum-current" title="Link to this heading"></a></h3>
+<p>The process enforces maximum limits on the currents. These are set by the instrument scientist based on</p>
+<ol class="arabic simple">
+<li><p>the current likely to be needed to compensate any feasible stray field</p></li>
+<li><p>the current that would hit the voltage limit on the Kepco before its current limit, if the coils have high enough resistance</p></li>
+<li><p>the maximum desired power dissipation of the coils</p></li>
+<li><p>not wanting to exceed the magnetometer full scale. Each axis has its own limit.</p></li>
+</ol>
+<p>Higher currents are <code class="docutils literal notranslate"><span class="pre">clamped</span></code> to this maximum with the appropriate polarity and ARE then sent to the PSU! But there should be a warning as well. In Auto, the clamped value is used as the basis for calculations next time.</p>
+</section>
+<section id="maximum-voltage">
+<h3>Maximum Voltage<a class="headerlink" href="#maximum-voltage" title="Link to this heading"></a></h3>
+<p>The process sets voltage limits on the PSUs to allow the current setpoints to be achieved. These should be automatically set in the power supply by the zero field controller whenever it is in auto mode.</p>
+</section>
+<section id="maximum-field">
+<h3>Maximum Field<a class="headerlink" href="#maximum-field" title="Link to this heading"></a></h3>
+<p>When overloaded by a high field, the fluxgate magnetometer can read any random value on all three axes which might look like it’s in range and may have the opposite sign to the actual field. Moderate overloads leave the reading close to the limit. The VI attempts to detect fields at or close to the limits and says <code class="docutils literal notranslate"><span class="pre">sensor</span> <span class="pre">overload</span></code> if this happens: typically the main magnet coil is still on or there’s a fault with the sensor.</p>
+<p><strong>Notes:</strong></p>
+<ol class="arabic simple">
+<li><p>ARGUS appears to use different magnetic field components, labelled LR (left-right), UD (up-down) and FB (forwards-backwards).  How do these differ from L, T and V?</p>
+<ul class="simple">
+<li><p>A single set would be good X, Y, Z as described above.</p></li>
+</ul>
+</li>
+<li><p>The offset value, O, appears to be a constant.  Why is this?</p>
+<ul class="simple">
+<li><p>It is an approximation</p></li>
+</ul>
+</li>
+<li><p>Are there limits on the input &amp; output values?  If so, what are they?  If these limits are breached, what should happen?</p>
+<ul class="simple">
+<li><p>The maximum current and voltage values are set as part of the initialisation file, and values beyond those limits are not sent to the PSU</p></li>
+</ul>
+</li>
+<li><p>Is the above expression guaranteed to converge?  What if it doesn’t?  How does the current zero-field controller guard against non-convergence?</p>
+<ul class="simple">
+<li><p>No, we expect to get noise but at the 1 mG level. The signal is declared stable at the 10mG level</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>There is a requirement that Zero field system control needs to be continuous, in the mathematical function sense of not having steps in, when configurations change or control is interrupted.”.  How is this requirement currently achieved? (It may better to run the zero-field controller on a separate device (e.g. a Raspberry Pi).  This approach would eliminate the risk of interruption should IBEX be halted or the control PC re-booted.) What is this requirement in practice?</p></li>
+<li><p>Preserving the zero on restart: the usual use-case for this is switching (either way) between a dilution fridge configuration and a cryostat configuration which happens to use the dilution insert as a centre stick. The sample remains in position and cold (1.4K to 10K) throughout and we want to avoid a spike in the applied field which might upset a sensitive magnetic or superconducting state. Being able to preserve zero field through an IBEX crash or computer reboot, and thus avoid having to repeat a time consuming sequence of field/temperature steps to prepare a sample, is also useful assuming everything else in IBEX can be got running.</p></li>
+<li><p>There is no enforced maximum rate of change. The calculated new currents are applied immediately – the field change itself may be limited by the inductance of the coils and the Kepcos briefly hitting the voltage limits as a result. Similarly in manual, a new current entered should be applied immediately. In practice in a real experiment there might be a large step on initially zeroing the field for a new sample/cryostat but subsequently going back into Auto will only be a small change.</p></li>
+<li><p>The system should be monitored for the currents overloading and this should be fed back to the user</p></li>
+</ul>
+</section>
+<section id="zero-field-implementation">
+<h2>Implementation<a class="headerlink" href="#zero-field-implementation" title="Link to this heading"></a></h2>
+<p><strong>Suggested operation of magnetometer IOC:</strong> (see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4838">ticket #4838</a> for more details]</p>
+<ol class="arabic simple">
+<li><p>On a regular timescale the IOC will read the three axes of the magnetometer. It should then fill in PVs for the <strong>raw field</strong> and <strong>corrected field</strong>: <code class="docutils literal notranslate"><span class="pre">Mc</span> <span class="pre">=</span> <span class="pre">(M-O)</span> <span class="pre">*</span> <span class="pre">C</span></code>, as well as its <strong>magnitude</strong>: <code class="docutils literal notranslate"><span class="pre">Magnitude</span> <span class="pre">=</span> <span class="pre">sqrt(corrected_X_field^2</span> <span class="pre">+</span> <span class="pre">corrected_Y_field^2</span> <span class="pre">+</span> <span class="pre">corrected_z_field^2)</span></code>.</p></li>
+<li><p>The PVs should go into alarm if the magnetometer is overloaded.</p></li>
+</ol>
+<p><strong>Suggested operation of auto-feedback IOC:</strong> (see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4855">ticket #4855</a> for more details]</p>
+<p>Flowchart of procedure:</p>
+<p><img alt="Flowchart" src="../../_images/Muon_Zero-Field_Auto-Feedback_Procedure_Flowchart.png" /></p>
+<ol class="arabic simple">
+<li><p>The magnetometer values should be checked for overload, if so the feedback is (temporarily) disabled.</p></li>
+<li><p>If in Auto mode and the field is “good” it should then calculate the new currents based on the previous current setpoints, the corrected field and the setpoint. Then check the currents against the limits and if so, clamp the current to the limit value and put the PV into alarm state. It then writes these to the Kepcos (regardless of limit status).</p></li>
+<li><p>If in Auto mode, the “AT_SETPOINT” PV is set to “Yes” if the corrected field is within some value (e.g. 10mG: perhaps set as a macro) of the setpoint, otherwise “No”. If in manual mode, the “AT_SETPOINT” PV is always set to “N/A”.</p></li>
+<li><p>In either mode and regardless of any alarms above, it then reads back the actual output current and voltage from the Kepcos and fills more PVs. (Option – put the output current PVs into alarm if the actual current is not close to the setpoint.  This would best be done in the Kepco IOC, if not already.)</p></li>
+<li><p>Careful consideration should be given to the case when a PV is unavailable or in alarm.  i.e. what should the loop do when data required for a decision isn’t available?</p></li>
+</ol>
+<section id="notes-from-instrument-scientist-who-wrote-the-original-zero-field-vi">
+<h3>Notes from instrument scientist (who wrote the original zero-field VI):<a class="headerlink" href="#notes-from-instrument-scientist-who-wrote-the-original-zero-field-vi" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The calibration step may be best implemented as a script that the scientists can then own. [See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4839">ticket #4839</a>]</p></li>
+<li><p>In “manual” offset calibration we need a simple way to vary the offsets and have the already-running zero field IOC take them into account (it will be in Auto Feedback mode). Perhaps this will be numbers we can adjust on an OPI. Typing g.set_pv(‘IN:MUONZF:OFFSET_X’,123.4) each time would be way too tedious. We then might want to save these values for future use perhaps by editing a .ini file, editing IOC macros, or similar (managers only). Or just press a “Save offsets” button?</p></li>
+<li><p>The calibrations should not auto-save anything at all without the instrument scientist saying so! It should be possible to calibrate and then run with those calibrated values, without saving them, such that the old values return after a restart of IBEX or a reload of a configuration. (Example – one-off user kit which has a stray field of its own which also needs correcting.) Saving values into one of our standard configurations should need manager level credentials just like any other changes to it. If the calibration is in a script it would have to open the .ini file explicitly and write the values – or perhaps print them to the scripting console for the instrument scientist to copy/paste into the ini file.</p></li>
+<li><p>The calibration values are initialised from .ini files, macros, etc but have PVs that the calibration script can read or write, with writes taking effect on the next pass through the feedback loop. The OPI should present these as adjustable values – especially the values of O where up/down buttons would be useful. The maximum currents should be available as read-only PVs.</p></li>
+<li><p>Most of the calibration factors are per-instrument and so should be stored somewhere global, or in the “instrument_base” configuration component which presumably loads the IOC.</p></li>
+<li><p>The offsets <strong><em>O</em></strong> (3 values for X,Y,Z) are changed more often and might vary between SE. Is it possible to set default values of <strong><em>O</em></strong> for the instrument and then any SE configuration which needs a different value can over-ride it?</p></li>
+<li><p>On MUSR (and CHRONUS) there are separate sets of calibration factors for the instrument in its longitudinal and transverse orientations. MUSR has a switch, fed into the Field point box, which indicates the orientation.</p></li>
+<li><p>Direct PV writes to the Kepco current are allowed only in manual mode and only up to the configured maximum current.</p></li>
+<li><p>The timing is important (in Auto mode). The delay from reading the magnetometers to writing to the Kepcos should be kept as steady as possible,  as should that from writing to the next magnetometer reading. The loop should also be reasonably fast – aim at around 2 loops per second. The calibration procedure checks this and the value of the feedback factor p is set accordingly. Do not attempt to compensate for varying time delays by adding additional factors into the maths!</p></li>
+<li><p>The last-written currents (<strong><em>I</em></strong>) are kept regardless of mode and updated by the feedback loop or writes to the PVs.</p></li>
+<li><p>There will be a “mode” PV that scripts can set to “auto” or “manual”. It may help to have a single PV to summarise the field-is-stable and alarm status (as a string value as well as perhaps going into alarm itself).</p></li>
+<li><p>On change from Manual to Auto the value of I is simply picked up and used.  On change from Auto to Manual it will simply stop writing values to the Kepco unless the user writes to the current PV.</p></li>
+<li><p>On IOC start up I’d suggest try to read the Kepco setpoints (if possible) or the output currents, initialise the last-written variable (I) to this value, and then go into Manual. A subsequent change back to Auto will not cause a significant bump assuming the field was zero before the shutdown and the stray fields have not changed much while the IOC was stopped.</p></li>
+<li><p>IOC shutdown should leave the currents on: no special action need be taken.</p></li>
+</ul>
+</section>
+</section>
+<section id="epics-implementation-details">
+<h2>EPICS implementation details<a class="headerlink" href="#epics-implementation-details" title="Link to this heading"></a></h2>
+<section id="high-level-implementation">
+<h3>High-level implementation<a class="headerlink" href="#high-level-implementation" title="Link to this heading"></a></h3>
+<p>The Zero field system is usually comprised of 5 different IOCs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01</span></code> - the zero field controller. Primarily, it is responsible for taking readings from the magnetometer and figuring out the new fields to write to the power supplies. It also handles most of the top-level user PVs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZFMAGFLD_01</span></code> - the magnetometer IOC. It is responsible for getting new values from the DAQ hardware, offsetting to compensate for magnetometer placement, and converting to the power supplies’ coordinate system via a calibration matrix.</p></li>
+<li><p>3x power supply IOCs, e.g. <code class="docutils literal notranslate"><span class="pre">KEPCO_01</span></code> - <code class="docutils literal notranslate"><span class="pre">KEPCO_03</span></code> (on EMU and MuSR). On HiFi, these 3 power supply IOCs are replaced by 3 “shim” coils in the cryomagnet.</p></li>
+</ul>
+<p>Because of a requirement to keep the delay between magnetometer readings and power supply writes as consistent as possible, it is not possible for the magnetometer IOC to scan independently. Instead, it is explicitly told to take a reading at suitable times from the controller IOC. This is done using a forward link from the controller ioc to <code class="docutils literal notranslate"><span class="pre">...ZFMAGFLD_01:TAKEDATA</span></code>.</p>
+<p>Once the magnetometer has collected readings for all 3 coordinate axes (including the magnitude and whether the magnetometer is overloaded), the magnetometer indicates that new readings are ready by forward linking back to the controller using the PV <code class="docutils literal notranslate"><span class="pre">...ZFCNTRL_01:INPUTS_UPDATED</span></code>. This allows the state machine in the controller IOC to continue to the next step.</p>
+<p>In automatic mode, where the controller is required to write new currents to the power supplies, the following algorithm is implemented:</p>
+<ul class="simple">
+<li><p>If the power supply is in voltage control mode, change it to current control mode. Allow up to 5 seconds (configurable via <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:READ_TIMEOUT</span></code>) for this change to happen, and raise an alarm if it doesn’t. If the power supply is already in current control mode, skip this step.</p></li>
+<li><p>If the power supply is off, send it an “on” command and wait up to 5 seconds (configurable via <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:READ_TIMEOUT</span></code>) for it to switch on, and raise an alarm if it doesn’t. If the power supply is already on, skip this step.</p></li>
+<li><p>Calculate new currents to write, and limit them to the interval <code class="docutils literal notranslate"><span class="pre">[ZFCNTRL_01:OUTPUT:CURR:SP.DRVL,</span> <span class="pre">ZFCNTRL_01:OUTPUT:CURR:SP.DRVH]</span></code></p></li>
+<li><p>Send these new currents to the power supply by writing to <code class="docutils literal notranslate"><span class="pre">$(PSU_X):CURRENT:SP</span></code>.</p></li>
+<li><p>Allow up to 5 seconds (configurable via <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:READ_TIMEOUT</span></code>) for the power supply current setpoint readbacks to get within <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:OUTPUT:PSU_WRITE_TOLERANCE</span></code> Amps of the setpoint. If this doesn’t happen, raise an alarm.</p></li>
+</ul>
+</section>
+<section id="power-supply-interface">
+<h3>Power supply interface<a class="headerlink" href="#power-supply-interface" title="Link to this heading"></a></h3>
+<p>The Zero-field controller accepts an arbitrary PV prefix to use as a power supply to drive the X, Y and Z magnet coils. The controller expects whichever IOC it is pointing at to have the following PVs available:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PV</p></th>
+<th class="head"><p>Description / caveats</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CURRENT</span></code></p></td>
+<td><p>The (measured) current for this power supply.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CURRENT:SP</span></code></p></td>
+<td><p>The setpoint for the power supply. In automatic mode, new floating-point values will be written to this PV at relatively quick intervals (somewhere between 2-10Hz). The new value should be sent to the hardware as soon as reasonably possible, as long delays can have an impact on the stability of the zero field system.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CURRENT:SP:RBV</span></code></p></td>
+<td><p>The setpoint readback for the power supply. <strong>This should be updated from hardware as soon as reasonably possible after a write to <code class="docutils literal notranslate"><span class="pre">CURRENT:SP</span></code></strong> - the zero field control state machine will wait for the setpoint readback to match the setpoint before continuing. For example, it can be updated from the protocol (via record redirection) as part of the setpoint write command. A fast scan is not sufficient to satisfy this requirement, because the delay between writing to <code class="docutils literal notranslate"><span class="pre">CURRENT:SP</span></code> and reading back the new value in <code class="docutils literal notranslate"><span class="pre">CURRENT:SP:RBV</span></code> needs to be consistent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VOLTAGE</span></code></p></td>
+<td><p>The (measured) voltage on the power supply. Not required by the state machine, but displayed for information. Therefore it is acceptable to update this relatively slowly.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">VOLTAGE:SP:RBV</span></code></p></td>
+<td><p>The voltage setpoint readback</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OUTPUTMODE</span></code></p></td>
+<td><p>A binary choice PV which returns 0 for voltage control and 1 for current control. If this choice is not applicable for a given PSU, it should always return “1” for current control.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">OUTPUTMODE:SP</span></code></p></td>
+<td><p>“1” is written to this PV by the zero-field system to put the power supply into current control mode - if <code class="docutils literal notranslate"><span class="pre">OUTPUTMODE</span></code> returned 0. This PV is never used if <code class="docutils literal notranslate"><span class="pre">OUTPUTMODE</span></code> is always 1 (see above)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OUTPUTSTATUS</span></code></p></td>
+<td><p>A binary choice PV which returns 1 if the PSU is switched on, 0 otherwise. If this choice is not applicable, then this PV should always return 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">OUTPUTSTATUS:SP</span></code></p></td>
+<td><p>“1” is written to this PV by the zero-field system to turn the supply on - if <code class="docutils literal notranslate"><span class="pre">OUTPUTSTATUS</span></code> returned 0. This PV is never used if <code class="docutils literal notranslate"><span class="pre">OUTPUTSTATUS</span></code> is always 1 (see above)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Link to this heading"></a></h2>
+<p>The IBEX and SECI zero-field control systems were compared using an external magnetometer mounted at the sample position. This magnetometer is completely separate from the magnetometer which the zero-field system itself uses, and is plugged into a laptop to monitor the field completely independently (the scientist knows how to set this system up; this is not something we are involved with and is not code we support)</p>
+<p>The following is a plot of the performance of both the IBEX and SECI zero field systems, as tested on EMU in January 2020. Y axis is in Gauss, X axis is in seconds.</p>
+<p><img alt="" src="../../_images/emu_zf_compensation_comparison.png" /></p>
+<p>When using the external magnetometer (connected to the laptop), be aware that this system has a faulty power supply. If the power supply is not correctly seated in the magnetometer, it can cause the field to appear to jump and/or drift wildly. To fix this, ensure the PSU is seated firmly in the magnetometer and avoid perturbing the magnetometer control box while it is taking data.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Zero-field-controller.html" class="btn btn-neutral float-left" title="Zero field controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Motors.html" class="btn btn-neutral float-right" title="Motors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

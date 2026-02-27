@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First-time install &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Links and Resources" href="Links-and-Resources.html" />
+    <link rel="prev" title="New Starter’s Guide" href="New-Starters.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Overview.html">Project Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="High-Level-Architectural-Design.html">High level architectural design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="New-Starters.html">New Starter’s Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">First-time install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Links-and-Resources.html">Links and Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Overview.html">Project Overview</a></li>
+      <li class="breadcrumb-item active">First-time install</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/overview/First-Time-Build.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="first-time-install">
+<h1>First-time install<a class="headerlink" href="#first-time-install" title="Link to this heading"></a></h1>
+<p><em>You can get more information on the development workflow <a class="reference internal" href="../processes/git_and_github/Git-workflow.html"><span class="doc std std-doc">here</span></a></em>.</p>
+<p>If any of the websites listed here do not work, contact another developer to get an alternate solution.</p>
+<section id="things-to-know-as-a-developer">
+<h2>Things to know as a developer<a class="headerlink" href="#things-to-know-as-a-developer" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../processes/dev_processes/Things-to-know-as-a-developer.html"><span class="doc std std-doc">here</span></a></p>
+</section>
+<section id="install-perl">
+<h2>Install Perl<a class="headerlink" href="#install-perl" title="Link to this heading"></a></h2>
+<p>Download and install <a class="reference external" href="http://strawberryperl.com/">Strawberry Perl</a></p>
+</section>
+<section id="install-visual-studio">
+<h2>Install Visual Studio<a class="headerlink" href="#install-visual-studio" title="Link to this heading"></a></h2>
+<p>See  <a class="reference internal" href="../iocs/compiling/Install-Visual-Studio.html"><span class="doc std std-doc">Install Visual Studio</span></a></p>
+</section>
+<section id="first-time-install-java">
+<h2>Install Java JDK<a class="headerlink" href="#first-time-install-java" title="Link to this heading"></a></h2>
+<p>Install the <strong>OpenJDK 25 hotspot</strong> binary zip from <a class="reference external" href="https://adoptium.net">https://adoptium.net</a> and extract to <code class="docutils literal notranslate"><span class="pre">\instrument\apps\JDK\25</span></code></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Do not install an Oracle JDK</strong>. It has an unsuitable license.</p>
+</div>
+</section>
+<section id="first-time-install-maven">
+<h2>Install Maven<a class="headerlink" href="#first-time-install-maven" title="Link to this heading"></a></h2>
+<p>Create <code class="docutils literal notranslate"><span class="pre">C:\Tools\</span></code></p>
+<p>Install <a class="reference external" href="https://maven.apache.org/download.cgi">Maven</a> and follow the ‘Windows tips’ in <a class="reference external" href="https://maven.apache.org/install.html">these instructions </a> to set ‘Environment Variables’ for the SDK with JAVA_HOME and maven in PATH
+It is recommended to install Maven into <code class="docutils literal notranslate"><span class="pre">C:\Tools\</span></code></p>
+<p><em>System Properties - Environment Variables - Path - New -<code class="docutils literal notranslate"><span class="pre">C:\Tools\apache-maven-###\bin</span></code></em></p>
+<p>The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.</p>
+</section>
+<section id="first-time-install-git">
+<h2>Install Git<a class="headerlink" href="#first-time-install-git" title="Link to this heading"></a></h2>
+<p>Install Git <a class="reference internal" href="../processes/git_and_github/Getting-started-with-Git-and-GitHub.html"><span class="doc std std-doc">Getting-started-with-Git-and-GitHub</span></a></p>
+</section>
+<section id="install-moxa-nport-driver-manager">
+<h2>Install Moxa NPort Driver manager<a class="headerlink" href="#install-moxa-nport-driver-manager" title="Link to this heading"></a></h2>
+<p>Install <code class="docutils literal notranslate"><span class="pre">\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\Utilities\MOXA</span> <span class="pre">Nport</span> <span class="pre">Software\drvmgr*.exe</span></code> - this is required on the instruments for networked serial ports. It’s required on dev machines for the database server (more specifically the moxa mappings page in the GUI)</p>
+</section>
+<section id="copy-epics-build">
+<h2>Copy EPICS build<a class="headerlink" href="#copy-epics-build" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p><em>EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time and then build modules as changes are made.</em></p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\</span></code></p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\</span></code> and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.</p></li>
+<li><p>Follow instructions on the <a class="reference internal" href="../iocs/compiling/Developer-Server-Build.html"><span class="doc std std-doc">Quick instructions section of the developer server build page</span></a> to copy a built version of EPICS to <code class="docutils literal notranslate"><span class="pre">\instrument\apps</span></code></p></li>
+</ol>
+<p>To easily add <code class="docutils literal notranslate"><span class="pre">EPICSTerm.bat</span></code> to the start menu after copying EPICS, run <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\add_epicsterm_to_start_menu.bat</span></code></p>
+</section>
+<section id="first-time-install-uktena">
+<h2>Install the uktena python distribution<a class="headerlink" href="#first-time-install-uktena" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../system_components/python/Building-and-installing-uktena.html"><span class="doc std std-doc">Building and installing the uktena python distribution</span></a></p>
+</section>
+<section id="uv">
+<h2>uv<a class="headerlink" href="#uv" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../system_components/python/Python-venvs.html#installing-uv"><span class="std std-ref">Installing uv</span></a></p>
+</section>
+<section id="ruff-git-hook-and-convenience-scripts">
+<h2>Ruff git hook and convenience scripts<a class="headerlink" href="#ruff-git-hook-and-convenience-scripts" title="Link to this heading"></a></h2>
+<p>In order to use this please clone the reusable workflows repo into dev
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/ISISComputingGroup/reusable-workflows.git</span></code></p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">ruff</span></code> for <a class="reference internal" href="../system_components/python/Python-conventions.html"><span class="doc std std-doc">formatting &amp; linting</span></a> and <code class="docutils literal notranslate"><span class="pre">pyright</span></code> for static analysis.</p>
+<p>We have a central configuration file for python code formatting &amp; linting.</p>
+<p>If you wish (you probably do) to install a convenient alias which automatically uses an appropriate <code class="docutils literal notranslate"><span class="pre">ruff</span></code> config for each repository, see <a class="reference external" href="https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-convenience-script">here</a></p>
+<p>If you wish to set up a git hook to automatically check this on each commit, see <a class="reference external" href="https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-git-hook">here</a>. You probably do want to set this up, but be careful with external repositories as it may not adhere to their formatting/linting standards. You can bypass the pre-commit hook if needed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--no-verify</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This configuration is not mandatory as the build server will run linting and formatting checks on python repositories anyway, but running the checks locally is faster and more dev-friendly than waiting for the build servers.</p>
+</div>
+</section>
+<section id="install-mysql">
+<h2>Install MySQL<a class="headerlink" href="#install-mysql" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../deployment/deploy/Installing-and-Upgrading-MySQL.html"><span class="doc std std-doc">Installing and upgrading MySQL</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn’t installed yet.</p>
+<p>Due to a change in admin provisioning on computers, you may need to use the admin runner available in one of the IBEX Utilities referred to later more directly. Alter <code class="docutils literal notranslate"><span class="pre">run_all</span></code> in the admin runner file to print the command to be run at the prompt and wait for an input to continue rather than simply run the command for you via the <code class="docutils literal notranslate"><span class="pre">AdminRunner</span></code> class.</p>
+</div>
+</section>
+<section id="building-the-gui">
+<h2>Building the GUI<a class="headerlink" href="#building-the-gui" title="Link to this heading"></a></h2>
+<p>Please see <a class="reference internal" href="../client/compiling/Building-the-GUI.html"><span class="doc std std-doc">Building the GUI</span></a>.</p>
+</section>
+<section id="setting-up-the-configurations-scripting-directory">
+<h2>Setting up the configurations &amp; scripting directory<a class="headerlink" href="#setting-up-the-configurations-scripting-directory" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For all commands in this section…</p>
+<ul class="simple">
+<li><p>On a developer machine use your own username rather than “spudulike”</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;NDXXXX&gt;</span></code> with your machine name, e.g. <code class="docutils literal notranslate"><span class="pre">NDXIRISTEST1</span></code>, <code class="docutils literal notranslate"><span class="pre">NDLT123</span></code></p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;init_inst_name&gt;</span></code> with your lower case machine name, e.g. <code class="docutils literal notranslate"><span class="pre">init_ndxtest1.py</span></code>, <code class="docutils literal notranslate"><span class="pre">init_ndlt123.py</span></code></p></li>
+</ul>
+<p>If you already have a ‘NDXXXX’ folder, rename it to ‘NDXXXX.old’ and continue with the following steps)</p>
+</div>
+<ol class="arabic simple">
+<li><p>Create the following folder structure: <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config</span></code></p></li>
+<li><p>Navigate to the config folder</p></li>
+<li><p>Enable git credential store and set a username - replace <code class="docutils literal notranslate"><span class="pre">&lt;NDXXXX&gt;</span></code> with real computer name</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">core</span><span class="o">.</span><span class="n">autocrlf</span> <span class="n">true</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">credential</span><span class="o">.</span><span class="n">helper</span> <span class="n">wincred</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;spudulike&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;spudulike@&lt;NDXXXX&gt;.isis.cclrc.ac.uk&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Enable default recursive check</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">push</span><span class="o">.</span><span class="n">recurseSubmodules</span> <span class="n">check</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Set up branch for this machine</p></li>
+</ol>
+<p>5a) Not A New Instrument
+i.e. if this machine has had IBEX installed before and the config branch already exists, run through the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Settings</span>\<span class="n">config</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">control</span><span class="o">-</span><span class="n">svcs</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">cclrc</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">gitroot</span><span class="o">/</span><span class="n">instconfigs</span><span class="o">/</span><span class="n">inst</span><span class="o">.</span><span class="n">git</span> <span class="n">NDXXXX</span>
+<span class="n">cd</span> <span class="n">NDXXXX</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">NDXXXX</span>
+</pre></div>
+</div>
+<p>5b) New Instrument
+i.e. if no config branch exists for this machine name, run through the following:</p>
+<ul class="simple">
+<li><p>Via a git client clone the repository from ‘<a class="reference external" href="http://spudulike&#64;control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git">http://spudulike&#64;control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git</a>’ to a directory with your machine name, like so:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">spudulike</span><span class="nd">@control</span><span class="o">-</span><span class="n">svcs</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">cclrc</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">gitroot</span><span class="o">/</span><span class="n">instconfigs</span><span class="o">/</span><span class="n">inst</span><span class="o">.</span><span class="n">git</span> <span class="n">NDXXXX</span>
+</pre></div>
+</div>
+<p>(when prompted, give spudulike password)</p>
+<ul class="simple">
+<li><p>Confirm that you now have the config file structure in place (components, configurations and synoptics directories)</p></li>
+<li><p>Create a branch from master with the machine name (if on an instrument) or your fedid if on a dev machine:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">NDXXXX</span><span class="o">&gt;/</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">NDXXXX</span><span class="o">&gt;</span>
+<span class="n">rename</span> <span class="s2">&quot;C:\Instrument\Settings\config\NDXXXX\Python\init_inst_name.py&quot;</span> <span class="n">to</span> <span class="s2">&quot;C:\Instrument\Settings\config\NDXXXX\Python\init_ndxxxx.py&quot;</span> <span class="p">(</span><span class="n">note</span> <span class="n">lowercase</span> <span class="n">on</span> <span class="n">init_ndxxxx</span><span class="o">.</span><span class="n">py</span><span class="p">)</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">Python</span><span class="o">/</span><span class="n">init_ndxxxx</span><span class="o">.</span><span class="n">py</span>
+<span class="n">git</span> <span class="n">rm</span> <span class="n">Python</span><span class="o">/</span><span class="n">init_inst_name</span><span class="o">.</span><span class="n">py</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;create initial python&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">NDXXXX</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The init_inst_name python file should have underscores rather than dashes if the machine name contains dashes. So <code class="docutils literal notranslate"><span class="pre">NDWTEST-BLAH</span></code> would have the init file <code class="docutils literal notranslate"><span class="pre">init_ndwtest_blah.py</span></code></p>
+</div>
+<p>Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)</p>
+<p>These repositories can be web browsed via <a class="reference external" href="http://control-svcs.isis.cclrc.ac.uk/git/">http://control-svcs.isis.cclrc.ac.uk/git/</a></p>
+<ol class="arabic simple" start="6">
+<li><p>Check it is possible to access the configurations of another developer or of an instrument by fetching the correct branch and switching to it, like so:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">NDXALF</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Switch back to your new branch:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">NDXXXX</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The developer branch has been created to store useful configurations that may be shared amongst all developers.</p>
+</div>
+</section>
+<section id="installing-technique-scripts">
+<h2>Installing technique scripts<a class="headerlink" href="#installing-technique-scripts" title="Link to this heading"></a></h2>
+<p>Some sets of instruments use shared scripts based on the techniques they employ, so installing these scripts would be helpful. Note that these are stored in a repo in an organisation that includes more of the scientists than our typical organisation.
+If the <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Scripts</span></code> directory already exists, cd into it and do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISNeutronMuon</span><span class="o">/</span><span class="n">InstrumentScripts</span><span class="o">.</span><span class="n">git</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Scripts</span>
+</pre></div>
+</div>
+</section>
+<section id="setting-up-a-calibrations-directory">
+<h2>Setting up a calibrations directory<a class="headerlink" href="#setting-up-a-calibrations-directory" title="Link to this heading"></a></h2>
+<p>If the <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\common</span></code> directory already exists, cd into it and do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">isisexperimentcontrols</span><span class="o">/</span><span class="n">common</span><span class="o">.</span><span class="n">git</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Settings</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">common</span>
+
+</pre></div>
+</div>
+<p>The purpose and function of the calibration files are described <a class="reference internal" href="../system_components/configurations/Calibration-Files.html"><span class="doc std std-doc">here</span></a>.</p>
+</section>
+<section id="first-time-install-configure-dae">
+<h2>Configure DAE for simulation mode on developer’s computer / Register ISISICP<a class="headerlink" href="#first-time-install-configure-dae" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Make sure <strong>ISISDAE-IOC-01.exe</strong> and <strong>ISISICP.exe</strong> processes are not running</p></li>
+<li><p>run    <code class="docutils literal notranslate"><span class="pre">create_icp_binaries.bat</span></code>   in  <code class="docutils literal notranslate"><span class="pre">c:\Instrument\Apps\EPICS</span></code>   to get the latest version</p></li>
+<li><p>Open an administrator command prompt (right click on command prompt in start menu and click “run as administrator”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> to     <code class="docutils literal notranslate"><span class="pre">c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae</span></code></p></li>
+<li><p>Type:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">register_programs</span><span class="o">.</span><span class="n">cmd</span>
+</pre></div>
+</div>
+<p>Unfortunately the <code class="docutils literal notranslate"><span class="pre">/RegServer</span></code> registration process doesn’t report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form “CoCreateInstanceEx (ISISICP) : Class not registered” then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. If you get messages about missing method/functions etc. it may mean a previous isisicp.exe registered successfully, but the newer one didn’t - just try again as administrator</p>
+<p>If you use Visual Studio 2017 (or older versions) and got “vcruntime140_1.dll was not found” error, you need to install Microsoft Visual C++ Redistributable for Visual Studio 2022.</p>
+<p>You can do this via this link:</p>
+<p><a class="reference external" href="https://visualstudio.microsoft.com/downloads/">https://visualstudio.microsoft.com/downloads/</a>
+(Scroll down, expand “Other Tools, Frameworks and Redistributables” and install Microsoft Visual C++ Redistributable for Visual Studio 2022(x64))</p>
+<section id="set-up-the-cs-studio-archiver">
+<h3>Set up the CS-Studio archiver<a class="headerlink" href="#set-up-the-cs-studio-archiver" title="Link to this heading"></a></h3>
+<p>Before doing this ensure that the <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> started in a previous step (to build EPICS) has successfully completed.
+In <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\CSS\master</span></code> run <code class="docutils literal notranslate"><span class="pre">setup_css.bat</span></code>
+this will create directories for the archive engine. in <code class="docutils literal notranslate"><span class="pre">.\css-win.x86_64</span></code></p>
+</section>
+<section id="getting-dae-ready-to-start-a-run-so-you-are-in-setup-rather-than-processing">
+<h3>Getting DAE ready to start a run (so you are in SETUP rather than processing)<a class="headerlink" href="#getting-dae-ready-to-start-a-run-so-you-are-in-setup-rather-than-processing" title="Link to this heading"></a></h3>
+<p>You need to create a configuration so ISISDAE-IOC-01 will start:</p>
+<ul class="simple">
+<li><p>run <code class="docutils literal notranslate"><span class="pre">start_ibex_server</span></code> (in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS</span></code>)</p></li>
+<li><p>start the GUI</p></li>
+<li><p>configuration -&gt; edit current configuration -&gt; give it a name and save as. It should now prompt you to switch to the configuration, after you do this the <code class="docutils literal notranslate"><span class="pre">Config:</span></code> line on the bottom of the gui screen should show this name and the instrument should be in <code class="docutils literal notranslate"><span class="pre">SETUP</span></code></p></li>
+<li><p>now go into experiment setup in DAE view and</p></li>
+<li><ul>
+<li><p>in time channels select “specify parameters” (not tcb file), in time regime 1 put from 10.0 to 19900.0 step 10.0 with mode <code class="docutils literal notranslate"><span class="pre">DT=C</span></code>, and in time regime 2 use 10.0 to 19900.0 step 1.0 mode <code class="docutils literal notranslate"><span class="pre">DT=C</span></code> (time regime 2 is only used if an event mode wiring table is selected). If there are no boxes to fill in, this means the configuration has not switched to the one you saved above and the ISISDAE-IOC-01 process is not running</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>in data acquisition tab use the dropdown for wiring, detector and spectra to choose a file with the name “ibextest” in it e.g. wiring_ibextest.dat for wiring, detector_ibextest for detector, spectra_ibextest for spectra etc. You need to have all three boxes (wiring,detector,spectra) filled for things to work, also these files are interdependent so make sure they are all “*_ibextest.dat” ones for now. Note that either wiring_ibextest.dat or wiring_event_ibextest.dat can be chosen as the wiring table to select histogram or event mode.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Press the Apply button</p></li>
+</ul>
+</li>
+<li><p>Now go back to main DAE view and press the “BEGIN RUN” button - you should get the instrument going into RUNNING</p></li>
+<li><p>Press Abort and you should go back into SETUP</p></li>
+<li><p>You can also open a python scripting window (scripting on left) and use  g.begin() and g.abort() to do the same thing</p></li>
+</ul>
+</section>
+</section>
+<section id="utilities">
+<h2>Utilities<a class="headerlink" href="#utilities" title="Link to this heading"></a></h2>
+<p>Git clone (usually in c:\Instrument\Dev) the following utilities:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">IBEX_device_generator</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">ibex_utils</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">ConfigChecker</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</section>
+<section id="optional-extras">
+<h2>Optional Extras<a class="headerlink" href="#optional-extras" title="Link to this heading"></a></h2>
+<p>The following are not strictly required for general IBEX development. They will be useful if you are on the project for &gt; 1 year but otherwise probably not worth installing.</p>
+<section id="explorer-context-menu-shortcut-for-epics-terminal">
+<h3>Explorer context menu shortcut for EPICS terminal<a class="headerlink" href="#explorer-context-menu-shortcut-for-epics-terminal" title="Link to this heading"></a></h3>
+<p>To add a shortcut to open an EPICS terminal using the context menu in Windows’ file explorer, Run Command Prompt as Admin, navigate to EPICS in the Command Prompt, and type <code class="docutils literal notranslate"><span class="pre">add_epics_context_menu.reg</span></code> (from EPICS top) to run it as admin. This will add a registry key that will enable you to right click in an empty space in file explorer and open the directory in an EPICS terminal.</p>
+</section>
+<section id="vnc">
+<h3>VNC<a class="headerlink" href="#vnc" title="Link to this heading"></a></h3>
+<p>If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but we have used:</p>
+<ul class="simple">
+<li><p>VNC Viewer (just the client) which is available <a class="reference external" href="https://www.realvnc.com/en/connect/download/viewer/">here</a></p></li>
+</ul>
+<p>(we have used tightVNC (just the client) in past which is available <a class="reference external" href="http://www.tightvnc.com/">here</a>)</p>
+</section>
+<section id="ni-daq">
+<h3>NI DAQ<a class="headerlink" href="#ni-daq" title="Link to this heading"></a></h3>
+<p>It is recommended that developers only install this if they know that they will at some point be using a DAQ mx. If you do not do this step, you will be unable to run certain IOCs (e.g. RIKEN power supplies, muon separator), and consequently some of their tests will fail.</p>
+<p>Some IOCs depends on DAQMX binaries from national instruments. Go to <a class="reference external" href="http://sine.ni.com/psp/app/doc/p/id/psp-268">http://sine.ni.com/psp/app/doc/p/id/psp-268</a> or if not go here <a class="reference external" href="https://www.ni.com/en-gb/support/downloads/drivers/download.ni-daqmx.html#311818">https://www.ni.com/en-gb/support/downloads/drivers/download.ni-daqmx.html#311818</a>
+and download the latest DAQMX drivers. When installing, ensure you check the box to install DAQMX.</p>
+</section>
+<section id="beckhoff-xar">
+<h3>Beckhoff XAR<a class="headerlink" href="#beckhoff-xar" title="Link to this heading"></a></h3>
+<p>If you will be developing or reviewing code involved with Beckhoff PLCs you will need to install TwinCAT XAR. This can be found on the public share in <code class="docutils literal notranslate"><span class="pre">installers</span></code>. More information for simulating Beckhoffs can be found <a class="reference internal" href="../specific_iocs/motors/beckhoff/Beckhoff-testing.html"><span class="doc std std-doc">here</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>XAR is the runtime that but for testing you will need the full setup which is the installer on the share</p>
+</div>
+</section>
+<section id="install-wix-toolset-we-use-version-3-and-not-the-latest-one-only-install-if-required">
+<h3>Install WiX toolset (We use version 3 and not the latest one - only install if required)<a class="headerlink" href="#install-wix-toolset-we-use-version-3-and-not-the-latest-one-only-install-if-required" title="Link to this heading"></a></h3>
+<p>Download and install latest stable version from <a class="reference external" href="https://wixtoolset.org/docs/wix3/">https://wixtoolset.org/docs/wix3/</a></p>
+</section>
+<section id="add-your-ssh-key-to-the-keys-repository">
+<h3>Add your SSH key to the <code class="docutils literal notranslate"><span class="pre">keys</span></code> repository<a class="headerlink" href="#add-your-ssh-key-to-the-keys-repository" title="Link to this heading"></a></h3>
+<p>Adding an SSH key to the <a class="reference external" href="https://github.com/isiscomputinggroup/keys">keys repository</a> can be used to give
+passwordless access to instrument machines. Follow the instructions <a class="reference external" href="https://shadow.nd.rl.ac.uk/ibex_sysadmin_manual/services/SSH-keys.html" title="(in IBEX Sysadmin's Manual)"><span>SSH key management</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="New-Starters.html" class="btn btn-neutral float-left" title="New Starter’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Links-and-Resources.html" class="btn btn-neutral float-right" title="Links and Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

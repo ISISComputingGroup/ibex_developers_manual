@@ -1,0 +1,222 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blockserver Structure &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Blockserver troubleshooting" href="Blockserver-Trouble-Shooting.html" />
+    <link rel="prev" title="BlockServer" href="../BlockServer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../BlockServer.html">BlockServer</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Blockserver Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Blockserver-Trouble-Shooting.html">Blockserver troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dynamic-components-%28component-switcher%29.html">Dynamic components (component switcher)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../BlockServer.html">BlockServer</a></li>
+      <li class="breadcrumb-item active">Blockserver Structure</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/blockserver/BlockServer-Structure.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="blockserver-structure">
+<h1>Blockserver Structure<a class="headerlink" href="#blockserver-structure" title="Link to this heading"></a></h1>
+<p>This document is intended to outline the internal structure of the BlockServer for reference by future developers. Please be aware that the BlockServer is a work in progress and as such this document is liable to change.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The BlockServer’s main responsibility is to look after configurations and their associated files. It can be used to read/write
+to both the active configuration on the instrument and other potential configurations in the filesystem. It also contains a
+filewatcher to ensure that any manual changes to configurations are correctly handled. Below is an UML overview of the most
+significant parts:</p>
+<p><img alt="Full UML" src="../../_images/full_uml.png" /></p>
+</section>
+<section id="blockserver-structure-channel-access">
+<h2>Channel Access<a class="headerlink" href="#blockserver-structure-channel-access" title="Link to this heading"></a></h2>
+<p>The BlockServer uses the pcaspy Python module to implement channel access. There are two main means of implementing PVs in the
+BlockServer, static PVs and dynamic PVs:</p>
+<ul class="simple">
+<li><p>Static PVs are created in a dictionary at startup and are intercepted by subclassing the Driver class and implementing the read()
+and write() methods. Most of the PVs the BlockServer uses are written like this and the method is well documented in the pcaspy
+documentation_. Note that if you are monitoring this PV for changes, you need to call setParam() followed by updatePVs() in the blockserver to propagate this change to the monitors. You can check whether this is working properly by putting a <code class="docutils literal notranslate"><span class="pre">camonitor</span></code> on the PV in question and checking that it automatically updates when the PV value is changed.</p></li>
+</ul>
+<p>PVs created in this manner do not have an alarm severity field <code class="docutils literal notranslate"><span class="pre">.SEVR</span></code> like they automatically do in EPICS. If such a field is necessary, for example for displaying the PV in the GUI banner, then it can be added manually. For example, to make a PV constantly have <code class="docutils literal notranslate"><span class="pre">NO_ALARM</span></code>, add the following to <code class="docutils literal notranslate"><span class="pre">initial_dbs</span></code> in <code class="docutils literal notranslate"><span class="pre">block_server.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BlockserverPVNames</span><span class="o">.</span><span class="n">PV_NAME_SEVR</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;enum&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">PV_NAME_SEVR_VALUE</span><span class="p">,</span> <span class="s2">&quot;enums&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NO_ALARM&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">PV_NAME_SEVR</span></code> is the PV address with <code class="docutils literal notranslate"><span class="pre">.SEVR</span></code> on the end, and <code class="docutils literal notranslate"><span class="pre">PV_NAME_SEVR_VALUE</span></code> is the value of the enum, 0 in this case as there is only one defined. Add</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="n">reason</span> <span class="o">==</span> <span class="n">BlockserverPVNames</span><span class="o">.</span><span class="n">PV_NAME_SEVR</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">PV_NAME_SEVR_VALUE</span>
+</pre></div>
+</div>
+<p>to <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">self.setParam(BlockserverPVNames.PV_NAME_SEVR,</span> <span class="pre">PV_NAME_SEVR_VALUE)</span></code> to the appropriate monitor update method so that the alarm value is given when something (e.g. the GUI) tries to get the alarm severity.</p>
+<p>Documentation: <a class="reference external" href="http://pcaspy.readthedocs.org/en/latest/">http://pcaspy.readthedocs.org/en/latest/</a></p>
+<ul class="simple">
+<li><p>Dynamic PVs are more complex and are required for serving PVs for each inactive configuration, the names of which are not known
+until startup. To do this we have created our own pcaspy server called CAServer that can be found in
+inst_server\server_common\channel_access_server.py. This server has a number of simple methods to register new PVs within it’s own
+dictionary and pass them to channel access when requested. The server also assumes that all PVs will be in a string format, which is
+currently a good assumption. All dynamic PVs are created by the ConfigListManager as they relate to the inactive configs/components
+that are listed in that class. A simple diagram of this relationship is shown below:</p></li>
+</ul>
+<p><img alt="CA UML" src="../../_images/channel_access_uml.png" /></p>
+<p>A simple example of both the static and dynamic PVs is located in inst_server\BlockServer\blockserver_docs\resources\pcaspy_example.</p>
+</section>
+<section id="configuration-servers">
+<h2>Configuration Servers<a class="headerlink" href="#configuration-servers" title="Link to this heading"></a></h2>
+<p>There are two Configuration Server Manager classes. The ActiveConfigHolder class holds the currently configuration and deals with the JSON communication between the BlockServer PVs and what modifications to make for the configuration. It also controls the running of the IOCs. This class is a subclass of ConfigHolder which is used to hold the basic details about the configurations as well as save/load them to disk. Most, if not all, of the individual get/set methods in the ConfigHolder are being replaced by catch-all get_config_details() and set_config_details(). A reduced description of the classes is given below:</p>
+<p><img alt="Config Server UML" src="../../_images/config_servers_uml.png" /></p>
+</section>
+<section id="configurations">
+<h2>Configurations<a class="headerlink" href="#configurations" title="Link to this heading"></a></h2>
+<p>The ConfigHolder class does most of the implementation for the specifics of editing a configuration making sure that all parts of the configuration follow the correct rules. It holds a Configuration object which does very little other than contain all the relevant configuration details. There are also small container classes to hold separate Blocks, Groups, IOCs and MetaData.</p>
+<p>The ConfigHolder also uses the methods from the static class ConfigurationFileManager, which deal with the specifics of the file system
+including version control of configuration files. This FileManager class uses a ConfigurationXmlConverter object to help convert into
+the xml used for saving and loading.</p>
+</section>
+<section id="setting-a-new-configuration">
+<h2>Setting a new configuration<a class="headerlink" href="#setting-a-new-configuration" title="Link to this heading"></a></h2>
+<p>When the GUI sets a new configuration, whether by editing the current configuration or by loading a configuration from disk, the configuration is first saved into an inactive configuration object and then loaded into the active configuration. This means that there is only one code path for changing the current configuration.</p>
+<p>When loading a new configuration, the blockserver will decide which iocs need to be started or restarted based on the differences in attributes of the current configuration and the new configuration. Likewise, it will only restart other services (block cache, run control, etc) if necessary.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../BlockServer.html" class="btn btn-neutral float-left" title="BlockServer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Blockserver-Trouble-Shooting.html" class="btn btn-neutral float-right" title="Blockserver troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

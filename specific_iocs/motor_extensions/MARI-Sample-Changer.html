@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARI Sample Changer &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MERLIN, LET and WISH Oscillating Radial Collimators" href="MERLIN%2C-LET-and-WISH-Oscillating-radial-collimators.html" />
+    <link rel="prev" title="POLARIS Jaws" href="jaws/Polaris-Jaws.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Goniometer-Axes.html">ALF Goniometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Bump-Strip.html">Bump Strips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Collision-Detection-Project.html">Collision Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-soft-motors-to-control-real-motors.html">Motor Coordinate Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Fermi-Chopper-Lifter.html">Fermi chopper lifter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Lens-Adjustment.html">IMAT Lens Adjustment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jaws.html">Jaws</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MARI Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN%2C-LET-and-WISH-Oscillating-radial-collimators.html">MERLIN, LET and WISH Oscillating Radial Collimators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motion-Set-points.html">Motion Set Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-analyser-towers.html">OSIRIS Analyser Towers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Portable-Eulerian-Cradle.html">Portable Eulerian Cradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Front-Beam-Stop-inhibit-movement.html">SANS2D Front Beam Stop Inhibit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-apertures-and-guides.html">SANS2D Apertures and Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-tank-collision-avoidance.html">SANS2D vacuum tank collision avoidance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sample-Changer-Support-Module.html">SANS Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tosca-sample-positioner.html">TOSCA sample positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-DMS.html">ZOOM Detector motion system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-PGC.html">ZOOM Polariser, Guide and Collimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-sample-stack.html">ZOOM Sample Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors-Extensions.html">Motor Extensions</a></li>
+      <li class="breadcrumb-item active">MARI Sample Changer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motor_extensions/MARI-Sample-Changer.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mari-sample-changer">
+<h1>MARI Sample Changer<a class="headerlink" href="#mari-sample-changer" title="Link to this heading"></a></h1>
+<p>MARI has two different sample changers. They are very similar in that they are both run by a Mclennan with the same settings for motor/encoder resolution. They are mounted on the end of sample sticks and each have 4 samples at 90 degrees from each other that can be placed into the beam. The sample holder is attached to both by screwing into the end of the sample stick. However, as this holder is rotating and is on this screw if it gets stuck during a rotation it will either tighten itself or loosen itself and fall off. Thus <strong>the sample changer must always be rotated in the same direction to stop it falling off</strong>, including during homing. If you are unsure which direction will result in it falling off you can start the device moving and then hold on to the sample holder and see if it starts tightening or loosening (you always want it tightening).</p>
+<p>Unfortunately, although the sample changers are very similar they are mechanically different in that one is directly driven by a universal joint (UJ) and the other is driven by a belt. Due to these mechanics the sample changers run in different directions (e.g. a positive move on the Mclennan causes a clockwise rotation in one sample changer and anti-clockwise in the other). For both the belt and the universal joint the correct direction is <strong>clockwise from the top</strong> (the top being the side where the home datum is). See the videos below.</p>
+<p>Confusingly there was an arrow on the bottom of each sample changer indicating which way it turns that was incorrect. The IS has corrected this arrow in blue marker pen. For the Mclennan this means that the belt must be driven in the positive direction and the UJ in the negative direction. The positions on the cans were originally incorrectly labelled, they have now been correctly labelled by the instrument scientist in pen.</p>
+<p>There is currently an instrument script on MARI called <code class="docutils literal notranslate"><span class="pre">changer.py</span></code> which moves everything in the correct direction, including during homing, and selects the correct samples. Due to homing directions being different for both they can currently only be homed through that script, not the GUI. These issues will be corrected in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5729">https://github.com/ISISComputingGroup/IBEX/issues/5729</a>.</p>
+<p>Finally, because of inaccuracies between converting the motor resolution in the Mclennan to one in IBEX the script does not move 90 degrees for each sample and instead has a small correction. To experimentally measure this correction there is a <code class="docutils literal notranslate"><span class="pre">test_sample_changer.py</span></code> script in C:\Scripts on MARI which will move the cans a number of full revolutions and ask the user to confirm they are still correctly aligned.</p>
+<section id="correctly-moving-universal-joint-sample-changer">
+<h2>Correctly moving universal joint sample changer<a class="headerlink" href="#correctly-moving-universal-joint-sample-changer" title="Link to this heading"></a></h2>
+<p><img alt="" src="../../_images/mari_sample_changer_joint.gif" /></p>
+</section>
+<section id="correctly-moving-belt-sample-changer">
+<h2>Correctly moving belt sample changer<a class="headerlink" href="#correctly-moving-belt-sample-changer" title="Link to this heading"></a></h2>
+<p><img alt="" src="../../_images/mari_sample_changer_belt.gif" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jaws/Polaris-Jaws.html" class="btn btn-neutral float-left" title="POLARIS Jaws" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MERLIN%2C-LET-and-WISH-Oscillating-radial-collimators.html" class="btn btn-neutral float-right" title="MERLIN, LET and WISH Oscillating Radial Collimators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

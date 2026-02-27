@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IOC Tips &amp; Tricks &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PV with a limited range" href="PV-with-a-limited-range.html" />
+    <link rel="prev" title="Handling invalid values" href="Handling-Invalid-Values.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Email-Text-Alerts-from-IOCS.html">Email &amp; Text alerts from IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flow-control.html">Flow control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Handling-Invalid-Values.html">Handling invalid values</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IOC Tips &amp; Tricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-with-a-limited-range.html">PV with a limited range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stream-Device-Tips-and-Tricks.html">Stream Device Tips and Tricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Using-IP-rather-than-nport-with-MOXA-%28RFC-2217%29.html">Using IP rather than NPORT (RFC 2217)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+      <li class="breadcrumb-item active">IOC Tips &amp; Tricks</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tips_tricks/IOC-Tips-and-Tricks.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ioc-tips-tricks">
+<h1>IOC Tips &amp; Tricks<a class="headerlink" href="#ioc-tips-tricks" title="Link to this heading"></a></h1>
+<section id="dbloadrecordsloop-and-dbloadrecordloop">
+<h2>DBLoadRecordsLoop and DBLoadRecordLoop<a class="headerlink" href="#dbloadrecordsloop-and-dbloadrecordloop" title="Link to this heading"></a></h2>
+<p>You can load Db records in a loop using <code class="docutils literal notranslate"><span class="pre">dbLoadRecordsLoop</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example usage of dbLoadRecordsLoop() and iocshCmdLoop() etc.</span>
+<span class="c1"># Define a loop or list variable, then references to \$(VAR) will be replaced by loop/list values.</span>
+<span class="c1"># You can use \$(VAR) in any of the values of the parameters, including the db file name.</span>
+<span class="c1"># The loop/list variable &quot;I&quot; is passed to the DB file along with any other specified macros.</span>
+<span class="c1"># We now loop &quot;I&quot; over a range of 1 to 3.</span>
+<span class="n">dbLoadRecordsLoop</span><span class="p">(</span><span class="s2">&quot;db/utilitiesTest.db&quot;</span><span class="p">,</span> <span class="s2">&quot;P=$(MYPVPREFIX),Q=A\$(I)&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also iterate over a list using <code class="docutils literal notranslate"><span class="pre">dbLoadRecordsList</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here S is our list variable with values x, Y and Z.</span>
+<span class="n">dbLoadRecordsList</span><span class="p">(</span><span class="s2">&quot;db/utilitiesTest.db&quot;</span><span class="p">,</span> <span class="s2">&quot;P=$(MYPVPREFIX),Q=A\$(S)&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;X;Y;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># As the loop/list variable is always passed though, we can instead iterate over Q.</span>
+<span class="n">dbLoadRecordsList</span><span class="p">(</span><span class="s2">&quot;db/utilitiesTest.db&quot;</span><span class="p">,</span> <span class="s2">&quot;P=$(MYPVPREFIX)&quot;</span><span class="p">,</span> <span class="s2">&quot;Q&quot;</span><span class="p">,</span> <span class="s2">&quot;BX;BY;BZ&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can execute IOC commands in loops as well.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can execute iocs commands in a similar way.</span>
+<span class="n">iocshCmdLoop</span><span class="p">(</span><span class="s2">&quot;dbgrep $(MYPVPREFIX)A\$(I)*&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">iocshCmdList</span><span class="p">(</span><span class="s2">&quot;dbgrep $(MYPVPREFIX)A\$(S)*&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;X;Y;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># We can also load files. The macro Q and I will be defined as temporary environment.</span>
+<span class="c1"># variables for use in the script and then reset back to their pre-script values.</span>
+<span class="n">iocshCmdLoop</span><span class="p">(</span><span class="s2">&quot;&lt; st\$(I).cmd&quot;</span><span class="p">,</span> <span class="s2">&quot;Q=Hello\$(I)&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>More details can be found at <a class="reference external" href="http://epics.isis.stfc.ac.uk/doxygen/main/support/utilities/dbLoadRecordsFuncs_8cpp.html#a32071967b99f42356b1e04b06746cc73">http://epics.isis.stfc.ac.uk/doxygen/main/support/utilities/dbLoadRecordsFuncs_8cpp.html#a32071967b99f42356b1e04b06746cc73</a>.</p>
+<p><strong>N.B.</strong> If you need to parameterise your macro names, you will need to use a template and not a <code class="docutils literal notranslate"><span class="pre">dbLoadRecordsList</span></code> or <code class="docutils literal notranslate"><span class="pre">dbLoadRecordsLoop</span></code>.</p>
+</section>
+<section id="toggle-multiple-pv-s-from-a-single-set-point">
+<h2>Toggle multiple PV’s from a single set-point<a class="headerlink" href="#toggle-multiple-pv-s-from-a-single-set-point" title="Link to this heading"></a></h2>
+<p>Sometimes you might want to have a single record set point that processes multiple records. An example of this would be for a device that requires different commands to be sent for Start and Stop. Rather than having to process two distinctly different records for each command you can use this template to toggle these from a single record:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">bi</span><span class="p">,</span> <span class="s2">&quot;$(P)TOG:RECORD:SP&quot;</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;Toggle record set point&quot;</span><span class="p">)</span>
+	
+	<span class="n">field</span><span class="p">(</span><span class="n">ZNAM</span><span class="p">,</span> <span class="s2">&quot;Record1&quot;</span><span class="p">)</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">ONAM</span><span class="p">,</span> <span class="s2">&quot;Record2&quot;</span><span class="p">)</span>
+	<span class="n">info</span><span class="p">(</span><span class="n">INTEREST</span><span class="p">,</span> <span class="s2">&quot;HIGH&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Add 1 to the value of the toggle set point to map the fanout </span>
+<span class="c1"># forward link index.</span>
+<span class="n">record</span><span class="p">(</span><span class="n">calcout</span><span class="p">,</span> <span class="s2">&quot;$(P)_TOG:CALC:RECORD&quot;</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">INPA</span><span class="p">,</span> <span class="s2">&quot;$(P)TOG:RECORD:SP CP&quot;</span><span class="p">)</span>
+	
+	<span class="n">field</span><span class="p">(</span><span class="n">CALC</span><span class="p">,</span> <span class="s2">&quot;A+1&quot;</span><span class="p">)</span>
+	
+	<span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span> <span class="s2">&quot;$(P)_TOG:RECORD.SELN PP&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">fanout</span><span class="p">,</span> <span class="s2">&quot;$(P)_TOG:RECORD&quot;</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">SELM</span><span class="p">,</span> <span class="s2">&quot;Specified&quot;</span><span class="p">)</span>
+	
+	<span class="n">field</span><span class="p">(</span><span class="n">LNK1</span><span class="p">,</span> <span class="s2">&quot;$(P)_RECORD1:SP PP&quot;</span><span class="p">)</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">LNK2</span><span class="p">,</span> <span class="s2">&quot;$(P)_RECORD2:SP PP&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">bo</span><span class="p">,</span> <span class="s2">&quot;$(P)_RECORD1:SP&quot;</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;Process record1&quot;</span><span class="p">)</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+	
+	<span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span> <span class="s2">&quot;@device.proto set_record1() $(PORT)&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">bo</span><span class="p">,</span> <span class="s2">&quot;$(P)_RECORD2:SP&quot;</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;Process record2&quot;</span><span class="p">)</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+	<span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;Passive&quot;</span><span class="p">)</span>
+	
+	<span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span> <span class="s2">&quot;@device.proto set_record2() $(PORT)&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This takes the set points binary value, shifts it by +1 in a calc record which allows for it to be mapped with the forward link outputs of the fanout record, these forward links are then processed. This can be easily extended with additional forward links or sequence records.</p>
+</section>
+<section id="processing-of-calc-records">
+<h2>Processing of calc records<a class="headerlink" href="#processing-of-calc-records" title="Link to this heading"></a></h2>
+<p>There are two major ways in which your calc records can be processed:</p>
+<p>1)The first way is to either use a forward link or have the name of your calc record in the OUT field of another PV, followed by the PP flag. In this way, the calc record will not be processed when the IOC starts. This way is better for when the other PV is a setpoint, since you want the calc record to process only when the setpoint is explicitly set, not also when the IOC starts and when the setpoint is initialized.</p>
+<p>2)The other way is to have the PV that should trigger the processing of the calc record in the an INP field of the calc record, followed by the CP MS flags. The CP flag enables monitoring of that PV, and then the MS flag means any alarm of that PV will propagate to the calc record. The calc record will be processed every time the other PV is processed, including when the IOC starts. This way is better for when the other PV is a readback, because you want the calc to be processed each time the readback changes.</p>
+</section>
+<section id="creating-many-ioc-aliases">
+<h2>Creating many IOC aliases<a class="headerlink" href="#creating-many-ioc-aliases" title="Link to this heading"></a></h2>
+<p>If you would like to create a set of PV aliases in an IOC from the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> then that is possible using <code class="docutils literal notranslate"><span class="pre">dbAliasRecordsPrefix</span></code> (to simply swap a prefix) or <code class="docutils literal notranslate"><span class="pre">dbAliasRecordsRE</span></code> (to use a more complicated regular expression)</p>
+<p>To create aliases for all records with e.g. the <code class="docutils literal notranslate"><span class="pre">ME:</span></code> (movable equipment) prefix that instead have the local pv prefix</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbAliasRecordsPrefix</span><span class="p">(</span><span class="s2">&quot;ME:&quot;</span><span class="p">,</span> <span class="s2">&quot;$(MYPVPREFIX)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The equivalent using a regular expression would be</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbAliasRecordsRE</span><span class="p">(</span><span class="s2">&quot;ME:(.*)&quot;</span><span class="p">,</span> <span class="s2">&quot;$(MYPVPREFIX)</span><span class="se">\1</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>but much more complex rewrites are possible</p>
+</section>
+<section id="for-general-information-on-commands-see">
+<h2>For general information on commands see:<a class="headerlink" href="#for-general-information-on-commands-see" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/index.html">http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/index.html</a></p></li>
+<li><p><a class="reference external" href="https://epics.anl.gov/base/R3-14/12-docs/AppDevGuide/node19.html">https://epics.anl.gov/base/R3-14/12-docs/AppDevGuide/node19.html</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Handling-Invalid-Values.html" class="btn btn-neutral float-left" title="Handling invalid values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PV-with-a-limited-range.html" class="btn btn-neutral float-right" title="PV with a limited range" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflectometry &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Beamline-specific information" href="reflectometry/Beamlines.html" />
+    <link rel="prev" title="TPGx00" href="pressure_monitors/TPGx00.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Reflectometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Config-Training.html">Reflectometry Config Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry/reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+      <li class="breadcrumb-item active">Reflectometry</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/Reflectometry-IOC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="reflectometry">
+<h1>Reflectometry<a class="headerlink" href="#reflectometry" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="high-level-requirements">
+<h2>High level Requirements<a class="headerlink" href="#high-level-requirements" title="Link to this heading"></a></h2>
+<p>As described in the physics background page (<a class="reference internal" href="reflectometry/design_docs/Reflectometers-Science.html"><span class="doc std std-doc">Reflectometers Science</span></a>), we need to calculate where a beamline should physically be based on higher level parameters, and track a changing beam path with multiple components. The user workflows we need to support are:</p>
+<ol class="arabic simple">
+<li><p>Delayed move (the user wants to move one or multiple devices on the beamline and they want to confirm the entered value(s) before committing to the move):</p>
+<ol class="arabic simple">
+<li><p>Set a parameter (or multiple)</p></li>
+<li><p>Ensure the value is correct by reading it</p></li>
+<li><p>Move to the set value – either:</p>
+<ol class="arabic simple">
+<li><p>Trigger move for a single parameter – the new value is applied for this parameter, all others retain their current values.</p></li>
+<li><p>Trigger move for all parameters – any new values are applied for all parameters</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Immediate move (the user knows the value is correct and just wants to move):</p>
+<ol class="arabic simple">
+<li><p>Set a single parameter</p></li>
+<li><p>Beamline immediately moves parameter to that position, while keeping all other parameters at their current value</p></li>
+</ol>
+</li>
+<li><p>Readback values (so the user knows where the beamline actually is)</p>
+<ol class="arabic simple">
+<li><p>When any component moves, the actual position of the parameters should be reported</p></li>
+</ol>
+</li>
+<li><p>Visual indicators (so the user has extra information on the state of parameters without thought, usually indicated on the GUI via a colour)</p>
+<ol class="arabic simple">
+<li><p>If a parameter setpoint is changed but not moved to (default colour yellow)</p></li>
+<li><p>If an underlying motor of a parameter is moving (default colour green)</p></li>
+<li><p>If a setpoint readback and readback are different from each other and not moving (default colour red)</p></li>
+<li><p>If a setpoint and setpoint readback are different and the setpoint is not changed (default colour red)</p>
+<ol class="arabic simple">
+<li><p>TBD - we are not sure, we don’t just want to copy values up from lower components.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Synchronised moves: To avoid clash conditions it is desirable that most axes move together so that they reach their final destinations at the same time. This means setting the velocity of the axis before a move is started. There is no initial requirement to actively monitor the motors themselves to ensure continual crash avoidance, e.g. in the event of a motor stall.</p>
+<ul class="simple">
+<li><p>a caveat on this is that some axes should not be synchronised. Either because the motor velocities should not be changed (piezo motors) or they take a long time and have no clash conditions (e.g. multi-detector heights).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="design-details">
+<h2>Design Details<a class="headerlink" href="#design-details" title="Link to this heading"></a></h2>
+<p>Reflectometry IOC sits on top of:</p>
+<ul class="simple">
+<li><p><strong>Motor Driver Layer:</strong> This layer is responsible for communicating with the galil and other motors.  This is complete.</p></li>
+<li><p><strong>Motor Group Layer:</strong> This layer groups together motors from the motor driver layer into more natural groups. For instance a jawset, which allows a user to set jaw gaps and height, not just positions of individual blades.</p></li>
+</ul>
+<p>The reflectometry IOC is composed of layers, each layer talking to the layer below and above it:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="reflectometry/Reflectometry-Beamline-Parameters.html"><span class="doc std std-doc">Beamline Parameters</span></a>:</strong> In this layer, the user is specifying where they want a component to be positioned in relation to the incoming beam. The user will specify theta, for instance, which will then set the position of the geometry component related to theta. They will also read whether the geometry component has changed and report a readback of the positions on the actual beamline. The beamline parameters are calculated in a strict order starting with those closest to the source to ensure the path is correct. Parameters can be disabled in which case they do not automatically track the beam.</p></li>
+<li><p><strong><a class="reference internal" href="reflectometry/Reflectometry-Geometry-Components.html"><span class="doc std std-doc">Geometry Components</span></a>:</strong> This layer calculates the beam path, and handles the conversion of positions between parameter values (relative to current beam path) and motor values (absolute room coordinates). The beamline parameters set the positions from above and the composite driving layers sets the parameters from below.</p></li>
+<li><p><strong><a class="reference internal" href="reflectometry/Reflectometry-Composite-Driving-Layer.html"><span class="doc std std-doc">Composite Driving Layer</span></a>:</strong> This layer pushes values from the parameters into the motor group and motor driver PVs. They also push the readbacks up to the geometry layer. This layer contains some logic to allow concurrent moves with very simple synchronization (complete all moves in time with the slowest axis).</p></li>
+</ul>
+<p>The whole system is coordinated by the <a class="reference internal" href="reflectometry/Reflectometry-Beamline-Object.html"><span class="doc std std-doc">Beamline object</span></a>, which represents a complete model of the beamline from a motion point of view. This model is defined for each individual instrument by the <a class="reference internal" href="reflectometry/Reflectometry-Configuration.html"><span class="doc std std-doc">Reflectometry Configuration</span></a>.</p>
+</section>
+<section id="set-point-propagation">
+<h2>Set Point Propagation<a class="headerlink" href="#set-point-propagation" title="Link to this heading"></a></h2>
+<p>The values that the user sets on the reflectometry IOC only ever get transferred downward between the layers. This is true of setpoints and set-point readbacks. The only time this is violated is on start-up where the state is read from the underlying hardware for initial values. This means if a user sets a motor position it will not be reflected in the setpoint and the next time the reflectometry IOC is moved it will set it back to its original position even if it hasn’t been changed.
+Readbacks flow in the opposite direction they are always read from the lower levels and set upwards. To help identify where set points and readbacks are not the same indicators on the GUI will be set.
+This is controversial but is signed off as per <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4307">ticket 4307</a>.</p>
+</section>
+<section id="server-status-feedback">
+<h2>Server Status Feedback<a class="headerlink" href="#server-status-feedback" title="Link to this heading"></a></h2>
+<p>The reflectometry server provides feedback on its status to the user at 3 different levels:</p>
+<ul class="simple">
+<li><p><strong>Error Log:</strong> At this level, we just collect error messages in the reflectometry server and expose them via a PV in addition to writing them to the log file. In order to do this, we should conventionally use <code class="docutils literal notranslate"><span class="pre">SERVER_STATUS_MANAGER.update_error_log(&lt;message&gt;)</span></code> in place of <code class="docutils literal notranslate"><span class="pre">logger.error(&lt;message&gt;)</span></code>. The PV with the list of errors is then displayed in a tab on the reflectometry front panel OPI. The log is stored in a 10,000 element char waveform and thus the string returned is truncated to that limit.</p></li>
+<li><p><strong>Problems:</strong> These are slightly higher level and intended to be fairly general just as an indication of the area where a problem occurred. For more detailed information, the user should refer to the error log. Problems are comprised of a type of issue, a severity and a list of sources that are reporting it. Examples:</p>
+<ul>
+<li><p>Problem: Configuration is invalid; Severity: Major; Source(s): Configuration</p></li>
+<li><p>Problem: Velocity cannot be restored; Severity: Minor; Source(s): MTR0304, MTR0305</p></li>
+</ul>
+</li>
+<li><p><strong>Status:</strong> This is the overall server status. The status is derived from the problems (the highest error level is the error level of the server)</p></li>
+</ul>
+<p>The intention of this system is to provide useful feedback to the user in case things go wrong <strong>in addition to</strong> handling exceptions programmatically in a sensible way as one would usually.</p>
+<p>The status, log and active problems get cleared every time a “move” is issued. This keeps the log PV size reasonable and the reported status up to date. E.g. if an error was thrown because of a disconnected motor IOC, and the motor has since been reconnected, the errors should be cleared on a successful move. If there are any persistent problems, they will just be thrown again.</p>
+</section>
+<section id="other-concepts">
+<h2>Other Concepts<a class="headerlink" href="#other-concepts" title="Link to this heading"></a></h2>
+<section id="reflectometry-footprint-calculator">
+<h3>Footprint Calculator<a class="headerlink" href="#reflectometry-footprint-calculator" title="Link to this heading"></a></h3>
+<p>The footprint calculator calculates the resolution and footprint on the sample based on the slit gaps, distances between slits and sample length. This object is owned by the beamline. Currently, the footprint and resolution values are read-only.</p>
+<p><strong>For more implementation details see the <a class="reference internal" href="reflectometry/Reflectometry-Configuration.html"><span class="doc std std-doc">Beamline Configuration page</span></a></strong></p>
+</section>
+<section id="long-axis">
+<h3>Long Axis<a class="headerlink" href="#long-axis" title="Link to this heading"></a></h3>
+<p>The long axis can be set like any other parameter to control movement of a component along the beam. It is currently set assuming the provided <code class="docutils literal notranslate"><span class="pre">IOCDriver</span></code> moves exactly parallel to the natural beam. Moving a component so far in the long axis that it reorders components in the beam is not currently supported.</p>
+</section>
+</section>
+<section id="design-changes">
+<h2>Design Changes<a class="headerlink" href="#design-changes" title="Link to this heading"></a></h2>
+<p>Potential design changes:</p>
+<ol class="arabic simple">
+<li><p>Add component for slit gap parameter</p></li>
+<li><p>Move displacement from movement strategy and place it in beam path calc</p></li>
+</ol>
+</section>
+<section id="specific-reflectometers">
+<h2>Specific Reflectometers<a class="headerlink" href="#specific-reflectometers" title="Link to this heading"></a></h2>
+<p>Information pertaining to specific reflectometry setups on the instruments.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="reflectometry/beamlines/Reflectomtery-IOC-CRISP.html"><span class="doc std std-doc">CRISP</span></a></p></li>
+<li><p><a class="reference internal" href="reflectometry/beamlines/Reflectomtery-IOC-INTER.html"><span class="doc std std-doc">INTER</span></a></p></li>
+<li><p><a class="reference internal" href="reflectometry/beamlines/Reflectomtery-IOC-POLREF.html"><span class="doc std std-doc">POLREF</span></a></p></li>
+<li><p><a class="reference internal" href="reflectometry/beamlines/Reflectomtery-IOC-SURF.html"><span class="doc std std-doc">SURF</span></a></p></li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>see <a class="reference internal" href="reflectometry/Reflectometry-Troubleshooting-and-FAQ.html"><span class="doc std std-doc">Reflectometry Troubleshooting and FAQ</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pressure_monitors/TPGx00.html" class="btn btn-neutral float-left" title="TPGx00" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reflectometry/Beamlines.html" class="btn btn-neutral float-right" title="Beamline-specific information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

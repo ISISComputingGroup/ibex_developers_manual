@@ -1,0 +1,656 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOQ &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MAPS" href="MAPS-Instrument-Details.html" />
+    <link rel="prev" title="LET" href="LET-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ARGUS-Instrument-Details.html">ARGUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHIPIR-Instrument-Details.html">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Instrument-Details.html">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LET-Instrument-Details.html">LET</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN-Instrument-Details.html">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OFFSPEC-Instrument-Details.html">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PEARL-Instrument-Details.html">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">LOQ</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/LOQ-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="loq">
+<h1>LOQ<a class="headerlink" href="#loq" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instrument details pages provide historical context about the devices on a specific instrument,
+at the time they were migrated to IBEX. <strong>These pages may not be up to date with the latest instrument
+configuration.</strong></p>
+</div>
+<p>This page collects information that will be useful for the implementation of the IBEX control system on LOQ.</p>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>LOQ is a time-of-flight SANS instrument instrument at ISIS, on TS1. The <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/LOQ.aspx">LOQ</a> web page describes the background to the instrument.</p>
+<p>It has 3 collimation apertures (only A2 is computer-controlled), 4 monitors (insertion/removal of M3 is computer-controlled), and 2 detectors (an ORDELA He-3 MWPC ‘main’ detector and a annular 4-module ‘high-angle’ scintillator detector, <em>neither of which move!</em>). <em>There are no jaw sets on LOQ.</em></p>
+</section>
+<section id="loq-equipment">
+<h2>LOQ Equipment<a class="headerlink" href="#loq-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on LOQ. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. as necessary).</p>
+<p>For a <em>minimally functional instrument</em>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>DAE 2</p></td>
+<td><p>Detector Electronics</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-dae">see DAE note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>n/a</p></td>
+<td><p>LiveView</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-live-view">see Live View note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>Mk3</p></td>
+<td><p>Chopper</p></td>
+<td><p>N/A</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-choppers">see Chopper note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GALIL</p></td>
+<td><p><a class="reference external" href="http://www.galilmc.com/products/dmc-22x0.php">DMC2280</a></p></td>
+<td><p>Motion Controller</p></td>
+<td><p>Ethernet</p></td>
+<td><p>[EPICS]</p></td>
+<td><p><a class="reference internal" href="#loq-note-galil">see Galil note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ORDELA</p></td>
+<td><p>2661N</p></td>
+<td><p>Ordela Detector</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-ordela-detector">see Ordela Detector note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>NI</p></td>
+<td><p>???</p></td>
+<td><p>Fieldpoint</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-ordela-detector">see Ordela Detector note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>~Omega~</p></td>
+<td><p>~iBTHX~</p></td>
+<td><p>~Transmitter~</p></td>
+<td><p>~Ethernet~</p></td>
+<td><p></p></td>
+<td><p>~<a class="reference internal" href="#loq-noteomega"><span class="std std-ref">see Omega note</span></a>~</p></td>
+</tr>
+<tr class="row-odd"><td><p>~Omega~</p></td>
+<td><p>~PAC~</p></td>
+<td><p>~Intelligent Controller~</p></td>
+<td><p>~Modbus~</p></td>
+<td><p></p></td>
+<td><p>~<a class="reference internal" href="#loq-note-omega-pac">see Omega PAC note</a>~</p></td>
+</tr>
+<tr class="row-even"><td><p>MOXA</p></td>
+<td><p>ioLogik</p></td>
+<td><p>Remote I/O Controller</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-moxa-iologik">see MOXA ioLogik note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>???</p></td>
+<td><p>ISIS Vacuum System</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-vacuum-system">see Vacuum System note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pfeiffer</p></td>
+<td><p>TPG300</p></td>
+<td><p>Vacuum Gauge</p></td>
+<td><p>RS-232</p></td>
+<td><p>EPICS</p></td>
+<td><p><a class="reference internal" href="#loq-note-vacuum-system">see Vacuum System note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Eurotherm</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>All models at ISIS</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#loq-note-eurotherm">see Eurotherm note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Julabo</p></td>
+<td><p>FP-51</p></td>
+<td><p>Water Bath</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-water-baths">see Water Bath note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>n/a</p></td>
+<td><p>Julabo Valve</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-julabo-valve">see Water Bath note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>LOQ</p></td>
+<td><p>Sample Changer</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-sample-changer">see Sample Changer note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>LOQ</p></td>
+<td><p>Sample Changer Scan</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-sample-changer-scan">see Sample Changer Scan note</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>There is then a wide range of alternative sample environment used on a much less frequent basis, listed below in (approximate) decreasing order of importance:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CNR-ISIS</p></td>
+<td><p>n/a</p></td>
+<td><p>DLS</p></td>
+<td><p>RS232 &amp; Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-dls">see DLS note</a> - commissioning soon</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thar</p></td>
+<td><p>ISIS</p></td>
+<td><p>Pressure Cell</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-pressure-cell">see Pressure Cell note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Danfysik</p></td>
+<td><p>8000</p></td>
+<td><p>PSU</p></td>
+<td><p>RS232</p></td>
+<td><p>DFKPS</p></td>
+<td><p><a class="reference internal" href="#loq-note-danfysik">see Danfysik note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Anton-Paar</p></td>
+<td><p>Physica MCR-501</p></td>
+<td><p>Rheometer</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-rheometer">see Rheometer note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>RAL</p></td>
+<td><p>V/Nb Furnace</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-furnace">see Furnace note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>RAL</p></td>
+<td><p>Muon Optical Furnace</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-furnace">see Furnace note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>CCR</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-cryo">see Cryo note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>Orange Cryostat</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-cryo">see Cryo note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>LOQ</p></td>
+<td><p>Couette Cell</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-couette-cell">see Couette Cell note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>McLennan</p></td>
+<td><p>PM600</p></td>
+<td><p>Motion Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#McLennan%20Servo%20Supplies">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#loq-note-mclennan">see McLennan note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Unilever</p></td>
+<td><p></p></td>
+<td><p>Extensional-Flow Cell</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>LOQ</p></td>
+<td><p>T-Jump Cell</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-t-jump-cell">see T-Jump Cell note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Keithley</p></td>
+<td><p>2400</p></td>
+<td><p>Source Meter</p></td>
+<td><p>RS-232</p></td>
+<td><p>#1826</p></td>
+<td><p><a class="reference internal" href="#loq-note-keithley">see Keithley note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Biologic</p></td>
+<td><p>???</p></td>
+<td><p>Stop-Flow Cell</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Thurlby</p></td>
+<td><p>EX355P</p></td>
+<td><p>PSU</p></td>
+<td><p>???</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-thurlby">see Thurlby note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Huber</p></td>
+<td><p>SMC 9000</p></td>
+<td><p>Motion Controller</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#loq-note-huber">see Huber note</a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="loq-note-dae">
+<h3>Note: DAE<a class="headerlink" href="#loq-note-dae" title="Link to this heading"></a></h3>
+<p>Also see Ordela Detector note below.</p>
+</section>
+<section id="loq-note-live-view">
+<h3>Note: Live View<a class="headerlink" href="#loq-note-live-view" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>LOQ has a SECI VI for visualising the data being acquired on the ORDELA detector in real-time. This is essential to efficient instrument operations and will need implementing in Ibex.</p></li>
+<li><p>If it were possible to extend the functionality to include the high-angle detector that would be very welcome.</p></li>
+</ol>
+</section>
+<section id="loq-note-choppers">
+<h3>Note: Choppers<a class="headerlink" href="#loq-note-choppers" title="Link to this heading"></a></h3>
+<p>LOQ has an ISIS Mk3 chopper.<br></p>
+</section>
+<section id="loq-note-galil">
+<h3>Note: Galil<a class="headerlink" href="#loq-note-galil" title="Link to this heading"></a></h3>
+<p>LOQ Galil drives 4 axes: Sample Changer _height _ stage, Sample Changer <em>vertical</em> stage, A2, and M3.</p>
+</section>
+<section id="loq-note-ordela-detector">
+<h3>Note: Ordela Detector<a class="headerlink" href="#loq-note-ordela-detector" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.ordela.com/">ORDELA</a> (Oak Ridge Detector Laboratory) is a manufacturer of area-detector devices.  It is a spin-off from Oak Ridge National Laboratory. Detector installed is a Model 2661N He-3 MWPC.</p></li>
+<li><p>This detector is currently controlled (HV on/off, setting discriminator levels) by proprietary W95-era software running on a dedicated PC. The same PC also features a NI DAQ card which can be used to record data independently of the LOQ DAE. This facility is only ever used for detector diagnostics.</p></li>
+<li><p><strong>LOQ’s reliance on an ageing PC/software combination to turn the detector on/off and set the discriminator levels is a significant single-point-of-failure which has been flagged for many years but only recently received any resource (ask DPK). As part of the Ibex migration this issue should be addressed.</strong></p></li>
+<li><p>The NI Fieldpoint device measures the detector voltage, the discriminator voltage and the detector temperature on three separate channels on separate modules (see VI).  The plan is to replace this obsolete device with an NI cDAQ (model 9185?) with the appropriate modules as this is currently supported in IBEX.</p></li>
+<li><p>The ORDELA detector can be damaged as a result of the neutron count rate being too high. Software is required to detect this over count rate (via the ISISICP) and move an aperture into a position to block the beam (axis controlled by Galil motion controller). Settings should be available to enter the over count rate level and the duration of the over count rate before any action is deemed necessary. The aperture has three discrete positions for normal operation. To block the beam it needs to be moved to the closest mid point of these positions. A message needs to be reported to a contact list and a corresponding message displayed on the instrument screen to identify a problem has been detected.
+(VI references : 1. C:\LabVIEW Modules\DAE\DAE Detector Check.vi 2. C:\LabVIEW Modules\Instruments\LOQ\LOQ Detector Protect\LOQ Detector Protect.llb\LOQ - Detector Protect - Front Panel.vi)</p></li>
+</ol>
+</section>
+<section id="loq-noteomega">
+<h3>~Note: Omega~<a class="headerlink" href="#loq-noteomega" title="Link to this heading"></a></h3>
+<p>~<a class="reference external" href="https://www.omega.co.uk/pptst/IBTX_IBTHX.html">OMEGA™ iBTHX transmitter</a> is a device to monitor and record barometric pressure, temperature, relative humidity, and dew point over an Ethernet network or the LOQnet. It is attached to the rear of the ORDELA detector.~</p>
+</section>
+<section id="loq-note-omega-pac">
+<h3>~Note: Omega PAC~<a class="headerlink" href="#loq-note-omega-pac" title="Link to this heading"></a></h3>
+<p>~The OMEGA™ iBTHX (see above) is not reliable.  It has been decided to replace it with a <a class="reference external" href="https://www.omega.co.uk/pptst/OME-WISE-7000_SERIES.html">OMEGA™ PAC Controller</a> device to monitor and record temperature.~</p>
+</section>
+<section id="loq-note-moxa-iologik">
+<h3>Note: MOXA ioLogik<a class="headerlink" href="#loq-note-moxa-iologik" title="Link to this heading"></a></h3>
+<p>Both the OMEGA™ iBTHX and OMEGA™ PAC devices (see above) have proved unreliable.  It has been decided to use <a class="reference external" href="https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series">MOXA ioLogik 12XX</a> devices to monitor and record temperature &amp; voltage on the ORDELA detector.</p>
+</section>
+<section id="loq-note-vacuum-system">
+<h3>Note: Vacuum System<a class="headerlink" href="#loq-note-vacuum-system" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>There are 2 vacuum gauges on LOQ. Both are TPG300’s. One is atop the Galil at the sample position monitoring the collimation, and the other is integrated into the detector tank pumping system.</p></li>
+<li><p>Only the detector tank TPG300 was read back in SECI. There are two sensors, one at the pump, and one on the tank.</p></li>
+<li><p><strong>It is highly desirable to have the collimation TPG300 integrated into Ibex too.</strong></p></li>
+<li><p>TPG300 support is implemented via <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/216">#216</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2063">#2063</a></p></li>
+</ol>
+</section>
+<section id="loq-note-eurotherm">
+<h3>Note: Eurotherm<a class="headerlink" href="#loq-note-eurotherm" title="Link to this heading"></a></h3>
+<p>Eurotherms are used to control the temperature of Orange Cryostats, CCRs and Furnace devices. And also to measure voltages from other sensors.</p>
+</section>
+<section id="loq-note-water-baths">
+<h3>Note: Water Baths<a class="headerlink" href="#loq-note-water-baths" title="Link to this heading"></a></h3>
+<p>LOQ routinely uses 2 Julabo Water Baths. Both are Model FP-51’s. In an emergency (ie, a bath failure) we would use Julabos from the ISIS inventory which include Model FP-50’s and Model FP-52’s.</p>
+<blockquote>
+<div><p>The LOQ Julabo baths act in a pair, and depend on the external/internal status. If the baths are not behaving as you would expect, check whether internal and external have been flipped. We will check out of cycle if this could be caused by IBEX rebooting.</p>
+</div></blockquote>
+</section>
+<section id="loq-note-julabo-valve">
+<h3>Note: Julabo Valve<a class="headerlink" href="#loq-note-julabo-valve" title="Link to this heading"></a></h3>
+<p><strong>There is an electrically-operated solenoid valve to allow scripted control of which Julabo Water Bath is thermostating the Sample Changer. This is implemented in SECI and will need replicating in Ibex.</strong><br>
+A similar device could also be used on SANS2D, so a driver for the Julabo Valve will be valuable elsewhere.</p>
+</section>
+<section id="loq-note-sample-changer">
+<h3>Note: Sample Changer<a class="headerlink" href="#loq-note-sample-changer" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>The LOQ Sample Changer is driven by a Galil. It sits on a Height Stage which is also driven by a Galil. This combination accounts for &gt;90% of sample environment usage on LOQ.</p></li>
+<li><p>In SECI the Sample Changer can be driven ‘manually’ from a VI, or ‘autonomously’ from GCL scripts.</p></li>
+<li><p><strong>Sample Changer scripts are created by a VB application called LOQscript developed by MJC. An Ibex-compatible equivalent of LOQscript will need to be provided.</strong></p></li>
+</ol>
+</section>
+<section id="loq-note-sample-changer-scan">
+<h3>Note: Sample Changer Scan<a class="headerlink" href="#loq-note-sample-changer-scan" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>A VI called LOQ SC Scan allows the sample positions on the Sample Changer to be ‘scanned in’ using the LOQ alignment laser and the output recorded on a photocell. It was written by GDH.</p></li>
+<li><p>The photocell is connected to a <a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=PM100A">Thor Labs Model PM100A power meter</a>.</p></li>
+</ol>
+</section>
+<section id="loq-note-dls">
+<h3>Note: Dynamic Light Scattering<a class="headerlink" href="#loq-note-dls" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>This apparatus should be ready to commence commissioning in Autumn 2018.</strong> Commissioning will take place on LOQ but the apparatus is intended to be available on LOQ, SANS2D, LARMOR and ZOOM.</p></li>
+<li><p>The apparatus contains a 100 mW Coherent OBIS visible laser with the facility for remote control.</p></li>
+<li><p>The scattered laser light will be processed by an LS Instruments multi-channel, multi-tau, correlator.</p></li>
+<li><p>For further information see ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3361">#3361</a>.</p></li>
+</ol>
+</section>
+<section id="loq-note-pressure-cell">
+<h3>Note: Pressure Cell<a class="headerlink" href="#loq-note-pressure-cell" title="Link to this heading"></a></h3>
+<p>The Thar Pressure Cell normally just integrates with the Eurotherm controller.</p>
+</section>
+<section id="loq-note-danfysik">
+<h3>Note: Danfysik<a class="headerlink" href="#loq-note-danfysik" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>: Currently a Danfysik Model 8000 controller is integrated into an ageing GEC power supply, but the GEC unit is due to be replaced in the near future as part of ISIS-wide obsolescence. It will most likely be replaced by a Danfysik power supply. Richard Hale may be able to advise what model.</p>
+<ol class="arabic simple">
+<li><p>There is a possibility that the GEC power supply will be replaced prior to December 2018.  The replacement power supply will be a Danfysik 8500 Model 859.</p></li>
+</ol>
+</li>
+<li><p><a class="reference external" href="http://www.danfysik.com/en/products/power-supplies/">Danfysik Power Supplies</a></p></li>
+<li><p><a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/Allhttps://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FPower%20Supplies">User and Software Manuals</a> for System 8500.</p></li>
+<li><p>See <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1208">#1208</a> for comms settings.</p></li>
+</ol>
+</section>
+<section id="loq-note-rheometer">
+<h3>Note: Rheometer<a class="headerlink" href="#loq-note-rheometer" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>This device is controlled by proprietary software (on a dedicated PC).  Manufacturer is reluctant to allow it to be integrated with ISIS software (i.e. SECI or IBEX).</p></li>
+<li><p>We have in the past used a Eurotherm controller to send a trigger pulse to initiate actions by the proprietary software.</p></li>
+<li><p>Manuals describing the use of the Anton-Paar Physica MCR-501 Rheometer are located here: <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls\AntonPaar_Physica_MCR501</span></code>.</p></li>
+</ol>
+</section>
+<section id="loq-note-furnace">
+<h3>Note: Furnaces<a class="headerlink" href="#loq-note-furnace" title="Link to this heading"></a></h3>
+<p>Furnaces normally just integrate with the Eurotherm controller.</p>
+</section>
+<section id="loq-note-cryo">
+<h3>Note: CCRs and Cryostats<a class="headerlink" href="#loq-note-cryo" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>CCR’s and Cryostats normally just integrate with the Eurotherm controller.</p></li>
+<li><p><em>LOQ does not use Cryomagnets. Ever!</em></p></li>
+</ol>
+</section>
+<section id="loq-note-couette-cell">
+<h3>Note: Couette Cell<a class="headerlink" href="#loq-note-couette-cell" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>The Couette Cell is driven by a <a class="reference internal" href="#loq-note-mclennan">McLennan PM1000</a> (compatible with a PM600).</p></li>
+<li><p>See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3105">#3105</a></p></li>
+</ol>
+</section>
+<section id="loq-note-mclennan">
+<h3>Note: McLennan<a class="headerlink" href="#loq-note-mclennan" title="Link to this heading"></a></h3>
+<p>Support for McLennan devices is well established (see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1099">#1099</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1100">#1100</a> and subsequent tickets.</p>
+</section>
+<section id="loq-note-t-jump-cell">
+<h3>Note: T-Jump Cell<a class="headerlink" href="#loq-note-t-jump-cell" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>The T-Jump Cell is driven by a Keithley 2400.</p></li>
+<li><p>See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3175">#3175</a></p></li>
+</ol>
+</section>
+<section id="loq-note-keithley">
+<h3>Note: Keithley<a class="headerlink" href="#loq-note-keithley" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://uk.tek.com/keithley-source-measure-units/keithley-smu-2400-series-sourcemeter">Keithley 2400 Source Meter</a></p></li>
+<li><p>See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1826">#1826</a>, <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3176">#3176</a></p></li>
+</ol>
+</section>
+<section id="loq-note-thurlby">
+<h3>Note: Thurlby<a class="headerlink" href="#loq-note-thurlby" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Thurlby EX355P PSU - see <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/155">#155</a> and <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/198">#198</a>.</p></li>
+<li><p><a class="reference external" href="https://www.aimtti.com/product-category/dc-power-supplies/aim-ex-rseries">Thurlby Thandar Instruments EX355P PSU</a></p></li>
+</ol>
+</section>
+<section id="loq-note-huber">
+<h3>Note: Huber<a class="headerlink" href="#loq-note-huber" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.xhuber.com/en/">Huber</a>.</p></li>
+<li><p>According to Huber’s web-site, a Huber SMC9000 is a motion controller.  See <a class="reference external" href="https://www.xhuber.com/en/products/3-control/smc-9300/">SMC 9300</a> which appears to be the latest of the 9000-series and <a class="reference external" href="https://www.xhuber.com/fileadmin/user_upload/downloads/usermanuals/9000_1103.pdf">SMC 9000</a></p></li>
+<li><p>The Huber device has not been used on LOQ for some time: <br>
+<em>I believe this device was a one-off use by a former member of the instrument team. SMK.</em><br>
+It should not be considered a priority for support on LOQ.  See also <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3502">#3502</a></p></li>
+</ol>
+</section>
+</section>
+<section id="loq-notes">
+<h2>LOQ Notes<a class="headerlink" href="#loq-notes" title="Link to this heading"></a></h2>
+<p>LOQ has the following specialist panels:</p>
+<ol class="arabic">
+<li><None>
+</li>
+</ol>
+<p>LOQ has the following devices under motion control:</p>
+<ol class="arabic simple">
+<li><p>Aperture (A2)</p>
+<ul class="simple">
+<li><p>The aperture device is a plate with 3 different sized aperture holes.  The Galil drives the plate to one of 3 predefined positions (each corresponding to one of the aperture holes).  It would be useful to create a 4th position, corresponding to a solid portion of the aperture plate (so that it can be used to block the beam).</p></li>
+</ul>
+</li>
+<li><p>Sample Changer (translation &amp; vertical)</p>
+<ul class="simple">
+<li><p>The sample changer moves in a grid fashion - left/right translation across the beam and up/down vertical translation.  Sample changer positions can be set directly in mm, or  via preset positions (defined in a file, which is edited regularly).  The preset positions use several naming conventions, according to the type of sample rack in use.</p></li>
+</ul>
+</li>
+<li><p>Transmission Monitor (M3)</p>
+<ul class="simple">
+<li><p>moves in/out of the beam.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LET-Instrument-Details.html" class="btn btn-neutral float-left" title="LET" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MAPS-Instrument-Details.html" class="btn btn-neutral float-right" title="MAPS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

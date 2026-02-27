@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Test &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tips, Tricks &amp; Techniques" href="../Tips-and-Tricks.html" />
+    <link rel="prev" title="Running IOCs locally" href="Running-IOCs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-sim-records-script.html">Add sim records script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Disable-records.html">Disable records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Emulating-Devices.html">Emulating devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Testing-Framework.html">IOC Testing framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Record-Simulation.html">Record simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-IOCs.html">Running IOCs locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-IOCs.html#simulation-mode">Simulation Mode</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Google Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">Google Test</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/testing/Setting-up-googleTest-to-work-with-EPICS-build-process.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="google-test">
+<h1>Google Test<a class="headerlink" href="#google-test" title="Link to this heading"></a></h1>
+<p>This is a guide to set up googleTest with EPICS at ISIS. This allows you to write C++ unit tests for your C/C++ code in an IOC. Examples of IOCs that run tests like this are the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-Keithley_2001">Keithley 2001</a> and the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-Cryosms">cryosms</a>.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#googletest-intro">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#googletest-release-file">Release file</a></p></li>
+<li><p><a class="reference internal" href="#googletest-building-test-runner">Building the test runner</a></p></li>
+<li><p><a class="reference internal" href="#googletest-running-tests">Running your tests</a></p></li>
+<li><p><a class="reference internal" href="#googletest-sample">Sample Test</a></p></li>
+<li><p><a class="reference internal" href="#googletest-external-dependencies">Adding a target to run tests</a></p></li>
+<li><p><a class="reference internal" href="#googletest-troubleshooting">Troubleshooting</a></p></li>
+</ul>
+</section>
+<section id="googletest-intro">
+<h2>Introduction<a class="headerlink" href="#googletest-intro" title="Link to this heading"></a></h2>
+<p>You will need to have the <code class="docutils literal notranslate"><span class="pre">googleTest</span></code> support submodule and built the master branch. This will create a <code class="docutils literal notranslate"><span class="pre">gtest.lib</span></code> which you can link against.</p>
+<p>More information on googleTest can be found at <a class="reference external" href="https://github.com/abseil/googletest">https://github.com/abseil/googletest</a>. We are using version 1.8.x currently at ISIS.</p>
+<p>Good places to start on how to write tests using googleTest is <a class="reference external" href="https://github.com/abseil/googletest/blob/master/googletest/docs/primer.md">here</a>.</p>
+<p>More advanced usage (including <code class="docutils literal notranslate"><span class="pre">ASSERT_THROWS</span></code>, <code class="docutils literal notranslate"><span class="pre">ASSERT_NO_THROW</span></code> and <code class="docutils literal notranslate"><span class="pre">ASSERT_DOUBLE_EQ</span></code>) can be found <a class="reference external" href="https://github.com/abseil/googletest/blob/master/googletest/docs/advanced.md">here</a>.</p>
+<p>Examples can be found <a class="reference external" href="https://github.com/abseil/googletest/blob/master/googletest/docs/samples.md">here</a>.</p>
+</section>
+<section id="googletest-release-file">
+<h2>Release file<a class="headerlink" href="#googletest-release-file" title="Link to this heading"></a></h2>
+<p>Remember to add the path to the Google Test support module in your support module Release file (in <code class="docutils literal notranslate"><span class="pre">configure/Release</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GTEST=$(SUPPORT)/googletest/master
+</pre></div>
+</div>
+</section>
+<section id="googletest-building-test-runner">
+<h2>Building the test runner<a class="headerlink" href="#googletest-building-test-runner" title="Link to this heading"></a></h2>
+<p>Make sure you include the following lines in your Makefile alongside the source code to create a test runner executable.</p>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="cp">ifeq ($(findstring 10.0,$(VCVERSION)),)</span>
+<span class="c"># googleTest Runner</span>
+
+<span class="nv">GTESTPROD_HOST</span><span class="o">+=</span><span class="w"> </span>runner
+<span class="nv">GTESTS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>runner
+<span class="cp">endif</span>
+</pre></div>
+</div>
+<p>Note: you should exclude the line <code class="docutils literal notranslate"><span class="pre">GTESTS</span> <span class="pre">+=</span> <span class="pre">runner</span></code> if you are using <code class="docutils literal notranslate"><span class="pre">run_tests.bat</span></code> as described below (i.e. if your tests need external dependencies). This is the line that tells the default <code class="docutils literal notranslate"><span class="pre">runtests</span></code> makefile target to include this test.</p>
+<p>You then need to include all the files you need for your tests using</p>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">runner_SRCS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="c1">#names of test files and source files</span>
+</pre></div>
+</div>
+<p>If your tests are in a different directory to your source files, you can add that directory to your SRCs path using</p>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">SRC_DIRS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="c1">#path to your tests directory</span>
+</pre></div>
+</div>
+</section>
+<section id="googletest-running-tests">
+<h2>Running your tests<a class="headerlink" href="#googletest-running-tests" title="Link to this heading"></a></h2>
+<p>Once built you can run the tests by doing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">runtests</span></code> in your submodule. This will print the test results and also save them to an xml file in <code class="docutils literal notranslate"><span class="pre">src/O.$(EPICS_HOST_ARCH)</span></code>. This file will be picked up by Jenkins.</p>
+</section>
+<section id="googletest-sample">
+<h2>Sample Test<a class="headerlink" href="#googletest-sample" title="Link to this heading"></a></h2>
+<p>The following below is a sample test file</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gtest/gtest.h&quot;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">TEST</span><span class="p">(</span><span class="n">Sample</span><span class="p">,</span><span class="w"> </span><span class="n">this_is_a_sample_test</span><span class="p">){</span>
+<span class="w">        </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace</span>
+</pre></div>
+</div>
+</section>
+<section id="googletest-external-dependencies">
+<h2>Tests with external dependencies<a class="headerlink" href="#googletest-external-dependencies" title="Link to this heading"></a></h2>
+<p>In some cases you may want to write unit tests that depend on other EPICS modules e.g. <code class="docutils literal notranslate"><span class="pre">asyn</span></code>. To do this you will need to create the required dlls and run the tests manually. First in your makefile in <code class="docutils literal notranslate"><span class="pre">src</span></code> add the following lines at the bottom:</p>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="cp">ifdef T_A</span>
+<span class="nf">install</span><span class="o">:</span><span class="w"> </span><span class="n">dllPath</span>.<span class="n">bat</span>
+
+<span class="nf">dllPath.bat</span><span class="o">:</span>
+<span class="w">	</span><span class="k">$(</span>CONVERTRELEASE<span class="k">)</span><span class="w"> </span>-a<span class="w"> </span><span class="k">$(</span>T_A<span class="k">)</span><span class="w"> </span>-T<span class="w"> </span><span class="k">$(</span>IOCS_APPL_TOP<span class="k">)</span><span class="w"> </span><span class="nv">$@</span>
+<span class="cp">endif</span>
+</pre></div>
+</div>
+<p>Then in the top of your submodule create <code class="docutils literal notranslate"><span class="pre">run_tests.bat</span></code> that looks like:</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">echo</span> off
+<span class="k">setlocal</span>
+<span class="k">set</span> <span class="s2">&quot;ARCH=</span><span class="nv">%1</span><span class="s2">&quot;</span>
+<span class="k">set</span> <span class="s2">&quot;TESTPATH=</span><span class="nv">%~dp0</span><span class="s2">&lt;IOC_NAME&gt;App/src/O.</span><span class="nv">%ARCH%</span><span class="s2">&quot;</span>
+<span class="k">if</span> <span class="k">exist</span> <span class="s2">&quot;</span><span class="nv">%TESTPATH%</span><span class="s2">\runner.exe&quot;</span> <span class="p">(</span>
+    <span class="k">call</span> <span class="nv">%TESTPATH%</span>\dllPath.bat
+    <span class="nv">%TESTPATH%</span>\runner.exe --gtest_output=xml:./test-reports/TEST-<span class="p">&lt;</span>IOC_NAME<span class="p">&gt;</span>.xml
+<span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+    <span class="p">@</span><span class="k">echo</span> No tests to run
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then in the top makefile you will need to override the <code class="docutils literal notranslate"><span class="pre">runtests</span></code> rule by adding in:</p>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">runtests</span>
+
+<span class="nf">runtests</span><span class="o">:</span>
+<span class="w">	</span>run_tests.bat<span class="w"> </span><span class="k">$(</span>EPICS_HOST_ARCH<span class="k">)</span>
+</pre></div>
+</div>
+<p>An example of an IOC that does this is the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-Cryosms">cryosms</a>.</p>
+</section>
+<section id="googletest-troubleshooting">
+<h2>Common issues<a class="headerlink" href="#googletest-troubleshooting" title="Link to this heading"></a></h2>
+<section id="tests-pass-but-error-afterwards-cannot-detect-source-of-runner-run">
+<h3>Tests pass but error afterwards “Cannot detect source of runner.run”<a class="headerlink" href="#tests-pass-but-error-afterwards-cannot-detect-source-of-runner-run" title="Link to this heading"></a></h3>
+<p>You may need to include the line <code class="docutils literal notranslate"><span class="pre">-include</span> <span class="pre">$(GTEST)/cfg/compat.RULES_BUILD</span></code> at the end of your Makefile, note the leading <code class="docutils literal notranslate"><span class="pre">-</span></code> which is to make the include optional, this is to stop failures on a global <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> when <code class="docutils literal notranslate"><span class="pre">$(GTEST)/cfg</span></code> will get removed before the module is processed.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Running-IOCs.html" class="btn btn-neutral float-left" title="Running IOCs locally" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Tips-and-Tricks.html" class="btn btn-neutral float-right" title="Tips, Tricks &amp; Techniques" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

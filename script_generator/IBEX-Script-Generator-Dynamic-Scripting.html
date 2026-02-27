@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Scripting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Script Generator testing" href="Script-Generator-Testing-Environment.html" />
+    <link rel="prev" title="Troubleshooting" href="Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Script-Generator.html">Script Generator</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html">Troubleshooting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dynamic Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Script-Generator-Testing-Environment.html">Script Generator testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Script-generator-high-level-design.html">Script Generator Design</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Script-Generator.html">Script Generator</a></li>
+      <li class="breadcrumb-item active">Dynamic Scripting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/script_generator/IBEX-Script-Generator-Dynamic-Scripting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dynamic-scripting">
+<h1>Dynamic Scripting<a class="headerlink" href="#dynamic-scripting" title="Link to this heading"></a></h1>
+<p>Dynamic scripting refers to requirements that allow a user to control the execution of actions whilst a script is running.</p>
+<section id="design">
+<h2>Design<a class="headerlink" href="#design" title="Link to this heading"></a></h2>
+<p>Dynamic scripting can be in 4 possible states: Playing, Paused, Stopped, Error. The design makes use of four design patterns: <a class="reference external" href="https://refactoring.guru/design-patterns/adapter">adapter</a>, <a class="reference external" href="https://sourcemaking.com/design_patterns/state">state</a>, <a class="reference external" href="https://refactoring.guru/design-patterns/observer">observer</a> (using the ModelObject and PropertyChangeListener Java classes) and <a class="reference external" href="https://refactoring.guru/design-patterns/factory-method">factory</a> (note: most articles actually talk about the abstract factory pattern we are using a more traditional factory pattern).</p>
+<p>Three of these design patterns have been modified to fit our purpose. State, Factory and Observer are used in conjunction to achieve state changes that are reactive to changes in the script server and model changes (handled asynchronously with observers over py4j bridge). State changes are not done by a return value of a method but by firing a property change from a <code class="docutils literal notranslate"><span class="pre">DynamicScriptingState</span></code>. This property change is then received by the <code class="docutils literal notranslate"><span class="pre">DynamicScriptingManager</span></code> and the <code class="docutils literal notranslate"><span class="pre">DynamicScriptingStateFactory</span></code> is then used to create the next state.</p>
+<p>The adapter pattern is used twice: once as an adapter to the <code class="docutils literal notranslate"><span class="pre">NicosModel</span></code> and the other as an adapter to the <code class="docutils literal notranslate"><span class="pre">ScriptGeneratorSingleton</span></code>.</p>
+<p>Dynamic scripting also makes use of the <a class="reference external" href="https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/">dependency injection technique</a>. See article for more details but this has allowed for ease of testing.</p>
+<p><img alt="UML Class Diagram for Dynamic Scripting" src="../_images/DynamicScripting.drawio.png" /></p>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading"></a></h2>
+<p>Dynamic Scripting code is stored in the <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.scriptgenerator.dynamicscripting</span></code> module of the <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui">ibex_gui</a>. As well as code for the UI in the <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.ui.scriptgenerator</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Script-Generator-Testing-Environment.html" class="btn btn-neutral float-right" title="Script Generator testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

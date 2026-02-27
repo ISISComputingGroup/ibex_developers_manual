@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanford DG645 &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tektronix AFG3XXX" href="Tektronix-AFG3XXX.html" />
+    <link rel="prev" title="Stanford DG645 (Litron Laser Timing)" href="Litron-Laser-Timing-Control-%28Stanford-DG645%29.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Aeroflex.html">Aeroflex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Agilent-33220A.html">Agilent 33220A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Litron-Laser-Timing-Control-%28Stanford-DG645%29.html">Stanford DG645 (Litron Laser Timing)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Stanford DG645</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tektronix-AFG3XXX.html">Tektronix AFG3XXX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Weeder-WTDAC-M.html">Weeder WTDAC-M</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Signal-Generators.html">Signal Generators</a></li>
+      <li class="breadcrumb-item active">Stanford DG645</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/signal_generators/Stanford-DG645.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="stanford-dg645">
+<h1>Stanford DG645<a class="headerlink" href="#stanford-dg645" title="Link to this heading"></a></h1>
+<p>For the Litron Laser Timing Control see <a class="reference internal" href="Litron-Laser-Timing-Control-%28Stanford-DG645%29.html"><span class="doc std std-doc">here</span></a>.</p>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Link to this heading"></a></h2>
+<p>Stanford DG645 is a digital delay generator. There is an IOC, emulator and tests for it. The OPI is constructed in a modular fashion
+out of smaller OPIs, to be reused if needed. The IOC is using a <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-delaygen">‘fork’</a> version of <a class="reference external" href="https://github.com/epics-modules/delaygen">Delaygen (original here)</a>.</p>
+<p>Currently does not support RECSIM mode.</p>
+</section>
+<section id="connection">
+<h2>Connection<a class="headerlink" href="#connection" title="Link to this heading"></a></h2>
+<p>The device supports varying BAUD rates but other communication parameters are fixed, hence we do not have macros for them. Default BAUD rate is 9600.</p>
+<p>The device also supports an ethernet connection using Telnet. In order to connect via ethernet, follow these steps on the device:</p>
+<ol class="arabic simple">
+<li><p>In the NET menu (SHIFT -&gt; STO) set:</p>
+<ol class="arabic simple">
+<li><p>TCPIP = Enabled</p></li>
+<li><p>DHCP = Enabled</p></li>
+<li><p>Telnet = Enabled</p></li>
+<li><p>Reset = Yes</p></li>
+<li><p>Press the Enter Button</p></li>
+</ol>
+</li>
+<li><p>Then access the status menu (SHIFT -&gt; 6) and use the arrows to navigate to TCPIP Status.</p></li>
+<li><p>Press 6 until you get to IP</p></li>
+<li><p>Make a note of this IP address</p></li>
+</ol>
+<p>Then in IBEX:</p>
+<ol class="arabic simple" start="5">
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">INTERFACE</span></code> macro to <code class="docutils literal notranslate"><span class="pre">ETHERNET</span></code></p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> macro to the IP you wrote down earlier</p></li>
+<li><p>Start the IOC</p></li>
+</ol>
+<p>This IP will be reassigned if the device is down for a while. So steps 2-7 will need to be repeated.</p>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<p>The IOC currently covers setting and reading of delays of channels T0, T1, A, B, C, D, E and F. T0 is the base channel that is not changeable from the IOC. Channels A-F can be configured to have their own delay value, offset by reference to another channel. For example:</p>
+<ul class="simple">
+<li><p>Channel T0 is currently 0ms</p></li>
+<li><p>Channel A is currently 5ms + T0</p></li>
+<li><p>Channel D is currently 10ms + A</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Then final delay for channel D is 15ms which in the GUI is called a ‘channel width’.It is possible to chain references across all of the channels. Channel T1 serves as max function of all the other channels.</p>
+<section id="widths">
+<h3>Widths<a class="headerlink" href="#widths" title="Link to this heading"></a></h3>
+<p>Channel widths are calculated by the IOC for the sake of drawing graphs. For example, channel width AB would be delay of channel A + delay of channel B.</p>
+</section>
+<section id="graphs">
+<h3>Graphs<a class="headerlink" href="#graphs" title="Link to this heading"></a></h3>
+<p>Graphs are controlled using a script. The script’s only purpose is to <strong>read</strong> data from the IOC and does not influence it’s behaviour. Graphs are a visual representation of length, starting point and polarity of delay between two channels. All of this functionality was based on behaviour of the VI (C:\LabVIEW Modules\Drivers\Stanford DG645).</p>
+</section>
+<section id="polarity-logic">
+<h3>Polarity logic<a class="headerlink" href="#polarity-logic" title="Link to this heading"></a></h3>
+<p>Negative or positive polarity logic will influence if the graph’s max value is -1 or 1. NIM/TTL/NR logic works as follows:</p>
+<ul class="simple">
+<li><p>NIM, if OutputAmpAO is set to 0.8 and OutputOffsetAO is set to -0.8</p></li>
+<li><p>TTL, if OutputAmpAO is set to 4 and OutputOffsetAO is set to 0</p></li>
+<li><p>NR if neither of above is true</p></li>
+</ul>
+<p>This is based on VI’s behaviour.</p>
+</section>
+<section id="error-queue">
+<h3>Error queue<a class="headerlink" href="#error-queue" title="Link to this heading"></a></h3>
+<p>The device supports an error queue of up to 20 errors. The VI, and subsequently the IOC currently displays a queue of 10 translated error messages.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Litron-Laser-Timing-Control-%28Stanford-DG645%29.html" class="btn btn-neutral float-left" title="Stanford DG645 (Litron Laser Timing)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Tektronix-AFG3XXX.html" class="btn btn-neutral float-right" title="Tektronix AFG3XXX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

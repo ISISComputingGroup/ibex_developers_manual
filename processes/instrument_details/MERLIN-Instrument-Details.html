@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MERLIN &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MUONFE" href="MUON-Front-End-Instrument-Details.html" />
+    <link rel="prev" title="MARI" href="MARI-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ARGUS-Instrument-Details.html">ARGUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHIPIR-Instrument-Details.html">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Instrument-Details.html">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LET-Instrument-Details.html">LET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOQ-Instrument-Details.html">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OFFSPEC-Instrument-Details.html">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PEARL-Instrument-Details.html">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">MERLIN</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/MERLIN-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="merlin">
+<h1>MERLIN<a class="headerlink" href="#merlin" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instrument details pages provide historical context about the devices on a specific instrument,
+at the time they were migrated to IBEX. <strong>These pages may not be up to date with the latest instrument
+configuration.</strong></p>
+</div>
+<p>This page collects information that will be useful for the implementation of the IBEX control system on MERLIN.</p>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>Merlin is a high count rate, medium energy resolution, direct geometry chopper spectrometer on TS1 at ISIS. The <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/Merlin.aspx">MERLIN</a> web page describes the background to the instrument.</p>
+</section>
+<section id="merlin-equipment">
+<h2>MERLIN Equipment<a class="headerlink" href="#merlin-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on MERLIN. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>DAE 2</p></td>
+<td><p>Detector Electronics</p></td>
+<td><p>Ethernet</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notedae"><span class="std std-ref">see DAE note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>TBD</p></td>
+<td><p>T0 Chopper</p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notet0chopper"><span class="std std-ref">see T0 Chopper note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>TBD</p></td>
+<td><p>Disk Chopper</p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notediskchopper"><span class="std std-ref">see Disk Chopper note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>TBD</p></td>
+<td><p>Fermi Chopper</p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notefermichopper"><span class="std std-ref">see Fermi Chopper note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p>TBD</p></td>
+<td><p>Fermi Chopper Lift</p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notefermilift"><span class="std std-ref">see Fermi Chopper Lift note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GALIL</p></td>
+<td><p><a class="reference external" href="http://www.galilmc.com/products/dmc-22x0.php">DMC2280</a></p></td>
+<td><p>Motion Controller</p></td>
+<td><p>Ethernet</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#merlin-notegalil"><span class="std std-ref">see Galil note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>???</p></td>
+<td><p>???</p></td>
+<td><p>1 x 4-blade jaws</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notejaws"><span class="std std-ref">see Jaws note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.pfeiffer-vacuum.com/products/measurement/container.action">Pfeiffer</a></p></td>
+<td><p>TPG300</p></td>
+<td><p>ISIS Vacuum System</p></td>
+<td><p>RS232</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/216">#216</a></p></td>
+<td><p><a class="reference internal" href="#merlin-notepfeiffer"><span class="std std-ref">see Pfeiffer note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Eurotherm</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>All models at ISIS</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#merlin-noteeurotherm"><span class="std std-ref">see Eurotherm  note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>McLennan</p></td>
+<td><p>PM600</p></td>
+<td><p>Motion Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#McLennan%20Servo%20Supplies">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#merlin-notemclennan"><span class="std std-ref">see McLennan note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>Sample Changer</p></td>
+<td><p>via McLennan</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notesamplechanger"><span class="std std-ref">see Sample Changer note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>Collimator</p></td>
+<td><p>via Galil</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-noteorcollimator"><span class="std std-ref">see Oscillating Radial Collimator note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Sumitomo</p></td>
+<td><p>4K 100mm TL GM</p></td>
+<td><p>Top-Loading Closed Cycle Refrigerator</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-notesumitomo"><span class="std std-ref">see Sumitomo note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ILL?</p></td>
+<td><p>Orange Cryostat</p></td>
+<td><p>Cryogenic System</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#merlin-noteorangecryostat"><span class="std std-ref">see Orange Cryostat note</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>???</p></td>
+<td><p>???</p></td>
+<td><p>Heater</p></td>
+<td><p>RS-232</p></td>
+<td><p></p></td>
+<td><p>controlled via Eurotherm</p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p>RAL</p></td>
+<td><p>Furnaces</p></td>
+<td><p>N/A</p></td>
+<td><p></p></td>
+<td><p>controlled via Eurotherm</p></td>
+</tr>
+<tr class="row-even"><td><p>Neocera</p></td>
+<td><p>LTC-21</p></td>
+<td><p>Temperature Controller</p></td>
+<td><p>RS-232</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1828">#1828</a></p></td>
+<td><p><a class="reference internal" href="#merlin-noteneocera"><span class="std std-ref">see Neocera note</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>McWhan</p></td>
+<td><p>TIZR</p></td>
+<td><p>Pressure Cell</p></td>
+<td><p>N/A</p></td>
+<td><p></p></td>
+<td><p>controlled manually? <a class="reference internal" href="#merlin-notemcwhan"><span class="std std-ref">see McWhan note</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="merlin-notedae">
+<h3>Note: DAE<a class="headerlink" href="#merlin-notedae" title="Link to this heading"></a></h3>
+<p>Main Detector banks + several fixed monitors.</p>
+</section>
+<section id="merlin-notet0chopper">
+<h3>Note: MERLIN T0 Chopper<a class="headerlink" href="#merlin-notet0chopper" title="Link to this heading"></a></h3>
+<p>T0 chopper is generally operated in read-only mode (i.e. visiting scientists should <strong><em>never</em></strong> change its settings).<br>
+T0 is an ISIS Mk2 chopper.</p>
+</section>
+<section id="merlin-notediskchopper">
+<h3>Note: MERLIN Disk Chopper<a class="headerlink" href="#merlin-notediskchopper" title="Link to this heading"></a></h3>
+<p>User needs the ability to change speed &amp; phase settings.  Also provide the ability to park the disc.<br>
+Disk Chopper is an ISIS Mk2 chopper.<br>
+At present, scientists often have to press a button on the chopper electronics crate before they can change the settings.  It would be helpful if this was no longer the case (i.e. design IOC to eliminate this extra step, if possible).
+We believe this “button” is the local vs computer-control switch.  If set to local, the chopper can only be controlled by the control panel on the crate.  If set to computer-control, IBEX can control the chopper.  Unfortunately, the chopper control system does not serve up the state of the local vs computer-control switch.</p>
+</section>
+<section id="merlin-notefermichopper">
+<h3>Note: MERLIN Fermi Chopper<a class="headerlink" href="#merlin-notefermichopper" title="Link to this heading"></a></h3>
+<p>The fermi chopper is a Jülich model (FZJ - Forschungszentrum Jülich) - custom built for ISIS (therefore unique, although very similar to models installed on MAPS and MARI).  A copy of the communications manual (PDF) is <a class="reference external" href="https://stfc365.sharepoint.com/:b:/r/sites/ISISExperimentControls/ICP%20Discussions/MAPS/Fermi%20Chopper%20Communications%20Protocol.pdf?csf=1&amp;amp;web=1&amp;amp;e=Y55Yzp">here</a> and the operating manual <a class="reference external" href="https://stfc365.sharepoint.com/:b:/r/sites/ISISExperimentControls/ICP%20Discussions/MERLIN/MERLIN%20Fermi%20Chopper%20Operating%20Manual%20Oct05.pdf?csf=1&amp;amp;web=1&amp;amp;e=5Rzsb8">here</a>.<br>
+The control program will need to include various safety-critical condition monitoring routines (e.g. overspeed, bearing voltage out-of-range).  There are some aspects of the control system which are specific to MERLIN and will need to be incorporated into the IOC.  Ideally, they would be modular (e.g. macro, configuration file) so that the main program would be compatible between the three systems (MERLIN, MAPS, MARI).  David Keymer wrote the original VIs, which are a useful reference.<br>
+The Fermi chopper on MERLIN is primarily controlled via scripts.  Scripts are used to calculate the frequency &amp; phase, based on the energy (longer-term this calculation could be folded into IOC).  The OPI should merely display the frequency &amp; phase, not allow the user to change them. <br>
+Current system exhibits odd behaviour at 600Hz - see if we can fix this when migrating to IBEX.<br>
+Ideally, the Fermi Chopper should have a hierarchy of OPIs - at least, Simple UI (user) &amp; Complex UI (manager).  The current VI has too many details on it - instrument scientists would like to hide these.  Talk with the instrument scientist about what is important when we design the IOC &amp; OPI(s). <br> The 600Hz issue occurs when resending the speed setpoint or “switch drive on and run”
+The fermi chopper originally exhibited strange behaviour (Ticket 2628) because the high and low words of the delay setpoint were being sent in the wrong order. The order should be the low word followed by the high word. The device appeared to “take” the setpoint and the setpoint readback was correct, but the actual delay readback would go towards another value instead.</p>
+</section>
+<section id="merlin-notefermilift">
+<h3>Note: MERLIN Fermi Chopper Lift<a class="headerlink" href="#merlin-notefermilift" title="Link to this heading"></a></h3>
+<p>A lift is used to raise/lower the Fermi chopper.  Lowered means the Fermi chopper is in the beam; raised means it is out of the beam.  It would be helpful if the lift can report its status to the IBEX GUI.<br>
+Lift is controlled by a PLC, therefore IBEX can report status of lift by interrogating the PLC.  IBEX will not be able to change the lift position - that will have to be done on the PLC control panel.  Make/type of PLC - to be determined.<br>
+Given the above, the requirement that “The Fermi chopper must not be operated (i.e. it must not be spinning) when it is in the raised position.  Lift controls should not be accessible to the user.” is automatically satisfied.<br></p>
+</section>
+<section id="merlin-notegalil">
+<h3>Note: Galil<a class="headerlink" href="#merlin-notegalil" title="Link to this heading"></a></h3>
+<p>Galils are used to drive the jaws.</p>
+</section>
+<section id="merlin-notejaws">
+<h3>Note: Jaws<a class="headerlink" href="#merlin-notejaws" title="Link to this heading"></a></h3>
+<p>Single 4-blade jaw-set.  Jaws are driven by Galils.<br>
+Apparently, the position of these jaws is reported via a potentiometer (rather than an encoder), which might also have implications for working with limit switches (as in, it won’t be possible).</p>
+</section>
+<section id="merlin-notepfeiffer">
+<h3>Note: Pfeiffer<a class="headerlink" href="#merlin-notepfeiffer" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.pfeiffer-vacuum.com/en/products/measurement/modulline/controllers/?detailPdoId=3407">Model TPG 300</a>, used for vacuum system read-back.  May actually be read back via PLC (same PLC that controls the Fermi Chopper Lift).</p>
+</section>
+<section id="merlin-noteeurotherm">
+<h3>Note: Eurotherm<a class="headerlink" href="#merlin-noteeurotherm" title="Link to this heading"></a></h3>
+<p>Three Eurotherms in use on MERLIN.  Used to control temperature of all top-loading CCRs, Orange cryostats, heaters and furnaces.</p>
+</section>
+<section id="merlin-notemclennan">
+<h3>Note: McLennan<a class="headerlink" href="#merlin-notemclennan" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>One McLennan is used to control the rotating centre-stick, McLennan-Newport Rotation Stage</p>
+<ol class="arabic simple">
+<li><p>Typically used to rotate sample (about vertical axis) into position and hold for periods of several minutes to several hours before moving on to next measurement.<br></p></li>
+<li><p>MERLIN scientists would also like to be able to oscillate the rotating centre-stick (i.e. slowly rotate back &amp; forth between two fixed angles).</p></li>
+</ol>
+</li>
+<li><p>One McLennan is used to control the Sample Changer.</p></li>
+</ol>
+</section>
+<section id="merlin-notesamplechanger">
+<h3>Note: Sample Changer<a class="headerlink" href="#merlin-notesamplechanger" title="Link to this heading"></a></h3>
+<p>The Sample Changer is driven by a McLennan motor.  It is similar (but not identical) to the sample changer used on IRIS.</p>
+</section>
+<section id="merlin-noteorcollimator">
+<h3>Note: Oscillating Radial Collimator<a class="headerlink" href="#merlin-noteorcollimator" title="Link to this heading"></a></h3>
+<p>The Oscillating Radial Collimator (presumably) is driven by a Galil motor controller.  Oscillates at a fixed, low frequency - 0.2Hz.  A similar system is used on LET. The mounting radius is 284.00 mm<br>
+<strong>Note: 31-07-2017:</strong> The currently proposed design for the Oscillating Radial Collimator on MERLIN has been scrapped.  A new design will be created.  No need to progress this item until a new design is ready.</p>
+</section>
+<section id="merlin-notesumitomo">
+<h3>Note: Sumitomo<a class="headerlink" href="#merlin-notesumitomo" title="Link to this heading"></a></h3>
+<p>MERLIN has a dedicated SUMITOMO 4K 100mm TL GM CCR: <a class="reference external" href="http://www.isis.stfc.ac.uk/sample-environment/low-temperature/ccrs/ccr-parameters---pdf9787.pdf">CCR-62</a>. Not directly computer-controlled  - controlled via Eurotherm.</p>
+</section>
+<section id="merlin-noteorangecryostat">
+<h3>Note: Orange Cryostat<a class="headerlink" href="#merlin-noteorangecryostat" title="Link to this heading"></a></h3>
+<p>MERLIN will soon have a dedicated Orange Cryostat: <a class="reference external" href="http://www.isis.stfc.ac.uk/sample-environment/low-temperature/cryostats/cryostats8445.html">models</a> to be determined.  Eurotherm controlled.</p>
+</section>
+<section id="merlin-noteneocera">
+<h3>Note: Neocera<a class="headerlink" href="#merlin-noteneocera" title="Link to this heading"></a></h3>
+<p>Neocera is used only occasionally.  <a class="reference external" href="http://www.submm.caltech.edu/~sharc/technical/LTC-21%20manual.pdf">Neocera LTC-21 Manual</a></p>
+</section>
+<section id="merlin-notemcwhan">
+<h3>Note: McWhan<a class="headerlink" href="#merlin-notemcwhan" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="http://www.isis.stfc.ac.uk/sample-environment/high-pressure-and-gas-handling-/clamped-cells/mcwhan-clamped-cell-8653.html">McWhan pressure cell</a>.  McWhan refers to the design of the cell (not to the manufacturer).  Cell cannot be controlled directly from IBEX.  It may be possible to report the current pressure via a device such as a Chell pressure transducer.
+See also <a class="reference external" href="http://www.isis.stfc.ac.uk/sample-environment/high-pressure/clamped-cells/general-clamped-cells/general-clamped-cells14180.html">General Clamped Cells</a> and <a class="reference external" href="http://www.isis.stfc.ac.uk/sample-environment/sample-containers/high-pressure-gas-cells/high-pressure-gas-cells8936.html">High Pressure Gas Cells</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MARI-Instrument-Details.html" class="btn btn-neutral float-left" title="MARI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MUON-Front-End-Instrument-Details.html" class="btn btn-neutral float-right" title="MUONFE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

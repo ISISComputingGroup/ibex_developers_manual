@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SANS Sample Changer &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TOSCA sample positioner" href="Tosca-sample-positioner.html" />
+    <link rel="prev" title="SANS2D vacuum tank collision avoidance" href="SANS2D-vacuum-tank-collision-avoidance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Goniometer-Axes.html">ALF Goniometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Bump-Strip.html">Bump Strips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Collision-Detection-Project.html">Collision Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-soft-motors-to-control-real-motors.html">Motor Coordinate Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Fermi-Chopper-Lifter.html">Fermi chopper lifter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Lens-Adjustment.html">IMAT Lens Adjustment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jaws.html">Jaws</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Sample-Changer.html">MARI Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN%2C-LET-and-WISH-Oscillating-radial-collimators.html">MERLIN, LET and WISH Oscillating Radial Collimators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motion-Set-points.html">Motion Set Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-analyser-towers.html">OSIRIS Analyser Towers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Portable-Eulerian-Cradle.html">Portable Eulerian Cradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Front-Beam-Stop-inhibit-movement.html">SANS2D Front Beam Stop Inhibit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-apertures-and-guides.html">SANS2D Apertures and Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-tank-collision-avoidance.html">SANS2D vacuum tank collision avoidance</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SANS Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tosca-sample-positioner.html">TOSCA sample positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-DMS.html">ZOOM Detector motion system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-PGC.html">ZOOM Polariser, Guide and Collimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-sample-stack.html">ZOOM Sample Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors-Extensions.html">Motor Extensions</a></li>
+      <li class="breadcrumb-item active">SANS Sample Changer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motor_extensions/Sample-Changer-Support-Module.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="sans-sample-changer">
+<h1>SANS Sample Changer<a class="headerlink" href="#sans-sample-changer" title="Link to this heading"></a></h1>
+<p>The sample changer support module (also referred to as the SANS sample changer) allows a sample changer to be configured on top of <a class="reference internal" href="Motion-Set-points.html"><span class="doc std std-doc">motion set-points</span></a>. The functionality this adds is to allow a motion set-point list to be created from the definitions of racks and slots.</p>
+<p>This takes input files <code class="docutils literal notranslate"><span class="pre">rackDefinitions.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">samplechanger.xml</span></code> and then allows the user to dynamically build the motion setpoints configuration file. As of <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5720">October 2020</a>, the user can also select a specific rack, and this will rebuild the list of motion setpoints to only include the positions listed in that rack. If the selected sample changer is the special value <code class="docutils literal notranslate"><span class="pre">_ALL</span></code>, positions from all sample changers will be included in the built motionsetpoints file. This option is automatically added to the list of available sample changers.</p>
+<p>An example sampleChanger + motionSetpoints configuration can be found in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-sampleChanger/tree/master/settings/sans_sample_changer">sampleChanger support</a>. As a minimum, you will need to define the following environment variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RACKDEFS</span></code>: Path to a rack definitions XML file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLOT_DETAILS_FILE</span></code>: Path to a slot details XML file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAMPLE_LKUP_FILE</span></code>: Path to the sample.txt file that should be written by this module</p></li>
+</ul>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>There are two different models of two-tier sample changer at ISIS. Both models are very similar; from the point of view of the control system they are effectively the same. The earlier of the two models is used on SANS2D <a class="reference external" href="http://www.isis.stfc.ac.uk/sample-environment/soft-condensed-matter/sample-changers-and-cell-racks/kit/two-tiered-sample-changer/two-tiered-sample-changer14341.html">pictured ​here</a>. The newer model is used on LARMOR.</p>
+<p>Each tier on the sample changer can hold two racks side-by-side. Different types of rack are used to hold different types of sample cartridge. The number of cartridges per rack depends on the size of the cartridge - the larger the cartridge, the fewer cartridges will fit in a rack. At present there are 3 types of rack (holding different styles of sample cartridge).</p>
+<ol class="arabic simple">
+<li><p>Rectangular – 10 position</p></li>
+<li><p>Double stopper – 7 position</p></li>
+<li><p>Banjo style (with 1, 2 or 5mm gaps) – 7 position</p></li>
+</ol>
+<p>Racks can be mixed and matched as required. For example, the sample changer could be configured with (say): a 10-position, rectangular rack and a 7-position, Banjo style rack on the top tier and two 7-position, Double stopper racks on the bottom tier, which would allow an experiment to use 31 samples. A picture of the <a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LAMOR%20RACK%20VIEW.jpg">LARMOR sample changer</a> shows an alternative configuration.</p>
+<p>With the current types of rack, the two tier sample changer can hold a maximum of 40 samples (4 x 10-position rectangular racks; 2 on each tier).  Diagrams of various types of Banjo-style cartridges are available: <a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/BANJO-CELL-RACK.pdf">Banjo 1mm gap)</a>, <a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/BANJO-CELL-RACK-2MM.pdf">Banjo 2mm gap)</a>, <a class="reference external" href="http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/BANJO-CELL-RACK-5MM.pdf">Banjo 5mm gap)</a>.</p>
+<p>The positions of the samples in each rack are known. Motors are used to drive the tiers, so that each sample can be positioned in the beam.</p>
+<p>The Sample Changer IOC needs to allow a scientist to select any sample loaded into the sample changer. The maximum number of positions is 40 (based on current rack designs, but this could change in the future). Each position comprises a name and an (x, y) coordinate pair. The scientist will select positions by their names.</p>
+</section>
+<section id="what-to-do-after-changing-racks">
+<h2>What to do after changing racks<a class="headerlink" href="#what-to-do-after-changing-racks" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Edit Instrument/Settings/machinename/configurations/motionSetPoints/sampleChanger.xml setting the <code class="docutils literal notranslate"><span class="pre">rack_type</span></code>, <code class="docutils literal notranslate"><span class="pre">xoff</span></code> and <code class="docutils literal notranslate"><span class="pre">yoff</span></code> attributes.</p></li>
+<li><p>Either press the “Reload config” button on the sample changer OPI, which can be accessed from the synoptic view or put a value to machinename:username:SAMPCHNG:RECALC</p></li>
+</ol>
+</section>
+<section id="mapping-motors-to-axes">
+<h2>Mapping motors to axes<a class="headerlink" href="#mapping-motors-to-axes" title="Link to this heading"></a></h2>
+<p>The sample change works in terms of motors with names beginning MOT:STACK:.
+These are axes which are mapped by the file Instrument/Settings/machinename/configurations/galil/axes.cmd</p>
+</section>
+<section id="mapping-named-positions-to-motor-positions">
+<h2>Mapping named positions to motor positions<a class="headerlink" href="#mapping-named-positions-to-motor-positions" title="Link to this heading"></a></h2>
+<p>This is done using motionSetPoints.
+The file Instrument/Settings/machinename/configurations/galil/motionsetpoints.cmd includes lines which
+create PVs starting LKUP:SAMPLE that perform the conversion from name to position, using the
+lookup file Instrument/Settings/machinename/configurations/motionSetPoints/samples.txt.</p>
+<p>The first coordinate is the position of machinename:username:MOT:STACK:Y
+and the second coordinate is machinename:username:MOT:STACK:ZLO.</p>
+<p>Generating samples.txt by hand is tedious so the sampleChanger IOC exists to automate the process</p>
+</section>
+<section id="defining-the-sample-positions">
+<h2>Defining the Sample Positions<a class="headerlink" href="#defining-the-sample-positions" title="Link to this heading"></a></h2>
+<p>The positions are calculated from two xml files, rack_definitions.xml, which should change rarely if ever
+and samplechanger.xml which should be edited to define what is currently loaded.
+Both are located in Instrument/Settings/machinename/configurations/motionSetPoints</p>
+</section>
+<section id="rack-definitions-xml">
+<h2>rack_definitions.xml<a class="headerlink" href="#rack-definitions-xml" title="Link to this heading"></a></h2>
+<p>This contains two sections, racks and slots.</p>
+<p>Racks contain a series of rack element which definite the various rack types.
+Each rack has a name and contains multiple position elements which have a name and an x and a y coordinate.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+	&lt;?xml version=&quot;1.0&quot;?&gt;
+	&lt;definitions&gt;
+		&lt;racks&gt;
+			&lt;rack name=&quot;Rectangular&quot;&gt;
+				&lt;position name=&quot;1&quot; y=&quot;0&quot; x=&quot;10&quot;/&gt;
+				&lt;position name=&quot;2&quot; y=&quot;0&quot; x=&quot;20&quot;/&gt;
+				&lt;position name=&quot;3&quot; y=&quot;0&quot; x=&quot;30&quot;/&gt;
+				...
+</pre></div>
+</div>
+<p>Slots define the slots into which racks can be fitted.
+Each slot has a name and an x and a y coordinate.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+	<span class="o">&lt;</span><span class="n">slots</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="n">slot</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Top_Left&quot;</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="o">/&gt;</span>
+		<span class="o">&lt;</span><span class="n">slot</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Top_Right&quot;</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;300&quot;</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="o">/&gt;</span>
+		<span class="o">&lt;</span><span class="n">slot</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bottom_Left&quot;</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="o">/&gt;</span>
+		<span class="o">&lt;</span><span class="n">slot</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bottom_Right&quot;</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;290&quot;</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;17&quot;</span><span class="o">/&gt;</span>
+	<span class="o">&lt;/</span><span class="n">slots</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="samplechanger-xml">
+<h2>samplechanger.xml<a class="headerlink" href="#samplechanger-xml" title="Link to this heading"></a></h2>
+<p>This defines what racks are currently loaded.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+	&lt;?xml version=&quot;1.0&quot;?&gt;
+	&lt;slots&gt;
+		&lt;slot name=&quot;Top_Left&quot; sample_suffix=&quot;TL&quot; rack_type=&quot;Banjo 1mm&quot; xoff=&quot;0.0&quot; yoff=&quot;0.0&quot;/&gt;
+		&lt;slot name=&quot;Top_Right&quot; rack_type=&quot;Rectangular&quot; xoff=&quot;0.0&quot; yoff=&quot;0.0&quot;/&gt;
+		&lt;slot name=&quot;Bottom_Left&quot; rack_type=&quot;Double Stopper&quot; xoff=&quot;0.0&quot; yoff=&quot;0.0&quot;/&gt;
+		&lt;slot name=&quot;Bottom_Right&quot; rack_type=&quot;Banjo 5mm&quot; xoff=&quot;0.0&quot; yoff=&quot;0.0&quot;/&gt;
+	&lt;/slots&gt;
+</pre></div>
+</div>
+<p>Each slot element has the following attributes:</p>
+<ul class="simple">
+<li><p>name, which must match the name of one of the slot elements in rack_definitions.xml</p></li>
+<li><p>rack_type, which must match the name of one of the rack elements in rack_definitions.xml</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xoff</span></code> and <code class="docutils literal notranslate"><span class="pre">yoff</span></code> which are the offsets between the nominal position of the slot defined in rack_definitions.xml and its actual position</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sample_suffix</span></code>, optional attribute. By default the name of each sample position in the rack will be the name of the position as defined in the <code class="docutils literal notranslate"><span class="pre">rack</span></code> followed by the name of the slot e.g. <code class="docutils literal notranslate"><span class="pre">1Top_Left</span></code>. By specifying the <code class="docutils literal notranslate"><span class="pre">sample_suffix</span></code> you can change what is appended to the sample names e.g. the above would create a sample called <code class="docutils literal notranslate"><span class="pre">1TL</span></code>.</p></li>
+</ul>
+</section>
+<section id="generating-sample-txt">
+<h2>Generating sample.txt<a class="headerlink" href="#generating-sample-txt" title="Link to this heading"></a></h2>
+<p>The sampleChanger module will be loaded by Instrument/Settings/machinename/configurations/galil/sampleChanger.cmd.
+It creates the PV machinename:username:SAMPCHNG:RECALC.
+Putting to that PV will cause the module to read rack_definitions.xml and samplechanger.xml
+and use them to generate a new sample.txt.
+It will then prompt the relevant motionSetPoint instance to load the name sample.txt.</p>
+<p>Recalculation can also be initiated from the GUI by pressing the “Reload config” on the sample changer OPI,
+which can be accessed from the synoptic view.</p>
+<p>The motor positions for a sample position are calculated by summing the positions for the slot, the position in the rack
+and the offset. This if the slot has x=1, the position has x=2 and the slot has xoff=3 then the x position will be 6.
+The x position corresponds to machinename:username:MOT:STACK:Y
+and the y position corresponds to machinename:username:MOT:STACK:ZLO.</p>
+<p>Position names are created by concatenating the position name and the slot name (or <code class="docutils literal notranslate"><span class="pre">sample_suffix</span></code>, see above).</p>
+</section>
+<section id="images">
+<h2>Images<a class="headerlink" href="#images" title="Link to this heading"></a></h2>
+<section id="banjo-rack">
+<h3>Banjo rack<a class="headerlink" href="#banjo-rack" title="Link to this heading"></a></h3>
+<p><img alt="Banjo" src="../../_images/131144968-496a52d1-0fa9-4b43-9d9d-ca58974193f8.jpg" /></p>
+</section>
+<section id="banjo-sample">
+<h3>Banjo Sample<a class="headerlink" href="#banjo-sample" title="Link to this heading"></a></h3>
+<p><img alt="Banjo_sample" src="../../_images/131144984-9d347067-7893-4a07-ab4d-6782fa2ea74e.jpg" /></p>
+</section>
+<section id="skinny-rack">
+<h3>Skinny Rack<a class="headerlink" href="#skinny-rack" title="Link to this heading"></a></h3>
+<p><img alt="Skinny" src="../../_images/131145026-117618fb-37f0-47a4-b3a4-28fa33bc38f6.jpg" /></p>
+</section>
+<section id="skinny-sample">
+<h3>Skinny Sample<a class="headerlink" href="#skinny-sample" title="Link to this heading"></a></h3>
+<p><img alt="Skinny_sample" src="../../_images/131145043-69114cdd-ef52-42fe-82d0-48a7e3c48ee6.jpg" /></p>
+</section>
+<section id="wide-rack">
+<h3>Wide Rack<a class="headerlink" href="#wide-rack" title="Link to this heading"></a></h3>
+<p><img alt="Wide_SANS2D" src="../../_images/131146548-1297c2a1-b7a4-4ae6-93f7-8929499930b5.jpg" /></p>
+</section>
+<section id="beam-position-calibration">
+<h3>Beam position Calibration<a class="headerlink" href="#beam-position-calibration" title="Link to this heading"></a></h3>
+<p><img alt="Beam_calibration_sample" src="../../_images/131145008-a829e99d-ffb1-408b-9f17-a9c021388417.jpg" /></p>
+</section>
+<section id="sample-changer-x-axis-movement">
+<h3>Sample Changer X Axis movement<a class="headerlink" href="#sample-changer-x-axis-movement" title="Link to this heading"></a></h3>
+<p><img alt="Sample_changer_X_Axis_GIF" src="../../_images/131147524-27f89f1e-caf8-4714-a760-25be4da85780.gif" /></p>
+</section>
+<section id="sample-changer-x-and-y-axis-movement">
+<h3>Sample Changer X and Y Axis Movement<a class="headerlink" href="#sample-changer-x-and-y-axis-movement" title="Link to this heading"></a></h3>
+<p><img alt="Sample_changer_X_Y_GIF (2)" src="../../_images/131150501-7d3805e1-1a08-4175-881a-7788a711c58d.gif" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SANS2D-vacuum-tank-collision-avoidance.html" class="btn btn-neutral float-left" title="SANS2D vacuum tank collision avoidance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Tosca-sample-positioner.html" class="btn btn-neutral float-right" title="TOSCA sample positioner" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

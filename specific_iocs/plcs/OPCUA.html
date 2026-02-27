@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPC UA &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Omron FINS" href="Omron-FINS.html" />
+    <link rel="prev" title="MAPS Vacuum System" href="MAPS-Vacuum-System.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../PLCs.html">PLCs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Helium-Recovery-PLC.html">He Recovery PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Vacuum-System.html">MAPS Vacuum System</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">OPC UA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Omron-FINS.html">Omron FINS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-PLC.html">RIKEN PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-PLC.html">SANS2D Vacuum PLC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Schneider-PLC.html">Schneider PLC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../PLCs.html">PLCs</a></li>
+      <li class="breadcrumb-item active">OPC UA</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/plcs/OPCUA.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opc-ua">
+<h1>OPC UA<a class="headerlink" href="#opc-ua" title="Link to this heading"></a></h1>
+<section id="general-what-is-opc-ua">
+<h2>General / What is OPC UA<a class="headerlink" href="#general-what-is-opc-ua" title="Link to this heading"></a></h2>
+<p>OPC UA is a cross-platform, open-source, IEC62541 standard for data exchange from sensors to cloud applications developed by the OPC Foundation. It is characterised by:</p>
+<ul class="simple">
+<li><p>Standardized data models freely available for over 60 types of industrial equipment, published by the OPC Foundation via Companion Specifications</p></li>
+<li><p>Extensible security profiles, including authentication, authorization, encryption and checksums</p></li>
+<li><p>Extensible security key management, including X.509, token and password</p></li>
+<li><p>Support for both client-server and publish-subscribe communication patterns</p></li>
+<li><p>Communication protocol independent. Mappings to several communication protocols like TCP/IP, UDP/
+IP, WebSockets, AMQP and MQTT are specified</p></li>
+<li><p>Initially successful in standardized data exchange with industrial equipment (discrete manufacturing, process manufacturing, energy) and systems for data collection and control, but now also leveraged in building automation, weighing and kitchen equipment and cloud applications</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Open_standard">Open</a> – open-source reference implementations freely available to OPC Foundation members, non members under GPL 2.0 license[2]</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cross-platform">Cross-platform</a> – not tied to one operating system or programming language</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Service-oriented_architecture">Service-oriented architecture</a> (SOA)</p></li>
+<li><p>The specification is freely available on the OPC Foundation website and is split into several parts
+to ease implementation, but only OPC UA stack vendors need to read them, end users simply leverage
+existing commercial and/or open-source stacks available in all popular programming languages</p></li>
+</ul>
+<p>More info can be found <a class="reference external" href="https://en.wikipedia.org/wiki/OPC_Unified_Architecture">here on Wikipedia for a general overview</a>, or for a more detailed description from <a class="reference external" href="https://opcfoundation.org/about/what-is-opc/">OPC Foundation</a>.</p>
+</section>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
+<section id="how-is-authentication-handled">
+<h3>How is authentication handled?<a class="headerlink" href="#how-is-authentication-handled" title="Link to this heading"></a></h3>
+<p>Currently, the IOC does not seem to be able to support encrypted message security policy. It does, however, support “None” security mode, and connecting with a username and password, which also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the <code class="docutils literal notranslate"><span class="pre">opcuaCLientCertificate</span></code> option in the <code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code> or <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> file, which loads the IOC with some other options, such as IP address, node configuration, namespace address, etc. More information on the EPICS OPC UA module can be found here: <a class="reference external" href="https://github.com/epics-modules/opcua?tab=readme-ov-file#documentation">EPICS OPC UA Documentation</a>.</p>
+<p>Authentication configurations in Windows only seem to work with username and password. This is likely due to functionality missing from the <code class="docutils literal notranslate"><span class="pre">open62541</span></code> library, the open source library that we use in conjunction with <code class="docutils literal notranslate"><span class="pre">opcua</span></code> EPICS module. A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument, the <code class="docutils literal notranslate"><span class="pre">client_private_key.pem</span></code> (which needs to either be generated, or gotten from the appropriate instrument’s <code class="docutils literal notranslate"><span class="pre">OPCUA</span></code> folder from the private network shares), <code class="docutils literal notranslate"><span class="pre">cert.txt</span></code> (which will need to be edited to reflect current username and password for the target PLC/server), and <code class="docutils literal notranslate"><span class="pre">OPCUA_01.cmd</span></code> should be moved from the Experiment Controls private network share <code class="docutils literal notranslate"><span class="pre">OPCUA</span></code> folder, to the instrument’s configurations area, in a new folder that should be named <code class="docutils literal notranslate"><span class="pre">opcua</span></code>. If done properly, the <code class="docutils literal notranslate"><span class="pre">opcua</span></code> EPICS module should be able to pick up the user name and password, log in to the OPC server properly, and begin a connection.</p>
+</section>
+</section>
+<section id="communication">
+<h2>Communication<a class="headerlink" href="#communication" title="Link to this heading"></a></h2>
+<section id="do-any-settings-in-the-plc-side-need-to-be-adjusted-to-get-communicating-properly">
+<h3>Do any settings in the PLC side need to be adjusted to get communicating properly?<a class="headerlink" href="#do-any-settings-in-the-plc-side-need-to-be-adjusted-to-get-communicating-properly" title="Link to this heading"></a></h3>
+<p>On occasion, a client certificate needs to be trusted manually, from the PLC technician side. However, things <em><em>should</em></em> be set up on our PLCs currently deployed; this step is done in deployment/implementation. A security policy might be set that is not what the IOC is trying to use, if everything else seems fine but you are unable to connect. Lastly, another person might be connected to the server (perhaps testing an IOC or something), and they would need to be kicked off in order for the IOC to communicate properly. Speak with Tim Carter or a member of the team, Instrumentation and Control Systems Group, to see if this is the case.</p>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<section id="where-are-instrument-specific-configs-loaded-from">
+<h3>Where are instrument-specific configs loaded from<a class="headerlink" href="#where-are-instrument-specific-configs-loaded-from" title="Link to this heading"></a></h3>
+<p>We load instrument specific configs from the $(INSTRUMENT)/configurations/opcua/ folder. This <code class="docutils literal notranslate"><span class="pre">opcua</span></code> folder is created at implementation time, on the <code class="docutils literal notranslate"><span class="pre">NDX</span></code> machine. It should contain a <code class="docutils literal notranslate"><span class="pre">OPCUA_01.cmd</span></code> file, which contains any <code class="docutils literal notranslate"><span class="pre">dbLoadRecords</span></code> calls, and where paths are specified to the <code class="docutils literal notranslate"><span class="pre">db</span></code> files for that <code class="docutils literal notranslate"><span class="pre">NDX</span></code>’s specific <code class="docutils literal notranslate"><span class="pre">OPCUA</span></code> IOC. If an <code class="docutils literal notranslate"><span class="pre">NDX</span></code> is missing an <code class="docutils literal notranslate"><span class="pre">opcua</span></code> folder, create one; if you cannot find it’s <code class="docutils literal notranslate"><span class="pre">OPCUA_01.cmd</span></code> file, it <em>should</em> be placed in the Experiment Controls private network share, in the <code class="docutils literal notranslate"><span class="pre">OPCUA</span></code> folder, in a folder specific to that <code class="docutils literal notranslate"><span class="pre">NDX</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">NDXMAPS</span></code>’s <code class="docutils literal notranslate"><span class="pre">OPCUA_01.cmd</span></code> file is in <code class="docutils literal notranslate"><span class="pre">&lt;network</span> <span class="pre">share&gt;/OPCUA/MAPS_OPCUA/</span></code>.</p>
+</section>
+<section id="where-are-instrument-specific-dbs-defined">
+<h3>Where are instrument-specific DBs defined<a class="headerlink" href="#where-are-instrument-specific-dbs-defined" title="Link to this heading"></a></h3>
+<p>Instrument specific <code class="docutils literal notranslate"><span class="pre">db</span></code> files are currently defined in <code class="docutils literal notranslate"><span class="pre">ioc/master/OPCUA/OPCUA-IOC-01App/Db</span></code>. Hence, the <code class="docutils literal notranslate"><span class="pre">db</span></code> files should have somewhat specific names so as to avoid confusion.</p>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>As always, be sure to check the IOC log first, if something isn’t working properly. If the IOC has connected properly to the server, the IOC log should print out something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># namespace 4 urn:OMRON:SomeOpcUaServer:FactoryAutomation</span>
+
+<span class="n">Structure</span> <span class="n">TPG_Gauge</span> <span class="p">{</span> <span class="c1"># binaryEncodingId: ns=4;i=5002</span>
+  <span class="n">Float</span> <span class="n">Pressure</span> <span class="c1"># mandatory opc:Float</span>
+  <span class="c1"># memberSize=4 alignment=4 padding=0 memSize=4</span>
+  <span class="n">Float</span> <span class="n">Lower_Threshold</span> <span class="c1"># mandatory opc:Float</span>
+  <span class="c1"># memberSize=4 alignment=4 padding=0 memSize=8</span>
+  <span class="n">Float</span> <span class="n">Upper_Threshold</span> <span class="c1"># mandatory opc:Float</span>
+  <span class="c1"># memberSize=4 alignment=4 padding=0 memSize=12</span>
+  <span class="n">String</span> <span class="n">Measured_Value_Status</span> <span class="c1"># mandatory opc:CharArray</span>
+  <span class="c1"># memberSize=16 alignment=8 padding=4 memSize=32</span>
+  <span class="n">String</span> <span class="n">Measuring_Circuit_Status</span> <span class="c1"># mandatory opc:CharArray</span>
+  <span class="c1"># memberSize=16 alignment=8 padding=0 memSize=48</span>
+  <span class="n">String</span> <span class="n">Switching_Function_Assignment</span> <span class="c1"># mandatory opc:CharArray</span>
+  <span class="c1"># memberSize=16 alignment=8 padding=0 memSize=64</span>
+  <span class="n">String</span> <span class="n">Switching_Function_Status</span> <span class="c1"># mandatory opc:CharArray</span>
+  <span class="c1"># memberSize=16 alignment=8 padding=0 memSize=80</span>
+  <span class="n">String</span> <span class="n">Filter_Time_Constant</span> <span class="c1"># mandatory opc:CharArray</span>
+  <span class="c1"># memberSize=16 alignment=8 padding=0 memSize=96</span>
+<span class="p">};</span> <span class="c1"># alignment=8 memSize=96 8 members</span>
+<span class="c1"># adding type TPG_Gauge to known types</span>
+</pre></div>
+</div>
+<p>Which means that the IOC has read data properly from the server and has a good connection.</p>
+<p>You will then see output like this, near the bottom of the IOC log:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span> <span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="p">(</span><span class="n">readComplete</span><span class="p">)</span> <span class="n">getting</span> <span class="n">data</span> <span class="k">for</span> <span class="n">item</span> <span class="n">ns</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span><span class="n">s</span><span class="o">=</span><span class="n">Opc_TPG2_Sensor_B2</span><span class="o">.</span><span class="n">Measuring_Circuit_Status</span> <span class="o">=</span> <span class="s2">&quot;No measuring channel&quot;</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">Good</span>
+<span class="o">**</span> <span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="p">(</span><span class="n">readComplete</span><span class="p">)</span> <span class="n">getting</span> <span class="n">data</span> <span class="k">for</span> <span class="n">item</span> <span class="n">ns</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span><span class="n">s</span><span class="o">=</span><span class="n">Opc_TPG2_Sensor_B1</span><span class="o">.</span><span class="n">Switching_Function_Assignment</span> <span class="o">=</span> <span class="s2">&quot;No assignment&quot;</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">Good</span>
+<span class="o">**</span> <span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="p">(</span><span class="n">readComplete</span><span class="p">)</span> <span class="n">getting</span> <span class="n">data</span> <span class="k">for</span> <span class="n">item</span> <span class="n">ns</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span><span class="n">s</span><span class="o">=</span><span class="n">Opc_TPG2_Sensor_B1</span><span class="o">.</span><span class="n">Switching_Function_Status</span> <span class="o">=</span> <span class="s2">&quot;Off&quot;</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">Good</span>
+<span class="o">**</span> <span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="p">(</span><span class="n">readComplete</span><span class="p">)</span> <span class="n">getting</span> <span class="n">data</span> <span class="k">for</span> <span class="n">item</span> <span class="n">ns</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span><span class="n">s</span><span class="o">=</span><span class="n">Opc_TPG2_Sensor_B1</span><span class="o">.</span><span class="n">Filter_Time_Constant</span> <span class="o">=</span> <span class="s2">&quot;Slow&quot;</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">Good</span>
+</pre></div>
+</div>
+<p>If you don’t see this sort of read out at the end of the IOC log, you’ll know that something has gone wrong, and likely there is a repeated output that signifies attempts to connect to the server.</p>
+<p>An example of BadInternalError IOC output, which can usually be caused by username and password not being read properly, or the paths not being set properly in the <code class="docutils literal notranslate"><span class="pre">OPCUA_01.cmd</span></code> file, looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OPC</span> <span class="n">UA</span><span class="p">:</span> <span class="n">Autoconnecting</span> <span class="n">sessions</span>
+<span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="p">(</span><span class="n">initClientSecurity</span><span class="p">)</span> <span class="n">loading</span> <span class="n">client</span> <span class="n">certificate</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Settings</span><span class="o">/</span><span class="n">config</span><span class="o">/&lt;</span><span class="n">NDX</span><span class="c1">###&gt;/configurations/opcua/client_cert.der</span>
+<span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="p">(</span><span class="n">initClientSecurity</span><span class="p">)</span> <span class="n">loading</span> <span class="n">client</span> <span class="n">private</span> <span class="n">key</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Instrument</span><span class="o">/</span><span class="n">Settings</span><span class="o">/</span><span class="n">config</span><span class="o">/&lt;</span><span class="n">NDX</span><span class="c1">###&gt;/configurations/opcua/client_private_key.pem</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.699</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">warn</span><span class="o">/</span><span class="n">userland</span>      <span class="n">AcceptAll</span> <span class="n">Certificate</span> <span class="n">Verification</span><span class="o">.</span> <span class="n">Any</span> <span class="n">remote</span> <span class="n">certificate</span> <span class="n">will</span> <span class="n">be</span> <span class="n">accepted</span><span class="o">.</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.705</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">securitypolicy</span>        <span class="n">The</span> <span class="n">Basic128Rsa15</span> <span class="n">security</span> <span class="n">policy</span> <span class="k">with</span> <span class="n">openssl</span> <span class="ow">is</span> <span class="n">added</span><span class="o">.</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.711</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">securitypolicy</span>        <span class="n">The</span> <span class="n">basic256</span> <span class="n">security</span> <span class="n">policy</span> <span class="k">with</span> <span class="n">openssl</span> <span class="ow">is</span> <span class="n">added</span><span class="o">.</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.716</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">securitypolicy</span>        <span class="n">The</span> <span class="n">basic256sha256</span> <span class="n">security</span> <span class="n">policy</span> <span class="k">with</span> <span class="n">openssl</span> <span class="ow">is</span> <span class="n">added</span><span class="o">.</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.723</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">securitypolicy</span>        <span class="n">The</span> <span class="n">Aes128Sha256RsaOaep</span> <span class="n">security</span> <span class="n">policy</span> <span class="k">with</span> <span class="n">openssl</span> <span class="ow">is</span> <span class="n">added</span><span class="o">.</span>
+<span class="n">OPC</span> <span class="n">UA</span> <span class="n">session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">credentials</span> <span class="n">file</span> <span class="n">C</span>
+<span class="n">OPC</span> <span class="n">UA</span> <span class="n">session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="n">credentials</span> <span class="n">file</span> <span class="n">C</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">contain</span> <span class="n">settings</span> <span class="k">for</span> <span class="n">Username</span> <span class="n">token</span> <span class="p">(</span><span class="n">user</span> <span class="o">+</span> <span class="k">pass</span><span class="p">)</span> <span class="ow">or</span> <span class="n">Certificate</span> <span class="n">token</span> <span class="p">(</span><span class="n">cert</span> <span class="o">+</span> <span class="n">key</span> <span class="p">[</span><span class="o">+</span> <span class="k">pass</span><span class="p">])</span>
+<span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="p">(</span><span class="n">setupSecurity</span><span class="p">)</span> <span class="n">no</span> <span class="n">security</span> <span class="n">configured</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.736</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">warn</span><span class="o">/</span><span class="n">client</span>        <span class="n">The</span> <span class="n">configured</span> <span class="n">ApplicationURI</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">match</span> <span class="n">the</span> <span class="n">URI</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">certificate</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SecurityPolicy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">opcfoundation</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">UA</span><span class="o">/</span><span class="n">SecurityPolicy</span><span class="c1">#None</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.743</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">warn</span><span class="o">/</span><span class="n">client</span>        <span class="n">The</span> <span class="n">configured</span> <span class="n">ApplicationURI</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">match</span> <span class="n">the</span> <span class="n">URI</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">certificate</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SecurityPolicy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">opcfoundation</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">UA</span><span class="o">/</span><span class="n">SecurityPolicy</span><span class="c1">#Basic128Rsa15</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.751</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">warn</span><span class="o">/</span><span class="n">client</span>        <span class="n">The</span> <span class="n">configured</span> <span class="n">ApplicationURI</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">match</span> <span class="n">the</span> <span class="n">URI</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">certificate</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SecurityPolicy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">opcfoundation</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">UA</span><span class="o">/</span><span class="n">SecurityPolicy</span><span class="c1">#Basic256</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.759</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">warn</span><span class="o">/</span><span class="n">client</span>        <span class="n">The</span> <span class="n">configured</span> <span class="n">ApplicationURI</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">match</span> <span class="n">the</span> <span class="n">URI</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">certificate</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SecurityPolicy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">opcfoundation</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">UA</span><span class="o">/</span><span class="n">SecurityPolicy</span><span class="c1">#Basic256Sha256</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.766</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">warn</span><span class="o">/</span><span class="n">client</span>        <span class="n">The</span> <span class="n">configured</span> <span class="n">ApplicationURI</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">match</span> <span class="n">the</span> <span class="n">URI</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">certificate</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SecurityPolicy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">opcfoundation</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">UA</span><span class="o">/</span><span class="n">SecurityPolicy</span><span class="c1">#Aes128_Sha256_RsaOaep</span>
+<span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="n">secure</span> <span class="n">channel</span> <span class="n">state</span> <span class="n">changed</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Closed</span> <span class="n">to</span> <span class="n">HelSent</span>
+<span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="n">secure</span> <span class="n">channel</span> <span class="n">state</span> <span class="n">changed</span> <span class="kn">from</span><span class="w"> </span><span class="nn">HelSent</span> <span class="n">to</span> <span class="n">AckReceived</span>
+<span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="n">secure</span> <span class="n">channel</span> <span class="n">state</span> <span class="n">changed</span> <span class="kn">from</span><span class="w"> </span><span class="nn">AckReceived</span> <span class="n">to</span> <span class="n">OPNSent</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.785</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">channel</span>       <span class="n">Connection</span> <span class="mi">1704</span> <span class="o">|</span> <span class="n">SecureChannel</span> <span class="mi">140237378</span> <span class="o">|</span> <span class="n">SecureChannel</span> <span class="n">opened</span> <span class="k">with</span> <span class="n">SecurityPolicy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">opcfoundation</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">UA</span><span class="o">/</span><span class="n">SecurityPolicy</span><span class="c1">#None and a revised lifetime of 600.00s</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.792</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">client</span>        <span class="n">Client</span> <span class="n">Status</span><span class="p">:</span> <span class="n">ChannelState</span><span class="p">:</span> <span class="n">Open</span><span class="p">,</span> <span class="n">SessionState</span><span class="p">:</span> <span class="n">Closed</span><span class="p">,</span> <span class="n">ConnectStatus</span><span class="p">:</span> <span class="n">Good</span>
+<span class="n">Session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="n">secure</span> <span class="n">channel</span> <span class="n">state</span> <span class="n">changed</span> <span class="kn">from</span><span class="w"> </span><span class="nn">OPNSent</span> <span class="n">to</span> <span class="n">Open</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.801</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">client</span>        <span class="n">The</span> <span class="n">initially</span> <span class="n">defined</span> <span class="n">EndpointURL</span> <span class="n">opc</span><span class="o">.</span><span class="n">tcp</span><span class="p">:</span><span class="o">//</span><span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">4080</span><span class="ow">is</span> <span class="n">valid</span> <span class="k">for</span> <span class="n">the</span> <span class="n">server</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.810</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">client</span>        <span class="n">Rejecting</span> <span class="n">UserTokenPolicy</span> <span class="mi">0</span> <span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="ow">in</span> <span class="n">endpoint</span> <span class="mi">0</span><span class="p">:</span> <span class="n">configuration</span> <span class="n">doesn</span><span class="s1">&#39;t match</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.813</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">client</span>        <span class="n">Rejecting</span> <span class="n">endpoint</span> <span class="mi">1</span><span class="p">:</span> <span class="n">security</span> <span class="n">mode</span> <span class="n">doesn</span><span class="s1">&#39;t match</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.818</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">client</span>        <span class="n">Rejecting</span> <span class="n">endpoint</span> <span class="mi">2</span><span class="p">:</span> <span class="n">security</span> <span class="n">mode</span> <span class="n">doesn</span><span class="s1">&#39;t match</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.822</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">error</span><span class="o">/</span><span class="n">client</span>       <span class="n">No</span> <span class="n">suitable</span> <span class="n">UserTokenPolicy</span> <span class="n">found</span> <span class="k">for</span> <span class="n">the</span> <span class="n">possible</span> <span class="n">endpoints</span>
+<span class="p">[</span><span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span> <span class="mi">08</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">55.825</span> <span class="p">(</span><span class="n">UTC</span><span class="o">+</span><span class="mi">0100</span><span class="p">)]</span> <span class="n">info</span><span class="o">/</span><span class="n">client</span>        <span class="n">Client</span> <span class="n">Status</span><span class="p">:</span> <span class="n">ChannelState</span><span class="p">:</span> <span class="n">Closed</span><span class="p">,</span> <span class="n">SessionState</span><span class="p">:</span> <span class="n">Closed</span><span class="p">,</span> <span class="n">ConnectStatus</span><span class="p">:</span> <span class="n">BadInternalError</span>
+<span class="n">Session</span> <span class="n">OPC1</span> <span class="n">irrecoverably</span> <span class="n">failed</span><span class="p">:</span> <span class="n">BadInternalError</span>
+<span class="n">OPC</span> <span class="n">UA</span> <span class="n">session</span> <span class="n">OPC1</span><span class="p">:</span> <span class="n">connect</span> <span class="n">service</span> <span class="n">failed</span> <span class="k">with</span> <span class="n">status</span> <span class="n">BadInternalError</span>
+</pre></div>
+</div>
+<p>This output will often repeat, as the client/IOC continually tries to connect to the server/PLC.</p>
+<p>You’ll see that the IOC gets quite close to connecting, as it goes from <code class="docutils literal notranslate"><span class="pre">Closed</span></code> to <code class="docutils literal notranslate"><span class="pre">HelSent</span></code>, or “hello sent”, then from <code class="docutils literal notranslate"><span class="pre">HelSent</span></code> to <code class="docutils literal notranslate"><span class="pre">AckReceived</span></code>, meaning it receives an acknowledgement, and then moves to <code class="docutils literal notranslate"><span class="pre">OPNSent</span></code>, sending a message to open the connection, which then fails on configuration mismatch. More information about the <a class="reference external" href="https://reference.opcfoundation.org/Core/Part6/v105/docs/7.1">OPC UA Connection protocol can be found here</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MAPS-Vacuum-System.html" class="btn btn-neutral float-left" title="MAPS Vacuum System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Omron-FINS.html" class="btn btn-neutral float-right" title="Omron FINS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

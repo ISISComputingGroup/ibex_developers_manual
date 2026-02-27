@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAMAN Spectrometer &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Rotating Stirrer Rack" href="Rotating-Stirrer-Rack.html" />
+    <link rel="prev" title="Ocean Optics DH-2000" href="Ocean-Optics-DH-2000-Shutter-control.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AnywhereUSB.html">AnywhereUSB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino-RKNDIO-PLC-control.html">Arduino RKNDIO PLC Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Background-Script-IOC.html">Background Script IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-Hexagon.html">CAEN Hexagon (MUX Data Acquisition Electronics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-v895.html">CAEN v895</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Catalytic-Flow-Reactor.html">Catalytic Flow Reactor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coherent-OBIS-Laser-Remote.html">Coherent OBIS Laser Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ferro-Magnetic_Resonance_equipment.html">Ferro-Magnetic Resonance equipment (FMR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gamry.html">Gamry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Hameg-HM8123.html">Hameg HM8123 programmable counter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Humidity-Controller.html">Humidity Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Inhibitor.html">Inhibitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOTQD-MSH150-Monochromator.html">LOTQD MSH150 Monochromator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LSi-Correlator.html">LSi Correlator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lynx_HPGe_detector.html">Mirion Lynx2 HPGe detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MOXA-e12XX.html">Moxa e12xx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ocean-Optics-DH-2000-Shutter-control.html">Ocean Optics DH-2000</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RAMAN Spectrometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rotating-Stirrer-Rack.html">Rotating Stirrer Rack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SDTest.html">SDTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SP300-Potentiostat.html">SP300 Potentiostat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stanford-SR850.html">Stanford SR850 Lock In Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thorlabs-FW102C-Filter-Wheel.html">Thorlabs FW102C Filter Wheel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nGEM-detector.html">nGEM Detector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Other.html">Other / Miscellaneous</a></li>
+      <li class="breadcrumb-item active">RAMAN Spectrometer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/other/RAMAN-Spectrometer.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="raman-spectrometer">
+<h1>RAMAN Spectrometer<a class="headerlink" href="#raman-spectrometer" title="Link to this heading"></a></h1>
+<p>Details for the B&amp;W Tek i-Raman Plus spectrometer which is to be used on <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/wiki/HRPD-Instrument-Details">HRPD</a>.</p>
+<p>The  B&amp;W Tek i-Raman Plus spectrometer in HRPD is a model BWS465-532S. Dom claims that the spectrometer is USB2.0. The model page suggests that it is USB3.0/2.0 compatible.</p>
+<p>These notes relate to issue <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3302">#3302</a>.</p>
+<p>The SDK can be found on the private ISIS share.</p>
+<section id="usb-interface">
+<h2>USB interface<a class="headerlink" href="#usb-interface" title="Link to this heading"></a></h2>
+<p>Talked with Chris about how to interface with the device. He suggests we start with a USB-to-anywhere adapter box to see if we can talk to it over Ethernet using the control software, BWSpec. We will go down in a couple of weeks when Dom is back to test interfacing with the device.</p>
+<p>If this does not work, we will have to have a separate machine running the IOC for the device. However, we may want to run the IOC on a separate machine if we want the spectrometer to be portable. On the other hand, the spectrometer is used in HRPD off the beamline so it may be their property.</p>
+</section>
+<section id="minute-for-meeting-on-2018-07-13-in-hrpd">
+<h2>Minute for meeting on 2018-07-13 in HRPD<a class="headerlink" href="#minute-for-meeting-on-2018-07-13-in-hrpd" title="Link to this heading"></a></h2>
+<p>Present: Rory Potter, David Keymer, Dominic Fortes, Alexandra Gibbs.</p>
+<ul class="simple">
+<li><p>Found out the model code and USB type of the device (documented above).</p></li>
+<li><p>Dom showed us how he takes a reading using the proprietary software, BWSpec. The steps he would go through are as follows:</p>
+<ol class="arabic simple">
+<li><p>He first sets the length of time he wants the integration to be done.</p></li>
+<li><p>He first takes a single “dark” spectra reading.</p></li>
+<li><p>He then sets the laser power and the number of integrations to be done.</p></li>
+<li><p>He then tells the spectrometer to “acquire” which takes in the readings.</p></li>
+</ol>
+</li>
+<li><p>Using BWSpec, you can take multiple integrations. Dom suggested that the software does something clever with these multiple integrations. The manual suggests that the software just overlays the data points collected from each reading. Clarifying what happens from a data collection point of view and how many integrations get written to the output file will be needed.</p></li>
+<li><p>The reason Dom want to integrate with IBEX is so that he can take readings using the spectrometer using a script in between times when the beam is active.</p></li>
+<li><p>Dom is happy with just some buttons to tell the spectrometer to scan. In the future, he would like to see a 2d scatter graph, like in the BWSpec software, while readings are being taken.</p></li>
+<li><p>I communicated our concern about the USB connection with him and explained that we can try to use a USB to ethernet adapter. Kathryn and Freddie have suggested that we could run a separate PC connected to the device which runs the IOC - like with the Tritons. I will talk to Chris about the options we have communicating with the device.</p></li>
+<li><p>The device number is not mentioned in the SDK list of devices supported. This may cause problems.</p></li>
+<li><p>The device being USB should allow us to use the USB3.0 specific functions in the SDK.</p></li>
+<li><p>Dom will send over a copy of the CSV file he wants the data to be written to for analysing using the proprietary software BWIQ.</p></li>
+</ul>
+</section>
+<section id="minute-for-meeting-on-2018-07-10">
+<h2>Minute for meeting on 2018-07-10<a class="headerlink" href="#minute-for-meeting-on-2018-07-10" title="Link to this heading"></a></h2>
+<p>Present: Rory Potter, David Keymer, John Holt, Dominic Fortes, Silvia Capelli.</p>
+<ul class="simple">
+<li><p>Silvia Capelli, who works on SXD, attended the meeting with an interest in using the spectrometer on SXD (SXD is currently on SECI).</p></li>
+<li><p>Rory Potter has been given a USB stick with the manual and SDK for the spectrometer.</p></li>
+<li><p>The functions that will be required are:</p>
+<ul>
+<li><p>Power of the laser: 0 - 100%</p></li>
+<li><p>Length of count (in ms)</p></li>
+<li><p>Number of counts</p></li>
+<li><p>Choice of what pieces of data to plot (&lt; 10 choices for each coordinate)</p></li>
+</ul>
+</li>
+<li><p>The data outputted by the spectrometer is a small CSV file with a few hundred rows and less than 10 columns which contains points from a 2d plot.</p></li>
+<li><p>The scientists would like the CSV file created by the spectrometer to contain timestamps to allow them to match up the spectrometer data with the neutron data.</p></li>
+<li><p>Currently they can run the spectrometer using the B&amp;W software on a laptop.</p></li>
+<li><p>The spectrometer connects via USB to a device running it.</p></li>
+<li><p>Ideally, the scientists would like the spectrometer to be run from IBEX.</p></li>
+<li><p>The spectrometer contains a class 3B LAZER. Because of this, the device is on a trolley with the laptop used to run it in an interlock.</p></li>
+<li><p>Dominic has agreed for us to interact with the spectrometer on Friday afternoon (2018-07-14).</p></li>
+<li><p>Dominic is off on holiday from next week until the end of the month so we won’t be able to interact with the spectrometer during that time.</p></li>
+<li><p>The device is not needed until next year on HRPD or SXD.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Ocean-Optics-DH-2000-Shutter-control.html" class="btn btn-neutral float-left" title="Ocean Optics DH-2000" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Rotating-Stirrer-Rack.html" class="btn btn-neutral float-right" title="Rotating Stirrer Rack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPI creation &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OPI Programming tips &amp; limitations" href="OPI-programming-tips-and-limitations.html" />
+    <link rel="prev" title="CS-Studio Views in the GUI" href="../GUI-CSS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">OPI creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OPI-programming-tips-and-limitations.html">OPI Programming tips &amp; limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../css_other/Debugging-CSS.html">Debugging CSS Views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../css_other/Malformed-URL-errors.html">Malformed URL errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../css_other/PV-Connection-Layer.html">PV Connection Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+      <li class="breadcrumb-item active">OPI creation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/opis/OPI-Creation.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opi-creation">
+<h1>OPI creation<a class="headerlink" href="#opi-creation" title="Link to this heading"></a></h1>
+<p>OPIs live in <code class="docutils literal notranslate"><span class="pre">ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources</span></code></p>
+<ul class="simple">
+<li><p>Start CS-Studio to create/edit an OPI (see <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\start_css.bat</span></code>)</p></li>
+<li><p>Load in the project in <code class="docutils literal notranslate"><span class="pre">ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources</span></code>: File -&gt; Import -&gt; General -&gt; Existing Projects into Workspace.</p></li>
+<li><p>Set the correct path for the Fonts and Colours files: Edit -&gt; Preferences -&gt; CSS Applications -&gt; Display -&gt; BOY. For the colour file choose <code class="docutils literal notranslate"><span class="pre">/resources/Share/isis_colours.def</span></code>; for the font file choose <code class="docutils literal notranslate"><span class="pre">/resources/Share/isis_fonts.def</span></code>.</p></li>
+<li><p>Create a new OPI with File -&gt; New -&gt; BOY -&gt; OPI File</p></li>
+<li><p>Change to the “OPI Editor” perspective to allow easier editing.</p></li>
+<li><p>You need to use “OPI Editor” to edit your files, <strong>not</strong> “Display Editor”. The later creates a display builder file and not an OPI.</p></li>
+<li><p>Edit the OPI - note that the <code class="docutils literal notranslate"><span class="pre">template.opi</span></code> will give you an idea of the style to use. It is best to copy controls from this template to keep the same behaviour.</p></li>
+<li><p>Also add an entry to the <code class="docutils literal notranslate"><span class="pre">opi_info.xml</span></code> file which can be found in <code class="docutils literal notranslate"><span class="pre">resources\opi_info.xml</span></code>. Note that some Macros are provided (See below).</p></li>
+</ul>
+<p>If you are stuck on how to do something with an OPI there are a number of in-built examples, which you can view by going to File -&gt; Import -&gt; BOY-&gt; BOY Examples.</p>
+<section id="opi-editor-vs-display-editor">
+<h2>OPI Editor vs Display editor<a class="headerlink" href="#opi-editor-vs-display-editor" title="Link to this heading"></a></h2>
+<p>When editing an existing OPI or creating a new one, it is important to use OPI editor over Display editor, as the display editor is not currently compatible with the rest of IBEX. If you have opened an OPI and can’t find the ISIS colour and font schemes, this possibly indicates that you are using the wrong toolset. You may also find that the file extension is being changed to a .bob file when the file is saved in a Display editor window.</p>
+<p>Re-opening the file in an OPI editor window (right click OPI -&gt; Open With -&gt; OPI Editor) may solve these issues.</p>
+</section>
+<section id="consistency-template-opi">
+<h2>Consistency - Template OPI<a class="headerlink" href="#consistency-template-opi" title="Link to this heading"></a></h2>
+<p>In order to promote consistency in look and feel between different OPIs, we have created a template OPI in <code class="docutils literal notranslate"><span class="pre">ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\template.opi</span></code>. Please follow the guidelines provided in this template, including ALL fonts and colours (it’s probably easier to just copy the widgets from this template). If you’re adding new widgets in your OPI which are not covered by this template, please add them to the template.</p>
+<p>Please also make sure your OPI works well for colour blind users, following <a class="reference internal" href="../misc/Designing-for-Colour-Blindness.html"><span class="doc std std-doc">these guidelines</span></a>.</p>
+<p>There is a script called <code class="docutils literal notranslate"><span class="pre">check_opi_format.py</span></code> in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis</span></code> that can help you check certain aspects of a new OPI. This script does not replace checking the OPI visually, but should help catch some style errors in OPIs. This will iterate over all OPIs in the <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources</span></code> directory, and write logs to the <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\check_OPI_format_logs</span></code> directory by default. Other behaviours are described below:</p>
+<p>Usage:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">check_opi_format.py</span> <span class="pre">[-h]</span> <span class="pre">[-file</span> <span class="pre">FILE]</span> <span class="pre">[-directory</span> <span class="pre">DIRECTORY]</span> <span class="pre">[-logs_directory</span> <span class="pre">LOGS_DIRECTORY]</span></code></p>
+<p>e.g.
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">check_opi_format.py</span> <span class="pre">-directory</span> <span class="pre">resources/Lakeshore336</span> <span class="pre">-file</span> <span class="pre">Lakeshore336.opi</span> <span class="pre">-logs_directory</span> <span class="pre">my_logs_directory</span></code>
+will scan a single OPI in <code class="docutils literal notranslate"><span class="pre">resources/Lakeshore336/Lakeshore336.opi</span></code> and save the logs in <code class="docutils literal notranslate"><span class="pre">/my_logs_directory/</span></code></p>
+<p>There is a script called <code class="docutils literal notranslate"><span class="pre">update_values.py</span></code> in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis</span></code>. This will iterate over all OPIs in the <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources</span></code> directory and update named colour and font tags to match the definitions given in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\CSS\master\Share\isis_colours.def</span></code> and <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\CSS\master\Share\isis_fonts.def</span></code>, respectively.</p>
+<p>Usage:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">update_values.py</span> <span class="pre">[-file</span> <span class="pre">FILE]</span> <span class="pre">[-directory</span> <span class="pre">DIRECTORY]</span> <span class="pre">[-attribute</span> <span class="pre">&lt;color/font&gt;]</span></code></p>
+<p>e.g.
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">update_values.py</span> <span class="pre">-directory</span> <span class="pre">resources/DG645</span> <span class="pre">-file</span> <span class="pre">dg645.opi</span> <span class="pre">-attribute</span> <span class="pre">color</span></code>
+will scan a single OPI in <code class="docutils literal notranslate"><span class="pre">resources/DG645/dg645.opi</span></code> and update the <code class="docutils literal notranslate"><span class="pre">color</span></code> attributes as necessary.</p>
+</section>
+<section id="macros">
+<h2>Macros<a class="headerlink" href="#macros" title="Link to this heading"></a></h2>
+<p>When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NAME</span></code>: the OPI title, as defined by the synoptic component editor (e.g. “Slit 2”). When setting up the OPI this macro should be in the Name property of the OPI.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OPINAME</span></code>: name of the OPI file opened (e.g. Slit.opi)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code>: the instrument pv prefix (e.g. IN:LARMOR:)
+Others macros may also be available, passed down from higher screens (also defined via the synoptic editor component)</p></li>
+</ul>
+<p>One convention we have used is to define a macro within the opened OPI called PV_ROOT which we then use to make full PV names. So at the top of the OPI XML would be something like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;macros&gt;
+  &lt;include_parent_macros&gt;true&lt;/include_parent_macros&gt;
+  &lt;PV_ROOT&gt;$(P)$(EUROTHERM)&lt;/PV_ROOT&gt;
+&lt;/macros&gt;
+</pre></div>
+</div>
+<p>here EUROTHERM would be a parameter passed from the synoptic and it is combined with P to create the prefix for all PVs referenced within the OPI screen. The macro name should be something like the un-shortened device name, and its value would typically be the IOC name used in the PVs, e.g. EUROTHERM_01.</p>
+<p>In case an OPI’s PV_root is defined in its parent, you need to go where to the parent OPI, select the section that represents the child OPI, and in the Macros row in the Properties tab you can find the value for PV_ROOT. Example: The psu_summary_indicate_changeover OPI can be found in the parent OPI <code class="docutils literal notranslate"><span class="pre">riken_front_end_overview</span></code>. If you open the former in OPI Editor, PV_ROOT ca not be found in the Macros row. However, if you go to <code class="docutils literal notranslate"><span class="pre">riken_front_end_overview</span></code>, which is the parent OPI, and click a linking container that links to psu_summary_indicate_changeover, you will find that PV_ROOT is defined in the Macros row.</p>
+<section id="other-standard-macro-names">
+<h3>Other Standard Macro Names<a class="headerlink" href="#other-standard-macro-names" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PV_ROOT</p></td>
+<td><p>Root for all PVs within an OPI</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="completing-the-opi">
+<h2>Completing the OPI<a class="headerlink" href="#completing-the-opi" title="Link to this heading"></a></h2>
+<p>Add the IOC name with appropriate information, including macros to the xml file</p>
+<p>ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\opi_info.xml</p>
+<p>In the xml file:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: unique name for component</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value.type</span></code>: the component type, same as name of constant in ComponentType (uk.ac.stfc.isis.ibex.synoptic.model)
+This enables the correct component target details to be added when component details are selected</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value.path</span></code>: the path to the opi file (relative to the resources folder)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value.description</span></code>: description which is shown in target details</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value.macros.macro.name</span></code>: name of macro in OPI</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value.macro.macro.description</span></code>: description of macro value which appears in target details when user clicks on the macro. For a macro that contains the IOC name please provide an example with the actual IOC name in brackets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value.macros.macro.default</span></code>: default macro value.  This will be placed into the appropriate cell of the macro table if one isn’t already present.</p></li>
+</ul>
+<p>Please follow <a class="reference internal" href="../misc/Synoptic-Icons.html"><span class="doc std std-doc">these guidelines</span></a> when specifying and creating new synoptic icons for the OPI.</p>
+<p>The final step should be to send the OPI to the instrument scientists. If they don’t approve it that is fine but it is good to get their response.</p>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<p>To start and interact with a testing IOC see <a class="reference internal" href="../../iocs/testing/Running-IOCs.html"><span class="doc std std-doc">Running (and testing) IOC</span></a>
+The easiest way to test this is to run IBEX-gui through the eclipse editor. Create a device screen and use this to test. The device screen can be refreshed (right click -&gt; refresh) to display the latest changes made in CSS editor.</p>
+</section>
+<section id="debugging-no-scrollbars">
+<h2>Debugging: No scrollbars<a class="headerlink" href="#debugging-no-scrollbars" title="Link to this heading"></a></h2>
+<p>Check if you have stray widgets. An example of a stray widget might have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">x</span><span class="o">&gt;-</span><span class="mi">2147483647</span><span class="o">&lt;/</span><span class="n">x</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">y</span><span class="o">&gt;</span><span class="mi">2147483496</span><span class="o">&lt;/</span><span class="n">y</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>If you have a stray widget, it may prevent scrollbars from appearing on your OPI. It might be possible to solve the issue by selecting and copying the elements to a new OPI. You can then diff the old version and the copied version using the following tools:</p>
+<ul class="simple">
+<li><p>XML sorter</p></li>
+<li><p>Diff tool e.g. notepad++, winmerge</p></li>
+</ul>
+</section>
+<section id="writing-to-char-waveform-pvs-and-displaying-char-waveforms-as-strings">
+<h2>Writing to char waveform PVs and displaying char waveforms as strings<a class="headerlink" href="#writing-to-char-waveform-pvs-and-displaying-char-waveforms-as-strings" title="Link to this heading"></a></h2>
+<p>CSS text input fields can write to char waveform PVs but needs to be set up in a special way. If you don’t do this, the <code class="docutils literal notranslate"><span class="pre">NORD</span></code> field of the waveform will not be set correctly on write and the PV value will only be written successfully if NORD already has a large enough value.</p>
+<ul class="simple">
+<li><p>Postfix the PV name with <code class="docutils literal notranslate"> <span class="pre">{&quot;longString&quot;:true}</span></code> (note the space before the JSON). The final value in “PV Name” should look similar to the following: <code class="docutils literal notranslate"><span class="pre">$(PV_ROOT):ARBITRARY:SP</span> <span class="pre">{&quot;longString&quot;:true}</span></code></p></li>
+<li><p>Ensure “Format Type” is “String”</p></li>
+</ul>
+<p>Note: If waveform PV is being attached to a multi-line text box then user will have to <code class="docutils literal notranslate"><span class="pre">ctrl-enter</span></code> to save their changes.</p>
+</section>
+<section id="data-browser-graph-creation">
+<h2>Data browser Graph Creation<a class="headerlink" href="#data-browser-graph-creation" title="Link to this heading"></a></h2>
+<p>To make a databrowser graph on an OPI:</p>
+<ol class="arabic simple">
+<li><p>In CSS go to the data browser perspective</p></li>
+<li><p>Click button “Add new databrowser plot” which is graph with a plus on in the tool bar</p></li>
+<li><p>Right click -&gt; Add a PV/PVs</p></li>
+<li><p>PV should start with <code class="docutils literal notranslate"><span class="pre">$(PV_ROOT)</span></code> and end in <code class="docutils literal notranslate"><span class="pre">.VAL</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">$(PV_ROOT)POS.VAL</span></code></p></li>
+<li><p>Alter colours, remove/add title and legend, rename axis</p></li>
+<li><p>Save in the resources folder, probably in a subfolder for the device (extension will be added automatically as .plt)</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Browser</span></code> monitor to your opi</p></li>
+<li><p>In properties in file set the file you have created</p></li>
+</ol>
+</section>
+<section id="activate-tab">
+<h2>Activate tab<a class="headerlink" href="#activate-tab" title="Link to this heading"></a></h2>
+<p>If it’s required to activate a tab from a synoptic via a macro: (See SKF G5 Chopper OPI as an example.)</p>
+<ol class="arabic simple">
+<li><p>Put macro in local PV</p></li>
+<li><p>Create script that reads value</p></li>
+<li><p>Set active tab on tab container using <code class="docutils literal notranslate"><span class="pre">setActiveTabIndex</span></code></p></li>
+</ol>
+</section>
+<section id="create-a-local-enum">
+<h2>Create a Local Enum<a class="headerlink" href="#create-a-local-enum" title="Link to this heading"></a></h2>
+<p>AS OF 05/02/2020 DOES NOT WORK.</p>
+<p>Create a local pv in an opi with labels (From Tech talk article not tested).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>loc://demo&lt;VEnum&gt;(2, &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
+</pre></div>
+</div>
+<p>If you cannot use an actual enum PV because there are too many labels, and you can’t use a local enum PV because that doesn’t allow changes to the enum labels, then don’t use an enum PV. Instead, on the combo box, un-check the option to get “Items from PV” and directly enter the items, as many as you want.
+Or set the items from a script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span><span class="w"> </span><span class="nn">org.csstudio.display.builder.runtime.script</span><span class="w"> </span><span class="kn">import</span> <span class="n">ScriptUtil</span>
+    <span class="n">combo</span> <span class="o">=</span> <span class="n">ScriptUtil</span><span class="o">.</span><span class="n">findWidgetByName</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="s2">&quot;Name Of My Combo&quot;</span><span class="p">)</span>
+    <span class="n">combo</span><span class="o">.</span><span class="n">setItems</span><span class="p">(</span> <span class="p">[</span> <span class="s2">&quot;Ene&quot;</span><span class="p">,</span> <span class="s2">&quot;Mene&quot;</span><span class="p">,</span> <span class="s2">&quot;Muh&quot;</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="enable-and-disable-controls">
+<h2>Enable and disable controls<a class="headerlink" href="#enable-and-disable-controls" title="Link to this heading"></a></h2>
+<p>If the enablement state of a widget (i.e. <code class="docutils literal notranslate"><span class="pre">enabled</span></code> property) is controlled as part of OPI logic, it can be made more obvious by also controlling its <code class="docutils literal notranslate"><span class="pre">transparent</span></code> property.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">\base\uk.ac.stfc.isis.ibex.opis\resources\mercuryiTC\enablement_of_controls.py</span></code> for examples of setting properties based on the value of a PV.</p>
+<p>Initial investigations centred on alternating the background colour of the control between e.g. <code class="docutils literal notranslate"><span class="pre">ISIS_Textbox_Readonly_Background</span></code> and <code class="docutils literal notranslate"><span class="pre">ISIS_Textbox_Background</span></code>.  However, although the logic and syntax were sound, the OPI didn’t faithfully reproduce the requested colours.</p>
+</section>
+<section id="using-opi-rules-and-external-scripts">
+<h2>Using OPI rules and external scripts<a class="headerlink" href="#using-opi-rules-and-external-scripts" title="Link to this heading"></a></h2>
+<p>When implementing display logic for OPIs (such as toggling an objects visibility based on a PV value) our standards are:</p>
+<ol class="arabic simple">
+<li><p>Rules take preference over scripts for trivial logic</p></li>
+<li><p>Scripts if needed should be an external file</p></li>
+</ol>
+<p>Bear in mind that both scripts and rules run <strong>in the GUI thread</strong> this can lead to unresponsiveness if you are doing a lot of work in them. You can write multithreaded scripts, see the jaws_display.opi for an example of this.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../GUI-CSS.html" class="btn btn-neutral float-left" title="CS-Studio Views in the GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="OPI-programming-tips-and-limitations.html" class="btn btn-neutral float-right" title="OPI Programming tips &amp; limitations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

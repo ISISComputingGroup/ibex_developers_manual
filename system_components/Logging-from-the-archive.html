@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logging from the archive &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MySQL database" href="MySQL-Database.html" />
+    <link rel="prev" title="LabVIEW errors" href="labview/LabVIEW-errors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">Logging from the archive</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/Logging-from-the-archive.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="logging-from-the-archive">
+<h1>Logging from the archive<a class="headerlink" href="#logging-from-the-archive" title="Link to this heading"></a></h1>
+<p>An IOC can be made to log PV values to a file based on the value of a trigger PV. Consider whether your IOC needs to do this.</p>
+<p>To add logging to an IOC you need to add <a class="reference internal" href="#the-info-fields">certain info fields</a> to its records. The logging is based on a trigger PV. There are currently two versions of the logging which run simultaneously.</p>
+<ul class="simple">
+<li><p>Continuous logging which writes values to the file in regular intervals as long as the PV is on</p></li>
+<li><p>On End logging, which when the trigger PV switches off (1 to 0) will write the log for the period for which it was on into the file.</p></li>
+</ul>
+<p>There are two because I am concerned that the continuous logger may miss values if they arrive at the database late; at some point this should be checked out and maybe the on end logging removed or made optional. The logging files will appear in <code class="docutils literal notranslate"><span class="pre">c:\logs\&lt;ioc</span> <span class="pre">name&gt;\&lt;ioc</span> <span class="pre">name&gt;_&lt;logging</span> <span class="pre">start</span> <span class="pre">date-time&gt;&lt;_continuous</span> <span class="pre">if</span> <span class="pre">continuous&gt;.dat</span></code></p>
+<p>To define what is in the log file add an info field of the form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   info(&lt;info field name&gt;, &lt;value&gt;)
+</pre></div>
+</div>
+<p>In the &lt;value&gt; section, the string <code class="docutils literal notranslate"><span class="pre">this_pv</span></code> will always be substituted with the PV name of the record this info field belongs to.</p>
+<p>For the changes to logging to take effect you must have built and run the IOC and then restarted the archiver access process. If you have changed or added the archive log rate then the instrument archiver (ARINST) must have been restarted since the IOC was run.</p>
+<p>There is some <a class="reference internal" href="../iocs/creation/IOC-Finishing-Touches.html#ioc-finishing-touches-archive-pvs"><span class="std std-ref">trouble shooting information</span></a>.</p>
+<section id="archive-setting">
+<h2>Archive setting<a class="headerlink" href="#archive-setting" title="Link to this heading"></a></h2>
+<p>For a PV to appear either in a header line or a column, or for it to trigger a log the PV must be archived. The rate of archive must be at least as small as the maximum scan period; otherwise values might be missed. To add it to the archive use the usual notion (see <a class="reference internal" href="../iocs/creation/IOC-Finishing-Touches.html#ioc-finishing-touches-archive-pvs"><span class="std std-ref">finishing touches</span></a> ).</p>
+<p>Example: PV changing a maximum of once every 0.1s use <code class="docutils literal notranslate"><span class="pre">info(archive,</span> <span class="pre">&quot;0.1</span> <span class="pre">VAL&quot;)</span></code></p>
+</section>
+<section id="formatted-pv-value">
+<h2>Formatted PV Value<a class="headerlink" href="#formatted-pv-value" title="Link to this heading"></a></h2>
+<p>Many fields accept a formatted PV value this is written as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`{pvname[!converter][|format]}`
+</pre></div>
+</div>
+<p>This is similar to the python format and using the same syntax except the variable name is replaced with the pvname and the colon is replaced with a pipe. The converter and format are both options. The converter will allow you to perform a conversion this is either <code class="docutils literal notranslate"><span class="pre">s</span></code> from string representation, <code class="docutils literal notranslate"><span class="pre">r</span></code> from representation (<strong>rep</strong>). The format are as the python formatter (see <a class="reference external" href="https://docs.python.org/2/library/string.html#format-string-syntax">python docs</a>). Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{this_pv}</span></code> - is the pv of the current record</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{IN:LARMOR:SIMPLE:VALUE1|10.6f}</span></code> - the pv <code class="docutils literal notranslate"><span class="pre">IN:LARMOR:SIMPLE:VALUE1</span></code> is formatted as a float with 10 character and 6dp</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{this_pv!s|10s}</span></code> - the current PV converted using the string representation and then given a width of 10</p></li>
+</ul>
+</section>
+<section id="the-info-fields">
+<h2>The info fields<a class="headerlink" href="#the-info-fields" title="Link to this heading"></a></h2>
+<section id="log-trigger">
+<h3><code class="docutils literal notranslate"><span class="pre">LOG_trigger</span></code><a class="headerlink" href="#log-trigger" title="Link to this heading"></a></h3>
+<p>The trigger PV indicates which PV turns logging on (PV value 1) and off (PV value 0). When the PV goes from 0 to 1 it triggers log creation. Only one of these should be defined, if you define two then last one into the database wins.</p>
+<p>The value of the field is either:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (empty string) - use the PV this is annotating as the trigger PV</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&lt;pvname&gt;&quot;</span></code> - use the pv name as the trigger</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">bi</span><span class="p">,</span> <span class="s2">&quot;$(P)LOGGING&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;Set logging&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">ZNAM</span><span class="p">,</span> <span class="s2">&quot;Off&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">ONAM</span><span class="p">,</span> <span class="s2">&quot;On&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PINI</span><span class="p">,</span> <span class="s2">&quot;YES&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">VAL</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+    <span class="n">info</span><span class="p">(</span><span class="n">archive</span><span class="p">,</span> <span class="s2">&quot;1 VAL&quot;</span><span class="p">)</span>
+    <span class="n">info</span><span class="p">(</span><span class="n">LOG_trigger</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="log-headerx">
+<h3><code class="docutils literal notranslate"><span class="pre">LOG_headerX</span></code><a class="headerlink" href="#log-headerx" title="Link to this heading"></a></h3>
+<p>If you want header lines in your log then use this field. Header lines are ordered alphanumerically by the X; X values 1-9 probably make most sense.</p>
+<p>The value of the field is the header you want in the file. An empty value will produce a blank line. If you include a PV value it will be the value that PV had when the logging starts. To add a PV use the standard PV format.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">info(LOG_header1,</span> <span class="pre">&quot;Temperature</span> <span class="pre">{this_pv|10.6f}&quot;)</span></code> First header line is “Temperature XXX” where XXX is the PV that the field is in format as float with 10 width and 6dp</p>
+</section>
+<section id="log-column-headerx">
+<h3><code class="docutils literal notranslate"><span class="pre">LOG_column_headerX</span></code><a class="headerlink" href="#log-column-headerx" title="Link to this heading"></a></h3>
+<p>The main part of the log are columns with data. Each column can have its own header and this is specified with the LOG_column_headerX annotation. Its value is the text that will be used as the column header. If there is no header field but a template field (see below) then the value from the template is used; if the template is blank, the PV of this record is used.  There should not be more than one header for each column X, if there are then one will win.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">info(LOG_column_header1,</span> <span class="pre">&quot;Temperature</span> <span class="pre">(K)&quot;)</span></code> produces a header of  “Temperature (K)” for column 1</p>
+<p>NB See archive setting</p>
+</section>
+<section id="log-column-templatex">
+<h3><code class="docutils literal notranslate"><span class="pre">LOG_column_templateX</span></code><a class="headerlink" href="#log-column-templatex" title="Link to this heading"></a></h3>
+<p>The main part of the log are columns with data. Each column can have its own template and this is specified with the LOG_column_templateX annotation. The value of the template is a formatted PV value that will be used as the column data. If there is no template (just a header) or it is blank then the default is the PV name in which the header record or template record occur. There should not be more than one template for each column X, if there are then one will win.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">info(LOG_column_template1,</span> <span class="pre">&quot;{this_pv|10.6f}&quot;)</span></code> produces a column of floats for the current records PV.</p>
+<p>NB See archive setting</p>
+</section>
+<section id="log-period-seconds">
+<h3><code class="docutils literal notranslate"><span class="pre">LOG_period_seconds</span></code><a class="headerlink" href="#log-period-seconds" title="Link to this heading"></a></h3>
+<p>The period of the log is set using the LOG_period_seconds info field. It sets the time period between lines in the table in seconds. It should be noted that if the PV is not changing more often than the value then the value will not change more often. This is an alternative to <code class="docutils literal notranslate"><span class="pre">LOG_period_pv</span></code>.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">info(LOG_period_seconds,</span> <span class="pre">&quot;0.5&quot;)</span></code> produces a time series in half second intervals.</p>
+</section>
+<section id="log-period-pv">
+<h3><code class="docutils literal notranslate"><span class="pre">LOG_period_pv</span></code><a class="headerlink" href="#log-period-pv" title="Link to this heading"></a></h3>
+<p>The period of the log can be set based on the value of a PV when the logging is started. This allows the IOC to control the period of the log. The value is the PV that is being used to set the logging period if it is blank the current record is used. It should be noted that if the PV is not changing more often than the value then the value will not change more often. This is an alternative to <code class="docutils literal notranslate"><span class="pre">LOG_period_seconds</span></code>.</p>
+<p>Examples:
+- <code class="docutils literal notranslate"><span class="pre">info(LOG_period_pv,</span> <span class="pre">&quot;TE:INST:SIMPLE:PERIOD&quot;)</span></code> produces a time series with an interval set by the PV
+TE:INST:SIMPLE:PERIOD.
+- <code class="docutils literal notranslate"><span class="pre">info(LOG_period_pv,</span> <span class="pre">&quot;&quot;)</span></code> produces a time series with an interval set by the PV record containing this</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="labview/LabVIEW-errors.html" class="btn btn-neutral float-left" title="LabVIEW errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MySQL-Database.html" class="btn btn-neutral float-right" title="MySQL database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumacam &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pixelman" href="Pixelman.html" />
+    <link rel="prev" title="Imaging Cameras" href="../Imaging-Cameras.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lumacam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Pixelman.html">Pixelman</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+      <li class="breadcrumb-item active">Lumacam</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cameras/Lumacam.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lumacam">
+<h1>Lumacam<a class="headerlink" href="#lumacam" title="Link to this heading"></a></h1>
+<p>The Lumacam is an imaging camera, which has been used on INES. It is comparable to the <a class="reference internal" href="../other/nGEM-detector.html"><span class="doc">nGEM Detector</span></a>.</p>
+<section id="lumacam-control-pc">
+<h2>Lumacam control PC<a class="headerlink" href="#lumacam-control-pc" title="Link to this heading"></a></h2>
+<p>This camera will have a pair of dedicated Ubuntu Linux control PCs, one on IMAT and one on INES. We do not manage (and do not
+have credentials for) these PCs.</p>
+<p>The Lumacam PC runs several IOCs and an EPICS gateway, under <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code>.</p>
+</section>
+<section id="networking">
+<h2>Networking<a class="headerlink" href="#networking" title="Link to this heading"></a></h2>
+<p>The Lumacam control PC should be connected to the instrument private network, and manually assigned an IP address
+in the <code class="docutils literal notranslate"><span class="pre">192.168.1.x</span></code> range. INES have previously used <code class="docutils literal notranslate"><span class="pre">192.168.1.15</span></code> for this PC.</p>
+<p>The EPICS gateway configuration on the Lumacam PC may need adjusting to reflect this private static IP if it is
+changed in future.</p>
+</section>
+<section id="epics-ca-addr-list">
+<h2><code class="docutils literal notranslate"><span class="pre">EPICS_CA_ADDR_LIST</span></code><a class="headerlink" href="#epics-ca-addr-list" title="Link to this heading"></a></h2>
+<p>In order to allow scripts and GUIs on an NDX machine to connect to the Lumacam PC, the static IP of the Lumacam PC
+needs to be added to <code class="docutils literal notranslate"><span class="pre">EPICS_CA_ADDR_LIST</span></code>.</p>
+<p>To do this for the GUI (including both cs-studio components and the PyDEV scripting console), edit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">Client_E4</span>\<span class="n">plugins</span>\<span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">e4</span><span class="o">.</span><span class="n">client_</span><span class="o">&lt;</span><span class="n">VERSION</span><span class="o">&gt;</span>\<span class="n">plugin_customization</span><span class="o">.</span><span class="n">ini</span>
+</pre></div>
+</div>
+<p>Note that the address list appears in two places in this configuration file; both places need to be updated.</p>
+</section>
+<section id="scripting">
+<h2>Scripting<a class="headerlink" href="#scripting" title="Link to this heading"></a></h2>
+<p>Basic scripts to begin and end a Lumacam data acquisition are stored in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">Instrument</span>\<span class="n">Settings</span>\<span class="n">config</span>\<span class="n">NDXINES</span>\<span class="n">Python</span>\<span class="n">inst</span>\<span class="n">lumacam</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+<section id="file-copying-and-data-output">
+<h2>File copying and data output<a class="headerlink" href="#file-copying-and-data-output" title="Link to this heading"></a></h2>
+<p>No file copying or data transfer of any type has been provided. Data will be manually copied by users from the
+Lumacam PC to appropriate locations.</p>
+</section>
+<section id="remote-access-to-the-lumacam-pc">
+<h2>Remote access to the Lumacam PC<a class="headerlink" href="#remote-access-to-the-lumacam-pc" title="Link to this heading"></a></h2>
+<p>The Lumacam PC can be reached by SSH from the NDX machine, using its configured static IP address.</p>
+<p>If the users wish to use a graphical client (such as NoMachine), they need a client laptop which also connects to
+the private network and is set to use a <em>different</em> static IP address (on INES, <code class="docutils literal notranslate"><span class="pre">192.168.1.16</span></code> has previously been
+used for this purpose).</p>
+<p>The NoMachine client is configured on a user Linux machine, not on an ISIS machine.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Imaging-Cameras.html" class="btn btn-neutral float-left" title="Imaging Cameras" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Pixelman.html" class="btn btn-neutral float-right" title="Pixelman" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

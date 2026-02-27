@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EPICS IOCs &amp; Support Modules &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Compiling" href="iocs/Compiling.html" />
+    <link rel="prev" title="Mini-inst troubleshooting" href="system_components/startup/Mini-inst-Troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EPICS IOCs &amp; Support Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iocs/Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">EPICS IOCs &amp; Support Modules</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/IOCs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="epics-iocs-support-modules">
+<h1>EPICS IOCs &amp; Support Modules<a class="headerlink" href="#epics-iocs-support-modules" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="before-creating-an-ioc">
+<h2>Before Creating an IOC<a class="headerlink" href="#before-creating-an-ioc" title="Link to this heading"></a></h2>
+<p>Remember, EPICS is a collaboration! Why create an IOC when you can just use one that’s already out there? If the device is not ISIS specific, before thinking about creating an IOC check whether it is listed <a class="reference external" href="https://epics.anl.gov/modules/manufacturer.php">here</a> and, if not, email the mailing list <a class="reference external" href="https://epics.anl.gov/tech-talk/index.php">here</a>.</p>
+</section>
+<section id="creating-an-ioc">
+<h2>Creating an IOC<a class="headerlink" href="#creating-an-ioc" title="Link to this heading"></a></h2>
+<p>Building a new IOC? Before you get started, take a look at the relevant <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/wiki">instrument page</a> to see if there’s any useful information for the device you’re about to write an IOC for. Otherwise, let’s get going. If you have problems see <a class="reference internal" href="iocs/Troubleshooting.html"><span class="doc std std-doc">See IOC and device Troubleshooting</span></a>.</p>
+<p>There are two sorts of IOCs, EPICs and pycaspy. For EPICs type see the automatic creation below for pycaspy see the <a class="reference internal" href="iocs/creation/ioc-pcaspy.html"><span class="doc std std-doc">pycaspy ioc</span></a>.</p>
+<p>Need more than 1 IOC? See <a class="reference internal" href="iocs/creation/Duplicating-IOCs.html"><span class="doc std std-doc">IOC Duplication</span></a></p>
+<section id="automatically">
+<h3>Automatically<a class="headerlink" href="#automatically" title="Link to this heading"></a></h3>
+<p>If you’re building a new StreamDevice IOC you can use the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX-device-generator">IOC Generator script</a>.</p>
+</section>
+<section id="manually">
+<h3>Manually<a class="headerlink" href="#manually" title="Link to this heading"></a></h3>
+<p>If you’re not creating a StreamDevice IOC or you would like to know how an IOC could be created manually see:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="iocs/creation/Creating-an-ISIS-StreamDevice-IOC.html"><span class="doc std std-doc">Creating an ISIS StreamDevice IOC</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/creation/Creating-IOC-wrapper-VI.html"><span class="doc std std-doc">Creating an LvDCOM IOC</span></a></p></li>
+</ul>
+</section>
+<section id="fleshing-out-the-ioc">
+<h3>Fleshing out the IOC<a class="headerlink" href="#fleshing-out-the-ioc" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards) and make sure you follow the <a class="reference internal" href="iocs/Conventions.html"><span class="doc std std-doc">conventions</span></a>. To write in a TDD style use:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="iocs/testing/IOC-Testing-Framework.html"><span class="doc std std-doc">IOC Testing framework</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/testing/Emulating-Devices.html"><span class="doc std std-doc">Emulating devices</span></a></p></li>
+</ul>
+<p>If you used the script to create your IOC an empty emulator and IOC tests will have been created for you.</p>
+</li>
+<li><p><a class="reference internal" href="iocs/testing/Record-Simulation.html"><span class="doc std std-doc">Record simulation</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/creation/IOC-Finishing-Touches.html"><span class="doc std std-doc">IOC Finishing Touches</span></a></p>
+<ul class="simple">
+<li><p>Additional for motors:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="specific_iocs/motors/Adding-motor-IOC-to-global-motor-moving-and-stop-all.html"><span class="doc std std-doc">Adding motor IOC to global motor moving and stop all</span></a></p></li>
+<li><p><a class="reference internal" href="specific_iocs/motors/Add-support-for-motor-extras.html"><span class="doc std std-doc">Add support for motor extras, e.g. axes</span></a></p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="iocs/testing/Running-IOCs.html"><span class="doc std std-doc">Running (and testing) IOC</span></a></p></li>
+<li><p>Add any manuals used to the <a class="reference internal" href="iocs/conventions/Manuals.html"><span class="doc std std-doc">manuals directory</span></a></p></li>
+<li><p>Add a page about the device in the correct categories in <a class="reference internal" href="Specific-IOCs.html"><span class="doc std std-doc">Specific Device IOC</span></a></p></li>
+<li><p><a class="reference internal" href="client/opis/OPI-Creation.html"><span class="doc std std-doc">Create an OPI</span></a> and send it to instrument scientists for approval.</p></li>
+</ol>
+</section>
+</section>
+<section id="conventions">
+<h2>Conventions<a class="headerlink" href="#conventions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="iocs/conventions/IOC-Naming.html"><span class="doc std std-doc">IOC naming</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/conventions/IOC-Descriptions.html"><span class="doc std std-doc">IOC descriptions</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/conventions/ISIS-PV-Guide.html"><span class="doc std std-doc">ISIS PV guide</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/conventions/PV-Naming.html"><span class="doc std std-doc">PV naming</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/conventions/PV-Units-%26-Standards.html"><span class="doc std std-doc">PV units &amp; standards</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/conventions/Macro-Naming.html"><span class="doc std std-doc">Macro naming</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/conventions/IOC-Startup.html"><span class="doc std std-doc">IOC Startup</span></a></p></li>
+</ul>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="iocs/tools/aSub-records.html"><span class="doc std std-doc">aSub records</span></a></p></li>
+<li><p><a class="reference internal" href="specific_iocs/Motors.html"><span class="doc std std-doc">Motor IOCs</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/compiling/IOC-Libraries-to-include-with-order.html"><span class="doc std std-doc">Libraries to include</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/creation/Creating-IOC-wrapper-VI.html"><span class="doc std std-doc">Using LVDCOM</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/tools/Convert-Record.html"><span class="doc std std-doc">Convert Record</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/tips_tricks/Stream-Device-Tips-and-Tricks.html"><span class="doc std std-doc">Stream Device Tips and Tricks</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/tools/Utilities-Library.html"><span class="doc std std-doc">IOC Utilities</span></a> includes general templates</p></li>
+<li><p><a class="reference internal" href="iocs/compiling/Removing-or-Renaming-IOC-module.html"><span class="doc std std-doc">Removing or Renaming an IOC module</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/testing/IOC-Testing-Framework.html"><span class="doc std std-doc">IOC Testing framework</span></a></p></li>
+<li><p><a class="reference internal" href="system_components/labview/Complexity-of-LabVIEW-Drivers.html"><span class="doc std std-doc">Complexity of LabVIEW Drivers</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/troubleshooting/IOC-Start-Example.html"><span class="doc std std-doc">Typical start up log for an ioc</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/compiling/Reducing-Build-Dependencies.html"><span class="doc std std-doc">Reducing build dependencies for older iocs</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/tools/Template-Substitutions.html"><span class="doc std std-doc">Template Substitutions</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/tools/Creating-a-State-Machine-%28Sequencer%29.html"><span class="doc std std-doc">Creating a State Machine</span></a></p></li>
+<li><p><a class="reference internal" href="iocs/tips_tricks/PV-with-a-limited-range.html"><span class="doc std std-doc">Limited range on PV</span></a></p></li>
+</ul>
+</section>
+<section id="remake-and-run-ioc">
+<h2>Remake and run IOC<a class="headerlink" href="#remake-and-run-ioc" title="Link to this heading"></a></h2>
+<p>When modifying and testing an IOC it helps if you chain the commands to make and run the IOC like below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">support</span>\<span class="o">&lt;</span><span class="n">IOC</span> <span class="n">name</span><span class="o">&gt;</span>\<span class="n">master</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">clean</span> <span class="n">uninstall</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">ioc</span>\<span class="n">master</span>\<span class="o">&lt;</span><span class="n">IOC</span> <span class="n">name</span><span class="o">&gt;</span>\ <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">clean</span> <span class="n">uninstall</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">ioc</span>\<span class="n">master</span>\<span class="o">&lt;</span><span class="n">IOC</span> <span class="n">name</span><span class="o">&gt;</span>\<span class="n">iocBoot</span>\<span class="n">ioc</span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>\ <span class="o">&amp;&amp;</span> <span class="n">runioc</span><span class="o">.</span><span class="n">bat</span>
+</pre></div>
+</div>
+</section>
+<section id="debugging-iocs">
+<h2>Debugging IOCs<a class="headerlink" href="#debugging-iocs" title="Link to this heading"></a></h2>
+<p>Debug builds of IOCs are built in jenkins and can be deployed to instruments, see <a class="reference internal" href="deployment/patch/Deploying-a-DEBUG-build-IOC.html"><span class="doc std std-doc">here</span></a>.</p>
+<p>It can be useful to add a <code class="docutils literal notranslate"><span class="pre">msgBox</span></code> to pause so you can attach a debugger, see <a class="reference internal" href="iocs/tools/IOC-Utilities.html#pausing-an-ioc-at-startup"><span class="std std-ref">here</span></a> for instructions. If your error is during or after the db load is to call <code class="docutils literal notranslate"><span class="pre">runioc.bat</span> <span class="pre">a</span></code> this will start he ioc but run <code class="docutils literal notranslate"><span class="pre">a</span></code> as the start script. Now attach the debug and in the console type <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">st.cmd</span></code>.
+To attach the debugger start the IOC, open visual studio with the code in you wish to debug, set breakpoints as you wish and in the top toolbar select “Debug &gt;&gt; Attach to process” find your process in the list and attach. You can control the debugger as you would other debuggers using the buttons on a toolbar just below the toolbar you clicked on with “Debug” in it.</p>
+</section>
+<section id="specific-ioc-information">
+<h2>Specific IOC Information<a class="headerlink" href="#specific-ioc-information" title="Link to this heading"></a></h2>
+<p>For information on specific IOCs see <a class="reference internal" href="Specific-IOCs.html"><span class="doc std std-doc">Specific Device IOC</span></a></p>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.aps.anl.gov/epics/EpicsDocumentation/AppDevManuals/RecordRef/Recordref-1.html">EPICS record reference manual</a></p></li>
+<li><p><a class="reference external" href="http://epics.isis.rl.ac.uk/doxygen/main/">IOC doxygen Documentation</a></p></li>
+<li><p><a class="reference internal" href="system_components/IOC-message-logging.html"><span class="doc std std-doc">IOC message logging</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="system_components/startup/Mini-inst-Troubleshooting.html" class="btn btn-neutral float-left" title="Mini-inst troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="iocs/Compiling.html" class="btn btn-neutral float-right" title="Compiling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LabVIEW errors &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Logging from the archive" href="../Logging-from-the-archive.html" />
+    <link rel="prev" title="Complexity of LabVIEW Drivers" href="Complexity-of-LabVIEW-Drivers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Complexity-of-LabVIEW-Drivers.html">Complexity of LabVIEW Drivers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LabVIEW errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../LabVIEW.html">LabVIEW</a></li>
+      <li class="breadcrumb-item active">LabVIEW errors</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/labview/LabVIEW-errors.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="labview-errors">
+<h1>LabVIEW errors<a class="headerlink" href="#labview-errors" title="Link to this heading"></a></h1>
+<p>This page documents common LabVIEW errors and how to resolve them</p>
+<section id="large-labview-log-files-in-users-username-appdata-local-temp">
+<h2>Large LabVIEW log files in <code class="docutils literal notranslate"><span class="pre">Users\&lt;username&gt;\AppData\Local\Temp</span></code><a class="headerlink" href="#large-labview-log-files-in-users-username-appdata-local-temp" title="Link to this heading"></a></h2>
+<p>Symptom: the above files of the form <code class="docutils literal notranslate"><span class="pre">*_cur.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">*_log.txt</span></code> are very large and getting spammed with messages of the form</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VirtualInstrument</span><span class="p">::</span><span class="n">GetNumOfBreaks</span><span class="p">:</span> <span class="n">negative</span> <span class="n">mNumBreakpoints</span> <span class="p">(</span><span class="mi">4294967295</span><span class="p">);</span> <span class="n">vi</span><span class="o">=</span><span class="p">[</span><span class="n">LinkIdentity</span> <span class="s2">&quot;Vector-control-v16isis.vi&quot;</span> <span class="p">[</span> <span class="n">Main</span> <span class="n">Application</span> <span class="n">Instance</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To the best of our knowledge this is an incompatibility between different versions of LabVIEW. If you open “Breakpoint manager” in the LabVIEW GUI this will stop the errors with the message</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BkptManager</span><span class="p">::</span><span class="n">InitLVDialog</span><span class="p">:</span> <span class="n">FixNumBreakpointsCount</span> <span class="n">because</span> <span class="n">GetNumOfBreaks</span> <span class="n">was</span> <span class="o">-</span><span class="mi">1</span><span class="p">(</span><span class="n">now</span> <span class="mi">0</span><span class="p">)</span> <span class="n">on</span> <span class="p">[</span><span class="n">VI</span> <span class="s2">&quot;Vector-control-v16isis.vi&quot;</span> <span class="p">(</span><span class="mh">0x06de49c0</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>However, this is not a permanent fix and the errors will return if LabVIEW is restarted. More permanent fix is to make a no-op change to the VI (e.g. slightly move a label), and press save, this forces LabVIEW to re-save the VI, and this stops the errors from returning on next LabVIEW start.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">_cur.txt</span></code> log is the log from the currently-running instance of LabVIEW, while <code class="docutils literal notranslate"><span class="pre">_log.txt</span></code> is from the last instance to run. So to fully make the large logs disappear LabVIEW needs to be restarted twice. Alternatively you can manually delete the logs.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Vector-control-v16isis.vi</span></code> is probably caused by the 3d magnet <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-Magnet3D/blob/master/magnet3DApp/protocol/lv_controls.xml">https://github.com/ISISComputingGroup/EPICS-Magnet3D/blob/master/magnet3DApp/protocol/lv_controls.xml</a></p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">C:\LabVIEW</span> <span class="pre">Modules\Drivers\Scientific</span> <span class="pre">Instruments\3D</span> <span class="pre">Magnet\Source</span> <span class="pre">Code\Vector-control-v16isis.vi</span></code> in LabVIEW then choose <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">-&gt;</span> <span class="pre">Breakpoint</span> <span class="pre">Manager</span></code> - after that you can close breakpoint manager</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Complexity-of-LabVIEW-Drivers.html" class="btn btn-neutral float-left" title="Complexity of LabVIEW Drivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Logging-from-the-archive.html" class="btn btn-neutral float-right" title="Logging from the archive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

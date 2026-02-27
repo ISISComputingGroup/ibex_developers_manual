@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galil default parameters &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Galil Homing Routines" href="Galil-homing-routines.html" />
+    <link rel="prev" title="Galil Userdef records" href="Galil-Userdef-Records.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Attocube.html">Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Beckhoff.html">Beckhoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Galil.html">Galil</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Differences-between-real-Galil-and-simulated-motor.html">Differences between real Galil &amp; Simulated motor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Homing-Routine-Steps.html">Galil Homing Routine steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Instrument-Configuration.html">Galil Instrument Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-Userdef-Records.html">Galil Userdef records</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Galil default parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Galil-homing-routines.html">Galil Homing Routines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IMAT-tomography-stages.html">IMAT Tomography Stages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Multi-galil-IOC.html">Multi-Galil IOC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="New-Galil-Driver.html">New Galil Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Resetting-HOMEVAL.html">Resetting <code class="docutils literal notranslate"><span class="pre">HOMEVAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Smoothing-Motor-Readback.html">Smoothing motor readback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Updating-old-galil-driver.html">Updating the old Galil driver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Linmot.html">Linmot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../McLennan-motors.html">McLennan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Motors.html">Motors</a></li>
+          <li class="breadcrumb-item"><a href="../Galil.html">Galil</a></li>
+      <li class="breadcrumb-item active">Galil default parameters</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/galil/Galil-default-parameters.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="galil-default-parameters">
+<h1>Galil default parameters<a class="headerlink" href="#galil-default-parameters" title="Link to this heading"></a></h1>
+<p>The Galil IOC has a number of (quite obscure) parameters. The ISIS defaults for these are stated here. Parameters that are not on this list either vary so much per axis that a sensible default is hard to reach or are happy at the motor record default.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default (Commissioning)</p></th>
+<th class="head"><p>Default (Running)</p></th>
+<th class="head"><p>Reasoning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>ESTALLTIME</p></td>
+<td><p>Throws an error when the encoder has not moved after specified time</p></td>
+<td><p>1</p></td>
+<td><p>Small enough to catch errors when they occur</p></td>
+<td><p>Give some slack so that doesn’t throw errors, tighten when required</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>EDEL</p></td>
+<td><p>In motion if encoder has moved by this amount</p></td>
+<td><p>2*ERES</p></td>
+<td><p>Could be increased if motor is particularly jittery</p></td>
+<td><p>A motor shouldn’t be jittering by more than 1 encoder step</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>JAH</p></td>
+<td><p>When on the axis will jog a specified amount after a home</p></td>
+<td><p>No</p></td>
+<td><p>Same</p></td>
+<td><p>We don’t want to do this at ISIS</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>JAH_VAL</p></td>
+<td><p>The amount to jog after home</p></td>
+<td><p>Don’t Care</p></td>
+<td><p>Same</p></td>
+<td><p>Doesn’t do anything when above PV not set</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>EGUAFTLIMIT</p></td>
+<td><p>The distance between a limit switch and a hard stop</p></td>
+<td><p>0.001</p></td>
+<td><p>Increased if a large deceleration would be bad</p></td>
+<td><p>A very small amount will definitely stop the axis</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>HOMEVAL</p></td>
+<td><p>What position to send the device after a home</p></td>
+<td><p>0</p></td>
+<td><p>Same</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2471">Home is defined as zero across ISIS</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>OFFONERRORLIMIT</p></td>
+<td><p>Turns the motor off when position error is greater than specified</p></td>
+<td><p>Off</p></td>
+<td><p>Same</p></td>
+<td><p>Would be useful if the IOC sent a new position on start up but currently doesn’t</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ERROR LIMIT</p></td>
+<td><p>The position error to turn the motor off at</p></td>
+<td><p>Don’t Care</p></td>
+<td><p>Same</p></td>
+<td><p>Doesn’t do anything when above PV not set</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>WLP</p></td>
+<td><p>Stops the motor from moving when it hits any limit</p></td>
+<td><p>On</p></td>
+<td><p>Off</p></td>
+<td><p>Provides a safety net during commissioning but means you cannot move off a limit when running</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>AUTOONOFF</p></td>
+<td><p>Automatically turns the motor on for a move and off when complete</p></td>
+<td><p>On</p></td>
+<td><p>Off when the motor needs to be constantly energised e.g. it will fall under gravity</p></td>
+<td><p>Better to turn the motor off when not in use</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ONDELAY</p></td>
+<td><p>If AUTOONOFF set, how long to wait after the motor is turned on to begin a move</p></td>
+<td><p>0.2</p></td>
+<td><p>0</p></td>
+<td><p>Used to make sure the amp is ready for the move. Generally we do not need to wait.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>OFFDELAY</p></td>
+<td><p>If AUTOONOFF set, how long to wait after stopped before turning off</p></td>
+<td><p>0.2</p></td>
+<td><p>2</p></td>
+<td><p>Should wait some time if you’re doing correction moves immediately</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ON_CMD</p></td>
+<td><p>If on will leave the motor on at all times</p></td>
+<td><p>Off</p></td>
+<td><p>Off when the motor needs to be constantly energised e.g. it will fall under gravity (Make sure the AUTOONOFF is Off)</p></td>
+<td><p>Better to turn the motor off when not in use</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>K1, K2, K3, FV, FC, FA, FN, ZP, ZN, CT, AF</p></td>
+<td><p>Used for ceramic motors</p></td>
+<td><p>0</p></td>
+<td><p>Change if ceramic</p></td>
+<td><p>This is the Galil’s default when not ceramic motors</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>FV, FA</p></td>
+<td><p>Changes the output voltages based on the acceleration/velocity</p></td>
+<td><p>0</p></td>
+<td><p>Change if required</p></td>
+<td><p>Most axes in ISIS do not require this</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>IL, TL</p></td>
+<td><p>Used for setting limits on the integrator and torque</p></td>
+<td><p>9.998</p></td>
+<td><p>Change if required</p></td>
+<td><p>Most axes at ISIS do not need a limit so set the highest possible</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>CP</p></td>
+<td><p>Used for ceramic motors but effects all motors. At the end of a move if the motor is within this value of the setpoint then the motor is switched off</p></td>
+<td><p>-1.0</p></td>
+<td><p>Change if ceramic</p></td>
+<td><p>-ve turns off the motor-off command (Can be set via the engineering view)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>VBAS</p></td>
+<td><p>The minimum speed the motor should go at (NOTE THAT ACCEL IS CALCULATED BASED ON THIS)</p></td>
+<td><p>0</p></td>
+<td><p>Same</p></td>
+<td><p>Most motors should be happy at any speed below maximum</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>BDST</p></td>
+<td><p>The distance to move to correct for backlash</p></td>
+<td><p>0</p></td>
+<td><p>Same</p></td>
+<td><p>Most axes shouldn’t need to correct</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>BVEL</p></td>
+<td><p>The velocity to move when correcting for backlash</p></td>
+<td><p>Don’t care</p></td>
+<td><p>Same</p></td>
+<td><p>Doesn’t do anything when BDST not set</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>BACC</p></td>
+<td><p>The acceleration to move with when correcting for backlash</p></td>
+<td><p>Don’t care</p></td>
+<td><p>Same</p></td>
+<td><p>Doesn’t do anything when BDST not set</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>DHLM</p></td>
+<td><p>The high soft limit</p></td>
+<td><p>2147483647 * MRES</p></td>
+<td><p>Slightly before the forward limit switch</p></td>
+<td><p>When commissioning turn off. When running we don’t normally want to hit the physical limits.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>DLLM</p></td>
+<td><p>The low soft limit</p></td>
+<td><p>-2147483648 * MRES</p></td>
+<td><p>Slightly before the reverse limit switch</p></td>
+<td><p>When commissioning turn off. When running we don’t normally want to hit the physical limits.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>UEIP</p></td>
+<td><p>Use an encoder</p></td>
+<td><p>Off</p></td>
+<td><p>On</p></td>
+<td><p>When starting to commission you are not using the encoder, when running you should if there is one</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>RTRY</p></td>
+<td><p>The number of times to retry getting to the setpoint</p></td>
+<td><p>0</p></td>
+<td><p>10</p></td>
+<td><p>When commissioning don’t want to run ‘closed loop’ otherwise 10 tries is normally enough to get to position</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Galil-Userdef-Records.html" class="btn btn-neutral float-left" title="Galil Userdef records" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Galil-homing-routines.html" class="btn btn-neutral float-right" title="Galil Homing Routines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

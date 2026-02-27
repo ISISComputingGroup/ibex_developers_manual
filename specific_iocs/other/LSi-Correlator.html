@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LSi Correlator &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mirion Lynx2 HPGe detector" href="Lynx_HPGe_detector.html" />
+    <link rel="prev" title="LOTQD MSH150 Monochromator" href="LOTQD-MSH150-Monochromator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AnywhereUSB.html">AnywhereUSB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Arduino-RKNDIO-PLC-control.html">Arduino RKNDIO PLC Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Background-Script-IOC.html">Background Script IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-Hexagon.html">CAEN Hexagon (MUX Data Acquisition Electronics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CAEN-v895.html">CAEN v895</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Catalytic-Flow-Reactor.html">Catalytic Flow Reactor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coherent-OBIS-Laser-Remote.html">Coherent OBIS Laser Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ferro-Magnetic_Resonance_equipment.html">Ferro-Magnetic Resonance equipment (FMR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gamry.html">Gamry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Hameg-HM8123.html">Hameg HM8123 programmable counter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Humidity-Controller.html">Humidity Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Inhibitor.html">Inhibitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOTQD-MSH150-Monochromator.html">LOTQD MSH150 Monochromator</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LSi Correlator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lynx_HPGe_detector.html">Mirion Lynx2 HPGe detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MOXA-e12XX.html">Moxa e12xx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Ocean-Optics-DH-2000-Shutter-control.html">Ocean Optics DH-2000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAMAN-Spectrometer.html">RAMAN Spectrometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rotating-Stirrer-Rack.html">Rotating Stirrer Rack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SDTest.html">SDTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SP300-Potentiostat.html">SP300 Potentiostat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stanford-SR850.html">Stanford SR850 Lock In Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thorlabs-FW102C-Filter-Wheel.html">Thorlabs FW102C Filter Wheel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nGEM-detector.html">nGEM Detector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Other.html">Other / Miscellaneous</a></li>
+      <li class="breadcrumb-item active">LSi Correlator</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/other/LSi-Correlator.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lsi-correlator">
+<h1>LSi Correlator<a class="headerlink" href="#lsi-correlator" title="Link to this heading"></a></h1>
+<p>The LSi correlator is a device used as part of the DLS system on LOQ. It can be controlled either with the vendor-supplied software, or using the Python, LabVIEW or Matlab APIs.</p>
+<section id="the-vendor-software">
+<h2>The vendor software<a class="headerlink" href="#the-vendor-software" title="Link to this heading"></a></h2>
+<section id="connecting-the-software-to-the-correlator">
+<h3>Connecting the software to the correlator<a class="headerlink" href="#connecting-the-software-to-the-correlator" title="Link to this heading"></a></h3>
+<p>The software struggles to find the correlator’s IP address on our network. Instead, the IP address can be entered manually in the settings file in</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;LSI</span> <span class="pre">Software</span> <span class="pre">root&gt;\LSI</span> <span class="pre">Correlator</span> <span class="pre">Acquisition</span> <span class="pre">Software\LSI</span> <span class="pre">Correlator</span> <span class="pre">Acquisition</span> <span class="pre">Software</span> <span class="pre">Settings.ini</span></code></p>
+<p>In this file, change the default setting of the correlator’s IP address to the actual device IP then reboot the software.</p>
+<p>The correlator name on the network is <code class="docutils literal notranslate"><span class="pre">LSI-Correlator-01cb39c4</span></code> - prefer connecting by name over IP address, as the device has historically changed MAC address for unknown reasons.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The device is <em>very</em> fiddly in terms of connection.</p>
+<p>Currently, the best procedure to <em>reliably</em> reconnect to the device is to:</p>
+<ul class="simple">
+<li><p>Switch off the IOC</p></li>
+<li><p>Switch off the box</p></li>
+<li><p>Wait 10 seconds</p></li>
+<li><p>Switch on the box</p></li>
+<li><p>Wait 60 seconds</p></li>
+<li><p>Switch on the IOC</p></li>
+<li><p>Wait a while for the IOC to fully start up</p></li>
+</ul>
+<p>This situation will hopefully be improved by <a class="reference external" href="https://github.com/isisComputingGroup/ibex/issues/8741">ticket 8741</a>.</p>
+</div>
+</section>
+</section>
+<section id="the-vendor-python-api">
+<h2>The Vendor Python API<a class="headerlink" href="#the-vendor-python-api" title="Link to this heading"></a></h2>
+<p>The python ‘API’ is little more than a reference implementation of a websocket client. It is installed with the vendor software. This code has been placed in a private repository as we have not got permission from LSI to publicly distribute it.</p>
+<p>The LSI python API has two dependencies in Python 3+:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">autobahn</span></code></p>
+<ul class="simple">
+<li><p>This is their module used to create websockets</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">twisted</span></code></p>
+<ul class="simple">
+<li><p>This is a common python library used by autobahn to control low-level TCP connections</p></li>
+</ul>
+</li>
+</ol>
+<p>The vendor-supplied example script, <code class="docutils literal notranslate"><span class="pre">ExampleMainCorrelator.py</span></code>, was modified to produce the <code class="docutils literal notranslate"><span class="pre">take_data</span></code> function in the EPICS IOC.</p>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>The second argument of the <code class="docutils literal notranslate"><span class="pre">LSICorrelator</span></code> object is the firmware revision on the device. This can be found from the LSi correlator vendor software.</p></li>
+</ul>
+</section>
+<section id="the-epics-ioc">
+<h2>The EPICS IOC<a class="headerlink" href="#the-epics-ioc" title="Link to this heading"></a></h2>
+<p>The EPICS IOC is based on PCASpy to create and interact with PVs over channel access. A major function of the IOC is to convert the values taken in from channel access into values/objects which the LSI python API can interpret. This IOC is only compatible with Python 3+.</p>
+<p>The PCASpy/EPICS driver has a dictionary of ‘internal’ values. These have have been converted from the PVs to they can be directly passed through to the drivers. The PVConfig structure standardises where these conversions to and from the LSI vendor API and channel access PVs take place.</p>
+<p>All communications to the physical device are handled by the LSI python API. The <code class="docutils literal notranslate"><span class="pre">take_data</span></code> function was developed from the example script supplied with this API.</p>
+<section id="adding-a-new-record-pv">
+<h3>Adding a new record (PV)<a class="headerlink" href="#adding-a-new-record-pv" title="Link to this heading"></a></h3>
+<p>The correlator PCASpy IOC adds a new interface (see <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/record.py">here</a>) which brings together methods typically required of a record/PV. <code class="docutils literal notranslate"><span class="pre">VAL</span></code>, <code class="docutils literal notranslate"><span class="pre">SEVR</span></code> and <code class="docutils literal notranslate"><span class="pre">STAT</span></code> fields are automatically created for all records.</p>
+<p>A basic <code class="docutils literal notranslate"><span class="pre">Record</span></code> object holds the name of PV and a dictionary containing information about the fields of the record as specified in the <a class="reference external" href="https://pcaspy.readthedocs.io/en/latest/api.html#database-field-definition">PCASpy documentation</a>. For example, a simple PV to publish a temperature could look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="n">Record</span><span class="p">(</span><span class="s2">&quot;TEMPERATURE&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;VAL&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>For enum records, the class attributes <code class="docutils literal notranslate"><span class="pre">convert_from_pv</span></code> and <code class="docutils literal notranslate"><span class="pre">convert_to_pv</span></code> lets you define a function which converts between the value of the PV and a more useful object. This is important for enums where the actual value of the PV is an integer, so a conversion between the integer and what that value represents is necessary.
+Example, a basic binary PV:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SIM</span> <span class="o">=</span> <span class="n">Record</span><span class="p">(</span><span class="s2">&quot;SIM&quot;</span><span class="p">,</span>
+             <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;enum&#39;</span><span class="p">,</span> <span class="s1">&#39;enums&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="s2">&quot;YES&quot;</span><span class="p">]},</span>
+             <span class="n">convert_from_pv</span><span class="o">=</span><span class="nb">bool</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the value of the PV is 1 or 0, and the <code class="docutils literal notranslate"><span class="pre">bool()</span></code> built-in takes the current value of the PV as its argument and returns a boolean. The <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/pvdb.py">PV database</a> of the correlator uses this to convert between enum values and the objects they represent in python.</p>
+<p>To create a setpoint PV which mimics the current Record type, set <code class="docutils literal notranslate"><span class="pre">has_setpoint</span> <span class="pre">=</span> <span class="pre">True</span></code> as an argument when instantiating the class. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="n">Record</span><span class="p">(</span><span class="s2">&quot;TEMPERATURE&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;VAL&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">},</span> <span class="n">has_setpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will create <code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span></code> and <code class="docutils literal notranslate"><span class="pre">TEMPERATURE:SP</span></code>, as well as the expected <code class="docutils literal notranslate"><span class="pre">VAL</span></code>, <code class="docutils literal notranslate"><span class="pre">SEVR</span></code> and <code class="docutils literal notranslate"><span class="pre">STAT</span></code> fields for the setpoint PV. These are all added to the <code class="docutils literal notranslate"><span class="pre">database_entries</span></code> for the object <code class="docutils literal notranslate"><span class="pre">temperature</span></code>.</p>
+<p>To add the PVs created in the Record <code class="docutils literal notranslate"><span class="pre">temperature</span></code> to the static PV database (including all <code class="docutils literal notranslate"><span class="pre">:SP</span></code> PVs) so they can be loaded into the PCASpy server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">STATIC_PV_DATABASE</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">STATIC_PV_DATABASE</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">temperature</span><span class="o">.</span><span class="n">database_entries</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">device_setter</span></code> is a function which takes in the current value of the PV and will perform some action on it, such as writing the PV value on to the device. In the LSI correlator, the settings for the correlator are written to the device through the vendor API using <code class="docutils literal notranslate"><span class="pre">device_setter</span></code>s.</p>
+</section>
+<section id="issues-gotchas">
+<h3>Issues/gotchas<a class="headerlink" href="#issues-gotchas" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>This device is not polled, and so it is difficult to truly know whether the connection to the device has been dropped. Currently the device will read disconnected after a correlator run is started and no data is returned.</p>
+<ul>
+<li><p>It might be possible to do something with websockets which would provide more immediate feedback whether the device connection is still alive, which is what most devices do.</p></li>
+</ul>
+</li>
+<li><p>Once the device connection has be severed, the IOC must be restarted. There is no logic in place to drop the <code class="docutils literal notranslate"><span class="pre">LSICorrelator</span></code> object and attempt a reconnection by spawning a new object.</p></li>
+<li><p>Two of the output values from the device, <code class="docutils literal notranslate"><span class="pre">TraceChA</span></code> and <code class="docutils literal notranslate"><span class="pre">TraceChB</span></code> have a length which is proportional to the measurement duration requested. Because PCASpy PV lengths are specified at IOC boot time, these arrays may have to be truncated to publish them as PVs. Currently they are not published, but are saved to file.</p></li>
+<li><p>The time series for the taken data labelled in the file as <code class="docutils literal notranslate"><span class="pre">Count</span> <span class="pre">Rate</span> <span class="pre">History</span> <span class="pre">(KHz)</span>&#160; <span class="pre">CR</span> <span class="pre">CHA</span> <span class="pre">/</span> <span class="pre">CR</span> <span class="pre">CHB</span></code> is generated by using a constant called <code class="docutils literal notranslate"><span class="pre">DELTA_T</span></code> the value is from the example API documentation that comes with the device driver.</p></li>
+<li><p>There is some test data which can be loaded into the analysis software in the manuals directory in testing. There is also the mock data used to generate that file which was used in testing the saving ticket.</p></li>
+<li><p>Because this is not a traditional IOC with a <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> for starting, macro values are not explicitly shown before starting. If incorrect the IOC may fall over and start trying to parse blank strings etc. which will lead to exceptions like <code class="docutils literal notranslate"><span class="pre">RuntimeError:</span> <span class="pre">No</span> <span class="pre">file</span> <span class="pre">path</span> <span class="pre">specified</span> <span class="pre">to</span> <span class="pre">save</span> <span class="pre">data</span> <span class="pre">to:</span> <span class="pre">'FILEPATH'</span></code></p></li>
+<li><p>If the correlation does not output in the file due to the <code class="docutils literal notranslate"><span class="pre">correlation_data</span></code> being equal to a blank array (<code class="docutils literal notranslate"><span class="pre">[]</span></code>), check that the default sampling time (minimum time lag) variable is set to an appropriate value. Common pre-sets used by IS are as follows: <code class="docutils literal notranslate"><span class="pre">12.5,</span> <span class="pre">200,</span> <span class="pre">400,</span> <span class="pre">800,</span> <span class="pre">1600,</span> <span class="pre">3200</span></code>nano seconds.</p></li>
+</ul>
+</section>
+<section id="saving-the-data">
+<h3>Saving the data<a class="headerlink" href="#saving-the-data" title="Link to this heading"></a></h3>
+<p>Ideally the data would be saved into a nexus file, and the subsequent data analysis would be performed in Mantid. However, because this data analysis is not yet available in Mantid, the data must be processed by the vendor’s software. Therefore we need to recreate a data format which can be imported by the vendor software in order to do this data analysis. The format of these data files is a tab-separated variable format with the extension <code class="docutils literal notranslate"><span class="pre">.dat</span></code>, examples of which can be found on the share.</p>
+<p>The IOC saves the file in two locations, once in <code class="docutils literal notranslate"><span class="pre">C:\Data</span></code> with a filename which allows it to get saved into the archive. The other file gets saved in a location specified by the user in a macro.</p>
+<p>After a brief look, it appears that the vendor software may be using the <code class="docutils literal notranslate"><span class="pre">CONTIN</span></code> library to perform fitting of the correlation function.</p>
+</section>
+</section>
+<section id="testing-with-hardware">
+<h2>Testing with Hardware<a class="headerlink" href="#testing-with-hardware" title="Link to this heading"></a></h2>
+<p>To test with the LSi Correlator hardware, the laser will need to be run onto a sample so that the correlation function can be populated. This means that the DLS would need to be installed where safe to operate and the correlator plugged into the network on an instrument. IBEX can then be run (as distinct from the vendor program).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LOTQD-MSH150-Monochromator.html" class="btn btn-neutral float-left" title="LOTQD MSH150 Monochromator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lynx_HPGe_detector.html" class="btn btn-neutral float-right" title="Mirion Lynx2 HPGe detector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

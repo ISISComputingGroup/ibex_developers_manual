@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMA4500m Density Meter &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Edwards TIC" href="Edwards-Turbo-Instrument-Controller.html" />
+    <link rel="prev" title="BioLogic MPS 70-4" href="BioLogic-MPS-70-4-%28stopped-flow%29.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="BioLogic-MPS-70-4-%28stopped-flow%29.html">BioLogic MPS 70-4</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DMA4500m Density Meter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Edwards-Turbo-Instrument-Controller.html">Edwards TIC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JASCO-PU--4180-HPLC-Pump.html">JASCO HPLC Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Knauer-1050-HPLC-Pump.html">Knauer 1050 HPLC Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Knauer-Valve-Unifier.html">Knauer Valve Unifier (VU4.1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Knauer-k-6.html">Knauer K-6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MKS_PR4000B.html">MKS PR4000B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMA-Trough.html">NIMA Trough</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WPI-Aladdin-Syringe-Pump.html">WPI Aladdin Syringe Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WPI-SP2XX-Syringe-Pump.html">WPI SP2XX Syringe Pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Watson-Marlow-323-Peristaltic-Pump.html">Watson-Marlow 323 Peristaltic Pump</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+      <li class="breadcrumb-item active">DMA4500m Density Meter</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/gas_liquid_handling/DMA4500m-Density-Meter.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dma4500m-density-meter">
+<h1>DMA4500m Density Meter<a class="headerlink" href="#dma4500m-density-meter" title="Link to this heading"></a></h1>
+<p>The device’s IOC was originally developed at ESS, then updated to match ISIS requirements and conventions. The original code is available <a class="reference external" href="https://bitbucket.org/europeanspallationsource/m-epics-dma4500m/src/master/">here</a>.</p>
+<p>It is a densitometer which currently measures density and temperature.</p>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p>Vendor documentation is available at <code class="docutils literal notranslate"><span class="pre">\\ISIS\shares\ISIS_Experiment_Controls\Manuals\AntonPaar__DMA4500</span></code>.</p>
+</section>
+<section id="connection-details">
+<h2>Connection Details<a class="headerlink" href="#connection-details" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>RS-232C Specifications</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Baud rate</p></td>
+<td><p>9600 Baud</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stop bits</p></td>
+<td><p>1 bit</p></td>
+</tr>
+<tr class="row-even"><td><p>Parity</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data length</p></td>
+<td><p>8 bit</p></td>
+</tr>
+<tr class="row-even"><td><p>Flow control</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Commands and returned values are terminated with CR</p></li>
+<li><p>Only one command should be sent per second</p></li>
+</ul>
+</section>
+<section id="quirks">
+<h2>Quirks<a class="headerlink" href="#quirks" title="Link to this heading"></a></h2>
+<section id="raw-data-and-temperature-setpoint">
+<h3>Raw data and temperature setpoint<a class="headerlink" href="#raw-data-and-temperature-setpoint" title="Link to this heading"></a></h3>
+<p>According to the device manual, the <code class="docutils literal notranslate"><span class="pre">getrawdata</span></code> command returns the “current raw data values”. Judging from the device output, the response is in this format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">density</span><span class="p">};{</span><span class="n">temperature</span><span class="p">};{</span><span class="n">temperature</span> <span class="n">setpoint</span><span class="p">};{</span><span class="n">sample</span> <span class="nb">id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><strong>density</strong> and <strong>temperature</strong> are “instant” measurements of the current sample density and temperature. The seem to oscillate slightly if the command is run multiple times in a row, so the error is likely quite high.</p></li>
+<li><p><strong>temperature setpoint</strong> is the current temperature setpoint. After a <code class="docutils literal notranslate"><span class="pre">settemperature</span></code> command is sent to the device, this setpoint immediately updates to the value specified in <code class="docutils literal notranslate"><span class="pre">settemperature</span></code> and the “instant” temperature measurement can be observed to ramp up/down towards the setpoint</p></li>
+<li><p><strong>sample id</strong> is a value that is increased by 1 every time a measurement is run (at least when started by the <code class="docutils literal notranslate"><span class="pre">start</span></code> command, possibly when started through the device GUI as well)</p></li>
+</ul>
+</section>
+</section>
+<section id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Link to this heading"></a></h2>
+<p>The IOC logic is fairly complex and uses features not supported by RECSIM, so RECSIM has not been implemented for this device.</p>
+</section>
+<section id="automeasure">
+<h2>Automeasure<a class="headerlink" href="#automeasure" title="Link to this heading"></a></h2>
+<p>When automeasure is enabled, the IOC periodically starts a measurement without user intervention. 3 PVs are involved in this:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:FREQ</span></code>: the interval between measurements (in seconds)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:ENABLED</span></code>: a binary record that’s 1 when automeasure is enabled, 0 otherwise (default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AUTOMEASURE</span></code>: the <code class="docutils literal notranslate"><span class="pre">calcout</span></code> PV responsible for starting measurements</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">AUTOMEASURE</span></code> runs every second, using <code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:FREQ</span></code> and <code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:ENABLED</span></code> as its inputs. When automeasure is enabled, the value of this PV is set to the interval specified in <code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:FREQ</span></code>. Every second, the PV’s value is decreased until it reaches 0; when this happens, a new measurement is started and the value is reset to <code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:FREQ</span></code>. The countdown is suspended while a measurement is running (through an SDIS field) so we’re only counting the interval between two measurements. In pseudocode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process_pv</span><span class="p">():</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">automeasure_enabled</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">automeasure_freq</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">count</span> <span class="o">=</span> <span class="n">automeasure_freq</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">count</span><span class="o">-=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+<p>Note that a measurement is started whenever the value of <code class="docutils literal notranslate"><span class="pre">AUTOMEASURE</span></code> is 0, so if <code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:ENABLED</span></code> is 0 but <code class="docutils literal notranslate"><span class="pre">AUTOMEASURE:FREQ</span></code> is also 0 we have to manually set the count to a non-zero value to avoid starting a measurement. This has the side effect that there will always be at least a 1 second delay between enabling automeasure and the start of the first measurement.</p>
+<section id="delays-when-running-on-the-real-device">
+<h3>Delays when running on the real device<a class="headerlink" href="#delays-when-running-on-the-real-device" title="Link to this heading"></a></h3>
+<p>I have observed that when the automeasure code is run on the real device the interval between measurements can be inconsistent. This seems to be due to a random delay when starting measurements: the IOC tells the device to start a measurement, but the device takes a few seconds to actually start one. This can lead to longer intervals than the user may have expected.</p>
+</section>
+</section>
+<section id="measurement-mode">
+<h2>Measurement Mode<a class="headerlink" href="#measurement-mode" title="Link to this heading"></a></h2>
+<p>The data sent back by the device is parsed according to the current measurement mode, which is set by <code class="docutils literal notranslate"><span class="pre">$(MEASUREMENT_MODE)</span></code> macro. Currently, the only supported mode is <code class="docutils literal notranslate"><span class="pre">DENSITY_ONLY</span></code> (for measuring density, temperature and measurement validity).</p>
+<p>From the device’s point of view, the measurement results are returned by the <code class="docutils literal notranslate"><span class="pre">getdata</span></code> command. The quantities to be measured and their position in the results list are determined by the active “method”. Methods are defined by the user using the device’s GUI, and they can include a large number of different quantities in any order specified by the user. The device does offer a <code class="docutils literal notranslate"><span class="pre">getdatahead</span></code> command to get the name and position of the quantities returned by <code class="docutils literal notranslate"><span class="pre">getdata</span></code>, but there is no easy way of parsing the output of this command to automatically make sense of the results list. For this reason, we need to manually add a measurement mode for every method used at ISIS, and users must make sure to set the <code class="docutils literal notranslate"><span class="pre">$(MEASUREMENT_MODE)</span></code> macro in IBEX to match the method they’re using.</p>
+</section>
+<section id="ioc-diagram">
+<h2>IOC diagram:<a class="headerlink" href="#ioc-diagram" title="Link to this heading"></a></h2>
+<p><img alt="Diagram of DMA4500M IOC" src="../../_images/dma4500m_ioc_diagram.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="BioLogic-MPS-70-4-%28stopped-flow%29.html" class="btn btn-neutral float-left" title="BioLogic MPS 70-4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Edwards-Turbo-Instrument-Controller.html" class="btn btn-neutral float-right" title="Edwards TIC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

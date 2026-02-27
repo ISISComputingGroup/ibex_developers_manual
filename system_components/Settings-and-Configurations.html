@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings &amp; Configurations &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Calibration files" href="configurations/Calibration-Files.html" />
+    <link rel="prev" title="Run Control" href="Run-control.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Settings &amp; Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configurations/Calibration-Files.html">Calibration files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurations/Configuration-Rules.html">Configuration rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurations/Dashboard.html">Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurations/PV-Sets.html">PV Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurations/PV-Values.html">PV Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configurations/Spangle-banner.html">Spangle Banner</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">Settings &amp; Configurations</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/Settings-and-Configurations.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="settings-configurations">
+<h1>Settings &amp; Configurations<a class="headerlink" href="#settings-configurations" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>How is an instrument configured and what is stored in the settings directory.</p>
+<p>The settings directory should be in <code class="docutils literal notranslate"><span class="pre">c:\Instrument\Settings</span></code>, it contains (each level is a directory):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">gwblock.pvlist</span></code>: created by the blockserver on each config change and used to configure the block gateway, which provides aliases for PVs to blocks. See <a class="reference internal" href="Gateway.html#gateway-pvlist-files"><span class="std std-ref">here</span></a> for format.</p></li>
+<li><p>config</p>
+<ul>
+<li><p>common: <a class="reference internal" href="configurations/Calibration-Files.html"><span class="doc std std-doc">Calibration files specific to equipment but potentially shared</span></a></p></li>
+<li><Instrument name>
+  - Python: Instrument specific python modules (TODO create a page)
+  - configurations directory
+</li>
+</ul>
+</li>
+</ul>
+<section id="configurations-directory">
+<h2>Configurations directory<a class="headerlink" href="#configurations-directory" title="Link to this heading"></a></h2>
+<p>The configurations directory has the settings for the instrument in.</p>
+<section id="files">
+<h3>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h3>
+<p>It contains some files:</p>
+<ul class="simple">
+<li><p>config_version.txt: configuration version</p></li>
+<li><p>globals.txt: overriding definition of macros for IOCs</p></li>
+<li><p>last_config.txt: last loaded config in IBEX</p></li>
+<li><p>rc_setting.cmd: commands to load in runcontrol</p></li>
+<li><p>banner.xml: customised displays and buttons for the GUI banner</p></li>
+<li><p>custom_records.db: records specific to the instrument which are loaded by INSTETC</p>
+<ul>
+<li><p>Pass macros through from globals.txt with <code class="docutils literal notranslate"><span class="pre">CUSTOM_RECORD_MACROS=&quot;DSC_EUROTHRM=03,DSC_LKSH336=02&quot;</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="user-configuration">
+<h3>User configuration<a class="headerlink" href="#user-configuration" title="Link to this heading"></a></h3>
+<p>The user configuration is items we expect an instrument scientist to change using the GUI. These include the</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="configurations/Configuration-Rules.html"><span class="doc std std-doc">configurations: contains configurations</span></a></p></li>
+<li><p><a class="reference internal" href="configurations/Configuration-Rules.html"><span class="doc std std-doc">components: contains the components which can be included in a configuration</span></a></p></li>
+<li><p>synoptics: graphical representation of the instrument</p></li>
+<li><p>device: device screens</p></li>
+</ul>
+</section>
+<section id="dae-configuration">
+<h3>DAE Configuration<a class="headerlink" href="#dae-configuration" title="Link to this heading"></a></h3>
+<p>Configuration files for the DAE.</p>
+<ul class="simple">
+<li><p>tables: wiring, spectra and detector tables</p></li>
+<li><p>tcb: tcb parameter files</p></li>
+</ul>
+</section>
+<section id="configuration-of-devices-and-extensions">
+<h3>Configuration of devices and extensions<a class="headerlink" href="#configuration-of-devices-and-extensions" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Motion-related configuration has now been moved to <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-motorExtensions/tree/master/settings">motorExtensions</a> as per <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8427">this ticket</a></p>
+</div>
+<p>These are directories which configure devices which would be too complicated for macro configuration. For example the Galil configuration with the need to setup the controller, homing routines etc. Historically this was named after a category of device, e.g. galil. This allow configuration of devices as a whole. They can also be named after an IOC which allow configuration of a single IOC, e.g TC_01.</p>
+<p>The extensions are items which extend an IOC for example a motion setpoints which allow a motor to stop at labelled positions. These are configured from the IOC configuration directory and may need optional extra configuration directories.</p>
+<p>The pattern for both device configuration and extensions configuration is that the IOC loads a command file sitting in a directory if it is present.</p>
+<p>Directories:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">galil</span></code>: configures the galil <a class="reference internal" href="../specific_iocs/motors/Galil.html"><span class="doc std std-doc">Galil</span></a> and extensions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mclen</span></code>: configures McLennan motors <a class="reference internal" href="../specific_iocs/motors/McLennan-motors.html"><span class="doc std std-doc">McLennan</span></a> and extensions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">motionSetPoints</span></code>: setpoint look up files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">refl</span></code> (for reflectometers only): contains a file <code class="docutils literal notranslate"><span class="pre">config.py</span></code>, which tells instruments using the <a class="reference internal" href="../specific_iocs/Reflectometry-IOC.html"><span class="doc std std-doc">Reflectometry IOC</span></a> what their beamline looks like (follow the link for details)</p></li>
+</ul>
+<p>Common extensions:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../specific_iocs/motor_extensions/Motion-Set-points.html"><span class="doc std std-doc">Motion Set points</span></a> (works for galil, McLennan and TC)</p></li>
+<li><p><a class="reference internal" href="../specific_iocs/motor_extensions/Axis.html"><span class="doc std std-doc">axes</span></a> (works for galil, McLennan and TC)</p></li>
+<li><p><a class="reference internal" href="../specific_iocs/motor_extensions/Sample-Changer-Support-Module.html"><span class="doc std std-doc">sample changer</span></a> (works for galil McLennan and TC)</p></li>
+<li><p><a class="reference internal" href="../specific_iocs/motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End.html"><span class="doc std std-doc">Barn doors and Momentum slits</span></a></p></li>
+</ul>
+</section>
+<section id="version-control">
+<h3>Version Control<a class="headerlink" href="#version-control" title="Link to this heading"></a></h3>
+<p>The configuration directory is backed up into git. This is done by the <a class="reference internal" href="BlockServer.html"><span class="doc std std-doc">Blockserver</span></a>.</p>
+<p>Each instrument stores the configurations in their own branch in this repository, these branches are named the same as the instrument machine.</p>
+<p>The repository is stored in a <a class="reference internal" href="../processes/git_and_github/New-Local-Git-Repository.html"><span class="doc std std-doc">local repository</span></a>.</p>
+</section>
+</section>
+<section id="special-cases">
+<h2>Special cases<a class="headerlink" href="#special-cases" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Detmon</span></code> has a special case for their configuration because they want to create configurations with the same info for multiple CAEN crates. The way this is created is <a class="reference internal" href="../processes/instrument_details/DETMON-Instrument-Details.html"><span class="doc std std-doc">described on the ibex instrument page</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Run-control.html" class="btn btn-neutral float-left" title="Run Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configurations/Calibration-Files.html" class="btn btn-neutral float-right" title="Calibration files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

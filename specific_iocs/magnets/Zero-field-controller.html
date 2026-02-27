@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero field controller &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Zero field controller design" href="Zero-field-controller-design.html" />
+    <link rel="prev" title="Transtechnik Power Supply" href="Transtechnik-Power-Supply.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Danfysik.html">Danfysik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Zero-field-controller.html">Zero field controller (HIFI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HTS-Magnet.html">HTS Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MuSR-Steering-Magnets.html">MuSR Steering Magnets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Muon-Active-Compensation.html">Muon Active Compensation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Muon-NGS-Power-Supply-Firewall.html">Muon NGPS Power Supply Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NGPS-PSU.html">NGPS Power Supply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Power-Supplies.html">RIKEN Power Supplies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TDK-Lambda-Genesys.html">TDK Lambda Genesys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Transtechnik-Power-Supply.html">Transtechnik Power Supply</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Zero field controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Zero-field-controller-design.html">Zero field controller design</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+      <li class="breadcrumb-item active">Zero field controller</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/magnets/Zero-field-controller.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="zero-field-controller">
+<h1>Zero field controller<a class="headerlink" href="#zero-field-controller" title="Link to this heading"></a></h1>
+<p>This page describes some practical troubleshooting information about the muon zero field compensation system. For detailed discussion of the software design, see <a class="reference internal" href="Zero-field-controller-design.html"><span class="doc std std-doc">Zero field controller design</span></a>.</p>
+<section id="ioc-setup">
+<h2>IOC setup<a class="headerlink" href="#ioc-setup" title="Link to this heading"></a></h2>
+<p>On EMU, the following IOCs should be running:</p>
+<ul class="simple">
+<li><p>Zero-field compensation power supplies: <a class="reference internal" href="../power_supplies/Kepco.html"><span class="doc std std-doc">KEPCO_01, KEPCO_02, KEPCO_03</span></a>. These power supplies drive currents around the zero field compensation coils, producing a magnetic field which cancels out stray fields from neighbouring magnets.</p></li>
+<li><p>Zero-field magnetometer: <a class="reference internal" href="../fluxgates_magnetometers/Zero-Field-Magnetometer-IOC.html"><span class="doc std std-doc">ZFMAGFLD_01</span></a>. This measures the magnetic field near the sample position, using probes connected to an NI-DAQ box.</p></li>
+<li><p>Zero-field controller: ZFCNTRL_01. This implements the control logic which links the magnetometer and the power supplies.</p></li>
+</ul>
+<p>The zero-field controller implements most of the control logic using an SNL (sequencer) program. It talks via channel access reads and writes to the magnetometer and power supply IOCs.</p>
+</section>
+<section id="controller-error-states">
+<h2>Controller error states<a class="headerlink" href="#controller-error-states" title="Link to this heading"></a></h2>
+<section id="no-new-magnetometer-data">
+<h3>No new magnetometer data<a class="headerlink" href="#no-new-magnetometer-data" title="Link to this heading"></a></h3>
+<p>The zero field controller talks to the magnetometer IOC via channel access. Each time the controller takes a reading, it processes <code class="docutils literal notranslate"><span class="pre">$(MAGNETOMETER):TAKEDATA</span></code> (<code class="docutils literal notranslate"><span class="pre">$(MAGNETOMETER)</span></code> is an IOC macro passed in from the configuration). The zero field controller IOC then expects the <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:INPUTS_UPDATED</span></code> pv to be processed when new readings are ready.</p>
+<p>This error state indicates that the <code class="docutils literal notranslate"><span class="pre">INPUTS_UPDATED</span></code> pv was not processed. This may be because:</p>
+<ul class="simple">
+<li><p>The magnetometer IOC is not started or has crashed.</p></li>
+<li><p>The magnetometer IOC is taking too long to get new readings (the timeout is defined in <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:STATEMACHINE:READ_TIMEOUT</span></code>)</p></li>
+</ul>
+</section>
+<section id="magnetometer-overloaded">
+<h3>Magnetometer overloaded<a class="headerlink" href="#magnetometer-overloaded" title="Link to this heading"></a></h3>
+<p>The magnetometers have a finite range of fields which they can measure accurately. The magnetometer IOC will attempt to detect this condition and flag an error.</p>
+<p>This error state can be caused by:</p>
+<ul class="simple">
+<li><p>One of the external magnets being switched on - either the longitudinal or transverse fields can overload the magnetometer. Suggested solution: switch off the external magnets</p></li>
+<li><p>One of the power supplies used by the zero-field system has been driven too high, and is producing a field which overloads the magnetometer. Suggested solution:</p>
+<ul>
+<li><p>Put the zero field control system into manual mode</p></li>
+<li><p>Manually set the currents in all three zero-field power supplies to zero.</p></li>
+<li><p>Check that the zero field no longer reports an overload</p></li>
+<li><p>Put controller back into auto mode</p></li>
+<li><p>Check that it can stabilize the field to zero.</p></li>
+<li><p>Consult with the scientists to define appropriate limits on the Kepcos such that they can no longer overload the magnetometer.</p></li>
+</ul>
+</li>
+</ul>
+<p>If neither of the above steps works, consult the scientists. There may be a physical problem with the magnetometer probes or an external field which is too strong to be compensated. The scientists have independent hall probes which can be used to check for large fields at the sample position.</p>
+</section>
+<section id="magnetometer-data-invalid">
+<h3>Magnetometer data invalid<a class="headerlink" href="#magnetometer-data-invalid" title="Link to this heading"></a></h3>
+<p>This error state is caused when the magnetometer returns data marked with an INVALID alarm to the zero field controller. Check that the magnetometer can talk correctly with the hardware. If it is a DAQMX ioc, the ioc may need restarting after a connection to the hardware is reestablished. See <a class="reference internal" href="../fluxgates_magnetometers/Zero-Field-Magnetometer-IOC.html"><span class="doc std std-doc">Zero field magnetometer ioc</span></a> for further troubleshooting details on the magnetometer.</p>
+</section>
+<section id="power-supply-invalid">
+<h3>Power supply invalid<a class="headerlink" href="#power-supply-invalid" title="Link to this heading"></a></h3>
+<p>One of the readbacks from the power supplies was marked with an INVALID alarm. Check the zero field controller OPI’s “advanced” panel to see which power supply is having issues communicating - the readbacks will be highlighted with purple invalid alarms.</p>
+</section>
+<section id="power-supply-on-limits">
+<h3>Power supply on limits<a class="headerlink" href="#power-supply-on-limits" title="Link to this heading"></a></h3>
+<p>One of the power supplies has been driven onto a limit, and it’s output capped. This may indicate:</p>
+<ul class="simple">
+<li><p>That there is a strong external field present, which the zero-field system is unable to compensate for. Solution: talk with scientists to find out if there is a large external field</p></li>
+<li><p>That there is a problem with the magnetometer readbacks. Erroneous magnetometer data can cause the zero field controller to attempt large compensations which would drive the power supplies beyond the limits.</p></li>
+<li><p>That one or more of the <code class="docutils literal notranslate"><span class="pre">AMPS_PER_MG_*</span></code> macros has an incorrect sign. This will cause the controller to attempt to compensate for fields in the wrong direction, which will cause out-of-bounds setpoints to be written. If you need to re-determine these macros, see the <a class="reference internal" href="#zero-field-controller-calibration">calibration</a> section below.</p></li>
+</ul>
+</section>
+<section id="power-supply-write-failed">
+<h3>Power supply write failed<a class="headerlink" href="#power-supply-write-failed" title="Link to this heading"></a></h3>
+<p>The zero-field controller writes to the power supply IOCs and then waits for the setpoint readbacks to be within a tolerance of the setpoint. This tolerance is defined by <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:OUTPUT:PSU_WRITE_TOLERANCE</span></code> and it will wait with a timeout given by <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:STATEMACHINE:READ_TIMEOUT</span></code>.</p>
+<p>This error state means that writes were sent to the power supply but the setpoint readbacks did not get within tolerance. Things to check:</p>
+<ul class="simple">
+<li><p>Is the power supply communicating properly? You can put the zero field controller into manual mode and manually set setpoints</p></li>
+<li><p>Is the tolerance too tight?</p></li>
+<li><p>If it looks like the readbacks are getting within tolerance but slower than the read timeout, try to update the setpoint readback from hardware immediately after sending a new setpoint in the protocol file. If it’s still too slow the read timeout can be increased, but beware that very slow readbacks can affect the stability of the system and only use this as a last resort.</p></li>
+<li><p>If the power supply appears to write correctly for a short time, and then one of the Kepcos goes into a non-clearable comms error, verify that <code class="docutils literal notranslate"><span class="pre">REMOTE_ON_SET=NO</span></code> is set in the IOC macros for the three relevant Kepcos. This settings MUST be set for zero-field Kepcos.</p></li>
+</ul>
+</section>
+<section id="psu-high-limit-low-limit">
+<h3>PSU high limit &lt; low limit<a class="headerlink" href="#psu-high-limit-low-limit" title="Link to this heading"></a></h3>
+<p>This state is triggered if the power supply limits have been defined incorrectly in the configuration. Check the configuration macros for sign errors.</p>
+</section>
+<section id="psu-out-of-range">
+<h3>PSU out of range<a class="headerlink" href="#psu-out-of-range" title="Link to this heading"></a></h3>
+<p>This state is triggered if the power supply setpoint readback value is outside of the power supply limits.</p>
+</section>
+</section>
+<section id="miscellaneous-troubleshooting">
+<h2>Miscellaneous troubleshooting<a class="headerlink" href="#miscellaneous-troubleshooting" title="Link to this heading"></a></h2>
+<section id="zero-field-controller-reports-unstable-when-the-instrument-is-running-at-field">
+<h3>Zero field controller reports “unstable” when the instrument is running at field.<a class="headerlink" href="#zero-field-controller-reports-unstable-when-the-instrument-is-running-at-field" title="Link to this heading"></a></h3>
+<p>The “stability” indicator does not truly indicate stability - instead, it indicates that the measured field is within a tolerance of the setpoint. The tolerance is defined in <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:TOLERANCE</span></code>.</p>
+<p>This behaviour was specified in the <a class="reference internal" href="Zero-field-controller-design.html#zero-field-implementation"><span class="std std-ref">initial design document - see flowchart</span></a> which was agreed with the muon scientists, and should only be changed by agreement with all scientists using this system.</p>
+</section>
+<section id="zero-field-controller-always-goes-into-manual-after-being-restarted-e-g-on-config-load">
+<h3>Zero field controller always goes into manual after being restarted (e.g. on config load)<a class="headerlink" href="#zero-field-controller-always-goes-into-manual-after-being-restarted-e-g-on-config-load" title="Link to this heading"></a></h3>
+<p>This behaviour was requested in the <a class="reference internal" href="Zero-field-controller-design.html"><span class="doc std std-doc">initial design document</span></a>.</p>
+<blockquote>
+<div><p>On IOC start up I’d suggest &lt;…&gt;, and then go into Manual.</p>
+</div></blockquote>
+</section>
+<section id="a-magnetometer-overload-does-not-always-trigger-an-alarm">
+<h3>A ‘magnetometer overload’ does not always trigger an alarm<a class="headerlink" href="#a-magnetometer-overload-does-not-always-trigger-an-alarm" title="Link to this heading"></a></h3>
+<p>In <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5132">ticket 5132</a>, it was requested that the alarms on the magnetometer being overloaded should be suppressed if the zero-field controller is in manual mode. This is because, while the controller is in manual mode, the scientists will intentionally apply large external fields (which overload the magnetometer), but they do not want their users to be worried by alarms.</p>
+<p>In auto mode, the magnetometer being overloaded triggers a MAJOR alarm.</p>
+</section>
+<section id="the-loop-time-is-in-minor-alarm">
+<h3>The “loop time” is in minor alarm<a class="headerlink" href="#the-loop-time-is-in-minor-alarm" title="Link to this heading"></a></h3>
+<p>The state machine measures the total time it takes for all of it’s actions to complete. If this takes too long, a minor alarm is triggered on loop time. This usually suggests that one of the steps in the loop is taking much longer than expected (for example, hitting a timeout when trying to acquire data).</p>
+<p>This is highlighted as an alarm because a very slow loop time can affect the stability of the system and it’s response to external fields. However, if the system appears to be operating correctly despite this alarm, then it may be safely ignored.</p>
+</section>
+<section id="the-zero-field-system-is-generating-large-channel-access-put-logs">
+<h3>The zero field system is generating large channel access put logs<a class="headerlink" href="#the-zero-field-system-is-generating-large-channel-access-put-logs" title="Link to this heading"></a></h3>
+<p>Because the zero-field controller IOCs does channel access writes to the power supply IOCs, these writes would usually be logged. However the zero field controller can perform these writes several times per second, causing large put logs to build up.</p>
+<p>To solve this, the power supply setpoint PVs should be placed in the <code class="docutils literal notranslate"><span class="pre">NOTRAPW</span></code> (no trap write) EPICS access security group. This can be done in the configuration using the PV sets mechanism, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IN</span><span class="p">:</span><span class="n">EMU</span><span class="p">:</span><span class="n">KEPCO_01</span><span class="p">:</span><span class="n">CURRENT</span><span class="p">:</span><span class="n">SP</span><span class="o">.</span><span class="n">ASG</span> <span class="n">NOTRAPW</span>
+</pre></div>
+</div>
+<p>In future we may choose to implement a solution which only hides writes initiated by the zero field system, while preserving writes generated by a user.</p>
+</section>
+<section id="voltage-limits-set-incorrectly-or-being-reset-in-auto-mode">
+<h3>Voltage limits set incorrectly or being reset in auto mode<a class="headerlink" href="#voltage-limits-set-incorrectly-or-being-reset-in-auto-mode" title="Link to this heading"></a></h3>
+<p>The voltage limits are specified via IOC macros. The IOC sends the limits whenever the controller is in auto-feedback mode and the limits read back from the power supply are not within tolerance of the macro value (the tolerance is given in <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01:VOLT_LIMIT_TOLERANCE</span></code>).</p>
+</section>
+<section id="requested-current-is-not-being-delivered-by-power-supply">
+<h3>Requested current is not being delivered by power supply<a class="headerlink" href="#requested-current-is-not-being-delivered-by-power-supply" title="Link to this heading"></a></h3>
+<p>Check that the voltage limits are set high enough. If the readback voltage is equal to the limit, the power supply will not be able to produce any more current and this will impact the stability of the system. Check voltage limit settings in the IOC macros and consult with scientists if you need to raise them.</p>
+<p>IBEX may not have set remote mode correctly or something along those lines (noticed as part of checks on EMU). As a workaround until we have a fix, stop the Kepco X, Y and Z, Zero field controller and magnetometer IOCs and then start up the <code class="docutils literal notranslate"><span class="pre">zerofield.vi</span></code> in <code class="docutils literal notranslate"><span class="pre">LabView</span> <span class="pre">Modules\Muon</span> <span class="pre">Magnets\Zero</span> <span class="pre">Field</span> <span class="pre">Controller</span></code> for a few seconds. Then stop the <code class="docutils literal notranslate"><span class="pre">zerofield.vi</span></code> and first start up the Kepcos and then the Zero field controller and magnetometer IOCS.</p>
+</section>
+<section id="i-can-set-the-gas-flow-to-a-larger-percentage-but-not-to-a-smaller-one">
+<h3>I can set the gas flow to a larger percentage but not to a smaller one<a class="headerlink" href="#i-can-set-the-gas-flow-to-a-larger-percentage-but-not-to-a-smaller-one" title="Link to this heading"></a></h3>
+<p>The needle valve may not be connected correctly, ask the scientists</p>
+</section>
+</section>
+<section id="zero-field-controller-calibration">
+<h2>Calibration<a class="headerlink" href="#zero-field-controller-calibration" title="Link to this heading"></a></h2>
+<p>The zero-field controller IOCs has macros for the number of Amps per mG expected of each power supply. These values are obtained by running a calibration routine, which is defined in the <a class="reference external" href="https://github.com/ISISNeutronMuon/InstrumentScripts/tree/master/technique/muon"><code class="docutils literal notranslate"><span class="pre">InstrumentScripts</span></code></a> repository and loaded into the instrument scripts.</p>
+<p>The calibration routine will create several plots:</p>
+<ul class="simple">
+<li><p>Plots of Amps against measured mG for each axis.</p>
+<ul>
+<li><p>These plots should be linear.</p></li>
+<li><p>If there is a non-linear section in the graph, you will need to set power supply limits such that the non-linear sections are excluded and then re-run the script.</p></li>
+<li><p>The gradient of these lines are the numbers you will need for the <code class="docutils literal notranslate"><span class="pre">AMPS_PER_MG_*</span></code> macros.</p></li>
+</ul>
+</li>
+<li><p>Plots of measured field against time in both auto and manual mode.</p>
+<ul>
+<li><p>The main thing to look for in these plots is that they contain no particular trend - the values should look like noise. The graphs in auto mode and manual mode should look very similar.</p></li>
+<li><p>On EMU a noise level less than 5 mG should be achievable.</p></li>
+<li><p>If you see a trend of convergence towards zero, you can try making the feedback factor larger to make the zero field system compensate more aggressively. A value of 0.5 has been found to be a good starting point. Do not make feedback greater than 1 as this is highly likely to create oscillations.</p></li>
+<li><p>If you observe oscillations (particularly in auto mode), you can try reducing the feedback factor, however this will make the system slower to respond to real changes.</p></li>
+<li><p>If you see a trend of divergence away from zero, it is likely that there is a sign error in one of the Amps per mG numbers or in the magnetometer sensor matrix.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cdaq-zero-field-smoothing">
+<h2>cDAQ zero field smoothing<a class="headerlink" href="#cdaq-zero-field-smoothing" title="Link to this heading"></a></h2>
+<p>Averaging can be applied with the use of the <code class="docutils literal notranslate"><span class="pre">NUM_SAMPLES</span></code> macro in the <code class="docutils literal notranslate"><span class="pre">ZFMAGFLD</span></code> IOC. This can help with noise from the magnetometer quickly giving feedback to the zero field controller.</p>
+<p>To apply averaging, set the <code class="docutils literal notranslate"><span class="pre">NUM_SAMPLES</span></code> macro to however many samples you would like to compress. The default is 1, which doesn’t do anything and leaves the field values as-is.</p>
+</section>
+<section id="debug-mode">
+<h2>Debug mode<a class="headerlink" href="#debug-mode" title="Link to this heading"></a></h2>
+<p>The zero-field controller includes a very verbose debug mode, which is off by default. To enable it, use <code class="docutils literal notranslate"><span class="pre">caput</span> <span class="pre">%MYPVPREFIX%ZFCNTRL_01:DEBUG</span> <span class="pre">1</span></code>. This will log messages at various points in the state machine, to aid debugging.</p>
+<p><strong>With debug mode enabled, the zero field controller may log debug messages at the rate of ~100 messages/sec.</strong> This option should not be left on long-term, else the messages will quickly fill available disk space.</p>
+</section>
+<section id="autosaving-feedback-mode">
+<h2>Autosaving feedback-mode<a class="headerlink" href="#autosaving-feedback-mode" title="Link to this heading"></a></h2>
+<p>To autosave the feedback mode so it persists on an IOC restart add <code class="docutils literal notranslate"><span class="pre">ZFCNTRL_01__SAVEFEEDBACKMODE=YES</span></code> to your <code class="docutils literal notranslate"><span class="pre">globals.txt</span></code>.
+This is done with a <code class="docutils literal notranslate"><span class="pre">pass0</span></code> autosave which checks for changes every 5 seconds rather than the default when using <code class="docutils literal notranslate"><span class="pre">autosaveFields</span></code> which is 30 seconds.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Transtechnik-Power-Supply.html" class="btn btn-neutral float-left" title="Transtechnik Power Supply" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Zero-field-controller-design.html" class="btn btn-neutral float-right" title="Zero field controller design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

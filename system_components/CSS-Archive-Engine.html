@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS-Studio Archive Engine &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Building the archive engine for MySQL" href="archive/Building-the-archive-engine-for-mysql.html" />
+    <link rel="prev" title="Dynamic components (component switcher)" href="blockserver/Dynamic-components-%28component-switcher%29.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CS-Studio Archive Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archive/Building-the-archive-engine-for-mysql.html">Building the archive engine for MySQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archive/CSS-Troubleshooting.html">Archive Engine Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archive/Using-the-archive-engine-with-mysql.html">Using the archive engine with MySQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">CS-Studio Archive Engine</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/CSS-Archive-Engine.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="cs-studio-archive-engine">
+<h1>CS-Studio Archive Engine<a class="headerlink" href="#cs-studio-archive-engine" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>The Archive Engine is part of CSS and is used to archive PV values, the manual for which is <a class="reference external" href="http://cs-studio.sourceforge.net/docbook/ch11.html">here</a>. Note that most facilities use the <a class="reference external" href="https://slacmshankar.github.io/epicsarchiver_docs/index.html">Archive Appliance</a> as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don’t have that many PVs we have continued to use the Archive Engine.</p>
+<p>The code for the Archive Engine is <a class="reference external" href="https://github.com/ControlSystemStudio/cs-studio/tree/master/applications/archive">here</a>. We have our own fork of this <a class="reference external" href="https://github.com/ISISComputingGroup/cs-studio">here</a> but in general the two should be in sync as much as possible as <a class="reference internal" href="../client/GUI-CSS.html"><span class="doc std std-doc">discussed</span></a>.</p>
+<p>We have a built version of the ArchiveEngine at <code class="docutils literal notranslate"><span class="pre">\\shadow.isis.cclrc.ac.uk\ICP_Binaries$\CSS</span></code> which gets copied into <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\css-win.x86_64</span></code> during the build. The built version is manually updated to keep it in line with the cs-studio version, see <a class="reference internal" href="#css-archive-engine-updating">updating the archive engine</a>.</p>
+<p>We actually run two archive engines on each instrument:</p>
+<ol class="arabic simple">
+<li><p>Block archive, this just archives blocks and is restarted whenever the configuration (and blocks) change.</p></li>
+<li><p>Instrument archive, this is just started once and archives all PVs marked with the archive info setting which are in the database. See <a class="reference internal" href="#css-archive-engine-configuration">configuration</a>.</p></li>
+</ol>
+<p>To run these archive engines there are two batch files in <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\ArchiveEngine</span></code> called <code class="docutils literal notranslate"><span class="pre">start_block_archiver</span></code> and <code class="docutils literal notranslate"><span class="pre">start_inst_archiver</span></code>. They can also both be accessed via procserv as <strong>ARBLOCK</strong> and <strong>ARINST</strong>.</p>
+<p>Each Archive Engine can be accessed via a web browser when running. This is what the <a class="reference internal" href="../webdashboard/Web-Dashboard.html"><span class="doc std std-doc">web dashboard</span></a> is based on.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>The archive engine stores values in a MySQL database. To set the database up see <a class="reference internal" href="../deployment/deploy/Installing-and-Upgrading-MySQL.html"><span class="doc std std-doc">here</span></a>.</p>
+<p>Create the database using the mysql_schema.txt in <code class="docutils literal notranslate"><span class="pre">...EPICS\CSS\master\ArchiveEngine</span></code> which originates from <code class="docutils literal notranslate"><span class="pre">org.csstudio.archive.rdb\dbd</span></code></p>
+</section>
+<section id="css-archive-engine-configuration">
+<h2>Configuration<a class="headerlink" href="#css-archive-engine-configuration" title="Link to this heading"></a></h2>
+<p>To change properties of the archive engine in general such as which database it is pointing to and the channel access settings you can modify <code class="docutils literal notranslate"><span class="pre">mysql_settings_*.ini</span></code> in <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\ArchiveEngine</span></code>.</p>
+<p>The archive engine gets its configuration for what PVs to archive and how (i.e. frequency or monitoring) from the same database that it archives values to. Rather than editing this directly the easiest way to modify it is using the <a class="reference external" href="http://cs-studio.sourceforge.net/docbook/ch11.html#idm140164570515184">Archive Configuration Tool</a>.</p>
+<p>Various examples of the xml format used for the tool are in <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\ArchiveEngine</span></code>. They can be manually imported/exported using the get/set batch scripts in <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\ArchiveEngine</span></code>. The way this xml is created differs for the instrument and block archivers:</p>
+<section id="instrument-archive">
+<h3>Instrument Archive<a class="headerlink" href="#instrument-archive" title="Link to this heading"></a></h3>
+<p>For setting which PVs to archive you can add an info field into the relevant db. For example <code class="docutils literal notranslate"><span class="pre">info(archive,</span> <span class="pre">&quot;0.1</span> <span class="pre">VAL&quot;)</span></code> will archive the VAL field every 0.1 seconds. When the IOC is first started this info field data gets put into the ioc <a class="reference internal" href="mysql/Database-Schemas.html"><span class="doc std std-doc">database</span></a>. The <code class="docutils literal notranslate"><span class="pre">CSS\master\ArchiveEngine\make_archive_xml.py</span></code> script then converts this into xml for the Archive Config Tool to put into the archive engine database.</p>
+</section>
+<section id="block-archive">
+<h3>Block Archive<a class="headerlink" href="#block-archive" title="Link to this heading"></a></h3>
+<p>The configuration for logging blocks is created and set by the <a class="reference internal" href="BlockServer.html"><span class="doc std std-doc">Blockserver</span></a>.</p>
+</section>
+</section>
+<section id="css-archive-engine-updating">
+<h2>Updating the Archive Engine<a class="headerlink" href="#css-archive-engine-updating" title="Link to this heading"></a></h2>
+<p>As our version of the Archive Engine is no different to CSS we can just copy their builds to get the latest version. To do this:</p>
+<ol class="arabic simple">
+<li><p>Get the latest build of CSS archive engine from build server (in e.g. <code class="docutils literal notranslate"><span class="pre">E:\Jenkins\workspace\ControlSystemStudio\org.csstudio.sns\repository\target\products</span></code>)</p></li>
+<li><p>Place it in a folder called <code class="docutils literal notranslate"><span class="pre">css_archvive_engine</span></code></p></li>
+<li><p>Zip the folder and call it <code class="docutils literal notranslate"><span class="pre">css_archive_engine-win.x86_64.zip</span></code></p></li>
+<li><p>Copy this to ICP Binaries on to internal server</p></li>
+</ol>
+</section>
+<section id="editing-the-archive-engine">
+<h2>Editing the Archive Engine<a class="headerlink" href="#editing-the-archive-engine" title="Link to this heading"></a></h2>
+<p>In some cases we may want to build the archive engine ourselves. For example, if we want to edit the code. To do this follow the instructions laid out <a class="reference external" href="https://github.com/ISISComputingGroup/org.csstudio.sns">here</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="blockserver/Dynamic-components-%28component-switcher%29.html" class="btn btn-neutral float-left" title="Dynamic components (component switcher)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="archive/Building-the-archive-engine-for-mysql.html" class="btn btn-neutral float-right" title="Building the archive engine for MySQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

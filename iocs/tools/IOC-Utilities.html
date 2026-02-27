@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IOC Utilities &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Access Security" href="IOC-access-security.html" />
+    <link rel="prev" title="Creating a State Machine (Sequencer)" href="Creating-a-State-Machine-%28Sequencer%29.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Asyn-Interpose-Functions.html">Asyn Interpose functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AsynEchoDriver.html">Asyn Echo Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Autosave.html">Autosave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Convert-Record.html">Convert record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-State-Machine-%28Sequencer%29.html">Creating a State Machine (Sequencer)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IOC Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-access-security.html">IOC Access Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-modules-for-file-handling.html">ISIS modules for file handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Labview-Remote.html">LabVIEW Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lua.html">Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serve-file-contents-over-EPICS.html">Serve file contents over EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Template-Substitutions.html">Template Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities-Library.html">Utilities Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aSub-records.html">Asub records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="icpconfig.html">ICP Config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools &amp; Support Modules</a></li>
+      <li class="breadcrumb-item active">IOC Utilities</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tools/IOC-Utilities.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ioc-utilities">
+<h1>IOC Utilities<a class="headerlink" href="#ioc-utilities" title="Link to this heading"></a></h1>
+<p>The utilities comprise of useful IOC db templates and IOC shell utilities.</p>
+<section id="ioc-utils-templates">
+<h2>DB Templates<a class="headerlink" href="#ioc-utils-templates" title="Link to this heading"></a></h2>
+<p>Below are available utility templates for <a class="reference internal" href="Template-Substitutions.html"><span class="doc std std-doc">substitution</span></a>. In order to allow Make to build these, you need to add the following to your <code class="docutils literal notranslate"><span class="pre">Device/master/configure/RELEASE</span></code> file: <code class="docutils literal notranslate"><span class="pre">UTILITIES=$(SUPPORT)/utilities/master</span></code>.</p>
+<section id="field-setter">
+<h3>Field setter<a class="headerlink" href="#field-setter" title="Link to this heading"></a></h3>
+<p>This copies the specified field from a PV and sets it on a different PV. E.g.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>file $(UTILITIES)/db/field_setter.template { 
+  pattern 
+    {P,    FROM, TO, FIELD}
+
+    {&quot;\$(P)&quot;, &quot;UNITS&quot;, &quot;READING&quot;, &quot;EGU&quot;}
+    {&quot;\$(P)&quot;, &quot;UNITS&quot;, &quot;SP&quot;, &quot;EGU&quot;}
+
+}
+</pre></div>
+</div>
+<p>This example copies the <code class="docutils literal notranslate"><span class="pre">EGU</span></code> field from <code class="docutils literal notranslate"><span class="pre">$(P)READING</span></code> to <code class="docutils literal notranslate"><span class="pre">$(P)UNITS.EGU</span></code> and <code class="docutils literal notranslate"><span class="pre">$(P)SP.EGU</span></code>.</p>
+</section>
+<section id="ioc-utils-unit-setter">
+<h3>Unit setter<a class="headerlink" href="#ioc-utils-unit-setter" title="Link to this heading"></a></h3>
+<p>This copies units from a PV and sets them on a different PV. E.g.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>file $(UTILITIES)/db/unit_setter.template { 
+  pattern 
+    {P,    FROM, TO}
+
+    {&quot;\$(P)&quot;, &quot;UNITS&quot;, &quot;READING&quot;}
+    {&quot;\$(P)&quot;, &quot;UNITS&quot;, &quot;SP&quot;}
+
+}
+</pre></div>
+</div>
+<p>This will copy units from the value of the PV <code class="docutils literal notranslate"><span class="pre">$(P)UNITS</span></code> to <code class="docutils literal notranslate"><span class="pre">$(P)READING</span></code> and <code class="docutils literal notranslate"><span class="pre">$(P)SP</span></code>.</p>
+</section>
+<section id="ioc-utils-error-setter">
+<h3>Error Setting<a class="headerlink" href="#ioc-utils-error-setter" title="Link to this heading"></a></h3>
+<p>Creates a raw PV that can be written to by a stream protocol and then transfer the stream protocols PV error and value to the real PV.</p>
+<p>For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>file $(UTILITIES)/db/error_setter.template {
+    pattern {P, STREAM_PV, PV_NAME}
+
+    {&quot;\$(P)&quot;, &quot;FREQ:REF&quot;, &quot;FREQ:SP:RBV&quot;}
+    {&quot;\$(P)&quot;, &quot;FREQ:REF&quot;, &quot;FREQ&quot;}
+
+}
+</pre></div>
+</div>
+<p>In this example, the PV <code class="docutils literal notranslate"><span class="pre">FREQ:REF</span></code> reads the values from a status and then set the values, via the protocol file, in the <code class="docutils literal notranslate"><span class="pre">FREQ:SP:RBV:RAW.A</span></code> PV. This value and any error that occurs in the <code class="docutils literal notranslate"><span class="pre">FREQ:REF</span></code> is then set on the <code class="docutils literal notranslate"><span class="pre">FREQ:SP:RBV</span></code> PV. This allows you to easily show a disconnected error in PVs that are set from the protocol file.</p>
+<p>If you need to use the error setter for PVs that are defined in a .db file instead of .template file, the .substitutions file for that .db file needs to have a different name than the .db file, otherwise the error setter will not work.</p>
+</section>
+<section id="calibration-range">
+<h3>Calibration Range<a class="headerlink" href="#calibration-range" title="Link to this heading"></a></h3>
+<p>Calculates the maximum and minimum values of a selected calibration file. You can load this db with macros using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(UTILITIES)/db/calibration_range.db&quot;</span><span class="p">,</span><span class="s2">&quot;P=$(P),BDIR=TEMP.BDIR,TDIR=TEMP.TDIR,SPEC=TEMP.SPEC,HIGH_PV=TEMP:RANGE:OVER.B,LOW_PV=TEMP:RANGE:UNDER.B&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">TEMP</span></code> is a <code class="docutils literal notranslate"><span class="pre">cvt</span></code> record which uses the calibration file. The max value is outputted to <code class="docutils literal notranslate"><span class="pre">HIGH_PV</span></code> and the minimum to <code class="docutils literal notranslate"><span class="pre">LOW_PV</span></code>.</p>
+</section>
+<section id="check-stability">
+<h3>check stability<a class="headerlink" href="#check-stability" title="Link to this heading"></a></h3>
+<p>This is a generic utility for verifying that a value has been within tolerance of a setpoint and without any invalid alarms for N samples.</p>
+<p>The implementation is defined in <code class="docutils literal notranslate"><span class="pre">$(UTILITIES)/db/check_stability.db</span></code>.</p>
+<p>First load the DB records, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;$(UTILITIES)/db/check_stability.db&quot;</span><span class="p">,</span> <span class="s2">&quot;P=$(MYPVPREFIX)$(IOCNAME):,INP_VAL=$(MYPVPREFIX)$(IOCNAME):FIELD,SP=$(MYPVPREFIX)$(IOCNAME):FIELD:SP:RBV,NSAMP=5,TOLERANCE=$(TOLERANCE=0)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And then, from an existing DB, forward link to <code class="docutils literal notranslate"><span class="pre">$(P)STAB:SCANNOW</span></code> when it should take new samples (e.g. Forward-link from the readback PV).</p>
+<p>Whether the value is stable or not is then published in <code class="docutils literal notranslate"><span class="pre">$(P)STAB:IS_STABLE</span></code> - 1 if stable, 0 otherwise.</p>
+</section>
+</section>
+<section id="shell-utilities">
+<h2>Shell Utilities<a class="headerlink" href="#shell-utilities" title="Link to this heading"></a></h2>
+<p>There are some IOC shell utilities defined in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\support\utilities</span></code> which can be used in an IOC shell to help startup IOCs. The doxygen docs are here <a class="reference external" href="http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/">http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/</a>.</p>
+<section id="pausing-an-ioc-at-startup">
+<h3>Pausing an IOC at startup<a class="headerlink" href="#pausing-an-ioc-at-startup" title="Link to this heading"></a></h3>
+<p>You can pause an IOC at startup in the st.cmd using <code class="docutils literal notranslate"><span class="pre">msgBox</span></code>. This is imported in <code class="docutils literal notranslate"><span class="pre">IOC_NAME_registerRecordDeviceDriver</span> <span class="pre">pdbbase</span></code> so must come after that line.</p>
+<p>Usage: <code class="docutils literal notranslate"><span class="pre">msgBox</span> <span class="pre">&quot;title&quot;</span> <span class="pre">&quot;text&quot;</span></code>. Bring up a message box at the point in your startup that it is placed and pause the boot until you click the button.</p>
+<p>This could be useful if you want to run a debugger on the IOC, which you attach whilst the IOC boot is paused.</p>
+</section>
+</section>
+<section id="calc">
+<h2>calc<a class="headerlink" href="#calc" title="Link to this heading"></a></h2>
+<p>Performs an arithmetic operation on an expression and return the integer value to a specific environment variable:</p>
+<p><code class="docutils literal notranslate"><span class="pre">calc(&quot;ENV1&quot;,&quot;1+1&quot;,1,2)</span></code></p>
+<p>The arguments are as follows:</p>
+<ol class="arabic simple">
+<li><p>The output environment variable</p></li>
+<li><p>The expression to be evaluated</p></li>
+<li><p>Options</p></li>
+<li><p>The output length</p></li>
+</ol>
+<p>My best guess is that the expression is evaluated using the <code class="docutils literal notranslate"><span class="pre">calcPerform</span></code> method from the EPICS standard library so the expression should match the syntax as used in a calc record.</p>
+<p>The options are detailed in <code class="docutils literal notranslate"><span class="pre">ioccalc.cpp</span></code> in the utilities directory.</p>
+<p>Examples can be seen in the Galil and McLennan motor records.</p>
+</section>
+<section id="dcalc">
+<h2>dcalc<a class="headerlink" href="#dcalc" title="Link to this heading"></a></h2>
+<p>As calc, but returns a double value. The 4th argument is for the number of decimal places, not the value length.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dcalc(&quot;ENV1&quot;,&quot;0.1*0.2&quot;,1,2)</span></code></p>
+<p>An example can be seen in the Eurotherm IOC, file <code class="docutils literal notranslate"><span class="pre">st-timing.cmd</span></code>.</p>
+</section>
+<section id="stringtest">
+<h2>stringtest<a class="headerlink" href="#stringtest" title="Link to this heading"></a></h2>
+<p>TODO</p>
+</section>
+<section id="stringiftest-resultvar-lhs-operation-rhs">
+<h2><code class="docutils literal notranslate"><span class="pre">stringiftest(resultvar,</span> <span class="pre">lhs,</span> <span class="pre">operation,</span> <span class="pre">rhs)</span></code><a class="headerlink" href="#stringiftest-resultvar-lhs-operation-rhs" title="Link to this heading"></a></h2>
+<p>Defines an environment variables as empty or a comment depending on if lhs is empty. The variables defined are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IF&lt;resultsvar&gt;</span></code> ‘#’ if empty; otherwise ‘ ‘</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IFNOT&lt;resultsvar&gt;</span></code> ‘ ‘ if empty; otherwise ‘#’</p></li>
+</ul>
+<p>parameters</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">resultvar</span></code> - the basename of the environment variable to set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lhs</span></code> - the string to test</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operation</span></code> - set the first bit for verbose mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rhs</span></code> - used in <code class="docutils literal notranslate"><span class="pre">lhs==rhs</span></code> operation</p></li>
+</ol>
+<p>The operation argument is given as a decimal representation of binary flags:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operation</p></th>
+<th class="head text-center"><p>Flag</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Verbose</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">0x1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>length &gt; 0</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">0x2</span></code> (default)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>lhs == rhs</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">0x4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Inverse output</p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">0x8</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>To get the operation that you require, add the flag value in decimal. For example, to check if a string has finite length, your operation would be <code class="docutils literal notranslate"><span class="pre">2</span></code>. However, if you would like your flag to check if a string has a zero length, then add the inverse flag value <code class="docutils literal notranslate"><span class="pre">8</span></code>, meaning your operation would be <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">(8+2)</span></code>. To add a log for this operation, add the verbose flag of value <code class="docutils literal notranslate"><span class="pre">1</span></code>, so the total value is <code class="docutils literal notranslate"><span class="pre">11</span></code>.</p>
+<p>For debugging purposes it is advisable to add the verbose/logging flag of value <code class="docutils literal notranslate"><span class="pre">1</span></code> to your operation.</p>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h3>
+<p>A simple use case might be to only run certain sections of <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> for a serial port (<code class="docutils literal notranslate"><span class="pre">PORT</span></code> macro defined) and others only if <code class="docutils literal notranslate"><span class="pre">IPADDR</span></code> macro is defined. So we would use lines like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stringiftest(&quot;SERIAL&quot;, &quot;$(PORT=)&quot;)
+stringiftest(&quot;IPADDR&quot;, &quot;$(IPADDR=)&quot;)
+$(IFIPADDR) drvAsynIPPortConfigure(&quot;$(DEVICE)&quot;, &quot;$(IPADDR):12345&quot;)
+$(IFSERIAL) drvAsynSerialPortConfigure(&quot;$(DEVICE)&quot;, &quot;$(PORT)&quot;, 0, 1, 0, 0)
+</pre></div>
+</div>
+<p>From the DKFPS IOC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stringiftest</span><span class="p">(</span><span class="s2">&quot;POLAR&quot;</span> <span class="s2">&quot;$(POLARITY=&quot;</span><span class="n">BIPOLAR</span><span class="s2">&quot;)&quot;</span> <span class="mi">5</span> <span class="s2">&quot;BIPOLAR&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The operation value is <code class="docutils literal notranslate"><span class="pre">5</span></code>, or <code class="docutils literal notranslate"><span class="pre">4+1</span></code>, so this checks the lhs (<code class="docutils literal notranslate"><span class="pre">$(POLARITY)</span></code>, which defaults to <code class="docutils literal notranslate"><span class="pre">&quot;BIPOLAR&quot;</span></code>) equals the right hand side <code class="docutils literal notranslate"><span class="pre">&quot;BIPOLAR&quot;</span></code>, and puts the result in the <code class="docutils literal notranslate"><span class="pre">$(POLAR)</span></code> also creating <code class="docutils literal notranslate"><span class="pre">$(IFPOLAR)</span></code> and <code class="docutils literal notranslate"><span class="pre">$(IFNOTPOLAR)</span></code> with appropriate space or <code class="docutils literal notranslate"><span class="pre">#</span></code> character. So if you wanted to execute some lines of <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> if <code class="docutils literal notranslate"><span class="pre">POLARITY</span></code> equals <code class="docutils literal notranslate"><span class="pre">BIPOLAR</span></code> and some if it wasn’t you would type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFPOLAR) do something 
+$(IFNOTPOLAR) do something else
+</pre></div>
+</div>
+<p>You’ll see this used a lot in the form <code class="docutils literal notranslate"><span class="pre">$(IFDEVSIM)</span></code> and <code class="docutils literal notranslate"><span class="pre">$(IFNOTDEVSIM)</span></code> to either connect to the real hardware or an emulator</p>
+<p>Search the <code class="docutils literal notranslate"><span class="pre">EPICS-ioc</span></code> repository for <code class="docutils literal notranslate"><span class="pre">stringiftest</span></code> to see many other examples of usage</p>
+</section>
+</section>
+<section id="setiocname">
+<h2>setIOCName<a class="headerlink" href="#setiocname" title="Link to this heading"></a></h2>
+<p>TODO</p>
+</section>
+<section id="getiocname">
+<h2>getIOCName<a class="headerlink" href="#getiocname" title="Link to this heading"></a></h2>
+<p>TODO</p>
+</section>
+<section id="getiocgroup">
+<h2>getIOCGroup<a class="headerlink" href="#getiocgroup" title="Link to this heading"></a></h2>
+<p>TODO</p>
+</section>
+<section id="mkdir">
+<h2>mkdir<a class="headerlink" href="#mkdir" title="Link to this heading"></a></h2>
+<p>TODO</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Creating-a-State-Machine-%28Sequencer%29.html" class="btn btn-neutral float-left" title="Creating a State Machine (Sequencer)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-access-security.html" class="btn btn-neutral float-right" title="IOC Access Security" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

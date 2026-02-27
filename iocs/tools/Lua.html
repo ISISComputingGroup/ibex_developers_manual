@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lua &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LuaCheck" href="lua/LuaCheck.html" />
+    <link rel="prev" title="LabVIEW Remote" href="Labview-Remote.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Asyn-Interpose-Functions.html">Asyn Interpose functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AsynEchoDriver.html">Asyn Echo Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Autosave.html">Autosave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Convert-Record.html">Convert record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-State-Machine-%28Sequencer%29.html">Creating a State Machine (Sequencer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Utilities.html">IOC Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-access-security.html">IOC Access Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-modules-for-file-handling.html">ISIS modules for file handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Labview-Remote.html">LabVIEW Remote</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lua</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lua/LuaCheck.html">LuaCheck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lua/Our-Lua-Utility-Functions.html">Lua Utility Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Serve-file-contents-over-EPICS.html">Serve file contents over EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Template-Substitutions.html">Template Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities-Library.html">Utilities Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aSub-records.html">Asub records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="icpconfig.html">ICP Config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools &amp; Support Modules</a></li>
+      <li class="breadcrumb-item active">Lua</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tools/Lua.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lua">
+<h1>Lua<a class="headerlink" href="#lua" title="Link to this heading"></a></h1>
+<p>I’ve added the EPICS Lua support module to our build system. Lua is a scripting language
+designed to be embedded, it has a small footprint and is reasonably powerful. It would
+provide an alternative to jumping through hoops in st.cmd syntax but also provides a
+few other options. There are examples of a Lua script used in the DETADC, Attocube and OERCONE IOCs.</p>
+<section id="to-add-the-lua-support-module-to-an-ioc">
+<h2>To add the Lua support module to an IOC<a class="headerlink" href="#to-add-the-lua-support-module-to-an-ioc" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>add    LUA=$(SUPPORT)/lua/master     to configure/RELEASE
+add    luaSupport.dbd                to the IOC Makefile DBD list
+add    lua   and   asyn              to the IOC Makefile   _LIBS    list
+</pre></div>
+</div>
+</section>
+<section id="how-to-use-it">
+<h2>How to use it<a class="headerlink" href="#how-to-use-it" title="Link to this heading"></a></h2>
+<p>All <code class="docutils literal notranslate"><span class="pre">iocsh</span></code> commands are imported into Lua and so you can do things
+like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span>
+<span class="n">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Loading instance: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
+    <span class="n">iocsh</span><span class="o">.</span><span class="n">dbLoadRecords</span><span class="p">(</span><span class="s2">&quot;test.db&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;P=xxx:,Q=</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>You execute files from st.cmd using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;LUA_PATH&quot;</span><span class="p">,</span> <span class="s2">&quot;$</span><span class="si">{UTILITIES}</span><span class="s2">/lua&quot;</span><span class="p">)</span>
+<span class="n">epicsEnvSet</span><span class="p">(</span><span class="s2">&quot;LUA_SCRIPT_PATH&quot;</span><span class="p">,</span><span class="s2">&quot;$</span><span class="si">{TOP}</span><span class="s2">/iocBoot/$</span><span class="si">{IOC}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">luash</span><span class="p">(</span><span class="s2">&quot;file.lua&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or just typing <code class="docutils literal notranslate"><span class="pre">luash</span></code> puts you into an interactive Lua shell.</p>
+<p>The Lua script record is like a calcout record but can execute Lua script. It might be
+an alternative to e.g. aSub records for parsing stream device strings when writing C is
+a bit overkill.</p>
+<p>As well as being able to read/write PVs there is also some asyn integration into Lua,
+so you can read/write/set asyn parameters
+from Lua command line or script record, or even talk to a device by creating an asyn IP port
+and sending strings. See the documentation directory in Lua support module  and the
+example scripts directory in iocBoot</p>
+<p>There is a powerpoint about Lua here: <a class="reference external" href="https://indico.cern.ch/event/766611/contributions/3438291/attachments/1856812/3050126/Lang-Lua_Integrating_Scripting_Language.pdf">https://indico.cern.ch/event/766611/contributions/3438291/attachments/1856812/3050126/Lang-Lua_Integrating_Scripting_Language.pdf</a></p>
+<p>See also the documentation on our <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-lua">epics-lua module</a> or the actual <a class="reference external" href="https://github.com/epics-modules/lua">epics module</a> for more information on using Lua in EPICS.</p>
+</section>
+<section id="importing-lua-functions-from-other-files">
+<h2>Importing Lua Functions from Other Files<a class="headerlink" href="#importing-lua-functions-from-other-files" title="Link to this heading"></a></h2>
+<p>When importing functions from other files you must be very careful not to pollute your scope as by default anything declared in lua is in the global scope. This means that if I have a file <code class="docutils literal notranslate"><span class="pre">importable_script.lua</span></code> of</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function</span> <span class="n">my_func</span><span class="p">()</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and I import this file from elsewhere using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">require</span> <span class="s2">&quot;importable_script.lua&quot;</span>
+<span class="n">my_func</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>I can call <code class="docutils literal notranslate"><span class="pre">my_func</span></code> as it will be in the global variables of my new script. This means the require statement is polluting my namespace, to get around this we can change <code class="docutils literal notranslate"><span class="pre">importable_script.lua</span></code> to read:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">available_functions</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">local</span> <span class="n">function</span> <span class="n">available_functions</span><span class="o">.</span><span class="n">my_func</span><span class="p">()</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">available_functions</span>
+</pre></div>
+</div>
+<p>when I do the import I can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_import</span> <span class="o">=</span> <span class="n">require</span> <span class="s2">&quot;importable_script.lua&quot;</span>
+<span class="n">my_import</span><span class="o">.</span><span class="n">my_func</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>now the only think in my global namespace will be <code class="docutils literal notranslate"><span class="pre">my_import</span></code>, which I specifically put in there, which contains all the functions I’ve imported for later reference.</p>
+<p>We have a few Lua utility functions available in our utilities submodule. For usage and how to add to them see <a class="reference internal" href="lua/Our-Lua-Utility-Functions.html"><span class="doc std std-doc">this page</span></a>.</p>
+</section>
+<section id="style-guide">
+<h2>Style Guide<a class="headerlink" href="#style-guide" title="Link to this heading"></a></h2>
+<p>We are using the style guide from LuaRocks as documented in <a class="reference external" href="https://github.com/luarocks/lua-style-guide#conditional-expressions">https://github.com/luarocks/lua-style-guide#conditional-expressions</a></p>
+</section>
+<section id="luacheck">
+<h2>LuaCheck<a class="headerlink" href="#luacheck" title="Link to this heading"></a></h2>
+<p>For installation, usage and troubleshooting see the <a class="reference internal" href="lua/LuaCheck.html"><span class="doc std std-doc">luacheck page</span></a></p>
+</section>
+<section id="issues-with-epics-lua-and-some-answers">
+<h2>Issues with Epics Lua and some answers<a class="headerlink" href="#issues-with-epics-lua-and-some-answers" title="Link to this heading"></a></h2>
+<p>Whilst during the conversion of the oercone IOC to Lua we came across a few issues with the epics Lua library.</p>
+<p>The process for resolving names in epics Lua starts with looking for a variable with that name, if it does not find one it looks in the running EPICS environment and then if it cannot find anything there it looks for a matching function name.</p>
+<p>This is great so that we can access macros easily by instead of doing <code class="docutils literal notranslate"><span class="pre">$(MYMACRO)</span></code> from cmd we can just do <code class="docutils literal notranslate"><span class="pre">MYMACRO</span></code>. However, we cannot stipulate a default. There is a Lua utility function we have written, <code class="docutils literal notranslate"><span class="pre">getMacroValue(options)</span></code>, which expects to be called like this <code class="docutils literal notranslate"><span class="pre">getMacroValue{macro=&quot;MYMACRO&quot;,</span> <span class="pre">default=&quot;VAL&quot;}</span></code> or <code class="docutils literal notranslate"><span class="pre">getMacroValue{macro=&quot;MYMACRO&quot;}</span></code>.</p>
+<p>The way that EPICs calls lua scripts causes local variables to fall out of scope between lines such that a script where you have written</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will print <code class="docutils literal notranslate"><span class="pre">nil</span></code> as <code class="docutils literal notranslate"><span class="pre">text</span></code> has not been defined but</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span><span class="p">;</span><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will successfully print <code class="docutils literal notranslate"><span class="pre">Hello</span></code>.</p>
+<p>Fortunately, if we have a multiline chunk such as in a function we can use local variables. Thus to limit the amount of global variables we have to use we have decided to surround our lua code in functions. This means that:</p>
+<ul class="simple">
+<li><p>Anything outside of a function must be declared as global for it to be used later on in the script. We think <a class="reference external" href="https://epics-lua.readthedocs.io/en/latest/using-lua-shell.html#common-lua-environments">this</a> might <code class="docutils literal notranslate"><span class="pre">fix</span></code> the use of local variables outside of functions but it’s effectively putting them in a global scope anyway.</p></li>
+<li><p>This includes the functions themselves, so we must take care to not give the same names to functions in the same iocBoot.</p></li>
+<li><p>I suggest if we have a main function for each lua file we give it the name <code class="docutils literal notranslate"><span class="pre">&lt;iocname&gt;_&lt;filename&gt;_main</span></code> e.g. for the oercone devices st.lua: <code class="docutils literal notranslate"><span class="pre">oercone_st_main</span></code> and it’s st-common.lua: <code class="docutils literal notranslate"><span class="pre">oercone_stcommon_main</span></code>.</p></li>
+</ul>
+<p>You may see that a variable was once the value you expect and then changes to something like <code class="docutils literal notranslate"><span class="pre">func_meta:</span> <span class="pre">008...</span></code>. This is because the variable name has dropped out of scope and epics Lua attempts to look for a macro and fails, so then looks for a function and returns the func_meta string.</p>
+</section>
+<section id="more-details">
+<h2>More details<a class="headerlink" href="#more-details" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lua/LuaCheck.html">LuaCheck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua/Our-Lua-Utility-Functions.html">Lua Utility Functions</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Labview-Remote.html" class="btn btn-neutral float-left" title="LabVIEW Remote" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lua/LuaCheck.html" class="btn btn-neutral float-right" title="LuaCheck" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

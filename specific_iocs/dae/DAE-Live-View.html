@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live View &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="isisicp Standard startup log" href="DAE-Normal-Log.html" />
+    <link rel="prev" title="DAE (Data Acquisition Electronics)" href="../DAE-and-the-ICP.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Live View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DAE-Normal-Log.html"><code class="docutils literal notranslate"><span class="pre">isisicp</span></code> Standard startup log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DAE-PVs.html">DAE Spectra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DAE-Pre-and-Post-commands.html">DAE Pre &amp; Post commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DAE-Trouble-Shooting.html">DAE Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dae-Spectra-Updating-Problem.html">Dae Spectra Updating Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Experimental-Runs.html">Experimental Run Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISISICP---enabling-incremental-event-file-creation.html">ISISICP - enabling incremental event file creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Shrinking-ISISICP-Memory-Usage-on-Simulated-DAE-machines.html">Reducing <code class="docutils literal notranslate"><span class="pre">ISISICP</span></code> memory use in simulation mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+      <li class="breadcrumb-item active">Live View</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/dae/DAE-Live-View.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="live-view">
+<h1>Live View<a class="headerlink" href="#live-view" title="Link to this heading"></a></h1>
+<section id="normal-integral-2d-detector-live-view">
+<h2>normal integral 2D detector live view<a class="headerlink" href="#normal-integral-2d-detector-live-view" title="Link to this heading"></a></h2>
+<p>The DAE, when in <a class="reference internal" href="../DAE-and-the-ICP.html#dae-event-histogram-modes"><span class="std std-ref">event mode</span></a>, can serve up an <a class="reference external" href="https://github.com/areaDetector/ADCore">AreaDetector</a> image of the neutron data as a <code class="docutils literal notranslate"><span class="pre">detector</span> <span class="pre">live</span> <span class="pre">view</span></code> device screen. The data created by areaDetector can also be viewed using an ImageJ plugin or as an Intensity plot in CSS.</p>
+<p>Using the live view device screens you can add several views, the DET macro indicates a view number and starts at 1 and can go up to 10</p>
+<p>Running the DAE in event mode works best (is quickest), this will need an event mode wiring table and also defining a second time regime in the time channels section. If you need to run it in histogram mode it will be slower as it will have to download all histograms to integrate every time, in event mode these are pre-created for fast access.</p>
+<p>Live view PVs have a root prefix of <code class="docutils literal notranslate"><span class="pre">%MYPVPREFIX%DAE:AD1:</span></code> for detector view 1 etc</p>
+<p>Open the live view settings page and then you need to specify a few items. Standard data is stored in the DAE as a set of spectra starting at number 1 (spectrum 0 is a special spectrum for unassigned data). The DAE has no knowledge of detector shape, however a contiguous block of spectrum numbers usually corresponds to rastering by row or column of a 2D detector. So for example you may have a detector sized 600x400 pixels - in the DAE this may be stored as 600 contiguous blocks of 400 elements, so you need to tell the view</p>
+<ul class="simple">
+<li><p>starting spectrum number: at what spectrum number does the first detector pixel correspond to. This is usually not 1 as the first few spectra are usually assigned to monitors.</p></li>
+<li><p>x pixels and y pixels: size of the detector
+The liveview display will then real <code class="docutils literal notranslate"><span class="pre">xsize</span></code> x <code class="docutils literal notranslate"><span class="pre">ysize</span></code> spectra and recreate the two dimensional structure. Other variables you can set are:</p></li>
+<li><p>integral mode: see total counts so far, or counts since last poll</p></li>
+<li><p>integral trans mode: do you want to see plot of pure counts, logarithm of counts etc.</p></li>
+<li><p>scale to zero: is scale to use  <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">-&gt;</span> <span class="pre">max</span> <span class="pre">counts</span></code> or <code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">counts</span></code> to <code class="docutils literal notranslate"><span class="pre">max</span> <span class="pre">counts</span></code></p></li>
+<li><p>specify a region of interest (ROI) and binning, or just leave as as to see all</p></li>
+<li><p>spec mode: is the dae in event or <a class="reference internal" href="../DAE-and-the-ICP.html#dae-event-histogram-modes"><span class="std std-ref">histogram mode</span></a></p></li>
+<li><p>data mode: normally <code class="docutils literal notranslate"><span class="pre">TOFSummed</span></code>, <code class="docutils literal notranslate"><span class="pre">TOF</span> <span class="pre">channel</span></code> is a special mode for linear (1D) detectors, it uses the linear detector pixel number as one axes and the time of flight as the other giving a 2D view. Used on POLREF and INTER for example.</p></li>
+<li><p>rotation: is the image the right way round or needs to be flipped</p></li>
+<li><p>period: dae period number to display, or use 0 for current period</p></li>
+<li><p>running: choose to enable or disable liveview.</p></li>
+</ul>
+<p>depending on the number of spectra, EPICS <code class="docutils literal notranslate"><span class="pre">MAX_ARRAY_BYTES</span></code> may need adjusting - this would only be for a PCAS based server, so the gateway for example if you need to view the liveview off instrument.</p>
+</section>
+<section id="d-detector-with-tof-axis-giving-2d-view-data-mode-tof-channel">
+<h2>1D detector with TOF axis giving 2D view (data mode: <code class="docutils literal notranslate"><span class="pre">TOF</span> <span class="pre">channel</span></code>)<a class="headerlink" href="#d-detector-with-tof-axis-giving-2d-view-data-mode-tof-channel" title="Link to this heading"></a></h2>
+<p>In this case Y is the spectrum number and X is the time of flight bin.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Y</span> <span class="pre">Pixels</span></code> is the number of spectra in the 1D detector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">Pixels</span></code> is (number_of_time_channels + 1)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">number_of_time_channels</span></code> is shown on the DAE Run Information tab as <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Channels</span></code> (this number will change if you change time channel boundaries)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="error-on-profile-picture-about-not-enough-data-for-datawidth-height">
+<h2>error on profile picture about not enough data for <code class="docutils literal notranslate"><span class="pre">dataWidth*height</span></code><a class="headerlink" href="#error-on-profile-picture-about-not-enough-data-for-datawidth-height" title="Link to this heading"></a></h2>
+<p>This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by <code class="docutils literal notranslate"><span class="pre">NELEMENTS</span></code> in <code class="docutils literal notranslate"><span class="pre">liveview.cmd</span></code> in <code class="docutils literal notranslate"><span class="pre">ioc/isisdae</span></code>. It is set by the macro <code class="docutils literal notranslate"><span class="pre">LIVEVIEW_NELEMENTS</span></code> it needs to be at least <code class="docutils literal notranslate"><span class="pre">sizeX</span></code> x <code class="docutils literal notranslate"><span class="pre">sizeY</span></code>. In some cases <code class="docutils literal notranslate"><span class="pre">EPICS_CA_MAX_ARRAY_BYTES</span></code> could need increasing, but we have set this quite large now (and EPICS7 did away with it), so it would be gateway/pcaspy/CSS where it might have an effect.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../DAE-and-the-ICP.html" class="btn btn-neutral float-left" title="DAE (Data Acquisition Electronics)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="DAE-Normal-Log.html" class="btn btn-neutral float-right" title="isisicp Standard startup log" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

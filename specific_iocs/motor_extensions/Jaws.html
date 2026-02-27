@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaws &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Muon Front end slits" href="jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End.html" />
+    <link rel="prev" title="IMAT Lens Adjustment" href="IMAT-Lens-Adjustment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Goniometer-Axes.html">ALF Goniometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Bump-Strip.html">Bump Strips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Collision-Detection-Project.html">Collision Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-soft-motors-to-control-real-motors.html">Motor Coordinate Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Fermi-Chopper-Lifter.html">Fermi chopper lifter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Lens-Adjustment.html">IMAT Lens Adjustment</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Jaws</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End.html">Muon Front end slits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jaws/EnginX-Jaws.html">ENGIN-X Jaws</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jaws/GEM-Beamscraper-Jaws.html">GEM Beamscraper Jaws</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jaws/Gem-Jaws-Manager.html">GEM Jaws Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jaws/Jaws-Managers.html">Jaws Managers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jaws/Nimrod-Jaws-Manager.html">NIMROD Jaws</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jaws/Polaris-Jaws.html">POLARIS Jaws</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Sample-Changer.html">MARI Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN%2C-LET-and-WISH-Oscillating-radial-collimators.html">MERLIN, LET and WISH Oscillating Radial Collimators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motion-Set-points.html">Motion Set Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-analyser-towers.html">OSIRIS Analyser Towers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Portable-Eulerian-Cradle.html">Portable Eulerian Cradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Front-Beam-Stop-inhibit-movement.html">SANS2D Front Beam Stop Inhibit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-apertures-and-guides.html">SANS2D Apertures and Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-vacuum-tank-collision-avoidance.html">SANS2D vacuum tank collision avoidance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sample-Changer-Support-Module.html">SANS Sample Changer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tosca-sample-positioner.html">TOSCA sample positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-DMS.html">ZOOM Detector motion system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-PGC.html">ZOOM Polariser, Guide and Collimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-sample-stack.html">ZOOM Sample Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors-Extensions.html">Motor Extensions</a></li>
+      <li class="breadcrumb-item active">Jaws</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motor_extensions/Jaws.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="jaws">
+<h1>Jaws<a class="headerlink" href="#jaws" title="Link to this heading"></a></h1>
+<p>The jaws are an abstraction layer in the form of a set of records that can be placed onto 4 motors which represent the North, South, East and West blade. They will allow a centre and gap to be set in both horizontal and vertical directions. It is a requirement that if an underlying motor position is set then the gap and centre should adjust to be in sync.</p>
+<p>The jaws are a <code class="docutils literal notranslate"><span class="pre">.db</span></code> record which can be added to most motors. The <code class="docutils literal notranslate"><span class="pre">.db</span></code> is assembled from records for individual jaw blades, and header records which describe the jawset as a whole (e.g. the overall lock status depending on the lock status of each individual blade). They are loaded via a <code class="docutils literal notranslate"><span class="pre">jaws.cmd</span></code> file in the configuration area which is read by the motor IOCs. The exact location is dependent on the type of motor.</p>
+<section id="standard-jaws">
+<h2>Standard Jaws<a class="headerlink" href="#standard-jaws" title="Link to this heading"></a></h2>
+<p>This is a standard full set of jaws (N,S,E,W blades) that are entirely controlled by one motor IOC.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<p>For a galil they might be in a file in the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-motorExtensions/tree/master/settings">motor extensions repository’s settings area</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Define a set of jaws from first 4 motors on first controller (if present)
+$(IFIOC_GALIL_01) dbLoadRecords(&quot;$(JAWS)/db/jaws.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS1:,mXN=MTR0101,mXS=MTR0102,mXE=MTR0103,mXW=MTR0104&quot;)
+$(IFIOC_GALIL_01) dbLoadRecords(&quot;$(JAWS)/db/jaws.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS2:,mXN=MTR0105,mXS=MTR0106,mXE=MTR0107,mXW=MTR0108&quot;)
+
+# Define a set of jaws from first 4 motors on second controller (if present)
+$(IFIOC_GALIL_02) dbLoadRecords(&quot;$(JAWS)/db/jaws.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS3:,mXN=MTR0201,mXS=MTR0202,mXE=MTR0203,mXW=MTR0204&quot;)
+$(IFIOC_GALIL_02) dbLoadRecords(&quot;$(JAWS)/db/jaws.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS4:,mXN=MTR0205,mXS=MTR0206,mXE=MTR0207,mXW=MTR0208&quot;)
+</pre></div>
+</div>
+<p>The motor axes would then be mapped as follows:
+<img alt="Standard Jaws Setup" src="../../_images/standard_jaws.jpg" /></p>
+</section>
+</section>
+<section id="split-jaws">
+<h2>Split Jaws<a class="headerlink" href="#split-jaws" title="Link to this heading"></a></h2>
+<p>Jaws can sometimes be set up such that individual blades of the same jaw set are controlled by separate motor controllers, e.g. North and South are controlled through <code class="docutils literal notranslate"><span class="pre">GALIL_01</span></code> and East and West are controlled through <code class="docutils literal notranslate"><span class="pre">GALIL_02</span></code>. There is a separate set of <code class="docutils literal notranslate"><span class="pre">.db</span></code> records that can be loaded by each IOC individually for this case.</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">jaws.cmd</span></code> analog to the one above, but where all vertical blades are controlled by motor controller 01, and all horizontal blades are controlled by motor controller 02, would look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># JAWS1
+$(IFIOC_GALIL_01=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_header_vertical.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS1:,mXN=MTR0101,mXS=MTR0102,mXE=MTR0201,mXW=MTR0202&quot;)
+$(IFIOC_GALIL_02=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_horizontal.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS1:,mXW=MTR0201,mXE=MTR0202&quot;)
+
+# JAWS2
+$(IFIOC_GALIL_01=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_header_vertical.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS2:,mXN=MTR0103,mXS=MTR0104,mXE=MTR0203,mXW=MTR0204&quot;)
+$(IFIOC_GALIL_02=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_horizontal.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS2:,mXW=MTR0203,mXE=MTR0204&quot;)
+
+# JAWS3
+$(IFIOC_GALIL_01=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_header_vertical.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS3:,mXN=MTR0105,mXS=MTR0106,mXE=MTR0205,mXW=MTR0206&quot;)
+$(IFIOC_GALIL_02=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_horizontal.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS3:,mXW=MTR0205,mXE=MTR0206&quot;)
+
+# JAWS4
+$(IFIOC_GALIL_01=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_header_vertical.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS4:,mXN=MTR0107,mXS=MTR0108,mXE=MTR0207,mXW=MTR0208&quot;)
+$(IFIOC_GALIL_02=#) dbLoadRecords(&quot;$(JAWS)/db/split_jaws_horizontal.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS4:,mXW=MTR0207,mXE=MTR0208&quot;)
+</pre></div>
+</div>
+<p>The motor axes would then be mapped as follows:
+<img alt="Split Jaws Setup" src="../../_images/split_jaws.jpg" /></p>
+<section id="notes">
+<h4>Notes:<a class="headerlink" href="#notes" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">split_jaws_header_vertical.db</span></code> and <code class="docutils literal notranslate"><span class="pre">split_jaws_horizontal.db</span></code> each expect the other one to be loaded and the jaws will not work correctly if this is not the case.</p></li>
+<li><p>We currently do not support one direction (e.g. vertical) to be split across separate controllers, e.g. J1 North on <code class="docutils literal notranslate"><span class="pre">MTR0101</span></code> and J1 South on <code class="docutils literal notranslate"><span class="pre">MTR0201</span></code></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="vertical-jaws">
+<h2>Vertical Jaws<a class="headerlink" href="#vertical-jaws" title="Link to this heading"></a></h2>
+<p>Some Jaw sets consist of only vertical jaws (i.e. east and west blades do not physically exist). A separate <code class="docutils literal notranslate"><span class="pre">.db</span></code> exists for this type of device which contains header and individual blade records assuming vertical blades only.</p>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">jaws.cmd</span></code> for one jaw set only consisting of vertical blades:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFIOC_GALIL_01) dbLoadRecords(&quot;$(JAWS)/db/jaws_vertical.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,JAWS=JAWS1:,mXN=MTR0101,mXS=MTR0102&quot;)
+</pre></div>
+</div>
+<p>Note: We do not currently support horizontal only jaws.</p>
+</section>
+</section>
+<section id="alias-jaws">
+<h2>Alias Jaws<a class="headerlink" href="#alias-jaws" title="Link to this heading"></a></h2>
+<p>In some cases the jaws logic is performed by the controller itself. Noticeably for the <a class="reference internal" href="../motors/Beckhoff.html"><span class="doc std std-doc">Beckhoff</span></a>. In this case there will be normal motor axes of the form <code class="docutils literal notranslate"><span class="pre">MOT:MTR0X0X</span></code> that describe the centres and gaps. The alias jaws <code class="docutils literal notranslate"><span class="pre">db</span></code> and <code class="docutils literal notranslate"><span class="pre">cmd</span></code> will load aliases for these so they look like conventional jaws.</p>
+</section>
+<section id="archive-deadbands">
+<h2>Archive deadbands<a class="headerlink" href="#archive-deadbands" title="Link to this heading"></a></h2>
+<p>On jaw sets which have fluctuating positions, it was seen that the databases were getting filled up with updates from the jaws. To stop this happening, the archive deadband (<code class="docutils literal notranslate"><span class="pre">ADEL</span></code>) field is copied from the underlying motor to the jaw.</p>
+<p>For the jaws positions that depend on more than one jaw blade (the centres and gaps), it was decided that the archive deadband should be taken from one of the jaws only. They follow this convention:</p>
+<ul class="simple">
+<li><p><strong>Vertical</strong> (<code class="docutils literal notranslate"><span class="pre">VCENT</span></code>, <code class="docutils literal notranslate"><span class="pre">VGAP</span></code>) positions take <code class="docutils literal notranslate"><span class="pre">ADEL</span></code> from the <strong>North</strong> jaw motor</p></li>
+<li><p><strong>Horizontal</strong> (<code class="docutils literal notranslate"><span class="pre">HCENT</span></code>, <code class="docutils literal notranslate"><span class="pre">HGAP</span></code>) positions take <code class="docutils literal notranslate"><span class="pre">ADEL</span></code> from the <strong>East</strong> jaw motor</p></li>
+</ul>
+</section>
+<section id="instrument-specific-jaws-information">
+<h2>Instrument-specific Jaws information<a class="headerlink" href="#instrument-specific-jaws-information" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End.html">Muon Front end slits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jaws/EnginX-Jaws.html">ENGIN-X Jaws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jaws/GEM-Beamscraper-Jaws.html">GEM Beamscraper Jaws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jaws/Gem-Jaws-Manager.html">GEM Jaws Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jaws/Jaws-Managers.html">Jaws Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jaws/Nimrod-Jaws-Manager.html">NIMROD Jaws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jaws/Polaris-Jaws.html">POLARIS Jaws</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IMAT-Lens-Adjustment.html" class="btn btn-neutral float-left" title="IMAT Lens Adjustment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End.html" class="btn btn-neutral float-right" title="Muon Front end slits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

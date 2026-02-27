@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handling invalid values &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Tips &amp; Tricks" href="IOC-Tips-and-Tricks.html" />
+    <link rel="prev" title="Flow control" href="Flow-control.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Email-Text-Alerts-from-IOCS.html">Email &amp; Text alerts from IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flow-control.html">Flow control</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Handling invalid values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Tips-and-Tricks.html">IOC Tips &amp; Tricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-with-a-limited-range.html">PV with a limited range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stream-Device-Tips-and-Tricks.html">Stream Device Tips and Tricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Using-IP-rather-than-nport-with-MOXA-%28RFC-2217%29.html">Using IP rather than NPORT (RFC 2217)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+      <li class="breadcrumb-item active">Handling invalid values</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tips_tricks/Handling-Invalid-Values.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="handling-invalid-values">
+<h1>Handling invalid values<a class="headerlink" href="#handling-invalid-values" title="Link to this heading"></a></h1>
+<p>From time-to-time, IBEX encounters problems determining the value of a PV (e.g. because of a communication error on a device).  The purpose of this page is to set out the conventions used by IBEX to indicate to the user that the value of a PV or block should be considered invalid.</p>
+<p>Blocks are, essentially, aliases for PVs.  Therefore, if the value of a PV cannot be determined, the value of a corresponding block is equally invalid.</p>
+<section id="situations-giving-rise-to-invalid-values">
+<h2>Situations Giving Rise to Invalid Values<a class="headerlink" href="#situations-giving-rise-to-invalid-values" title="Link to this heading"></a></h2>
+<p>The following situations can cause process variables (PVs) to be considered invalid.</p>
+<ul class="simple">
+<li><p>communication error between a device and IBEX</p></li>
+<li><p>device reports that a value is invalid (i.e. over range)</p></li>
+</ul>
+<p>There may be other situations which can cause process variables (PVs) to be considered invalid.  If so, define them here.</p>
+<section id="communication-errors">
+<h3>Communication Errors<a class="headerlink" href="#communication-errors" title="Link to this heading"></a></h3>
+<p>When EPICS detects a communication error with a device, it does two things:</p>
+<ol class="arabic simple">
+<li><p>the PV continues to hold the last-known value</p></li>
+<li><p>the alarm status of the PV is changed to <code class="docutils literal notranslate"><span class="pre">INVALID</span></code></p></li>
+</ol>
+</section>
+<section id="calibration-errors">
+<h3>Calibration Errors<a class="headerlink" href="#calibration-errors" title="Link to this heading"></a></h3>
+<p>Some devices return “raw” values from sensors.  Such values have to be converted into meaningful physical values via some kind of calibration algorithm (in most cases, the algorithm is merely a simple linear conversion or a table lookup plus linear interpolation).  For example, a Eurotherm returns the raw voltage generated by a thermocouple, which is converted into a temperature using a lookup table.</p>
+<p>All calibration algorithms have a range of validity - if the “raw” sensor value falls outside that range the calibrated physical value should be considered invalid.  Calibration calculations are performed in the IOC, therefore, any out of range errors have to be signalled by the IOC.  In this situation, it is suggested that the IOC behaves as follows:</p>
+<ol class="arabic simple">
+<li><p>the PV holds the converted value (even though it might be invalid)</p></li>
+<li><p>the alarm status of the PV is changed to <code class="docutils literal notranslate"><span class="pre">[can-we-invent-a-calibration-alarm?]</span></code></p></li>
+</ol>
+</section>
+</section>
+<section id="ibex-conventions-for-invalid-values">
+<h2>IBEX Conventions for Invalid Values<a class="headerlink" href="#ibex-conventions-for-invalid-values" title="Link to this heading"></a></h2>
+<p>For each type of invalid value (described above), IBEX will behave according to the conventions described below.  There are specific conventions for different features of IBEX - the dashboard area of the IBEX GUI (i.e. the IBEX client), log files, genie_python, run control, the Web Dashboard.</p>
+<section id="id1">
+<h3>Communication Errors:<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>In this situation IBEX cannot read a value from a device.  In practice, this means EPICS will signal an <code class="docutils literal notranslate"><span class="pre">INVALID</span></code> alarm on a PV.  On encountering an <code class="docutils literal notranslate"><span class="pre">INVALID</span></code> alarm, IBEX will behave as follows:</p>
+<section id="ibex-gui">
+<h4>IBEX GUI<a class="headerlink" href="#ibex-gui" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>In the dashboard, blocks will display the text “N/A” and be surrounded by a purple border</p></li>
+<li><p>In OPIs, readback fields (which display PVs, not blocks) will display the last-known-good-value and be surrounded by a purple border.  On hovering the mouse over a readback field, IBEX will display a pop-up box showing the PV name, the last-known-good-value and the alarm status.</p></li>
+</ol>
+</section>
+<section id="log-data-files">
+<h4>Log &amp; Data Files<a class="headerlink" href="#log-data-files" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>In the NeXus data file, blocks will be logged with their last-known-good-value and the alarm status.</p></li>
+<li><p>In the IBEX archive, PVs will be logged with their last-known-good-value and the alarm status.</p></li>
+</ol>
+<p>Applications or scripts which process log &amp; data files are responsible for checking the alarm status of a block or PV and taking appropriate action.</p>
+</section>
+<section id="genie-python">
+<h4>genie_python<a class="headerlink" href="#genie-python" title="Link to this heading"></a></h4>
+<p>In genie_python, <code class="docutils literal notranslate"><span class="pre">cget</span></code> is used to obtain the value of a block or PV.  <code class="docutils literal notranslate"><span class="pre">cget</span></code> always</p>
+<ol class="arabic simple">
+<li><p>returns the value of a block or PV</p></li>
+<li><p>returns the alarm status of the block or PV</p></li>
+<li><p>prints a warning message if there is an alarm on the block or PV.</p></li>
+</ol>
+<p>It is the responsibility of the script author to check the alarm status and take any subsequent actions required.</p>
+</section>
+<section id="run-control">
+<h4>Run Control<a class="headerlink" href="#run-control" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>If a block has run control applied to it and that block goes into alarm (including <code class="docutils literal notranslate"><span class="pre">INVALID</span></code> alarm) then</p>
+<ul class="simple">
+<li><p>if the last-known-good-value was within the run control limits, data collection will continue</p></li>
+<li><p>if the last-known-good-value was outside the run control limits, data collection will not resume until the alarm is cleared.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="web-dashboard">
+<h4>Web Dashboard<a class="headerlink" href="#web-dashboard" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>In the web dashboard, blocks will display the text “INVALID”.</p></li>
+</ol>
+</section>
+</section>
+<section id="id2">
+<h3>Calibration Errors<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>At the current time, there is no agreed convention.</p>
+</section>
+<section id="alternative-conventions">
+<h3>Alternative Conventions<a class="headerlink" href="#alternative-conventions" title="Link to this heading"></a></h3>
+<p>IBEX has adopted the conventions defined above.  Other systems and devices have adopted different conventions for signalling that a readback value might be invalid.  We have deliberately decided not to follow these conventions to avoid the risk of ambiguity or clashes in interpretation.</p>
+<section id="why-haven-t-we-used-nan">
+<h4>Why haven’t we used NaN?<a class="headerlink" href="#why-haven-t-we-used-nan" title="Link to this heading"></a></h4>
+<p>NaN, which means “not a number”, is a concept used in computing to represent the results of calculations that are somehow “indeterminate”.  Superficially, therefore, it might seem that NaN is a good candidate for representing an invalid value.
+However, there are several reasons for not choosing NaN for this purpose:</p>
+<ol class="arabic simple">
+<li><p>Specifically, NaN, as defined by the IEEE-754 standard, applies only to floating-point numbers.  There is no concept of NaN for integer-valued variables.  Nor is there an equivalent concept for string-valued variables.  So, NaN is a only a partial solution, at best.</p></li>
+<li><p>Some devices use NaN to signal that a value has not been defined or initialized.  Strictly speaking this is an abuse of the IEEE-754 standard.  Nevertheless, because some device manufacturers have adopted this convention, it means that there is a risk of confusion - if a device returns NaN does it mean that the value was never initialized, or has it become invalid (having previously been valid)?</p></li>
+<li><p>In arithmetical expressions, NaNs behave as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">anything</span> <span class="pre">+</span> <span class="pre">NaN</span> <span class="pre">=</span> <span class="pre">NaN</span></code> - i.e. NaNs propagate through arithmetical operations</p></li>
+<li><p>all comparisons involving NaNs return <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> (except the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator, which returns <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>).</p></li>
+</ul>
+</li>
+<li><p>If NaNs appear in data or log files, then any code reading such files might need modification to take appropriate action on encountering a NaN.</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Flow-control.html" class="btn btn-neutral float-left" title="Flow control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-Tips-and-Tricks.html" class="btn btn-neutral float-right" title="IOC Tips &amp; Tricks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

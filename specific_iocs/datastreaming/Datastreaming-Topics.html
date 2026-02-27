@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data streaming: topics &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data streaming: hardware architecture" href="Datastreaming-hardware-architecture.html" />
+    <link rel="prev" title="Data streaming: how-to guide" href="Datastreaming-How-To.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ADRs.html">Data streaming: ADRs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming---File-writing.html">Data streaming: File writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming---Sample-Environment.html">Data streaming: Sample environment forwarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming--neutron-events-histograms.html">Data streaming: Neutron events and histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-How-To.html">Data streaming: how-to guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data streaming: topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-hardware-architecture.html">Data streaming: hardware architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-run-starts-stops.html">Data streaming: run starts/stops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Datastreaming.html">Data Streaming</a></li>
+      <li class="breadcrumb-item active">Data streaming: topics</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/datastreaming/Datastreaming-Topics.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="data-streaming-topics">
+<h1>Data streaming: topics<a class="headerlink" href="#data-streaming-topics" title="Link to this heading"></a></h1>
+<p>We have a number of topics per-instrument on <code class="docutils literal notranslate"><span class="pre">livedata</span></code>, the <a class="reference internal" href="../Datastreaming.html#kafkacluster"><span class="std std-ref">Kafka cluster</span></a> we use.</p>
+<p>Partition numbers are listed below. For variable partitions this will depend on the throughput requirements of the specific instrument.</p>
+<section id="runinfo">
+<h2><code class="docutils literal notranslate"><span class="pre">_runInfo</span></code><a class="headerlink" href="#runinfo" title="Link to this heading"></a></h2>
+<p>partitions: 1</p>
+<p>This contains run start and run stop flatbuffers blobs.</p>
+<p>Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/pl72_run_start.fbs"><code class="docutils literal notranslate"><span class="pre">pl72</span></code> - Run start</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/6s4t_run_stop.fbs"><code class="docutils literal notranslate"><span class="pre">6s4t</span></code> - Run stop</a></p></li>
+</ul>
+</section>
+<section id="events">
+<h2><code class="docutils literal notranslate"><span class="pre">_events</span></code><a class="headerlink" href="#events" title="Link to this heading"></a></h2>
+<p>partitions: variable</p>
+<p>This contains data from event-mode events.</p>
+<p>Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/ev44_events.fbs"><code class="docutils literal notranslate"><span class="pre">ev44</span></code> - Events</a></p></li>
+</ul>
+</section>
+<section id="topics-sampleenv">
+<h2><code class="docutils literal notranslate"><span class="pre">_sampleEnv</span></code><a class="headerlink" href="#topics-sampleenv" title="Link to this heading"></a></h2>
+<p>partitions: 1</p>
+<p>This contains sample environment data forwarded from EPICS.
+In a <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file this should end up in <code class="docutils literal notranslate"><span class="pre">raw_data_1/selog/</span></code></p>
+<p>Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/f144_logdata.fbs"><code class="docutils literal notranslate"><span class="pre">f144</span></code> - All CA and Scalar PVA data</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/se00_data.fbs"><code class="docutils literal notranslate"><span class="pre">se00</span></code> - PVA Arrays</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/al00_alarm.fbs"><code class="docutils literal notranslate"><span class="pre">al00</span></code> - EPICS alarms</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/ep01_epics_connection.fbs"><code class="docutils literal notranslate"><span class="pre">ep01</span></code> - EPICS connection status</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/un00_units.fbs"><code class="docutils literal notranslate"><span class="pre">un00</span></code> - EPICS units</a></p></li>
+</ul>
+</section>
+<section id="runlog">
+<h2><code class="docutils literal notranslate"><span class="pre">_runLog</span></code><a class="headerlink" href="#runlog" title="Link to this heading"></a></h2>
+<p>partitions: 1</p>
+<p>This contains run metadata forwarded from the ICP.
+In a <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file this should end up in <code class="docutils literal notranslate"><span class="pre">raw_data_1/runlog/</span></code></p>
+<p>Schemas in this topic match the ones in <a class="reference internal" href="#topics-sampleenv"><span class="std std-ref">_sampleEnv</span></a></p>
+</section>
+<section id="monitorhistograms">
+<h2><code class="docutils literal notranslate"><span class="pre">_monitorHistograms</span></code><a class="headerlink" href="#monitorhistograms" title="Link to this heading"></a></h2>
+<p>partitions: variable</p>
+<p>This contains monitor histograms.
+Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/hs01_event_histogram.fbs"><code class="docutils literal notranslate"><span class="pre">hs01</span></code> - Histograms</a></p></li>
+</ul>
+</section>
+<section id="detspecmap">
+<h2><code class="docutils literal notranslate"><span class="pre">_detSpecMap</span></code><a class="headerlink" href="#detspecmap" title="Link to this heading"></a></h2>
+<p>partitions: 1</p>
+<p>This contains details of the detector-spectrum mapping.
+Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/df12_det_spec_map.fbs"><code class="docutils literal notranslate"><span class="pre">df12</span></code> - Detector-spectrum mapping</a></p></li>
+</ul>
+</section>
+<section id="areadetector">
+<h2><code class="docutils literal notranslate"><span class="pre">_areaDetector</span></code><a class="headerlink" href="#areadetector" title="Link to this heading"></a></h2>
+<p>partitions: variable</p>
+<p>This is raw <code class="docutils literal notranslate"><span class="pre">areaDetector</span></code> data. It’s sent by <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ioc/blob/716aada58c972cf0661ab6cebc41fba34d29b806/ISISDAE/iocBoot/iocISISDAE-IOC-01/liveview.cmd#L8">this line in <code class="docutils literal notranslate"><span class="pre">ISISDAE</span></code></a></p>
+</section>
+<section id="forwarderconfig">
+<h2><code class="docutils literal notranslate"><span class="pre">_forwarderConfig</span></code><a class="headerlink" href="#forwarderconfig" title="Link to this heading"></a></h2>
+<p>partitions: 1</p>
+<p>This is the forwarder configuration, sent by <a class="reference internal" href="Datastreaming---Sample-Environment.html#bskafka"><span class="std std-ref">BlockserverToKafka</span></a>.
+Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/fc00_forwarder_config.fbs"><code class="docutils literal notranslate"><span class="pre">fc00</span></code> - Forwarder configuration</a></p></li>
+</ul>
+</section>
+<section id="forwarderstatus">
+<h2><code class="docutils literal notranslate"><span class="pre">_forwarderStatus</span></code><a class="headerlink" href="#forwarderstatus" title="Link to this heading"></a></h2>
+<p>partitions: 1</p>
+<p>This is the forwarder status topic which contains details about what PVs the forwarder is forwarding.
+Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/x5f2_status.fbs"><code class="docutils literal notranslate"><span class="pre">x5f2</span></code> - General status</a></p></li>
+</ul>
+</section>
+<section id="forwarderstorage">
+<h2><code class="docutils literal notranslate"><span class="pre">_forwarderStorage</span></code><a class="headerlink" href="#forwarderstorage" title="Link to this heading"></a></h2>
+<p>partitions: 1</p>
+<p>This is the last known forwarder configuration, sent by <a class="reference internal" href="Datastreaming---Sample-Environment.html#bskafka"><span class="std std-ref">BlockserverToKafka</span></a>. This is for if the forwarder crashes, then it can quickly retrieve its last configuration.
+Flatbuffers schemas in this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ess-dmsc/streaming-data-types/blob/master/schemas/fc00_forwarder_config.fbs"><code class="docutils literal notranslate"><span class="pre">fc00</span></code> - Forwarder Configuration</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Datastreaming-How-To.html" class="btn btn-neutral float-left" title="Data streaming: how-to guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Datastreaming-hardware-architecture.html" class="btn btn-neutral float-right" title="Data streaming: hardware architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

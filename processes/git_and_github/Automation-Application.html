@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automation Application &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting started with git and github" href="Getting-started-with-Git-and-GitHub.html" />
+    <link rel="prev" title="Adding new modules" href="Adding-new-modules-via-Git.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-new-modules-via-Git.html">Adding new modules</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Automation Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Getting-started-with-Git-and-GitHub.html">Getting started with git and github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Cleanup.html">Git cleanup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Commands.html">Useful Git commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-workflow.html">Git workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Making-the-IBEX-workflow-work-with-SSH-authentication.html">Git and SSH key authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="New-Local-Git-Repository.html">New local git repository</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Git-and-GitHub.html">Git and Github</a></li>
+      <li class="breadcrumb-item active">Automation Application</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/git_and_github/Automation-Application.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="automation-application">
+<h1>Automation Application<a class="headerlink" href="#automation-application" title="Link to this heading"></a></h1>
+<p>With the move to using GitHub V2 projects a new method of automation was required.</p>
+<p>This is achieved using the application forked in <a class="reference external" href="https://github.com/ISISComputingGroup/board-automation-app">https://github.com/ISISComputingGroup/board-automation-app</a>
+(Note this is a fork from an organisation related to one of the developers at the time, as organisation level access is required, and rather than develop and troubleshoot in this organisation, a simpler system was considered wise.)
+As well as automating items in relation to project management, this also displays a burndown chart.</p>
+<section id="automation">
+<h2>Automation<a class="headerlink" href="#automation" title="Link to this heading"></a></h2>
+<details>
+<summary>What this application does at a 'user' level</summary>
+Note that this is based on our PI boards, which undertake some automation themselves. The term `status` below indicates things such as the column headings on the Current Sprint Board.
+<p>If you add a <code class="docutils literal notranslate"><span class="pre">proposal</span></code> label to an issue in one of the included repos then it will be added to the PI and assigned to the next sprint with a <code class="docutils literal notranslate"><span class="pre">backlog</span></code> status
+If you add an <code class="docutils literal notranslate"><span class="pre">added</span> <span class="pre">during</span> <span class="pre">sprint</span> <span class="pre">label</span></code> it will be added to the PI and assigned to the current sprint. No status is auto assigned here, so if the status labels are applied first then this might not appear on the board automatically.
+If you add an <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">progress</span></code>, <code class="docutils literal notranslate"><span class="pre">impeded</span></code>, or <code class="docutils literal notranslate"><span class="pre">review</span></code> label it will update the status to match.
+If you add a <code class="docutils literal notranslate"><span class="pre">rework</span></code> label it will apply a <code class="docutils literal notranslate"><span class="pre">Backlog</span></code> status ready to be picked up again.
+If you move things between columns on the board, it will update the labels applied, according to the following:</p>
+<ul class="simple">
+<li><p>from backlog to in progress: add in progress label</p></li>
+<li><p>from backlog to impeded: add impeded label</p></li>
+<li><p>from backlog to review: add review label</p></li>
+<li><p>from backlog to done: do nothing</p></li>
+<li><p>from in progress to backlog: remove in progress label</p></li>
+<li><p>from in progress to impeded: remove in progress label, add impeded label</p></li>
+<li><p>from in progress to review: remove in progress label, add review label</p></li>
+<li><p>from in progress to done: remove in progress label</p></li>
+<li><p>from impeded to backlog: remove impeded label</p></li>
+<li><p>from impeded to in progress: remove impeded label, add in progress label</p></li>
+<li><p>from impeded to review: remove impeded label, add review label</p></li>
+<li><p>from impeded to done: remove impeded label</p></li>
+<li><p>from review to backlog: remove review and under review labels, add rework label</p></li>
+<li><p>from review to in progress: remove review and under review labels, add in progress and rework labels</p></li>
+<li><p>from review to impeded: remove review and under review labels, add impeded label</p></li>
+<li><p>from review to done: remove review and under review labels</p></li>
+</ul>
+</details>
+<details>
+<summary>Adding a new repository in the organisation to be watched by this application</summary>
+To ensure all aspects of this application work on the repository being considered, ensure that the following labels exist in the repository:
+* proposal
+* added during sprint
+* in progress
+* impeded
+* review
+* under review
+<p>Add the repository to the list in organisation settings &gt; GitHub Apps &gt; ibex-git-project-automation &gt; configure</p>
+</details>
+<details>
+<summary>Installing the application on a host</summary>
+<p>This will start with a pull of the application from GitHub.
+The instruction for the configuration settings are held in the repo, and those instructions should be followed.
+Starting the app is all that is needed after that by running <code class="docutils literal notranslate"><span class="pre">app.py</span></code> via python.</p>
+<p>Note that this has to use Python 3.10 or higher, and due to constraints on the system deployed to and installing on there, a specific python instance was created, which needs to be used for this. At time of writing, this is Python 3.13, with the following packages installed manually:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plotly</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tornado</span></code></p></li>
+</ul>
+</details>
+<details>
+<summary>Updating the application</summary>
+This should be as simple as synchronising the fork, and pulling to the server it is installed on.
+</details>
+<details>
+<summary>Installing/Updating the application whilst JSON Bourne is in use</summary>
+In order to simplify the addition of this application to the existing ecosystem, rather than run proxies it has been designed to run alongside an existing Tornado Application JSON Bourne.
+<p>Basic installation and update is the same, but an additional step is needed to ensure both sets of code are run, the contents of the automation application, including the updated python, need to be copied into the JSON Bourne directory, and the contents of <code class="docutils literal notranslate"><span class="pre">webserver_forJSONBourne.py</span></code> should be replaced with the contents of <code class="docutils literal notranslate"><span class="pre">webserver_forJSONBourne_and_git_automation.py</span></code>. Alternatively <code class="docutils literal notranslate"><span class="pre">start_webserver.bat</span></code> could be updated to use <code class="docutils literal notranslate"><span class="pre">webserver_forJSONBourne_and_git_automation.py</span></code> instead of the existing <code class="docutils literal notranslate"><span class="pre">webserver.py</span></code>.
+The python made available for the automation application will run JSON Bourne, and <code class="docutils literal notranslate"><span class="pre">start_webserver.bat</span></code> should be updated to use that specific python.</p>
+</details>
+<details>
+<summary>Installing the application to the organisation</summary>
+The instructions in the GitHub docs provides a good description of how to [register a GitHub Application](https://docs.github.com/en/apps/creating-github-apps/writing-code-for-a-github-app/building-a-github-app-that-responds-to-webhook-events#register-a-github-app)
+</details>
+</section>
+<section id="burndown-chart">
+<h2>Burndown Chart<a class="headerlink" href="#burndown-chart" title="Link to this heading"></a></h2>
+<details>
+<summary>What this shows</summary>
+This shows a column for each day in a sprint with the number of tickets in each status/column on the current sprint board.
+</details>
+<details>
+<summary>How it is updated</summary>
+It is updated each day, the first time someone looks at the page.
+</details></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Adding-new-modules-via-Git.html" class="btn btn-neutral float-left" title="Adding new modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Getting-started-with-Git-and-GitHub.html" class="btn btn-neutral float-right" title="Getting started with git and github" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

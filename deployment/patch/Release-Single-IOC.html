@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release a single IOC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Future Workflows" href="../Future.html" />
+    <link rel="prev" title="Patch or hotfix an IOC" href="Patch-or-hotfix-an-IOC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Deploy.html">Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Patch.html">Patching</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-patch-hotfix-branch.html">Creating a patch/hotfix branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploying-a-DEBUG-build-IOC.html">Deploying a Debug IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Modifying-Code-on-an-instrument.html">Modifying code on an instrument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Modifying-Device-on-an-Instrument.html">Modifying devices on an instrument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Modifying-Plugins-on-a-Deployed-Client.html">Patching a deployed client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Patch-or-hotfix-an-IOC.html">Patch or hotfix an IOC</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Release a single IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Future.html">Future Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Patch.html">Patching</a></li>
+      <li class="breadcrumb-item active">Release a single IOC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/patch/Release-Single-IOC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="release-a-single-ioc">
+<h1>Release a single IOC<a class="headerlink" href="#release-a-single-ioc" title="Link to this heading"></a></h1>
+<p>We may want to release a single IOC to an instrument but not release a whole build. This is the procedure to do this:</p>
+<ol class="arabic simple">
+<li><p>Add all new code to master.</p></li>
+<li><p>Wait for the overnight build.</p></li>
+<li><p>Ensure that nothing has happened in the code between the release and this release that will cause it not to work</p>
+<ul class="simple">
+<li><p>the easiest way to do this is to look at the merge of master on to the release branch/tag.</p></li>
+</ul>
+</li>
+<li><p>Copy the needed IOC and support module (and anything else) from the relevant build server directory on the ICP share to the equivalent directories in a release build directory. e.g.</p>
+<ul class="simple">
+<li><p>from <code class="docutils literal notranslate"><span class="pre">...Kits$\CompGroup\ICP\EPICS\EPICS_CLEAN_win7_x64\BUILD-275\EPICS\ioc\master</span></code></p></li>
+<li><p>to <code class="docutils literal notranslate"><span class="pre">...Kits$\CompGroup\ICP\Releases\Build275_Knaur_pump\ioc\master</span></code></p></li>
+</ul>
+</li>
+<li><p>Copy these file on to the instrument.</p></li>
+<li><p>Run in a epics terminal in EPICS <code class="docutils literal notranslate"><span class="pre">utils\build_ioc_startups.py</span></code></p>
+<ul class="simple">
+<li><p>If this fails it can be because there is a duplicate IOC.  The error message is rubbish!</p></li>
+</ul>
+</li>
+<li><p>Restart the IBEX server.</p></li>
+<li><p>Test the IOC boots and connects</p></li>
+</ol>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="ioc-does-not-start">
+<h3>IOC does not Start<a class="headerlink" href="#ioc-does-not-start" title="Link to this heading"></a></h3>
+<p>Look at the IOC log this should give you a clue. If there is no log message in the IOC log, i.e. it just appears to be restarting itself. Start the IOC from the command line. If you then get a pop-up message box with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;xxx.dll&quot; not found 
+</pre></div>
+</div>
+<p>This means that a function has been added to a module that this IOC relies on to work. Locate the function and the module it belongs to then copy over this module and try again. This can now affect not just your IOC but others that rely on this new module; Make sure that this is what you want.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Patch-or-hotfix-an-IOC.html" class="btn btn-neutral float-left" title="Patch or hotfix an IOC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Future.html" class="btn btn-neutral float-right" title="Future Workflows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asub records &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ICP Config" href="icpconfig.html" />
+    <link rel="prev" title="Utilities Library" href="Utilities-Library.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Asyn-Interpose-Functions.html">Asyn Interpose functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AsynEchoDriver.html">Asyn Echo Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Autosave.html">Autosave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Convert-Record.html">Convert record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-State-Machine-%28Sequencer%29.html">Creating a State Machine (Sequencer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Utilities.html">IOC Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-access-security.html">IOC Access Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-modules-for-file-handling.html">ISIS modules for file handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Labview-Remote.html">LabVIEW Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lua.html">Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serve-file-contents-over-EPICS.html">Serve file contents over EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Template-Substitutions.html">Template Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities-Library.html">Utilities Library</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Asub records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="icpconfig.html">ICP Config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools &amp; Support Modules</a></li>
+      <li class="breadcrumb-item active">Asub records</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tools/aSub-records.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="asub-records">
+<h1>Asub records<a class="headerlink" href="#asub-records" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>EPICS aSub records are a powerful tool that allows you to write arbitrary C or C++ code that interacts with EPICS DB records.</p>
+<p>Circumstances where you may need to use aSub records include:</p>
+<ul class="simple">
+<li><p>A device responds with a very complex status string which is too complex to decode using streamdevice</p></li>
+<li><p>There are complex checks required before a command can be sent to a device, or complex logic required to interpret the state of a device.</p></li>
+<li><p>The device responds with completely different responses based on its physical configuration, and the IOC needs to handle all possible circumstances</p></li>
+<li><p>You need to interact with files from within an IOC (first consider whether <a class="reference internal" href="Autosave.html"><span class="doc std std-doc">autosave</span></a> or <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ReadASCII">ReadASCII</a> cover the functionality you need)</p></li>
+</ul>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FZJ</span> <span class="pre">Fermi</span> <span class="pre">Chopper</span></code> (<code class="docutils literal notranslate"><span class="pre">EPICS/ioc/master/FERMCHOP</span></code>)</p>
+<ul>
+<li><p>This contains five scripts: Two to parse sets of status packets from a device, two to choose values to send to a device, and one to check that a command is allowed to be sent at the current time.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Keithley</span> <span class="pre">2700</span></code> (<code class="docutils literal notranslate"><span class="pre">EPICS/support/Keithley_2700/master</span></code>)</p>
+<ul>
+<li><p>This contains a script to parse buffer readings from a device and put them into the appropriate DB records.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Keyence</span> <span class="pre">TM-3001P</span></code></p>
+<ul>
+<li><p>This contains scripts to parse complex response strings from a device.</p></li>
+</ul>
+</li>
+<li><p>ReadASCII metadata (<code class="docutils literal notranslate"><span class="pre">EPICS/support/ReadASCII/master</span></code>)</p>
+<ul>
+<li><p>This contains scripts to read metadata from a filepath provided in EPICS DB records.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="ioc-files">
+<h2>IOC files<a class="headerlink" href="#ioc-files" title="Link to this heading"></a></h2>
+<section id="db-records">
+<h3>DB records<a class="headerlink" href="#db-records" title="Link to this heading"></a></h3>
+<p>Define some aSub records which may look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">stringin</span><span class="p">,</span> <span class="s2">&quot;$(P)STATUS:RAW&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DESC</span><span class="p">,</span> <span class="s2">&quot;Reads from the device&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;1 second&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">FLNK</span><span class="p">,</span> <span class="s2">&quot;$(P)STATUS:PARSE&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">aSub</span><span class="p">,</span> <span class="s2">&quot;$(P)STATUS:PARSE&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SNAM</span><span class="p">,</span> <span class="s2">&quot;function_name&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">INPA</span><span class="p">,</span> <span class="s2">&quot;$(P)STATUS:RAW&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">FTA</span><span class="p">,</span> <span class="s2">&quot;STRING&quot;</span><span class="p">)</span>
+
+    <span class="n">field</span><span class="p">(</span><span class="n">OUTA</span><span class="p">,</span> <span class="s2">&quot;$(P)STATUS PP&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">FTVA</span><span class="p">,</span> <span class="s2">&quot;STRING&quot;</span><span class="p">)</span>
+
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">stringin</span><span class="p">,</span> <span class="s2">&quot;$(P)STATUS&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="build-files">
+<h3>Build files<a class="headerlink" href="#build-files" title="Link to this heading"></a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">.dbd</span></code> file with the names of all the functions declared in the <code class="docutils literal notranslate"><span class="pre">C</span></code> file which will be called by EPICS. Your DBD file should look like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function</span><span class="p">(</span><span class="n">function_name</span><span class="p">)</span>
+<span class="n">function</span><span class="p">(</span><span class="n">another_function_name</span><span class="p">)</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong><strong>NOTE: Make sure there is a newline at the end of this file</strong></strong></p>
+</div></blockquote>
+<p>In the same directory as your C source code and the DBD file, adjust the makefile to reference the newly created <code class="docutils literal notranslate"><span class="pre">.dbd</span></code> and <code class="docutils literal notranslate"><span class="pre">.c</span></code> files, as well as adding necessary dependencies. It should look something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>LIBRARY_IOC = APPNAME
+DBD += appname.dbd
+
+APPNAME_DBD += asyn.dbd
+APPNAME_DBD += asubFunctions.dbd
+
+APPNAME_SRCS += c_source.c
+
+APPNAME_LIBS += $(EPICS_BASE_IOC_LIBS)
+APPNAME_LIBS += asyn utilities
+APPNAME_LIBS += asubFunctions
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">APPNAME</span></code> is to be replaced with the name of the new support module being built.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">configure/RELEASE</span></code>, ensure you have listed all required dependencies. A minimum set for an aSub record is shown below, but your support module may also require additional dependencies.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ASYN=$(SUPPORT)/asyn/master
+ONCRPC=$(SUPPORT)/oncrpc/master
+SNCSEQ=$(SUPPORT)/seq/master
+UTILITIES=$(SUPPORT)/utilities/master
+ASUBFUNCTIONS=$(SUPPORT)/asubFunctions/master
+</pre></div>
+</div>
+<p>Finally, the <strong>IOC</strong> makefile (<code class="docutils literal notranslate"><span class="pre">-IOC-01App\src\build.mak</span></code>) will now need to be updated to include the DBD and Library produced by the support module. The following lines will add the dependency:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(APPNAME)_DBD += LIBRARY_NAME.dbd
+$(APPNAME)_LIBS += LIBRARY_NAME
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">$(APPNAME)</span></code> <em>is</em> a macro, and <code class="docutils literal notranslate"><span class="pre">LIBRARY_NAME</span></code> will need to be replaced with the names of the library and DBD file that you have created above.</p>
+<p>You will also need to ensure that the support module location is mentioned in <code class="docutils literal notranslate"><span class="pre">ioc/{iocname}/configure/RELEASE</span></code>. However, for most IOCs, this should already be the case, as they will get their stream protocol from that location.</p>
+</section>
+</section>
+<section id="writing-an-asub-function">
+<h2>Writing an aSub Function<a class="headerlink" href="#writing-an-asub-function" title="Link to this heading"></a></h2>
+<section id="c-code">
+<h3>C code<a class="headerlink" href="#c-code" title="Link to this heading"></a></h3>
+<p>Define a C function which will be called by the aSub record. This must have the same name as the <code class="docutils literal notranslate"><span class="pre">SNAM</span></code> field in EPICS DB. You also need to tie this function in to the epics database with a call to <code class="docutils literal notranslate"><span class="pre">epicsRegisterFunction</span></code>. At this stage your C source file should look like the following:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;registryFunction.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;aSubRecord.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;epicsExport.h&gt;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">aSubRecord</span><span class="w"> </span><span class="o">*</span><span class="n">prec</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Either call a C++ function (see below) or implement logic here. */</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">epicsRegisterFunction</span><span class="p">(</span><span class="n">function_name</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="escaping-to-c">
+<h3>Escaping to C++<a class="headerlink" href="#escaping-to-c" title="Link to this heading"></a></h3>
+<p>Note: escaping to C++ is not strictly necessary, it is possible to implement the logic in C. However it is often easier to work with C++ due to it’s larger standard library and <a class="reference external" href="https://www.boost.org/">boost</a>.</p>
+<section id="create-a-c-c-header-file">
+<h4>Create a c/c++ header file<a class="headerlink" href="#create-a-c-c-header-file" title="Link to this heading"></a></h4>
+<p>In the same directory as the <code class="docutils literal notranslate"><span class="pre">C</span></code> source code file, create a header (<code class="docutils literal notranslate"><span class="pre">.h</span></code> extension) like the following:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#endifit</span>
+
+<span class="k">extern</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">function_name_impl</span><span class="p">(</span><span class="n">aSubRecord</span><span class="w"> </span><span class="o">*</span><span class="n">prec</span><span class="p">);</span>
+<span class="k">extern</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">another_function_name_impl</span><span class="p">(</span><span class="n">aSubRecord</span><span class="w"> </span><span class="o">*</span><span class="n">prec</span><span class="p">);</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+<section id="reference-the-header-file-from-the-c-code">
+<h4>Reference the header file from the C code<a class="headerlink" href="#reference-the-header-file-from-the-c-code" title="Link to this heading"></a></h4>
+<p>In C code which is called by the EPICS records, call the C++ functions which will be parsing the data. Your C source file should now look something like the following:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;registryFunction.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;aSubRecord.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;epicsExport.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;header_file.h&quot;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">aSubRecord</span><span class="w"> </span><span class="o">*</span><span class="n">prec</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">function_name_impl</span><span class="p">(</span><span class="n">prec</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">epicsRegisterFunction</span><span class="p">(</span><span class="n">function_name</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>Note that C and C++ functions cannot share the same name. Here we have appended <code class="docutils literal notranslate"><span class="pre">_impl</span></code> to the name of the C++ function to indicate that it is the implementation.</p>
+</section>
+<section id="reference-the-header-file-from-c">
+<h4>Reference the header file from C++<a class="headerlink" href="#reference-the-header-file-from-c" title="Link to this heading"></a></h4>
+<p>Create a C++ source file (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension, cannot share the same name as the <code class="docutils literal notranslate"><span class="pre">.c</span></code> file). The following is an example of a skeletal C++ source file which simply sets the output data (<code class="docutils literal notranslate"><span class="pre">VALA</span></code>, which goes to <code class="docutils literal notranslate"><span class="pre">OUTA</span></code>) to the input value (<code class="docutils literal notranslate"><span class="pre">A</span></code>, which is pulled from <code class="docutils literal notranslate"><span class="pre">INPA</span></code> in the EPICS database file):</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;registryFunction.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;aSubRecord.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;menuFtype.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;errlog.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;epicsString.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;epicsExport.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;header_file.h&quot;</span>
+
+<span class="kt">long</span><span class="w"> </span><span class="nf">function_name_impl</span><span class="p">(</span><span class="n">aSubRecord</span><span class="w"> </span><span class="o">*</span><span class="n">prec</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * Returns the first input value back, assuming both have been </span>
+<span class="cm">     * declared as LONG in the db file. You can check the fta and </span>
+<span class="cm">     * ftva fields to confirm the data types </span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="o">*</span><span class="p">(</span><span class="n">epicsInt32</span><span class="o">*</span><span class="p">)</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">vala</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">epicsInt32</span><span class="o">*</span><span class="p">)</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="cm">/* process output links */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The function takes one argument, <code class="docutils literal notranslate"><span class="pre">prec</span></code>, which is as a pointer to the EPICS aSub record. Changes made to <code class="docutils literal notranslate"><span class="pre">prec</span></code> will set the value of the corresponding EPICS fields once the aSub function returns (return 0 to indicate success, or 1 to indicate failure).</p>
+</section>
+<section id="add-the-c-source-file-to-the-support-module-makefile">
+<h4>Add the C++ source file to the support module Makefile.<a class="headerlink" href="#add-the-c-source-file-to-the-support-module-makefile" title="Link to this heading"></a></h4>
+<p>The makefile should now contain a line that looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APPNAME_SRCS</span> <span class="o">+=</span> <span class="n">c_source</span><span class="o">.</span><span class="n">c</span> <span class="n">cpp_source</span><span class="o">.</span><span class="n">cpp</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="asub-record-function-tips-and-tricks">
+<h2>aSub Record Function Tips and Tricks<a class="headerlink" href="#asub-record-function-tips-and-tricks" title="Link to this heading"></a></h2>
+<p>It is advised that when writing an aSub record, you escape to C++ as soon as possible so that you can use the C++ standard libraries and error handling capacity to improve the robustness of your IOC to errors arising from the aSub record.</p>
+<section id="googletest-unit-tests">
+<h3>GoogleTest unit tests<a class="headerlink" href="#googletest-unit-tests" title="Link to this heading"></a></h3>
+<p>GoogleTest can be used to write unit tests for you aSub functions. Details on how to set up GoogleTest to compile under EPICS can be found <a class="reference internal" href="../testing/Setting-up-googleTest-to-work-with-EPICS-build-process.html#googletest-intro"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="error-catching">
+<h3>Error catching<a class="headerlink" href="#error-catching" title="Link to this heading"></a></h3>
+<p>To reduce the chances of the IOC crashing due to an exception being, it is best practice to wrap the logic of your function in a <code class="docutils literal notranslate"><span class="pre">try-catch</span></code> block to log these exceptions and return a non-zero value. E.g. to catch a stand</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Your code here</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">errlogSevPrintf</span><span class="p">(</span><span class="n">errlogMajor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s exception: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">());</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="defensive-type-checking">
+<h3>Defensive Type Checking<a class="headerlink" href="#defensive-type-checking" title="Link to this heading"></a></h3>
+<p>As any field of the aSub record can be written to, it is best practice to check types of input and output fields before reading and writing.</p>
+<p>To check that the type of the input field <code class="docutils literal notranslate"><span class="pre">a</span></code> is a <code class="docutils literal notranslate"><span class="pre">STRING</span></code>, use</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">fta</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">menuFtypeSTRING</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">errlogSevPrintf</span><span class="p">(</span><span class="n">errlogMajor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s incorrect input argument type A&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>To check that the type of the output field <code class="docutils literal notranslate"><span class="pre">a</span></code> is of type <code class="docutils literal notranslate"><span class="pre">STRING</span></code> use</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftva</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">menuFtypeSTRING</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">errlogSevPrintf</span><span class="p">(</span><span class="n">errlogMajor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s incorrect output argument type A&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="reading-from-a-waveform-of-strings">
+<h3>Reading from a waveform of strings<a class="headerlink" href="#reading-from-a-waveform-of-strings" title="Link to this heading"></a></h3>
+<p>If you need to read from a waveform of strings, then you need to be extra careful with types. The best way we have found is to read the waveform into a <code class="docutils literal notranslate"><span class="pre">vector&lt;std::string&gt;</span></code> in the following way:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">args</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">noa</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">s</span><span class="p">(((</span><span class="n">epicsOldString</span><span class="o">*</span><span class="p">)(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">))[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">epicsOldString</span><span class="p">));</span>
+<span class="w">    </span><span class="n">args</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This takes into account that the type of each element of the waveform is not a <code class="docutils literal notranslate"><span class="pre">char*</span></code> but a<code class="docutils literal notranslate"> <span class="pre">epicsOldString</span></code>.</p>
+</section>
+<section id="decoupling-from-the-asub-record-pointer">
+<h3>Decoupling from the aSub record pointer<a class="headerlink" href="#decoupling-from-the-asub-record-pointer" title="Link to this heading"></a></h3>
+<p>You may find it useful to decouple the logic of writing to the output fields of the aSub record from the main aSub record it self. This makes it easier to test how you write to the aSub record without needing a pointer to a real aSub record. You can encapsulate the values you need in a <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">aSubOutputParameters</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">outputPointer</span><span class="p">;</span>
+<span class="w">    </span><span class="n">epicsEnum16</span><span class="w"> </span><span class="n">outputType</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Struct constructors</span>
+<span class="w">    </span><span class="n">aSubOutputParameters</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">output_pointer</span><span class="p">,</span><span class="w"> </span><span class="n">epicsEnum16</span><span class="w"> </span><span class="n">output_type</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">outputPointer</span><span class="p">(</span><span class="n">output_pointer</span><span class="p">),</span><span class="w"> </span><span class="n">outputType</span><span class="p">(</span><span class="n">output_type</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>You can then use this <code class="docutils literal notranslate"><span class="pre">struct</span></code> to create a map which associates a value (a integer channel number in the example below) to the specific aSub output data that value corresponds to.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="w"> </span><span class="n">asub_channel_output</span><span class="p">(</span><span class="n">aSubRecord</span><span class="w"> </span><span class="o">*</span><span class="n">prec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="w"> </span><span class="n">channel_outputs</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">vala</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftva</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">valb</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvb</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">valc</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvc</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">vald</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvd</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">vale</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftve</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">valf</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvf</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">valg</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvg</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">valh</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvh</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w">   </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">vali</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvi</span><span class="p">)));</span>
+<span class="w">    </span><span class="n">channel_outputs</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">aSubOutputParameters</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w">  </span><span class="n">aSubOutputParameters</span><span class="p">(</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">valj</span><span class="p">,</span><span class="w"> </span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">ftvj</span><span class="p">)));</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">channel_outputs</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When testing you need to create mock versions of the <code class="docutils literal notranslate"><span class="pre">asub_channel_output</span></code> map rather than the whole aSub record.</p>
+</section>
+<section id="parsing-functions-as-arguments">
+<h3>Parsing functions as arguments<a class="headerlink" href="#parsing-functions-as-arguments" title="Link to this heading"></a></h3>
+<p>If you find yourself needing to pass a function as an argument, you can do so using:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">boost::function&lt;return_value</span> <span class="pre">(arguments)&gt;</span> <span class="pre">func</span></code> (remember to include <code class="docutils literal notranslate"><span class="pre">boost/function.hpp</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::function&lt;return_value</span> <span class="pre">(arguments)&gt;</span> <span class="pre">func</span></code> (remember to include `functional, C++11 and later only)</p></li>
+<li><p>Using a <code class="docutils literal notranslate"><span class="pre">template&lt;typename</span> <span class="pre">F&gt;</span></code> and passing the function as a parameter <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">func</span></code>. <strong>N.B.</strong>: Types are checked at runtime not compile time when using templates (more details <a class="reference external" href="https://stackoverflow.com/questions/1174169/function-passed-as-template-argument">here</a>).</p></li>
+<li><p>Function pointers - try to use the above safer ways first.</p></li>
+</ol>
+<p>This technique can be useful if you have multiple aSub functions that are similar apart from the logic to parse a value from the waveform. You can then pass a different functions as arguments to a base aSub record function to generate your aSub record functions.</p>
+</section>
+<section id="record-doesn-t-seem-to-work">
+<h3>Record doesn’t seem to work<a class="headerlink" href="#record-doesn-t-seem-to-work" title="Link to this heading"></a></h3>
+<p>Add in some debug lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">errlogSevPrintf</span><span class="p">(</span><span class="n">errlogMajor</span><span class="p">,</span> <span class="s2">&quot;Start&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you don’t see this in the log (works even under the testing framework) do a <code class="docutils literal notranslate"><span class="pre">caget</span> <span class="pre">-a</span></code> and make sure all the links are valid; an invalid link specification will cause the record not to process.</p>
+</section>
+<section id="tips">
+<h3>Tips<a class="headerlink" href="#tips" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>LONG in epics DB world is 32 bit, while the C long type is 32bit on Windows and 64bit on Linux. When casting from aSub you should use the <code class="docutils literal notranslate"><span class="pre">epicsInt32</span></code> type and not “long”</p></li>
+<li><p>Do not assign directly to aSub record argument such as “prec-&gt;vala = result”. Rather copy into the pre-allocated space as shown below</p></li>
+<li><p>Remember all aSub arguments are arrays of the type even if the type is an array, so <code class="docutils literal notranslate"><span class="pre">epicsOldString*</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epicsInt32</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">epicsInt32</span><span class="o">*</span><span class="p">)</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">;</span>
+<span class="n">epicsOldString</span><span class="o">*</span> <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">epicsOldString</span><span class="o">*</span><span class="p">)</span><span class="n">prec</span><span class="o">-&gt;</span><span class="n">vala</span><span class="p">;</span>
+<span class="n">strcpy_s</span><span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">,</span> <span class="n">MAX_STRING_SIZE</span><span class="p">,</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="asub-functions">
+<h2>aSub Functions<a class="headerlink" href="#asub-functions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-asubFunctions/blob/master/asubFunctionsApp/src/splitCharWaveform.c#L108"><code class="docutils literal notranslate"><span class="pre">splitCharWaveform</span></code></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Utilities-Library.html" class="btn btn-neutral float-left" title="Utilities Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="icpconfig.html" class="btn btn-neutral float-right" title="ICP Config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

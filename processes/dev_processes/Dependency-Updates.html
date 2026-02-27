@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dependency Updates &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="External Contributions" href="External-Contributions.html" />
+    <link rel="prev" title="Component &amp; Activity Stewards" href="Component-and-Activity-Stewards.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Component-and-Activity-Stewards.html">Component &amp; Activity Stewards</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Dependency Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="External-Contributions.html">External Contributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Good-Ticket-Writing.html">Good Ticket Writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-Documentation.html">Project Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Things-to-know-as-a-developer.html">Things to know as a developer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tickets-and-their-Workflow.html">Ticket workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Umbrella-Tickets.html">Umbrella tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Understanding-Java-Licensing.html">Understanding Java Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unupdated-dependencies.html">Unupdated dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Dev-Processes.html">Developer Processes</a></li>
+      <li class="breadcrumb-item active">Dependency Updates</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/dev_processes/Dependency-Updates.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dependency-updates">
+<h1>Dependency Updates<a class="headerlink" href="#dependency-updates" title="Link to this heading"></a></h1>
+<p>After a release, the dependencies of the system should be considered for update. This will ensure that we do not get too far out of date and any upgrade will, hopefully, be small and not require much effort. In general we do not want to be on the bleeding edge but at the last stable release (i.e. prefer LTS versions when they are available). The list of dependencies will be shipped with the release notes and should be kept up-to-date with any notes. This page documents the process of updating.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any dependencies which should not be updated should be listed with a reason <a class="reference internal" href="Unupdated-dependencies.html"><span class="doc std std-doc">here</span></a>.</p>
+<p>When updating dependencies add the new dependencies to the upcoming release notes.</p>
+</div>
+<section id="webdashboard">
+<h2>WebDashboard<a class="headerlink" href="#webdashboard" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/pvws-config?tab=readme-ov-file#updating">Update <code class="docutils literal notranslate"><span class="pre">tomcat</span></code> on external webserver</a>. This is an external-facing process so <strong>must</strong> be kept up-to-date with latest security bug fixes.</p></li>
+<li><p>Update java JDK on external webserver. This is used to run tomcat, which is an external-facing process, so <strong>must</strong> be kept up-to-date with latest security bug fixes.</p></li>
+<li><p>Update <a class="reference external" href="https://github.com/ISISComputingGroup/WebDashboard/blob/main/package.json">javascript dependencies</a>. This is done automatically by dependabot, so this step is to ensure that no outstanding dependabot pull requests are unmerged, and to check any dependencies which dependabot is not configured to upgrade.</p></li>
+</ul>
+</section>
+<section id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Link to this heading"></a></h2>
+<p>The GUI has multiple mechanisms for pulling in dependencies, all of which may potentially need updates. You should aim to do one dependency update at a time, testing each update both under the eclipse IDE and maven and committing before moving onto the next update.</p>
+<section id="jar-files">
+<h3><code class="docutils literal notranslate"><span class="pre">.jar</span></code> files<a class="headerlink" href="#jar-files" title="Link to this heading"></a></h3>
+<p>We now only reference a single <code class="docutils literal notranslate"><span class="pre">.jar</span></code> file (<code class="docutils literal notranslate"><span class="pre">opal</span></code>) from the GUI. This is not currently being updated as the project has moved to nebula visualisation widgets and no new versions are being produced.</p>
+</section>
+<section id="target-platform">
+<h3>Target platform<a class="headerlink" href="#target-platform" title="Link to this heading"></a></h3>
+<p>This is defined in the file <code class="docutils literal notranslate"><span class="pre">./base/uk.ac.stfc.isis.ibex.targetplatform/targetplatform.target</span></code></p>
+<p>General update process:</p>
+<ul class="simple">
+<li><p>Look for newer versions of the repository. E.g. if the repository url is <code class="docutils literal notranslate"><span class="pre">http://some.website/releases/1.23</span></code>, try visiting <code class="docutils literal notranslate"><span class="pre">http://some.website/releases</span></code> to see whether the releases are listed. If so, point the target platform at the new releases.</p></li>
+<li><p>Some repositories are updated “in-place”. Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.</p></li>
+<li><p>For maven dependencies referenced in target platform, look up latest version on maven central then update the version number in target platform to correspond. If the version numbers are hardcoded in <code class="docutils literal notranslate"><span class="pre">feature.xml</span></code> or <code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code> for individual plugins, update it there too.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update <code class="docutils literal notranslate"><span class="pre">client.tycho.parent</span></code> - see below for details. Make sure you update the <a class="reference internal" href="../../client/compiling/Building-the-GUI.html"><span class="doc std std-doc">gui build wiki page</span></a> to ensure new starters get the correct version.</p>
+</div>
+</section>
+<section id="parent-pom">
+<h3>Parent POM<a class="headerlink" href="#parent-pom" title="Link to this heading"></a></h3>
+<p>Tycho and eclipse framework versions are defined in the file <code class="docutils literal notranslate"><span class="pre">./base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml</span></code>. Note that the eclipse framework version <em>must</em> correspond with the version defined in the target platform, otherwise the maven build will fail with mismatched framework versions.</p>
+</section>
+<section id="client-jre">
+<h3>Client JRE<a class="headerlink" href="#client-jre" title="Link to this heading"></a></h3>
+<p>The GUI builds copy a JRE from <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk&lt;jdk_version&gt;</span></code>. Copy the latest jdk to ICP, rename to follow the same format, and then update <code class="docutils literal notranslate"><span class="pre">ibex_gui\build\build.bat</span></code> to point at the new JRE location.</p>
+</section>
+<section id="pydev">
+<h3>Pydev<a class="headerlink" href="#pydev" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recurse-submodules</span></code> the latest version of <a class="reference external" href="https://github.com/ISISComputingGroup/Pydev">our fork</a> and create a new dependency update branch off of master.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recurse-submodules</span></code> the latest version of <a class="reference external" href="https://github.com/fabioz/Pydev">the upstream</a> on to a vendor branch and merge this branch into the dependency update branch.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">install</span></code> in the dependency update branch base directory.</p></li>
+<li><p>After a successful build, create a PR to merge the changes into master, and upload the updated repo to <code class="docutils literal notranslate"><span class="pre">\\shadow.isis.cclrc.ac.uk\ICP_P2W$</span></code>, this latest version should be named ‘Pydev’.</p></li>
+<li><p>Remove and re-add the Pydev target platform dependency in the GUI</p></li>
+</ul>
+</section>
+</section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
+<section id="uktena-python-distribution">
+<h3>Uktena python distribution<a class="headerlink" href="#uktena-python-distribution" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Check on <a class="reference external" href="https://python.org">https://python.org</a> for newer versions of python itself</p></li>
+<li><p>If a newer version is available, download the “windows installer”.</p></li>
+<li><p>Select custom install, install python to a location of your choice (not <code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\python3</span></code>).</p></li>
+<li><p>During the python installation process, <strong>ensure that you tick the box asking whether you want to install TCL/TK support</strong> in optional features. This is needed for independent matplotlib plots in standalone genie_python windows.</p></li>
+<li><p>Also during the python installation process, in advanced options screen select both <code class="docutils literal notranslate"><span class="pre">download</span> <span class="pre">debugging</span> <span class="pre">symbols</span></code> and <code class="docutils literal notranslate"><span class="pre">download</span> <span class="pre">debug</span> <span class="pre">binaries</span></code></p></li>
+<li><p>Zip up the resulting directory and add it to the share at <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3</span></code> as <code class="docutils literal notranslate"><span class="pre">python_clean_&lt;version&gt;.zip</span></code></p></li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">package_builder\common_build_python_3.bat</span></code> to use the new python version and test that all dependencies work correctly</p></li>
+</ul>
+</section>
+<section id="our-packages">
+<h3>Our packages<a class="headerlink" href="#our-packages" title="Link to this heading"></a></h3>
+<p>We depend on a variety of python packages that we publish ourselves, either via pypi or via git.</p>
+<p>These may need to be updated to allow new python versions. For packages published on PyPI, a new pypi release will need to be made.</p>
+<p>These packages are <em>libraries</em>, so they can support multiple python versions. Many of these packages aim to run CI on
+3 recent python releases, following recommendations from <a class="reference external" href="https://scientific-python.org/specs/spec-0000/">SPEC 0</a>. Therefore,
+the dependency update is to ensure that these libraries work on the new python version we are targeting, and to drop support
+for python releases more than 3 years old.</p>
+<p>These packages include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/genie"><code class="docutils literal notranslate"><span class="pre">genie</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/ibex_bluesky_core"><code class="docutils literal notranslate"><span class="pre">ibex_bluesky_core</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/lewis"><code class="docutils literal notranslate"><span class="pre">lewis</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/pcaspy"><code class="docutils literal notranslate"><span class="pre">pcaspy</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/cachannel"><code class="docutils literal notranslate"><span class="pre">CaChannel</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/epicscorelibs_pcas"><code class="docutils literal notranslate"><span class="pre">epicscorelibs_pcas</span></code></a></p></li>
+<li><p><a class="reference external" href="https://github.com/isiscomputinggroup/epicscorelibs"><code class="docutils literal notranslate"><span class="pre">epicscorelibs</span></code></a></p>
+<ul>
+<li><p>This is currently built manually, generating explicit wheels uploaded to <a class="reference external" href="https://github.com/ISISComputingGroup/epicscorelibs/releases">github releases</a>.</p></li>
+</ul>
+</li>
+</ul>
+<section id="dep-update-venvs">
+<h4>Virtual environments for our packages<a class="headerlink" href="#dep-update-venvs" title="Link to this heading"></a></h4>
+<p>We are moving towards using virtual environments in favour of <code class="docutils literal notranslate"><span class="pre">uktena</span></code> just bundling all of the dependencies for absolutely all python packages. Using a separate virtual environment for each of the packages means that:</p>
+<ol class="arabic simple">
+<li><p>If we need to patch one of those packages with ie. a dependency that has a known security vulnerability, it doesn’t interfere with other packages</p></li>
+<li><p>We can actually use entirely different versions of python per-package, if a vendor library keeps us from updating</p></li>
+<li><p>We can be more efficient about running things like upgrade scripts, which cuts down time waiting to install dependencies/copy <code class="docutils literal notranslate"><span class="pre">uktena</span></code> from the share.</p></li>
+</ol>
+<p>The new mechanism uses <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">compile</span> <span class="pre">pyproject.toml</span> <span class="pre">-o</span> <span class="pre">requirements-frozen.txt</span></code> to generate a “frozen” set of requirements, with the versions pinned.</p>
+<p>It also uses a <code class="docutils literal notranslate"><span class="pre">.python-version</span></code> file to say which version of python should be used at runtime, which <code class="docutils literal notranslate"><span class="pre">uv</span></code> respects.</p>
+<p>Also search for <code class="docutils literal notranslate"><span class="pre">UV_PYTHON</span></code> environment variables and update those packages to use a recent python version.</p>
+</section>
+</section>
+<section id="external-packages">
+<h3>External packages<a class="headerlink" href="#external-packages" title="Link to this heading"></a></h3>
+<p>Check on PyPi for any package updates, then edit <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> to install new versions where needed. Note that since we decided <a class="reference internal" href="../../system_components/python/Python-dependencies.html"><span class="doc std std-doc">all python projects should use virtual environments</span></a> there will be a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> or legacy <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file for all Python projects using the new import mechanism, ensure these are also updated.</p>
+</section>
+<section id="ode">
+<h3>ODE<a class="headerlink" href="#ode" title="Link to this heading"></a></h3>
+<p><strong>We are not currently distributing ODE with <code class="docutils literal notranslate"><span class="pre">uktena</span></code></strong> - nothing needs to be done.</p>
+<summary>
+<p>Old instructions</p>
+<details>
+<p>ODE is handled separately from other packages and is installed from a wheel on <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3</span></code> if moving to a new python version i.e. 3.10 to 3.11 this wheel will need to be replaced.</p>
+<ul class="simple">
+<li><p>First check <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode">here</a> for a matching version of ODE, if one is not present one will need to be built, to do so:</p>
+<ul>
+<li><p>Make a note of the latest release tag from the <a class="reference external" href="https://bitbucket.org/odedevs/ode/downloads/?tab=tags">ODE Bitbucket</a></p></li>
+<li><p>open a cmd window and cd to e.g. <code class="docutils literal notranslate"><span class="pre">c:\devel</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://bitbucket.org/odedevs/ode.git</span></code></p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">0.16.4</span></code> is your version to build then <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">ode</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">0.16.4</span></code></p></li>
+<li><p>type <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">&quot;CMAKE=c:\Instrument\Apps\EPICS\ICP_Binaries\CMake\bin\cmake.exe&quot;</span></code></p></li>
+<li><p>type <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">ode-build</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">ode-build</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">&quot;%CMAKE%&quot;</span> <span class="pre">-G&quot;Visual</span> <span class="pre">Studio</span> <span class="pre">16</span> <span class="pre">2022&quot;</span> <span class="pre">-A</span> <span class="pre">x64</span> <span class="pre">..</span></code></p></li>
+<li><p>type <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">ode.sln</span></code></p></li>
+<li><p>change to <code class="docutils literal notranslate"><span class="pre">Debug</span></code> to <code class="docutils literal notranslate"><span class="pre">Release</span></code> configuration at top, it should already say x64, and from menu build -&gt; build solution</p></li>
+<li><p>now cd to the <code class="docutils literal notranslate"><span class="pre">bindings\python</span> <span class="pre">directory</span></code></p></li>
+<li><p>open ode.pyx, change definition of <code class="docutils literal notranslate"><span class="pre">collide_callback</span></code> to add <code class="docutils literal notranslate"><span class="pre">noexcept</span></code> i.e. <code class="docutils literal notranslate"><span class="pre">cdef</span> <span class="pre">void</span> <span class="pre">collide_callback(void*</span> <span class="pre">data,</span> <span class="pre">dGeomID</span> <span class="pre">o1,</span> <span class="pre">dGeomID</span> <span class="pre">o2):</span></code> to <code class="docutils literal notranslate"><span class="pre">cdef</span> <span class="pre">void</span> <span class="pre">collide_callback(void*</span> <span class="pre">data,</span> <span class="pre">dGeomID</span> <span class="pre">o1,</span> <span class="pre">dGeomID</span> <span class="pre">o2)</span> <span class="pre">noexcept:</span></code></p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">bindings/python</span></code> and open the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">wheel.bdist_wheel</span> <span class="pre">import</span> <span class="pre">bdist_wheel</span></code> to the imports at top.</p></li>
+<li><p>remove the whole try/except clause that calls <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> from <code class="docutils literal notranslate"><span class="pre">Popen</span></code>, instead just set the variables explicitly e.g. <code class="docutils literal notranslate"><span class="pre">ode_cflags</span> <span class="pre">=</span> <span class="pre">[r'-IC:\devel\ODE\include',</span> <span class="pre">r'-IC:\devel\ODE\ode-build\include']</span></code> and <code class="docutils literal notranslate"><span class="pre">ode_libs</span> <span class="pre">=</span> <span class="pre">[r'C:\devel\ODE\ode-build\Release\ode_double.lib']</span></code></p></li>
+<li><p>in main() Update the version number to match the version of ode used, and set the name to <code class="docutils literal notranslate"><span class="pre">ode</span></code>.</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">%python3%</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span></code> and then <code class="docutils literal notranslate"><span class="pre">%python3%</span> <span class="pre">setup.py</span> <span class="pre">bdist_wheel</span></code></p></li>
+<li><p>copy the wheel generated in <code class="docutils literal notranslate"><span class="pre">dist</span></code> to <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3</span></code></p></li>
+<li><p>copy <code class="docutils literal notranslate"><span class="pre">ode_double.dll</span></code> from <code class="docutils literal notranslate"><span class="pre">C:\devel\ODE\ode-build\Release</span></code> to the same place</p></li>
+</ul>
+</li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">common_build_python.bat</span></code> in <code class="docutils literal notranslate"><span class="pre">package_builder</span></code> to point to the most recent wheel file.</p></li>
+<li><p>Test by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">run_all_tests.py</span></code> in <code class="docutils literal notranslate"><span class="pre">inst_servers</span></code>, which contains collision avoidance monitor tests</p></li>
+</ul>
+</details>
+</summary>
+</section>
+</section>
+<section id="system">
+<h2>System<a class="headerlink" href="#system" title="Link to this heading"></a></h2>
+<section id="mysql">
+<h3>MySQL<a class="headerlink" href="#mysql" title="Link to this heading"></a></h3>
+<p>Download the latest stable MySQL version as a zip file and put in the share <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\MySQL</span></code> and remove the old one.</p>
+<p>In the upgrade script <code class="docutils literal notranslate"><span class="pre">https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade/ibex_install_utils</span></code> edit <code class="docutils literal notranslate"><span class="pre">install_tasks.py</span></code> to point at the new version.</p>
+<p>Update the one in your local machine by running <code class="docutils literal notranslate"><span class="pre">upgrade_mysql.bat</span></code>.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">create_icp_binaries.bat</span></code>, update the unpacked version of MySQL used during the build to the new version added on the share.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\epics\support\mysql\master\MySQLCppApp\src\mysql-connector-c++</span></code>, update the vendor submodule to a recent version, then rebuild <code class="docutils literal notranslate"><span class="pre">mysql</span></code>, <code class="docutils literal notranslate"><span class="pre">pvdump</span></code>, and then all IOCs, in that order.</p>
+</section>
+<section id="java">
+<h3>Java<a class="headerlink" href="#java" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Get the latest AdoptOpen JDK zip file from <code class="docutils literal notranslate"><span class="pre">https://adoptium.net/releases.html?jvmVariant=hotspot</span></code> and put it in <code class="docutils literal notranslate"><span class="pre">C:\instrument\apps\JDK\&lt;majorver&gt;\</span></code>.</p>
+<ul>
+<li><p>Only upgrade major versions to another LTS version.</p></li>
+</ul>
+</li>
+<li><p>Uninstall the older version from control Panel, remove any references from the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</p></li>
+<li><p>Test that running <code class="docutils literal notranslate"><span class="pre">start_ibex_server.bat</span></code> completes successfully, and ensure there are no obvious errors in the IOC log files for:</p>
+<ul>
+<li><p>ARBLOCK</p></li>
+<li><p>ARINST</p></li>
+<li><p>ALARM</p></li>
+<li><p>IOCLOG</p></li>
+</ul>
+</li>
+<li><p>Check that CS Studio IDE is loaded correctly</p></li>
+<li><p>Update the Ansible playbook with the new version as per <a class="reference external" href="https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#updating-jdk-version">these instructions</a>.</p></li>
+</ul>
+</section>
+<section id="maven">
+<h3>Maven<a class="headerlink" href="#maven" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>There are two versions of maven, this is to update the one following the format <code class="docutils literal notranslate"><span class="pre">maven-X.x.x</span></code></p></li>
+<li><p>Download the latest maven from <code class="docutils literal notranslate"><span class="pre">https://maven.apache.org/download.cgi#</span></code></p></li>
+<li><p>Delete the older version of the maven</p></li>
+<li><p>unzip and copy the content to <code class="docutils literal notranslate"><span class="pre">\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Binaries</span></code></p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">copy_in_maven.bat</span></code> in <code class="docutils literal notranslate"><span class="pre">\ibex_gui\build\</span></code> to point at the new maven version</p></li>
+</ul>
+</section>
+<section id="make">
+<h3>Make<a class="headerlink" href="#make" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Download the latest make sources from <code class="docutils literal notranslate"><span class="pre">https://ftp.gnu.org/gnu/make/</span></code></p></li>
+<li><p>In the downloaded source tree, open a command prompt</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">config_env.bat</span></code> (this runs a correct <code class="docutils literal notranslate"><span class="pre">vcvarsall.bat</span></code> for the current system)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">build_w32.bat</span></code></p></li>
+<li><p>Copy the built binary in <code class="docutils literal notranslate"><span class="pre">./WinRel/gnumake.exe</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\instrument\apps\epics\utils_win32\master\bin\make.exe</span></code></p></li>
+</ul>
+</section>
+<section id="git">
+<h3>git<a class="headerlink" href="#git" title="Link to this heading"></a></h3>
+<p>Git upgrade is handled by install scripts.</p>
+</section>
+</section>
+<section id="cs-studio">
+<h2>CS-Studio<a class="headerlink" href="#cs-studio" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>GUI<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Our CS-Studio GUI dependencies are located on a share on shadow, a read only version <code class="docutils literal notranslate"><span class="pre">\\shadow.isis.cclrc.ac.uk\ICP_P2$\</span></code> (which is accessible via a webpage at <code class="docutils literal notranslate"><span class="pre">http://shadow.nd.rl.ac.uk/ICP_P2/</span></code> and a writable version <code class="docutils literal notranslate"><span class="pre">\\shadow.isis.cclrc.ac.uk\ICP_P2W$\</span></code>.</p>
+<p>CS-Studio requires a version of jdk11 to build that it gets from <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\AdoptOpenJDK</span></code> or <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Eclipse</span> <span class="pre">Adoptium</span></code>.</p>
+<ul class="simple">
+<li><p>Install the latest jdk11, and ensure <code class="docutils literal notranslate"><span class="pre">isis_css_top\build.bat</span></code> points at the correct jdk location.</p></li>
+<li><p>You will need JavaFX binaries. These can be patched onto the AdoptOpenJDK/Eclipse Temurin installation. Download the Windows SDK from <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\Java_utils\openjfx-19_windows-x64_bin-sdk\javafx-sdk-19</span></code> (originally from <a class="reference external" href="https://gluonhq.com/products/javafx/">gluon</a>) and copy the <code class="docutils literal notranslate"><span class="pre">bin</span></code>, <code class="docutils literal notranslate"><span class="pre">lib</span></code>, and <code class="docutils literal notranslate"><span class="pre">legal</span></code> directories over the corresponding directories in the JDK. The JavaFX version does not necessarily need to match your java installation, as long as the versions are compatible. For example, we can use JavaFX 19 on a Java 11 installation. Please check that the license is still appropriate before you install.</p></li>
+</ul>
+<p>To update the CS-Studio components that the GUI uses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">https://github.com/ISISComputingGroup/isis_css_top.git</span></code></p></li>
+<li><p>Make relevant changes to the code, make sure submodules get pinned to new versions using same workflow as in EPICS top.</p></li>
+<li><p>Trigger a build on Jenkins</p></li>
+<li><p>After the build is complete go to the build server and copy the entire isis_css_top tree to the share (<code class="docutils literal notranslate"><span class="pre">\\shadow.isis.cclrc.ac.uk\ICP_P2W$</span></code>) rename the folder to <code class="docutils literal notranslate"><span class="pre">css_gui_dependencies_&lt;year_month_day&gt;</span></code>.</p></li>
+<li><p>Updated the gui target platform to point at the new folder, i.e. <code class="docutils literal notranslate"><span class="pre">http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies_&lt;year_month_day&gt;/p2repo/</span></code></p></li>
+<li><p>Reload the target platform and rebuild the gui.</p></li>
+<li><p>Test that your changes work correctly!</p></li>
+<li><p>If you cannot write to the <code class="docutils literal notranslate"><span class="pre">ICP_P2W$</span></code> share on shadow, your fed id account will need adding to the <code class="docutils literal notranslate"><span class="pre">icp</span></code> local group on shadow itself. This just requires somebody to run the <code class="docutils literal notranslate"><span class="pre">vigr</span></code> command on shadow and then possibly <code class="docutils literal notranslate"><span class="pre">service</span> <span class="pre">smb</span> <span class="pre">restart</span></code> too</p></li>
+</ul>
+</section>
+<section id="archive-engines-alarm-servers">
+<h3>Archive engines / alarm servers<a class="headerlink" href="#archive-engines-alarm-servers" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The build uses the same process as above</p></li>
+<li><p>Once build is done, the products are in <code class="docutils literal notranslate"><span class="pre">org.csstudio.sns\repository\products</span></code></p></li>
+<li><p>Copy the zip files for alarm server, alarm config tool, archive engine and archive config tool to <code class="docutils literal notranslate"><span class="pre">\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Binaries\CSS</span></code>, renaming the directories to match the existing names if necessary (The existing ones should be backed up).</p></li>
+<li><p>The changes will be picked up after doing <code class="docutils literal notranslate"><span class="pre">create_icp_binaries</span></code> and then <code class="docutils literal notranslate"><span class="pre">css\master\setup_css.bat</span></code></p></li>
+<li><p>Ensure scripts to launch Archivers and alarm server <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/AlarmServer/run_alarm_server.bat">1</a> <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/ArchiveEngine/start_block_archiver.bat">2</a> <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/ArchiveEngine/start_inst_archiver.bat">3</a> point at correct executables after running <code class="docutils literal notranslate"><span class="pre">create_icp_binaries.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">setup_css.bat</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="activemq">
+<h2>ActiveMQ<a class="headerlink" href="#activemq" title="Link to this heading"></a></h2>
+<p>To update ActiveMQ in epics:</p>
+<ul class="simple">
+<li><p>Create a new branch on <code class="docutils literal notranslate"><span class="pre">...\EPICS\ISIS\ActiveMQ\master</span></code>.</p></li>
+<li><p>Put the latest ActiveMQ version (from <a class="reference external" href="https://activemq.apache.org/">https://activemq.apache.org/</a>) on the vendor branch that already exists on the repo.</p></li>
+<li><p>Merge the vendor branch into your new branch</p></li>
+<li><p>Create a PR to merge this in to master (this PR will be merged as part of the update dependencies ticket).</p></li>
+</ul>
+</section>
+<section id="ioclogserver">
+<h2>IOCLogServer<a class="headerlink" href="#ioclogserver" title="Link to this heading"></a></h2>
+<p>The IOC log server has a similar build process to the main GUI, and includes several <code class="docutils literal notranslate"><span class="pre">.jar</span></code> files in it’s repository. These may have new versions and need to be updated.</p>
+<p>Update <code class="docutils literal notranslate"><span class="pre">EPICS\ISIS\IocLogServer\master\LogServer\pom.xml</span></code> with new dependency version numbers.</p>
+</section>
+<section id="cygwin-tools">
+<h2>Cygwin Tools<a class="headerlink" href="#cygwin-tools" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">procServ</span></code>, <code class="docutils literal notranslate"><span class="pre">conserver</span></code> and <code class="docutils literal notranslate"><span class="pre">console</span></code> are cygwin applications, compiled copies of which are kept centrally in <code class="docutils literal notranslate"><span class="pre">ICP_Binaries\EPICS_Tools</span></code> and then copied into subdirectories of <code class="docutils literal notranslate"><span class="pre">tools/master</span></code> of the EPICS distribution during a build. Their source code is located in the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-tools">https://github.com/ISISComputingGroup/EPICS-tools</a> repository and they are built by the EPICS_tools Jenkins job which places new versions in <code class="docutils literal notranslate"><span class="pre">kits$\EPICS_Tools</span></code>. The Jenkins job only runs when requested.</p>
+<p>If you update the source code of procServ/conserver the following applies too, but we should also update <code class="docutils literal notranslate"><span class="pre">cygwin</span></code> and rebuild the binaries periodically even if the source code is unchanged. To publish new binaries:</p>
+<ul class="simple">
+<li><p>determine the host running the Jenkins job, look at the LABEL parameter of the build (this is currently ndhspare53)</p></li>
+<li><p>log onto the machine and update cygwin - goto <a class="reference external" href="https://www.cygwin.com/">https://www.cygwin.com/</a> in a web browser from the machine and download and run <code class="docutils literal notranslate"><span class="pre">setup-x86_64.exe</span></code></p></li>
+<li><p>let it update packages</p></li>
+</ul>
+<p>There are two cygwin distributions on the computer in <code class="docutils literal notranslate"><span class="pre">c:\cygwin64</span></code> and <code class="docutils literal notranslate"><span class="pre">c:\mini_cygwin64</span></code>, the one in <code class="docutils literal notranslate"><span class="pre">cygwin64</span></code> is used to build programs and the one in <code class="docutils literal notranslate"><span class="pre">mini_cygwin64</span></code> is a minimal distribution that is copied to the instrument along with the built procServ/conserver programs to provide a runtime environment. Both of these need to be updated, so you will <strong>need to run the above setup twice</strong> changing the installation directory between runs. when you update <code class="docutils literal notranslate"><span class="pre">c:\mini_cygwin64</span></code> there will likely be very few packages and nothing additional needs to be done other than update it. After you update the main <code class="docutils literal notranslate"><span class="pre">cygwin64</span></code> you will need to disable <code class="docutils literal notranslate"><span class="pre">ASLR</span></code> on cygwin1.dll - you can do this by running from a command window <code class="docutils literal notranslate"><span class="pre">disable_aslr.bat</span></code> (this is in the EPICS/too/master directory). If cygwin was installed from an admin account, then <code class="docutils literal notranslate"><span class="pre">disable_aslr</span></code> will need to be run from an admin terminal too or else you will get an access denied error when it tries to update the dll</p>
+<ul class="simple">
+<li><p>now start the jenkins EPICS_Tools job, this will build and update <code class="docutils literal notranslate"><span class="pre">kits$\Binaries\EPICS_Tools</span></code></p></li>
+</ul>
+</section>
+<section id="nicos">
+<h2>NICOS<a class="headerlink" href="#nicos" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../../system_components/nicos/Developing-NICOS.html"><span class="doc std std-doc">Nicos Dependency update steps</span></a>.</p>
+<p><strong>Note:</strong>
+We are using a fork of NICOS. If updating NICOS, ensure that the protocol versions defined in the client and the server match. The server version is specified in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\ISIS\ScriptServer\master\nicos\protocols\daemon\classic.py</span></code> and the client version in <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.ibex.nicos/src/uk/ac/stfc/isis/ibex/nicos/messages/ReceiveBannerMessage.java</span></code>. If these do not match, the script server connection will fail.</p>
+</section>
+<section id="updates-to-consider">
+<h2>Updates to consider<a class="headerlink" href="#updates-to-consider" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>PCRE (<a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-pcre">https://github.com/ISISComputingGroup/EPICS-pcre</a>)</p></li>
+<li><p>procServ</p></li>
+<li><p>EPICS base</p></li>
+<li><p>Support modules e.g. StreamDevice, asyn, Lua etc.</p></li>
+<li><p>Google test for EPICS (<code class="docutils literal notranslate"><span class="pre">gtest</span></code>) (<a class="reference external" href="https://github.com/epics-modules/gtest">https://github.com/epics-modules/gtest</a>)</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Component-and-Activity-Stewards.html" class="btn btn-neutral float-left" title="Component &amp; Activity Stewards" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="External-Contributions.html" class="btn btn-neutral float-right" title="External Contributions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

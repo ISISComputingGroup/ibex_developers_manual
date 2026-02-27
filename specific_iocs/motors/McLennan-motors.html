@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>McLennan &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HRPD Homing Sequence" href="mclennan/HRPD-homing-sequence.html" />
+    <link rel="prev" title="Linmot" href="Linmot.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Motors.html">Motors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Attocube.html">Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Beckhoff.html">Beckhoff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EnginX-Sample-Positioner.html">EnginX Sample Positioner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galil.html">Galil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Linmot.html">Linmot</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">McLennan</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mclennan/HRPD-homing-sequence.html">HRPD Homing Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mclennan/Vesuvio-homing-sequence.html">VESUVIO Foil Homing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Newport.html">Newport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PI-Rotation-Stage-setup.html">PI Rotation Stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SMC100.html">SMC100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Attocube.html">SXD Attocube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motors-Trouble-Shooting.html">Motors Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-motor-IOC-to-global-motor-moving-and-stop-all.html">Add motor to global moving and stop all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clearing-the-Motors-are-Moving-state.html">Clearing the “motors moving” state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set-the-raw-position-of-the-motor-without-moving-it.html">Set the raw position of the motor without moving it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Add-support-for-motor-extras.html">Add support for motor extras</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Motors.html">Motors</a></li>
+      <li class="breadcrumb-item active">McLennan</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/motors/McLennan-motors.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mclennan">
+<h1>McLennan<a class="headerlink" href="#mclennan" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>The McLennan motor is a controller that support multiple independent motors. It is often used at ISIS for rotation stages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unlike many other motor controllers that remember settings through autosave the McLennan exclusively uses macros. This means for changing parameters in a persistent way you will need to change them in the IOC configuration rather than the motor details panel, otherwise they will get lost on IOC restart. We now plan to make these settings appear read-only in the motor view to avoid any confusion</p>
+</div>
+<p>Instructions on how to convert a <strong>LabVIEW Mclennan ini file</strong> are at the end of this document in the <a class="reference internal" href="#converting-values-from-labview">converting values from LabVIEW</a> section</p>
+<section id="behaviour">
+<h2>Behaviour<a class="headerlink" href="#behaviour" title="Link to this heading"></a></h2>
+<section id="motor-resolution">
+<h3>Motor Resolution<a class="headerlink" href="#motor-resolution" title="Link to this heading"></a></h3>
+<p>The motor resolution is set with the <em>MSTP</em><strong>n</strong> IOC macros and in units of <code class="docutils literal notranslate"><span class="pre">steps/mm</span></code>, this will be inverted by the IOC internally as the EPICS motor record <code class="docutils literal notranslate"><span class="pre">MRES</span></code> field uses the inverse <code class="docutils literal notranslate"><span class="pre">mm/step</span></code>.</p>
+</section>
+<section id="encoder-resolution">
+<h3>Encoder Resolution<a class="headerlink" href="#encoder-resolution" title="Link to this heading"></a></h3>
+<p>The encoder ratio rather than encoder resolution is set with the <em>ERES</em><strong>n</strong> IOC macros, this is a string like <code class="docutils literal notranslate"><span class="pre">400/4096</span></code> and bears no direct relation to the EPICS motor record <code class="docutils literal notranslate"><span class="pre">ERES</span></code>. As the Mclennan driver pretends to be open loop (no encoder present as per <code class="docutils literal notranslate"><span class="pre">MSTA</span></code> field) whatever mode it is running in, the motor record <code class="docutils literal notranslate"><span class="pre">ERES</span></code> is not actually used and is set to <code class="docutils literal notranslate"><span class="pre">0</span></code> in the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> and will then display as the same value as motor record <code class="docutils literal notranslate"><span class="pre">MRES</span></code> when later viewed. So ignore the encoder resolution value displayed on the motor record screen.</p>
+<p>The encoder ratio written <code class="docutils literal notranslate"><span class="pre">M/E</span></code> is providing <code class="docutils literal notranslate"><span class="pre">motor_steps_per_revolution</span> <span class="pre">/</span> <span class="pre">encoder_steps_per_revolution</span></code>, in the past (e.g. under SECI/LabVIEW) this was referred to as <code class="docutils literal notranslate"><span class="pre">Numerator</span> <span class="pre">/</span> <span class="pre">Demoninator</span></code>. So <code class="docutils literal notranslate"><span class="pre">actual_position_steps</span> <span class="pre">=</span> <span class="pre">encoder_steps_readback</span> <span class="pre">*</span> <span class="pre">encoder_ratio</span></code>. For closed loop (encoder feedback) controller mode to work this ratio needs to be correct so that <code class="docutils literal notranslate"><span class="pre">commanded_motor_steps_moved</span> <span class="pre">=</span> <span class="pre">encoder_steps_moved</span> <span class="pre">*</span> <span class="pre">encoder_ratio</span></code>, if the ratio isn’t right the motor will fail to get position leading to many retries and an error. It is possible to work out the ratio by e.g. going to motor console (PuTTY/hterm), doing a small MR relative move and comparing command position (CP) and actual position (AP). <code class="docutils literal notranslate"><span class="pre">dbior</span></code> command on an ioc window now shows these values, as does the <code class="docutils literal notranslate"><span class="pre">QP</span></code> command at the motor low level serial interface. The Raw encoder steps is <code class="docutils literal notranslate"><span class="pre">IP</span></code> or <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Position</span></code> which is scaled by encoder ratio to give actual (AP) position. If encoder and motor move in opposite directions, add a minus sign to encoder ratio.</p>
+</section>
+<section id="velocity">
+<h3>Velocity<a class="headerlink" href="#velocity" title="Link to this heading"></a></h3>
+<p>The McLennan motor velocity is set with the <em>VELO</em><strong>n</strong> IOC macros, the value set is in <code class="docutils literal notranslate"><span class="pre">mm/second</span></code>, same units as EPICS motor record uses.</p>
+</section>
+<section id="acceleration">
+<h3>Acceleration<a class="headerlink" href="#acceleration" title="Link to this heading"></a></h3>
+<p>The IOC macro <em>ACCL</em><strong>n</strong> for acceleration is the the number of seconds under linear acceleration to reach maximum speed, the same convention as the EPICS motor record (The acceleration value on the device itself is the acceleration in units of <code class="docutils literal notranslate"><span class="pre">step/s^2</span></code>, this is calculated in the IOC as velocity divided by the product of the motor resolution and ACCL value).</p>
+</section>
+<section id="setting-the-motor-position-offset">
+<h3>Setting the motor position/offset<a class="headerlink" href="#setting-the-motor-position-offset" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="Set-the-raw-position-of-the-motor-without-moving-it.html"><span class="doc std std-doc">Set the raw position of the motor without moving it</span></a></p>
+</section>
+<section id="homing">
+<h3>Homing<a class="headerlink" href="#homing" title="Link to this heading"></a></h3>
+<p>There are several homing modes on the McLennan set via the <code class="docutils literal notranslate"><span class="pre">HOME</span></code> macro. The choice of mode depends on the motor, modes 1 and 3 (constant velocity homes to limit switches) are controlled in software by SNL, others by controller <code class="docutils literal notranslate"><span class="pre">HD</span></code> (home to datum) command. Modes are:</p>
+<ul class="simple">
+<li><p>0: Controller does internal home to an external home signal (not normally used).</p></li>
+<li><p>1: Do a reverse constant velocity move (jog) until limit switch is hit, but do not zero the motor (this is deprecated)</p></li>
+<li><p>2: Do a hardware reverse (-) direction search for a home signal and then zero the motor</p></li>
+<li><p>3: Do a reverse constant velocity move (jog) until limit switch is hit then zero the motor.</p></li>
+<li><p>4: Do a hardware forward (+) direction search for a home signal and then zero the motor</p></li>
+<li><p>5: Move to forward limit, do a hardware reverse direction search for a home signal and then zero the motor</p></li>
+<li><p>6: Move to reverse limit, do a hardware forward direction search for a home signal and then zero the motor</p></li>
+</ul>
+<p>The constant velocity move uses JVEL and is set to be a 1/10 of the normal velocity unless the macro is set to change it.</p>
+<p><strong>There is a <a class="reference internal" href="mclennan/Vesuvio-homing-sequence.html"><span class="doc std std-doc">special homing sequence for Vesuvio</span></a> because it doesn’t quite work until ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5739">5739</a> is done</strong></p>
+<p><strong>There is a <a class="reference internal" href="mclennan/HRPD-homing-sequence.html"><span class="doc std std-doc">special homing sequence for HRPD low temp sample changer</span></a> because it doesn’t quite work until ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5739">5739</a> is done</strong></p>
+<p>The way this works in the code is that the motor driver send the correct home (or no home) dependent on the mode set in <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/devPM304.cc#L163"><code class="docutils literal notranslate"><span class="pre">request_mode</span></code></a>, for <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/homing.st">SNL</a> then takes care of other moves.</p>
+</section>
+<section id="controller-switch-settings">
+<h3>Controller Switch settings<a class="headerlink" href="#controller-switch-settings" title="Link to this heading"></a></h3>
+<p>Rotary switch SW1 and SW2 give axis address, address is 10*SW1 + SW2</p>
+<p>DIP Switch SW3</p>
+<ul class="simple">
+<li><p>1=ON 2=OFF gives serial baud 9600, see manual for other combinations</p></li>
+<li><p>3=OFF 7bit even parity, or     3=ON 8bit no parity</p></li>
+<li><p>4=OFF (no hardware flow control)</p></li>
+<li><p>5=ON  (quiet command reply mode, required by EPICS driver)</p></li>
+<li><p>6=OFF</p></li>
+<li><p>7=OFF (rs232)</p></li>
+<li><p>8=OFF (no terminator for rs485)</p></li>
+</ul>
+<p>SW4 controls encoder termination, with OFF=single ended (TTL), ON=differential pair (RS422). Not for us to change, leave to motion engineers.</p>
+</section>
+<section id="configuring-axes">
+<h3>Configuring axes<a class="headerlink" href="#configuring-axes" title="Link to this heading"></a></h3>
+<p>When configuring a particular axis, an <code class="docutils literal notranslate"><span class="pre">axes.cmd</span></code> file is required in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\[INSTMACHINE]\configurations\mclennan</span></code>. See the the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/wiki/Motion-Control">motion control</a> pages for additional details. It is often desirable to set up a number of axes depending which controller, and which axis is in use. There are specific environment variables set up to let you do this. The following example shows a stretching rig set up on <code class="docutils literal notranslate"><span class="pre">MOT0201</span></code> and a linear sample changer on <code class="docutils literal notranslate"><span class="pre">MOT0101</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(IFMTRCTRL1)$(IFAXIS1) dbLoadRecords(&quot;$(AXIS)/db/axis.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,AXIS=STACK:LIN,mAXIS=MTR0101&quot;)
+$(IFMTRCTRL2)$(IFAXIS1) dbLoadRecords(&quot;$(AXIS)/db/axis.db&quot;,&quot;P=$(MYPVPREFIX)MOT:,AXIS=STRETCH:LIN,mAXIS=MTR0201&quot;)
+</pre></div>
+</div>
+<p>You can see the environment variables being used at the start of the line. The available variables are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IFMTRCTRLn</span></code>: The line is run if the controller number for the motor is <code class="docutils literal notranslate"><span class="pre">n</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is between 1 and 24. This corresponds to the <code class="docutils literal notranslate"><span class="pre">MTRCTRL</span></code> IOC macro.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IFAXISn</span></code>: The line is run if the axis number for the motor is <code class="docutils literal notranslate"><span class="pre">n</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is between 1 and 8. This corresponds to the <code class="docutils literal notranslate"><span class="pre">AXISn=yes</span></code> IOC macro.</p></li>
+</ul>
+<p>Note that the equivalent <code class="docutils literal notranslate"><span class="pre">IFNOT...</span></code> environment variables also exist but are typically of less use.</p>
+<p>Also note that the two environment variables combine as an <code class="docutils literal notranslate"><span class="pre">and</span></code> operation when used in this form. That is, the line will only execute if both conditions are met. There is currently no way to combine the environment variable with an <code class="docutils literal notranslate"><span class="pre">or</span></code> operator.</p>
+</section>
+<section id="reset-on-move">
+<h3>Reset on move<a class="headerlink" href="#reset-on-move" title="Link to this heading"></a></h3>
+<p>The IBEX McLennan driver is set to send a reset command on any request to move. This is intended to clear errors (e.g. tracking abort) and avoid the need for power cycling that would clear the position.</p>
+</section>
+<section id="reset-on-stop">
+<h3>Reset on stop<a class="headerlink" href="#reset-on-stop" title="Link to this heading"></a></h3>
+<p>The IBEX McLennan driver sends the following sequence of commands when a stop is requested:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">STOP</span>
+<span class="n">RESET</span>
+<span class="n">STOP</span>
+</pre></div>
+</div>
+<p>The first stop will stop the motor as part of the normal operation and the 2nd and 3rd command will have no effect. If the motor enters an error state during a move, the first stop will have no effect and the 2nd and 3rd command will stop it. The first command is necessary since the 2nd and 3rd commands will not cause it to stop under normal operation.</p>
+</section>
+<section id="creep-speed-cs-for-home-to-datum">
+<h3>Creep Speed CS for home to datum<a class="headerlink" href="#creep-speed-cs-for-home-to-datum" title="Link to this heading"></a></h3>
+<p>Quick note on this learnt from SECI; It appears that the SC command which set the speed for HD (home to datum) may be limited in it range. We don’t think it can be set faster than the normal speed and maybe be limited to 400. Investigate when and if we need this.</p>
+</section>
+</section>
+<section id="setup-trouble-shooting-and-usage">
+<h2>Setup, Trouble Shooting and Usage<a class="headerlink" href="#setup-trouble-shooting-and-usage" title="Link to this heading"></a></h2>
+<p>The McLennan now prints its current mode of operation (moving, homing, Idle, tracking abort etc) and any error messages to the IOC log file/ioc command window screen.</p>
+<section id="setting-up-the-unit">
+<h3>Setting up the unit<a class="headerlink" href="#setting-up-the-unit" title="Link to this heading"></a></h3>
+<p>When starting the unit:</p>
+<ol class="arabic simple">
+<li><p>Start the controller</p></li>
+<li><p>Start/restart the IOC (so that it can send the motor and encoder resolutions to the controller)</p></li>
+<li><p>Home the device</p></li>
+</ol>
+</section>
+<section id="i-ve-booted-up-a-mclennan-and-can-t-get-it-moving-properly">
+<h3>I’ve booted up a McLennan and can’t get it moving (properly)<a class="headerlink" href="#i-ve-booted-up-a-mclennan-and-can-t-get-it-moving-properly" title="Link to this heading"></a></h3>
+<p>Check the <code class="docutils literal notranslate"><span class="pre">MCLEN</span></code> IOC log file for error messages and also examine output from <code class="docutils literal notranslate"><span class="pre">dbior</span></code> and <code class="docutils literal notranslate"><span class="pre">dbior</span> <span class="pre">*</span> <span class="pre">1</span></code> typed at the IOC console window.</p>
+<p>If it doesn’t move at all try using the macros for an axis number other than 1 (e.g. 2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the Mclennan crate, so you may not be be trying to control the correct axis id.</p>
+<p>If it moves a short distance and stops it may be going into <code class="docutils literal notranslate"><span class="pre">Tracking</span> <span class="pre">abort</span></code>. A tracking abort means the encoder and motor step counters have got further apart than expected during the move, this could be due to:</p>
+<ul class="simple">
+<li><p>The encoder and motor resolutions are incorrect/incompatible, so “expected” and “actual” position are diverging. The first thing to do is to restart the McLennan hardware and then the IOC so that the values are resent. If this does not fix it then check the settings are correct.</p></li>
+<li><p>you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of this page if you need to change the tracking abort window.</p></li>
+</ul>
+</section>
+<section id="mclennan-moves-but-doesn-t-stop-at-desired-position">
+<h3>McLennan moves but doesn’t stop at desired position<a class="headerlink" href="#mclennan-moves-but-doesn-t-stop-at-desired-position" title="Link to this heading"></a></h3>
+<p>If the McLennan moves but does not stop at the position you requested it could be that the encoder and motor resolutions have not been sent to the controller or are incorrect. This must be done whenever the unit is restarted and is done by restarting the IOC.</p>
+</section>
+<section id="lots-of-parity-errors-in-log-file">
+<h3>Lots of parity errors in log file<a class="headerlink" href="#lots-of-parity-errors-in-log-file" title="Link to this heading"></a></h3>
+<p>check <code class="docutils literal notranslate"><span class="pre">Controller</span> <span class="pre">Switch</span> <span class="pre">settings</span></code> above - if IBEX has been set to use 7 bit even parity but the crate dip switch is set at 8 bits no parity, then this could lead to parity errors being generated. Make sure the IBEX MCLEN IOC and the crate agree on this setting.</p>
+</section>
+<section id="homes-are-very-slow">
+<h3>Homes are very slow<a class="headerlink" href="#homes-are-very-slow" title="Link to this heading"></a></h3>
+<p><em>In homing modes 1 and 3</em>, the McLennan homes via SNL and uses <code class="docutils literal notranslate"><span class="pre">JVEL</span></code> as it’s speed. <code class="docutils literal notranslate"><span class="pre">JVEL</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">VELO/10</span></code> if not set, so try increasing the jog speed and see if this speeds up homes</p>
+<p><em>In other homing modes</em>, the McLennan uses an internal homing routine. This uses the “creep speed” which IBEX now <em>does</em> set as of <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4815">https://github.com/ISISComputingGroup/IBEX/issues/4815</a>. If you need to manually make homing faster, do the following:</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">HVEL</span></code> macro to an appropriate speed for homing via IBEX configuration macros</p></li>
+<li><p>Restart the IOC</p></li>
+</ul>
+<p>Note that the creep speed for the PM600 at least is limited to 800 steps per second. We cater for this in the motor record and set it to the <code class="docutils literal notranslate"><span class="pre">HVEL</span></code> value if lower than 800 and otherwise set it to 800.</p>
+</section>
+</section>
+<section id="mclennan-does-not-communicate">
+<h2>Mclennan does not communicate<a class="headerlink" href="#mclennan-does-not-communicate" title="Link to this heading"></a></h2>
+<p>Most McLennans have 2 RS232 ports, for daisy chain in&amp;out. The out port is <strong>required</strong> to have an rs-232 terminator installed in it, this looks similar to a null modem and bridges two pins. <strong>If this terminator is not installed the Mclennan will not communicate at all using any comms settings</strong>.</p>
+</section>
+<section id="office-mclennan-settings">
+<h2>Office McLennan Settings<a class="headerlink" href="#office-mclennan-settings" title="Link to this heading"></a></h2>
+<p>The office McLennan(s, there are two) needs the following:</p>
+<ol class="arabic simple">
+<li><p>No Null terminator or gender changer (if using a straight-through male-female cable from a PC)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Note: If the Mclennan has two ports (for daisy chaining), the out port MUST have an RS232 terminator in it. This looks similar to a null modem and bridges two serial pins. If this is not present, the motor controller will not communicate.</p></li>
+</ul>
+<p>Use following IOC macro setting:</p>
+<p><em>note: the comms settings should be labelled on the device, so refer to those</em></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BAUD</span></code> 9600</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BITS</span></code> 7</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARITY</span></code> even</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AXIS3</span></code> yes (all others no)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MODE3</span></code> CLOSED</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCL3</span></code> 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VELO3</span></code> 0.5</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ERES3</span></code> 400/4096</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MSTP3</span></code> 4000</p></li>
+</ol>
+</section>
+<section id="getting-debug-output-information">
+<h2>getting debug output/information<a class="headerlink" href="#getting-debug-output-information" title="Link to this heading"></a></h2>
+<p>console to IOC and type <code class="docutils literal notranslate"><span class="pre">dbior</span></code> for basic information. For extended information pass a higher report level to dbior e.g. <code class="docutils literal notranslate"><span class="pre">dbior</span> <span class="pre">drvPM304</span> <span class="pre">1</span></code> (the <code class="docutils literal notranslate"><span class="pre">drvPM304</span></code> is the Mclennan driver name and restricts details to just that, the second argument is the debug level. You can use <code class="docutils literal notranslate"><span class="pre">*</span></code> instead of <code class="docutils literal notranslate"><span class="pre">drvPM304</span></code> but will then get extended details for <code class="docutils literal notranslate"><span class="pre">asyn</span></code> and other loaded drivers too)</p>
+</section>
+<section id="converting-values-from-labview">
+<h2>converting values from LabVIEW<a class="headerlink" href="#converting-values-from-labview" title="Link to this heading"></a></h2>
+<p>if you need to convert a previous SECI/LabVIEW Mclennan ini file, these are usually found in <code class="docutils literal notranslate"><span class="pre">c:\labview</span> <span class="pre">modules\Drivers\Mclennan</span> <span class="pre">PM600\INI</span> <span class="pre">Files</span></code> on the NDX computer. A file will have an entry like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">M0</span><span class="p">]</span>
+<span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Mclennan Newport&quot;</span>
+<span class="n">Enabled</span> <span class="o">=</span> <span class="n">TRUE</span>    
+<span class="n">Units</span> <span class="o">=</span> <span class="s2">&quot;deg&quot;</span>
+<span class="n">Com</span> <span class="n">Port</span> <span class="o">=</span> <span class="mi">7</span> 
+<span class="n">Axis</span> <span class="n">Address</span> <span class="o">=</span> <span class="mi">1</span>    
+<span class="n">Baud</span> <span class="n">Rate</span> <span class="o">=</span> <span class="mi">9600</span>    
+<span class="n">Data</span> <span class="n">Bits</span> <span class="o">=</span> <span class="mi">8</span>    
+<span class="n">Parity</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">Stop</span> <span class="n">Bits</span> <span class="o">=</span> <span class="mi">10</span>    
+<span class="n">Acceleration</span> <span class="o">=</span> <span class="mi">40000</span>    
+<span class="n">Velocity</span> <span class="o">=</span> <span class="mi">10000</span>    
+<span class="n">Motor</span> <span class="n">steps</span> <span class="n">per</span> <span class="n">unit</span> <span class="o">=</span> <span class="mf">8000.000000</span>    
+<span class="n">Encoder</span> <span class="n">counts</span> <span class="n">per</span> <span class="n">unit</span> <span class="o">=</span> <span class="mf">1000.000000</span>    
+<span class="n">Correction</span> <span class="n">Gain</span> <span class="o">=</span> <span class="mi">70</span>    
+<span class="n">Window</span> <span class="o">=</span> <span class="mi">50</span>    
+<span class="n">Creep</span> <span class="n">Speed</span> <span class="o">=</span> <span class="mi">5000</span>    
+<span class="n">Creep</span> <span class="n">Steps</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">Settling</span> <span class="n">Time</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">Jog</span> <span class="n">Speed</span> <span class="o">=</span> <span class="mi">10000</span>    
+<span class="n">Control</span> <span class="n">Mode</span> <span class="o">=</span> <span class="mi">4</span>    
+<span class="n">BackOff</span> <span class="n">Steps</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">Deceleration</span> <span class="o">=</span> <span class="mi">40000</span>    
+<span class="n">Upper</span> <span class="n">limit</span> <span class="o">=</span> <span class="mf">180.000000</span>    
+<span class="n">Lower</span> <span class="n">Limit</span> <span class="o">=</span> <span class="o">-</span><span class="mf">180.000000</span>    
+<span class="n">Enable</span> <span class="n">State</span> <span class="o">=</span> <span class="mi">1</span>    
+<span class="n">KF</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">KP</span> <span class="o">=</span> <span class="mi">10</span>    
+<span class="n">KS</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">KV</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">KX</span> <span class="o">=</span> <span class="mi">0</span>    
+<span class="n">Numerator</span> <span class="o">=</span> <span class="mf">8.000000</span>    
+<span class="n">Denominator</span> <span class="o">=</span> <span class="mf">1.000000</span>    
+<span class="n">Homing</span> <span class="n">Method</span> <span class="o">=</span> <span class="mi">2</span>    
+<span class="n">Homing</span> <span class="n">Speed</span> <span class="o">=</span> <span class="mi">10000</span>    
+<span class="n">Home</span> <span class="n">Offset</span> <span class="o">=</span> <span class="mf">0.000000</span>    
+<span class="n">Apply</span> <span class="n">Home</span> <span class="n">Position</span> <span class="o">=</span> <span class="n">TRUE</span>    
+<span class="n">Home</span> <span class="n">Position</span> <span class="o">=</span> <span class="mf">0.000000</span>    
+<span class="n">Apply</span> <span class="n">Home</span> <span class="n">Offset</span> <span class="o">=</span> <span class="n">FALSE</span>    
+</pre></div>
+</div>
+<p>Calculate the appropriate MCLEN IOC macros as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Axis</span> <span class="pre">Address</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Enabled</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> so we set <code class="docutils literal notranslate"><span class="pre">AXIS1=yes</span></code> and then set other macros with a suffix of <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Name</span> <span class="pre">=</span> <span class="pre">&quot;Mclennan</span> <span class="pre">Newport&quot;</span></code> so we set <code class="docutils literal notranslate"><span class="pre">NAME1</span> <span class="pre">=</span> <span class="pre">Mclennan</span> <span class="pre">Newport</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Motor</span> <span class="pre">steps</span> <span class="pre">per</span> <span class="pre">unit</span> <span class="pre">=</span> <span class="pre">8000.000000</span></code> so we set <code class="docutils literal notranslate"><span class="pre">MSTP1</span> <span class="pre">=</span> <span class="pre">8000</span></code> (which will lead to an EPICS motor record MRES of 0.000125)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Encoder</span> <span class="pre">counts</span> <span class="pre">per</span> <span class="pre">unit</span> <span class="pre">=</span> <span class="pre">1000.000000</span></code> this is not used directly, but see comment on <code class="docutils literal notranslate"><span class="pre">Numerator</span></code> and <code class="docutils literal notranslate"><span class="pre">Denominator</span></code> below</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Velocity</span> <span class="pre">=</span> <span class="pre">10000</span></code> this is in steps per second, so we divide by motor steps per unit to get units per second  (10000 / 8000), <code class="docutils literal notranslate"><span class="pre">VELO1</span> <span class="pre">=</span> <span class="pre">1.25</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Acceleration</span> <span class="pre">=</span> <span class="pre">40000</span></code> this is in steps / s^2, we divide velocity by acceleration (10000 / 40000) to get the acceleration time <code class="docutils literal notranslate"><span class="pre">ACCL1</span> <span class="pre">=</span> <span class="pre">0.25</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Units</span> <span class="pre">=</span> <span class="pre">&quot;deg&quot;</span></code> so we set <code class="docutils literal notranslate"><span class="pre">UNIT1</span> <span class="pre">=</span> <span class="pre">deg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jog</span> <span class="pre">Speed</span> <span class="pre">=</span> <span class="pre">10000</span></code> so like velocity above we divide by steps (10000 / 8000) to get <code class="docutils literal notranslate"><span class="pre">JVEL1</span> <span class="pre">=</span> <span class="pre">1.25</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Upper</span> <span class="pre">limit</span> <span class="pre">=</span> <span class="pre">180.000000</span></code> is already in proper units so set <code class="docutils literal notranslate"><span class="pre">DHLM</span> <span class="pre">=</span> <span class="pre">180.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lower</span> <span class="pre">Limit</span> <span class="pre">=</span> <span class="pre">-180.000000</span></code> is already in proper units so set <code class="docutils literal notranslate"><span class="pre">DLLM</span> <span class="pre">=</span> <span class="pre">-180.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Homing</span> <span class="pre">Speed</span> <span class="pre">=</span> <span class="pre">10000</span></code> so divide by motor steps (10000/8000) to get <code class="docutils literal notranslate"><span class="pre">HVEL1</span> <span class="pre">=</span> <span class="pre">1.25</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Numerator</span> <span class="pre">=</span> <span class="pre">8.000000</span></code> and <code class="docutils literal notranslate"><span class="pre">Denominator</span> <span class="pre">=</span> <span class="pre">1.000000</span></code> refer to the encoder ratio components so we set <code class="docutils literal notranslate"><span class="pre">ERES1</span> <span class="pre">=</span> <span class="pre">8/1</span></code> (This should be the equivalent numeric ratio to <code class="docutils literal notranslate"><span class="pre">Motor</span> <span class="pre">steps</span> <span class="pre">per</span> <span class="pre">unit</span></code>/<code class="docutils literal notranslate"><span class="pre">Encoder</span> <span class="pre">counts</span> <span class="pre">per</span> <span class="pre">unit</span></code> which is true here as 8000 / 1000 == 8 / 1 )</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Home</span> <span class="pre">Position</span> <span class="pre">=</span> <span class="pre">0.000000</span></code> IOC always applies a dial home position of 0, if LabVIEW value is non-zero set <code class="docutils literal notranslate"><span class="pre">OFST1</span></code> IOC macro to this value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">Mode</span> <span class="pre">=</span> <span class="pre">4</span></code> in LabVIEW <code class="docutils literal notranslate"><span class="pre">4</span></code> is “closed loop stepper” so set <code class="docutils literal notranslate"><span class="pre">CMOD1</span> <span class="pre">=</span> <span class="pre">CLOSED</span></code> (if LabVIEW was <code class="docutils literal notranslate"><span class="pre">1</span></code> that means “open loop stepper” so would set <code class="docutils literal notranslate"><span class="pre">CMOD1</span> <span class="pre">=</span> <span class="pre">OPEN</span></code>. We don’t currently handle other values and they are not used at ISIS as far as we know)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Homing</span> <span class="pre">Method</span> <span class="pre">=</span> <span class="pre">2</span></code> for LabVIEW 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So LabVIEW method <code class="docutils literal notranslate"><span class="pre">2</span></code> is a <em>reverse direction hardware home</em> so after examining the <a class="reference internal" href="#homing">Homing</a> section above the equivalent ibex IOC mode is <code class="docutils literal notranslate"><span class="pre">HOME1</span> <span class="pre">=</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Window</span> <span class="pre">=</span> <span class="pre">50</span></code> this is the end of move check window before an internal Mclennan retry. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves plus retries completes and is still outside this Window, an error will be signalled. So we set <code class="docutils literal notranslate"><span class="pre">WIN1</span> <span class="pre">=</span> <span class="pre">50</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Creep</span> <span class="pre">Steps</span> <span class="pre">=</span> <span class="pre">0</span></code> number of steps to approach final position at the slower <code class="docutils literal notranslate"><span class="pre">Creep</span> <span class="pre">speed</span></code> in the final phase of a move. So we set <code class="docutils literal notranslate"><span class="pre">CRST1</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Settling</span> <span class="pre">Time</span> <span class="pre">=</span> <span class="pre">0</span></code> how long motor readback must be within <code class="docutils literal notranslate"><span class="pre">Window</span></code> of requested position at end of move, if not achieved triggers a timeout abort. So we set <code class="docutils literal notranslate"><span class="pre">SETL1</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BackOff</span> <span class="pre">Steps</span> <span class="pre">=</span> <span class="pre">0</span></code> used for backlash correction. We can set <code class="docutils literal notranslate"><span class="pre">BOST1</span> <span class="pre">=</span> <span class="pre">0</span></code> but this is the default anyway.</p></li>
+</ul>
+<p>Some LabVIEW values do not currently have macros and get IOC defaults. Edit MCLEN IOC <code class="docutils literal notranslate"><span class="pre">st-motor-init.st</span></code> if you need to temporarily change them and then create a ticket to add a proper IOC macro</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Correction</span> <span class="pre">Gain</span> <span class="pre">=</span> <span class="pre">70</span></code> this is equivalent to the IOC default <code class="docutils literal notranslate"><span class="pre">PCOF</span> <span class="pre">=</span> <span class="pre">0.7</span></code> for a stepper motor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Creep</span> <span class="pre">Speed</span> <span class="pre">=</span> <span class="pre">5000</span></code> only important for us if <code class="docutils literal notranslate"><span class="pre">Creep</span> <span class="pre">Steps</span></code> &gt; 0 as this is temporary set to <code class="docutils literal notranslate"><span class="pre">HVEL</span></code> during a home so does not now affect homes.</p></li>
+</ul>
+<p>Some Mclennan values were not covered in LabVIEW but exist in MCLEN IOC <code class="docutils literal notranslate"><span class="pre">st-motor-init.st</span></code></p>
+<ul class="simple">
+<li><p>Tracking window - a parameter used to determine if a <em>TRACKING ABORT</em> should be signalled, it is the max allowed difference between current and requested position during a move (also known as the <em>following error</em>). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step, or incorrect encoder values being returned from the hardware</p></li>
+<li><p>Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a <em>NOT COMPLETE/TIMEOUT ABORT</em> This could mean the <code class="docutils literal notranslate"><span class="pre">Window</span></code> Mclennan parameter is too small and cannot be achieved, try increasing relevant <code class="docutils literal notranslate"><span class="pre">WIN*</span></code> macro.</p></li>
+</ul>
+</section>
+<section id="useful-commands-for-debugging-from-a-terminal-session">
+<h2>useful commands for debugging from a terminal session<a class="headerlink" href="#useful-commands-for-debugging-from-a-terminal-session" title="Link to this heading"></a></h2>
+<p>Command syntax is <code class="docutils literal notranslate"><span class="pre">aXXnnn</span></code> where <code class="docutils literal notranslate"><span class="pre">a</span></code> is address, <code class="docutils literal notranslate"><span class="pre">XX</span></code> command, <code class="docutils literal notranslate"><span class="pre">nnn</span></code> optional argument e.g. <code class="docutils literal notranslate"><span class="pre">1HD-1</span></code> homes axis 1 to datum in negative direction.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CO</span> <span class="o">-</span> <span class="n">query</span> <span class="n">current</span> <span class="n">operation</span>
+<span class="n">OS</span> <span class="o">-</span> <span class="n">query</span> <span class="n">status</span>
+<span class="n">QA</span> <span class="o">-</span> <span class="n">query</span> <span class="nb">all</span> <span class="n">parameters</span>
+<span class="n">QM</span> <span class="o">-</span> <span class="n">query</span> <span class="n">modes</span>
+<span class="n">QP</span> <span class="o">-</span> <span class="n">query</span> <span class="n">positions</span>
+<span class="n">QS</span> <span class="o">-</span> <span class="n">query</span> <span class="n">speeds</span>
+</pre></div>
+</div>
+<p>modes give a bit pattern - see manual for meaning</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Linmot.html" class="btn btn-neutral float-left" title="Linmot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mclennan/HRPD-homing-sequence.html" class="btn btn-neutral float-right" title="HRPD Homing Sequence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

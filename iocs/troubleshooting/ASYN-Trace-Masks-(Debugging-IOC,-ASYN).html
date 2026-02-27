@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asyn Trace Masks &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DLL Dependency Walker" href="Dependency-Walker.html" />
+    <link rel="prev" title="Troubleshooting" href="../Troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Asyn Trace Masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Walker.html">DLL Dependency Walker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-And-Device-Trouble-Shooting.html">General troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Start-Example.html">IOC Startup Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Start-Example.html#full-log">Full Log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-crash-or-unexpected-termination-%E2%80%90-Find-function-from-windows-module-offset.html">IOC Crash - find function from offset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-flow-control-settings.html">IOC Flow Control Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Log-file-location.html">Log file locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Remote-Debugging-from-Visual-Studio.html">Remote Debugging from Visual Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serial-Bruteforce-script.html">Serial Bruteforce Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serial-Port-Debug.html">Serial Port Debug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestSerialPort.html">TestSerialPort</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Troubleshooting.html">Troubleshooting</a></li>
+      <li class="breadcrumb-item active">Asyn Trace Masks</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/troubleshooting/ASYN-Trace-Masks-(Debugging-IOC,-ASYN).md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="asyn-trace-masks">
+<h1>Asyn Trace Masks<a class="headerlink" href="#asyn-trace-masks" title="Link to this heading"></a></h1>
+<p>For asyn based drivers, such as stream device, additional information printing can be enabled on a port via commands from the ioc shell. The commands let you see what bytes are being sent and received, and also the flow of control/logic.</p>
+<section id="print-commands-and-responses-to-screen">
+<h2>Print commands and responses to screen<a class="headerlink" href="#print-commands-and-responses-to-screen" title="Link to this heading"></a></h2>
+<p>The two commands you need are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asynSetTraceIOMask</span><span class="p">(</span><span class="s2">&quot;L0&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">)</span>
+<span class="n">asynSetTraceMask</span><span class="p">(</span><span class="s2">&quot;L0&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note: if the device’s messages are longer than 80 characters, you should increase the buffer size by also running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asynSetTraceIOTruncateSize</span><span class="p">(</span><span class="s2">&quot;L0&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where 1024 is the maximum message length you expect - could be increased if your device requires it.</p>
+<p>to turn off use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asynSetTraceMask</span><span class="p">(</span><span class="s2">&quot;L0&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="asyn-trace-mask">
+<h2>ASYN trace mask<a class="headerlink" href="#asyn-trace-mask" title="Link to this heading"></a></h2>
+<p>This determines what you see and is set to 0x1 (ASYN_TRACE_ERROR) by default. The following additional values
+can be ORed together and optionally set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0x1</span></code>: ASYN_TRACE_ERROR - Print error messages (default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x2</span></code>: ASYN_TRACEIO_DEVICE - Device support reports I/O activity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x4</span></code>: ASYN_TRACEIO_FILTER - Any layer between device support and the low level driver e.g. asyn interpose functions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x8</span></code>: ASYN_TRACEIO_DRIVER - Low level driver reports I/O activity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x10</span></code>: ASYN_TRACE_FLOW - Report logic flow</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x20</span></code>: ASYN_TRACE_WARNING - Report warnings, i.e. conditions between ASYN_TRACE_ERROR and ASYN_TRACE_FLOW</p></li>
+</ul>
+<p>If L0 if your asyn port, then</p>
+<p><code class="docutils literal notranslate"><span class="pre">asynSetTraceMask(&quot;L0&quot;,-1,0x9)</span></code></p>
+<p>will enable ASYN_TRACE_ERROR and ASYN_TRACEIO_DRIVER for all addresses (-1) on port “L0” which is a good place to start for debugging. You may also want to use ASYN_TRACE_FLOW but this can print a bit too much depending on the driver and you may loose your IO device messages amongst them. If you want to try this separately then e.g.</p>
+<p><code class="docutils literal notranslate"><span class="pre">asynSetTraceMask(&quot;L0&quot;,0,0x11)</span></code></p>
+<p>will enable ASYN_TRACE_ERROR and ASYN_TRACE_FLOW on port “L0” but just for address 0.</p>
+<p>To see output of interpose functions such as <code class="docutils literal notranslate"><span class="pre">asynInterposeThrottle</span></code> add <code class="docutils literal notranslate"><span class="pre">0x4</span></code>, so <code class="docutils literal notranslate"><span class="pre">0x9</span></code> become <code class="docutils literal notranslate"><span class="pre">0xD</span></code> for example</p>
+</section>
+<section id="asyn-traceio-mask">
+<h2>ASYN traceIO mask<a class="headerlink" href="#asyn-traceio-mask" title="Link to this heading"></a></h2>
+<p>If  ASYN_TRACEIO_DRIVER  has been enabled, then this mask determines the format of the output produced when reporting I/O. The default is ASYN_TRACEIO_NODATA so the count of bytes transferred is reported, but the bytes themselves are not printed.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0x0</span></code> (ASYN_TRACEIO_NODATA) - Print count of bytes transferred, but not bytes themselves</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x1</span></code>  (ASYN_TRACEIO_ASCII)  - Print bytes with a “%s” style format</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x2</span></code>  (ASYN_TRACEIO_ESCAPE) - Calls <code class="docutils literal notranslate"><span class="pre">epicsStrPrintEscaped()</span></code> to display bytes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x4</span></code>  (ASYN_TRACEIO_HEX)    - Print hexadecimal values of each byte with “ %2.2x”</p></li>
+</ul>
+<p>So</p>
+<p><code class="docutils literal notranslate"><span class="pre">asynSetTraceIOMask(&quot;L0&quot;,-1,0x2)</span></code></p>
+<p>would enable ASYN_TRACEIO_ESCAPE style printing of all bytes read/written by the asyn driver via port “L0”, which is a good place to start</p>
+</section>
+<section id="additional-trace-information">
+<h2>Additional trace information<a class="headerlink" href="#additional-trace-information" title="Link to this heading"></a></h2>
+<p>This mask determines the information printed at the start of each message above. The default is <code class="docutils literal notranslate"><span class="pre">ASYN_TRACEINFO_TIME</span></code> which just adds a timestamp, normally this is sufficient but it can be changed by calling  <code class="docutils literal notranslate"><span class="pre">asynSetTraceInfoMask</span></code>  with a combination of flags:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0x1</span></code>  <code class="docutils literal notranslate"><span class="pre">(ASYN_TRACEINFO_TIME)</span></code>   prints the date and time of the message (default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x2</span></code>  <code class="docutils literal notranslate"><span class="pre">(ASYN_TRACEINFO_PORT)</span></code>   prints <code class="docutils literal notranslate"><span class="pre">[port,addr,reason]</span></code>, where port is the port name, <code class="docutils literal notranslate"><span class="pre">addr</span></code> is the asyn address, and reason is pasynUser-&gt;reason. These are the 3 pieces of “addressing” information in asyn.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x4</span></code>  <code class="docutils literal notranslate"><span class="pre">(ASYN_TRACEINFO_SOURCE)</span></code> prints the file name and line number, i.e. <code class="docutils literal notranslate"><span class="pre">[__FILE__,__LINE__]</span></code> where the asynPrint or asynPrintIO statement occurs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x8</span></code>  <code class="docutils literal notranslate"><span class="pre">(ASYN_TRACEINFO_THREAD)</span></code>  prints the thread name, thread ID and thread priority, i.e. <code class="docutils literal notranslate"><span class="pre">[epicsThreadGetNameSelf(),</span> <span class="pre">epicsThreadGetIdSelf(),</span> <span class="pre">epicsThreadGetPrioritySelf()]</span></code>.</p></li>
+</ul>
+<p>e.g. to print time and port details at start of each message</p>
+<p><code class="docutils literal notranslate"><span class="pre">asynSetTraceInfoMask(&quot;L0&quot;,-1,0x3)</span></code></p>
+</section>
+<section id="logging-to-file">
+<h2>Logging to file<a class="headerlink" href="#logging-to-file" title="Link to this heading"></a></h2>
+<p>By default the trace output is sent to the epics error log (which by default echoes to console too), but it can instead be sent to file e.g.</p>
+<p><code class="docutils literal notranslate"><span class="pre">asynSetTraceFile(&quot;L0&quot;,-1,&quot;temp.log&quot;)</span></code></p>
+</section>
+<section id="getting-very-verbose-output-from-stream-device">
+<h2>Getting (VERY VERBOSE) output from stream device.<a class="headerlink" href="#getting-very-verbose-output-from-stream-device" title="Link to this heading"></a></h2>
+<p>In your <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code>, or at the EPICS prompt from a console session, use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">streamDebug</span> <span class="pre">1</span></code></p>
+<p>This will turn on debug logging from stream device which is very verbose.</p>
+</section>
+<section id="seeing-all-channel-access-put-requests-to-the-ioc">
+<h2>Seeing all channel access put requests to the IOC<a class="headerlink" href="#seeing-all-channel-access-put-requests-to-the-ioc" title="Link to this heading"></a></h2>
+<p>In your <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code>, or at the EPICS prompt from a console session, use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">caPutLogToConsole</span> <span class="pre">1</span></code></p>
+<p>This will log all details of <code class="docutils literal notranslate"><span class="pre">caput</span></code> etc to the ioc to console using the <code class="docutils literal notranslate"><span class="pre">caPutLog</span></code> mechanism.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Dependency-Walker.html" class="btn btn-neutral float-right" title="DLL Dependency Walker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

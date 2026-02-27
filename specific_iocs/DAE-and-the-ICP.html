@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAE (Data Acquisition Electronics) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Live View" href="dae/DAE-Live-View.html" />
+    <link rel="prev" title="Triton" href="cryogenics/Triton.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DAE (Data Acquisition Electronics)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dae/DAE-Live-View.html">Live View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/DAE-Normal-Log.html"><code class="docutils literal notranslate"><span class="pre">isisicp</span></code> Standard startup log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/DAE-PVs.html">DAE Spectra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/DAE-Pre-and-Post-commands.html">DAE Pre &amp; Post commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/DAE-Trouble-Shooting.html">DAE Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/Dae-Spectra-Updating-Problem.html">Dae Spectra Updating Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/Experimental-Runs.html">Experimental Run Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/ISISICP---enabling-incremental-event-file-creation.html">ISISICP - enabling incremental event file creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dae/Shrinking-ISISICP-Memory-Usage-on-Simulated-DAE-machines.html">Reducing <code class="docutils literal notranslate"><span class="pre">ISISICP</span></code> memory use in simulation mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+      <li class="breadcrumb-item active">DAE (Data Acquisition Electronics)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/DAE-and-the-ICP.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dae-data-acquisition-electronics">
+<h1>DAE (Data Acquisition Electronics)<a class="headerlink" href="#dae-data-acquisition-electronics" title="Link to this heading"></a></h1>
+<p>The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file.</p>
+<p>Note: the <code class="docutils literal notranslate"><span class="pre">MUX</span></code> instrument uses a <a class="reference internal" href="other/CAEN-Hexagon.html"><span class="std std-doc">different type of acquisition electronics</span></a></p>
+<section id="running-the-dae-in-parallel">
+<h2>Running the DAE in Parallel<a class="headerlink" href="#running-the-dae-in-parallel" title="Link to this heading"></a></h2>
+<p>In some cases you may want your DAE to mimic the state of a DAE on another machine. This is particularly useful when testing the DAE3 hardware as it will give comparable data files to the ones created by a DAE2.</p>
+<p>To do this you must:</p>
+<ul class="simple">
+<li><p>Switch to the dae3_pull_dae2_data <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-isisdae/tree/dae3_pull_dae2_data">branch</a></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">dbLoadRecords(&quot;$(ISISDAE)/db/dae3_pull.db&quot;,&quot;P=$(MYPVPREFIX),Q=DAE:,O=XXX&quot;)</span></code> to the st.cmd of your DAE, where XXX is the prefix of the instrument which you wish to mimic.</p></li>
+<li><p>Copy across the wiring, detector and spectra tables from the other instrument.</p></li>
+<li><p>Set your DAE with the same tables and the same general settings.</p></li>
+<li><p>Wait until the other instrument is in SETUP</p></li>
+<li><p>Start your DAE</p></li>
+</ul>
+<p>The DAE will mimic the run state, title and period of the DAE it is point to.</p>
+</section>
+<section id="dae-event-histogram-modes">
+<h2>Event and Histogram Mode<a class="headerlink" href="#dae-event-histogram-modes" title="Link to this heading"></a></h2>
+<p>The DAE/ICP has two main ‘modes’ of operation, event mode and histogram mode. In event mode the position and timestamp of every single neutron that the detector finds is passed through the DAE to the ICP and saved into the NeXus file. In histogram mode the DAE will intercept these events and put them into bins based on when they hit the detector. Due to the binning of events histograms lead to some lost information however historically histogrammed data was the only option due to limited data rates. Instruments in general are moving more towards event data but it still has the disadvantage that it will lead to large and unwieldy NeXus files and in some cases offers little benefit as histogramming would be the first step of data analysis anyway.</p>
+<p>In reality this mode of operation is actually set per detector card rather than over the whole DAE. However instruments will tend to run with a majority one way or the other and so scientists tend to think of them as distinct modes. The exception to this is monitors where instruments will nearly always histogram them. This is for two reasons:</p>
+<ul class="simple">
+<li><p>They have higher flux than other detectors so will dramatically increase file size if put as events</p></li>
+<li><p>They’re used mainly for normalisation and diagnostics so loss of precision is not that much of a big deal</p></li>
+</ul>
+</section>
+<section id="dae-configuration">
+<h2>Configuring the DAE/ICP<a class="headerlink" href="#dae-configuration" title="Link to this heading"></a></h2>
+<p>There are two settings files inside <code class="docutils literal notranslate"><span class="pre">EPICS/ICP_Binaries</span></code> that are used to configure the ICP at start up, these are <code class="docutils literal notranslate"><span class="pre">icp_config.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">isisicp.properties</span></code>. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc. <strong>NOTE:</strong> on in instrument these files live in a different location <code class="docutils literal notranslate"><span class="pre">c:\labview</span> <span class="pre">modules\dae</span></code>. The <code class="docutils literal notranslate"><span class="pre">isisicp.properties</span></code> file is used to override settings in <code class="docutils literal notranslate"><span class="pre">isisicp.default.properties</span></code>.</p>
+<p>There are three main files that can be set at runtime to change the behaviour of the DAE or used for later analysis, they are collectively known as tables and need to be selected from the “Experiment Setup/Data Acquisition” tab in the GUI:</p>
+<ul class="simple">
+<li><p><em>Detector Table</em>: Files containing the word detector specifying the physical location of each detector. The second line contains the number of entries followed by the number of user parameters. The table consists of a detector id, it’s offset, it’s L2 (distance from the sample), an id code and then as many user specified parameters as specified in the second line.</p></li>
+<li><p><em>Spectra Table</em>: Files containing the word spectra specifying how detector id (which has little meaning to an instrument scientist) maps to spectrum number (which the scientists use for analysis). The second line contains the number of detectors.</p></li>
+<li><p><em>Wiring Table</em>: Files containing the word wiring and specifying how the detectors are connected to the DAE. The second line specifies how many detectors there are and how many of those are monitors. The table contains an index, detector id, time regime (see time channels below), physical crate, module and position numbers, the monitor that the detector corresponds to (0 for none) and the monitor prescale.
+These files are picked up from <code class="docutils literal notranslate"><span class="pre">Instrument/Settings/config/inst/configurations/tables</span></code>, have the *.dat suffix and are all human readable. They can be edited by hand but must be done carefully to ensure that there are no logic errors within them. For example if a detector is listed in one file but not in another.</p></li>
+</ul>
+<section id="time-channel-binning-setting-to-event-histogram-mode">
+<h3>Time Channel Binning - setting to event/histogram mode<a class="headerlink" href="#time-channel-binning-setting-to-event-histogram-mode" title="Link to this heading"></a></h3>
+<p>The way that data is binned by the DAE is set by changing the time channel boundaries (TCB). Scientists generally want different amounts of detail depending on when the neutron hit the detector, which they can do by setting a smaller bin in the time range that they care more about. They can do this through the GUI manually or by creating a tcb file that is loaded into the ICP/ibex GUI. It may be that scientists would like different levels of binning for different banks of detectors they can do this by setting up a number of different <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">regimes</span></code> and then specifying the regime they would like the detector to go into in the wiring table.</p>
+<p>Time regimes defined in the GUI are assigned an integer from 1 to 99. There is a special convention for the time regime number in a wiring table file. If the integer 1-99 is used, this means collect in histogram mode using binning created from that time regime. Specifying a time regime number of &gt; 100 in a wiring table file is a convention for event mode - specifying YYXX will collect events using regime XX regime but create ‘on the fly’ histograms in YY time regime for quick spectra view. Normally you will see <code class="docutils literal notranslate"><span class="pre">1</span></code> for histogram mode and <code class="docutils literal notranslate"><span class="pre">102</span></code> for event mode in a wiring file, this mean histograms will use time regime 1 and event mode will use time regime 2 for collecting the data at high resolution but create histograms based on time regime 1 resolution for quick spectrum views</p>
+<p>By convention on instruments, wiring tables enabling event mode have end in <code class="docutils literal notranslate"><span class="pre">_event.dat</span></code>. histogram and event mode wiring tables for a new instrument/new DAE are normally created by Detector System Group as they will know the physical wiring layout. An existing histogram mode table can be converted to enable event mode by anybody by following the rules above.</p>
+<p>By default simulated data will head into one or two spectra, if you want to see simulated data across all banks e.g. for an areaDetector simulation then look for the following lines in the <code class="docutils literal notranslate"><span class="pre">isisicp.properties</span></code> file mentioned above in <a class="reference internal" href="#dae-configuration">Configuring the DAE/ICP</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">isisicp</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">neventssim</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">isisicp</span><span class="o">.</span><span class="n">simulation</span><span class="o">.</span><span class="n">spreadsimevents</span> <span class="o">=</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>change <code class="docutils literal notranslate"><span class="pre">spreadsimevents</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code>, you probably don’t need to increase <code class="docutils literal notranslate"><span class="pre">neventssim</span></code> unless you had loaded a custom larger wiring table and spectra aren’t accumulating data fast enough for you.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order for simulation mode parameters like <code class="docutils literal notranslate"><span class="pre">isisicp.simulation.spreadsimevents</span></code> to work correctly, you need to have an event-mode wiring table loaded.</p>
+</div>
+</section>
+</section>
+<section id="performing-arbitrary-actions-on-run-start-run-end">
+<h2>Performing arbitrary actions on run start/run end<a class="headerlink" href="#performing-arbitrary-actions-on-run-start-run-end" title="Link to this heading"></a></h2>
+<p>The ISISDAE ioc can be configured to process PVs just after starting and ending runs. It is easiest to configure this in <code class="docutils literal notranslate"><span class="pre">globals.txt</span></code> like the following example for the SANS2D fast shutter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ISISDAE_01__POST_BEGIN_1</span><span class="o">=</span><span class="n">TE</span><span class="p">:</span><span class="n">NDW1799</span><span class="p">:</span><span class="n">FINS_VAC</span><span class="p">:</span><span class="n">SHUTTER</span><span class="p">:</span><span class="n">OPEN_IF_AUTO</span><span class="o">.</span><span class="n">PROC</span> <span class="n">CA</span> <span class="n">PP</span>
+<span class="n">ISISDAE_01__POST_RESUME_1</span><span class="o">=</span><span class="n">TE</span><span class="p">:</span><span class="n">NDW1799</span><span class="p">:</span><span class="n">FINS_VAC</span><span class="p">:</span><span class="n">SHUTTER</span><span class="p">:</span><span class="n">OPEN_IF_AUTO</span><span class="o">.</span><span class="n">PROC</span> <span class="n">CA</span> <span class="n">PP</span>
+<span class="n">ISISDAE_01__POST_END_1</span><span class="o">=</span><span class="n">TE</span><span class="p">:</span><span class="n">NDW1799</span><span class="p">:</span><span class="n">FINS_VAC</span><span class="p">:</span><span class="n">SHUTTER</span><span class="p">:</span><span class="n">CLOSE_IF_AUTO</span><span class="o">.</span><span class="n">PROC</span> <span class="n">CA</span> <span class="n">PP</span>
+<span class="n">ISISDAE_01__POST_ABORT_1</span><span class="o">=</span><span class="n">TE</span><span class="p">:</span><span class="n">NDW1799</span><span class="p">:</span><span class="n">FINS_VAC</span><span class="p">:</span><span class="n">SHUTTER</span><span class="p">:</span><span class="n">CLOSE_IF_AUTO</span><span class="o">.</span><span class="n">PROC</span> <span class="n">CA</span> <span class="n">PP</span>
+<span class="n">ISISDAE_01__POST_PAUSE_1</span><span class="o">=</span><span class="n">TE</span><span class="p">:</span><span class="n">NDW1799</span><span class="p">:</span><span class="n">FINS_VAC</span><span class="p">:</span><span class="n">SHUTTER</span><span class="p">:</span><span class="n">CLOSE_IF_AUTO</span><span class="o">.</span><span class="n">PROC</span> <span class="n">CA</span> <span class="n">PP</span>
+</pre></div>
+</div>
+<p>There are currently 4 macros available for each of <code class="docutils literal notranslate"><span class="pre">POST_BEGIN_x</span></code>, <code class="docutils literal notranslate"><span class="pre">POST_END_x</span></code>, <code class="docutils literal notranslate"><span class="pre">POST_ABORT_x</span></code>, <code class="docutils literal notranslate"><span class="pre">POST_PAUSE_x</span></code> and <code class="docutils literal notranslate"><span class="pre">POST_RESUME_x</span></code>.</p>
+<p>Note that if the PV you want to process is not in the ISISDAE ioc, you will need to specify the <code class="docutils literal notranslate"><span class="pre">.PROC</span></code> field explicitly for the link to work.</p>
+</section>
+<section id="isisdae-environment-variables">
+<h2>ISISDAE environment variables<a class="headerlink" href="#isisdae-environment-variables" title="Link to this heading"></a></h2>
+<p>These were added for <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6560">https://github.com/ISISComputingGroup/IBEX/issues/6560</a> but testing proved inconclusive, so may need to be revisited:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ISISDAE_TIMER_PRIORITY</span></code> controls if the spectra read timer queue thread is same (0), higher (1) or lower (-1) priority than other scan threads, defaults to higher</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ISISDAE_TIMER_SLEEP</span></code> how long to sleep after a spectra read to allow a thread yield (default: 1ms)</p></li>
+</ul>
+</section>
+<section id="further-information">
+<h2>Further information<a class="headerlink" href="#further-information" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dae/DAE-Live-View.html">Live View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/DAE-Normal-Log.html"><code class="docutils literal notranslate"><span class="pre">isisicp</span></code> Standard startup log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/DAE-PVs.html">DAE Spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/DAE-Pre-and-Post-commands.html">DAE Pre &amp; Post commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/DAE-Trouble-Shooting.html">DAE Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/Dae-Spectra-Updating-Problem.html">Dae Spectra Updating Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/Experimental-Runs.html">Experimental Run Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/ISISICP---enabling-incremental-event-file-creation.html">ISISICP - enabling incremental event file creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dae/Shrinking-ISISICP-Memory-Usage-on-Simulated-DAE-machines.html">Reducing <code class="docutils literal notranslate"><span class="pre">ISISICP</span></code> memory use in simulation mode</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cryogenics/Triton.html" class="btn btn-neutral float-left" title="Triton" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dae/DAE-Live-View.html" class="btn btn-neutral float-right" title="Live View" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

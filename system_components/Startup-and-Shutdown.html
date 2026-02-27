@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup and Shutdown &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mini-inst troubleshooting" href="startup/Mini-inst-Troubleshooting.html" />
+    <link rel="prev" title="Spangle Banner" href="configurations/Spangle-banner.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Startup and Shutdown</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="startup/Mini-inst-Troubleshooting.html">Mini-inst troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">Startup and Shutdown</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/Startup-and-Shutdown.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="startup-and-shutdown">
+<h1>Startup and Shutdown<a class="headerlink" href="#startup-and-shutdown" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>This page shows the behaviour expected for IBEX or starting and stopping. There are two different modes in which IBEX can run:</p>
+<ol class="arabic simple">
+<li><p>Full: As the instrument control, which archiving, configurations, logging etc</p></li>
+<li><p>MiniInst: As a minimal system running only a small number of IBEX IOCs</p></li>
+</ol>
+<p>The system will provide IOCs (2) if a file called <code class="docutils literal notranslate"><span class="pre">startup.txt</span></code> is in the ICP Config Root. ICP Config Root defaults to <code class="docutils literal notranslate"><span class="pre">C:/Instrument/Settings/config/&lt;COMPUTERNAME&gt;/configurations</span></code> but may be overridden in <code class="docutils literal notranslate"><span class="pre">icpconfighost.txt</span></code> in <code class="docutils literal notranslate"><span class="pre">C:/Instrument/Settings/config</span></code>.</p>
+<p>On a system reboot IBEX should start but only if it was running when the machine was shut down. Whether IBEX was running is recorded by the contents of a file (<add file path>) - this will be done as part of ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1950">#1950</a>. The reboot behaviour is achieved by placing start_ibex_server script in the startup directory.</p>
+<p>Start behaviour:</p>
+<ul class="simple">
+<li><p>If IBEX is running and IBEX is requested to start then IBEX should restart itself (this should have minimal data loss).</p></li>
+</ul>
+<section id="process-on-start-not-definitive-see-actual-scripts">
+<h2>Process on Start (not definitive see actual scripts)<a class="headerlink" href="#process-on-start-not-definitive-see-actual-scripts" title="Link to this heading"></a></h2>
+<p>There is a startup script <code class="docutils literal notranslate"><span class="pre">ibex_system_boot.bat</span></code>, this can be installed as a startup program, if IBEX server was previously started it restarts it otherwise it does nothing. It is detected by the presence of <code class="docutils literal notranslate"><span class="pre">c:\instrument\var\tmp\ibex_running.txt</span></code>.</p>
+<p>Start is initiated from <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\start_ibex_server.bat</span></code>. It:</p>
+<ol class="arabic simple">
+<li><p>Stop the ibex server (see below)</p></li>
+<li><p>Put start file in place <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1950">#1950</a></p></li>
+<li><p>Runs ca repeater bat</p>
+<ol class="arabic simple">
+<li><p>Kills old carepeater tasks</p></li>
+<li><p>Starts a new task in procserv</p></li>
+</ol>
+</li>
+<li><p>Runs conserver bat</p>
+<ol class="arabic simple">
+<li><p>Stops conserver</p></li>
+<li><p>Starts a new conserver</p></li>
+</ol>
+</li>
+<li><p>If startup.txt exists in config runs start_ibex_server_mini else runs start_ibex_server_full.bat</p></li>
+<li><p>[full only] update iocs db</p></li>
+<li><p>[full only] start ioc log server (if logs cannot be loaded, you may not have permission to view the files, this can happen if you accidentally started the server in admin mode in the past. This can be fixed by either changing the folder’s permissions or deleting its configs)</p></li>
+<li><p>[full only] start the alarm server</p></li>
+<li><p>start the gateways</p></li>
+<li><p>start the procserver for the iocs (call <code class="docutils literal notranslate"><span class="pre">iocstartup\procserv.bat</span></code>)</p></li>
+<li><p>starts proc server control (PSCTRL IOC)</p></li>
+<li><p>Reload conserver</p></li>
+<li><p>[full only] start the block server</p></li>
+<li><p>[full only] start the database server</p></li>
+<li><p>[full only] start the script server (if not on an instrument)</p></li>
+<li><p>[mini only] Start and enable auto start on IOC in startup.txt list</p></li>
+</ol>
+</section>
+<section id="process-on-stop-not-definitive-see-actual-scripts">
+<h2>Process on Stop (not definitive see actual scripts)<a class="headerlink" href="#process-on-stop-not-definitive-see-actual-scripts" title="Link to this heading"></a></h2>
+<p>Initiated from start or <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\stop_ibex_server.bat</span></code>. It stops the following</p>
+<ol class="arabic simple">
+<li><p>Remove start file <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1950">#1950</a></p></li>
+<li><p>IOCs in <code class="docutils literal notranslate"><span class="pre">startup.txt</span></code></p></li>
+<li><p>Conserver</p></li>
+<li><p>IOC Log Server</p></li>
+<li><p>Alarm server</p></li>
+<li><p>Gateway</p></li>
+<li><p>Blockserver</p></li>
+<li><p>Database Server</p></li>
+<li><p>Script Server</p></li>
+<li><p>IOCs with PID files</p></li>
+<li><p>All procserv processes</p></li>
+<li><p>All exes in ioc startups</p></li>
+<li><p>Gateway exe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Conserver.exe</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Console.exe</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PSCTRL</span></code></p></li>
+<li><p>Archive engine</p></li>
+<li><p>MK3 Chopper</p></li>
+<li><p>[instrument only] <code class="docutils literal notranslate"><span class="pre">css.exe</span></code></p></li>
+<li><p>[instrument only] <code class="docutils literal notranslate"><span class="pre">javaw</span></code></p></li>
+<li><p>[instrument only] <code class="docutils literal notranslate"><span class="pre">java</span></code></p></li>
+<li><p>[instrument only] <code class="docutils literal notranslate"><span class="pre">pythonw</span></code></p></li>
+<li><p>[instrument only] <code class="docutils literal notranslate"><span class="pre">ibex-client</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">SeciUserInterface</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">SeciStartup</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">LabView</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">mkscript3</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">muonscript</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">PlotScan.exe</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">vs7jit.exe</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">mari_script.exe</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">tkgenie32.exe</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">dllhost.exe</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">isisdatasvr.exe</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">isisicp.exe</span></code></p></li>
+<li><p>[without startup.txt] <code class="docutils literal notranslate"><span class="pre">cwdss.exe</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">camonitor</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caRepeater</span></code></p></li>
+</ol>
+</section>
+<section id="ibex-hard-coded-ports">
+<h2>Ports<a class="headerlink" href="#ibex-hard-coded-ports" title="Link to this heading"></a></h2>
+<section id="procserv-ports">
+<h3>ProcServ Ports<a class="headerlink" href="#procserv-ports" title="Link to this heading"></a></h3>
+<p>These items have hard-coded ports for ProcServ:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Port</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Blockserver</p></td>
+<td><p>9006</p></td>
+</tr>
+<tr class="row-odd"><td><p>Database server</p></td>
+<td><p>9009</p></td>
+</tr>
+<tr class="row-even"><td><p>JSON Bourne server</p></td>
+<td><p>9012</p></td>
+</tr>
+</tbody>
+</table>
+<p>Everything else (IOCs, Block Cache, archivers etc.) are assigned ports as part of the build process starting from 20000.</p>
+</section>
+<section id="other-ports">
+<h3>Other Ports<a class="headerlink" href="#other-ports" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Port</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Instrument Archiver web port</p></td>
+<td><p>4812</p></td>
+</tr>
+<tr class="row-odd"><td><p>Block Archiver web port</p></td>
+<td><p>4813</p></td>
+</tr>
+<tr class="row-even"><td><p>JSON Bourne web port</p></td>
+<td><p>60000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blockserver web port</p></td>
+<td><p>8008</p></td>
+</tr>
+<tr class="row-even"><td><p>Script Server (ActiveMQ STOMP port)</p></td>
+<td><p>39991</p></td>
+</tr>
+<tr class="row-odd"><td><p>JMS (ActiveMQ openwire port)</p></td>
+<td><p>39990</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="configurations/Spangle-banner.html" class="btn btn-neutral float-left" title="Spangle Banner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="startup/Mini-inst-Troubleshooting.html" class="btn btn-neutral float-right" title="Mini-inst troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squish &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Squish BDD Tools" href="System-Testing-with-Squish-BDD.html" />
+    <link rel="prev" title="Mockito" href="Mockito.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-Unit-Tests.html">Adding tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="An-Introduction-to-Unit-Testing.html">An introduction to unit testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mockito.html">Mockito</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Squish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish-BDD.html">Squish BDD Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Test-naming.html">Test naming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">Squish</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/testing/System-Testing-with-Squish.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="squish">
+<h1>Squish<a class="headerlink" href="#squish" title="Link to this heading"></a></h1>
+<section id="squish-licensing-information-contact-details">
+<h2>Squish Licensing Information &amp; Contact Details<a class="headerlink" href="#squish-licensing-information-contact-details" title="Link to this heading"></a></h2>
+<p>We have one floating tester subscription and one floating execution subscription licence. The execution subscription is
+used by a build server to run tests, the tester subscription is used by us to develop tests. We can have at most one
+developer writing tests at a time, but we can all install the software on our machines. I don’t yet know how the license
+system works e.g. if one developer forgets to close squish on their system, does it block everybody until they do? Or
+is there some timeout? We will have to experiment. See <code class="docutils literal notranslate"><span class="pre">license</span> <span class="pre">server</span></code> below for more details.</p>
+</section>
+<section id="set-up-for-local-server">
+<h2>Set Up for local server<a class="headerlink" href="#set-up-for-local-server" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Install SQUISH/JAVA WINDOWS from <code class="docutils literal notranslate"><span class="pre">&lt;isis</span> <span class="pre">experiment</span> <span class="pre">controls</span> <span class="pre">share&gt;\squish</span></code></p></li>
+<li><p>Read and accept the terms and conditions if still correct</p></li>
+<li><p>Install download:</p>
+<ol class="arabic simple">
+<li><p>Run download installer</p></li>
+<li><p>Floating license: Enter <code class="docutils literal notranslate"><span class="pre">control-svcs.isis.cclrc.ac.uk:49345</span></code></p></li>
+<li><p>Licence Agreement: Read and accept the licence</p></li>
+<li><p>Uncheck <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Center</span></code> from items to install, unless you really need it</p></li>
+<li><p>Select python version for script language (3.*)</p></li>
+<li><p>Installation folder: Use <code class="docutils literal notranslate"><span class="pre">c:\tools</span></code> (or <code class="docutils literal notranslate"><span class="pre">c:\squish</span></code> on a build server)</p></li>
+<li><p>JRE or JDK: Select the JDK we are currently developing with</p></li>
+<li><p>Shortcuts: use defaults</p></li>
+<li><p>Start Menu: use defaults</p></li>
+<li><p>Accept default except for location which should be changed to <code class="docutils literal notranslate"><span class="pre">c:\tools</span></code> (or <code class="docutils literal notranslate"><span class="pre">c:\squish</span></code> on a build server)</p></li>
+<li><p>Install</p></li>
+</ol>
+</li>
+<li><p>Clone the current tests to your machine, into <code class="docutils literal notranslate"><span class="pre">c:\Instrument\dev\</span></code>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ISISComputingGroup</span><span class="o">/</span><span class="n">System_Tests_UI_E4</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Open the test suites in the IDE</p>
+<ol class="arabic simple">
+<li><p>Menu File -&gt; Open Test Suite ..</p></li>
+<li><p>Open the root of the git clone you just made this will open all tests suites in the window</p></li>
+</ol>
+</li>
+<li><p>Set the Application under test (AUT)</p>
+<ol class="arabic simple">
+<li><p>Ensure that the ibex_gui client has been built with build.bat</p></li>
+<li><p>Edit -&gt; Server Settings -&gt; Manage AUTs …</p></li>
+<li><p>Select Mapped AUTs and click Add…</p></li>
+<li><p>Locate the executable from the built (built using the build.bat maven script) eclipse project (e.g.
+ibex-client in <code class="docutils literal notranslate"><span class="pre">ibex_gui\built_client\</span></code>)</p></li>
+</ol>
+</li>
+<li><p>To get access to global scripts right click in squish -&gt; global scripts pane -&gt; add -&gt; global scripts directory
+(Found within System_Tests_UI_E4) and select the global scripts directory in the repository root.</p></li>
+<li><p>If not running in Python 3 follow <a class="reference external" href="https://kb.froglogic.com/squish/howto/changing-python-installation-used-squish-binary-packages/">these</a> instructions, and point to the default <code class="docutils literal notranslate"><span class="pre">python3</span></code> directory in the
+squish installation root.</p></li>
+</ol>
+<p>You may also need to install <code class="docutils literal notranslate"><span class="pre">psutil</span></code> and <code class="docutils literal notranslate"><span class="pre">mysql-connector-python==8.0.11</span></code> through the GUI
+(Edit -&gt; Preferences -&gt; PyDev -&gt; Interpreters -&gt; Python Interpreter then “Manage with pip”) if running the experiment
+details tests.</p>
+<p>Once you have set up Squish via the steps above, you should be able to run a test suite to confirm everything is working.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need the IBEX server running in the background, but not the client (which will be started by Squish when
+you run a test).</p>
+</div>
+</section>
+<section id="rdp-to-server">
+<h2>RDP to Server<a class="headerlink" href="#rdp-to-server" title="Link to this heading"></a></h2>
+<p>It is possible to remote desktop to the squish servers but when you disconnect you must use the “Disconnect from RDP”
+shortcut on the desktop. This will prompt for escalated privileges - enter your federal ID and password on the CLRC domain.</p>
+</section>
+<section id="setup-for-build-server">
+<h2>Setup For Build Server<a class="headerlink" href="#setup-for-build-server" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Install all the things needed for an instrument (Git, MySQL, Java)</p></li>
+<li><p>Install Jenkins build system but run it from a command line.</p></li>
+<li><p>Add the script for running the command to the startup.</p></li>
+<li><p>Install squish as above.</p></li>
+<li><p>Add to <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;user&gt;\AppData\Roaming\froglogic\Squish\ver1</span></code> the key
+<code class="docutils literal notranslate"><span class="pre">GlobalScriptDirs</span> <span class="pre">=</span> <span class="pre">&quot;C:\\Jenkins\\workspace\\squish_ui_system_tests\\global_scripts&quot;</span></code></p></li>
+<li><p>Add applications under test to the server setup as above using the IDE</p></li>
+<li><p>Change the Application Behaviour to have a startup time of 120s.</p></li>
+<li><p>Check that the global script directory has been set.</p></li>
+<li><p>Switch off screen saver and power saving</p></li>
+<li><p>Next remote desktop from another machine as the user stated in the password doc</p>
+<ul class="simple">
+<li><p>We have tried making this autologon, but it gets stuck at the policy screen</p></li>
+<li><p>We don’t need VNC this seems to do the job without a problem</p></li>
+</ul>
+</li>
+<li><p>Then disconnect the session using the shortcut on the desktop</p></li>
+<li><p>Leave the machine with an attached screen. I think this is needed to set the resolution when leaving remote desktop.</p></li>
+</ol>
+</section>
+<section id="creating-a-new-test-suite">
+<h2>Creating a new Test Suite<a class="headerlink" href="#creating-a-new-test-suite" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Click File -&gt; New test Suite …</p></li>
+<li><p>New Test Suite:</p>
+<ol class="arabic simple">
+<li><p>Create a sensible name, <code class="docutils literal notranslate"><span class="pre">suite_&lt;what&gt;_tests</span></code></p></li>
+<li><p>Make the test suite path the same as the system testing folder</p></li>
+</ol>
+</li>
+<li><p>Language: Make sure it is python</p></li>
+<li><p>Select the application as eclipse (the ibex client in E4 was called eclipse)</p></li>
+<li><p>Finish</p></li>
+<li><p>Edit the test suite settings (select test suite in test suites tab. Then click on icon with blue spanner)</p>
+<ol class="arabic simple">
+<li><p>Edit Object Map to be <code class="docutils literal notranslate"><span class="pre">..\objects.map</span></code>. You may not be able to do this from the Squish client depending on your
+version, in which case you can directly edit <code class="docutils literal notranslate"><span class="pre">suite.conf</span></code> in <code class="docutils literal notranslate"><span class="pre">/&lt;System</span> <span class="pre">tests</span> <span class="pre">folder&gt;/suite_&lt;something&gt;_tests/</span></code> (it
+should say <code class="docutils literal notranslate"><span class="pre">OBJECTMAP=..\objects.map</span></code>)</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="system-testing-the-ibex-script-generator-with-squish-bdd-tools">
+<h2>System Testing The IBEX Script Generator with Squish BDD Tools<a class="headerlink" href="#system-testing-the-ibex-script-generator-with-squish-bdd-tools" title="Link to this heading"></a></h2>
+<p>The way we use Squish for testing the script generator is a bit different to the way we test the IBEX client. The
+method for testing is documented on the <a class="reference internal" href="System-Testing-with-Squish-BDD.html"><span class="doc std std-doc">Squish BDD Tools</span></a> page. Many of the hints and tips from
+this page still apply, for example using utilities such as <code class="docutils literal notranslate"><span class="pre">set_text_field</span></code>.</p>
+</section>
+<section id="creating-a-new-test">
+<h2>Creating a new Test<a class="headerlink" href="#creating-a-new-test" title="Link to this heading"></a></h2>
+<p>A test contains one test case.</p>
+<ol class="arabic simple">
+<li><p>Find the suite the test should be in</p></li>
+<li><p>Click “Create new test case” (icon document with a plus in Test Suites tab)</p></li>
+<li><p>Change name to <code class="docutils literal notranslate"><span class="pre">tst_&lt;what</span> <span class="pre">the</span> <span class="pre">test</span> <span class="pre">does&gt;</span></code></p></li>
+<li><p>A test suite should start:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">findFile</span><span class="p">(</span><span class="s2">&quot;scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;test_running.py&quot;</span><span class="p">)))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">test_running</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_test</span>
+<span class="o">&lt;</span><span class="n">other</span> <span class="n">imports</span><span class="o">&gt;</span> 
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+
+    <span class="c1"># Given application</span>
+    <span class="n">start_test</span><span class="p">()</span>
+
+    <span class="o">&lt;</span><span class="n">rest</span> <span class="n">of</span> <span class="n">test</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="writing-tests">
+<h2>Writing tests<a class="headerlink" href="#writing-tests" title="Link to this heading"></a></h2>
+<p>Hints, tips and gotchas for writing tests:</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">set_text_field</span></code> to set a text field because it deletes its contents before adding the new value.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">menu</span></code> module to access menus because if a menu is interrupted then you want it to try again at the top level menu.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">generate_config_name</span></code> to generate a config name so that it will be ignored by git and cleaned up by the system test</p></li>
+<li><p>If you open a dialogue capture it using a context manager. You could consider adding an option for OK and Cancel.</p></li>
+<li><p>If you need to select a perspective button the object picker will set it using the index (<code class="docutils literal notranslate"><span class="pre">occurrence</span></code>) however these
+buttons might change their positions it is better to select them based on their text. To do this:</p>
+<ol class="arabic simple">
+<li><p>Open the object map.</p></li>
+<li><p>Click on the button object definition (you can use the search at the top to find it).</p></li>
+<li><p>In the properties tab change <code class="docutils literal notranslate"><span class="pre">occurrence</span></code> to <code class="docutils literal notranslate"><span class="pre">text</span></code> and the value to the text on the button.</p></li>
+<li><p>Save it and check it works by clicking highlight object; button should flash red.</p></li>
+</ol>
+</li>
+<li><p>Often <code class="docutils literal notranslate"><span class="pre">test.compare</span></code> and <code class="docutils literal notranslate"><span class="pre">test.verify</span></code> in Squish provides logs that aren’t very useful, please do add a <code class="docutils literal notranslate"><span class="pre">test.log</span></code>
+line to describe the error.</p></li>
+</ul>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading"></a></h2>
+<section id="change-java-that-squish-is-using">
+<h3>Change Java that squish is using<a class="headerlink" href="#change-java-that-squish-is-using" title="Link to this heading"></a></h3>
+<p>To change java that squish is using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">squish</span> <span class="n">installation</span> <span class="n">directory</span><span class="o">&gt;</span>
+<span class="s2">&quot;bin/squishconfig&quot;</span> <span class="o">--</span><span class="n">java</span><span class="o">=</span><span class="s2">&quot;C:\Program Files\Java\jdk&lt;jdk version&gt;\jre</span><span class="se">\b</span><span class="s2">in&quot;</span>
+</pre></div>
+</div>
+<p>This fixes the issue:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Internal Error: don&#39;t know where to log: Squish for Java has not been configured for the current user yet.
+Please configure the (Java Runtime Environment) used for executing the AUT (Application Under Test) in the Squish IDE via Edit &gt; Preferences &gt; Squish &gt; .... (Or use `SQUISH_DIR/bin/squishconfig --java=path_to_jre`.
+Replace &quot;path_to_jre&quot; as required.) (Starting application)
+</pre></div>
+</div>
+<p>and also the error message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">NoClassDefFoundError</span><span class="p">:</span> <span class="n">com</span><span class="o">/</span><span class="n">froglogic</span><span class="o">/</span><span class="n">squish</span><span class="o">/</span><span class="n">swt</span><span class="o">/</span><span class="n">CompositeResolver</span>
+	<span class="n">at</span> <span class="n">com</span><span class="o">.</span><span class="n">froglogic</span><span class="o">.</span><span class="n">squish</span><span class="o">.</span><span class="n">swt</span><span class="o">.</span><span class="n">SWT</span><span class="o">.&lt;</span><span class="n">clinit</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SWT</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">922</span><span class="p">)</span>
+	<span class="n">at</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">swt</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Display</span><span class="o">.&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Display</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">419</span><span class="p">)</span>
+	<span class="n">at</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">swt</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Display</span><span class="o">.&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Display</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">481</span><span class="p">)</span>
+	<span class="n">at</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">Workbench</span><span class="o">.</span><span class="n">createDisplay</span><span class="p">(</span><span class="n">Workbench</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">795</span><span class="p">)</span>
+	<span class="n">at</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">PlatformUI</span><span class="o">.</span><span class="n">createDisplay</span><span class="p">(</span><span class="n">PlatformUI</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">160</span><span class="p">)</span>
+	<span class="n">at</span> <span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">e4</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">Application</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">38</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>when starting the GUI.</p>
+</section>
+<section id="restart-after-a-power-cut">
+<h3>Restart after a Power Cut<a class="headerlink" href="#restart-after-a-power-cut" title="Link to this heading"></a></h3>
+<p>After a power cut you will need to log into the machine via RDP and then disconnect using the shortcut on the desktop.</p>
+</section>
+<section id="diagnosing-error-screenshots">
+<h3>Diagnosing Error Screenshots<a class="headerlink" href="#diagnosing-error-screenshots" title="Link to this heading"></a></h3>
+<p>Taking screenshots on error should be turned on in <code class="docutils literal notranslate"><span class="pre">start_test</span></code> in <code class="docutils literal notranslate"><span class="pre">test_running.py</span></code>. The screenshots are placed on the
+squish server in <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\&lt;test</span> <span class="pre">name&gt;\errorImages</span></code>. Only
+the screenshots from the most recent build will be available.</p>
+</section>
+</section>
+<section id="license-server">
+<h2>License server<a class="headerlink" href="#license-server" title="Link to this heading"></a></h2>
+<p>This was set up as per <a class="reference external" href="https://doc.qt.io/squish/setting-up-the-squish-floating-license-server.html">https://doc.qt.io/squish/setting-up-the-squish-floating-license-server.html</a> on
+<code class="docutils literal notranslate"><span class="pre">control-svcs.isis.cclrc.ac.uk</span></code> The executable runs from <code class="docutils literal notranslate"><span class="pre">/opt/squish-license-server/bin/licenseserver</span></code> and licence is stored in <code class="docutils literal notranslate"><span class="pre">/etc/squish-license-server/licenses</span></code> The service is automatically started
+at boot time via systemd. Data is logged to syslog and the service is
+running on the default port of 49345. To see the log you can use e.g. <code class="docutils literal notranslate"><span class="pre">journalctl</span> <span class="pre">-u</span> <span class="pre">squish-license-server.service</span> <span class="pre">--since</span> <span class="pre">today</span></code></p>
+<p>To restart the licence server process, use <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">squish-license-server.service</span></code> on the licence server
+machine.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="squish-fails-to-run-tests-with-an-error-in-the-c-runtime-library">
+<h3>Squish fails to run tests with an error in the C runtime library<a class="headerlink" href="#squish-fails-to-run-tests-with-an-error-in-the-c-runtime-library" title="Link to this heading"></a></h3>
+<p>Error is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Runtime Error! 
+
+Program: C:\Squish\lib\_squishrunner.exe 
+
+R6034 An application has made an attempt to load the C runtime library incorrectly. Please contact the application&#39;s support team for more information.
+</pre></div>
+</div>
+<p>This issue is due to us loading the <code class="docutils literal notranslate"><span class="pre">uuid</span></code> library in Python. This library loads a conflicted C runtime library and
+means tests aren’t able to run completely correctly.</p>
+<p>Solution is to rename <code class="docutils literal notranslate"><span class="pre">C:\Squish\python\msvcr90.dll</span></code> to <code class="docutils literal notranslate"><span class="pre">msvcr90_off.dll</span></code>, which removes the conflicting dependency
+version. See ticket <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4773">#4773</a> for more details.</p>
+</section>
+<section id="squish-fails-to-begin-run">
+<h3>Squish fails to begin run<a class="headerlink" href="#squish-fails-to-begin-run" title="Link to this heading"></a></h3>
+<p>Attempt to change your tcb file to a regular neutron tcb file and begin a run. You should see it beginning and then
+return to set up with the log message: <code class="docutils literal notranslate"><span class="pre">invalid</span> <span class="pre">tcb</span> <span class="pre">start</span> <span class="pre">-</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">0</span> <span class="pre">not</span> <span class="pre">5.00000</span> <span class="pre">ns</span></code>. See the
+<a class="reference internal" href="../../specific_iocs/dae/DAE-Trouble-Shooting.html"><span class="doc std std-doc">DAE troubleshooting</span></a> “invalid tcb start” section.</p>
+</section>
+<section id="squish-fails-to-start-the-application">
+<h3>Squish Fails to Start the Application<a class="headerlink" href="#squish-fails-to-start-the-application" title="Link to this heading"></a></h3>
+<p>Look at the <code class="docutils literal notranslate"><span class="pre">Runner/Server</span></code> Log tab see if you can diagnose the problem.</p>
+<p>If the error is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Unrecognized</span> <span class="n">option</span><span class="p">:</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">reads</span><span class="o">=</span><span class="n">javafx</span><span class="o">.</span><span class="n">base</span><span class="o">=</span><span class="n">ALL</span><span class="o">-</span><span class="n">UNNAMED</span>
+</pre></div>
+</div>
+<p>This probably means squish is attempting to run on an old Java version, for example Java 8. The client install script
+copies a fixed version of java into a <code class="docutils literal notranslate"><span class="pre">jre</span></code> folder next to the client executable, which should force the client
+to pick up the correct version of Java - check that this is present and the correct version that the client should
+presently be using.</p>
+</section>
+<section id="keyerror-mysqlpw-is-missing">
+<h3>KeyError: <code class="docutils literal notranslate"><span class="pre">MYSQLPW</span></code> is missing<a class="headerlink" href="#keyerror-mysqlpw-is-missing" title="Link to this heading"></a></h3>
+<p>To remedy this error set <code class="docutils literal notranslate"><span class="pre">MYSQLPW</span></code> to the root password in your environment variables when running the tests.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to pick up the new environment variable, the Squish IDE will need to be restarted after setting the environment
+variable.</p>
+</div>
+</section>
+<section id="no-licence-available">
+<h3>No licence available<a class="headerlink" href="#no-licence-available" title="Link to this heading"></a></h3>
+<p>If onsite/vpn you can access  <a class="reference external" href="https://control-svcs.nd.rl.ac.uk/squish/squish_stats.txt">https://control-svcs.nd.rl.ac.uk/squish/squish_stats.txt</a> - look for something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;clientAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;::ffff:a.b.c.d&quot;</span>
+<span class="s2">&quot;licenseType&quot;</span><span class="p">:</span> <span class="s2">&quot;tester&quot;</span>
+</pre></div>
+</div>
+<p>Then from a command windows do <code class="docutils literal notranslate"><span class="pre">nslookup</span> <span class="pre">a.b.c.d</span></code> to see machine name using licence. Currently, licences should
+auto-expire after 12 hours anyway, so you may just need to wait. <code class="docutils literal notranslate"><span class="pre">licenceType</span></code> can be <code class="docutils literal notranslate"><span class="pre">tester</span></code> or <code class="docutils literal notranslate"><span class="pre">execution</span></code>, we have
+one of each type and <code class="docutils literal notranslate"><span class="pre">execution</span></code> is used by the jenkins squish test server (this licence type only allow running, not
+editing, of tests).</p>
+</section>
+<section id="install-new-licence">
+<h3>Install new licence<a class="headerlink" href="#install-new-licence" title="Link to this heading"></a></h3>
+<p>On <code class="docutils literal notranslate"><span class="pre">control-svcs</span></code>, edit <code class="docutils literal notranslate"><span class="pre">/etc/squish-licence-server/licences/squish-licence.cfg</span></code> and paste in new licence details. Then
+run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">squish</span><span class="o">-</span><span class="n">license</span><span class="o">-</span><span class="n">server</span> <span class="n">stop</span>
+<span class="n">service</span> <span class="n">squish</span><span class="o">-</span><span class="n">license</span><span class="o">-</span><span class="n">server</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>To restart the Squish license server with the new license.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Mockito.html" class="btn btn-neutral float-left" title="Mockito" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="System-Testing-with-Squish-BDD.html" class="btn btn-neutral float-right" title="Squish BDD Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

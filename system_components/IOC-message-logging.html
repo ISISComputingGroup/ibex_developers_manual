@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IOC Message Logging &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="INSTETC IOC" href="Inst-etc-IOC.html" />
+    <link rel="prev" title="Gateways" href="Gateway.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gateway.html">Gateways</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../System-components.html">Backend System Components</a></li>
+      <li class="breadcrumb-item active">IOC Message Logging</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/IOC-message-logging.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ioc-message-logging">
+<h1>IOC Message Logging<a class="headerlink" href="#ioc-message-logging" title="Link to this heading"></a></h1>
+<section id="logging-architecture-overview">
+<h2>Logging Architecture Overview<a class="headerlink" href="#logging-architecture-overview" title="Link to this heading"></a></h2>
+<p>Each IOC has some functionality to dispatch any log messages it generates to a listening IOC log server, the address and port of which must be known to the IOC.</p>
+<p>Assuming that the log server is active, the IOC will automatically connect to the log server on start-up and send any messages on to it as soon as they arise.</p>
+<p>EPICS base includes a simple IOC log server that writes log messages to a text file. We have replaced this with our own server written in Java that has much more functionality.</p>
+<p>Our Java log server may connect to any number of IOCs. It processes incoming messages, formats them appropriately, and then dispatches them using a messaging service called <a class="reference external" href="http://en.wikipedia.org/wiki/Java_Message_Service">Java messaging service, JMS</a>.</p>
+<p>A JMS server receives these reformatted messages and forwards them on to any subscribers (e.g. Eclipse clients).</p>
+<p>The log server also saves all messages to a relational database (SQL). Messages may then be retrieved at any time from the database by interested clients (again, Eclipse clients).</p>
+<p>It is likely that the Log server, JMS server, and Database server will all live on the same physical machine.</p>
+<p><img alt="IOC architectural view" src="../_images/iocLogArchitecture.png" /></p>
+</section>
+<section id="log-server">
+<h2>Log Server<a class="headerlink" href="#log-server" title="Link to this heading"></a></h2>
+<p>The log server is written in Java and may be found in the directory <code class="docutils literal notranslate"><span class="pre">EPICS/ISIS/IocLogServer/</span></code>.</p>
+<p>Also included in this directory are an instance of Apache <a class="reference internal" href="ActiveMQ.html"><span class="doc std std-doc">ActiveMQ</span></a> (a JMS server implementation), some tools written in python to aid development, and some start-up and build scripts.</p>
+<section id="functionality">
+<h3>Functionality<a class="headerlink" href="#functionality" title="Link to this heading"></a></h3>
+<p>Once the log server is started, it will automatically attempt to connect to the JMS server and the SQL database server (the connection details for each are currently hardcoded but will be moved to external config files in the future).</p>
+<p>If the log server cannot connect to either, or if the connection to either is dropped at any point while the log server is running, it will automatically attempt to re-establish connection (and keep trying every few seconds until it is re-established).</p>
+<p>The log server will then attempt to listen for IOC messages on a set of ports (again hardcoded, to be moved to config file in the future). Any messages received are (i) converted into and XML format and forwarded on to the JMS server; (ii) saved to the SQL database.</p>
+<p>The connection to both the JMS server and the database are independently buffered so that if connection to either is lost, the log server will wait to re-establish connection before sending on any messages, so that no messages should be dropped. The log server will wait a few seconds after re-establishing connection to the JMS before sending any messages, in order to give JMS clients a chance to reconnect to the JMS server themselves.</p>
+</section>
+<section id="development">
+<h3>Development<a class="headerlink" href="#development" title="Link to this heading"></a></h3>
+<p>To develop the log server, first run the script <code class="docutils literal notranslate"><span class="pre">/IocLogServer/LogServer/make-eclipse-project.bat</span></code>. This will create Eclipse <code class="docutils literal notranslate"><span class="pre">.project</span></code> and <code class="docutils literal notranslate"><span class="pre">.classpath</span></code> files and a <code class="docutils literal notranslate"><span class="pre">.settings</span></code> folder. Next, create a new directory in <code class="docutils literal notranslate"><span class="pre">/IocLogServer</span></code> called workspace. Open <a class="reference external" href="https://www.eclipse.org/">Eclipse</a> and select this new folder as the workspace. (I have added my version of the project files into the project so you may no longer need to do this).</p>
+<p>Import the log server project (File &gt; Import &gt; General &gt; Existing Projects into Workspace &gt; folder EPICS/ISIS/IocLogServer/base.</p>
+<p>To run the server from Eclipse, right click on the project folder, click: run as &gt; run configurations. Set the main class as ‘org.isis.logserver.server.IOCLogServer’ and click ‘Run’.</p>
+</section>
+<section id="building-and-running">
+<h3>Building and Running<a class="headerlink" href="#building-and-running" title="Link to this heading"></a></h3>
+<p>The log server is built using <a class="reference external" href="http://maven.apache.org/">Apache Maven</a>. A maven <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> file is included in the project. To build, install maven on your computer and run the batch file <code class="docutils literal notranslate"><span class="pre">build-log-server.bat</span></code> found in the directory EPICS/ISIS/IocLogServer/. This will create a runnable jar file.</p>
+<p>The server can be launched by running <code class="docutils literal notranslate"><span class="pre">start-log-server.bat</span></code>.</p>
+<p>To test the functionality, you should also launch the JMS server by running <code class="docutils literal notranslate"><span class="pre">start-jms-server.bat</span></code>. You can test that message passing works correctly by using the demonstration IOC and demonstration JMS client detailed in the development tools section below.</p>
+<p>See the database server section below for details on how to set up a test SQL database.</p>
+<p>Instructions to build the log server are included as part of the <a class="reference external" href="http://epics-jenkins.isis.rl.ac.uk/">Jenkins</a> build script (<a class="reference external" href="https://github.com/ISISComputingGroup/EPICS/blob/cad660a01a2c8e648a37372ad6e11deb26e7eb1e/jenkins_build.bat">EPICS/jenkins_build.bat</a>)</p>
+<p>The log server and JMS server should be started automatically when running the script /EPICS/start_inst.bat. The startup details are in the script EPICS/logserver/start_log_servers.bat.</p>
+</section>
+</section>
+<section id="jms-server">
+<h2>JMS Server<a class="headerlink" href="#jms-server" title="Link to this heading"></a></h2>
+<p>The JMS server implementation used is <a class="reference external" href="http://activemq.apache.org/">Apache ActiveMQ</a>. ActiveMQ comes bundled with the log server and a start-up script for it is included (‘start-jms-server.bat’). No configuration is required for ActiveMQ; simply run the start-up script and it will be ready in a few seconds. The start-up script is also run as part of the IOC start-up script (EPICS/start_inst.bat).</p>
+<p>Message producers (the log server) and consumers (Eclipse-based clients) interact through the JMS by subscribing to a ‘topic’. Any message that a producer sends to the topic is immediately forwarded to all consumers who are currently subscribed to the topic.</p>
+<p>JMS does not buffer topic messages so any consumer who is not connected to the JMS server and subscribed to the topic when the server receives the message will not have the message forwarded to them.</p>
+<p>The Topic for IOC log messages is ‘/topic/iocLogs’.</p>
+<p>The default port for sending and receiving JMS messages on ActiveMQ is 61616. However, we have switched to using 39990 to keep it in the fixed port range and avoid clashes.</p>
+</section>
+<section id="development-tools">
+<h2>Development Tools<a class="headerlink" href="#development-tools" title="Link to this heading"></a></h2>
+<p>In the subdirectory ‘…\EPICS\ISIS\IocLogServer\master\dev-tools’ are a number of python scripts to aid in development and debugging of the log server and eclipse clients that consume log messages.</p>
+<p>The first, ‘jms_client.py’, connects to the JMS server and receives any messages forwarded by it. This can be used to test if the log server is correctly forwarding on messages.</p>
+<p>The connection details used (JMS server address, port, topic name) are found in ‘jms_details.py’.</p>
+<p>The second tool is ‘ioc_message_simulator.py’ which connects directly to the log server and can be used to simulate messages coming from IOCs.</p>
+<p>These tools may be started using the batch files: ‘start-jms-demo-client.bat’ and ‘start-ioc-demo.bat’ respectively.</p>
+<p>Another tool that may be of use in analysing problems relating to the connection between two programs is <a class="reference external" href="http://technet.microsoft.com/en-gb/sysinternals/bb897437.aspx">TCPView</a>. This displays a list of active TCP connections including port numbers to and from processes on your machine.</p>
+</section>
+<section id="database-server">
+<h2>Database Server<a class="headerlink" href="#database-server" title="Link to this heading"></a></h2>
+<p>You can use <a class="reference external" href="http://www.mysql.com/products/workbench/">MySQL workbench</a> as a MySQL development server.</p>
+<p>The file EPICS/ISIS/IocLogServer/log_mysql_schema.txt contains a sequence of SQL commands that will create the appropriate schema for use by the log server and clients.</p>
+</section>
+<section id="eclipse-clients">
+<h2>Eclipse Clients<a class="headerlink" href="#eclipse-clients" title="Link to this heading"></a></h2>
+<p>The IOC log message handling in the Eclipse client consists of two main plugins: <code class="docutils literal notranslate"><span class="pre">org.csstudio.isis.log</span></code> (model) and <code class="docutils literal notranslate"><span class="pre">org.csstudio.isis.ui.log</span></code> (view). Additionally, the plugin <code class="docutils literal notranslate"><span class="pre">org.csstudio.isis.product.model</span></code> contains the <code class="docutils literal notranslate"><span class="pre">LogMessage</span></code> class that represents an individual log message, and the <code class="docutils literal notranslate"><span class="pre">LogMessageFields</span></code> enumeration which enumerates all the fields in a log message as well as providing a display name and a database tag name for each field.</p>
+<section id="model-plugin">
+<h3>Model Plugin<a class="headerlink" href="#model-plugin" title="Link to this heading"></a></h3>
+<p>The log model plugin starts automatically when the Eclipse client is launched. On launch, it runs an instance of a JMS handler class which listens continuously for new messages from the JMS server. Any messages received are parsed (from their XML representation) into ‘!LogMessage’ objects and passed on to any subscribers (typically view components).</p>
+<p>The model also provides for the facility to search a database for log messages. Searches may be performed by string matching on any log message field and may be constrained according to a start and end time.</p>
+<p>Clients of the model (i.e., the view) may subscribe, receiving any new log messages from the JMS. The model stores a local cache of all recently received messages which clients may access. This means that a client will not miss any messages received between the time the programs starts up and the time the client is instantiated.</p>
+<p>The model plugin also provides an Eclipse preference page with a class that implements <code class="docutils literal notranslate"><span class="pre">!IWorkbenchPreferencePage</span></code>. This page allows the user to configure settings that control the connection to the JMS server and to the database server. These settings are saved to disk so are persistent between uses of the Eclipse client. Changes to these settings take effect immediately.</p>
+<p><img alt="Log preferences" src="../_images/LogPreferences.png" /></p>
+</section>
+<section id="view-plugin">
+<h3>View Plugin<a class="headerlink" href="#view-plugin" title="Link to this heading"></a></h3>
+<p><img alt="Log viewer" src="../_images/logViewer.png" /></p>
+<section id="search-filter-vs-severity-filter">
+<h4>Search filter Vs Severity Filter<a class="headerlink" href="#search-filter-vs-severity-filter" title="Link to this heading"></a></h4>
+<p>The search filter will set the field that user want their search to be on. for e.g. if <code class="docutils literal notranslate"><span class="pre">content</span></code> is selected then the it will look for user specified text in <code class="docutils literal notranslate"><span class="pre">content</span></code> field of the log messages.</p>
+<p>The severity filter will make sure that only the messages above the selected filter is displayed. for e.g. if <code class="docutils literal notranslate"><span class="pre">information</span></code> severity is selected then only the logs with information severity or higher will be displayed.</p>
+<p>In short, search filter will search the messages based on the filter and severity filter will then further filter out the messages based on selected severity level.</p>
+</section>
+</section>
+<section id="id1">
+<h3>Development<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>When launching the Eclipse client, it is useful to have the JMS Server, the Log Server, and an appropriately configured MySQL Server instance running. You should also set the appropriate settings options in the the log server preference page.</p>
+<p>If the Eclipse client cannot find the JMS server, it will periodically re-attempt to connect to it, and print a console message saying so. If the log server is not running, the Eclipse client will show no indication (as it does not connect to the log server directly), however no new log messages will be dispatched by JMS or saved to the database. If the database is not running, attempting to perform a message search will not work and a warning message will be displayed.</p>
+</section>
+</section>
+<section id="log-message-format">
+<h2>Log Message Format<a class="headerlink" href="#log-message-format" title="Link to this heading"></a></h2>
+<p>A log message may contain the following fields</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">contents</span></code> 	- The text content of the message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eventTime</span></code>	- The time when the message was generated (as recorded by the IOC).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">createTime</span></code>	- The time when the message was received by the log server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>		- The type of the message (possible values to be determined).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">severity</span></code>	- The message severity (possible values to be determined).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clientName</span></code>	- The name of the IOC (as supplied by the IOC in its message).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clientHost</span></code> 	- The name/address of the machine that the IOC is on.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">applicationId</span></code>	- The application that processed the message (typically log server).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repeatCount</span></code>	- The number of times the message has been repeated in succession.</p></li>
+</ul>
+<p>The log server converts log messages into a simple XML format before dispatching them via JMS.</p>
+<p>The message should always include opening and closing ‘message’ tags and may include one each of the above fields (the tag name is the same as that given above). Any of these may be omitted.</p>
+<p>A typical message might look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">contents</span><span class="o">&gt;</span><span class="n">Unable</span> <span class="n">to</span> <span class="n">access</span> <span class="n">PV</span><span class="p">:</span> <span class="s1">&#39;PREFIX:IOC_NAME:PV_NAME&#39;</span><span class="o">&lt;/</span><span class="n">contents</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">severity</span><span class="o">&gt;</span><span class="n">ERROR</span><span class="o">&lt;/</span><span class="n">severity</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">eventTime</span><span class="o">&gt;</span><span class="mi">2014</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">16</span> <span class="mi">15</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">27</span><span class="o">&lt;/</span><span class="n">eventTime</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">clientName</span><span class="o">&gt;</span><span class="n">GALIL_06</span><span class="o">&lt;/</span><span class="n">clientName</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="n">ioclog</span><span class="o">&lt;/</span><span class="nb">type</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">message</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="default-connection-details">
+<h2>Default Connection Details<a class="headerlink" href="#default-connection-details" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Default IOC log port: 7004</p></li>
+<li><p>IOC caput log port: 7011</p></li>
+<li><p>Log server address: localhost</p></li>
+<li><p>JMS server address: localhost</p></li>
+<li><p>JMS server port: 39990</p></li>
+<li><p>JMS message topic: iocLogs</p></li>
+<li><p>SQL server address: localhost</p></li>
+<li><p>SQL server port: 3306</p></li>
+<li><p>SQL server schema: msg_log</p></li>
+<li><p>SQL server username (read-only): msg_report</p></li>
+<li><p>SQL server password (read-only): $msg_report</p></li>
+<li><p>SQL server username (read/write): msg_log</p></li>
+<li><p>SQL server password (read/write): $msg_log</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Gateway.html" class="btn btn-neutral float-left" title="Gateways" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Inst-etc-IOC.html" class="btn btn-neutral float-right" title="INSTETC IOC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

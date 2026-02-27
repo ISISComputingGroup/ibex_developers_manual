@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blind script output &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Rheometers" href="../Rheometers.html" />
+    <link rel="prev" title="Blind script" href="reflectometry_blind_script.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Config-Training.html">Reflectometry Config Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Reflectometry-IOC.html">Reflectometry</a></li>
+      <li class="breadcrumb-item active">Blind script output</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/reflectometry_blind_script_output.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="blind-script-output">
+<h1>Blind script output<a class="headerlink" href="#blind-script-output" title="Link to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\Windows\system32&gt;call C:\Instrument\Apps\EPICS\..\Python\genie_python.bat
+Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 20:25:58) [MSC v.1500 64 bit (AMD64)]
+Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+
+IPython 4.2.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython&#39;s features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python&#39;s own help system.
+object?   -&gt; Details about &#39;object&#39;, use &#39;object??&#39; for extra details.
+No instrument specified - loading local instrument
+
+genie_python version 5.2.0
+pv prefix NDXCRISP
+THIS IS CRISP!
+PV prefix is IN:CRISP:
+
+In [1]: g.change_script_dir(&quot;c:\\scripts&quot;)
+
+In [2]: g.load_script(&quot;do_experiment.py&quot;)
+Loaded the following script(s): runscript
+From: c:\scripts\do_experiment.py
+File last modified: 2019-03-28 17:30:32
+
+In [3]: runscript()
+** Run angle Si_D2O **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.005, Psi=-0.94
+Theta set to: 0.3
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 0.609, 0.206, 0.6, 0.9
+Wait for 50 uA
+** Beginning Run 00103644 at 17:31:47 28/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 50 uamps
+** Ending Run 00103644 at 17:48:50 28/03/19
+** Run angle Si_D2O **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.305, Psi=-0.94
+Theta set to: 0.6
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 1.218, 0.412, 1.2, 1.8
+Wait for 120 uA
+** Beginning Run 00103645 at 17:49:12 28/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 120 uamps
+** Ending Run 00103645 at 18:29:39 28/03/19
+** Run angle Si_D2O **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=1.205, Psi=-0.94
+Theta set to: 1.5
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 3.045, 1.03, 3.0, 4.5
+Wait for 200 uA
+** Beginning Run 00103646 at 18:30:18 28/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 200 uamps
+** Ending Run 00103646 at 19:37:38 28/03/19
+** Contrast change for valve1 **
+Concentration: Valve 1, concentrations [38, 0, 62, 0], flow 1.5,  volume 30, time None, and NOT waiting for completion
+Waiting for 1.0 seconds
+Waiting for IN:CRISP:CS:SB:Pump_is_on=1
+** Transmission Si_Trans **
+Translation to -18.5
+Change to mode: NR
+Theta set to: 0.0
+Sample: height offset from beam=-42.067
+Setting hgaps to [None, None, None, None] (None&#39;s are not changed)
+Slit gaps 1-4 set to: 0.25, 0.25, 10, 5
+Wait for 180 uA
+** Beginning Run 00103647 at 19:38:52 28/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 180 uamps
+** Ending Run 00103647 at 20:41:14 28/03/19
+Sample: height offset from beam=-37.067
+Reset horizontal gaps to [(&#39;S1HG&#39;, 39.9985), (&#39;S2HG&#39;, 29.9995), (&#39;S3HG&#39;, 30.0019), (&#39;S4HG&#39;, 40.0)]
+** Run angle Si_SMW **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.005, Psi=-0.94
+Theta set to: 0.3
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 0.609, 0.206, 0.6, 0.9
+Wait for 100 uA
+** Beginning Run 00103648 at 21:38:19 28/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 100 uamps
+** Ending Run 00103648 at 22:12:00 28/03/19
+** Run angle Si_SMW **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.305, Psi=-0.94
+Theta set to: 0.6
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 1.218, 0.412, 1.2, 1.8
+Wait for 180 uA
+** Beginning Run 00103649 at 22:12:21 28/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 180 uamps
+** Ending Run 00103649 at 23:14:07 28/03/19
+** Run angle Si_SMW **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=1.205, Psi=-0.94
+Theta set to: 1.5
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 3.045, 1.03, 3.0, 4.5
+Wait for 300 uA
+** Beginning Run 00103650 at 23:14:46 28/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 300 uamps
+** Ending Run 00103650 at 00:55:45 29/03/19
+** Contrast change for valve1 **
+Concentration: Valve 1, concentrations [0, 0, 100, 0], flow 1.5,  volume 30, time None, and waiting for completion
+Waiting for 1.0 seconds
+Waiting for IN:CRISP:CS:SB:Pump_is_on=1
+Waiting for IN:CRISP:CS:SB:Pump_is_on=0
+** Run angle Si_H20 **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.005, Psi=-0.94
+Theta set to: 0.3
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 0.609, 0.206, 0.6, 0.9
+Wait for 80 uA
+** Beginning Run 00103651 at 01:16:40 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 80 uamps
+** Ending Run 00103651 at 01:43:39 29/03/19
+** Run angle Si_H20 **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.305, Psi=-0.94
+Theta set to: 0.6
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 1.218, 0.412, 1.2, 1.8
+Wait for 150 uA
+** Beginning Run 00103652 at 01:44:07 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 150 uamps
+** Ending Run 00103652 at 02:34:39 29/03/19
+** Run angle Si_H20 **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=1.205, Psi=-0.94
+Theta set to: 1.5
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 3.045, 1.03, 3.0, 4.5
+Wait for 250 uA
+** Beginning Run 00103653 at 02:35:33 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 250 uamps
+** Ending Run 00103653 at 03:59:38 29/03/19
+** Contrast change for valve1 **
+Concentration: Valve 1, concentrations [100, 0, 0, 0], flow 1.5,  volume 30, time None, and NOT waiting for completion
+Waiting for 1.0 seconds
+Waiting for IN:CRISP:CS:SB:Pump_is_on=1
+** Transmission Si_Trans **
+Translation to -18.5
+Change to mode: NR
+Theta set to: 0.0
+Sample: height offset from beam=-42.067
+Setting hgaps to [None, None, None, None] (None&#39;s are not changed)
+Slit gaps 1-4 set to: 0.25, 0.25, 10, 5
+Wait for 180 uA
+** Beginning Run 00103654 at 04:00:59 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 180 uamps
+** Ending Run 00103654 at 05:01:41 29/03/19
+Sample: height offset from beam=-37.067
+Reset horizontal gaps to [(&#39;S1HG&#39;, 39.9985), (&#39;S2HG&#39;, 30.000500000000002), (&#39;S3HG&#39;, 30.000700000000002), (&#39;S4HG&#39;, 40.0)]
+** Run angle Si_D2O **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.005, Psi=-0.94
+Theta set to: 0.3
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 0.609, 0.206, 0.6, 0.9
+Wait for 50 uA
+** Beginning Run 00103655 at 05:02:23 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 50 uamps
+** Ending Run 00103655 at 05:21:42 29/03/19
+** Run angle Si_D2O **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.305, Psi=-0.94
+Theta set to: 0.6
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 1.218, 0.412, 1.2, 1.8
+Wait for 120 uA
+** Beginning Run 00103656 at 05:22:13 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 120 uamps
+** Ending Run 00103656 at 06:02:46 29/03/19
+** Run angle Si_D2O **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=1.205, Psi=-0.94
+Theta set to: 1.5
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 3.045, 1.03, 3.0, 4.5
+Wait for 200 uA
+** Beginning Run 00103657 at 06:03:26 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 200 uamps
+** Ending Run 00103657 at 07:10:56 29/03/19
+** Contrast change for valve1 **
+Concentration: Valve 1, concentrations [38, 0, 62, 0], flow 1.5,  volume 30, time None, and NOT waiting for completion
+Waiting for 1.0 seconds
+Waiting for IN:CRISP:CS:SB:Pump_is_on=1
+** Transmission Si_Trans **
+Translation to -18.5
+Change to mode: NR
+Theta set to: 0.0
+Sample: height offset from beam=-42.067
+Setting hgaps to [None, None, None, None] (None&#39;s are not changed)
+Slit gaps 1-4 set to: 0.25, 0.25, 10, 5
+Wait for 180 uA
+** Beginning Run 00103658 at 07:12:07 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 180 uamps
+** Ending Run 00103658 at 08:12:50 29/03/19
+Sample: height offset from beam=-37.067
+Reset horizontal gaps to [(&#39;S1HG&#39;, 39.9975), (&#39;S2HG&#39;, 30.0), (&#39;S3HG&#39;, 30.0015), (&#39;S4HG&#39;, 40.0)]
+** Run angle Si_SMW **
+Translation to -18.5
+Change to mode: NR
+Sample: Phi=0.005, Psi=-0.94
+Theta set to: 0.3
+Sample: height offset from beam=-37.067
+Slit gaps 1-4 set to: 0.609, 0.206, 0.6, 0.9
+Wait for 100 uA
+** Beginning Run 00103659 at 08:13:26 29/03/19
+*  Proposal Number: 0
+*  Experiment Team:
+Waiting for 100 uamps
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reflectometry_blind_script.html" class="btn btn-neutral float-left" title="Blind script" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Rheometers.html" class="btn btn-neutral float-right" title="Rheometers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

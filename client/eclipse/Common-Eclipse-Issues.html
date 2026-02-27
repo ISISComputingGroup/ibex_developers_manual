@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Common Eclipse issues &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Common Eclipse tasks" href="Common-Eclipse-Tasks.html" />
+    <link rel="prev" title="Checkstyle setup" href="Checkstyle-setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Checkstyle-setup.html">Checkstyle setup</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Common Eclipse issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Common-Eclipse-Tasks.html">Common Eclipse tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eclipse-RCP.html">Eclipse RCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eclipse-logging.html">Eclipse logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eclipse-preferences.html">Eclipse preferences</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Eclipse.html">Eclipse</a></li>
+      <li class="breadcrumb-item active">Common Eclipse issues</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/eclipse/Common-Eclipse-Issues.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="common-eclipse-issues">
+<h1>Common Eclipse issues<a class="headerlink" href="#common-eclipse-issues" title="Link to this heading"></a></h1>
+<p>Sometimes the error messages that Eclipse gives are a little opaque, so here are some possible solutions for some of the more common issues.</p>
+<section id="plugin-execution-not-covered-by-lifecycle-configuration">
+<h2>Plugin execution not covered by lifecycle configuration<a class="headerlink" href="#plugin-execution-not-covered-by-lifecycle-configuration" title="Link to this heading"></a></h2>
+<p>Go to window -&gt; preferences -&gt; Maven -&gt; Errors/Warnings.
+Change “Plugin execution not covered by lifecycle configuration” to ignore in the drop down.</p>
+</section>
+<section id="the-type-xxxxxxx-cannot-be-resolved-it-is-indirectly-referenced-from-required-class-files">
+<h2>The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files<a class="headerlink" href="#the-type-xxxxxxx-cannot-be-resolved-it-is-indirectly-referenced-from-required-class-files" title="Link to this heading"></a></h2>
+<section id="errors-appear-for-single-plugin">
+<h3>Errors appear for single plugin<a class="headerlink" href="#errors-appear-for-single-plugin" title="Link to this heading"></a></h3>
+<p>Possible solutions (in order of desperation):</p>
+<ul class="simple">
+<li><p>Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX. For example: if the error message is <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">type</span> <span class="pre">org.eclipse.ui.plugin.AbstractUIPlugin</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">resolved.</span> <span class="pre">It</span> <span class="pre">is</span> <span class="pre">indirectly</span> <span class="pre">referenced</span> <span class="pre">from</span> <span class="pre">required</span> <span class="pre">.class</span> <span class="pre">files</span></code> then the org.eclipse.ui plugin requires adding.bundle to the required bundle in the manifest file of your plugin.</p></li>
+<li><p>Delete the complaining plugin from the workspace and then re-import it.</p></li>
+<li><p>Remove JRE System Library from the complaining plug-in’s Java Build Path then re-add it.</p></li>
+<li><p>This can also occur in similar cases to the <strong>Invalid class hierarchy</strong>.</p></li>
+</ul>
+</section>
+<section id="errors-appear-across-entire-project">
+<h3>Errors appear across entire project<a class="headerlink" href="#errors-appear-across-entire-project" title="Link to this heading"></a></h3>
+<p>Suggests that eclipse has got itself into a funny state. Try <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">&gt;</span> <span class="pre">Clean</span></code> first, if that does not get rid of the problems, try:</p>
+<ol class="arabic simple">
+<li><p>Reset the targetplatform: Open file in <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.targetplatform</span></code>, reload dependencies if they are in error, then click <code class="docutils literal notranslate"><span class="pre">Reload</span> <span class="pre">Target</span> <span class="pre">Platform</span></code> top right</p></li>
+<li><p>Synchronize the runnable product: open <code class="docutils literal notranslate"><span class="pre">ibex.product</span></code> in <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.e4.client.product</span></code>, click <code class="docutils literal notranslate"><span class="pre">Synchronize</span> <span class="pre">this</span> <span class="pre">configuration</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">product's</span> <span class="pre">defining</span> <span class="pre">plug-in.</span></code></p></li>
+<li><p>Confirm the problems have disappeared. (you may need to repeat step 1 &amp; 2 a couple of times)</p></li>
+<li><p>Launch application from <code class="docutils literal notranslate"><span class="pre">ibex.product</span></code> (little green arrow on the top right) and confirm the client starts</p></li>
+</ol>
+</section>
+</section>
+<section id="invalid-class-hierarchy">
+<h2>Invalid class hierarchy<a class="headerlink" href="#invalid-class-hierarchy" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Make sure that you don’t have any circular dependencies. That is package A imports package B imports package A.</p></li>
+<li><p>If you have several layers of derived dependencies, particularly containing CSStudio or eclipse classes, make sure the correct bundles have been imported. Dependencies are not necessarily re-exported from the intermediate layers by default. There are two solutions:</p>
+<ul>
+<li><p>Add the base bundle to the list of dependencies of your new class via the manifest file</p></li>
+<li><p>Go through the classes you derive from. In their bundles go to the dependencies menu and click on the plugin you’re deriving from. Click properties and check the box that says “Reexport this dependency”. Once the intermediate layers all reexport their dependencies then it should become available to your class.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="product-xxxxxxxxxxx-product-could-not-be-found">
+<h2>Product XXXXXXXXXXX.product could not be found<a class="headerlink" href="#product-xxxxxxxxxxx-product-could-not-be-found" title="Link to this heading"></a></h2>
+<p>Typically is followed by a lot of errors relating to bundle resolution, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    !MESSAGE Product uk.ac.stfc.isis.ibex.product.product could not be found.
+
+    !ENTRY org.eclipse.osgi 2 0 2015-09-16 15:25:45.343
+    !MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+    !SUBENTRY 1 org.eclipse.osgi 2 0 2015-09-16 15:25:45.343
+    !MESSAGE Bundle reference:file:/C:/CodeWorkspaces/GitHub/ibex_gui/base/uk.ac.stfc.isis.ibex.ui.perspectives/ was not resolved.
+    !SUBENTRY 2 uk.ac.stfc.isis.ibex.ui.perspectives 2 0 2015-09-16 15:25:45.343
+    !MESSAGE Missing required bundle uk.ac.stfc.isis.ibex.ui.statusbar_1.0.0.
+    !SUBENTRY 1 org.eclipse.osgi 2 0 2015-09-16 15:25:45.343
+    !MESSAGE Bundle reference:file:/C:/CodeWorkspaces/GitHub/ibex_gui/base/uk.ac.stfc.isis.ibex.product/ was not resolved.
+    !SUBENTRY 2 uk.ac.stfc.isis.ibex.product 2 0 2015-09-16 15:25:45.343
+    !MESSAGE Missing required bundle uk.ac.stfc.isis.ibex.ui.statusbar_0.0.0.
+    !SUBENTRY 1 org.eclipse.osgi 2 0 2015-09-16 15:25:45.343
+    !MESSAGE Bundle reference:file:/C:/CodeWorkspaces/GitHub/ibex_gui/base/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/uk.ac.gda.common_1.2.0.v20140919-1144.jar was not resolved.
+    !SUBENTRY 2 uk.ac.gda.common 2 0 2015-09-16 15:25:45.344
+    !MESSAGE Missing native code match lib/linux-x86/libgda_common.so; processor=x86; osname=linux, lib/linux-x86_64/libgda_common.so; processor=x86_64; osname=linux.
+
+    !ENTRY org.eclipse.osgi 2 0 2015-09-16 15:25:45.389
+    !MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+    !SUBENTRY 1 org.eclipse.osgi 2 0 2015-09-16 15:25:45.389
+    !MESSAGE Bundle uk.ac.stfc.isis.ibex.ui.weblinks_1.0.0.qualifier [460] was not resolved.
+    !SUBENTRY 2 uk.ac.stfc.isis.ibex.ui.weblinks 2 0 2015-09-16 15:25:45.393
+    !MESSAGE Missing required bundle uk.ac.stfc.isis.ibex.ui.perspectives_1.0.0.
+    !SUBENTRY 1 org.eclipse.osgi 2 0 2015-09-16 15:25:45.393
+    ...
+    &lt;Lots of similar messages removed&gt;
+    ...
+    !MESSAGE Bundle uk.ac.stfc.isis.ibex.ui.perspectives_1.0.0.qualifier [465] was not resolved.
+    !SUBENTRY 2 uk.ac.stfc.isis.ibex.ui.perspectives 2 0 2015-09-16 15:25:45.393
+    !MESSAGE Missing required bundle uk.ac.stfc.isis.ibex.ui.statusbar_1.0.0.
+</pre></div>
+</div>
+<p>From this example it seems to be related to uk.ac.stfc.isis.ibex.ui.statusbar as that appears multiple times.</p>
+<p>Possible solution:</p>
+<ul class="simple">
+<li><p>Check the offending plug-in has been added to one of the feature projects as a plug-in</p></li>
+</ul>
+</section>
+<section id="new-plugin-is-not-available-and-possibly-crashing-existing-plugins">
+<h2>New plugin is not available (and possibly crashing existing plugins)<a class="headerlink" href="#new-plugin-is-not-available-and-possibly-crashing-existing-plugins" title="Link to this heading"></a></h2>
+<p>This might be difficult to find as an error, and it may not exist for other developers - even on the same branch!
+Adding the plugin directly to your configuration solves this.</p>
+</section>
+<section id="plugins-compile-fine-but-dependencies-cause-errors-at-runtime">
+<h2>Plugins compile fine but dependencies cause errors at runtime<a class="headerlink" href="#plugins-compile-fine-but-dependencies-cause-errors-at-runtime" title="Link to this heading"></a></h2>
+<p>If you can run the application fine but are seeing a <code class="docutils literal notranslate"><span class="pre">java.lang.NoClassDefFoundError</span></code> at runtime, try re-setting the target platform, synchronizing <code class="docutils literal notranslate"><span class="pre">client.product</span></code> (under “testing” in the product overview), and doing a clean.</p>
+</section>
+<section id="menu-items-are-missing">
+<h2>Menu items are missing<a class="headerlink" href="#menu-items-are-missing" title="Link to this heading"></a></h2>
+<p>This is usually because a dependency is missing. See “I really cannot work out why the GUI won’t start!” below.</p>
+</section>
+<section id="no-application-id">
+<h2>No application ID<a class="headerlink" href="#no-application-id" title="Link to this heading"></a></h2>
+<p>Starting the GUI via Eclipse just doesn’t seem to work and I cannot see why!</p>
+<p>One useful thing to try is to use the run configuration to check all the correct plug-ins are included:</p>
+<ul class="simple">
+<li><p>Right-click on ibex.product in uk.ac.stfc.isis.ibex.client.product and select Run As-&gt;Run Configurations…</p></li>
+<li><p>Select ibex.product under Eclipse Application</p></li>
+<li><p>From the tabs select “Plug-ins” and click the “Validate Plug-ins” button</p></li>
+<li><p>If it displays errors because plug-ins are missing:</p>
+<ul>
+<li><p>Close the dialogs and add the missing plug-ins to the feature.xml file in uk.ac.stfc.isis.ibex.feature.base or one of the other features</p></li>
+<li><p>Repeat this whole process again from the beginning</p></li>
+</ul>
+</li>
+<li><p>If there are no errors then click the “Run” button to see if it works</p></li>
+</ul>
+<p>Sometimes eclipse will tell you that you have errors in various projects when you open it. The following operations (may) help.</p>
+<ul class="simple">
+<li><p>Refresh, clean and build all projects. Select all projects, press F5 to refresh, then go to <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">-&gt;</span> <span class="pre">Clean</span></code> to clean all projects.</p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">-&gt;</span> <span class="pre">Run</span> <span class="pre">Configurations</span> <span class="pre">-&gt;</span> <span class="pre">Plugins</span></code> and press “Add required plugins”. You can now validate/apply your choice.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.targetplatform</span></code>, open <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.targetplatform.target</span></code> and click “set as target platform”.</p></li>
+<li><p>If all else fails, delete all the projects from eclipse’s workspace and reimport them.</p></li>
+</ul>
+</section>
+<section id="the-gui-starts-but-looks-strange-and-some-items-e-g-menu-bar-perspective-buttons-are-missing">
+<h2>The GUI starts but looks strange and some items (e.g. menu bar, perspective buttons) are missing<a class="headerlink" href="#the-gui-starts-but-looks-strange-and-some-items-e-g-menu-bar-perspective-buttons-are-missing" title="Link to this heading"></a></h2>
+<p>This can happen if the wrong “.product” file is run and not all plugins are defined in the application.</p>
+<ul class="simple">
+<li><p>Make sure you <em>only</em> run ibex.product in uk.ac.stfc.isis.ibex.<strong>client</strong>.product <em>not</em> any other “.product” file in the workspace e.g. uk.ac.stfc.isis.ibex.product</p></li>
+</ul>
+</section>
+<section id="i-can-t-see-changes-in-a-new-branch">
+<h2>I can’t see changes in a new branch<a class="headerlink" href="#i-can-t-see-changes-in-a-new-branch" title="Link to this heading"></a></h2>
+<p>Sometimes when you check out a new branch in the ibex GUI repository, you won’t see any changes in the GUI. You can fix this by following the steps below:</p>
+<ol class="arabic simple">
+<li><p>In Eclipse, remove all the projects from the workspace and close Eclipse.</p></li>
+<li><p>Then, while checked out to the branch you want to see the changes on, perform a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-fdx</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD</span> <span class="pre">--hard</span></code> to reset the git repository. This will remove any changes you have made to the branch.</p></li>
+<li><p>Restart Eclipse and repeat the steps to get the GUI working from <a class="reference internal" href="../compiling/Building-the-GUI.html"><span class="doc std std-doc">Building the GUI</span></a>.</p></li>
+</ol>
+</section>
+<section id="build-fails-with-error-failed-to-resolve-target-definition-targetplatform-target-could-not-find-org-eclipse-e4-tools-spies-feature-feature-group-in-the-repositories-of-the-current-location">
+<h2>Build fails with <code class="docutils literal notranslate"><span class="pre">[ERROR]</span> <span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">resolve</span> <span class="pre">target</span> <span class="pre">definition</span> <span class="pre">...</span> <span class="pre">targetplatform.target:</span> <span class="pre">Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">&quot;org.eclipse.e4.tools.spies.feature.feature.group...&quot;</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">repositories</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">current</span> <span class="pre">location</span></code><a class="headerlink" href="#build-fails-with-error-failed-to-resolve-target-definition-targetplatform-target-could-not-find-org-eclipse-e4-tools-spies-feature-feature-group-in-the-repositories-of-the-current-location" title="Link to this heading"></a></h2>
+<p>This probably means that our pinned target has gone out of date and needs updating. Open the Eclipse IDE and click on <code class="docutils literal notranslate"><span class="pre">org.eclipse.tools/latest</span></code> and click <code class="docutils literal notranslate"><span class="pre">update</span></code> this should fail and show <code class="docutils literal notranslate"><span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">locate</span> <span class="pre">installable</span> <span class="pre">unit</span> <span class="pre">...</span></code>. To fix this remove the plugin and then add it from the <code class="docutils literal notranslate"><span class="pre">software</span> <span class="pre">site</span> </code>, work with <code class="docutils literal notranslate"><span class="pre">org.eclipse.e4.core.tools.update</span> <span class="pre">-</span> <span class="pre">http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest</span></code> then you add <code class="docutils literal notranslate"><span class="pre">Eclipse</span> <span class="pre">E4</span> <span class="pre">-</span> <span class="pre">All</span> <span class="pre">Spies</span></code>.</p>
+</section>
+<section id="validation-error-in-target-platform-jython-manifests">
+<h2>Validation error in target platform <code class="docutils literal notranslate"><span class="pre">jython</span></code> manifests<a class="headerlink" href="#validation-error-in-target-platform-jython-manifests" title="Link to this heading"></a></h2>
+<p>Make sure that <code class="docutils literal notranslate"><span class="pre">-Djdk.util.zip.disableZip64ExtraFieldValidation=true</span></code> is included in <code class="docutils literal notranslate"><span class="pre">eclipse.ini</span></code> (located right next
+to the <code class="docutils literal notranslate"><span class="pre">eclipse.exe</span></code> executable).</p>
+</section>
+<section id="java-lang-unsupportedclassversionerror">
+<h2><code class="docutils literal notranslate"><span class="pre">java.lang.UnsupportedClassVersionError</span></code><a class="headerlink" href="#java-lang-unsupportedclassversionerror" title="Link to this heading"></a></h2>
+<p>If you see a <code class="docutils literal notranslate"><span class="pre">java.lang.UnsupportedClassVersionError</span></code> error at runtime, then:</p>
+<ul class="simple">
+<li><p>Select Window -&gt; Preferences -&gt; Java -&gt; Compiler</p></li>
+<li><p>Set compliance level to 21.</p></li>
+</ul>
+</section>
+<section id="adding-a-dictionary-to-eclipse-s-spelling-checker">
+<h2>Adding a dictionary to Eclipse’s spelling checker<a class="headerlink" href="#adding-a-dictionary-to-eclipse-s-spelling-checker" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In Eclipse open <code class="docutils literal notranslate"><span class="pre">Window</span> <span class="pre">&gt;</span> <span class="pre">Preferences</span> <span class="pre">&gt;</span> <span class="pre">General</span> <span class="pre">&gt;</span> <span class="pre">Editors</span> <span class="pre">&gt;</span> <span class="pre">Text</span> <span class="pre">Editors</span> <span class="pre">&gt;</span> <span class="pre">Spelling</span></code></p></li>
+<li><p>Change the “User defined dictionary” to <code class="docutils literal notranslate"><span class="pre">&lt;ISIS</span> <span class="pre">Experiment</span> <span class="pre">Controls</span> <span class="pre">Shares&gt;/Eclipse</span> <span class="pre">settings/code_dictionary.txt</span></code></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Checkstyle-setup.html" class="btn btn-neutral float-left" title="Checkstyle setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Common-Eclipse-Tasks.html" class="btn btn-neutral float-right" title="Common Eclipse tasks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

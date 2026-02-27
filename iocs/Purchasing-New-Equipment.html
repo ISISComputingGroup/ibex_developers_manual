@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purchasing new equipment &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Designing protocols" href="purchasing_new_equipment/Designing-Protocols.html" />
+    <link rel="prev" title="Creating a pcaspy IOC" href="creation/ioc-pcaspy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Creation.html">IOC Creation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Purchasing new equipment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="purchasing_new_equipment/Designing-Protocols.html">Designing protocols</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+      <li class="breadcrumb-item active">Purchasing new equipment</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/Purchasing-New-Equipment.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="purchasing-new-equipment">
+<h1>Purchasing new equipment<a class="headerlink" href="#purchasing-new-equipment" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page relates to “slow” control; if looking at items like cameras, DAQ, or items at a higher frequency than 10Hz, please <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/FAQ.html#report-a-problem" title="(in IBEX User Manual)"><span class="xref std std-ref">contact Experiment Controls</span></a>.</p>
+</div>
+<section id="off-the-shelf-devices">
+<h2>Off the shelf devices<a class="headerlink" href="#off-the-shelf-devices" title="Link to this heading"></a></h2>
+<p>If purchasing “simple” off the shelf devices (e.g. power supplies, temperature controllers, gaussmeters, etc.) please bear the following in mind:</p>
+<ul class="simple">
+<li><p>The device itself needs to allow an external computer to control it.</p></li>
+<li><p>Only certain transport layers will interact with our architecture readily. If it is not in this list, we are unlikely to be able to integrate it easily, so please engage with the group as soon as possible. This list is in order of preference.</p>
+<ul>
+<li><p><strong>Serial</strong> (RS232 is preferred, but RS422 and RS485 can be accommodated with advanced warning). Ideally DB9 or DB25 connectors.</p></li>
+<li><p><strong>Ethernet</strong> - but please make sure there is provision for updates to the device system. Ideally this would be DHCP capable, but should also allow for configuration of a static IP.</p></li>
+<li><p><strong>GPIB</strong></p></li>
+</ul>
+</li>
+<li><p>If the only connection option available is <strong>USB</strong>, then you <strong>MUST</strong> get in touch with us early, as the options for integrating these devices are limited, and it may need a dedicated computer purchasing.</p></li>
+<li><p>With regards to the control protocol, the following can all be integrated easily, other protocols would need to be discussed:</p>
+<ul>
+<li><p><a class="reference external" href="https://sampleenvironment.github.io/secop-site/index.html" title="(in SECoP)"><span class="xref std std-doc">SECoP</span></a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments">SCPI</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/OPC_Unified_Architecture">OPCUA</a></p></li>
+<li><p>ASCII based command sets (please see the <a class="reference internal" href="purchasing_new_equipment/Designing-Protocols.html"><span class="doc">Designing protocols</span></a> guide for more details of preferences of how these would look)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Modbus">Modbus</a></p></li>
+</ul>
+</li>
+</ul>
+<p>If a protocol needs to be designed, please consider <a class="reference external" href="https://sampleenvironment.github.io/secop-site/index.html" title="(in SECoP)"><span class="xref std std-doc">SECoP</span></a> first, or read the <a class="reference internal" href="purchasing_new_equipment/Designing-Protocols.html"><span class="doc">Designing protocols</span></a> guide.</p>
+<p>As much warning as possible is needed to ensure availability of new devices within IBEX; please <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/FAQ.html#report-a-problem" title="(in IBEX User Manual)"><span class="xref std std-ref">contact Experiment Controls</span></a> as soon as possible when considering the purchase of a new device.</p>
+</section>
+<section id="systems-which-integrate-a-computer">
+<h2>Systems which integrate a Computer<a class="headerlink" href="#systems-which-integrate-a-computer" title="Link to this heading"></a></h2>
+<p>It is not unusual for moderately complex systems to require a computer to provide suitable control. This raises greater concerns for ISIS generally, as well as the Experiment Controls team.</p>
+<p>Agreement needs to be ensured during tender and selection in relation to:</p>
+<ul class="simple">
+<li><p>Who supplies the computer</p></li>
+<li><p>Who maintains it</p></li>
+<li><p>Who ensures it is kept up to date</p></li>
+<li><p>Who deals with changes when the hardware must be updated or the operating system updates cause something to function in an unanticipated manner</p></li>
+<li><p>Recovery procedures for failure conditions</p></li>
+<li><p>Who is responsible for the cybersecurity level and maintenance of this computer</p></li>
+</ul>
+<p>Service level agreements for any of these issues should also be agreed. These should match the expected lifetime of the item being purchased. If this is not possible, then an agreement as to the risk needs to be made, and considerations for ways to mitigate it which do not put undue stress on the resources in question.</p>
+<p>Conversations with the Experiment Controls team from the outset would be beneficial for such items.</p>
+<p>Updates for security aspects are especially important for any item which is placed on a network, there is greater grace available should the communication between IBEX and the device be via a transport layer other than ethernet as the computer can be kept off a network.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="creation/ioc-pcaspy.html" class="btn btn-neutral float-left" title="Creating a pcaspy IOC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="purchasing_new_equipment/Designing-Protocols.html" class="btn btn-neutral float-right" title="Designing protocols" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

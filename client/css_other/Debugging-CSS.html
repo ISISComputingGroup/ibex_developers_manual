@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debugging CSS Views &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Malformed URL errors" href="Malformed-URL-errors.html" />
+    <link rel="prev" title="OPI Programming tips &amp; limitations" href="../opis/OPI-programming-tips-and-limitations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../opis/OPI-Creation.html">OPI creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opis/OPI-programming-tips-and-limitations.html">OPI Programming tips &amp; limitations</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Debugging CSS Views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Malformed-URL-errors.html">Malformed URL errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Connection-Layer.html">PV Connection Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+      <li class="breadcrumb-item active">Debugging CSS Views</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/css_other/Debugging-CSS.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="debugging-css-views">
+<h1>Debugging CSS Views<a class="headerlink" href="#debugging-css-views" title="Link to this heading"></a></h1>
+<p>Sometimes we find issues in our code that originate from CSS. This page originates from <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1206">ticket #1206</a> and some of the resources that were used to analyse the problem. This page may grow owing to future issues; please feel free to add to it.</p>
+<section id="source-inspection-within-eclipse">
+<h2>Source inspection within ECLIPSE<a class="headerlink" href="#source-inspection-within-eclipse" title="Link to this heading"></a></h2>
+<p>Note that whilst in ECLIPSE debug mode, you should be able to see most of the source you’re accessing via breakpoints and the normal step into, step over commands, including CSS. However, if the source is being loaded via reflection, as is the case in the above issue, you will only be able to see the code at call time, you won’t be able to navigate to specific definitions which can be frustrating.</p>
+<p>Note that you may have to go through numerous layers of system code for which the source is unavailable. The debug stepping commands will still work, you just need to keep at it until you get to an inspection enabled class.</p>
+</section>
+<section id="breakpoints">
+<h2>Breakpoints<a class="headerlink" href="#breakpoints" title="Link to this heading"></a></h2>
+<p>My experience in ECLIPSE is that breakpoints will work in 3rd party CSS code, provided you can inspect the class in question (see above). The one caveat is that you can toggle a breakpoint at a specific line, and even make it conditional, but the breakpoint icon may not appear alongside the code. If you look at the Breakpoints window, it should still appear there, and it should work. So don’t worry!</p>
+</section>
+<section id="source-on-github">
+<h2>Source on GitHub<a class="headerlink" href="#source-on-github" title="Link to this heading"></a></h2>
+<p>As was the case in the attached issue, we might not be using the most up to date version of CSS. How do you know whether it has been changed in the source repo? Fortunately CSS is all open source. Unfortunately, the repo structure is quite hard to navigate. For instance, the package <code class="docutils literal notranslate"><span class="pre">org.csstudio.security.ui</span></code> is located <a class="reference external" href="https://github.com/ControlSystemStudio/cs-studio/tree/master/core/utility/utility-plugins/org.csstudio.security.ui">here</a>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://github.com/ControlSystemStudio/cs-studio/tree/master/core/utility/utility-plugins/org.csstudio.security.ui</span></code></p>
+<p>Owing to efforts to clean up the file structure, it also means many files have moved. The Github <code class="docutils literal notranslate"><span class="pre">history</span></code> option for a file doesn’t take that into account. I know of no way then to look at the full file history via Github. You have to do it by cloning the repo and then use the command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--follow</span> <span class="pre">./path/to/file</span></code></p>
+</section>
+<section id="source-inspection-within-the-file-system">
+<h2>Source inspection within the file system<a class="headerlink" href="#source-inspection-within-the-file-system" title="Link to this heading"></a></h2>
+<p>If you’re trying to figure out what is going on in the code and the limitations on source inspection within ECLIPSE is stopping you, you can always look at the source that you’re using directly through the file system. The <code class="docutils literal notranslate"><span class="pre">.jar</span></code> files used can be unzipped with most archiving programs (I use 7Zip). Simply navigate to the package in question and look in the <code class="docutils literal notranslate"><span class="pre">.source*</span></code> jar file. For instance, the source for <code class="docutils literal notranslate"><span class="pre">org.csstudio.security</span></code> on my system is located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\workspace\.metadata\.plugins\org.eclipse.pde.core\.bundle_pool\plugins\org.csstudio.security.source_1.1.0.20140923-1503.jar\</span></code></p>
+</section>
+<section id="plugin-customisation">
+<h2>Plugin customisation<a class="headerlink" href="#plugin-customisation" title="Link to this heading"></a></h2>
+<p>Note that many of the CSS plugins use some degree of customization. This is set in the file <code class="docutils literal notranslate"><span class="pre">plugin_customization.ini</span></code>. For me it’s located at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.product\plugin_customization.ini</span></code></p>
+<p>Packages with customization options should contain a <code class="docutils literal notranslate"><span class="pre">*.prefs</span></code> file defining the available options.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../opis/OPI-programming-tips-and-limitations.html" class="btn btn-neutral float-left" title="OPI Programming tips &amp; limitations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Malformed-URL-errors.html" class="btn btn-neutral float-right" title="Malformed URL errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

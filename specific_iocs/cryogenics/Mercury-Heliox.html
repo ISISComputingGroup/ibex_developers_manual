@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oxford Instruments Mercury Heliox &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mercury iTC" href="MercuryiTC.html" />
+    <link rel="prev" title="ITC503 (Old-style Heliox)" href="ITC503-Heliox.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Cryogenics.html">Cryogenics</a></li>
+      <li class="breadcrumb-item active">Oxford Instruments Mercury Heliox</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/Mercury-Heliox.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="oxford-instruments-mercury-heliox">
+<h1>Oxford Instruments Mercury Heliox<a class="headerlink" href="#oxford-instruments-mercury-heliox" title="Link to this heading"></a></h1>
+<p>The mercury Heliox systems are a type of refrigerator which cools using Helium-3. Using this technique, temperatures of around ~300mK can be achieved.</p>
+<p>The Heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat or cryomagnet which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the Heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.</p>
+<section id="physical-process-background">
+<h2>Physical process - background<a class="headerlink" href="#physical-process-background" title="Link to this heading"></a></h2>
+<p>A sorption cooling stage works by evaporative cooling of Helium-3. To understand the process, consider the following picture:</p>
+<p><img alt="sorb" src="../../_images/heliox.png" /></p>
+<p>The components which are interesting for us are:</p>
+<ul class="simple">
+<li><p>Helium-3 pot. The sample is mounted to the bottom of this.</p></li>
+<li><p>Helium-4 pot (also called “1K pot”).</p></li>
+<li><p>Sorption pump</p></li>
+</ul>
+<p>The Helium-3 pot and the sorption pump form a closed system. Helium-3 can move between these two areas, but cannot escape. This is done because Helium-3 is extremely expensive, so pumping it away would be very wasteful.</p>
+<p>The sorption pump is a “pump” in the sense that it can control the pressure of the Helium-3 surrounding it. The physical process that achieves this is adsorption of Helium-3 onto the material (charcoal) in the pump. The pumping efficiency (i.e. pressure) of the pump can be changed by controlling it’s temperature. The lower the temperature, the more Helium-3 the pump will adsorb per unit time. If the pump is warmed to ~30K, it will release all of the previously adsorbed Helium-3.</p>
+<p>The Helium-3 pot is where the lowest temperatures (~260mK) are achieved. In this pot, Helium-3 cools by evaporation. The rate of evaporation of Helium-3 (i.e. the cooling power) is changed by varying the temperature of the sorption pump (and therefore the vapour pressure above the Helium-3 in this pot).</p>
+<p>The Helium-4 pot is used to recondense Helium-3 back into a liquid after being released by the sorption pump (to release Helium-3, the sorption pump is warmed to 30K, and Helium-3 is a gas at this temperature).</p>
+</section>
+<section id="communications">
+<h2>Communications<a class="headerlink" href="#communications" title="Link to this heading"></a></h2>
+<section id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h3>
+<p>The Mercury can be physically configured to use serial, ethernet or GPIB as it’s transport layer. At ISIS, we use serial. The serial settings can be changed on the physical device, but we typically use 57600 baud as this is usually an acceptable compromise of transmission speed against line length restrictions. If there is a very long connection from the moxa to the Heliox unit, and there is noise on the line, it may be useful to reduce the baud rate to see if this helps.</p>
+</section>
+<section id="command-set">
+<h3>Command set<a class="headerlink" href="#command-set" title="Link to this heading"></a></h3>
+<p>The Heliox systems are physically based on the mercury ITC temperature controllers, but they do not use the same command set and cannot be controlled by the same drivers. The mercury Heliox systems have their own driver.</p>
+<p>The devices use an SCPI-like command syntax. There are two approaches to getting data using this protocol:</p>
+<ul class="simple">
+<li><p>Ask for everything in one go, e.g. <code class="docutils literal notranslate"><span class="pre">STAT:DEV:HelioxX</span></code>. This will return a huge status string containing every measurement under that category (~30 items). This approach is used by the LabVIEW driver (although it only actually looks at the data for a few measurements). It is also useful for enumerating the valid pieces of data that you can ask for individually.</p></li>
+<li><p>Ask for one thing at a time, e.g. <code class="docutils literal notranslate"><span class="pre">STAT:DEV:HelioxX:TEMP:SIG:TEMP</span></code>. This will only return the one measurement which we asked for. This approach is what the IOC uses.</p></li>
+</ul>
+</section>
+<section id="channels">
+<h3>Channels<a class="headerlink" href="#channels" title="Link to this heading"></a></h3>
+<p>The mercury ITC driver essentially reads data from 5 distinct channels:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Physical sensor location</p></th>
+<th class="head"><p>Channel name on LET Heliox</p></th>
+<th class="head"><p>Channel name on Muon Heliox</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>He3 Pot</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HelioxX</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HelioxX</span></code></p></td>
+<td><p>This is the “main” Heliox control channel. According to the OI manual this is the only channel which we should need to use to control the Heliox’s temperature. In the IOC and LabVIEW driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either <code class="docutils literal notranslate"><span class="pre">HeHigh</span></code> or <code class="docutils literal notranslate"><span class="pre">HeLow</span></code> depending on temperature (see below).</p></td>
+</tr>
+<tr class="row-odd"><td><p>He3 Sorption pump</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">He3Sorb</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MB1_He3_Sorb</span></code></p></td>
+<td><p>Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same!</p></td>
+</tr>
+<tr class="row-even"><td><p>He4 Pot</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">He4Pot</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DB6_He4Pot</span></code></p></td>
+<td><p>Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the Heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage.</p></td>
+</tr>
+<tr class="row-odd"><td><p>He3 Pot (high sensor)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HeHigh</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DB7_He3_Pot_CRN</span></code></p></td>
+<td><p>Monitoring only. This is a “high” (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it’s range of validity. This channel will give invalid temperatures if the Heliox is running at “low” temperature.</p></td>
+</tr>
+<tr class="row-even"><td><p>He3 Pot (low sensor)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HeLow</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DB8_He3_Pot_Low</span></code></p></td>
+<td><p>Monitoring only. This is a “low” (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it’s range of validity. This channel will give invalid temperatures if the Heliox is running at “high” temperature.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Because the channel names vary between the Muon Heliox and the LET Heliox, they must be supplied as IOC macros. (Apart from the <code class="docutils literal notranslate"><span class="pre">He3</span> <span class="pre">Pot</span></code>, which is the same for both devices)</p>
+<p>If a new Heliox turns up on another beamline, the following is the process to figure out the required channel names:</p>
+<ul class="simple">
+<li><p>Connect to the device via your favourite terminal emulator (HTerm/PuTTY/HyperTerminal/etc).</p></li>
+<li><p>Issue the command <code class="docutils literal notranslate"><span class="pre">READ:SYS:CAT</span></code> (terminated with a line feed, <code class="docutils literal notranslate"><span class="pre">\n</span></code>)</p></li>
+<li><p>This will respond with a string like <code class="docutils literal notranslate"><span class="pre">STAT:SYS:CAT:DEV:&lt;device</span> <span class="pre">1</span> <span class="pre">id&gt;:&lt;device</span> <span class="pre">1</span> <span class="pre">type&gt;:DEV:&lt;device</span> <span class="pre">2</span> <span class="pre">id&gt;:&lt;device</span> <span class="pre">2</span> <span class="pre">type&gt;:...</span></code>.</p>
+<ul>
+<li><p>The IDs should look something like <code class="docutils literal notranslate"><span class="pre">DB1.H1</span></code> (meaning: daughter board 1, heater 1)</p></li>
+<li><p>The device type could be one of <code class="docutils literal notranslate"><span class="pre">TEMP</span></code> (temperature), <code class="docutils literal notranslate"><span class="pre">PRES</span></code> (pressure), <code class="docutils literal notranslate"><span class="pre">HTR</span></code> (heater) or <code class="docutils literal notranslate"><span class="pre">AUX</span></code> (auxiliary output).</p></li>
+</ul>
+</li>
+<li><p>For each of the devices in the catalogue response, issue the command <code class="docutils literal notranslate"><span class="pre">READ:DEV:&lt;device</span> <span class="pre">id&gt;:&lt;device</span> <span class="pre">type&gt;:NICK</span></code> (terminated with a line feed)</p></li>
+<li><p>The device will respond with a string that looks like <code class="docutils literal notranslate"><span class="pre">STAT:DEV:MB1.T1:TEMP:NICK:MB1_He3_Sorb</span></code></p></li>
+<li><p>The last part of this response (<code class="docutils literal notranslate"><span class="pre">MB1_He3_Sorb</span></code> in this example) is the string that the IOC will need as a macro</p></li>
+<li><p>If it’s not immediately obvious which channel name corresponds to which item in the table above, consult cryogenics for advice about how the channels have been named.</p></li>
+</ul>
+</section>
+</section>
+<section id="regeneration">
+<h2>Regeneration<a class="headerlink" href="#regeneration" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Physical process - background<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Sorption cooling stages can only dissipate a finite amount of energy before they must be “regenerated”. This is contrast to dilution cooling, which can be run (essentially) continuously.</p>
+<p>A regeneration follows the following physical process:</p>
+<ul class="simple">
+<li><p>Regeneration is started either manually (by the user) or automatically by the IOC/LabVIEW driver if that option is selected</p></li>
+<li><p>The He3 sorption pump is warmed significantly (to about 30K).</p></li>
+<li><p>This heat causes the pump to release all of the Helium-3 stored in it.</p></li>
+<li><p>At the same time, the 1K pot is run, which causes the helium-3 to recondense when it comes into contact with the 1K pot</p></li>
+<li><p>Once all of the helium 3 has recondensed, the sorption pump is cooled back down. This causes it to start “pumping” and therefore cooling of the He3 Pot resumes.</p></li>
+<li><p>This process will take approximately 30-90 minutes depending on the starting temperature of the Heliox.</p></li>
+</ul>
+<p>The Heliox typically needs a regeneration after 24-48 hours of cooling. I think this depends on the sample and the external heat load.</p>
+<p>In effect, this means that the users lose temperature control while a regeneration is in progress. TODO: do the scientists know this or will they be surprised by this behaviour? Are regenerations typically done automatically or manually or does this depend on the scientist/experiment?</p>
+</section>
+<section id="detecting-when-a-regeneration-is-required">
+<h3>Detecting when a regeneration is required<a class="headerlink" href="#detecting-when-a-regeneration-is-required" title="Link to this heading"></a></h3>
+<p>A regeneration is captured by a boolean with the following inputs:</p>
+<ul class="simple">
+<li><p>Mode = “Low Temp”</p></li>
+<li><p>And Heliox temperature &gt; 0.4K</p></li>
+<li><p>And He3 Sorb heater in automatic mode</p></li>
+<li><p>And He3 Sorb heater percent heat &lt; 0.2%</p></li>
+<li><p>And no comms errors within the last 120 seconds</p></li>
+<li><p>And auto-recondense enabled on VI front panel</p></li>
+<li><p>And one or both of:</p>
+<ul>
+<li><p>Either:</p>
+<ul>
+<li><p>Rate of change of temperature over the last 200 seconds &gt; 0.0005K/min (calculated by line of best fit)</p></li>
+<li><p>AND variance of temperature over the last 200 seconds &gt; 0.0005K</p></li>
+<li><p>AND (Heliox temperature - TSet) &gt; 0.25K</p></li>
+</ul>
+</li>
+<li><p>Or:</p>
+<ul>
+<li><p>(Heliox temperature - TSet) &gt; 0.05K continuously for 600 seconds. This is the ‘coarse check’, where 600s is the ‘coarse time’.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This boolean must then stay true continuously for 120 seconds. If it does, then a regeneration is triggered in the VI. Under IBEX, the value of the boolean will be displayed on the OPI but no action will be taken.</p>
+</section>
+<section id="regeneration-logic">
+<h3>Regeneration logic<a class="headerlink" href="#regeneration-logic" title="Link to this heading"></a></h3>
+<p>When a regeneration is triggered, the existing LabVIEW driver simply sends a temperature setpoint of zero. There is logic to do something much more complicated, but it is “commented out” in an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">False</span></code> statement.</p>
+<p>It appears to me as though the setpoint is never set back to the previous value in the LabVIEW code. There is a lot of code relating to this, but it is all disabled.</p>
+<p>Under IBEX we currently only allow manual regenerations. The same conditions as above are displayed on an indicator on the IBEX OPI, but no action is taken. This is because the scientists don’t trust the current regeneration conditions and so they have not been hooked up. We would need to book lots of time with the Heliox to try and work out a better set of detection conditions if this logic were to be used in future.</p>
+</section>
+</section>
+<section id="labview-driver-oddities">
+<h2>LabVIEW driver oddities<a class="headerlink" href="#labview-driver-oddities" title="Link to this heading"></a></h2>
+<p>The following notes apply to the LabVIEW driver:</p>
+<ul class="simple">
+<li><p>The driver does not work with LabVIEW 2018. It works with versions from 2010 to 2014 - I am not sure in which intermediate version it stops working. The symptom is that it never even tries to send bytes to a serial port. I think it is crashing while trying to get a subVI by reference but I am not completely sure about this.</p></li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="no-comms-to-device-but-i-m-sure-the-serial-settings-are-correct">
+<h3>No comms to device but I’m sure the serial settings are correct<a class="headerlink" href="#no-comms-to-device-but-i-m-sure-the-serial-settings-are-correct" title="Link to this heading"></a></h3>
+<p>The symptom is that the device acts as if it’s not there - you will see serial writes going out but nothing coming back. This can happen if the device is left in local mode (for example, after a cryogen fill).</p>
+<p>I am not aware of a remote command to set the device back into remote mode, so you will need to walk up to the physical mercury controller. It has a touch screen with a small <code class="docutils literal notranslate"><span class="pre">l</span></code> in the bottom-left of the touch screen. If it is shown in blue, tap it once. It should turn orange, which indicates the device is now in remote. Check you now have comms.</p>
+<p><strong>NB</strong> Only the main communications socket (25 pin d-type, labelled <em>RS232</em>) should be connected to a MOXA port, <strong>not</strong> any other sockets on the Mercury.</p>
+</section>
+<section id="i-can-read-the-main-temperature-but-not-any-channels">
+<h3>I can read the main temperature but not any channels<a class="headerlink" href="#i-can-read-the-main-temperature-but-not-any-channels" title="Link to this heading"></a></h3>
+<p>Check channel assignments are correct - see table above and instructions for finding out channel names if unknown.</p>
+</section>
+<section id="devices-are-communicating-but-readback-values-are-not-correct">
+<h3>Devices are communicating but readback values are not correct<a class="headerlink" href="#devices-are-communicating-but-readback-values-are-not-correct" title="Link to this heading"></a></h3>
+<p>Check the cables are connected correctly - you don’t get super obvious errors if e.g. ITC and IPS cables are swapped. This issue may also be indicated by errors parsing responses from the device in the IOC log.</p>
+<p>An error could look like this if the IPS and ITC cables are swapped:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ITC503_01:MODE:</span> <span class="pre">Input</span> <span class="pre">&quot;0A0C3H0M50P03&quot;</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">match</span> <span class="pre">format</span> <span class="pre">&quot;%{A0|A1|A2|A3}&quot;</span></code></p>
+</section>
+<section id="regeneration-starts-but-never-finishes">
+<h3>Regeneration starts but never finishes<a class="headerlink" href="#regeneration-starts-but-never-finishes" title="Link to this heading"></a></h3>
+<p>The Heliox detects whether a regeneration has “finished” by checking whether the temperature of the Helium-3 pot is smaller than a threshold. From testing, I believe the threshold is somewhere around 1.7K. The outer cryostat should be capable of achieving 1.6K or better. The Helium-3 pot won’t go colder than the outer cryostat while regenerating, so if the outer cryostat is at a higher temperature than about 1.7K the regeneration will appear to hang and never finish.</p>
+<p>The outer cryostat could be warmer than expected for various reasons:</p>
+<ul class="simple">
+<li><p>Try gently increasing the needle valve percentage on the outer cryostat (e.g. from 6% to 8%) and check how the temperature responds.</p>
+<ul>
+<li><p>If it gets much colder, it may solve the issue.</p></li>
+<li><p>If it gets marginally colder or does not respond, or you have to adjust the needle valve beyond 10% or so, check with cryogenics group. There may be a leak or a cryogenic issue with the equipment meaning it is unable to reach the lowest temperatures.</p></li>
+<li><p>If it gets warmer, gently decrease the flow of He. The minimum attainable temperature is a minimum on a curve, and it is possible that reducing the flow of He can get the cryostat colder.</p></li>
+<li><p>If none of the above works or you are unsure, consult cryogenics section</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="temperature-control-unstable">
+<h3>Temperature control unstable<a class="headerlink" href="#temperature-control-unstable" title="Link to this heading"></a></h3>
+<p>The temperature control is known to be unstable at:</p>
+<ul class="simple">
+<li><p>Very close to base temperature, i.e. TSet &lt; 300mK. This is because even the tiniest of heater changes cause a large change in temperature when this close to base temperature</p></li>
+<li><p>Near the “low temperature”/”high temperature” threshold, which is approximately 1.5-1.7K. This is a result of the Heliox changing it’s mode of operation around this threshold.</p></li>
+</ul>
+<p>Example ramp (260mK-1.8K in steps of 20mK) demonstrating these instabilities (notice significant overshoot below 300mK and large instabilities from 1.5-1.7K):</p>
+<p><img alt="" src="../../_images/mercury_heliox_ramp_example.PNG" /></p>
+<p>There is nothing the driver does in IBEX which can affect the stability. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.</p>
+</section>
+<section id="regeneration-starts-when-i-set-temperature-setpoint-0">
+<h3>Regeneration starts when I set temperature setpoint = 0<a class="headerlink" href="#regeneration-starts-when-i-set-temperature-setpoint-0" title="Link to this heading"></a></h3>
+<p>This is a feature of the Heliox intentionally added by oxford instruments, when the device gets a setpoint of zero it interprets it as “regenerate and then cool” as opposed to just “cool”.</p>
+<p>This can be avoided by setting a temperature in the range 0 &lt; T &lt; base temperature to cool to base temp.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ITC503-Heliox.html" class="btn btn-neutral float-left" title="ITC503 (Old-style Heliox)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MercuryiTC.html" class="btn btn-neutral float-right" title="Mercury iTC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PV Connection Layer &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Miscellaneous" href="../GUI-Other.html" />
+    <link rel="prev" title="Malformed URL errors" href="Malformed-URL-errors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../opis/OPI-Creation.html">OPI creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opis/OPI-programming-tips-and-limitations.html">OPI Programming tips &amp; limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Debugging-CSS.html">Debugging CSS Views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Malformed-URL-errors.html">Malformed URL errors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PV Connection Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+      <li class="breadcrumb-item active">PV Connection Layer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/css_other/PV-Connection-Layer.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pv-connection-layer">
+<h1>PV Connection Layer<a class="headerlink" href="#pv-connection-layer" title="Link to this heading"></a></h1>
+<p>This is what I think I know about how the layers under PVMAnagerObservable work to reconnect to a PV. This was part of the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2162">logging ticket</a> and led to a logging build <a class="reference internal" href="../troubleshooting/PV-Manager-and-Observers-Logging.html"><span class="doc std std-doc">PV Manager and Observers Logging</span></a>.</p>
+<p>On disconnect the log is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:NDW1407:CS:SB:TEMP1 = 13:52:47.265000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 27
+:NDW1407:CS:SB:TEMP1 = 13:52:47.265000: CAJChannel connect changegov.aps.jca.Channel$ConnectionState[DISCONNECTED=1]
+:NDW1407:CS:SB:TEMP1 = 13:52:47.265000: MultiplexChannelHandler connect changeJCAConnection [connected: false writeConnected: false channel: CAJChannel = { name = TE:NDW1407:CS:SB:TEMP1, connectionState = DISCONNECTED }]
+:NDW1407:CS:SB:TEMP1 = 13:52:47.265000: ConnectionCollector connect changefalse
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: PVDirector connected or exception event false
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: PVReaderImpl connection
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: PVManagerObservable connection false
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: DisplayBlock connection false
+</pre></div>
+</div>
+<p>The channel then is searched for:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: ChannelSearchManager Moved channel search to timer with delay 32
+:NDW1407:CS:SB:TEMP1 = 13:52:47.276000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.276000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.276000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.309000: ChannelSearchManager Moved channel search to timer with delay 64
+                 all = 13:52:47.309000: ChannelSearchManager no work to do not restarting timer. period32
+:NDW1407:CS:SB:TEMP1 = 13:52:47.319000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.319000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.319000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.366000: PVReaderImpl valueChange
+:NDW1407:CS:SB:TEMP1 = 13:52:47.366000: PVManagerObservable valueChange false
+:NDW1407:CS:SB:TEMP1 = 13:52:47.383000: ChannelSearchManager Moved channel search to timer with delay 128
+                 all = 13:52:47.383000: ChannelSearchManager no work to do not restarting timer. period64
+:NDW1407:CS:SB:TEMP1 = 13:52:47.393000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.393000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.393000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.521000: ChannelSearchManager Moved channel search to timer with delay 256
+                 all = 13:52:47.521000: ChannelSearchManager no work to do not restarting timer. period128
+:NDW1407:CS:SB:TEMP1 = 13:52:47.531000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.531000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.531000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.787000: ChannelSearchManager Moved channel search to timer with delay 512
+                 all = 13:52:47.787000: ChannelSearchManager no work to do not restarting timer. period256
+:NDW1407:CS:SB:TEMP1 = 13:52:47.797000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.797000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.797000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:48.309000: ChannelSearchManager Moved channel search to timer with delay 1024
+                 all = 13:52:48.309000: ChannelSearchManager no work to do not restarting timer. period512
+:NDW1407:CS:SB:TEMP1 = 13:52:48.319000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:48.319000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:48.319000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:49.343000: ChannelSearchManager Moved channel search to timer with delay 2048
+                 all = 13:52:49.343000: ChannelSearchManager no work to do not restarting timer. period1024
+:NDW1407:CS:SB:TEMP1 = 13:52:49.353000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:49.353000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:49.353000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:51.401000: ChannelSearchManager Moved channel search to timer with delay 4096
+                 all = 13:52:51.401000: ChannelSearchManager no work to do not restarting timer. period2048
+:NDW1407:CS:SB:TEMP1 = 13:52:51.411000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:51.411000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:51.411000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:55.508000: ChannelSearchManager Moved channel search to timer with delay 8192
+                 all = 13:52:55.508000: ChannelSearchManager no work to do not restarting timer. period4096
+:NDW1407:CS:SB:TEMP1 = 13:52:55.518000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:55.518000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:55.518000: ChannelSearchManager request sent? true
+                 all = 13:52:58.123000: ChannelSearchManager no work to do not restarting timer. period16384
+:NDW1407:CS:SB:TEMP1 = 13:53:03.711000: ChannelSearchManager Moved channel search to timer with delay 16384
+                 all = 13:53:03.711000: ChannelSearchManager no work to do not restarting timer. period8192
+:NDW1407:CS:SB:TEMP1 = 13:53:03.721000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:03.721000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:03.721000: ChannelSearchManager request sent? true
+</pre></div>
+</div>
+<p>You can see that as the channel is not found it is sent to progressively longer period searches. Until is reaches the 16s one I have seen it up to a 64s delay.</p>
+<p>Then we reconnect the IOC and we get:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                 all = 13:53:05.425000: ChannelSearchManager no work to do not restarting timer. period32
+                 all = 13:53:05.788000: ChannelSearchManager no work to do not restarting timer. period128
+                 all = 13:53:06.224000: ChannelSearchManager no work to do not restarting timer. period256
+                 all = 13:53:08.641000: ChannelSearchManager no work to do not restarting timer. period128
+:NDW1407:CS:SB:TEMP1 = 13:53:20.534000: ChannelSearchManager Moved channel search to timer with delay 32768
+                 all = 13:53:20.534000: ChannelSearchManager no work to do not restarting timer. period16384
+:NDW1407:CS:SB:TEMP1 = 13:53:20.830000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:20.830000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:20.831000: ChannelSearchManager request sent? true
+                 all = 13:53:38.603000: ChannelSearchManager no work to do not restarting timer. period32
+                 all = 13:53:39.815000: ChannelSearchManager no work to do not restarting timer. period64
+                 all = 13:53:39.954000: ChannelSearchManager no work to do not restarting timer. period128
+                 all = 13:53:46.211000: ChannelSearchManager no work to do not restarting timer. period16384
+                 all = 13:53:50.802000: ChannelSearchManager no work to do not restarting timer. period256
+:NDW1407:CS:SB:TEMP1 = 13:54:10.818000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:10.818000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:10.819000: ChannelSearchManager request sent? false
+                 all = 13:54:11.286000: ChannelSearchManager no work to do not restarting timer. period512
+:NDW1407:CS:SB:TEMP1 = 13:54:43.587000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.587000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.587000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:54:43.589000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 22
+:NDW1407:CS:SB:TEMP1 = 13:54:43.589000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 18
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 22
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 18
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAJChannel connect complete changegov.aps.jca.Channel$ConnectionState[DISCONNECTED=1]
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CATransport resubscribe subscriptions request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CATransport resubscribe subscriptions request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAJChannel connect changegov.aps.jca.Channel$ConnectionState[CONNECTED=2]
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: MultiplexChannelHandler connect changeJCAConnection [connected: true writeConnected: false channel: CAJChannel = { name = TE:NDW1407:CS:SB:TEMP1, connectionState = CONNECTED }]
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: ConnectionCollector connect changetrue
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: PVDirector connected or exception event true
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: PVReaderImpl connection
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: PVManagerObservable connection true
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: DisplayBlock connection true
+</pre></div>
+</div>
+<p>The GUI gets access rights (22) then a connection (18). I have seen it get a version number too not sure whether this is only on first connect. Then we register for value changes I think.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.591000</span><span class="p">:</span> <span class="n">CreateChannel</span> <span class="n">connect</span> <span class="n">complete</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.591000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">22</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.592000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">18</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.592000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.592000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.592000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.592000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">15</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.593000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.602000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.602000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.602000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.602000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">1</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.602000</span><span class="p">:</span> <span class="n">CAResponseHandler</span> <span class="nb">id</span> <span class="p">(</span><span class="mi">18</span> <span class="ow">is</span> <span class="n">connection</span><span class="p">,</span> <span class="mi">23</span> <span class="n">response</span><span class="p">,</span> <span class="mi">1</span> <span class="n">reconnect</span><span class="p">)</span> <span class="mi">15</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.692000</span><span class="p">:</span> <span class="n">PVReaderImpl</span> <span class="n">valueChange</span>
+<span class="p">:</span><span class="n">NDW1407</span><span class="p">:</span><span class="n">CS</span><span class="p">:</span><span class="n">SB</span><span class="p">:</span><span class="n">TEMP1</span> <span class="o">=</span> <span class="mi">13</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mf">43.692000</span><span class="p">:</span> <span class="n">PVManagerObservable</span> <span class="n">valueChange</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>So I think the way it works is that there is a ladder of timers which send a search response for requested PVs onto the network (max delay appears to be 132s). If a connection is established the search is no longer requested if it isn’t then it is moved down the ladder. Once the IOC replies the handshake is done and a connection is established the timing for this seems short so I don’t think this is the problem.</p>
+<p>The logic of sending the search request seems complicated maybe the problem is in here (ChannelSearchManager.timeout) or maybe if there are many items in this list it fills up the send buffer so it takes a while for it to reconnect along with the delay.
+Also we found that if the system gets to many responses it tell the system to stop sending flow control (CATransport.enableFlowControl). This may also cause a problem if this search is ignored because flow control is on and then it has to wait to send it again. Maybe this along with the large number of PVs might explain slow re-connection. I have created another ticket for someone else to look.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Malformed-URL-errors.html" class="btn btn-neutral float-left" title="Malformed URL errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../GUI-Other.html" class="btn btn-neutral float-right" title="Miscellaneous" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

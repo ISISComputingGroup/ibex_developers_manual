@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embedding JavaFX views into IBEX &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Icon Licences" href="Icon-Licences.html" />
+    <link rel="prev" title="Designing for Colour Blindness" href="Designing-for-Colour-Blindness.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Designing-for-Colour-Blindness.html">Designing for Colour Blindness</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Embedding JavaFX views into IBEX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Icon-Licences.html">Icon Licences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Local-files-and-start-up.html">Local Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Synoptic-Icons.html">Synoptic icons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Other.html">Miscellaneous</a></li>
+      <li class="breadcrumb-item active">Embedding JavaFX views into IBEX</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/misc/Embedding-JavaFX-views-into-IBEX.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="embedding-javafx-views-into-ibex">
+<h1>Embedding JavaFX views into IBEX<a class="headerlink" href="#embedding-javafx-views-into-ibex" title="Link to this heading"></a></h1>
+<p>This is useful for e.g. embedding native views from Phoebus such as displaybuilder, databrowser etc.</p>
+<section id="efxclipse-compatibility-layer-setup">
+<h2>EFXclipse / compatibility layer setup<a class="headerlink" href="#efxclipse-compatibility-layer-setup" title="Link to this heading"></a></h2>
+<p>In order to be able to embed JavaFX views, the efxclipse compatibility layer must be configured on the branch you’re attempting to use. The easiest way to check this is to check for the presence of an <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.javafx</span></code> package - if this package is not present, you will not be able to embed javafx views. Currently this package is only available on the Phoebus proof-of-concept branch.</p>
+</section>
+<section id="patching-java-to-include-javafx-support">
+<h2>Patching Java to include JavaFX support<a class="headerlink" href="#patching-java-to-include-javafx-support" title="Link to this heading"></a></h2>
+<p>To enable JavaFX support on a java installation, it must be patched with the JavaFX overlay. See <a class="reference internal" href="../../deployment/deploy/Upgrade-Java.html"><span class="doc std std-doc">here</span></a> for details of how to do this.</p>
+<p>If you don’t do this, you will get an error of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>java.lang.ExceptionInInitializerError
+    at uk.ac.stfc.isis.ibex.ui.alarm.AlarmView.createPartControl(AlarmView.java:44)
+    at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:158)
+    at org.eclipse.ui.internal.e4.compatibility.CompatibilityView.createPartControl(CompatibilityView.java:155)
+    at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:365)
+[...]
+Caused by: java.lang.RuntimeException: No toolkit found
+    at com.sun.javafx.tk.Toolkit.getToolkit(Toolkit.java:280)
+    at com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:291)
+    at javafx.application.Platform.startup(Platform.java:113)
+    at javafx.embed.swt.FXCanvas.lambda$initFx$4(FXCanvas.java:356)
+    at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+    at java.base/java.security.AccessController.doPrivileged(AccessController.java:460)
+    at javafx.embed.swt.FXCanvas.initFx(FXCanvas.java:355)
+    at javafx.embed.swt.FXCanvas.&lt;clinit&gt;(FXCanvas.java:272)
+</pre></div>
+</div>
+</section>
+<section id="creating-a-javafx-view">
+<h2>Creating a JavaFX view<a class="headerlink" href="#creating-a-javafx-view" title="Link to this heading"></a></h2>
+<p>They key bit of code to do this is actually rather simple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createPartControl</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Composite</span><span class="w"> </span><span class="n">parent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	</span><span class="n">FXCanvas</span><span class="w"> </span><span class="n">fxCanvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FXCanvas</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="w">    	</span><span class="n">fxCanvas</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">AlarmTreeView</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">AlarmClient</span><span class="p">(</span><span class="s">&quot;127.0.0.1:12345&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;kafka_topic&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">))));</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">AlarmTreeView</span></code> is a JavaFX UI class. <code class="docutils literal notranslate"><span class="pre">Scene</span></code> is a class provided by JavaFX (you can get this by depending on <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.javafx</span></code> in the plugin’s <code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code>). <code class="docutils literal notranslate"><span class="pre">FXCanvas</span></code> is the efxclipse class that enables SWT &lt;-&gt; JavaFX interoperability - again it is exported from <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.javafx</span></code> - in particular it comes from <code class="docutils literal notranslate"><span class="pre">javafx-swt.jar</span></code>.</p>
+</section>
+<section id="javafx-library-setup">
+<h2>JavaFX library setup<a class="headerlink" href="#javafx-library-setup" title="Link to this heading"></a></h2>
+<p>Note: we cannot currently get JavaFX from maven - although the dependency looks like it’s there, it doesn’t work for us due to the absence of <code class="docutils literal notranslate"><span class="pre">javafx-swt.jar</span></code>.</p>
+<ul class="simple">
+<li><p>Download javafx SDK from <a class="reference external" href="https://gluonhq.com/products/javafx/">https://gluonhq.com/products/javafx/</a></p></li>
+<li><p>Put the jars in <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.javafx/lib</span></code></p></li>
+<li><p>Reference the jars on the plugin classpath and runtime-export any <code class="docutils literal notranslate"><span class="pre">com.sun.javafx.*</span></code> and <code class="docutils literal notranslate"><span class="pre">org.openjfx.*</span></code> packages from the plugin.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Designing-for-Colour-Blindness.html" class="btn btn-neutral float-left" title="Designing for Colour Blindness" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Icon-Licences.html" class="btn btn-neutral float-right" title="Icon Licences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

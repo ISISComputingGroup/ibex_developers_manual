@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating an ISIS StreamDevice IOC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Duplicating IOCs" href="Duplicating-IOCs.html" />
+    <link rel="prev" title="Creating new submodules in EPICS" href="Creating-New-Submodules-in-EPICS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Creation.html">IOC Creation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-ioc-to-epics-hardware-list.html">Add IOC to EPICS hardware support list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-IOC-wrapper-VI.html">LvDCOM IOCs (LabVIEW wrapper IOCs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-New-Submodules-in-EPICS.html">Creating new submodules in EPICS</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Duplicating-IOCs.html">Duplicating IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Finishing-Touches.html">IOC Finishing Touches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Generator.html">IOC Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Writing-An-ISIS-Stream-Device.html">Writing an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ioc-pcaspy.html">Creating a pcaspy IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Creation.html">IOC Creation</a></li>
+      <li class="breadcrumb-item active">Creating an ISIS StreamDevice IOC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/creation/Creating-an-ISIS-StreamDevice-IOC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-an-isis-streamdevice-ioc">
+<h1>Creating an ISIS StreamDevice IOC<a class="headerlink" href="#creating-an-isis-streamdevice-ioc" title="Link to this heading"></a></h1>
+<section id="before-you-begin">
+<h2>Before you begin<a class="headerlink" href="#before-you-begin" title="Link to this heading"></a></h2>
+<p>Is the a support module already available? Check <a class="reference external" href="https://epics.anl.gov/modules/manufacturer.php">https://epics.anl.gov/modules/manufacturer.php</a>. If it’s not listed there, email tech talk <a class="reference external" href="https://epics.anl.gov/tech-talk/">https://epics.anl.gov/tech-talk/</a>.</p>
+</section>
+<section id="first-step">
+<h2>First step<a class="headerlink" href="#first-step" title="Link to this heading"></a></h2>
+<p>The easiest way to create a StreamDevice is to use the script <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX_device_generator">here</a> but if for some reason you want to create it manually the instructions are as follows:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The IOC creating script is improving but still under testing. Git operations should be happening correctly.
+Tickets related to the issues:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3431">https://github.com/ISISComputingGroup/IBEX/issues/3431</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/3588">https://github.com/ISISComputingGroup/IBEX/issues/3588</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4659">https://github.com/ISISComputingGroup/IBEX/issues/4659</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8249">https://github.com/ISISComputingGroup/IBEX/issues/8249</a></p></li>
+</ul>
+</div>
+</section>
+<section id="create-a-streamdevice-support-module">
+<h2>Create a StreamDevice support module<a class="headerlink" href="#create-a-streamdevice-support-module" title="Link to this heading"></a></h2>
+<p>Note: The support module is put in the <code class="docutils literal notranslate"><span class="pre">EPICS\support</span></code> directory, but the actual IOC(s) are put in the <code class="docutils literal notranslate"><span class="pre">EPICS\ioc\master</span></code> directory</p>
+<p>First, set up the Support Module (Using the Hameg 8123 as an example.):</p>
+<p>Make the main directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">...</span><span class="n">EPICS</span>\<span class="n">support</span>
+<span class="n">mkdir</span> <span class="n">Hameg_8123</span>
+<span class="n">cd</span> <span class="n">Hameg_8123</span>
+</pre></div>
+</div>
+<p>Get an admin to <a class="reference internal" href="../../processes/git_and_github/Adding-new-modules-via-Git.html"><span class="doc std std-doc">create a git repository</span></a>.</p>
+<p>Create a stream support module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">...</span><span class="n">EPICS</span>\<span class="n">support</span>\<span class="n">Hameg_8123</span>\<span class="n">master</span>
+<span class="n">makeSupport</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">t</span> <span class="n">streamSCPI</span> <span class="n">Hameg_8123</span>
+</pre></div>
+</div>
+<p>Edit the protocol file in <code class="docutils literal notranslate"><span class="pre">Hameg_8123Sup</span></code>, so it reads like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Terminator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">;</span>
+<span class="n">ReplyTimeout</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">;</span>
+
+<span class="n">getIDN</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="s2">&quot;*IDN?&quot;</span><span class="p">;</span>
+    <span class="c1">#Read no more than 39 chars (EPICS limit)</span>
+    <span class="ow">in</span> <span class="s2">&quot;%/(.{0,39})/&quot;</span><span class="p">;</span>
+    <span class="n">ExtraInput</span> <span class="o">=</span> <span class="n">Ignore</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">getTriggerLevel</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="s2">&quot;LV\$1?&quot;</span><span class="p">;</span>
+    <span class="ow">in</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="n">ExtraInput</span> <span class="o">=</span> <span class="n">Ignore</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">setTriggerLevel</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="s2">&quot;LV\$1</span><span class="si">%s</span><span class="s2">?&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">resetCounts</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="s2">&quot;RES&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note: I have only included a very small section of the command set for this device for brevity.</p>
+<p>Now add the directory name to the support make file (<code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\support\Makefile</span></code>), ie to DIRS at the top. Also add dependencies if needed.</p>
+<p>Next the db file needs to created. The db file should now be stored with the proto file in <code class="docutils literal notranslate"><span class="pre">hameg8123Sup</span></code> to aid portability. For the Hameg the part of the db file looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">ai</span><span class="p">,</span> <span class="s2">&quot;$(P)CHAN_A:TRIG_LVL&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;1 second&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@Hameg_8123.proto getTriggerLevel(A) $(PORT)&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">EGU</span><span class="p">,</span>  <span class="s2">&quot;V&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">record</span><span class="p">(</span><span class="n">ao</span><span class="p">,</span> <span class="s2">&quot;$(P)CHAN_A:TRIG_LVL:SP&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span>  <span class="s2">&quot;@Hameg_8123.proto setTriggerLevel(A) $(PORT)&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">PREC</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+    <span class="n">field</span><span class="p">(</span><span class="n">EGU</span><span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Hameg_8123.proto</span></code> is the name of the protocol file for the Hameg created here.</p>
+<p>Note that the db file should conform to the naming standards detailed in <a class="reference internal" href="../conventions/PV-Naming.html"><span class="doc std std-doc">PV-Naming</span></a>, and that ANY value which might be read and set as a block must have a <code class="docutils literal notranslate"><span class="pre">:SP</span></code> as well as a non post-fixed name entry.</p>
+<p>Also note that ALL streamdevice PVs must have the field <code class="docutils literal notranslate"><span class="pre">DTYP</span></code> set to <code class="docutils literal notranslate"><span class="pre">&quot;stream&quot;</span></code>, otherwise they will not correctly communicate.</p>
+<p>Modify the Makefile in the same directory as the protocol and db files to have lines like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DB</span> <span class="o">+=</span> <span class="o">&lt;</span><span class="n">db_file_name</span><span class="o">&gt;.</span><span class="n">db</span>
+<span class="n">DATA</span> <span class="o">+=</span> <span class="o">&lt;</span><span class="n">protocol_file_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>If the Makefile has a line that reads <code class="docutils literal notranslate"><span class="pre">DATA</span> <span class="pre">+=</span> <span class="pre">$(patsubst</span> <span class="pre">../%,</span> <span class="pre">%,</span> <span class="pre">$(wildcard</span> <span class="pre">../*.proto))</span></code>, delete it.</p>
+</section>
+<section id="creating-the-ioc">
+<h2>Creating the IOC<a class="headerlink" href="#creating-the-ioc" title="Link to this heading"></a></h2>
+<p>All IOCs used at ISIS reside in the <code class="docutils literal notranslate"><span class="pre">EPICS\ioc\master</span></code> directory.</p>
+<p>For this example we are using the Hameg 8123.</p>
+<p>Please take note of the <a class="reference internal" href="../conventions/IOC-Naming.html"><span class="doc std std-doc">IOC naming conventions</span></a>. The same name (with the same casing) should be used both for the top-level IOC directory under <code class="docutils literal notranslate"><span class="pre">EPICS\ioc\master</span></code> and in the <code class="docutils literal notranslate"><span class="pre">makeBaseApp</span></code> command, as in the example below.</p>
+<p>First create the necessary directory structure and IOC boilerplate, starting from the <code class="docutils literal notranslate"><span class="pre">EPICS\ioc</span></code> directory (we’re going to create at least two IOCs):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">HAMEG8123</span>
+<span class="n">cd</span> <span class="n">HAMEG8123</span>
+<span class="n">makeBaseApp</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">t</span> <span class="n">ioc</span> <span class="n">HAMEG8123</span><span class="o">-</span><span class="n">IOC</span><span class="o">-</span><span class="mi">01</span>
+<span class="n">makeBaseApp</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">t</span> <span class="n">ioc</span> <span class="n">HAMEG8123</span><span class="o">-</span><span class="n">IOC</span><span class="o">-</span><span class="mi">02</span>
+<span class="n">makeBaseApp</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">t</span> <span class="n">ioc</span> <span class="n">HAMEG8123</span><span class="o">-</span><span class="n">IOC</span><span class="o">-</span><span class="mi">01</span>
+<span class="o">&lt;</span><span class="n">Press</span> <span class="k">return</span><span class="o">&gt;</span>
+<span class="n">makeBaseApp</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">t</span> <span class="n">ioc</span> <span class="n">HAMEG8123</span><span class="o">-</span><span class="n">IOC</span><span class="o">-</span><span class="mi">02</span>
+<span class="o">&lt;</span><span class="n">Press</span> <span class="k">return</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The next step is to adjust the Makefile in <code class="docutils literal notranslate"><span class="pre">HAMEG8123-IOC-02App\src:</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">HAMEG8123</span><span class="o">-</span><span class="n">IOC</span><span class="o">-</span><span class="mi">02</span><span class="n">App</span>\<span class="n">src</span>
+<span class="k">del</span> <span class="n">build</span><span class="o">.</span><span class="n">mak</span>
+<span class="n">notepad</span> <span class="n">Makefile</span>
+</pre></div>
+</div>
+<p>In notepad, adjust the Makefile as outlined in the in-line comments, namely change the line:
+<code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">$(TOP)/HAMEG8123-IOC-02App/src/build.mak</span></code> to <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">$(TOP)/HAMEG8123-IOC-01App/src/build.mak</span></code>.
+Don’t forget to save it!</p>
+<p>Now it is time to edit the <code class="docutils literal notranslate"><span class="pre">build.mak</span></code> file in <code class="docutils literal notranslate"><span class="pre">HAMEG8123-IOC-01App\src</span></code> - this is the master build file for all the HAMEG8123 IOCs. In notepad (or similar) add any require DBD files and LIBS to the respective listings. For example, for the Hameg it is necessary to add the DBDs for stream, asyn and the communication protocols:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>...
+## ISIS standard dbd ##
+$(APPNAME)_DBD += devSequencer.dbd
+$(APPNAME)_DBD += icpconfig.dbd
+$(APPNAME)_DBD += pvdump.dbd
+$(APPNAME)_DBD += asSupport.dbd
+$(APPNAME)_DBD += devIocStats.dbd
+$(APPNAME)_DBD += caPutLog.dbd
+$(APPNAME)_DBD += utilities.dbd
+## add other dbd here ##
+$(APPNAME)_DBD += stream.dbd
+$(APPNAME)_DBD += asyn.dbd
+$(APPNAME)_DBD += drvAsynSerialPort.dbd
+$(APPNAME)_DBD += drvAsynIPPort.dbd
+...
+</pre></div>
+</div>
+<p>Likewise, the LIBs need to be added too:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## ISIS standard libraries ##
+$(APPNAME)_LIBS += seq pv
+$(APPNAME)_LIBS += devIocStats
+$(APPNAME)_LIBS += pvdump easySQLite sqlite
+$(APPNAME)_LIBS += caPutLog
+$(APPNAME)_LIBS += icpconfig
+$(APPNAME)_LIBS += autosave
+$(APPNAME)_LIBS += utilities
+## Add other libraries here ##
+$(APPNAME)_LIBS += stream
+$(APPNAME)_LIBS += pcre
+$(APPNAME)_LIBS += asyn
+$(APPNAME)_LIBS += calc
+</pre></div>
+</div>
+<p>The final step is to rationalise the st.cmd files for each IOC. There will be a default <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> for each IOC which will call a common file in the 01 directory. The top files for IOC-YY should look like the following (XXXX is the name of the IOC):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!../../bin/windows-x64/XXXX-IOC-YY
+
+## You may have to change XXXX to something else
+## everywhere it appears in this file
+
+&lt; envPaths
+
+cd &quot;${TOP}&quot;
+
+## Register all support components
+dbLoadDatabase &quot;dbd/XXXX-IOC-YY.dbd&quot;
+XXXX_IOC_YY_registerRecordDeviceDriver pdbbase
+
+## calling common command file in ioc 01 boot dir
+&lt; ${TOP}/iocBoot/iocXXXX-IOC-01/st-common.cmd
+
+</pre></div>
+</div>
+<p>The a common file, <code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code> should look like (NOTE: the support files location is a macro defined in the <code class="docutils literal notranslate"><span class="pre">&lt;IOC_DIR&gt;\configure\RELEASE</span></code> file):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>epicsEnvSet &quot;STREAM_PROTOCOL_PATH&quot; &quot;$(AMINT2L)/data&quot;
+
+##ISIS## Run IOC initialisation 
+&lt; $(IOCSTARTUP)/init.cmd
+
+## For recsim:
+$(IFRECSIM) drvAsynSerialPortConfigure(&quot;L0&quot;, &quot;$(PORT=NUL)&quot;, 0, 1, 0, 0)
+
+# For dev sim devices
+$(IFDEVSIM) drvAsynIPPortConfigure(&quot;L0&quot;, &quot;localhost:$(EMULATOR_PORT=57677)&quot;)
+
+## For real device use:
+$(IFNOTDEVSIM) $(IFNOTRECSIM) drvAsynSerialPortConfigure(&quot;L0&quot;, &quot;$(PORT=NO_PORT_MACRO)&quot;, 0, 0, 0, 0)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;, -1, &quot;baud&quot;, &quot;$(BAUD=9600)&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;, -1, &quot;bits&quot;, &quot;$(BITS=7)&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;, -1, &quot;parity&quot;, &quot;$(PARITY=even)&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;, -1, &quot;stop&quot;, &quot;$(STOP=1)&quot;)
+## Hardware flow control off
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;, 0, &quot;clocal&quot;, &quot;Y&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;,0,&quot;crtscts&quot;,&quot;N&quot;)
+## Software flow control off
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;,0,&quot;ixon&quot;,&quot;N&quot;)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption(&quot;L0&quot;,0,&quot;ixoff&quot;,&quot;N&quot;)
+
+##ISIS## Load common DB records 
+&lt; $(IOCSTARTUP)/dbload.cmd
+
+## Load our record instances
+dbLoadRecords(&quot;[support_module_path]/db/devAMINT2L.db&quot;,&quot;P=$(MYPVPREFIX)$(IOCNAME):, PORT=L0, RECSIM=$(RECSIM=0), DISABLE=$(DISABLE=0)&quot;)
+
+##ISIS## Stuff that needs to be done after all records are loaded but before iocInit is called 
+&lt; $(IOCSTARTUP)/preiocinit.cmd
+
+cd &quot;${TOP}/iocBoot/${IOC}&quot;
+iocInit
+
+## Start any sequence programs
+#seq sncxxx,&quot;user=hgv27692Host&quot;
+
+##ISIS## Stuff that needs to be done after iocInit is called e.g. sequence programs 
+&lt; $(IOCSTARTUP)/postiocinit.cmd
+
+</pre></div>
+</div>
+<p>Now is a good time to add everything into Git. Once that is done it is time to build it and run it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">c</span><span class="p">:</span>\<span class="n">Instrument</span>\<span class="n">Apps</span>\<span class="n">EPICS</span>\<span class="n">ioc</span>\<span class="n">master</span>\<span class="n">HAMEG8123</span>
+<span class="n">make</span>
+<span class="n">cd</span> <span class="n">iocBoot</span>\<span class="n">iocHAMEG8123</span><span class="o">-</span><span class="n">IOC</span><span class="o">-</span><span class="mi">01</span>
+<span class="n">runIOC</span><span class="o">.</span><span class="n">bat</span> <span class="n">st</span><span class="o">.</span><span class="n">cmd</span>
+</pre></div>
+</div>
+<p>Hopefully, the IOC will start and the <code class="docutils literal notranslate"><span class="pre">dbl</span></code> command will list all the PVs.</p>
+<p>Now it builds add a reference to the IOC make file in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\ioc\master\Makefile</span></code> add the directory name to <code class="docutils literal notranslate"><span class="pre">IOCDIRS</span></code>. If this gets to long split with <code class="docutils literal notranslate"><span class="pre">IOCDIR</span> <span class="pre">+=</span></code></p>
+<p>Before the IOC is complete you will need to finish all the <a class="reference internal" href="../../IOCs.html"><span class="doc std std-doc">relevant workflow steps</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Creating-New-Submodules-in-EPICS.html" class="btn btn-neutral float-left" title="Creating new submodules in EPICS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Duplicating-IOCs.html" class="btn btn-neutral float-right" title="Duplicating IOCs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

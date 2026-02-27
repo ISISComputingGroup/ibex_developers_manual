@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Increment Planning &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sprint Planning" href="Sprint-Planning.html" />
+    <link rel="prev" title="Meeting roles &amp; rotas" href="Meeting-Roles-and-Rotas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Meetings.html">Meetings - internal</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Backlog-Preparation.html">Sprint pre-planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Code-Chats-and-Lightning-Talks.html">Code chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meeting-Roles-and-Rotas.html">Meeting roles &amp; rotas</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Program Increment Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Planning.html">Sprint Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sprint-Review-and-Retro.html">Sprint Review &amp; Retrospective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Technical-Debt-Stand-down.html">Technical Debt Stand-down</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Meetings.html">Meetings - internal</a></li>
+      <li class="breadcrumb-item active">Program Increment Planning</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/meetings/Program-Increment-Planning.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="program-increment-planning">
+<h1>Program Increment Planning<a class="headerlink" href="#program-increment-planning" title="Link to this heading"></a></h1>
+<p>This meeting covers the overarching themes for the next few months. It will usually be held in the week or so before the first sprint of the Program Increment (PI) in question. This is an opportunity to ensure the whole team are aware of the more mid term goals of the team.</p>
+<p>A PI will consist of the sprints between this major release and the next one, these will typically be in January/February and August/September.</p>
+<p>In the first sprint in a PI we will create and deploy a release of the work we have just completed. The deploy should occur so that the instrument scientists have at least two full weeks of testing time available before the start of the user cycle. In the third sprint we will undertake dependency updates.</p>
+<p>This meeting will usually be chaired by the project manager for the group or other senior team member.</p>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading"></a></h2>
+<p>There is a <a class="reference external" href="https://github.com/orgs/ISISComputingGroup/projects?query=is%3Aopen+is%3Atemplate">template</a> for the PI board into which can be brought the tickets that relate to the work to be undertaken.
+Start by using that template to create a project for the coming PI.
+Edit the setting to add the sprints to the appropriate field. Assign the pre-populated tickets to the appropriate sprint.
+Add the items to be considered in the upcoming PI that are either a significant amount of work, or which the instrument scientists would appreciate visibility of. These can be added as either a link to a ticket in one of the repos, or a note on this board. These will typically have a classification of <code class="docutils literal notranslate"><span class="pre">Project/Feature</span></code>. It is wise to add sub-tickets of these umbrellas as well, as <code class="docutils literal notranslate"><span class="pre">To</span> <span class="pre">do</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">Project/Feature</span></code>, as if there are dependencies between them they can be assigned to sprints as appropriate.
+Items to consider may be carried over from the previous PI, or be new items.
+Assign a priority order to the projects and features, and any sub-tickets which have been added so that they can be grouped easily.</p>
+</section>
+<section id="during-meeting">
+<h2>During Meeting<a class="headerlink" href="#during-meeting" title="Link to this heading"></a></h2>
+<p>Review the PI about to end, see what is complete and what isn’t, and discuss if appropriate.
+Ask what has gone well or badly during the PI about to end, as a small retrospective.
+Looking to the PI about to start, load each project/feature  from the <code class="docutils literal notranslate"><span class="pre">Prioritising</span> <span class="pre">Table</span> <span class="pre">-</span> <span class="pre">Projects/Features</span></code> tab, so that the aims and purposes of each piece of work can be discussed and agreed. Care should be taken that the details of code and implementation should not be undertaken here too thoroughly.
+Where items can be assigned to a specific sprint this should be done. If any priorities are wildly inappropriate that can also be discussed in this meeting, although care should be taken not to become too detailed.</p>
+</section>
+<section id="extra-notes">
+<h2>Extra Notes<a class="headerlink" href="#extra-notes" title="Link to this heading"></a></h2>
+<section id="preparation-priority-ordering">
+<h3>Preparation = Priority Ordering<a class="headerlink" href="#preparation-priority-ordering" title="Link to this heading"></a></h3>
+<p>Each project/feature should have a number which increments in the style 100, 200, etc. so that the sub-tickets (which could have further sub-tickets) can be numbered 110, 120, 130. If you have anything with more than 9 sub-tickets, or a third layer, increase at the highest level by an order of 10, so that the project would be 1000, the sub-tickets then become 1100, 1110, 1120, 1130 etc. Using this order makes it easier to rearrange, as if item 130 should fit between 110 and 120, simply setting it to 115 will move it to the right place.
+After the meeting these numbers can be tidied up appropriately.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Meeting-Roles-and-Rotas.html" class="btn btn-neutral float-left" title="Meeting roles &amp; rotas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Sprint-Planning.html" class="btn btn-neutral float-right" title="Sprint Planning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

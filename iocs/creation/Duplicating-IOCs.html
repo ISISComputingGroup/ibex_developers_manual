@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duplicating IOCs &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IOC Finishing Touches" href="IOC-Finishing-Touches.html" />
+    <link rel="prev" title="Creating an ISIS StreamDevice IOC" href="Creating-an-ISIS-StreamDevice-IOC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Creation.html">IOC Creation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-ioc-to-epics-hardware-list.html">Add IOC to EPICS hardware support list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-IOC-wrapper-VI.html">LvDCOM IOCs (LabVIEW wrapper IOCs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-New-Submodules-in-EPICS.html">Creating new submodules in EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-an-ISIS-StreamDevice-IOC.html">Creating an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Duplicating IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Finishing-Touches.html">IOC Finishing Touches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Generator.html">IOC Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Writing-An-ISIS-Stream-Device.html">Writing an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ioc-pcaspy.html">Creating a pcaspy IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Creation.html">IOC Creation</a></li>
+      <li class="breadcrumb-item active">Duplicating IOCs</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/creation/Duplicating-IOCs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="duplicating-iocs">
+<h1>Duplicating IOCs<a class="headerlink" href="#duplicating-iocs" title="Link to this heading"></a></h1>
+<section id="ioc-duplication-script">
+<h2>IOC Duplication script<a class="headerlink" href="#ioc-duplication-script" title="Link to this heading"></a></h2>
+<p>There is a script in ibex utils to duplicate IOCs, more information can be found <a class="reference internal" href="../../tools/Shared-utility-scripts.html#ioc-copier-script"><span class="std std-ref">here.</span></a></p>
+<p>The manual instructions below can also be used.</p>
+<summary>Manual instructions</summary><details>## Creating IOC 2
+If you need more than 1 IOC (i.e. you are making the second IOC) there is only a process to follow, rather than a script, as various IOCs can have their own nuances: so take this with a grain of salt. Let us refer to the IOC you are duplicating as `newIOC`, for clarity.
+<p>Navigate to an IOC folder which has two or more IOCs: here we have two folders to focus on, <code class="docutils literal notranslate"><span class="pre">&lt;ioc&gt;/iocBoot/</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;ioc&gt;/&lt;ioc&gt;-IOC-0&lt;n&gt;App</span></code> (where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of IOCs). Make sure this IOC has a <code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code> file (to make your life easier!). Let us refer to this as <code class="docutils literal notranslate"><span class="pre">refIOC</span></code>.</p>
+<p>Now, let’s get cracking!</p>
+<section id="making-ioc-2-iocboot-ioc-newioc-ioc-02">
+<h3>Making IOC 2: <code class="docutils literal notranslate"><span class="pre">iocBoot/ioc&lt;newIOC&gt;-IOC-02&gt;</span></code><a class="headerlink" href="#making-ioc-2-iocboot-ioc-newioc-ioc-02" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Create a new <strong><code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-02</span></code></strong> folder in <code class="docutils literal notranslate"><span class="pre">/iocBoot/</span></code>.</p></li>
+<li><p>Navigate to the <strong><code class="docutils literal notranslate"><span class="pre">config.xml</span></code></strong> file of <code class="docutils literal notranslate"><span class="pre">refIOC</span></code>. In <code class="docutils literal notranslate"><span class="pre">01</span></code> you will see macros being defined, in <code class="docutils literal notranslate"><span class="pre">02</span></code> you will see the <code class="docutils literal notranslate"><span class="pre">01</span></code> config file being referenced. Create a <code class="docutils literal notranslate"><span class="pre">config.xml</span></code> file in <code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-02</span></code> and do the same.</p></li>
+<li><p>Check that there is a <strong><code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code></strong> file in <code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-01</span></code></p>
+<ul class="simple">
+<li><p>if there <strong>is</strong>, note how <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> references this. Copy this file into <code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-02</span></code> and refactor all instances of <code class="docutils literal notranslate"><span class="pre">01</span></code> to <code class="docutils literal notranslate"><span class="pre">02</span></code>. Then, where the file calls <code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code>, you will need to add a line that navigates to the <code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-01</span></code> directory above it (there will be an example of this in <code class="docutils literal notranslate"><span class="pre">ioc&lt;refIOC&gt;-IOC-02</span></code>).</p></li>
+<li><p>if there <strong>is no</strong>t, note how the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> and <code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code> are set up in <code class="docutils literal notranslate"><span class="pre">refIOC</span></code>. In <code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-01</span></code>, transition the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> contents to a
+<code class="docutils literal notranslate"><span class="pre">st-common.cmd</span></code> file and refactor the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> to reference this in a similar way. Now follow the step above!</p></li>
+</ul>
+</li>
+<li><p>Copy across the <strong><code class="docutils literal notranslate"><span class="pre">Makefile</span></code></strong> - this stays unchanged.</p></li>
+<li><p>Copy across <strong><code class="docutils literal notranslate"><span class="pre">envPaths</span></code></strong>, changing <code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-01</span></code> to <code class="docutils literal notranslate"><span class="pre">ioc&lt;newIOC&gt;-IOC-02</span></code> if it appears.</p></li>
+<li><p>Copy across <strong><code class="docutils literal notranslate"><span class="pre">dllPath&lt;...&gt;</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">relPaths</span></code></strong> files. These also stay unchanged.</p></li>
+</ol>
+</section>
+<section id="making-ioc-2-newioc-ioc-02app">
+<h3>Making IOC 2:  <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;-IOC-02App</span></code><a class="headerlink" href="#making-ioc-2-newioc-ioc-02app" title="Link to this heading"></a></h3>
+<p>This one may be slightly less straightforward. There may be nuances and additional things in this folder to deal with that aren’t mentioned below - either try find another IOC with similar oddities or ask someone!</p>
+<ol class="arabic simple">
+<li><p>Create a new <strong><code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;-IOC-02App</span></code></strong> folder in <code class="docutils literal notranslate"><span class="pre">/&lt;newIOC&gt;/</span></code></p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;-IOC-01App</span></code> and copy across <strong><code class="docutils literal notranslate"><span class="pre">Db</span></code></strong> to the <code class="docutils literal notranslate"><span class="pre">02App</span></code> folder.</p>
+<ul class="simple">
+<li><p>Empty the <code class="docutils literal notranslate"><span class="pre">O.</span></code> folders of all <code class="docutils literal notranslate"><span class="pre">.db</span></code> files.</p></li>
+<li><p>Delete all <code class="docutils literal notranslate"><span class="pre">.substitutions</span></code> files from top level.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">Db\O.windows-x64\Makefile</span></code>, refactor the line <code class="docutils literal notranslate"><span class="pre">DB</span> <span class="pre">+=</span> <span class="pre">something.db</span> <span class="pre">...</span></code> with <code class="docutils literal notranslate"><span class="pre">#DB</span> <span class="pre">+=</span> <span class="pre">xxx.db</span></code> (e.g just comment it out)</p></li>
+</ul>
+</li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;-IOC-01App</span></code> and copy across <strong><code class="docutils literal notranslate"><span class="pre">src</span></code></strong> to the <code class="docutils literal notranslate"><span class="pre">02App</span></code> folder.</p>
+<ul class="simple">
+<li><p>Empty the contents of both <code class="docutils literal notranslate"><span class="pre">O.</span></code> folders.</p></li>
+<li><p>Delete the <code class="docutils literal notranslate"><span class="pre">build.mak</span></code> file</p></li>
+<li><p>Rename the <code class="docutils literal notranslate"><span class="pre">&lt;...&gt;Main.cpp</span></code> file with the correct IOC number, and rename the header in the file itself.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, update <code class="docutils literal notranslate"><span class="pre">APPNAME</span></code> with the correct IOC number - but the <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">...</span></code> line needs to stay the same.</p></li>
+</ul>
+</li>
+<li><p>Check whether <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;-IOC-01App</span></code> has a <strong><code class="docutils literal notranslate"><span class="pre">protocol</span></code></strong> file</p>
+<ul class="simple">
+<li><p>If it does, just copy this across. As far as I can see, the Makefiles and folder contents seem to be the same.</p></li>
+</ul>
+</li>
+</ol>
+</details> 
+</section>
+<section id="after-duplication">
+<h3>After duplication<a class="headerlink" href="#after-duplication" title="Link to this heading"></a></h3>
+<p>After either using the script or creating duplicates manually be sure to make and test to IOC.</p>
+</section>
+<section id="making-the-ioc">
+<h3>Making the IOC<a class="headerlink" href="#making-the-ioc" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">make</span></code></strong> the <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;</span></code> folder</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">iocstartups</span></code></strong> in EPICS top</p></li>
+<li><p>Try to run your new IOC!</p></li>
+</ol>
+</section>
+<section id="testing-the-ioc">
+<h3>Testing the IOC<a class="headerlink" href="#testing-the-ioc" title="Link to this heading"></a></h3>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">IOCTestframework</span></code> or the <code class="docutils literal notranslate"><span class="pre">ioc/&lt;newIOC&gt;</span></code> folder (wherever the IOC tests live).
+Refactor <code class="docutils literal notranslate"><span class="pre">DEVICE_PREFIX</span></code> to <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;_02</span></code> and you will need to refactor any calls to <code class="docutils literal notranslate"><span class="pre">get_default_ioc_dir()</span></code> with additional parameter <code class="docutils literal notranslate"><span class="pre">iocnum</span></code> (or whatever the equivalent is in your test module, this should be pretty intuitive).</p>
+<p><strong><strong>WARNING:</strong></strong> If you will also be making more IOCs via the method below, you should be <em>very</em> confident that your new <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;_02</span></code> behaves the same as <code class="docutils literal notranslate"><span class="pre">&lt;newIOC&gt;_01</span></code> before duplicating: any issues with <code class="docutils literal notranslate"><span class="pre">&lt;newIOC_02</span></code> will be propagated in <em>every</em> other new IOC you make as well.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Creating-an-ISIS-StreamDevice-IOC.html" class="btn btn-neutral float-left" title="Creating an ISIS StreamDevice IOC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IOC-Finishing-Touches.html" class="btn btn-neutral float-right" title="IOC Finishing Touches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

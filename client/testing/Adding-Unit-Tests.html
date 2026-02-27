@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding tests &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="An introduction to unit testing" href="An-Introduction-to-Unit-Testing.html" />
+    <link rel="prev" title="Testing" href="../GUI-Testing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Testing.html">Testing</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="An-Introduction-to-Unit-Testing.html">An introduction to unit testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mockito.html">Mockito</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish.html">Squish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="System-Testing-with-Squish-BDD.html">Squish BDD Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Test-naming.html">Test naming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Testing.html">Testing</a></li>
+      <li class="breadcrumb-item active">Adding tests</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/testing/Adding-Unit-Tests.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-tests">
+<h1>Adding tests<a class="headerlink" href="#adding-tests" title="Link to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="An-Introduction-to-Unit-Testing.html"><span class="doc std std-doc">Introduction to unit testing</span></a></p></li>
+</ul>
+</div>
+<p>The steps required to add unit tests for a plugin are:</p>
+<ul class="simple">
+<li><p>Create a new Fragment Project</p>
+<ul>
+<li><p>File &gt; New &gt; Project… &gt; Plug-in Development &gt; Fragment Project</p></li>
+<li><p>Set the project name to <code class="docutils literal notranslate"><span class="pre">&lt;the</span> <span class="pre">full</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">plug-in</span> <span class="pre">to</span> <span class="pre">test\&gt;.tests</span></code></p></li>
+<li><p>Change the location to the repository rather than the workspace: <code class="docutils literal notranslate"><span class="pre">ibex_gui\base\&lt;project_name&gt;</span></code> (don’t
+forget the project name!)</p></li>
+<li><p>Click “Next”</p></li>
+<li><p>Make sure the Execution Environment points at the correct version of Java</p></li>
+<li><p>Click the “Browse” button next to “Plug-in ID”</p></li>
+<li><p>Select the plug-in to test and click “OK”</p></li>
+<li><p>Finish</p></li>
+</ul>
+</li>
+<li><p>In the newly created plug-in, add a new Package with the same name or structure as the plug-in.</p>
+<ul>
+<li><p>Select the plug-in</p></li>
+<li><p>File &gt; New &gt; Package</p></li>
+<li><p>Enter the name and click “Finish”</p></li>
+</ul>
+</li>
+<li><p>In the new Package create a class for adding test</p>
+<ul>
+<li><p>Select the Package</p></li>
+<li><p>File &gt; New &gt; Class</p></li>
+<li><p>The class name <strong>must</strong> end with <code class="docutils literal notranslate"><span class="pre">Test</span></code> to be picked up by the automated build</p></li>
+</ul>
+</li>
+<li><p>Add tests to the class</p>
+<ul>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">org.junit</span></code> and <code class="docutils literal notranslate"><span class="pre">org.mockito</span></code> (if required) to the ‘Required Plug-ins’, under the Dependencies tab for the
+manifest (<code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code>)</p></li>
+</ul>
+</li>
+<li><p>Add the test plug-in to the Maven build by <a class="reference internal" href="../coding/Adding-a-Plugin-or-Feature-to-Maven-Build.html"><span class="doc std std-doc">following these steps</span></a></p></li>
+<li><p>Running the Maven build should now also run the tests</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../GUI-Testing.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="An-Introduction-to-Unit-Testing.html" class="btn btn-neutral float-right" title="An introduction to unit testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

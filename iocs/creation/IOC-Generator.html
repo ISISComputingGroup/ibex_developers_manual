@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IOC Generator &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Writing an ISIS StreamDevice IOC" href="Writing-An-ISIS-Stream-Device.html" />
+    <link rel="prev" title="IOC Finishing Touches" href="IOC-Finishing-Touches.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Creation.html">IOC Creation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Add-ioc-to-epics-hardware-list.html">Add IOC to EPICS hardware support list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-IOC-wrapper-VI.html">LvDCOM IOCs (LabVIEW wrapper IOCs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-New-Submodules-in-EPICS.html">Creating new submodules in EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-an-ISIS-StreamDevice-IOC.html">Creating an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Duplicating-IOCs.html">Duplicating IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Finishing-Touches.html">IOC Finishing Touches</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IOC Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Writing-An-ISIS-Stream-Device.html">Writing an ISIS StreamDevice IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ioc-pcaspy.html">Creating a pcaspy IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Creation.html">IOC Creation</a></li>
+      <li class="breadcrumb-item active">IOC Generator</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/creation/IOC-Generator.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ioc-generator">
+<h1>IOC Generator<a class="headerlink" href="#ioc-generator" title="Link to this heading"></a></h1>
+<p>Generates the boilerplate structure required for developing an IBEX <a class="reference internal" href="../../IOCs.html"><span class="doc std std-doc">IOC</span></a>.</p>
+<section id="how-you-use-it">
+<h2>How you use it<a class="headerlink" href="#how-you-use-it" title="Link to this heading"></a></h2>
+<p>Use these <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX-device-generator">instructions</a>.</p>
+</section>
+<section id="how-to-edit-it-how-it-works-file-locations">
+<h2>How to edit it/how it works/file locations<a class="headerlink" href="#how-to-edit-it-how-it-works-file-locations" title="Link to this heading"></a></h2>
+<p>Clone the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX-device-generator">repository</a> into C:\Instrument\Dev.</p>
+<p>This program makes git branches and pushes to the remote repo, you can stop this by adding a return statement at the start of each method in git_utils (including the RepoWrapper constructor).</p>
+<p>The program starts in IBEX_device_generator.py, so we’ll start there.
+generate_device calls create_component for each component you might want, passing in an instance method.
+These instance methods are grouped into classes:</p>
+<ul class="simple">
+<li><p>support_utils (generic IOC config)</p></li>
+<li><p>ioc_utils (ISIS specific IOC config)</p></li>
+<li><p>ioc_test_framework_utils (testing)</p></li>
+<li><p>emulator_utils (emulation)</p></li>
+<li><p>gui_utils (opi template creation)</p></li>
+</ul>
+<section id="support-utils">
+<h3>support_utils<a class="headerlink" href="#support-utils" title="Link to this heading"></a></h3>
+<p>Makes files in C:\Instrument\Apps\EPICS\support</p>
+<p>Templates for support module: C:\Instrument\Apps\EPICS\support\asyn\master\templates\streamSCPI
+These templates are <strong>generated from</strong> templates in: C:\Instrument\Apps\EPICS\support\asyn\master\makeSupport\streamSCPI</p>
+</section>
+<section id="create-submodule">
+<h3>create_submodule<a class="headerlink" href="#create-submodule" title="Link to this heading"></a></h3>
+<p>Creates the top level directory in C:\Instrument\Apps\EPICS\support, adds a makefile and tries to create a new git repo.</p>
+</section>
+<section id="apply-support-dir-template">
+<h3>apply_support_dir_template<a class="headerlink" href="#apply-support-dir-template" title="Link to this heading"></a></h3>
+<p>Requires the directories made by create_submodule.
+This will call a Perl script which generates the .db and .proto files for the support module.
+The Perl script is C:\Instrument\Apps\EPICS\support\asyn\master\bin\windows-x64\makeSupport.pl.
+The Perl script uses the templates in C:\Instrument\Apps\EPICS\support\asyn\master\templates\streamSCPI_NAME_Sup.
+These templates are <strong>generated from</strong> templates in: C:\Instrument\Apps\EPICS\support\asyn\master\makeSupport\streamSCPI_NAME_Sup</p>
+</section>
+</section>
+<section id="ioc-utils">
+<h2>ioc_utils<a class="headerlink" href="#ioc-utils" title="Link to this heading"></a></h2>
+<p>Makes files in C:\Instrument\Apps\EPICS\ioc\master</p>
+<p>Templates for ioc configuration: C:\Instrument\Apps\EPICS\base\master\templates\makeBaseApp\top
+These templates are <strong>generated from</strong> templates in: C:\Instrument\Apps\EPICS\base\master\src\template\base\top
+Run make in C:\Instrument\Apps\EPICS\base\master\src to regenerate the templates.</p>
+</section>
+<section id="ioc-test-framework-utils">
+<h2>ioc_test_framework_utils<a class="headerlink" href="#ioc-test-framework-utils" title="Link to this heading"></a></h2>
+</section>
+<section id="emulator-utils">
+<h2>emulator_utils<a class="headerlink" href="#emulator-utils" title="Link to this heading"></a></h2>
+</section>
+<section id="gui-utils">
+<h2>gui_utils<a class="headerlink" href="#gui-utils" title="Link to this heading"></a></h2>
+<p>Generates an opi template for the IOC.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IOC-Finishing-Touches.html" class="btn btn-neutral float-left" title="IOC Finishing Touches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Writing-An-ISIS-Stream-Device.html" class="btn btn-neutral float-right" title="Writing an ISIS StreamDevice IOC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

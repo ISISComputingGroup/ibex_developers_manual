@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HLM Webserver deployment &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ICE Dilution Fridge" href="../ICE-Dilution-Fridge.html" />
+    <link rel="prev" title="Helium Level Monitoring" href="../HLM-General.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../HLM-General.html">Helium Level Monitoring</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">HLM Webserver deployment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Cryogenics.html">Cryogenics</a></li>
+          <li class="breadcrumb-item"><a href="../HLM-General.html">Helium Level Monitoring</a></li>
+      <li class="breadcrumb-item active">HLM Webserver deployment</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/hlm/HLM-Web-Server-deployment.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="hlm-webserver-deployment">
+<h1>HLM Webserver deployment<a class="headerlink" href="#hlm-webserver-deployment" title="Link to this heading"></a></h1>
+<p>Deployment notes for <a class="reference external" href="https://github.com/ISISNeutronMuon/HLM_View">HLM View</a>, running with Apache + mod_wsgi on Windows Server 2012 R2.</p>
+<section id="web-app">
+<h2>Web App<a class="headerlink" href="#web-app" title="Link to this heading"></a></h2>
+<p>To run with the Django development server using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span> <span class="pre">0.0.0.0:8000</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Installed python-3.9.4-amd64
+2. Installed Git-2.31.1-64-bit
+3. (Optional) Installed npp.7.9.5.Installer (Notepad++)
+4. Cloned the HLM View repo in C:/
+5. Created virtual environment: C:\HLM_View\venv and activated it (Scripts/activate.bat)
+6. Installed requirements: cd C:\HLM_View and pip install -r requirements.txt
+
+7. Manually copy over static files that are not version controlled
+   (from https://github.com/ISISNeutronMuon/HLM_View/files/6404513/static.zip)
+    - secret_key.txt in .project\
+    - jquery-3.5.1.min.js in HLM_View\static\js
+    - plugins\ in HLM_View\static
+    - bootstrap\ in HLM_View\static
+
+8. Update the db connection at DATABASES in settings.py
+9. Use an online Django secret key generator and create a `secret_key.txt` file with the key inside in the HLM_View\project folder.
+10. Run python manage.py runserver (in root with the venv activated)- works with debug=True, 
+   Note: If set to false Django won&#39;t provide static files anymore. 
+   This step is just for testing as Django dev server should never be used in production.
+</pre></div>
+</div>
+</section>
+<section id="grafana-dashboard">
+<h2>Grafana Dashboard<a class="headerlink" href="#grafana-dashboard" title="Link to this heading"></a></h2>
+<p>To set up the Grafana dashboard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Install</span> <span class="n">grafana</span><span class="o">-</span><span class="mf">7.5.5</span><span class="o">.</span><span class="n">windows</span><span class="o">-</span><span class="n">amd64</span>
+<span class="mf">2.</span> <span class="n">Set</span> <span class="n">up</span> <span class="n">Grafana</span> <span class="n">admin</span> <span class="n">credentials</span> <span class="p">(</span><span class="n">Access</span> <span class="n">details</span><span class="p">)</span>
+<span class="mf">3.</span> <span class="n">Import</span> <span class="n">dashboard</span> <span class="k">with</span> <span class="o">.</span><span class="n">json</span> <span class="n">file</span> <span class="kn">from</span><span class="w"> </span><span class="nn">HLM_View</span>\<span class="n">Grafana</span>
+<span class="mf">4.</span> <span class="n">Configure</span> <span class="n">the</span> <span class="n">Grafana</span> <span class="n">Data</span> <span class="n">Source</span> <span class="p">(</span><span class="n">MySQL</span> <span class="n">DB</span><span class="p">)</span>
+<span class="mf">5.</span> <span class="n">In</span> <span class="n">Grafana</span><span class="o">/</span><span class="n">conf</span><span class="p">,</span> <span class="n">copy</span> <span class="n">sample</span><span class="o">.</span><span class="n">ini</span> <span class="p">,</span> <span class="n">rename</span> <span class="n">to</span> <span class="n">custom</span><span class="o">.</span><span class="n">ini</span>
+<span class="mf">6.</span> <span class="n">Then</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">allow_embedding</span> <span class="ow">and</span> <span class="n">anonymous</span> <span class="n">access</span> <span class="p">(</span><span class="k">for</span> <span class="n">iframes</span><span class="p">)</span>
+<span class="mf">7.</span> <span class="n">Restart</span> <span class="n">Grafana</span> <span class="n">service</span> <span class="n">to</span> <span class="n">apply</span> <span class="n">new</span> <span class="n">config</span>
+<span class="mf">8.</span> <span class="n">Updated</span> <span class="n">iframe</span> <span class="n">links</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">HLM</span> <span class="n">View</span> <span class="n">templates</span> <span class="p">(</span><span class="n">details</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">building</span><span class="o">.</span><span class="n">html</span><span class="p">)</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">localhost</span><span class="p">:</span><span class="mi">3000</span> <span class="n">to</span> <span class="n">new</span> <span class="n">address</span> 
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/ISISNeutronMuon/HLM_View/blob/master/Grafana/Object%20Measurements.json">HLM_View\Grafana</a></p>
+</section>
+<section id="web-server">
+<h2>Web Server<a class="headerlink" href="#web-server" title="Link to this heading"></a></h2>
+<p>To run with a production web server using Apache + mod_wsgi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Used</span> <span class="n">resources</span><span class="p">:</span> 
+	<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Johnnyboycurtis</span><span class="o">/</span><span class="n">webproject</span><span class="c1">#apache-and-mod_wsgi </span>
+	<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GrahamDumpleton</span><span class="o">/</span><span class="n">mod_wsgi</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">develop</span><span class="o">/</span><span class="n">win32</span><span class="o">/</span><span class="n">README</span><span class="o">.</span><span class="n">rst</span>
+	<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">djangoproject</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="mf">3.2</span><span class="o">/</span><span class="n">howto</span><span class="o">/</span><span class="n">deployment</span><span class="o">/</span><span class="n">wsgi</span><span class="o">/</span><span class="n">modwsgi</span><span class="o">/</span>
+        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">montesariel</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">post</span><span class="o">-</span><span class="mi">3</span>
+        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">djangoproject</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="mf">3.2</span><span class="o">/</span><span class="n">howto</span><span class="o">/</span><span class="n">deployment</span><span class="o">/</span><span class="n">checklist</span><span class="o">/</span>
+	
+<span class="mf">1.</span> <span class="n">Added</span> <span class="n">new</span> <span class="n">hosts</span> <span class="ow">in</span> <span class="n">project</span><span class="o">/</span><span class="n">settings</span><span class="o">.</span><span class="n">py</span> <span class="n">ALLOWED_HOSTS</span><span class="p">,</span> <span class="nb">set</span> <span class="n">DEBUG</span> <span class="n">to</span> <span class="kc">False</span><span class="p">,</span> <span class="n">check</span> <span class="n">the</span> <span class="n">Django</span> <span class="n">deployment</span> <span class="n">checklist</span>
+
+<span class="mf">2.</span> <span class="n">Install</span> <span class="n">VC_redist</span><span class="o">.</span><span class="n">x64</span><span class="o">.</span><span class="n">exe</span>
+<span class="mf">3.</span> <span class="n">Download</span> <span class="n">httpd</span><span class="o">-</span><span class="mf">2.4.47</span><span class="o">-</span><span class="n">win64</span><span class="o">-</span><span class="n">VS16</span><span class="o">.</span><span class="n">zip</span> <span class="p">(</span><span class="n">ApacheLounge</span><span class="p">),</span> <span class="n">extract</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Apache24</span>
+<span class="mf">4.</span> <span class="n">Run</span> <span class="s2">&quot;C:\Apache24</span><span class="se">\b</span><span class="s2">in\httpd.exe&quot;</span> <span class="n">then</span> <span class="n">go</span> <span class="n">to</span> <span class="n">localhost</span> <span class="mi">80</span> <span class="n">to</span> <span class="n">confirm</span> <span class="n">it</span> <span class="n">works</span>
+
+<span class="mf">5.</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">mod_wsgi</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">MVS</span> <span class="n">C</span><span class="o">++</span> <span class="mf">14.0</span> <span class="n">required</span>
+<span class="mf">6.</span> <span class="n">Download</span> <span class="n">vs_buildtools__1321439799</span><span class="mf">.1619704707</span><span class="p">,</span> <span class="ow">and</span> <span class="n">install</span> <span class="n">universal</span> <span class="o">+</span> <span class="n">C</span><span class="o">++</span> <span class="n">packages</span>
+<span class="mf">7.</span> <span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mod</span><span class="o">-</span><span class="n">wsgi</span><span class="o">-</span><span class="mf">4.7.1</span>
+<span class="mf">8.</span> <span class="n">CMD</span><span class="p">:</span> <span class="n">run</span> <span class="n">mod_wsgi</span><span class="o">-</span><span class="n">express</span> <span class="n">module</span><span class="o">-</span><span class="n">config</span> <span class="p">(</span><span class="n">this</span> <span class="n">will</span> <span class="n">create</span> <span class="n">mod_wsgi</span><span class="o">.</span><span class="n">cp39</span><span class="o">-</span><span class="n">win_amd64</span><span class="o">.</span><span class="n">pyd</span> 
+<span class="ow">in</span> <span class="n">HLM_View</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="n">Lib</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">mod_wsgi</span><span class="o">/</span><span class="n">server</span><span class="p">)</span>
+
+<span class="mf">9.</span> <span class="n">Edit</span> <span class="s2">&quot;C:\Apache24\conf\httpd.conf&quot;</span><span class="p">:</span>
+    <span class="n">Set</span> <span class="n">ServerName</span> <span class="n">to</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">80</span>
+	
+    <span class="n">At</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">http</span><span class="o">.</span><span class="n">conf</span><span class="p">,</span> <span class="n">added</span><span class="p">:</span>
+	
+	<span class="c1"># Django Project</span>
+	<span class="n">LoadFile</span> <span class="s2">&quot;C:/Instrument/Apps/Python/Python39/python39.dll&quot;</span>
+	<span class="n">LoadModule</span> <span class="n">wsgi_module</span> <span class="s2">&quot;C:/HLM_View/venv/Lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd&quot;</span>
+	<span class="n">WSGIPythonHome</span> <span class="s2">&quot;C:/HLM_View/venv;C:/Instrument/Apps/Python/Python39/&quot;</span>
+	<span class="n">WSGIScriptAlias</span> <span class="o">/</span> <span class="s2">&quot;C:/HLM_View/project/wsgi.py&quot;</span>
+	<span class="n">WSGIPythonPath</span> <span class="s2">&quot;C:/HLM_View/venv/Lib/site-packages/;C:/HLM_View/&quot;</span>
+
+	<span class="o">&lt;</span><span class="n">Directory</span> <span class="s2">&quot;C:/HLM_View/project/&quot;</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="n">Files</span> <span class="n">wsgi</span><span class="o">.</span><span class="n">py</span><span class="o">&gt;</span>
+			<span class="n">Require</span> <span class="nb">all</span> <span class="n">granted</span>
+		<span class="o">&lt;/</span><span class="n">Files</span><span class="o">&gt;</span>
+	<span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+
+	<span class="n">Alias</span> <span class="o">/</span><span class="n">static</span> <span class="s2">&quot;C:/HLM_View/static/&quot;</span>
+	<span class="o">&lt;</span><span class="n">Directory</span> <span class="s2">&quot;C:/HLM_View/static&quot;</span><span class="o">&gt;</span>
+		<span class="n">Require</span> <span class="nb">all</span> <span class="n">granted</span>
+	<span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+
+<span class="mf">10.</span> <span class="n">Run</span> <span class="s2">&quot;C:\Apache24</span><span class="se">\b</span><span class="s2">in\httpd.exe&quot;</span> <span class="ow">and</span> <span class="n">check</span> <span class="n">that</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">instrument</span> <span class="n">name</span><span class="o">&gt;/</span> <span class="n">works</span><span class="o">.</span>
+<span class="n">Note</span><span class="p">:</span> <span class="n">Apache</span> <span class="n">logs</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="ow">in</span> <span class="s2">&quot;C:\Apache24\logs&quot;</span>
+
+<span class="mf">11.</span> <span class="n">Fix</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">bug</span> <span class="n">that</span> <span class="n">causes</span> <span class="n">an</span> <span class="n">error</span> <span class="mi">500</span> <span class="n">every</span> <span class="n">time</span> <span class="n">a</span> <span class="n">query</span> <span class="ow">is</span> <span class="n">made</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+    <span class="n">Edit</span> <span class="n">the</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">project</span><span class="o">-</span><span class="n">root</span>\<span class="n">venv</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">asgiref</span> <span class="n">by</span> <span class="n">adding</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+	<span class="c1"># PATCH that fixes a Python Bug:</span>
+	<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+	<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+
+	<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+		<span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop_policy</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">WindowsSelectorEventLoopPolicy</span><span class="p">())</span>
+
+
+<span class="mf">12.</span> <span class="n">Install</span> <span class="n">Apache</span> <span class="n">httpd</span><span class="o">.</span><span class="n">exe</span> <span class="k">as</span> <span class="n">a</span> <span class="n">service</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Apache24</span>\<span class="nb">bin</span><span class="o">&gt;</span><span class="n">httpd</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">k</span> <span class="n">install</span> <span class="o">-</span><span class="n">n</span> <span class="s2">&quot;HLM View Web Server&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../HLM-General.html" class="btn btn-neutral float-left" title="Helium Level Monitoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ICE-Dilution-Fridge.html" class="btn btn-neutral float-right" title="ICE Dilution Fridge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

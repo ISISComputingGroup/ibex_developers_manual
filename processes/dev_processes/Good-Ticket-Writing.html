@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Ticket Writing &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project Documentation" href="Project-Documentation.html" />
+    <link rel="prev" title="External Contributions" href="External-Contributions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Component-and-Activity-Stewards.html">Component &amp; Activity Stewards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dependency-Updates.html">Dependency Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="External-Contributions.html">External Contributions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Good Ticket Writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-Documentation.html">Project Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Things-to-know-as-a-developer.html">Things to know as a developer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tickets-and-their-Workflow.html">Ticket workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Umbrella-Tickets.html">Umbrella tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Understanding-Java-Licensing.html">Understanding Java Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unupdated-dependencies.html">Unupdated dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Dev-Processes.html">Developer Processes</a></li>
+      <li class="breadcrumb-item active">Good Ticket Writing</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/dev_processes/Good-Ticket-Writing.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="good-ticket-writing">
+<h1>Good Ticket Writing<a class="headerlink" href="#good-ticket-writing" title="Link to this heading"></a></h1>
+<section id="purpose-of-this-guide">
+<h2>Purpose of this guide<a class="headerlink" href="#purpose-of-this-guide" title="Link to this heading"></a></h2>
+<p>This description of the process is aimed to help improve communication, rather than be followed with no consideration as to what is needed for the members of the group to flourish, please edit it as required.</p>
+</section>
+<section id="parts-of-a-ticket">
+<h2>Parts of a ticket<a class="headerlink" href="#parts-of-a-ticket" title="Link to this heading"></a></h2>
+<section id="title">
+<h3>Title<a class="headerlink" href="#title" title="Link to this heading"></a></h3>
+<p>This should be a succinct representation of the content of the ticket.
+Where there is a logical grouping of themes, using a <code class="docutils literal notranslate"><span class="pre">Keyword:</span> <span class="pre">Title</span></code> format can make it easier to find related tickets without having to create umbrella tickets</p>
+</section>
+<section id="user-story">
+<h3>User Story<a class="headerlink" href="#user-story" title="Link to this heading"></a></h3>
+<p>This is <em>why</em> the work needs to be done, and for <em>whom</em>.
+It will be centred around an actor who is part of the process, whether that is a user, developer, someone providing support, someone with a role will have a need and the story should highlight who has that need.
+It should state what needs to happen, along with the justification of why it needs to work that way.</p>
+<p>As a role/method of interacting with the system, I want it to behave in this way, so that something does/doesn’t happen.</p>
+<p>This should amount to a requirement, one or two lines at most.</p>
+</section>
+<section id="acceptance-criteria">
+<h3>Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Link to this heading"></a></h3>
+<p>This is how we define <strong>done</strong>, so this is <em>the outcome</em> or <em>what</em> we need to achieve. Reading this set of checkboxes it should be easy for a developer or a reviewer to be able to say “yes it does that”. These need to be clear. There should also be as few of this as is practical to match the user story.</p>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>This is a good place to provide extra context, who to talk to, what might impact this work and similar. This is extra information</p>
+<section id="design-details">
+<h3>Design/Details<a class="headerlink" href="#design-details" title="Link to this heading"></a></h3>
+<p>This is an aspect that is usually not included, but may be of benefit to people with less experience and knowledge of the codebase and ways of working within a team.
+It is described as not included as some developers do provide this level of detail at times. (e.g. <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/1208">https://github.com/ISISComputingGroup/IBEX/issues/1208</a> gave great detail of the changes that were needed for that work). As has happened in some places, comments can be added to detail more of the technical specification, including command sets, UI designs, and so on.
+Because these can be more proscriptive than just an acceptance criteria (this would be <em>how</em> to do it, not just describing when it is done) care should be taken as to when this section is included so that it does not stifle creativity or limit the approach to be taken. However, it can make the difference between being able to look at something and undertake it with confidence, or not, as well.</p>
+</section>
+</section>
+<section id="random-example">
+<h2>Random Example<a class="headerlink" href="#random-example" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Title<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Coffee Meeting: Take a cup of black instant coffee with me</p>
+</section>
+<section id="id2">
+<h3>User Story<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>As someone attending a coffee meeting I want a cup of black instant coffee to take with me so that I have something to drink during the meeting.</p>
+</section>
+<section id="id3">
+<h3>Acceptance Criteria<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>[ ] There is a cup of black coffee available for me to take</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Notes<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The nicest kettle is in the kitchen by the meeting room</p></li>
+<li><p>The clean mugs are usually in the cupboard over the sink</p></li>
+<li><p>It may be worth double checking which brands are available so that something can be brought in if necessary</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Design/Details<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Check to see if there is a suitable coffee brand in that kitchen the day before, if not bring some from home</p></li>
+<li><p>10 minutes before the meeting head off to the meeting room to have 5 minutes to make the coffee before the meeting once you get there, as the nicest kettle is in that kitchen</p></li>
+<li><p>Fill the kettle to either the min level or to the number of people wanting to use it, this can’t be predicted before arriving there</p></li>
+<li><p>Whilst the kettle boils, get a mug from the cupboard, and put a teaspoon of coffee powder in it</p></li>
+<li><p>Once the kettle has boiled, add water to the mug and stir</p></li>
+</ol>
+</section>
+<section id="how-it-maps-to-the-purposes-of-each-section">
+<h3>How it maps to the purposes of each section<a class="headerlink" href="#how-it-maps-to-the-purposes-of-each-section" title="Link to this heading"></a></h3>
+<p>Title: If you know what you are doing it is enough to meet the acceptance criteria
+User Story: This clarifies who, and why, it’s someone attending the meeting, and they want to have something drink with them
+Acceptance Criteria: This is clear, there is either a cup of coffee or there isn’t, Schrödinger’s Coffee is not an experiment worth conducting in this scenario.
+Notes: Some extra context and information
+Design/Detail: This is not at so low a level that there is no room for creativity, and it assumes some knowledge that should be straightforward enough for the majority of people. But, it does specify enough that someone who has never done this before has at least a good chance of succeeding when combined with the notes as that specified which cupboard.</p>
+</section>
+</section>
+<section id="when-to-add-design-details">
+<h2>When to add Design/Details<a class="headerlink" href="#when-to-add-design-details" title="Link to this heading"></a></h2>
+<p>This will vary based on the task and scenario.
+Sometimes that design/detail will be in other documents, and they could be referenced, especially for new items where interfaces have probably been discussed in greater detail.
+If there are new team members this can be a benefit to them, as it breaks apart the system/architecture design side from the developer side.
+If there are no other clear requirements anywhere, such as with some of the reverse engineering that has been undertaken in the past. That way the ticket has the history, but the wiki can stay rooted in the present.
+It could be added before the ticket is considered at all by the team, but it might also be something to add after prioritisation in certain situations.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="External-Contributions.html" class="btn btn-neutral float-left" title="External Contributions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Project-Documentation.html" class="btn btn-neutral float-right" title="Project Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

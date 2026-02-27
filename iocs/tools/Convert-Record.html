@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convert record &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating a State Machine (Sequencer)" href="Creating-a-State-Machine-%28Sequencer%29.html" />
+    <link rel="prev" title="Autosave" href="Autosave.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Asyn-Interpose-Functions.html">Asyn Interpose functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AsynEchoDriver.html">Asyn Echo Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Autosave.html">Autosave</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Convert record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-State-Machine-%28Sequencer%29.html">Creating a State Machine (Sequencer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Utilities.html">IOC Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-access-security.html">IOC Access Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISIS-modules-for-file-handling.html">ISIS modules for file handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Labview-Remote.html">LabVIEW Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lua.html">Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Serve-file-contents-over-EPICS.html">Serve file contents over EPICS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Template-Substitutions.html">Template Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities-Library.html">Utilities Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aSub-records.html">Asub records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="icpconfig.html">ICP Config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools &amp; Support Modules</a></li>
+      <li class="breadcrumb-item active">Convert record</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tools/Convert-Record.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="convert-record">
+<h1>Convert record<a class="headerlink" href="#convert-record" title="Link to this heading"></a></h1>
+<p>The convert record is used to convert values when you have a lookup table or formulae. The details for the record can be found at <a class="reference external" href="http://www-csr.bessy.de/control/SoftDist/csm/cvtRecord.html">http://www-csr.bessy.de/control/SoftDist/csm/cvtRecord.html</a>. These can be a little sketchy so these are some extra notes.</p>
+<p>I (John) used the record in the barndoors support modules (..\EPICS\support\barndoors\master), Kathryn has used it on the Eurotherm.</p>
+<p>To use this record in an IOC you must include in the build.mak file the following (both in support and the ioc):</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$(APPNAME)_DBD</span> <span class="pre">+=</span> <span class="pre">cvtRecord.dbd</span></code> in the dbd section</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$(APPNAME)_LIBS</span> <span class="pre">+=</span> <span class="pre">cvtRecord</span> <span class="pre">csmbase</span></code> in the libraries section</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CSM=$(SUPPORT)/csm/master</span></code> in the RELEASE file in configuration directory</p></li>
+</ol>
+<p>If you are using a calibration file both the base path (<code class="docutils literal notranslate"><span class="pre">TDIR</span></code> field) and the filename (<code class="docutils literal notranslate"><span class="pre">SPEC</span></code> field) must be less than 40 characters; If you really need an extra 40 characters the <code class="docutils literal notranslate"><span class="pre">BDIR</span></code> field can also be used. You should use the standard name for these macros of <code class="docutils literal notranslate"><span class="pre">CALIB_PATH</span></code> and <code class="docutils literal notranslate"><span class="pre">CALIB_FILE</span></code> (see (Macro-Naming)). The suggested location for calibration files is <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\calib\&lt;device</span> <span class="pre">type&gt;</span></code>. Place an example in your IOC that can be copied  in settings.</p>
+<p>The convert records will load calibration data when it is initialised. To reload the calibration data use:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>caput %MYPVPREFIX%&lt;record name&gt;.INIT 1
+</pre></div>
+</div>
+<section id="spline-hack">
+<h2>Spline hack<a class="headerlink" href="#spline-hack" title="Link to this heading"></a></h2>
+<p>A hack is being introduced into <code class="docutils literal notranslate"><span class="pre">csmbase</span></code> and the convert record to allow developers to use bespoke conversion routines along with (1D) lookup tables. The way this is currently implemented is to write a conversion function (in C or C++) in the support directory and name it <code class="docutils literal notranslate"><span class="pre">User1DTableSub</span></code>. It must be named this due to a limitation in the convert record wherein a developer cannot specify <em>both</em> a user defined subroutine name <em>and</em> and a lookup table. Hence the way that the function is located by the convert record is to search the epics function registry for a function called <code class="docutils literal notranslate"><span class="pre">User1DTableSub</span></code>.</p>
+<p>This is currently only in use with the Keithley 2700 as used for the HIFI Cryomag. The user defined subroutine uses the <code class="docutils literal notranslate"><span class="pre">gsl</span></code> library’s cubic spline implementation to interpolate from a resistance measurement provided by a 4 wire carbon RTD to a temperature in Kelvin (in the range 0-200 or so).</p>
+</section>
+<section id="tips-tricks-and-gotchas">
+<h2>Tips, Tricks and Gotchas<a class="headerlink" href="#tips-tricks-and-gotchas" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>The record will linearly interpolate the value this includes at either end of the record so make sure you set <code class="docutils literal notranslate"><span class="pre">DRVH</span></code> and <code class="docutils literal notranslate"><span class="pre">DRVL</span></code> if you want to avoid this.</p></li>
+<li><p>Make sure your calibration (in the way in the direction you are using it) has only one value per input otherwise it is not always clear what the answer will be. For example in the barn doors I have two calibration file one represents the gap for a given response (this includes inwards and outwards swing which have the same gap measurement) and one file which is just inward swing for when I am converting a gap to a motor movement.</p></li>
+<li><p>The spline hack uses gsl, and the spline interpolation implementation allocated memory for the fit and an accelerator. This should normally be freed, but in the spline hack implementation is it not because of the way that an evaluation is called. If the convert record (when using a spline hack) develops a memory leak, this could be why.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Autosave.html" class="btn btn-neutral float-left" title="Autosave" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Creating-a-State-Machine-%28Sequencer%29.html" class="btn btn-neutral float-right" title="Creating a State Machine (Sequencer)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

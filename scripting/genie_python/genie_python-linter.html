@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>genie_python script checking (linting) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Matplotlib" href="../Matplotlib.html" />
+    <link rel="prev" title="genie_python Troubleshooting" href="genie_python-Troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Bluesky-scanning.html">Bluesky</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Genie-Python.html">Genie Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="genie_python-Troubleshooting.html"><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> Troubleshooting</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> script checking (linting)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument-scripts.html">Shared Instrument Scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Scripting.html">Scripting (Python)</a></li>
+          <li class="breadcrumb-item"><a href="../Genie-Python.html">Genie Python</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> script checking (linting)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/scripting/genie_python/genie_python-linter.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="genie-python-script-checking-linting">
+<h1><code class="docutils literal notranslate"><span class="pre">genie_python</span></code> script checking (linting)<a class="headerlink" href="#genie-python-script-checking-linting" title="Link to this heading"></a></h1>
+<p>On <a class="reference external" href="https://isiscomputinggroup.github.io/genie/genie_python.html#genie.load_script" title="(in genie_python v0.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">g.load_script</span></code></a> genie_python now runs pylint on the scripts. This help the user see errors before the script is run. However sometimes this causes its own issues. There is a <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/scripting/Error-Checking-Troubleshooting.html" title="(in IBEX User Manual)"><span class="xref std std-doc">page in the user manual</span></a> describing what the user should do.</p>
+<p>If a warning cannot be fixed, and you are sure the code is otherwise correct, warnings can be ignored from a line by adding a comment:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">some_code</span><span class="p">()</span>  <span class="c1"># pylint disable=&lt;warning name&gt;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IMAT_library</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>  <span class="c1"># pylint: disable=wildcard-import, unused-wildcard-import</span>
+</pre></div>
+</div>
+<p>If the error is a pyright (typing) error, as opposed to a pylint error, then the comment syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">some_code</span><span class="p">()</span>  <span class="c1"># pyright: ignore</span>
+</pre></div>
+</div>
+<section id="linting-dynamically-defined-variables">
+<h2>Linting dynamically defined variables<a class="headerlink" href="#linting-dynamically-defined-variables" title="Link to this heading"></a></h2>
+<p>Python allows programmers to set attributes dynamically using expressions like <code class="docutils literal notranslate"><span class="pre">locals()['foo']</span> <span class="pre">=</span> <span class="pre">1</span></code>, which creates a local variable called <code class="docutils literal notranslate"><span class="pre">foo</span></code> with value <code class="docutils literal notranslate"><span class="pre">1</span></code>. Pylint doesn’t support dynamic assignment, so if <code class="docutils literal notranslate"><span class="pre">foo</span></code> was subsequently referenced in the code it would be counted as an undefined variable.</p>
+<p>In cases where we need to lint scripts containing dynamic assignments, we can write a Pylint <a class="reference external" href="http://pylint.pycqa.org/en/latest/how_tos/transform_plugins.html">transform plugin</a> to let Pylint know that the dynamically assigned variables are OK and should not be counted as undefined. This has been done <a class="reference external" href="https://github.com/ISISComputingGroup/genie/blob/19cdfeedaf5ec9107f0328a69204b621858c859a/src/genie_python/scanning_instrument_pylint_plugin.py#L14">here</a> to support dynamic assignments in the <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/5214">SCANS library</a>, where some scripts were dynamically adding all methods of classes derived from <code class="docutils literal notranslate"><span class="pre">ScanningInstrument</span></code> to the local module.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="genie_python-Troubleshooting.html" class="btn btn-neutral float-left" title="genie_python Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Matplotlib.html" class="btn btn-neutral float-right" title="Matplotlib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

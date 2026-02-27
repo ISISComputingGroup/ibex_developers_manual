@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHIPIR &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CHRONUS" href="CHRONUS-Instrument-Details.html" />
+    <link rel="prev" title="ARGUS" href="ARGUS-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ARGUS-Instrument-Details.html">ARGUS</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Instrument-Details.html">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LET-Instrument-Details.html">LET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOQ-Instrument-Details.html">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN-Instrument-Details.html">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OFFSPEC-Instrument-Details.html">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PEARL-Instrument-Details.html">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">CHIPIR</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/CHIPIR-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="chipir">
+<h1>CHIPIR<a class="headerlink" href="#chipir" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These instrument details pages provide historical context about the devices on a specific instrument,
+at the time they were migrated to IBEX. <strong>These pages may not be up to date with the latest instrument
+configuration.</strong></p>
+</div>
+<p>This page collects information that will be useful for the implementation of the new control system on CHIPR.</p>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>CHIPIR is a neutron instrument dedicated to the irradiation of microelectronics with atmospheric-like neutrons, on TS2. The <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/Chipir.aspx">CHIPIR</a> web page describes the background to the instrument.</p>
+<p>It was originally intended that IBEX should be piloted on CHIPIR, but commissioning of the instrument has taken longer than expected and, therefore, this idea has been shelved.  Nevertheless, there is no reason why IBEX cannot be installed on CHIPIR at some future date.</p>
+</section>
+<section id="chipir-equipment">
+<h2>CHIPIR Equipment<a class="headerlink" href="#chipir-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on CHIPIR. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manufacturer</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Connection</p></th>
+<th class="head"><p>Driver</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GALIL</p></td>
+<td><p><a class="reference external" href="http://www.galilmc.com/products/dmc-22x0.php">DMC2280</a></p></td>
+<td><p>Motion Controller</p></td>
+<td><p>Ethernet</p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control">EPICS</a></p></td>
+<td><p><a class="reference internal" href="#chipir-note-galil">see Galil note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.rohde-schwarz.com/general_information/hameg/rohde-schwarz-company_230166.html">HAMEG</a></p></td>
+<td><p>HM8123</p></td>
+<td><p>Gated Counter</p></td>
+<td><p></p></td>
+<td><p>#109, #110, #117</p></td>
+<td><p><a class="reference internal" href="#chipir-note-hameg">see HAMEG note</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.home.agilent.com/agilent/home.jspx?cc=GB&amp;amp;lc=eng">AGILENT</a></p></td>
+<td><p>E3613A</p></td>
+<td><p>PSU</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-agilent">see Agilent note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.home.agilent.com/agilent/home.jspx?cc=GB&amp;amp;lc=eng">AGILENT</a></p></td>
+<td><p>33220A</p></td>
+<td><p>Function Generator</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="http://www.aps.anl.gov/epics/modules/manufacturer.php#Agilent">EPICS</a>, #102, #111, #118</p></td>
+<td><p><a class="reference internal" href="#chipir-note-agilent">see Agilent note</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.home.agilent.com/agilent/home.jspx?cc=GB&amp;amp;lc=eng">AGILENT</a></p></td>
+<td><p>53220A</p></td>
+<td><p>Counter</p></td>
+<td><p></p></td>
+<td><p>#103, #112, #119</p></td>
+<td><p><a class="reference internal" href="#chipir-note-agilent">see Agilent note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.tek.com/digital-multimeter">TEKTRONIX</a></p></td>
+<td><p>DMM4040</p></td>
+<td><p>Multimeter</p></td>
+<td><p></p></td>
+<td><p>#120</p></td>
+<td><p><a class="reference internal" href="#chipir-note-tektronix">see Tektronix note</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.tek.com/digital-multimeter">TEKTRONIX</a></p></td>
+<td><p>DMM4050</p></td>
+<td><p>Multimeter</p></td>
+<td><p></p></td>
+<td><p>#121</p></td>
+<td><p><a class="reference internal" href="#chipir-note-tektronix">see Tektronix note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.thinksrs.com/">Stanford RS</a></p></td>
+<td><p>PS350</p></td>
+<td><p>PSU</p></td>
+<td><p></p></td>
+<td><p>#122</p></td>
+<td><p><a class="reference internal" href="#chipir-note-stanford-rs">see Stanford RS note</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.thinksrs.com/">Stanford RS</a></p></td>
+<td><p>SR400</p></td>
+<td><p>Photon Counter</p></td>
+<td><p></p></td>
+<td><p>#123</p></td>
+<td><p><a class="reference internal" href="#chipir-note-stanford-rs">see Stanford RS note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>Filter Set</p></td>
+<td><p><a class="reference internal" href="#chipir-note-galil">see Galil note</a></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-filter-set">see Filter Set note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>Collimator</p></td>
+<td><p><a class="reference internal" href="#chipir-note-galil">see Galil note</a></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-collimator">see Collimator note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>XYZ Table</p></td>
+<td><p><a class="reference internal" href="#chipir-note-galil">see Galil note</a></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-xyz-table">see XYZ Table note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ISIS</p></td>
+<td><p></p></td>
+<td><p>Pre-sample Table</p></td>
+<td><p><a class="reference internal" href="#chipir-note-galil">see Galil note</a></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-pre-sample-table">see Pre-sample Table note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.ortec-online.com">ORTEC</a></p></td>
+<td><p><a class="reference external" href="http://www.ortec-online.com/Solutions/928-EASY-NIM.aspx">Easy-NIM 928</a></p></td>
+<td><p>MCA</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-ortec">see ORTEC note</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.superlogics.com">SuperLogics</a></p></td>
+<td><p>8017 series</p></td>
+<td><p>Data Acquisition</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-super-logics">see SuperLogics note</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>TBD</p></td>
+<td><p></p></td>
+<td><p>Camera</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-camera">see Camera note</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Beckhoff</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="#chipir-note-beckhoff">see Beckhoff note</a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="chipir-note-galil">
+<h3>Note: Galil<a class="headerlink" href="#chipir-note-galil" title="Link to this heading"></a></h3>
+<p>Model: <a class="reference external" href="http://www.galilmc.com/products/dmc-22x0.php">DMC2280</a></p>
+<p>Other than the collimator, the only other quirk to CHIPIR’s galil 02 is that the jaws in/out axis uses a non-standard homing routine - <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-galil/pull/79/files#diff-64af6fffc6cf1ad849a8685d6848ae66746109ac8457de498d3fa758491681e1"><code class="docutils literal notranslate"><span class="pre">galil_Home_JogForwLimit.dmc</span></code></a></p>
+</section>
+<section id="chipir-note-filter-set">
+<h3>Note: Filter Set<a class="headerlink" href="#chipir-note-filter-set" title="Link to this heading"></a></h3>
+<p>Driven by Beckhoff controlled motor.<br>
+See <a class="reference internal" href="#chipir-note-galil">see Galil note</a></p>
+<p>These are driven through <code class="docutils literal notranslate"><span class="pre">TC</span></code> using some variables for in/out readback and control. There is also some web HMI screen which IDD motion wrote which may now be defunct now that IBEX works with the filter set.</p>
+</section>
+<section id="chipir-note-collimator">
+<h3>Note: Collimator<a class="headerlink" href="#chipir-note-collimator" title="Link to this heading"></a></h3>
+<p>Driven by Galil controlled motor.<br></p>
+<p>This runs some <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_CHIPIR_Collimator.dmc">custom galil code</a> but essentially does not accept moves like a normal motor. it has an encoder as an auxiliary feedback only ie. to see if it’s moving, but uses physical switches fed into the Galil’s digital ins for positioning. It uses a “read” thread that runs on thread 7 to monitor these during a move.</p>
+</section>
+<section id="chipir-note-xyz-table">
+<h3>Note: XYZ Table<a class="headerlink" href="#chipir-note-xyz-table" title="Link to this heading"></a></h3>
+<p>Driven by Galil controlled motor.<br>
+See <a class="reference internal" href="#chipir-note-galil">see Galil note</a></p>
+</section>
+<section id="chipir-note-pre-sample-table">
+<h3>Note: Pre-sample Table<a class="headerlink" href="#chipir-note-pre-sample-table" title="Link to this heading"></a></h3>
+<p>Driven by Galil controlled motor.<br>
+See <a class="reference internal" href="#chipir-note-galil">see Galil note</a></p>
+</section>
+<section id="chipir-note-hameg">
+<h3>Note: HAMEG<a class="headerlink" href="#chipir-note-hameg" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.rohde-schwarz.com/general_information/hameg/rohde-schwarz-company_230166.html">HAMEG</a> has now been acquired by <a class="reference external" href="https://www.rohde-schwarz.com">Rohde &amp; Schwarz</a>.<br>
+<a class="reference external" href="https://www.rohde-schwarz.com/product/hm8123-productstartpage_63493-44102.html">HM8123 Universal Counter</a></p>
+</section>
+<section id="chipir-note-agilent">
+<h3>Note: Agilent<a class="headerlink" href="#chipir-note-agilent" title="Link to this heading"></a></h3>
+<p>Agilent has spun-off its electronic measurement business, which now trades as <a class="reference external" href="http://www.keysight.com/main/home.jspx?cc=GB&amp;amp;lc=eng">Keysight Technologies</a>.<br></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.keysight.com/en/pd-838240-pn-E3610A/30w-power-supply-8v-3a-or-15v-2a?cc=GB&amp;amp;lc=eng&amp;amp;lsrch=true&amp;amp;searchT=E3613A">E3613A power supply</a> is now discontinued.</p></li>
+<li><p><a class="reference external" href="http://www.keysight.com/en/pd-127539-pn-33220A/function-arbitrary-waveform-generator-20-mhz?cc=GB&amp;amp;lc=eng&amp;amp;lsrch=true&amp;amp;searchT=33220A">33220A function generator</a> will be discontinued from 01/12/2016.</p></li>
+<li><p><a class="reference external" href="http://www.keysight.com/en/pd-1893411-pn-53220A/350-mhz-universal-frequency-counter-timer-12-digits-s-100-ps?nid=-33609.959903.00&amp;amp;cc=GB&amp;amp;lc=eng">53220A counter</a>.</p></li>
+</ol>
+</section>
+<section id="chipir-note-tektronix">
+<h3>Note: Tektronix<a class="headerlink" href="#chipir-note-tektronix" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://uk.tek.com/datasheet/dmm4050-4040-digital-multimeter">DMM4050 and DMM4040 digital multimeters</a></p>
+</section>
+<section id="chipir-note-stanford-rs">
+<h3>Note: Stanford RS<a class="headerlink" href="#chipir-note-stanford-rs" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.thinksrs.com/products/PS300.htm">PS300 series high-voltage power supplies</a></p></li>
+<li><p><a class="reference external" href="http://www.thinksrs.com/products/SR400.htm">SR400 series photon counters</a></p></li>
+</ol>
+</section>
+<section id="chipir-note-ortec">
+<h3>Note: ORTEC Easy-NIM 928<a class="headerlink" href="#chipir-note-ortec" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.ortec-online.com/products/electronics/multichannel-analyzers-mca/basic-analog/928">High Performance, Multi-Function Nuclear MCA/Counter/Timer/Rate Meter</a>.</p></li>
+</ol>
+</section>
+<section id="chipir-note-super-logics">
+<h3>Note: SuperLogics<a class="headerlink" href="#chipir-note-super-logics" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.superlogics.com/data-acquisition-99/data-acq-analog-input/analog-input-rs485/8017.html">8017/18/19 series - 8 Channel Analog Input Module, 16-Bit A/D Converter</a>.<br>
+Copy of manual for <a class="reference external" href="https://stfc365.sharepoint.com/:b:/r/sites/ISISExperimentControls/ICP%20Discussions/Chipir/Manuals%20for%20Equipment/Superlogics_8019R.pdf?csf=1&amp;amp;web=1&amp;amp;e=EV4XiD">8017/18/19 series</a>.</p></li>
+</ol>
+</section>
+<section id="chipir-note-camera">
+<h3>Note: Camera<a class="headerlink" href="#chipir-note-camera" title="Link to this heading"></a></h3>
+<p>Not required for day 1. Open to suggestions.</p>
+</section>
+<section id="chipir-note-beckhoff">
+<h3>Note: Beckhoff<a class="headerlink" href="#chipir-note-beckhoff" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>There are three items, a secondary shutter and 2 filters being controlled by a Beckhoff</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ARGUS-Instrument-Details.html" class="btn btn-neutral float-left" title="ARGUS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CHRONUS-Instrument-Details.html" class="btn btn-neutral float-right" title="CHRONUS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

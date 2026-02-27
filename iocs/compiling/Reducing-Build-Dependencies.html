@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reducing build dependencies &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Removing or renaming an IOC module" href="Removing-or-Renaming-IOC-module.html" />
+    <link rel="prev" title="Install Visual Studio" href="Install-Visual-Studio.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Compiling.html">Compiling</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Build-Arch.html">Build Arch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Building-multiple-architectures-%28e.g.-32-%26-64-bit-builds%29.html">Building multiple architectures (e.g. 32/64-bit builds)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compile-Errors.html">Compile Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Developer-Server-Build.html">Developer Server Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Developer-Updating.html">Updating your local IBEX EPICS directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Libraries-to-include-with-order.html">IOC Libraries to include with order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Install-Visual-Studio.html">Install Visual Studio</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Reducing build dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Removing-or-Renaming-IOC-module.html">Removing or renaming an IOC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpeedUpBuilding.html">Speed Up Building</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-builds.html">Static Builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Using-Visual-Studio-with-the-EPICS-build-system.html">Using VS with EPICS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Purchasing-New-Equipment.html">Purchasing new equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Compiling.html">Compiling</a></li>
+      <li class="breadcrumb-item active">Reducing build dependencies</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/compiling/Reducing-Build-Dependencies.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="reducing-build-dependencies">
+<h1>Reducing build dependencies<a class="headerlink" href="#reducing-build-dependencies" title="Link to this heading"></a></h1>
+<p>This is a page describing how to reduce dependencies in our EPICS build. Currently we have a MASTER_RELEASE file at the top level that, though convenient, means the build system does a lot of cross-checking for things it doesn’t need, disabling checkRelease can speed this up.</p>
+<p>A simple way to reduce dependencies is to remove the</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>include $(TOP)/../../../configure/MASTER_RELEASE
+-include $(TOP)/../../../configure/MASTER_RELEASE.$(EPICS_HOST_ARCH)
+-include $(TOP)/../../../configure/MASTER_RELEASE.private
+-include $(TOP)/../../../configure/MASTER_RELEASE.private.$(EPICS_HOST_ARCH)
+</pre></div>
+</div>
+<p>lines and replace them by the lines that were in MASTER_RELEASE that are needed for the build and runtime (e.g. ioc loading db files) e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ASYN=$(SUPPORT)/asyn/master
+</pre></div>
+</div>
+<p>To determine what you need to add:</p>
+<ul class="simple">
+<li><p>look at the Makefile to see what DBD and library files are used when building an IOC and then add the relevant macro definitions from MASTER_RELEASE to the new RELEASE to allow these to be located. See the _LIB and _DBD macros</p></li>
+<li><p>Look at DB template *.substitution files in the App/Db directory to see where DB files are included from, you’ll need any macros from here too</p></li>
+<li><p>Check st.cmd for use of such macros e.g. <code class="docutils literal notranslate"><span class="pre">$(ACCESSSECURITY)</span></code> and other DB files it may load and add these macros to the new RELEASE too</p></li>
+</ul>
+<p>For the first step you can use the script in <code class="docutils literal notranslate"><span class="pre">ibex_utils/developer_support_script</span></code> which will add the lines to RELEASE based on libs and dbd files in you build.mak which it knows about. This script can be run multiple times. To run use:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python build_dependencies.py &lt;ioc directory&gt;
+</pre></div>
+</div>
+<p>If you get it wrong / miss something, it will usually just break the build due to a missing file; however if you miss a macro used in st.cmd it will not be noticed until the IOC is run. So you will need to run the IOC up in simulation mode and check for any warnings about undefined macros or commands.</p>
+<p>If the module you are changing is using AREA_DETECTOR or EPISC_V4 then things a little more complicated, I’ll add extended notes at a later point.</p>
+<p>after any change to RELEASE do a “make clean uninstall” followed by “make” to check</p>
+<p>Something I mean to look more closely at for ideas is <a class="reference external" href="http://epics-sumo.sourceforge.net/">http://epics-sumo.sourceforge.net/</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Install-Visual-Studio.html" class="btn btn-neutral float-left" title="Install Visual Studio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Removing-or-Renaming-IOC-module.html" class="btn btn-neutral float-right" title="Removing or renaming an IOC module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

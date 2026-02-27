@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercury iTC - Enhanced cryostat control &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IPS" href="Oxford-Instruments-IPS.html" />
+    <link rel="prev" title="Mercury iTC" href="MercuryiTC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-IPS.html">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Cryogenics.html">Cryogenics</a></li>
+      <li class="breadcrumb-item active">Mercury iTC - Enhanced cryostat control</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/MercuryiTC-Enhanced-Cryostat-Control.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mercury-itc-enhanced-cryostat-control">
+<h1>Mercury iTC - Enhanced cryostat control<a class="headerlink" href="#mercury-itc-enhanced-cryostat-control" title="Link to this heading"></a></h1>
+<section id="the-problem">
+<h2>The Problem<a class="headerlink" href="#the-problem" title="Link to this heading"></a></h2>
+<p>EMU is the only beamline to be fully controlled by new MercuryiTCs as opposed to ITC503s as of 03/11/2021. The MercuryiTCs are newer and will become replacements to the ITC503s for more beamlines as time goes on, particularly on WISH and RIKEN initially. The problem with the new MercuryiTCs is that they have two modes:</p>
+<ul class="simple">
+<li><p>Pressure control mode</p>
+<ul>
+<li><p>Controls needle valve based on the pressure</p></li>
+</ul>
+</li>
+<li><p>Automatic needle valve control mode</p>
+<ul>
+<li><p>Controls needle valve based on heater power, affecting the pressure but ignoring the pressure set by the user</p></li>
+</ul>
+</li>
+</ul>
+<p>It is difficult to switch between the two modes and requires multiple Mercurys which cost thousands of pounds. For optimal control, scientists need the needle valve to be controlled based on the pressure (done automatically by the Mercury in Pressure Control Mode), but they also need the pressure to be controlled automatically based on the temperature setpoint (to be implemented in IBEX).</p>
+</section>
+<section id="design">
+<h2>Design<a class="headerlink" href="#design" title="Link to this heading"></a></h2>
+<p>This design comes after feedback from scientists and cryogenics teams on the previous design (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the orange cryostat. The second design uses elements from both the first design and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from <code class="docutils literal notranslate"><span class="pre">(T</span> <span class="pre">-</span> <span class="pre">Tset)</span> <span class="pre">^</span> <span class="pre">2</span></code> which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general “safe” maximum, and a minimum pressure.</p>
+<section id="python-test-script">
+<h3>Python test script<a class="headerlink" href="#python-test-script" title="Link to this heading"></a></h3>
+<p>It was decided that we should test the algorithm using a python test script which can be found in the <code class="docutils literal notranslate"><span class="pre">Settings/config/NDXEMU/Python/inst</span></code> under the name <code class="docutils literal notranslate"><span class="pre">cryo_control_test.py</span></code>. The script has two classes: <code class="docutils literal notranslate"><span class="pre">UserDefined</span></code> and <code class="docutils literal notranslate"><span class="pre">CryoControlAlgorithm</span></code>. <code class="docutils literal notranslate"><span class="pre">UserDefined</span></code> contains defaults for parameters in the algorithm that a user will be able to define. <code class="docutils literal notranslate"><span class="pre">CryoControlAlgorithm</span></code> contains all the algorithmic logic. To run a test call <code class="docutils literal notranslate"><span class="pre">CryoControlAlgorithm.run()</span></code>, you can change the user-defined values by passing them as parameters to this run function e.g. to change the cutoff point call <code class="docutils literal notranslate"><span class="pre">CryoControlAlgorithm.run(cutoff_point=7.0)</span></code>. Other parameters can be found in the script.</p>
+</section>
+<section id="flowchart">
+<h3>Flowchart<a class="headerlink" href="#flowchart" title="Link to this heading"></a></h3>
+<p><img alt="Flowchart design" src="../../_images/MercuryEnhancedCryo2.drawio.png" /></p>
+<p>Some amendments were made in a future meeting after the creation of this flowchart:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">setpoint</span> <span class="pre">&lt;=</span> <span class="pre">cutoff</span> <span class="pre">point</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">setpoint</span> <span class="pre">&lt;=</span> <span class="pre">cutoff</span> <span class="pre">point</span> <span class="pre">&amp;&amp;</span> <span class="pre">temperature</span> <span class="pre">&lt;=</span> <span class="pre">cutoff</span> <span class="pre">point</span></code>.</p></li>
+<li><p>Set delay should be 10s by default, rather than 200ms.</p></li>
+<li><p>Pressure law changed:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">pressure</span> <span class="pre">setpoint</span> <span class="pre">=</span> <span class="pre">(temperature</span> <span class="pre">-</span> <span class="pre">temperature_setpoint)^2</span></code> becomes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">pressure</span> <span class="pre">setpoint</span> <span class="pre">=</span> <span class="pre">pressure</span> <span class="pre">setpoint</span> <span class="pre">minimum</span> <span class="pre">+</span> <span class="pre">temp</span> <span class="pre">scale</span> <span class="pre">*</span> <span class="pre">(temperature</span> <span class="pre">-</span> <span class="pre">temperature</span> <span class="pre">setpoint)^2</span></code></p></li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading"></a></h2>
+<p>Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (<a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC">MERCURY_ITC IOC</a>, <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-MercuryiTC">MercuryiTC support module</a>). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint. My recommendation would be to build the logic with a small state machine in snl, with new PVs where required</p>
+<section id="switching-the-automated-pressure-control-on-and-off">
+<h3>Switching the automated pressure control on and off<a class="headerlink" href="#switching-the-automated-pressure-control-on-and-off" title="Link to this heading"></a></h3>
+<p>The automated pressure control behaviour needs to be able to be turned on and off. The IOC should behave as if no changes had been made to the IOC when this behaviour is turned off. The behaviour should be turned on and off by a boolean checkbox in the OPI, which controls a PV whose value is persisted through autosave.</p>
+<p>The benefits of using autosave over a macro:</p>
+<ul class="simple">
+<li><p>Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)</p></li>
+<li><p>Enables switching between modes without reloading config</p></li>
+</ul>
+</section>
+<section id="operation-delay">
+<h3>Operation delay<a class="headerlink" href="#operation-delay" title="Link to this heading"></a></h3>
+<p>The user can choose a delay between setting setpoints to avoid overloading the device. This delay will be set in milliseconds with a default of 200                 ms. It could be set to 0 ms to avoid any delay. The delay value should be an autosaved PV so the value is persisted.</p>
+</section>
+</section>
+<section id="previous-design">
+<h2>Previous Design<a class="headerlink" href="#previous-design" title="Link to this heading"></a></h2>
+<p><img alt="Flowchart design" src="../../_images/MercuryEnhancedCryo.drawio.png" /></p>
+<section id="temperature-cut-off">
+<h3>Temperature cut-off<a class="headerlink" href="#temperature-cut-off" title="Link to this heading"></a></h3>
+<p>There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cut-off point, and low temperatures as anything below it. This cut-off point should persist (using autosave) and default to 5 Kelvin.</p>
+</section>
+<section id="low-temperature-operation">
+<h3>Low-temperature operation<a class="headerlink" href="#low-temperature-operation" title="Link to this heading"></a></h3>
+<p>Another problem with the MercuryiTCs is that when in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. When operating below the cut-off temperature our automated pressure control should set the pressure to a user-defined constant pressure value. This constant pressure value should persist (using autosave) and default to 5 mbar.</p>
+</section>
+<section id="high-temperature-operation">
+<h3>High-temperature operation<a class="headerlink" href="#high-temperature-operation" title="Link to this heading"></a></h3>
+<p>When operating above the cut-off temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key. The lookup table could be implemented using <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ReadASCII">ReadASCII</a>.</p>
+</section>
+</section>
+<section id="device-screen">
+<h2>Device Screen<a class="headerlink" href="#device-screen" title="Link to this heading"></a></h2>
+<p>On branch at <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_gui/tree/Ticket6729_enhanced_cryostat_control">https://github.com/ISISComputingGroup/ibex_gui/tree/Ticket6729_enhanced_cryostat_control</a>.</p>
+<p><img alt="Device screen design" src="../../_images/MercuryEnhancedCryoDeviceScreen.png" /></p>
+<section id="questions-whilst-designing">
+<h3>Questions whilst designing<a class="headerlink" href="#questions-whilst-designing" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>There seems to be a mix of terminology for the lookup table key. Here I have used the difference between the temperature and temperature setpoint because it was one of the terms used and seemed logical to me. The other suggestion was using the difference between the current heater power and the target heater power. Is using the difference between the temperature and temperature setpoint correct? Also, the IOC currently does not have the ability to read a current and target heater power it seems to just read a single value. The manual seems to suggest for a heater controller we can set and get a heater power but that is untested comms behaviour from our end.</p>
+<ul>
+<li><p>The heater power I have referred to here seems to be in Watts. There seems to be a few different heater values with different units. Is the one referred to previously a value in Watts, Volts or Percent?</p></li>
+</ul>
+</li>
+<li><p>This design expects the user to set a single temperature channel and a single pressure channel for the behaviour to work with, does this match the requirements? If so are the single temperature cards and pressure cards that we want to use for this control fixed or do they vary?</p></li>
+<li><p>This design does not use parameters that the mercuryitc uses for auto needle valve control but relies on a lookup table being handwritten. Is this sufficient or do we need to come up with an algorithm to tune that table from some parameters?</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MercuryiTC.html" class="btn btn-neutral float-left" title="Mercury iTC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Oxford-Instruments-IPS.html" class="btn btn-neutral float-right" title="IPS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

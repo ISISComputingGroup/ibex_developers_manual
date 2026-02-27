@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scripting use-cases &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Updating NICOS Version" href="../Developing-NICOS.html" />
+    <link rel="prev" title="Script server design" href="Script-server-design.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../LabVIEW.html">LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Nicos.html">NICOS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Configuring-a-New-Nicos-Instrument.html">Configuring a new Nicos instrument</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Design-Documents.html">Script Server design documents</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Nicos-evaluation.html">Nicos evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-Server-Back-End-Design-Document.html">Script server back end design document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-Server-Front-End-Design-Document.html">Script server front end design document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Script-server-design.html">Script server design</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Scripting use-cases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Developing-NICOS.html">Updating NICOS Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Installing-Nicos-on-Windows.html">Installing Nicos on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-commands.html">NICOS Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NICOS-notes.html">NICOS Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Running-Nicos-%28Script-Server%29.html">Running NICOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Testing-Nicos.html">Testing Nicos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python.html">Python (including Uktena, <code class="docutils literal notranslate"><span class="pre">uv</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../../Nicos.html">NICOS</a></li>
+          <li class="breadcrumb-item"><a href="../Design-Documents.html">Script Server design documents</a></li>
+      <li class="breadcrumb-item active">Scripting use-cases</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/nicos/design_docs/Scripting-use-cases.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="scripting-use-cases">
+<h1>Scripting use-cases<a class="headerlink" href="#scripting-use-cases" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Some instruments never want more than one scripts running simultaneously</p>
+<ul>
+<li><p>This is the “default” case for more than one instrument</p></li>
+</ul>
+</li>
+<li><p>Some instruments want to run multiple control scripts in parallel:</p>
+<ul>
+<li><p>LARMOR for example run a script that flips polarisation alongside a user script. Similar workflow on Vesuvio.</p></li>
+</ul>
+</li>
+<li><p>There is a use case for one “control” script and one “visualisation” script simultaneously</p>
+<ul>
+<li><p>the visualisation script can be purely read-only</p></li>
+</ul>
+</li>
+<li><p>Muons make no distinction between script, script server, script generator.</p>
+<ul>
+<li><p>Play about with some ideas in scripting</p></li>
+<li><p>Then go to script generator to make full experimental script</p></li>
+<li><p>Like the idea of editing a script which is sat in a queue</p></li>
+</ul>
+</li>
+<li><p>Improve script server training materials.</p>
+<ul>
+<li><p>But also has to be explainable to a (scientific) user in a short amount of time.</p></li>
+<li><p>Has to be possible to run single lines (e.g. function calls with parameters)</p></li>
+</ul>
+</li>
+</ul>
+<section id="ideas">
+<h2>Ideas<a class="headerlink" href="#ideas" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Only enable write from within script server?</p>
+<ul>
+<li><p>We would have to provide an override for some specific use cases</p></li>
+</ul>
+</li>
+<li><p>Disable writing while acquisition is running (e.g. oak ridge). This could run into issues at ISIS.</p></li>
+<li><p>Enable load/execute in script server from within normal console window?</p>
+<ul>
+<li><p>have a genie_python command <code class="docutils literal notranslate"><span class="pre">g.queue_on_server()</span></code>?</p></li>
+<li><p>Future of <code class="docutils literal notranslate"><span class="pre">g.load_script()</span></code></p></li>
+<li></li>
+</ul>
+</li>
+<li><p>As a user: go to script server, load script, execute it?</p>
+<ul>
+<li><p>I might want to edit my script.</p></li>
+</ul>
+</li>
+<li><p>load_script still loads script locally, but when I execute this function it should run on the script server?</p></li>
+<li><p>Nicos has a command for <code class="docutils literal notranslate"><span class="pre">list_commands</span></code>. We’ve currently only made it aware of g_p commands</p></li>
+<li><p>Use standard python? e.g. <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">main():</span> <span class="pre">...</span> <span class="pre">main()</span></code></p></li>
+</ul>
+</section>
+<section id="solution">
+<h2>Solution?<a class="headerlink" href="#solution" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">g.run_file</span></code> : loads and runs locally (right now)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g.queue_file</span></code> : loads and runs in the script server (queues)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g.dry_run</span></code> (queues in simulation mode - might be further in the future)</p></li>
+<li><p>Need a (small) scripting console in the nicos perspective</p></li>
+<li><p>Might need to disable queuing a script from within a script in the queue. Separate client/server g_p.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Script-server-design.html" class="btn btn-neutral float-left" title="Script server design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Developing-NICOS.html" class="btn btn-neutral float-right" title="Updating NICOS Version" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

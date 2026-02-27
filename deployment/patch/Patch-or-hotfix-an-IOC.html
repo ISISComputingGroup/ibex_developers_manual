@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patch or hotfix an IOC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Release a single IOC" href="Release-Single-IOC.html" />
+    <link rel="prev" title="Patching a deployed client" href="Modifying-Plugins-on-a-Deployed-Client.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Deploy.html">Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Patch.html">Patching</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-patch-hotfix-branch.html">Creating a patch/hotfix branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deploying-a-DEBUG-build-IOC.html">Deploying a Debug IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Modifying-Code-on-an-instrument.html">Modifying code on an instrument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Modifying-Device-on-an-Instrument.html">Modifying devices on an instrument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Modifying-Plugins-on-a-Deployed-Client.html">Patching a deployed client</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Patch or hotfix an IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Release-Single-IOC.html">Release a single IOC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Future.html">Future Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Patch.html">Patching</a></li>
+      <li class="breadcrumb-item active">Patch or hotfix an IOC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/patch/Patch-or-hotfix-an-IOC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="patch-or-hotfix-an-ioc">
+<h1>Patch or hotfix an IOC<a class="headerlink" href="#patch-or-hotfix-an-ioc" title="Link to this heading"></a></h1>
+<p>To deploy a new IOC to an instrument, or patch an existing one, different levels of care need to be taken depending on what has changed</p>
+<section id="opi-for-new-ioc-or-changes-to-existing-opi">
+<h2>OPI for new IOC, or changes to existing OPI<a class="headerlink" href="#opi-for-new-ioc-or-changes-to-existing-opi" title="Link to this heading"></a></h2>
+<p>You do not usually need to deploy a new GUI, in fact it is best to avoid this as you may update other OPIs unintentionally, introducing changes that need updates to IOC that you are not deploying. So go for the minimal change approach if possible:</p>
+<ul class="simple">
+<li><p>keep existing GUI build on instrument</p></li>
+<li><p>the directory you will be updating on the instrument will be of the form <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\Client_E4\plugins\uk.ac.stfc.isis.ibex.opis_1.0.0.4670\resources</span></code> and if from your local machine then from somewhere like <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources</span></code></p></li>
+<li><p>copy across just the new/changed OPIs and leave everything else as is</p></li>
+<li><p>If adding a new IOC, then you may need to manually edit <code class="docutils literal notranslate"><span class="pre">opi_info.xml</span></code> to add new OPI to ibex list. Do not copy across a new <code class="docutils literal notranslate"><span class="pre">opi_info.xml</span></code> as it could refer to things that are not present.</p></li>
+</ul>
+</section>
+<section id="updating-an-existing-ioc-no-exe-changed">
+<h2>Updating an existing IOC (no EXE changed)<a class="headerlink" href="#updating-an-existing-ioc-no-exe-changed" title="Link to this heading"></a></h2>
+<p>again, change the minimum possible, don’t copy a whole tree from the jenkins build server unless you need to. It is usually safer to use a clean jenkins build from <code class="docutils literal notranslate"><span class="pre">kits$</span></code> as a basis unless you are really sure your local build is consistent. If you do not need to update the IOC <code class="docutils literal notranslate"><span class="pre">EXE</span></code> file in <code class="docutils literal notranslate"><span class="pre">ioc/master</span></code> you can probably just copy across the new db files or st.cmd changes etc. Note that we often edit files in e.g. a <code class="docutils literal notranslate"><span class="pre">YYYApp\Db</span></code> and <code class="docutils literal notranslate"><span class="pre">YYYApp\protocol</span></code> and they get deployed to a top level <code class="docutils literal notranslate"><span class="pre">db</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code> when make is run, IOC normally load these top level ones but copying both sets is safe just in case.</p>
+</section>
+<section id="deploying-new-ioc-or-updating-an-existing-ioc-when-exe-has-changed">
+<h2>Deploying new IOC (or updating an existing ioc when EXE has changed)<a class="headerlink" href="#deploying-new-ioc-or-updating-an-existing-ioc-when-exe-has-changed" title="Link to this heading"></a></h2>
+<p>An IOC EXE from <code class="docutils literal notranslate"><span class="pre">ioc\master\MYIOC\bin\windows-x64</span></code> depends on DLL files etc in <code class="docutils literal notranslate"><span class="pre">support</span></code> and these may change after a developer dependency update to our EPICS repositories, so just copying an EXE from usual EPICS_CLEAN jenkins will not work (c++ libraries expose functions from DLLs, these may change with a new version of e.g. EPICS base or asyn). If you are sure that the dependencies on the build server and instrument were the same, you can just copy a new EXE, but it may be safer to copy a static build of an EXE across as that includes all these DLL dependencies inside the EXE and so is self contained (if a lot larger). If you copy an EXE you should also copy the ioc’s <code class="docutils literal notranslate"><span class="pre">dbd</span></code> file from the same build e.g. for INSTETC ioc this is copying <code class="docutils literal notranslate"><span class="pre">INSTETC/dbd/INSTETC-IOC-01.dbd</span></code> file as well as the <code class="docutils literal notranslate"><span class="pre">INSTETC/bin</span></code> EXE files.</p>
+<p>So for a new IOC do the following:</p>
+<ul class="simple">
+<li><p>copy the new <code class="docutils literal notranslate"><span class="pre">support</span></code> directory from the <code class="docutils literal notranslate"><span class="pre">EPICS-CLEAN</span></code> jenkins build to the instrument e.g. <code class="docutils literal notranslate"><span class="pre">support\stanford_sr400_photon_counter</span></code></p></li>
+<li><p>copy the <code class="docutils literal notranslate"><span class="pre">ioc</span></code> directory from <code class="docutils literal notranslate"><span class="pre">EPICS-CLEAN</span></code> jenkins build to the instrument e.g. copy all of <code class="docutils literal notranslate"><span class="pre">ioc\master\SR400</span></code></p></li>
+<li><p>copy the just the ioc EXE files from the <code class="docutils literal notranslate"><span class="pre">bin</span></code> of the <code class="docutils literal notranslate"><span class="pre">EPICS-STATIC-CLEAN</span></code> build to replace those you copied from <code class="docutils literal notranslate"><span class="pre">EPICS-CLEAN</span></code> e.g. replace files on instrument in <code class="docutils literal notranslate"><span class="pre">ioc\master\SR400\bin\windows-x64</span></code> with the files from <code class="docutils literal notranslate"><span class="pre">EPICS-STATIC-CLEAN</span></code> jenkins directory <code class="docutils literal notranslate"><span class="pre">ioc\master\SR400\bin\windows-x64-static</span></code> (this will just be replacing exe, if a DLL is present in the original instrument directory don’t worry about it)</p></li>
+<li><p>copy the dbd files i.e. copy all dbd files in <code class="docutils literal notranslate"><span class="pre">ioc\master\SR400\dbd</span></code> from <code class="docutils literal notranslate"><span class="pre">EPICS-STATIC-CLEAN</span></code> jenkins to equivalent location on instrument computer e.g. to <code class="docutils literal notranslate"><span class="pre">c:\instrument\apps\EPICS\ioc\master\SR400\dbd</span></code>. We need to copy dbd files as they relate to EPICS records in DLLs that are embedded. We can’t copy all of the <code class="docutils literal notranslate"><span class="pre">EPICS-STATIC-CLEAN</span></code> tree as some bits have the wrong <code class="docutils literal notranslate"><span class="pre">EPICS_HOST_ARCH</span></code> embedded (as in windows-x64-static). So we need to do this hybrid approach.</p></li>
+</ul>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>on windows you cannot replace an EXE file if it is in use</p></li>
+<li><p>The list of IOCs to start is produced by a <code class="docutils literal notranslate"><span class="pre">start_ibex_server</span></code> and it also builds the list of ioc macros that the GUI reads. So you will need to run <code class="docutils literal notranslate"><span class="pre">start_ibex_server</span></code> for a new IOC or changed macros, and may have to restart the GUI after this too.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Modifying-Plugins-on-a-Deployed-Client.html" class="btn btn-neutral float-left" title="Patching a deployed client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Release-Single-IOC.html" class="btn btn-neutral float-right" title="Release a single IOC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keithley 2420 (Polaris Thermoelectric cell) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Keithley 2700" href="Keithley-2700.html" />
+    <link rel="prev" title="Keithley 2400" href="Keithley-2400.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Multimeters.html">Multimeters</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Keithley-2000.html">Keithley 2000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Keithley-2001.html">Keithley 2001</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Keithley-2400.html">Keithley 2400</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Keithley 2420 (Polaris Thermoelectric cell)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Keithley-2700.html">Keithley 2700</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Keithley-6517B.html">Keithley 6517B</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Keysight-E4980AL-LCR-Meter.html">Keysight (previously Agilent) E4980AL LCR Meter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Multimeters.html">Multimeters</a></li>
+      <li class="breadcrumb-item active">Keithley 2420 (Polaris Thermoelectric cell)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/multimeters/Keithley-2420-(POLARIS-Thermoelectric-cell).md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="keithley-2420-polaris-thermoelectric-cell">
+<h1>Keithley 2420 (Polaris Thermoelectric cell)<a class="headerlink" href="#keithley-2420-polaris-thermoelectric-cell" title="Link to this heading"></a></h1>
+<p>Polaris occasionally use a Keithley to do a thermoelectric cell measurement. Originally this was from <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/2801">https://github.com/ISISComputingGroup/IBEX/issues/2801</a></p>
+<p>Currently, doing this measurement requires a few hacks to get it going. These are documented below:</p>
+<section id="keithley-setup">
+<h2>Keithley setup<a class="headerlink" href="#keithley-setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Keithley needs to have it’s current source range set high enough.</p>
+<ul>
+<li><p>Source -&gt; I -&gt; Right arrow -&gt; range up (until desired range is displayed)</p></li>
+</ul>
+</li>
+<li><p>It is helpful to connect a test resistor to the Keithley to get sensible values back</p></li>
+</ul>
+</section>
+<section id="ioc-setup">
+<h2>IOC setup<a class="headerlink" href="#ioc-setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Currently the Keithley IOC sends some commands at initialization that cause problems for this measurement, so need to remove/comment out <code class="docutils literal notranslate"><span class="pre">PINI</span></code> and <code class="docutils literal notranslate"><span class="pre">SCAN</span></code> fields in the DB</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">MEAS</span></code> command in the protocol is a generic measure command - to force it to use a particular mode, the <code class="docutils literal notranslate"><span class="pre">get_V</span></code> and <code class="docutils literal notranslate"><span class="pre">get_R</span></code> commands will need to be changed to match the following:</p>
+<ul>
+<li><p>The Keithley 2400 IOC has implemented this protocol</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># /// Read the voltage from the data string. Format is %g (V), %g (I), %g (R), %g (Timestamp), %g (Status)</span>
+<span class="n">get_V</span> <span class="p">{</span>
+   <span class="n">ExtraInput</span> <span class="o">=</span> <span class="n">Ignore</span><span class="p">;</span>
+   <span class="n">out</span> <span class="s2">&quot;:MEAS:VOLT?&quot;</span><span class="p">;</span>
+   <span class="ow">in</span> <span class="s2">&quot;</span><span class="si">%f</span><span class="s2">,</span><span class="si">%*f</span><span class="s2">,</span><span class="si">%*f</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1"># /// Read the current from the data string. Format is %g (V), %g (I), %g (R), %g (Timestamp), %g (Status)</span>
+<span class="n">get_I</span> <span class="p">{</span>
+   <span class="n">ExtraInput</span> <span class="o">=</span> <span class="n">Ignore</span><span class="p">;</span>
+   <span class="n">out</span> <span class="s2">&quot;:MEAS:CURR?&quot;</span><span class="p">;</span>
+   <span class="ow">in</span> <span class="s2">&quot;</span><span class="si">%*f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">,</span><span class="si">%*f</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1"># /// Read the resistance from the data string. Format is %g (V), %g (I), %g (R), %g (Timestamp), %g (Status)</span>
+<span class="n">get_R</span> <span class="p">{</span>
+   <span class="n">ExtraInput</span> <span class="o">=</span> <span class="n">Ignore</span><span class="p">;</span>
+   <span class="n">out</span> <span class="s2">&quot;:MEAS:RES?&quot;</span><span class="p">;</span>
+   <span class="ow">in</span> <span class="s2">&quot;</span><span class="si">%*g</span><span class="s2">,</span><span class="si">%*g</span><span class="s2">,</span><span class="si">%g</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="blocks">
+<h2>Blocks<a class="headerlink" href="#blocks" title="Link to this heading"></a></h2>
+<p>The following blocks need to be set up:</p>
+<p><code class="docutils literal notranslate"><span class="pre">keithley2420_resistance_2</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">TE:NDWxxxx:PARS:USER:R2</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">keithley2420_resistance_1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">TE:NDWxxxx:PARS:USER:R1</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">keithley2420_voltage</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">TE:NDWxxxx:PARS:USER:R0</span></code></p>
+<p>Set up precisions and units:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">caput</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">PARS</span><span class="p">:</span><span class="n">USER</span><span class="p">:</span><span class="n">R2</span><span class="o">.</span><span class="n">PREC</span> <span class="mi">5</span>
+<span class="n">caput</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">PARS</span><span class="p">:</span><span class="n">USER</span><span class="p">:</span><span class="n">R1</span><span class="o">.</span><span class="n">PREC</span> <span class="mi">5</span>
+<span class="n">caput</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">PARS</span><span class="p">:</span><span class="n">USER</span><span class="p">:</span><span class="n">R0</span><span class="o">.</span><span class="n">PREC</span> <span class="mi">5</span>
+
+<span class="n">caput</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">PARS</span><span class="p">:</span><span class="n">USER</span><span class="p">:</span><span class="n">R2</span><span class="o">.</span><span class="n">EGU</span> <span class="n">ohm</span>
+<span class="n">caput</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">PARS</span><span class="p">:</span><span class="n">USER</span><span class="p">:</span><span class="n">R1</span><span class="o">.</span><span class="n">EGU</span> <span class="n">ohm</span>
+<span class="n">caput</span> <span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">PARS</span><span class="p">:</span><span class="n">USER</span><span class="p">:</span><span class="n">R0</span><span class="o">.</span><span class="n">EGU</span> <span class="n">volt</span>
+</pre></div>
+</div>
+</section>
+<section id="script">
+<h2>Script<a class="headerlink" href="#script" title="Link to this heading"></a></h2>
+<p>The following script was run to push values from the IOC into blocks. Save into instrument scripts directory.</p>
+<p>For the next experiment, they would like the thermoelectric cell to run intermittently. It should be left in voltage mode when not in use. The following modifications need to be made to the script below to allow this measurement to run:</p>
+<ul class="simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">__exit__</span></code>, set the measurement mode back to voltage.</p></li>
+<li><p>Show the instrument scientists how to wrap certain parts of their script using this context manager.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Thread</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">genie_python</span><span class="w"> </span><span class="kn">import</span> <span class="n">genie</span> <span class="k">as</span> <span class="n">g</span>
+
+
+<span class="n">IOC</span> <span class="o">=</span> <span class="s2">&quot;KHLY2400_01&quot;</span>
+
+<span class="n">SCANNING_PVS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;_READ_OUTPUT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_READ_MODES&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_voltage</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gets the voltage for a record that has had it&#39;s scanning disabled.</span>
+<span class="sd">    :param wait: How long to wait between processing the record and getting the value.</span>
+<span class="sd">    :return: The voltage (volts)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:V:RAW.PROC&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:V:RAW&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t get voltage. Check the IOC is running (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_resistance</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gets the resistance for a record that has had it&#39;s scanning disabled.</span>
+<span class="sd">    :return: The resistance (ohms)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:R:RAW.PROC&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:R:RAW&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t get resistance. Check the IOC is running (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ScanRates</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Enum representing scan rates. Values should match index defined in</span>
+<span class="sd">    http://www.aps.anl.gov/epics/base/R3-14/12-docs/AppDevGuide/node18.html</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">PASSIVE</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">EVENT</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">IO_INTERRUPT</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">TEN_SECONDS</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">FIVE_SECONDS</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">TWO_SECONDS</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">ONE_SECOND</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">POINT_FIVE_SECONDS</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">POINT_TWO_SECONDS</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">POINT_ONE_SECONDS</span> <span class="o">=</span> <span class="mi">9</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_set_scan_rate</span><span class="p">(</span><span class="n">scan_rate</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Switches scan rate on all PVs listed in {SCANNING_PVS}</span>
+
+<span class="sd">    :param scan_rate: the new scan rate to set, should be one of {ScanRates}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">pv</span> <span class="ow">in</span> <span class="n">SCANNING_PVS</span><span class="p">:</span>
+        <span class="c1"># 0 = Passive. Don&#39;t set by name as that change may not be on instruments yet.</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">.SCAN&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">,</span> <span class="n">pv</span><span class="p">),</span> <span class="n">scan_rate</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">KeithleySourceModes</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Measurement modes that can be set on the keithley.</span>
+
+<span class="sd">    Values should match up with what is in the DB (see C:\Instrument\Apps\EPICS\ioc\master\KHLY2400\db\KHLY2400.db)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">CURRENT</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">VOLTAGE</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_set_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set the measurement mode of the keithley.</span>
+<span class="sd">    :param mode: measurement mode to set, should be one of {KeithleySourceModes}.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:SOURCE:MODE:SP&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="n">mode</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_set_current</span><span class="p">(</span><span class="n">current</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set a current (A) on the keithley</span>
+<span class="sd">    :param current:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:WRITE:SP&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="s2">&quot;:SOUR:CURR:LEV </span><span class="si">{:.9f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current</span><span class="p">),</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">experiment</span><span class="p">(</span><span class="n">loop_condition</span><span class="p">,</span> <span class="n">currents</span><span class="p">,</span> <span class="n">measurement_delay</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Main measurement loop</span>
+<span class="sd">    :param loop_condition: A function that should return True when this method should keep looping,</span>
+<span class="sd">                           and False to stop looping.</span>
+<span class="sd">    :param currents: Tuple of currents (in Amps) at which to take measurements. For each element in the tuple a block</span>
+<span class="sd">                     is expected with name &quot;keithley2420_resistance_&lt;index&gt;&quot;, where &lt;index&gt; is the 1-based index of the</span>
+<span class="sd">                     element in the tuple.</span>
+<span class="sd">    :param measurement_delay: A time delay in seconds between setting the current and taking a measurement</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:RES:MODE:SP&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">loop_condition</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;looping&quot;</span><span class="p">)</span>
+        <span class="n">_set_mode</span><span class="p">(</span><span class="n">KeithleySourceModes</span><span class="o">.</span><span class="n">CURRENT</span><span class="p">)</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:OUTPUT:MODE:SP&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">_set_current</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="n">measurement_delay</span><span class="p">)</span>
+        <span class="n">voltage</span> <span class="o">=</span> <span class="n">_get_voltage</span><span class="p">()</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">cset</span><span class="p">(</span><span class="s2">&quot;keithley2420_voltage&quot;</span><span class="p">,</span> <span class="n">voltage</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">current</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">currents</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">_set_current</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="n">measurement_delay</span><span class="p">)</span>
+            <span class="n">resistance</span> <span class="o">=</span> <span class="n">_get_resistance</span><span class="p">()</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">cset</span><span class="p">(</span><span class="s2">&quot;keithley2420_resistance_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">resistance</span><span class="p">)</span>
+
+    <span class="n">g</span><span class="o">.</span><span class="n">set_pv</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:OUTPUT:MODE:SP&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IOC</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">is_local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_set_current</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">_set_mode</span><span class="p">(</span><span class="n">KeithleySourceModes</span><span class="o">.</span><span class="n">VOLTAGE</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ThermoElectricCell</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Context manager for the thermo electric cell.</span>
+
+<span class="sd">    Starts a background thread running the thermoelectric cell measurement loop.</span>
+<span class="sd">    On exiting the context, terminates the thread.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current1</span><span class="o">=</span><span class="mi">30</span><span class="o">/</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">current2</span><span class="o">=-</span><span class="mi">30</span><span class="o">/</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">measurement_delay</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor</span>
+<span class="sd">        :param current1: The first current to measure (in Amps)</span>
+<span class="sd">        :param current2: The second current to measure (in Amps)</span>
+<span class="sd">        :param measurement_delay: A time delay in seconds between setting the current and taking a measurement</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keep_looping</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">experiment</span><span class="p">,</span>
+                             <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keep_looping</span><span class="p">,</span> <span class="p">(</span><span class="n">current1</span><span class="p">,</span> <span class="n">current2</span><span class="p">),</span> <span class="n">measurement_delay</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run when entering the context manager. Disables scanning and starts the background thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting thermoelectric cell measurement loop...&quot;</span><span class="p">)</span>
+        <span class="n">_set_scan_rate</span><span class="p">(</span><span class="n">ScanRates</span><span class="o">.</span><span class="n">PASSIVE</span><span class="p">)</span>  <span class="c1"># Disable scanning.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;... Done&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run when exiting the context manager. Re-enables scanninng and stops the background thread.</span>
+<span class="sd">        :return: False (don&#39;t swallow exceptions)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stopping thermoelectric cell measurement loop...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keep_looping</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;... Done&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+</pre></div>
+</div>
+<p>It is run either as a context manager around an existing script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">inst</span><span class="o">.</span><span class="n">ThermoElectricCell</span><span class="p">(</span><span class="n">current1</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">current2</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="n">do_existing_script</span>
+</pre></div>
+</div>
+<p>Or, alternatively, in the background using a context manager around an infinite statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">ThermoElectricCell</span><span class="p">(</span><span class="n">current1</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">current2</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;Press return to stop thermo electric cell&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Keithley-2400.html" class="btn btn-neutral float-left" title="Keithley 2400" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Keithley-2700.html" class="btn btn-neutral float-right" title="Keithley 2700" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

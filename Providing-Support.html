@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Providing Support &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Releases &amp; Deployment" href="Deployment.html" />
+    <link rel="prev" title="Temperature Jump Apparatus" href="specific_iocs/temp_controllers/Temperature-Jump-Apparatus.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Providing Support</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/Providing-Support.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="providing-support">
+<h1>Providing Support<a class="headerlink" href="#providing-support" title="Link to this heading"></a></h1>
+<p>There is a long list of things to worry about when you have the support phone or are dealing with a support issue, and this page should provide a starting point to look for guidance on what to do if no one is around.</p>
+<p>These pages should be a living document - as people learn things add them to the appropriate place if things change, and you notice, update them. If you are experienced, make sure the rest of us are getting things right and verify what is linked to from here. Just remember, this is a public wiki, so be wary of the detail added.</p>
+<p>Don’t forget to “Send As” ISIS Experiment Controls in outlook and also cc: ISIS Experiment Controls in the message, that way it will be possible for others to see what has already been discussed. Don’t forget to include your name when signing off emails from ISIS Experiment Controls, it’s much nicer to deal with a person who is part of a group than an anonymous entity.</p>
+<p>Everyone should start a thread in the “support issues” teams channel for any support work whether that is the emails being dealt with, the calls received, or anything that comes out of people walking into the office.</p>
+<p>If remote, make sure you are either on the VPN or accessing a system on-site in some way.</p>
+<p>The on call number is <code class="docutils literal notranslate"><span class="pre">x1763</span></code> (as called from a RAL phone, and should be available between 7:00-23:00 7 days a week during cycle.
+The email address can be found in the address book as <code class="docutils literal notranslate"><span class="pre">ISIS</span> <span class="pre">Experiment</span> <span class="pre">Controls</span></code>.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#the-types-of-support">The types of support</a></p></li>
+<li><p><a class="reference internal" href="#duties-for-first-line">Duties for “first line”</a></p></li>
+<li><p><a class="reference internal" href="#what-does-being-on-call-mean">What does being on call mean?</a></p></li>
+<li><p><a class="reference internal" href="#trouble-shooting">Trouble Shooting</a></p></li>
+<li><p><a class="reference internal" href="#answering-the-support-phone">Answering the support phone</a></p></li>
+<li><p><a class="reference internal" href="#basic-types-of-call">Basic types of call</a></p></li>
+<li><p><a class="reference internal" href="#other-tasks">Other Tasks</a></p></li>
+</ul>
+</section>
+<section id="the-types-of-support">
+<h2>The types of support<a class="headerlink" href="#the-types-of-support" title="Link to this heading"></a></h2>
+<p>All permanent members of the ISIS Computing Group are expected to be on the support rotas.</p>
+<p>Note that being the person on rota means you are responsible for seeing that support items are dealt with. This doesn’t mean you have to do them, but you have to make sure they are done.</p>
+<p>There is no requirement to change working patterns when on call.</p>
+<section id="some-basic-support-principles">
+<h3>Some basic support principles<a class="headerlink" href="#some-basic-support-principles" title="Link to this heading"></a></h3>
+<p>If a scientist/user contacts you directly about an urgent issue, you should politely remind them that there is an on call number, and a generic email, and they will be much more likely to get swifter assistance by calling/emailing it rather than individuals.</p>
+<p>If you are working on a problem that you believe has the potential to stop all instruments taking data (e.g. the central beam status is reporting incorrectly or there is a critical bug in a core IBEX component) you should immediately email all instrument scientists using the <code class="docutils literal notranslate"><span class="pre">ISIS</span> <span class="pre">Instrument</span> <span class="pre">Scientist</span></code> mailing list. You should make them aware of the problem and any workarounds that you have found.</p>
+<p>If you encounter an urgent problem that you are really unsure of you can find other team member’s numbers in the support phone’s contacts list or at <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls\On</span> <span class="pre">Call\Phone</span> <span class="pre">Numbers.xlsx</span></code>.</p>
+</section>
+<section id="who-is-on-call-when">
+<h3>Who is on call when?<a class="headerlink" href="#who-is-on-call-when" title="Link to this heading"></a></h3>
+<p>The “first line” and on call rotas will be made available via the shared calendar as is currently the case.
+There will always be someone who is “first line”, but those duties vary in and out of cycle.
+On call only exists in cycle.</p>
+</section>
+</section>
+<section id="duties-for-first-line">
+<h2>Duties for first line<a class="headerlink" href="#duties-for-first-line" title="Link to this heading"></a></h2>
+<p>This role is active between 8:30 and 17:00, every weekday, generally with a different person on duty each week.
+You will keep an eye on the support emails, and any voicemails, and make sure they are dealt with by someone. Chase up if something doesn’t happen.
+If you don’t have the experience to resolve something, then you should ask the team for help.</p>
+<p>Your phone will ring first for support issues, be prepared to answer it.</p>
+<p>If you don’t have the experience to resolve the issues, then in cycle you should ask whoever is on call for help first, followed by others in the team. Out of cycle ask the team.</p>
+<p>Extra note for the first week of cycle, these are usually busy, be prepared to delegate tasks. It may be necessary to ask specific individuals to undertake tasks, and you may need to keep track of who is dealing with which problem and where they are. It would also be wise to share the issues as appropriate, but do remember that working patterns and individual needs may play a part in who can help with what.</p>
+</section>
+<section id="what-does-being-on-call-mean">
+<h2>What does being on call mean?<a class="headerlink" href="#what-does-being-on-call-mean" title="Link to this heading"></a></h2>
+<p>This role is active between 07:00 and 23:00, everyday in cycle, generally with a different person on duty each week.</p>
+<p>An on call week starts on a Friday and finishes a week later. (So that the first on call week of a cycle starts the Friday before cycle starts, and the final on call week ends with cycle.)</p>
+<p>During working hours the person scheduled for first line will receive phone calls first, therefore the duties here are more focussed on the out of hours time (07:00 to 08:30 and 17:00 to 23:00).</p>
+<p>Your mobile phone will ring, be prepared to answer it, and deal with the issue detailed.</p>
+<p>If the person on first line support is inexperienced, be ready to support them and take calls from them.</p>
+</section>
+<section id="trouble-shooting">
+<h2>Trouble Shooting<a class="headerlink" href="#trouble-shooting" title="Link to this heading"></a></h2>
+<p>There are a number of tips for <a class="reference internal" href="overview/Links-and-Resources.html#all-troubleshooting-links"><span class="std std-ref">trouble shooting</span></a> already on the wiki.</p>
+</section>
+<section id="answering-the-support-phone">
+<h2>Answering the support phone<a class="headerlink" href="#answering-the-support-phone" title="Link to this heading"></a></h2>
+<details>
+  <summary> Steps to answer the phone. </summary>
+<ol class="arabic simple">
+<li><p>Greet the caller with something that tells them they are talking to the right team, e.g. just respond with “ISIS Experiment Controls Support”</p></li>
+<li><p>Make a note* of the time</p></li>
+<li><p>Make a note* of the name of the instrument and the name or at least the role of the caller, if possible - sometimes they are quick and you don’t get to catch it, or they don’t actually say who it is. These calls can also come from visiting users in cabins, or from the Main Control Room (MCR), knowing who called you about the problem can help if others need to follow it up. Check how best to call them back - scientist may call from cabin, but say to email or phone back on their mobile in case they are no longer in the cabin.</p></li>
+<li><p>Make a note* of the basic problem. Useful details like:</p>
+<ol class="arabic simple">
+<li><p>When did the problem start happening (this helps us to know where to look for in log files)</p></li>
+<li><p>Is it happening now, or only when you try and do something</p></li>
+<li><p>What events led up to the problem happening e.g. which commands, opened something on GUI, connected new equipment, …</p></li>
+<li><p>how urgent is it - do they have a workaround for now etc.  When is a convenient time for us to start to investigate issue.</p></li>
+</ol>
+</li>
+<li><p>If you can solve the problem do so, if you can’t start finding the appropriate answers in this guide or by reaching out to others (if onsite, ask in office - if offsite, post in teams). It is OK to tell the user you will call them back</p></li>
+</ol>
+<ul class="simple">
+<li><p>Notes can be mental notes - but don’t be afraid to write everything down either, you have to write it all down for the out of hours calls anyway.</p></li>
+</ul>
+</details>
+</section>
+<section id="basic-types-of-call">
+<h2>Basic types of call<a class="headerlink" href="#basic-types-of-call" title="Link to this heading"></a></h2>
+<details>
+  <summary>I can't log in to *** computer</summary>
+<ol class="arabic simple">
+<li><p>What is the name of the computer?
+- If it is the NDX or NDH, we care, look at the next steps, there are a small subset of other systems we support that others might be logging into which will be listed in the older SharePoint along with the access information as appropriate.
+- Anything else, NDC, NDL, NDW, cabin PCs, or an ISIS or CLRC domain account as opposed to a local instrument account:</p>
+<ul class="simple">
+<li><p>in office hours refer them to the Facilities IT service desk</p></li>
+<li><p>out of hours, if in cycle then in zoom phone call “ISIS IT Infrastructure on-call” (phone number 94499)</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- If attempting to connect to EMMA, remember the -A
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Unable to connect to NDX via RDP
+- This is no longer an option, please use VNC
+- If they don’t know the password, check that they are an instrument scientist with appropriate access to the information required. If they are not an instrument scientist ask them to contact their local contact to resolve this. If they are, add them to the appropriate group if they are the local contact for this experiment</p></li>
+<li><p>Unable to connect to NDX via VNC
+- Check ping to the NDX, and to the NDH</p>
+<ul class="simple">
+<li><p>If there are any issues with these pings, you can check DRAC. <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/SitePages/Getting%20to%20Instrument%20DRACs.aspx">Basic DRAC information here</a> and instrument <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/Lists/Instrument%20Control%20Computers/AllItems.aspx">DRAC IDs here</a>. It is worth following the DRAC connections</p></li>
+<li><p>If you are restarting via the DRAC, using <code class="docutils literal notranslate"><span class="pre">power</span> <span class="pre">cycle</span> <span class="pre">system</span> <span class="pre">(cold</span> <span class="pre">reboot)</span></code> should bring the system back</p></li>
+</ul>
+</li>
+<li><p>Wrong password entered too many times on anything other than NDX
+- We can’t resolve this</p></li>
+</ol>
+</details>
+<details>
+  <summary>I can't see the dataweb for {instrument}</summary>
+<ol class="arabic simple">
+<li><p>Check whether or not you can see that dataweb, and how extensive the failure is (one instrument, many, all) (TODO: Find out the solution for this, is it always restart the dataweb server/JSON_BOURNE?</p></li>
+<li><p>Try the troubleshooting section on the <a class="reference internal" href="webdashboard/Web-Dashboard.html#webdashboard-troubleshooting"><span class="std std-ref">dataweb</span></a></p></li>
+<li><p>If this doesn’t work try restarting ndaextweb3</p></li>
+</ol>
+</details>
+<details>
+  <summary>Device issues</summary>
+<ol class="arabic simple">
+<li><p>I can’t talk to device/my blocks are showing as disconnected/IOC isn’t working</p>
+<ul class="simple">
+<li><p>Check that the IOC is running</p></li>
+<li><p>Check that the device is turned on</p></li>
+<li><p>Check if your problem is already listed on the <a class="reference internal" href="Specific-IOCs.html"><span class="doc std std-doc">device/ioc wiki pages</span></a>.</p></li>
+<li><p>If the device is a DAQmx one, look at it in MAX, and perform a self-test</p></li>
+<li><p>Device not responding</p>
+<ul>
+<li><p>Stop the IOC (or VI) and try to connect via a more direct route, e.g. Putty</p></li>
+<li><p>Check the cabling, and that ports etc. are correct</p></li>
+<li><p>For serial devices, check using the MOXA web interface that bytes are being sent and received on the correct port. Moxa IPs are listed <a class="reference external" href="http://beamlog.nd.rl.ac.uk/inst_summary.xml">here</a> and the login details are on the usual passwords page.</p></li>
+</ul>
+</li>
+<li><p>If the device is unable to interact in any way, refer this to the appropriate hardware team (via the MCR out of hours)</p></li>
+<li><p>If the device responds via a more direct route, but not via the IOC/VI</p>
+<ul>
+<li><p>Make sure the settings in the IOC/VI are correct</p></li>
+<li><p>If the IOC/VI have been updated since the device last worked correctly, roll back to a version that is known to work, and raise a ticket to investigate the issue and find a more sustainable solution</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>I can’t use this button to get to more details/why doesn’t this bit of the OPI work</p>
+<ul class="simple">
+<li><p>Check they are in manager mode</p></li>
+</ul>
+</li>
+<li><p>I need to add this device to my system</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/index.html" title="(in IBEX User Manual)"><span class="xref std std-doc">the user manual</span></a></p></li>
+</ul>
+</li>
+<li><p>My motor won’t move</p>
+<ul class="simple">
+<li><p>Are both limits made?</p>
+<ul>
+<li><p>Yes: Something has happened in the physical realm, refer it to EUSG via the MCR</p></li>
+<li><p>No: Go to next consideration</p></li>
+</ul>
+</li>
+<li><p>Is any of the other information updating for that motor controller?</p>
+<ul>
+<li><p>Yes: Go to next consideration</p></li>
+<li><p>No: Under IBEX go to the engineering device screen, do not send any characters but send a command, if the response is anything but <code class="docutils literal notranslate"><span class="pre">:</span></code> then the Galil is in a fault mode of some kind which will involve restarts etc.</p>
+<ul>
+<li><p>If the Galil is unresponsive refer it to EUSG via the MCR</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Looking at the specific motor:</p>
+<ul>
+<li><p>Are you trying to move in the same direction as an active limit switch?</p>
+<ul>
+<li><p>Yes: Try moving in the other direction, if you can move that way to a requested position all is fine</p></li>
+</ul>
+</li>
+<li><p>Are you able to move in either direction?</p>
+<ul>
+<li><p>No: Check for hardware faults (potentially as a referral to EUSG via the MCR)</p></li>
+</ul>
+</li>
+<li><p>If it is able to move, is the encoder tracking in the same direction as the requested motion?</p>
+<ul>
+<li><p>No: The motor setup is probably incorrect, recommission the motor</p></li>
+<li><p>Yes: Feel bewildered as this should be a moving motor</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>My device isn’t behaving as I expect</p>
+<ul class="simple">
+<li><p>Verify that the device expected on that port is the device connected on that port</p></li>
+<li><p>Treat it as a device that is unable to interact</p></li>
+<li><p>Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)</p></li>
+<li><p>Verify that the behaviour you’re seeing is not a known quirk of the device. These quirks are often detailed on the <a class="reference internal" href="Specific-IOCs.html"><span class="doc std std-doc">device/ioc wiki pages</span></a></p></li>
+</ul>
+</li>
+</ol>
+</details>
+<details>
+  <summary>This network device isn't connecting</summary>
+<ol class="arabic simple">
+<li><p>If the device has been working on the ISIS network in that specific hall since the start of May 2025 then this is most likely an issue with the device or the port.</p></li>
+<li><p>If this is a new to that hall, or to ISIS generally device, or it hasn’t been used since sometime before May 2025, then this may be a network access issue, and it will need some help from the Infrastructure team, the MCR will have a number for them.</p></li>
+</ol>
+</details>
+<details>
+  <summary>A service isn't running</summary>
+<ol class="arabic simple">
+<li><p>There are a few things that have services which run, especially the databases, and it is possible after a crash/other restart that these don’t start up again, starting task manager as an administrator should allow you to start the service in question</p></li>
+<li><p>If it is not one of our services (e.g. swipe systems, ERA), we cannot resolve the issue, escalate as appropriate (TODO: Make sure the different escalation methods are documented)</p></li>
+<li><p>If the MCR news service isn’t working, then so long as there is space, restarting our <a class="reference external" href="https://shadow.nd.rl.ac.uk/ibex_sysadmin_manual/systems/Webserver.html" title="(in IBEX Sysadmin's Manual)"><span>Webserver</span></a> may help.</p></li>
+</ol>
+</details>
+<details>
+  <summary>Script issues</summary>
+<ol class="arabic simple">
+<li><p>My script won’t load</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">g.load_script</span></code> is being used and you see errors of the form <code class="docutils literal notranslate"><span class="pre">E:</span>&#160; <span class="pre">1:</span> <span class="pre">error</span> <span class="pre">description</span> <span class="pre">(error-name)</span></code>, these errors are coming from the linter. Detailed linter troubleshooting is available <a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/scripting/Error-Checking-Troubleshooting.html" title="(in IBEX User Manual)"><span class="xref std std-doc">here</span></a>.</p></li>
+</ul>
+</li>
+<li><p>My script isn’t behaving in the way I expect it to</p>
+<ul class="simple">
+<li><p>This is a best efforts, and not everyone can provide the same level of support</p></li>
+<li><p>Look at it with respect to basic coding standards and obvious race condition points</p></li>
+<li><p>(TODO: Complete this section)</p></li>
+</ul>
+</li>
+</ol>
+</details>
+</section>
+<section id="other-tasks">
+<h2>Other tasks<a class="headerlink" href="#other-tasks" title="Link to this heading"></a></h2>
+<details>
+  <summary>Checking Nagios</summary>
+<ol class="arabic simple">
+<li><p>This is usually considered during the daily stand up</p></li>
+<li><p>Out of cycle we only worry about the most critical items</p></li>
+<li><p>In cycle there are more things to be aware of and waiting until the next stand up meeting can be too long</p></li>
+<li><p>Some issues can only be solved by specific individuals, it is still worth making sure they are aware that there is a problem as they might not have seen the issue yet</p></li>
+<li><p>Any space issues in a computer</p>
+<ul class="simple">
+<li><p>Check that there isn’t just one large raw/nexus file - if there is then the warning should disappear soon or it is a different problem than just space, otherwise go on to the next step</p></li>
+<li><p>Contact the Instrument Scientists to let them know that something needs doing to their system, and ask when you might be able to take over their computer to ensure they have enough space</p></li>
+<li><p>When there is an opportunity delete some of the oldest log files, if the database (IBEX systems only) is large then trim it as per an update</p></li>
+</ul>
+</li>
+<li><p>The CPU/memory usage is high</p>
+<ul class="simple">
+<li><p>Check which processes are high, and the graph to see how long they have been high</p></li>
+<li><p>If this looks like a steady climb, if you can determine the source create a ticket for investigation</p></li>
+<li><p>Contact the Instrument Scientists to let them know that there is an issue, and ask them to restart appropriate items when they have a chance. Note that restarting the IBEX server is least likely to be required.</p></li>
+</ul>
+</li>
+</ol>
+</details>
+<details>
+  <summary>Finding Instrument Scientist Phone Numbers</summary>
+<p>To find contact numbers for instrument scientists and cabin phone numbers for instruments, the following website is available: <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/Instruments.aspx">Instrument Map</a>. On this page you can either click on the instrument (in the top image), or click the <code class="docutils literal notranslate"><span class="pre">Contacts</span> <span class="pre">And</span> <span class="pre">Support</span> <span class="pre">&gt;</span> <span class="pre">Instrument</span> <span class="pre">Scientists</span></code> tab and find the instrument you are looking for.</p>
+</details>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="specific_iocs/temp_controllers/Temperature-Jump-Apparatus.html" class="btn btn-neutral float-left" title="Temperature Jump Apparatus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Deployment.html" class="btn btn-neutral float-right" title="Releases &amp; Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

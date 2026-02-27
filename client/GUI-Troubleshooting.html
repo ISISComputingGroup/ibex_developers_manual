@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUI Troubleshooting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging memory leaks in the IBEX GUI" href="troubleshooting/Debugging-memory-leaks-in-the-IBEX-GUI.html" />
+    <link rel="prev" title="Synoptic icons" href="misc/Synoptic-Icons.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GUI-Building.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI-Coding.html">Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GUI Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting/Debugging-memory-leaks-in-the-IBEX-GUI.html">Debugging memory leaks in the IBEX GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting/Java-Resource-Usage-Tools.html">Java Memory and CPU Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting/PV-Manager-and-Observers-Logging.html">PVManager &amp; Observers Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting/Pydev-autocomplete-issue.html">PyDEV Autocompletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting/Slow-reconnection-in-the-GUI.html">Slow PV Reconnections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Client.html">IBEX GUI (Eclipse)</a></li>
+      <li class="breadcrumb-item active">GUI Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/GUI-Troubleshooting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="gui-troubleshooting">
+<h1>GUI Troubleshooting<a class="headerlink" href="#gui-troubleshooting" title="Link to this heading"></a></h1>
+<p>This page contains information on how to troubleshoot some common issues with the GUI. These are issues that occur once the GUI has started, not issues in starting the GUI. A good place to start are the log files, they are stored in <code class="docutils literal notranslate"><span class="pre">...\Instrument\Apps\Client\workspace\logs</span></code>.</p>
+<p>The following pages also contain GUI troubleshooting information for specific problems:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting/Debugging-memory-leaks-in-the-IBEX-GUI.html">Debugging memory leaks in the IBEX GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting/Java-Resource-Usage-Tools.html">Java Memory and CPU Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting/PV-Manager-and-Observers-Logging.html">PVManager &amp; Observers Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting/Pydev-autocomplete-issue.html">PyDEV Autocompletion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting/Slow-reconnection-in-the-GUI.html">Slow PV Reconnections</a></li>
+</ul>
+</div>
+<section id="display-resolution-scaling">
+<h2>Display resolution &amp; scaling<a class="headerlink" href="#display-resolution-scaling" title="Link to this heading"></a></h2>
+<p>If the GUI loads up but items are the wrong size, you may need to change your display settings. The exact settings that
+you need may vary from computer to computer. This is a common issue on Windows 10 machines due to the OS’ scaling
+setting for text, icons etc. that is meant to ensure they do not look too small on high screen resolutions.</p>
+<p>Generally a resolution of 1920 x 1080 with a scaling factor of 100% should look correct on standard screens. You can
+increase both of those settings slightly if you feel like the display elements look uncomfortably small.</p>
+</section>
+<section id="ibex-appears-fullscreen-with-top-menu-items-hidden">
+<h2>IBEX appears fullscreen with top menu items hidden<a class="headerlink" href="#ibex-appears-fullscreen-with-top-menu-items-hidden" title="Link to this heading"></a></h2>
+<p>Solution: right click inside any OPI and select “exit full screen”.</p>
+</section>
+<section id="runtime-failure-due-to-security-manager">
+<h2>Runtime failure due to security manager<a class="headerlink" href="#runtime-failure-due-to-security-manager" title="Link to this heading"></a></h2>
+<p>If you use eclipse IDE version 2022-03 to attempt to launch the GUI, you will get an error like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">org</span><span class="o">.</span><span class="n">osgi</span><span class="o">.</span><span class="n">framework</span><span class="o">.</span><span class="n">BundleException</span><span class="p">:</span> <span class="ne">Exception</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">osgi</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">framework</span><span class="o">.</span><span class="n">SystemBundleActivator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="n">of</span> <span class="n">bundle</span> <span class="n">org</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">osgi</span><span class="o">.</span>
+<span class="o">...</span>
+<span class="n">Caused</span> <span class="n">by</span><span class="p">:</span> <span class="n">org</span><span class="o">.</span><span class="n">osgi</span><span class="o">.</span><span class="n">framework</span><span class="o">.</span><span class="n">BundleException</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">create</span> <span class="n">security</span> <span class="n">manager</span>
+<span class="o">...</span>
+<span class="n">Caused</span> <span class="n">by</span><span class="p">:</span> <span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">ClassNotFoundException</span><span class="p">:</span> <span class="n">allow</span>
+</pre></div>
+</div>
+<p>The solution to this error is to use an older IDE - for example 2021-12 works without issue. Longer-term solution to this issue is to wait for the eclipse IDE team to fix this bug.</p>
+</section>
+<section id="build-fails-due-to-tycho-dependencies-e-g-equinox-ds-not-resolvable-this-is-only-for-the-maven-build">
+<h2>Build fails due to Tycho dependencies (e.g. equinox.ds not resolvable; this is only for the Maven build)<a class="headerlink" href="#build-fails-due-to-tycho-dependencies-e-g-equinox-ds-not-resolvable-this-is-only-for-the-maven-build" title="Link to this heading"></a></h2>
+<p>Try deleting the <code class="docutils literal notranslate"><span class="pre">.m2</span></code> cache directory (in <code class="docutils literal notranslate"><span class="pre">ibex_gui/build/.m2</span></code> for GUI/script generator or <code class="docutils literal notranslate"><span class="pre">isis_css_top/.m2</span></code> for CSS) and then rebuilding.</p>
+</section>
+<section id="modulenotfounderror-no-module-named-pywin32-bootstrap">
+<h2>ModuleNotFoundError: No module named ‘pywin32_bootstrap’<a class="headerlink" href="#modulenotfounderror-no-module-named-pywin32-bootstrap" title="Link to this heading"></a></h2>
+<p>This may be due to windows file path limits. If you are running from a deeply nested directory after build and try to access the path to python it may run over this file path limit and not be able to find it.</p>
+</section>
+<section id="ioc-start-stop-list-is-not-populated">
+<h2>IOC Start/Stop list is not Populated<a class="headerlink" href="#ioc-start-stop-list-is-not-populated" title="Link to this heading"></a></h2>
+<p>If the IOC Start/Stop list is blank when the instrument is running then there is a problem with the PV serving this. The PV serving it comes from the DBSRV ioc and ultimately comes from the MySQL database. Console to the BD server:</p>
+<p><code class="docutils literal notranslate"><span class="pre">console</span> <span class="pre">-M</span> <span class="pre">localhost</span> <span class="pre">DBSVR</span></code></p>
+<p>should not be producing errors (pressing return creates blank lines)</p>
+<p>Next check that the <a class="reference internal" href="../system_components/mysql/Database-Troubleshooting.html"><span class="doc std std-doc">database is up</span></a>.</p>
+</section>
+<section id="target-platform-errors">
+<h2>Target Platform Errors<a class="headerlink" href="#target-platform-errors" title="Link to this heading"></a></h2>
+<p>In some cases when you receive a <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">Target</span> <span class="pre">Definition</span></code> error, this can relate to some cached files that need to be refreshed and repeatedly performing the loop of <code class="docutils literal notranslate"><span class="pre">Clean</span> <span class="pre">project</span> <span class="pre">&gt;</span> <span class="pre">Set</span> <span class="pre">as</span> <span class="pre">Target</span> <span class="pre">Platform</span> <span class="pre">&gt;</span> <span class="pre">Reload</span></code> between 3-10 times can fix this issue. Set as Target Platform and Reload are located on the target view, located at <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.targetplatform.target</span></code>.</p>
+</section>
+<section id="jaxb-dependency-issues">
+<h2>JAXB dependency issues<a class="headerlink" href="#jaxb-dependency-issues" title="Link to this heading"></a></h2>
+<p>Firstly, as of the March 2020 dependency updates, make sure you have imported the <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.jaxb</span></code> project into eclipse (check out master and pull first).</p>
+<p>We have seen some cases of JAXB causing issues with the GUI building. Since Eclipse builds in parallel a race condition can arise between building CSS (which expects some XML classes in the standard library) and the rest of the GUI (which has XML outside of the standard library due to using Java 11). If you have a load of JAXB issues, try the following:</p>
+<ol class="arabic simple">
+<li><p>In the project explorer delete all the plugins (Do not delete the files from disk)</p></li>
+<li><p>Restart Eclipse</p></li>
+<li><p>Select “Import Existing Projects” and select the GUI base folder</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.targetplatform</span></code> file</p></li>
+<li><p>After the project has been imported click the “reload” button and then “Set Target Platform” in the top right. Note that these two buttons do not do the same thing and it necessary to press them both in order.</p></li>
+</ol>
+<p>This seems to be the best way to resolve this. If you have persistent issues with JAXB and this method not working, please inform the team as we would like to investigate.</p>
+</section>
+<section id="delete-dotfiles">
+<h2>Delete dotfiles<a class="headerlink" href="#delete-dotfiles" title="Link to this heading"></a></h2>
+<p>If Eclipse gets very confused with the project build, you might want to completely wipe clean all files/folders used in the project. You can create a new workspace but there are still several additional folders worth deleting if needed. In your user folder, there should be hidden “dot” folders called:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.m2</span></code> (contains downloaded dependencies)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.p2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.eclipse</span></code></p></li>
+</ul>
+</section>
+<section id="client-fails-to-start-at-runtime">
+<h2>Client fails to start at runtime<a class="headerlink" href="#client-fails-to-start-at-runtime" title="Link to this heading"></a></h2>
+<p>If it produces a log with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Unresolved</span> <span class="n">requirement</span><span class="p">:</span> <span class="n">Require</span><span class="o">-</span><span class="n">Capability</span><span class="p">:</span> <span class="n">osgi</span><span class="o">.</span><span class="n">ee</span><span class="p">;</span> <span class="nb">filter</span><span class="o">:=</span><span class="s2">&quot;(&amp;(osgi.ee=JavaSE)(version=11))&quot;</span>
+</pre></div>
+</div>
+<p>You may have built with Java 11 but are running with Java 8 make sure the path is set correctly without Java 8 on it and that you are using the correct version at run time.</p>
+<p>You can verify that you are using the correct java version by running <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-version</span></code> in a command prompt. It should return java 11 in a non-EPICS terminal, or java 8 in an epics terminal (note, you cannot launch the GUI from an EPICS terminal). If it returns the incorrect version, you can add the correct version to your PATH.</p>
+</section>
+<section id="file-set-from-project-has-no-valid-check-configuration">
+<h2>File set from project … has no valid check configuration.<a class="headerlink" href="#file-set-from-project-has-no-valid-check-configuration" title="Link to this heading"></a></h2>
+<p>Try <a class="reference internal" href="eclipse/Checkstyle-setup.html"><span class="doc std std-doc">setting up the checkstyle</span></a>.</p>
+</section>
+<section id="gui-claims-another-instance-is-running-upon-start-but-there-isn-t">
+<h2>GUI claims another instance is running upon start (but there isn’t)<a class="headerlink" href="#gui-claims-another-instance-is-running-upon-start-but-there-isn-t" title="Link to this heading"></a></h2>
+<p>Navigate to: <code class="docutils literal notranslate"><span class="pre">C:/Users/&lt;username&gt;/AppData/Local/IBEX</span></code> and delete the file “instance.txt”</p>
+</section>
+<section id="maven-built-client-can-t-see-referenced-files">
+<h2>maven-built client can’t see referenced files<a class="headerlink" href="#maven-built-client-can-t-see-referenced-files" title="Link to this heading"></a></h2>
+<p>Add <code class="docutils literal notranslate"><span class="pre">Eclipse-BundleShape:</span> <span class="pre">dir</span></code> in the <code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code>; see the <code class="docutils literal notranslate"><span class="pre">.opis</span></code> <code class="docutils literal notranslate"><span class="pre">MANIFEST.MF</span></code> for an example of this.
+This makes the maven build build the directory into a directory rather than a jar, which is sometimes necessary to let eclipse then “see” the files natively on the filesystem. If you look in the <code class="docutils literal notranslate"><span class="pre">plugins/</span></code> folder of a built client you should see a folder for <code class="docutils literal notranslate"><span class="pre">.opis</span></code> but a <code class="docutils literal notranslate"><span class="pre">.jar</span></code> for most other ibex modules - except for a few that need to be built as directories, as you may be finding.</p>
+</section>
+<section id="other-issues">
+<h2>Other issues<a class="headerlink" href="#other-issues" title="Link to this heading"></a></h2>
+<section id="remote-debugging-with-eclipse">
+<h3>Remote debugging with Eclipse<a class="headerlink" href="#remote-debugging-with-eclipse" title="Link to this heading"></a></h3>
+<p>The following has been done to ensure that it is possible to debug the IBEX GUI running on any particular instrument:</p>
+<ol class="arabic simple">
+<li><p>The JDWP agent is added to IBEX GUI. In individual installations it will run on an available port dynamically determined at run-time.</p></li>
+<li><p>There is a utility available in <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities</span> <span class="pre">-</span> <span class="pre">getJVMInfo.bat</span></code></p></li>
+<li><p>SSH server is installed on all instruments and port forwarding is enabled.</p></li>
+</ol>
+<p>The following needs to be done to debug the instance:</p>
+<ol class="arabic simple">
+<li><p>Open Command prompt in the Instrument.</p></li>
+<li><p>Get the port on which JDWP is enabled for the instrument by executing the following on the command prompt:
+<code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities\getJVMInfo.bat</span></code>.
+From the output copy the value against dt_socket.</p></li>
+<li><p>In your local machine open command prompt and enter <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">–L</span> <span class="pre">&lt;Your_Port&gt;:127.0.0.1:&lt;DEBUG_PORT&gt;</span> <span class="pre">&lt;TOP_SECRET_UID&#64;&lt;SERVER&gt;</span></code>.
+For example <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">–L</span> <span class="pre">12345:127.0.0.1:66666</span> <span class="pre">spudulike&#64;ndxscidemo</span></code></p></li>
+<li><p>Set the debug configuration (Run ==&gt; Debug Configurations… ==&gt; Remote Java Application) on the eclipse as shown below. Use 127.0.0.1 as host name and &lt;Your_Port&gt; as the port:
+<img alt="image" src="../_images/GUI-Troubleshooting-remote-debugging.png" /></p></li>
+</ol>
+</section>
+<section id="debugging-local-code-with-eclipse">
+<h3>Debugging local code with Eclipse<a class="headerlink" href="#debugging-local-code-with-eclipse" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>When eclipse build starts it will print on the console the port it is listening for debugging. Similar to : <code class="docutils literal notranslate"><span class="pre">Listening</span> <span class="pre">for</span> <span class="pre">transport</span> <span class="pre">dt_socket</span> <span class="pre">at</span> <span class="pre">address:</span> <span class="pre">60796</span></code></p></li>
+<li><p>Set a debug configuration for Remote Java Application with host as localhost and port as obtained above.</p></li>
+</ol>
+<p><a class="reference internal" href="troubleshooting/Debugging-memory-leaks-in-the-IBEX-GUI.html"><span class="doc std std-doc">Memory “leaks”</span></a></p>
+<p><a class="reference internal" href="troubleshooting/PV-Manager-and-Observers-Logging.html"><span class="doc std std-doc">PV Manager and Observers</span></a></p>
+</section>
+<section id="accessing-pydev-s-preferences">
+<h3>Accessing pydev’s preferences<a class="headerlink" href="#accessing-pydev-s-preferences" title="Link to this heading"></a></h3>
+<p>To access pydev’s “secret menu” to change preferences in the interactive console, press <code class="docutils literal notranslate"><span class="pre">ctrl-alt-p</span></code> when focused on the console.
+This allows you to set things like ad-hoc commands that get run before <code class="docutils literal notranslate"><span class="pre">genie</span></code> is loaded.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="misc/Synoptic-Icons.html" class="btn btn-neutral float-left" title="Synoptic icons" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="troubleshooting/Debugging-memory-leaks-in-the-IBEX-GUI.html" class="btn btn-neutral float-right" title="Debugging memory leaks in the IBEX GUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

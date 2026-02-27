@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Composite Driving Layer &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuration" href="Reflectometry-Configuration.html" />
+    <link rel="prev" title="Beamline Parameters" href="Reflectometry-Beamline-Parameters.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Config-Training.html">Reflectometry Config Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Reflectometry-IOC.html">Reflectometry</a></li>
+      <li class="breadcrumb-item active">Composite Driving Layer</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/Reflectometry-Composite-Driving-Layer.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="composite-driving-layer">
+<h1>Composite Driving Layer<a class="headerlink" href="#composite-driving-layer" title="Link to this heading"></a></h1>
+<p>The composite driving layer sets the PV values which will make the moves happen.</p>
+<p>The layer consists of drivers which take setpoint values from components and push these values into a PV wrapper, and conversely take readback values from the PV wrapper and push them into the components. It also handles moving multiple axes “synchronously”, which for the moment means concurrently i.e. speeds are set so axes finish moving roughly at the same time, but no continuous synchronization in real time.</p>
+<p><strong>For more information on implementation specifics see the Reflectometry Configuration page:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Reflectometry-Configuration.html#reflectometry-composite-drivers"><span class="std std-ref">Composite Drivers</span></a></p></li>
+<li><p><a class="reference internal" href="Reflectometry-Configuration.html#reflectometry-pv-wrappers"><span class="std std-ref">PV Wrappers</span></a></p></li>
+</ul>
+<section id="synchronisation">
+<h2>Synchronisation<a class="headerlink" href="#synchronisation" title="Link to this heading"></a></h2>
+<p>To enable synchronisation of axes, this layer:</p>
+<ul class="simple">
+<li><p>can report the minimum time taken for individual IOC driver to finish a move</p></li>
+<li><p>can be told to make a move in a given duration.</p></li>
+</ul>
+<p>When calculating the time for each axis to finish a move, the backlash distance and speed is taken into account to try to be accurate even if the backlash distance makes up a considerable part of the total move duration for the axis (<a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4541">ticket</a>). There are several limitations with the system:</p>
+<ul class="simple">
+<li><p>The acceleration time of the motors is not taken into account, so calculations will be slightly inaccurate</p></li>
+<li><p>When starting a move from within backlash range the speed cannot be controlled, so unless the backlash speed is very slow and is the limiting factor on the entire move, this motor will finish its move earlier than the others.</p></li>
+<li><p>In order to avoid stalling, each axis has a minimum velocity stored in the PVWrapper. An axis will not move slower than this, even if instructed to do so as part of a synchronised move, meaning it might reach its target quicker than intended. However we only expect this to happen in very specific cases for very small moves thus the difference should be negligible. The minimum velocity is set to:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">VBAS</span></code> of the underlying motor by default</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VMAX</span></code> / <code class="docutils literal notranslate"><span class="pre">min_velocity_scale_factor</span></code> if <code class="docutils literal notranslate"><span class="pre">VBAS</span> <span class="pre">&lt;=0</span></code>. <code class="docutils literal notranslate"><span class="pre">min_velocity_scale_factor</span></code> is an optional argument on the PVWrapper (defaults to 100)</p></li>
+</ul>
+</li>
+</ul>
+<p>The user can turn this off in the configuration file. In which case the time reported to finish a move is 0, and the axis’s speed is not changed on move.</p>
+<p>Synchronisation in the configuration files defaults to <code class="docutils literal notranslate"><span class="pre">true</span></code>, but can be set on a driver via the <code class="docutils literal notranslate"><span class="pre">synchronised</span></code> argument.</p>
+</section>
+<section id="reflectometry-parking-sequences">
+<h2>Out Of Beam Positions and Parking Sequences<a class="headerlink" href="#reflectometry-parking-sequences" title="Link to this heading"></a></h2>
+<p>Any IOC Driver can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be “Out Of Beam” via an <code class="docutils literal notranslate"><span class="pre">InBeamParameter</span></code>. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the y height of the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component’s movement axis, this is done to ensure that component does not block the beam while parked. It is also possible to have the park position as a position offset from the beam, e.g. for INTERs mirror/guides which when out of the beam must track the beam to remain guide. In addition to this the user can supply a parking sequence which will cause the instrument to park and unpark a component using the supplied positions.</p>
+<p>Out-of-beam positions are defined via the <code class="docutils literal notranslate"><span class="pre">OutOfBeamPosition</span></code> class. Example:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">park_high</span> <span class="o">=</span> <span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">park_low</span> <span class="o">=</span> <span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="n">position</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">IOCDriver</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">the_axis</span><span class="p">,</span> <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">park_high</span><span class="p">,</span> <span class="n">park_low</span><span class="p">])</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code>:  the position along the movement axis where this component should be parked. Any engineering correction will be applied implicitly to this value; if this is in offset mode this is the offset from the beam</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: if the interception between the beam path and the height axis is <em>greater than</em> <code class="docutils literal notranslate"><span class="pre">threshold</span></code>, this <code class="docutils literal notranslate"><span class="pre">position</span></code> should be chosen for parking. If this is <code class="docutils literal notranslate"><span class="pre">None</span></code>, this signifies that this is the <em>only</em>, or <em>default out-of-beam position</em>, i.e. the out-of-beam position to use if no other threshold is met. (defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tolerance</span></code>: the tolerance around <code class="docutils literal notranslate"><span class="pre">position</span></code> at which this component is still considered “out of beam” (defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_offset</span></code>: if <code class="docutils literal notranslate"><span class="pre">True</span></code> then the position acts as an offset from the beam and final motor set point (defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+</ul>
+<p>So moving <code class="docutils literal notranslate"><span class="pre">comp</span></code> out of the beam while the beam intersects the axis at a height below 15 will move it to <code class="docutils literal notranslate"><span class="pre">park_high</span></code> = 20. If it is moved out of beam  while the intersection is above 15 (let’s say for a high theta angle), it will instead move to <code class="docutils literal notranslate"><span class="pre">park_low</span></code> = -10, in order to not block the beam while parked.</p>
+<p>You can also use this short-hand for very simple, single out of beam positions (ie. no sequences or thresholds, you just want to move to -10 in this case as it’ll always be out of the beam):</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">driver</span> <span class="o">=</span> <span class="n">IOCDriver</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">the_axis</span><span class="p">,</span> <span class="n">out_of_beam_positions</span><span class="o">=-</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If no out-of-beam positions are defined for a driver, it is always considered as being “in beam”.</p>
+<p>Parking sequences are defined using <code class="docutils literal notranslate"><span class="pre">OutOfBeamSequence</span></code>. This has exactly the same parameters as out of beam except that the first argument is a list of values. The list of each parking sequence for a component, you can have one for each axis, must be the same length or not exist. You may have None’s at the start of the sequence to indicate that the component should not move from its current position. Example:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">driver</span> <span class="o">=</span> <span class="n">IOCDriver</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">HEIGHT</span><span class="p">,</span> <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamSequence</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)])</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">IOCDriver</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">PHI</span><span class="p">,</span> <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamSequence</span><span class="p">([</span><span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>This would mean that when this component parked the following happens:</p>
+<ol class="arabic simple">
+<li><p>Height set to 0 but phi would not move</p></li>
+<li><p>Height set to -10, phi set to 0</p></li>
+<li><p>Height set to -10 (no movement), phi set to -20</p></li>
+</ol>
+<p>Unparking would be this but in reverse.</p>
+</section>
+<section id="reflectometry-engineering-offset">
+<h2>Engineering Offset<a class="headerlink" href="#reflectometry-engineering-offset" title="Link to this heading"></a></h2>
+<p>Engineering offsets correct the value sent to a PV because of inaccuracies in the engineering. For instance, if we set theta to 0.3 we will be setting the height of the jaw so that the jaws centre is in the middle of the beam. However, because of needing to tilt the jaws and the centre of rotation not being in the middle of the jaws, we need to add a correction to the geometry of 0.1mm. The best place to do this is at the point at which the value is sent to the driver. The form of the corrections can multiple but we will start by catering for:</p>
+<ol class="arabic simple">
+<li><p>pure function based on the value and values of other components</p></li>
+<li><p>an interpolated table based on a set point</p></li>
+</ol>
+<p>Note that in this case, the zero motor position is no longer necessarily zero, while this does not affect the maths, users will probably want to ensure that in the straight-through case the motor is zero.</p>
+<p>The configuration for this is to add an engineering offset object to the IOCDriver. The engineering offset object will do the following:</p>
+<ol class="arabic simple">
+<li><p>Convert readbacks from the IOC PVWrapper to the uncorrected value</p></li>
+<li><p>Convert set-points from the component to the correct value that get sent to the PV</p></li>
+<li><p>On initialisation to convert PV to set-point value to be initialised</p>
+<ol class="arabic simple">
+<li><p>This is hard because to calculate the value you need a beamline parameter value which is not yet set because it is being calculated. To avoid this we introduce the constraint that engineering corrections may only be functions of an autosaved beamline parameter or the motor position/PV on which the driver is based.</p></li>
+</ol>
+</li>
+</ol>
+<section id="types-of-engineering-corrections">
+<h3>Types of Engineering Corrections<a class="headerlink" href="#types-of-engineering-corrections" title="Link to this heading"></a></h3>
+<section id="no-correction">
+<h4>No Correction<a class="headerlink" href="#no-correction" title="Link to this heading"></a></h4>
+<p>Doesn’t perform any correction. Is useful when you want to define a correction but have it do nothing.</p>
+</section>
+<section id="constant-correction">
+<h4>Constant Correction<a class="headerlink" href="#constant-correction" title="Link to this heading"></a></h4>
+<p>Add a constant on to the value, probably better to redefine zero on the axis. Add this into the configuration file to the driver:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">add_driver</span><span class="p">(</span><span class="n">AxisDriver</span><span class="p">(</span>
+    <span class="n">component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+    <span class="n">PVWrapper</span><span class="p">,</span> 
+    <span class="n">engineering_correction</span><span class="o">=</span><span class="n">ConstantCorrection</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>where value is the amount you want to add onto the axis when setting a set point.</p>
+</section>
+<section id="interpolated-data-correction">
+<h4>Interpolated Data Correction<a class="headerlink" href="#interpolated-data-correction" title="Link to this heading"></a></h4>
+<p>This will perform a correction based on a table loaded from disc. It will perform linear interpolation between the points in the datafile to derive the correction. Outside of the table of data no correction is set. To use this add to the configuration:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">theta_param_angle</span> <span class="o">=</span> <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;THETA&quot;</span><span class="p">,</span> <span class="n">theta_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">))</span>
+
+<span class="o">...</span>
+
+<span class="n">add_driver</span><span class="p">(</span><span class="n">AxisDriver</span><span class="p">(</span>
+    <span class="n">component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+    <span class="n">PVWrapper</span><span class="p">,</span> 
+    <span class="n">engineering_correction</span><span class="o">=</span><span class="n">InterpolateGridDataCorrection</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">theta_param_angle</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">theta_param_angle</span></code> is being used as the interpolation variable. The filename in the name of a file in the configuration directory (<code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\&lt;instrument&gt;\configurations\refl\</span></code>) which contains the points. The format is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">Theta</span><span class="p">,</span> <span class="n">correction</span>
+<span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.2</span>
+<span class="mf">1.01</span><span class="p">,</span> <span class="mf">3.4</span>
+<span class="o">...</span>
+<span class="mf">2.5</span><span class="p">,</span> <span class="mf">4.6</span>
+</pre></div>
+</div>
+<p>Where the header <code class="docutils literal notranslate"><span class="pre">Theta,</span> <span class="pre">correction</span></code> matches with the name of the beamline parameter (first argument in <code class="docutils literal notranslate"><span class="pre">XXXParameter</span></code>). If you want to use the value sent to the displacement driver instead use <code class="docutils literal notranslate"><span class="pre">DRIVER</span></code> in the header.</p>
+<p>If you want to do multi-dimension interpolation then your <code class="docutils literal notranslate"><span class="pre">InterpolateGridDataCorrection</span></code> object should have all beamline values in it that are needed, e.g.:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">InterpolateGridDataCorrection</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">theta_param_angle</span><span class="p">,</span> <span class="n">sm_angle_param</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>and the data file should have a similar header and data:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">Theta</span><span class="p">,</span> <span class="n">smangle</span><span class="p">,</span> <span class="n">correction</span>
+<span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span>
+<span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
+<span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span>
+<span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>The data points do not have to form a square.</p>
+<p>If we take the above example we mark these four points on a graph:</p>
+<p><img alt="4 points for a 2D example map" src="../../_images/Interpolated2DExample.png" /></p>
+<p>At point:</p>
+<ul class="simple">
+<li><p>A (0,0) = 8.25. Point is equidistant from all points so is the average of all points.</p></li>
+<li><p>B (10,0) = 15. Point is halfway between the two right-hand points so is average of right-hand points.</p></li>
+<li><p>C (12,3) =0. Point is outside of the area made by the points and so its correction is 0.</p></li>
+</ul>
+<p>The algorithm used is the linear version of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html">griddata from <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a>.</p>
+</section>
+<section id="user-function-engineering-correction">
+<h4>User Function Engineering Correction<a class="headerlink" href="#user-function-engineering-correction" title="Link to this heading"></a></h4>
+<p>To apply a user function engineering correction yo an axis we must first define the function in the configuration file. In this example case, we have a function which depends on a single beamline parameter, <code class="docutils literal notranslate"><span class="pre">theta</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_correction</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+   <span class="o">...</span>
+   <span class="k">return</span> <span class="n">calulated_offset</span>
+</pre></div>
+</div>
+<p>When called by the reflectometry IOC this function will be given:</p>
+<p>-<code class="docutils literal notranslate"><span class="pre">value</span></code> which is the position that would be sent to the axis if the correction was 0
+-<code class="docutils literal notranslate"><span class="pre">theta</span></code> which is the value of the first beamline parameter set in <code class="docutils literal notranslate"><span class="pre">UserFunctionCorrection</span></code></p>
+<p>If there are more beamline parameters set in <code class="docutils literal notranslate"><span class="pre">UserFunctionCorrection</span></code> these would be additional arguments. The function should return a correction which will be added onto the value before being sent to the PV.
+The next step is to add the engineering correction to the IOC driver. We show the definition of the theta beamline parameter to make it clear what the arguments are:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">theta_param_angle</span> <span class="o">=</span> <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">&quot;THETA&quot;</span><span class="p">,</span> <span class="n">theta_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">))</span>
+
+<span class="o">...</span>
+
+<span class="n">add_driver</span><span class="p">(</span><span class="n">AxisDriver</span><span class="p">(</span>
+    <span class="n">component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+    <span class="n">PVWrapper</span><span class="p">,</span> 
+    <span class="n">engineering_correction</span><span class="o">=</span><span class="n">UserFunctionCorrection</span><span class="p">(</span><span class="n">my_correction</span><span class="p">,</span> <span class="n">theta_param_angle</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">UserFunctionCorrection</span></code> takes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">user_correction_function</span></code>: reference to the function to use</p></li>
+<li><p>beamline parameters: 0 or more beamline parameters whose set point readback values should be passed to the <code class="docutils literal notranslate"><span class="pre">user_correction_function</span></code></p></li>
+</ul>
+</section>
+<section id="select-a-correction-base-on-a-mode">
+<h4>Select a Correction Base on a Mode<a class="headerlink" href="#select-a-correction-base-on-a-mode" title="Link to this heading"></a></h4>
+<p>This is an engineering correction which will select another correction based on the mode that the beamline is in.The correction is created with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ModeSelectCorrection(default_correction,</span> <span class="pre">corrections_for_mode)</span></code>
+where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">default_correction</span></code>: is an engineering correction which is used if there are no modes in the <code class="docutils literal notranslate"><span class="pre">corrections_for_mode</span></code> dictionary which match the current mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">corrections_for_mode</span></code>: is a dictionary of the mode name against the correction that should be used for that mode</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">add_driver</span><span class="p">(</span><span class="n">AxisDriver</span><span class="p">(</span> <span class="n">component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">PVWrapper</span><span class="p">,</span> 
+    <span class="n">engineering_correction</span><span class="o">=</span><span class="n">ModeSelectCorrection</span><span class="p">(</span><span class="n">ConstantCorrection</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">{</span><span class="s2">&quot;NR&quot;</span><span class="p">:</span> <span class="n">UserFunctionCorrection</span><span class="p">(</span><span class="n">my_correction</span><span class="p">),</span> <span class="s2">&quot;PA&quot;</span><span class="p">:</span> <span class="n">ConstantCorrection</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">)}))</span>
+</pre></div>
+</div>
+<p>Here the correction will be by a user function in <code class="docutils literal notranslate"><span class="pre">NR</span></code> mode, by a constant of -0.2 in <code class="docutils literal notranslate"><span class="pre">PA</span></code> mode and a correction of 1 in any other mode.</p>
+<p>There is also a <a class="reference internal" href="Reflectometry-Configuration.html#reflectometry-as-mode-correction"><span class="std std-ref">helper method</span></a> for easily creating mode specific constant corrections.</p>
+</section>
+<section id="user-specified">
+<h4>User Specified<a class="headerlink" href="#user-specified" title="Link to this heading"></a></h4>
+<p>If you wish to write your own <code class="docutils literal notranslate"><span class="pre">engineering_correction</span></code> you must:</p>
+<ol class="arabic simple">
+<li><p><strong>either</strong> inherit from <code class="docutils literal notranslate"><span class="pre">SymmetricEngineeringCorrection</span></code>: this used when the same correction is added when setting a value on an axis as is subtracted when getting a value from an axis. To set the correction override <code class="docutils literal notranslate"><span class="pre">correction(self,</span> <span class="pre">setpoint)</span></code> which returns the correction to add/subtract based on the setpoint.</p></li>
+<li><p><strong>or</strong> inherit from <code class="docutils literal notranslate"><span class="pre">EngineeringCorrection</span></code>: this allows different correction to be used when setting and getting value to and from the axis. The following must be overridden:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">to_axis(self,</span> <span class="pre">setpoint)</span></code>: given a setpoint return the correct value to send to the axis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from_axis(self,</span> <span class="pre">value,</span> <span class="pre">setpoint)</span></code>: given the <code class="docutils literal notranslate"><span class="pre">value</span></code> read from the axis and <code class="docutils literal notranslate"><span class="pre">setpoint</span></code> for the axis return the <code class="docutils literal notranslate"><span class="pre">value</span></code> without the correction</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reflectometry-Beamline-Parameters.html" class="btn btn-neutral float-left" title="Beamline Parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reflectometry-Configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Feb 27, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
