@@ -1,7 +1,7 @@
 # PR Electronics PRE4500
 
 ``` {note}
-The IOC and repository are named PRE4500, athough the actual device IBEX communicates with is a "PRE4511 MODBUS communication enabler", using MODBUS RTU (**R**emote **T**erminal **U**nit) over RS-485.  (Manual in usual network shared directory).
+The IOC and repository are named PRE4500, although the actual device IBEX communicates with is a "PRE4511 MODBUS communication enabler", using MODBUS RTU (**R**emote **T**erminal **U**nit) over RS-485.  (Manual in usual network shared directory).
 ```
 
 ## Background
