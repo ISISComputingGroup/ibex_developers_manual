@@ -1,4 +1,4 @@
-# Sample environment forwarding
+# Data streaming: Sample environment forwarding
 
 All IBEX instruments are currently forwarding their sample environment PVs into Kafka. This is done in two parts:
 
