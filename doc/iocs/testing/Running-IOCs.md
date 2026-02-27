@@ -48,7 +48,7 @@ e.g.
     EGXCOLIM_01__RECSIM=1
 
 :::{caution}
-Inline comments are not possible within `globals.txt`, so should be on a new line. If added inline they may be read as part of the configuration value.*
+Inline comments are not possible within `globals.txt`, so should be on a new line. If added inline they may be read as part of the configuration value.
 :::
 
 ## Reading a Compressed Hex PV
