@@ -1,7 +1,7 @@
 # PR Electronics PRE4500
 
 ``` {note}
-The IOC and repository are named PRE4500, although the actual device IBEX communicates with is a "PRE4511 MODBUS communication enabler", using MODBUS RTU (**R**emote **T**erminal **U**nit) over RS-485.  (Manual in usual network shared directory).
+The IOC and repository are named PRE4500, although the actual device IBEX communicates with is a "PRE4511 MODBUS communication enabler", using MODBUS RTU (Remote Terminal Unit) over RS-485.  (Manual in usual network shared directory).
 ```
 
 ## Background
@@ -22,7 +22,7 @@ As the device communicates via RS-485 (**not** RS-232 as the vast majority of de
 
 Both the PRE4511 and MOXA NPort use RJ45 (aka 8P8C) device sockets (PRE4511 brought out to rear of chassis).  It is therefore simpler to create a bespoke cable to connect them.
 
-#### Pinouts for communications cable using an RJ45 (aka 8P8C) plug at each end:
+#### Pin-outs for communications cable using an RJ45 (aka 8P8C) plug at each end:
 
 ``` {tip}
 The following diagram shows the pin numbering while looking **end-on** to the plug with the cable going **away** from the viewer ('barb' underneath):
@@ -41,7 +41,7 @@ Discarded CAT5 patch cables were used to make up the new ones by cutting off the
 
 After making the cable, it should be tested using the "Kolsol Tester" (aka "*Excellent Helper*") in 'RJ45 Mapping' mode.  If all is well, the pin-to-pin mapping should look like the screenshot below:
 
-![PRE4500_Cable_Pinout](PRE4500_Pinout_-_Cable_Tester_screenshot.jpg)
+![PRE4500_Cable_Pin-out](PRE4500_Pinout_-_Cable_Tester_screenshot.jpg)
 
 In this case, the MOXA NPort end of the cable was connected to the Remote unit (`R` in the screenshot) and the PRE4500 end to the main unit (`M` in the screenshot).
 

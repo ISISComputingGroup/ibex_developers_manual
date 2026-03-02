@@ -434,6 +434,7 @@ Kirkham
 Klixon
 kN
 Knauer
+Kolsol
 Kotlin
 kwargs
 LabVIEW
