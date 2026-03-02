@@ -37,7 +37,7 @@ The following diagram shows the pin numbering while looking **end-on** to the pl
 |     5      |    4    | Blue       |
 |     6      |    5    | Blue/White |
 
-Discarded CAT5 patch cables were used to make up the new ones by cutting off the broken plugs and crimping on replacements (ExptCtrls Group has appropriate equipment).  Arbitrary colour internal conductors were chosen for the three signals (see table above).
+Discarded CAT5 patch cables were used to make up the new ones by cutting off the broken plugs and crimping on replacements (the Experiment Controls Group has appropriate equipment).  Arbitrary colour internal conductors were chosen for the three signals (see table above).
 
 After making the cable, it should be tested using the "Kolsol Tester" (aka "*Excellent Helper*") in 'RJ45 Mapping' mode.  If all is well, the pin-to-pin mapping should look like the screenshot below:
 
