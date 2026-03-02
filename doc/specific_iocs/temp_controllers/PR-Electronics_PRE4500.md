@@ -12,6 +12,24 @@ A single module per temperature/channel is used (four currently).  See below for
 
 ![PR4511_Modules_on_SANDALS](PRE4500_Installed_Modules.jpg)
 
+### Addresses and purposes of modules
+
+MERLIN:
+| Module | Purpose | Address |
+| ------ | -------- | ------ |
+| T1 | Not Used | 1 |
+| T2 | Body | 2 |
+| T3 | Ambient | 3 |
+| T4 | Water | 4 |
+
+SANDALS:
+| Module | Purpose | Address |
+| ------ | -------- | ------ |
+| T1 | Disc C1D1 | 1 |
+| T2 | Disc C1D2 | 2 |
+| T3 | Body | 3 |
+| T4 | Ambient | 4 |
+
 ## Connection to control system
 
 The device requires a MOXA NPort capable of RS-485 communication, e.g. an NPort 5650-16.  The serial settings for the appropriate port need to be set to `RS-485 2-Wire` via the web configuration interface.
