@@ -20,6 +20,8 @@ key and the (encrypted with passphrase) private key to `~/.ssh/` in your WSL ins
 
 ### Disabling host-key checking for Ansible
 
+To avoid ansible asking for host-key verification for each machine it connects to, you can disable the SSH host-key check prompt.
+
 You can use either:
 ```bash
 export ANSIBLE_HOST_KEY_CHECKING=False
