@@ -1,23 +1,24 @@
 # Setting up WSL (Windows Subsystem for Linux)
 
 As a developer you will often need to run applications on Linux rather than Windows. You can do this on your
-developer machine using WSL (Windows subsystem for Linux)
+developer machine using WSL (Windows subsystem for Linux).
 
 ## Installation
 
 Follow the [official guide](https://learn.microsoft.com/en-us/windows/wsl/install) to install WSL. An `Ubuntu`
-distribution is recommended.
+distribution is recommended so that Ubuntu-specific commands documented on the wiki can be used, though if
+you are more comfortable with another distribution you are free to use it.
 
 ## Mounting WSL filesystem from windows
 
 The WSL filesystem can be accessed using `\\wsl$\` on your native Windows machine.
 
-## SSH key
+## SSH
 
 After you have {external+sysadmin:doc}`generated an SSH key <services/SSH-keys>`, you may copy both the public
 key and the (encrypted with passphrase) private key to `~/.ssh/` in your WSL instance.
 
-## Disabling host-key checking for Ansible
+### Disabling host-key checking for Ansible
 
 You can use either:
 ```bash
