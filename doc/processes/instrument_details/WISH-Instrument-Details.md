@@ -1,5 +1,8 @@
 # WISH
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on WISH.
 ## Background & Timeline ##
 WISH is a long-wavelength diffractometer, on TS2. The [WISH](https://www.isis.stfc.ac.uk/Pages/WISH.aspx) web page describes the background to the instrument.

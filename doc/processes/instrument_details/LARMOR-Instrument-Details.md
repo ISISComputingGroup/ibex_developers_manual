@@ -1,5 +1,8 @@
 # LARMOR
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the new control system on LARMOR.
 
 ## Background & Timeline ##

@@ -29,7 +29,7 @@ overview/Links-and-Resources
 - [General IOC information](IOCs): Everything you could possibly want to know about IOCs in general, creation and conventions
 - [Specific Device IOC](Specific-IOCs): Detailed information about specific IOCs & scientific hardware
 - [Project Tools](Tools): Developer-facing tools which have proven useful for the project
-- [System Administration & Hardware](/Systems): All about the physical & virtual computers on which IBEX runs
+- {external+sysadmin:doc}`System Administration & Hardware <index>`: All about the physical & virtual computers on which IBEX runs
 
 ## Documentation & Processes
 

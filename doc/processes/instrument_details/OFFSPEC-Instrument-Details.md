@@ -1,5 +1,8 @@
 # OFFSPEC
 
+```{include} migration_notes_warning.mdinc
+```
+
 ## Background & Timeline ##
 OFFSPEC is an advanced reflectometer instrument at ISIS, on TS2. The [OFFSPEC](https://www.isis.stfc.ac.uk/Pages/OFFSPEC.aspx) web page describes the background to the instrument.
 

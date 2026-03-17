@@ -1,5 +1,8 @@
 # HIFI-CRYOMAG
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page contains information pertinent to the conversion of the HIFI_CRYOMAG control system from LabVIEW to EPICS.
 
 ## Background & Timeline ##

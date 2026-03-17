@@ -1,5 +1,8 @@
 # IMAT
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the new control system on IMAT.
 ## Background & Timeline ##
 The [IMAT](http://www.isis.stfc.ac.uk/instruments/imat/imat8259.html) web page describes the background to the instrument.  Additional material is also available on the [IMAT sharepoint](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FIMAT&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3).

@@ -223,3 +223,5 @@ AVOID combining strings with '\\', '\\\\' or '/'
 For new repos containing python you should add the following [workflow](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/.github/workflows/linters.yml) to ensure standards compliance.
 
 An example of how to call this workflow is [here](https://github.com/ISISComputingGroup/EPICS-inst_servers/blob/master/.github/workflows/linter.yml), you may need to adjust `master` vs `main` depending on which branch your repository uses as it's primary branch (should be `main` for new repos usually).
+
+For more information see {ref}`reusable_workflows`.

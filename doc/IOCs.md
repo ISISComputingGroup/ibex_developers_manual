@@ -80,7 +80,6 @@ If you're not creating a StreamDevice IOC or you would like to know how an IOC c
 * [IOC Testing framework](iocs/testing/IOC-Testing-Framework)
 * [Complexity of LabVIEW Drivers](system_components/labview/Complexity-of-LabVIEW-Drivers)
 * [Typical start up log for an ioc](iocs/troubleshooting/IOC-Start-Example)
-* [Some Design thoughts for a serial/Ethernet IOC](iocs/tips_tricks/Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
 * [Reducing build dependencies for older iocs](iocs/compiling/Reducing-Build-Dependencies)
 * [Template Substitutions](iocs/tools/Template-Substitutions)
 * [Creating a State Machine](iocs/tools/Creating-a-State-Machine-(Sequencer))

@@ -1,5 +1,8 @@
 # MUONFE
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page contains information pertinent to the automation of the Muon Front End Beamline Control at ISIS.
 
 ## Background & Timeline ##

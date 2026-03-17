@@ -1,5 +1,8 @@
 # SANS2D
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on SANS2D.
 ## Background & Timeline ##
 SANS2D is a Time-of-Flight Small-Angle Neutron Scattering instrument, on TS2. The [SANS2D](https://www.isis.stfc.ac.uk/Pages/SANS2D.aspx) web page describes the background to the instrument.  Information about the [construction of SANS2D](https://stfc365.sharepoint.com/sites/ISISProjects-Archive/TS2%20Construction/Forms/AllItems.aspx?FolderCTID=0x012000B3C16B2D4C3C4D48AAFC5C89840FE109&id=%2Fsites%2FISISProjects%2DArchive%2FTS2%20Construction%2FInstruments%20%28WBS%208%2E0%29%2FSANS2D), which is useful background for understanding the operation of the instrument, is also available.

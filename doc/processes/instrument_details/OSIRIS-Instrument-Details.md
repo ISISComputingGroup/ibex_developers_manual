@@ -1,5 +1,8 @@
 # OSIRIS
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the new control system on OSIRIS.
 ## Background & Timeline ##
 OSIRIS is a long established instrument at ISIS, on TS1. The [OSIRIS](https://www.isis.stfc.ac.uk/Pages/osiris.aspx) web page describes the background to the instrument.  A schematic layout of OSIRIS is shown in ​[this diagram](https://www.isis.stfc.ac.uk/Gallery/OSIRIS_3D_BW_Labelled.JPG).<br>

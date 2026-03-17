@@ -58,6 +58,7 @@ autosaved
 autosaving
 autostart
 autotune
+Avro
 backend
 Baldor
 Baratron
@@ -89,6 +90,7 @@ booleans
 bootable
 bottlenecking
 breakpoint
+brokerless
 bruteforce
 bumpstrip
 burndown
@@ -161,6 +163,8 @@ Culham
 customisable
 cxx
 Cybaman
+cyber
+cybersecurity
 cygwin
 DAC
 DAE
@@ -192,6 +196,7 @@ deadbands
 deadman
 deenergise
 dehex
+dependabot
 deprioritise
 dereferenced
 deserialise
@@ -278,6 +283,7 @@ galilmul
 galils
 Galvano
 Gamry
+gaussmeters
 gazcell
 gb
 GC'd
@@ -291,6 +297,7 @@ Gibbins
 GigE
 github
 gitlab
+gitops
 globals
 gollum
 gonio
@@ -348,6 +355,7 @@ idn
 ie
 IFR
 ilm
+iLM200
 ImageJ
 ini
 inits
@@ -368,6 +376,7 @@ iocs
 iocsh
 ioLogik
 ip
+iPS
 IPv
 ipython
 ish
@@ -415,6 +424,7 @@ junit
 jvisualvm
 Jython
 Jülich
+Kafka
 Kammrath
 Kanban
 kbaud
@@ -429,7 +439,9 @@ Kirkham
 Klixon
 kN
 Knauer
+Kolsol
 Kotlin
+Kubernetes
 kwargs
 LabVIEW
 Lakeshore
@@ -457,15 +469,18 @@ longin
 longout
 lookups
 loopback
+lossy
 lowlimit
 lowT
 LSi
 lua
 luacheck
 luarocks
+Lumacam
 lvdcom
 lvDCOM
 lvDCOMConfigure
+Lynx
 Löhnert
 mA
 machinename
@@ -503,6 +518,7 @@ middleware
 Mihai
 minidump
 mins
+Mirion
 misconfigured
 mitigations
 mK
@@ -524,6 +540,7 @@ moxas
 MPa
 msc
 msg
+msgpack
 msi
 MSLITS
 msm
@@ -630,6 +647,7 @@ PLCs
 plt
 PNG
 png
+podman
 polarisers
 polref
 postfixed
@@ -658,6 +676,7 @@ procserver
 profiler
 programmatically
 proto
+protobuffers
 pseudocode
 psu
 pugixml
@@ -687,6 +706,7 @@ pywin
 quickstream
 RAL
 Raman
+rastering
 RBox
 rbv
 rc
@@ -871,6 +891,7 @@ ua
 uA
 uamps
 UC
+UDP
 UI
 ui
 uk
@@ -882,7 +903,9 @@ uncheck
 unclamped
 uncomment
 uncommented
+underivable
 unintuitive
+unmerged
 uno
 unpadded
 unpark
@@ -915,6 +938,7 @@ vhds
 vhdx
 viewmodel
 virtualbox
+virtualised
 vis
 Viscotherm
 vm

@@ -29,12 +29,12 @@
 - {external+ibex_user_manual:doc}`IBEX user manual <index>`
 - [IBEX Project Board for Issues](https://github.com/ISISComputingGroup/IBEX/projects/1)
 - [Stream Protocol Page](http://epics.web.psi.ch/software/streamdevice/doc/)
-- [genie_python reference](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html)
+- {external+genie_python:doc}`genie_python reference <genie_python>`
 - [nagios](https://varanus.nd.rl.ac.uk/nagios/)
 - [EPICS WIKI](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14)
 - [Current program version, servers and settings](http://beamlog.nd.rl.ac.uk/inst_summary.xml)
-- [Instrument Overview page](http://dataweb.isis.rl.ac.uk/ibexdataweb/overview/ibexoverview.html)
-- [Instrument Dashboards](http://dataweb.isis.rl.ac.uk/Dashboards/default.htm)
+- [Instrument Wall display](https://isiscomputinggroup.github.io/WebDashboard/wall)
+- [Instrument Dashboards](https://isiscomputinggroup.github.io/WebDashboard/instruments)
 
 {#all_troubleshooting_links}
 ## Troubleshooting
@@ -53,7 +53,6 @@ A non-exhaustive collection of troubleshooting pages.
 * [Database](/system_components/mysql/Database-Troubleshooting)
 * [Web Dashboard](#webdashboard_troubleshooting)
 * [genie_python](/scripting/genie_python/genie_python-Troubleshooting)
-* [Computer](/systems/inst_control/Computer-Troubleshooting) (e.g. the NDX)
-* [ICAT and TopCAT](/systems/external/ICAT-Troubleshooting)
+* {external+sysadmin:doc}`index`
 * [Mini-inst](/system_components/startup/Mini-inst-Troubleshooting)
 * [Where are the log files](/iocs/troubleshooting/Log-file-location)

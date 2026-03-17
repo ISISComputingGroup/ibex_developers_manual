@@ -1,5 +1,8 @@
 # DETMON
 
+```{include} migration_notes_warning.mdinc
+```
+
 ## Background & Timeline ##
 DETMON is a support system for use by the detector teams to monitor and view the status of the HV (High Voltage) crates that are in use across ISIS.
 A pilot system should be created before Cycle 2019-01, the final system does not at present have a dead line.

@@ -11,6 +11,23 @@ The software struggles to find the correlator's IP address on our network. Inste
 
 In this file, change the default setting of the correlator's IP address to the actual device IP then reboot the software.
 
+The correlator name on the network is `LSI-Correlator-01cb39c4` - prefer connecting by name over IP address, as the device has historically changed MAC address for unknown reasons.
+
+:::{important}
+The device is _very_ fiddly in terms of connection.
+
+Currently, the best procedure to _reliably_ reconnect to the device is to:
+- Switch off the IOC
+- Switch off the box
+- Wait 10 seconds
+- Switch on the box
+- Wait 60 seconds
+- Switch on the IOC
+- Wait a while for the IOC to fully start up
+
+This situation will hopefully be improved by [ticket 8741](https://github.com/isisComputingGroup/ibex/issues/8741).
+:::
+
 ## The Vendor Python API
 
 The python 'API' is little more than a reference implementation of a websocket client. It is installed with the vendor software. This code has been placed in a private repository as we have not got permission from LSI to publicly distribute it.

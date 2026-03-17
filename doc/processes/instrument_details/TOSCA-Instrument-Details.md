@@ -1,5 +1,8 @@
 # TOSCA
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on TOSCA.
 ## Background & Timeline ##
 TOSCA is an indirect geometry spectrometer, on TS1. The [TOSCA](https://www.isis.stfc.ac.uk/Pages/TOSCA.aspx) web page describes the background to the instrument.

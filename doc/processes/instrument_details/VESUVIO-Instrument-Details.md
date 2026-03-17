@@ -1,5 +1,8 @@
 # VESUVIO
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the new control system on VESUVIO.
 ## Background & Timeline ##
 VESUVIO (previously known as EVS) is a long established instrument at ISIS, on TS1. The [VESUVIO](http://www.isis.stfc.ac.uk/instruments/vesuvio/) web page describes the background to the instrument.  An image of VESUVIO is shown in ​[this diagram](http://www.isis.stfc.ac.uk/instruments/vesuvio/vesuvio-configuration6163.jpg).<br>

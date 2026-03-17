@@ -1,5 +1,8 @@
 # ENGIN-X
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on ENGIN-X.
 ## Background & Timeline ##
 ENGIN-X is a long established instrument at ISIS, on TS1. The [ENGIN-X](http://www.isis.stfc.ac.uk/instruments/engin-x/engin-x2900.html) web page describes the background to the instrument.  ENGIN-X is dedicated to engineering science experiments. It is optimized for the measurement of strain, and thus stress, deep within crystalline materials.

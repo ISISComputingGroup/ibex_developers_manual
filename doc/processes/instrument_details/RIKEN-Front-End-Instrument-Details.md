@@ -1,5 +1,8 @@
 # RIKENFE
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page contains information pertinent to the automation of the RIKEN Front End Beamline Control at ISIS.
 
 ## Background ##

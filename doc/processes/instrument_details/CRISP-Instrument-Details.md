@@ -1,5 +1,8 @@
 # CRISP
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on CRISP.
 ## Background & Timeline ##
 CRISP is a reflectometer instrument at ISIS, on TS1. The [CRISP](https://www.isis.stfc.ac.uk/Pages/CRISP.aspx) web page describes the background to the instrument.

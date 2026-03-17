@@ -96,3 +96,7 @@ Cause is currently unknown.
 ### Communications sometimes randomly fail
 
 Cause is currently unknown.
+
+### Cannot configure large number of cycles on waveform generator
+
+The (hardware) limit on the number of cycles that the rig will accept is `2^29`.

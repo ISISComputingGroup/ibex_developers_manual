@@ -1,5 +1,8 @@
 # LET
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on LET.
 
 ## Background & Timeline ##

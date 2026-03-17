@@ -19,13 +19,11 @@ See  [Install Visual Studio](/iocs/compiling/Install-Visual-Studio)
 {#first_time_install_java}
 ## Install Java JDK
 
-Install **OpenJDK 21 hotspot** from https://adoptium.net/?variant=openjdk21&jvmVariant=hotspot (the MSI installer is fine, tick all the boxes when it asks you which components to install)
+Install the **OpenJDK 25 hotspot** binary zip from https://adoptium.net and extract to `\instrument\apps\JDK\25`
 
 ```{important}
 **Do not install an Oracle JDK**. It has an unsuitable license.
 ```
-
-You may wish to install some optional java components [as detailed here](#developer_upgrade_java).
 
 {#first_time_install_maven}
 ## Install Maven 
@@ -183,10 +181,10 @@ The developer branch has been created to store useful configurations that may be
 
 ## Installing technique scripts
 Some sets of instruments use shared scripts based on the techniques they employ, so installing these scripts would be helpful. Note that these are stored in a repo in an organisation that includes more of the scientists than our typical organisation.
-If the `C:\Instrument\Settings\scripts` directory already exists, cd into it and do a `git pull` on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
+If the `C:\Instrument\Scripts` directory already exists, cd into it and do a `git pull` on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
 
 ```
-git clone https://github.com/ISISNeutronMuon/InstrumentScripts.git C:/Instrument/Settings/scripts
+git clone https://github.com/ISISNeutronMuon/InstrumentScripts.git C:/Instrument/Scripts
 ```
 
 ## Setting up a calibrations directory
@@ -288,4 +286,4 @@ Download and install latest stable version from https://wixtoolset.org/docs/wix3
 ### Add your SSH key to the `keys` repository
 
 Adding an SSH key to the [keys repository](https://github.com/isiscomputinggroup/keys) can be used to give
-passwordless access to instrument machines. Follow the instructions [here](/tools/SSH-keys).
+passwordless access to instrument machines. Follow the instructions {external+sysadmin:doc}`services/SSH-keys`.

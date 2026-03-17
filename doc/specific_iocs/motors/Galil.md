@@ -106,6 +106,8 @@ By default, the Galil IOC will stop all running threads when it restarts. If you
 ### Assigning IP addresses
 
 The IP address of a Galil can only be established using a serial connection. This must be set up.
+
+As a convention, we use `192.168.1.2XX` where `XX` is the respective number of the Galil crate - ie. `192.168.1.201` for the first crate. 
   
 For a Galil DMC 2280, there are no problems
 1) Enter the command IA n1,n2,n3,n4 e.g. IA 192,168,1,201
@@ -171,6 +173,23 @@ engaged, or that an external system has disabled motion (safety systems commonly
 If it is a soft limit, these are set in IBEX. For axes where the [motor and encoder resync](#galil_mot_enc_sync),
 the internal limits in the galil should match closely with the limits set in IBEX. However, if the motor-encoder resync
 tolerance is set very high, it is possible for the internal galil limits to differ from those configured in IBEX.
+
+### Checking historic Galil parameters
+
+It may be useful to check when a Galil parameter was changed. The easiest way to do this is via the `autosave`
+directory, which keeps historic files.
+
+For example, if you were interested in the setting `MENCTYPE_CMD` on motor `0403`, the following command
+could be used:
+```
+cd /c/Instrument/var/autosave/GALIL_04
+grep -rF "0403_MENCTYPE_CMD"
+```
+
+This will list all autosave files that refer to this setting, along with the value it had at that time.
+
+For more fine-grained information, the ICP put log files (`*_ICPputlog.txt` - on the archive, or in `c:\data\Export only`) can equally
+be searched, using a similar command, to find exactly when a setting was changed.
 
 ## Further Information
 

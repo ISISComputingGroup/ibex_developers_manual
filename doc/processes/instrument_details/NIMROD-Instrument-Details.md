@@ -1,5 +1,8 @@
 # NIMROD
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on NIMROD.
 ## Background & Timeline ##
 NIMROD is a diffractometer instrument at ISIS, on TS2. The [NIMROD](https://www.isis.stfc.ac.uk/Pages/NIMROD.aspx) web page describes the background to the instrument.

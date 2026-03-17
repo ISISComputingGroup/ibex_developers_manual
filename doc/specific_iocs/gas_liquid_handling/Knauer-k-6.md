@@ -1,5 +1,10 @@
 # Knauer K-6
 
+:::{seealso}
+{doc}`Knauer-Valve-Unifier` is an updated version of this device, which only has LAN ports, not
+a serial port, but otherwise has identical functionality.
+:::
+
 ## Documentation
 
 Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experiment_Controls\Manuals\Knauer K-6 Valve Drive`

@@ -135,7 +135,7 @@ A service that controls access between two or more networks.
 
 ## Genie Python
 
-An implementation of the [OpenGenie](http://www.opengenie.org) scripting language in Python, or at least its commands specific to instrument control.  Documentation [here](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html).
+An implementation of the [OpenGenie](http://www.opengenie.org) scripting language in Python, or at least its commands specific to instrument control.  Documentation at {external+genie_python:doc}`genie_python`.
 
 ## GIT
 
@@ -169,7 +169,7 @@ Archives [PV](#pv) values using the [CSS Archive Engine](#archive-engine) which 
 
 ## Journal Viewer
 
-Journal viewer is an overloaded term. There are two, one as [part of the ibex GUI](/system_components/Journal-Viewer) and the other is a standalone application supported by the instrument scientists, we only provide data for this.
+Journal viewer is an overloaded term. There are two, one as [part of the ibex GUI](/system_components/Journal-Viewer) and the other is a standalone application supported by the instrument scientists, we only provide data for this (at `http://journals.isis.cclrc.ac.uk/jv/`).
 
 ## Journal Parser
 
@@ -233,7 +233,11 @@ The version of [IBEX](#ibex) to be deployed.
 
 ## SECI
 
-**Sample Environment Control Interface. An old instrument control system, used before IBEX. No longer in use on any instruments. Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.
+**Sample Environment Control Interface**. An old instrument control system, used before IBEX. No longer in use on any instruments. Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.
+
+## SECoP
+
+**Sample Environment Communication Protocol**. See {external+secop:doc}`SECoP docs <index>` for details.
 
 ## Sequencer
 

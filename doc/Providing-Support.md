@@ -97,9 +97,12 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
       - out of hours, if in cycle then in zoom phone call "ISIS IT Infrastructure on-call" (phone number 94499)
     - If attempting to connect to EMMA, remember the -A
   1. Unable to connect to NDX via RDP
-    - Try yourself to RDP, if you can ask reporter to try again, if they can't it is a connectivity issue for the system they are using to site, in hours refer them to the service desk, out of hours this is best efforts. Check the ISIS Computing O365 SharePoint for more information.
+    - This is no longer an option, please use VNC
+    - If they don't know the password, check that they are an instrument scientist with appropriate access to the information required. If they are not an instrument scientist ask them to contact their local contact to resolve this. If they are, add them to the appropriate group if they are the local contact for this experiment
+  1. Unable to connect to NDX via VNC
     - Check ping to the NDX, and to the NDH
-      - If there are any issues with these pings, you can check DRAC. [Basic DRAC information here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/SitePages/Getting%20to%20Instrument%20DRACs.aspx) and instrument [DRAC IDs here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/Lists/Instrument%20Control%20Computers/AllItems.aspx).
+      - If there are any issues with these pings, you can check DRAC. Basic DRAC information is in the {external+sysadmin:doc}`systems administration manual <systems/NDH>`.
+      - If you are restarting via the DRAC, using `power cycle system (cold reboot)` should bring the system back
   1. Wrong password entered too many times on anything other than NDX
     - We can't resolve this
 </details>
@@ -170,7 +173,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
 
   1. There are a few things that have services which run, especially the databases, and it is possible after a crash/other restart that these don't start up again, starting task manager as an administrator should allow you to start the service in question
   1. If it is not one of our services (e.g. swipe systems, ERA), we cannot resolve the issue, escalate as appropriate (TODO: Make sure the different escalation methods are documented)
-  1. If the MCR news service isn't working, then so long as there is space, restarting our [webserver](/systems/Webserver) may help.
+  1. If the MCR news service isn't working, then so long as there is space, restarting our {external+sysadmin:doc}`systems/Webserver` may help.
   
 </details>
 

@@ -47,3 +47,9 @@ A requirement of this IOC is to maintain as consistent a time as possible betwee
 `TAKEDATA` is processed at regular intervals by the sequencer which is running in the `ZFCNTRL_01` ioc.
 
 ![](magnetometer_daq.png)
+
+## Setup 
+
+The magnetometer for the zero field systems uses an NI cDAQ and is configured on the NDX by `NI MAX` which should be in the start menu. 
+It's a network device so to find it on an instrument go to `My System -> Devices and Interfaces -> Network Devices` 
+Devices here use a baton system and need "reserving" - to do this right click on the device and reserve it. You may need to hit "self-test" and/or unreserve then re-reserve if this fails to reserve or communicate. 

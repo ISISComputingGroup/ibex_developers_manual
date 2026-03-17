@@ -1,5 +1,8 @@
 # ZOOM
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the new control system on ZOOM.
 ## Background & Timeline ##
 The [ZOOM](http://www.isis.stfc.ac.uk/instruments/zoom/zoom8060.html) web page describes the background to the instrument. Additional material is also available on the [ZOOM sharepoint](https://stfc365.sharepoint.com/sites/ISISProjects-1015/ZOOM/Forms/AllItems.aspx).  ZOOM is expected to have 36 motion axes.
