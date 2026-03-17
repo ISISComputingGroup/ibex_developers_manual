@@ -297,6 +297,7 @@ Gibbins
 GigE
 github
 gitlab
+gitops
 globals
 gollum
 gonio
@@ -440,6 +441,7 @@ kN
 Knauer
 Kolsol
 Kotlin
+Kubernetes
 kwargs
 LabVIEW
 Lakeshore
