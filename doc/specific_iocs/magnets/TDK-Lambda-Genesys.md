@@ -10,6 +10,8 @@ The connection on the back of the device is an RJ45. However, the device does no
 
 Note that there is a spare 25 way connector in the office (if you use it please replace it!). I couldn't get it working with a 9 way. 
 
+Note: 9 way conenctor digram is incorrect - pin 7 is ground on 25 way, but it is pin 5 on a DB9 for ground, so it may work if DB9 pin 5 was mapped instead of pin 7
+
 ## Macros
 
 As well as the typical communication macros such as `BAUD`. `BITS`, `PARITY` etc, there are a number of specialist macros for each power supply in this IOC:
