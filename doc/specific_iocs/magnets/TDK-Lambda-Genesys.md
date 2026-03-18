@@ -6,11 +6,6 @@ These power supplies can be daisy-chained in groups of up to 10 power supplies s
 
 ## Physical Connection
 The connection on the back of the device is an RJ45. However, the device does not communicate through ethernet as this would imply but instead requires a serial adapter to convert it into a 9 pin D type connector that we can then plug the MOXA into. We can make our own adapter using the push-pin adapters (currently in the chalk pits) using the following configuration:
-![TDK wiring](tdk_wiring.jpg)
-
-Note that there is a spare 25 way connector in the office (if you use it please replace it!). I couldn't get it working with a 9 way. 
-
-Note: 9 way connector diagram is incorrect - pin 7 is Ground on 25 way connector, but it is pin 5 on a DB9 for ground, so it may work if DB9 pin 5 was mapped instead of DB9 pin 7
 
 from TDK Manual (note: TDK manual pinout for the 8 pin connector side is reverse of RJ45, they are correct for RJ45 below where looking into the RJ45 socket with the connectors at the top pin 1 is on the left) 
 
@@ -29,6 +24,8 @@ from TDK Manual (note: TDK manual pinout for the 8 pin connector side is reverse
 | 5 | GND | 8 | GND | White |
 
 Wiring is Lambda -> Cat 5 -> adapter -> moxa cable -> Moxa
+
+Note that there is a spare 25 way connector in the office (if you use it please replace it!). 
 
 ## Macros
 
