@@ -10,7 +10,24 @@ The connection on the back of the device is an RJ45. However, the device does no
 
 Note that there is a spare 25 way connector in the office (if you use it please replace it!). I couldn't get it working with a 9 way. 
 
-Note: 9 way conenctor digram is incorrect - pin 7 is ground on 25 way, but it is pin 5 on a DB9 for ground, so it may work if DB9 pin 5 was mapped instead of pin 7
+Note: 9 way connector digram is incorrect - pin 7 is Ground on 25 way connector, but it is pin 5 on a DB9 for ground, so it may work if DB9 pin 5 was mapped instead of DB9 pin 7
+
+from TDK Manual
+
+| DB25 || RJ 45 ||
+| -- | -- | -- | -- |
+| PIN  |  NAME  | PIN  | NAME | 
+| 2 | TX | 8 | RX |
+| 3 | RX | 7 | TX |
+| 7 | GND | 1 | GND |
+
+| DB9 || RJ 45 ||
+| -- | -- | -- | -- |
+| PIN  |  NAME  | PIN  | NAME | 
+| 2 | RX | 7 | TX |
+| 3 | TX | 8 | RX |
+| 5 | GND | 1 | GND |
+
 
 ## Macros
 
