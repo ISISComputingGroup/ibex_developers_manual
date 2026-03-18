@@ -14,19 +14,21 @@ Note: 9 way connector diagram is incorrect - pin 7 is Ground on 25 way connector
 
 from TDK Manual (note: TDK manual pinout for the 8 pin connector side is reverse of RJ45, they are correct for RJ45 below where looking into the RJ45 socket with the connectors at the top pin 1 is on the left) 
 
-| DB25 (socket) || RJ 45 ||
+| DB25 (female) || RJ 45 ||
 | -- | -- | -- | -- |
 | PIN  |  NAME  | PIN  | NAME | 
 | 2 | TX | 1 | RX |
 | 3 | RX | 2 | TX |
 | 7 | GND | 8 | GND |
 
-| DB9 (socket) || RJ 45 ||
-| -- | -- | -- | -- |
-| PIN  |  NAME  | PIN  | NAME | 
-| 2 | RX | 2 | TX |
-| 3 | TX | 1 | RX |
-| 5 | GND | 8 | GND |
+| DB9 (female) || RJ 45 |||
+| -- | -- | -- | -- | -- |
+| PIN  |  NAME  | PIN  | NAME | push pin color (RS black adapter)  | 
+| 2 | RX | 2 | TX | Orange |
+| 3 | TX | 1 | RX | Blue |
+| 5 | GND | 8 | GND | White |
+
+Wiring is Lambda -> Cat 5 -> adapter -> moxa cable -> Moxa
 
 ## Macros
 
