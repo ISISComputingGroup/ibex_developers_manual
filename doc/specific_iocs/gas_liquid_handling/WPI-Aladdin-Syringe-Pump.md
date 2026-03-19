@@ -40,7 +40,7 @@ The device has it's own logic for setting the units of volume to be pumped `VOLU
 The units for the rate can be selected but will only be set when setting the `RATE:SP`. You can resend the same set point to set newly selected rate units.
 
 :::{danger}
-There are multiple PVs which can independently talk to the same physical channel; `RATE:UNITS:SP` and `1:RATE:UNITS:SP`. The rate setpoint PV which corresonds to the `RUN` PV being used must be set to the correct units (i.e. if `1:RUN:SP` is being used to start pumping, then the units must be set in `1:RATE:UNITS:SP`.
+There are multiple PVs which can independently talk to the same physical channel; `RATE:UNITS:SP` and `1:RATE:UNITS:SP`. The rate setpoint PV which corresponds to the `RUN` PV being used must be set to the correct units (i.e. if `1:RUN:SP` is being used to start pumping, then the units must be set in `1:RATE:UNITS:SP`.
 :::
 
 ## Connection notes
