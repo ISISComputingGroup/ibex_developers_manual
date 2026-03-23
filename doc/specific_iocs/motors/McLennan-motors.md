@@ -34,6 +34,9 @@ The McLennan motor velocity is set with the *VELO***n** IOC macros, the value se
 ### Acceleration
 The IOC macro *ACCL***n** for acceleration is the the number of seconds under linear acceleration to reach maximum speed, the same convention as the EPICS motor record (The acceleration value on the device itself is the acceleration in units of `step/s^2`, this is calculated in the IOC as velocity divided by the product of the motor resolution and ACCL value). 
 
+### Limits
+There are a pair of macros for the limits *DHLM***n** and *DLLM***n** for the high and low limit respectively.
+
 ### Setting the motor position/offset
 See [Set the raw position of the motor without moving it](Set-the-raw-position-of-the-motor-without-moving-it)
 
