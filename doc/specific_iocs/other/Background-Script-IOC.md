@@ -8,7 +8,7 @@ If you want the IOC to register as started the user must include the lines:
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.environ["KIT_ROOT"], "ISIS", "inst_servers", "master")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.environ["EPICS_KIT_ROOT"], "ISIS", "inst_servers", "master")))
 
 from server_common.helpers import register_ioc_start
 
@@ -25,7 +25,7 @@ import os
 from time import sleep
 
 sys.path.insert(0, os.path.abspath(os.path.join(r"C:\\", "Instrument", "scripts")))
-sys.path.insert(1, os.path.abspath(os.path.join(os.environ["KIT_ROOT"], "ISIS", "inst_servers", "master")))
+sys.path.insert(1, os.path.abspath(os.path.join(os.environ["EPICS_KIT_ROOT"], "ISIS", "inst_servers", "master")))
 
 from technique.muon.background_plot import BackgroundBlockPlot
 from genie_python import genie as g
