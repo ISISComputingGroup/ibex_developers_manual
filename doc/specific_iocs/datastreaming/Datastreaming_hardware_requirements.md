@@ -40,6 +40,16 @@ HRPD-X has notably lower requirements than SANDALS-II. There are two options:
 1. keep machines for both exact copies, which means a like-for-like can be swapped in in case of a hardware failure. This means that for HRPD-X we may be able to up retention rates of events and diagnostic data.
 2. keep machines baseline specifications the same except for storage which is tailored towards that instrument.
 
+For HRPD-X: 
+
+Worst case sustained count rate estimate is 50Mbps. There is a requirement to be able to keep 1 run's amount of events in a kafka instance along with the same amount of space for a nexus file to be written (until it is ultimately moved off this machine)
+
+We then need other space for slower streams such as sample environment and run info. 
+
+While commissioning we may also need additional space to store low-level diagnostic information such as streaming extra information from the streaming boards. 
+
+On this basis we will specify these machines with 4TB of storage along with a separate boot disk to be used for the base OS and software deployments. The latter can be 500GB-1TB. This leaves headroom for diagnostics and foreseeable future needs over the next 3-5 years. 
+
 ## Notes
 
 - From dell consumer prices, we worked out that our baseline versus the SuperMuSR specifications was about 16% - with the differences being half the CPU cores and RAM.
