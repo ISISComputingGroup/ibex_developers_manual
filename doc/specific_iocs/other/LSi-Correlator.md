@@ -11,7 +11,7 @@ The software struggles to find the correlator's IP address on our network. Inste
 
 In this file, change the default setting of the correlator's IP address to the actual device IP then reboot the software.
 
-The correlator name on the network is `LSI-Correlator-01cb39c4` - prefer connecting by name over IP address, as the device has historically changed MAC address for unknown reasons.
+The correlator name on the network is `LSI-Correlator-01cb39c4` - but you will need to connect by IP address, not by name (connecting by name does not work). So use `nslookup LSI-Correlator-01cb39c4` and put the returned IP into the IBEX configuration `ADDR` macro. The address is not reserved as the device has historically changed MAC address for unknown reasons.
 
 :::{important}
 The device is _very_ fiddly in terms of connection.
