@@ -22,3 +22,5 @@ Sometimes the hexagon loses connection with the IOC, this can be due to a hexago
 - try a hexagon power cycle then an IOC restart
 
 After a hexagon power cycle, a timing register needs to be set on the hexagon using the CAEN MCA2 vendor software to make the event/list mode work properly. The scientists know about this and will do this. 
+
+If the timing register is not set properly then you will see a `WARNING: Timing registers not set` appear in the log files for the IOC.
