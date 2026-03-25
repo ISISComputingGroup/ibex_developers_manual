@@ -93,8 +93,8 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   1. What is the name of the computer? 
     - If it is the NDX or NDH, we care, look at the next steps, there are a small subset of other systems we support that others might be logging into which will be listed in the older SharePoint along with the access information as appropriate. 
     - Anything else, NDC, NDL, NDW, cabin PCs, or an ISIS or CLRC domain account as opposed to a local instrument account:
-      - in office hours refer them to the Facilities IT service desk
-      - out of hours, if in cycle then in zoom phone call "ISIS IT Infrastructure on-call" (phone number 94499)
+      - In office hours, refer them to the Facilities IT/DI service desk
+      - Out of hours, if in cycle then call "RAL ISIS IT Infrastructure On Call" in Teams (phone number **01235 394499**)
     - If attempting to connect to EMMA, remember the -A
   1. Unable to connect to NDX via RDP
     - This is no longer an option, please use VNC
