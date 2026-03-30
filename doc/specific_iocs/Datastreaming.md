@@ -13,7 +13,7 @@ The data streaming system is being built as a requirement for HRPD-X and possibl
 
 In general this works by producing both neutron events and histograms, sample environment data, and other diagnostic data into a [Kafka](https://kafka.apache.org/) cluster and having clients (consumers in Kafka lingo!) that either view data live and act on it or write the data to a nexus file. Additional information can be found [here](http://accelconf.web.cern.ch/AccelConf/icalepcs2017/papers/tupha029.pdf) and [here](https://iopscience.iop.org/article/10.1088/1742-6596/1021/1/012013). 
 
-All data is serialised into [Flatbuffers](https://flatbuffers.dev/) blobs using [these schemas](https://github.com/ess-dmsc/streaming-data-types) - we have a tool called [saluki](https://github.com/ISISComputingGroup/saluki) which can deserialise these and make them human-readable after they've been put into Kafka. 
+All data is serialised into [Flatbuffers](https://flatbuffers.dev/) blobs using [these schemas](https://github.com/ISISComputingGroup/streaming-data-types) - we have a tool called [saluki](https://github.com/ISISComputingGroup/saluki) which can deserialise these and make them human-readable after they've been put into Kafka. 
 
 Overall architecture is as follows:
 
