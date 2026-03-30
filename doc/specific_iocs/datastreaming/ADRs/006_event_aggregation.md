@@ -10,7 +10,7 @@ Data (neutron events) and metadata (in particular vetos, period number and proto
 both individual detector modules and by the streaming control board:
 - Events will be emitted by each detector module (which has no knowledge of events on other modules)
 - Protons-per-pulse and period number will be emitted once per frame by the streaming control board
-- Vetos may be emitted by both the streaming control board (global vetos) and each individual detector modules (e.g. local overcount vetos).
+- Vetos may be emitted by both the streaming control board (global vetos) and each individual detector modules (e.g. local over-count vetos).
 
 To avoid complex logic in every downstream consumer 'zipping' together these disparate pieces of information, we
 require some form of 'aggregation' process, which emits 'complete' neutron frames with appropriate (merged) metadata
