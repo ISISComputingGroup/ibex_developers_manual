@@ -16,7 +16,7 @@ There are several options here:
 Within each of these options we need to decide on a serialization format.
 Options are: 
 - protobuffers
-- flatbuffers with ESS schemas
+- flatbuffers with ESS-like schemas
 - JSONB
 - msgpack
 - Avro
