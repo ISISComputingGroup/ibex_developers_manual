@@ -43,7 +43,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 ## Rotas
 
-From week commencing 1/12/25, the standup is hosted by whoever is covering support, unless specificed otherwise. The rota for this is in the Experiment Controls Outlook calendar.
+From week commencing 1/12/25, the standup is hosted by whoever is covering support, unless specified otherwise. The rota for this is in the Experiment Controls Outlook calendar.
 
 ---
 
