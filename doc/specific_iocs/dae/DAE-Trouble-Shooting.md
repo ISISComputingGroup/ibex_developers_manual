@@ -310,7 +310,8 @@ See [here](#dae_configuration) to learn more about these files.
 After a run the data files should be copied to an external archive so that the users can do more processing. If the user can not get these then there can be multiple causes and it depends exactly where they are looking. The first thing to check is that the machine is copying the files correctly in the post 
 end run script. The log for this is stored at `C:\Data\log\post_command_<day>.log`. If there is a problem rectify the problem, possible causes are:
 
-- mapped drive (`d:`) is not connected properly: often double clicking on the drive is enough to get it remapped
+- mapped drive (`d:`) is not (re)connected properly: often double clicking on the drive is enough to get it remapped
+- data is trying to copied to wrong cycle subdirectory - see not below about incorrect cycle. Look at `post_command*` log and check cycle number looks correct, it is read from `o:\setcycle.cmd`. As old cycles are mounted read-only you may see robocopy errors mentioning `The media is write protected` in this case. 
 - something else: fix and document here
 
 After fixing the issues the files will be copied after the next run is finished. So start and end a run (with a test like title), you may also want to put it in simulation mode if the DAE is switched off. Finally check the files have appeared in `<isis instrument folder>\<machine name>\Instrument\data\cycle_<cycle number>`.
@@ -408,11 +409,11 @@ Due to a historical problem with electronic noise causing random period changes,
 
 ### cycle number not updating
 
-The isis cycle is contained in a local file `setcycle.cmd` on the NDX that is read by the `end_of_run.cmd` which will also update this file to the most recent copy from the mapped o: drive on the NDX. If the cycle number is not updating then:
+The isis cycle is contained in a local file `setcycle.cmd` on the NDX that is read by the `end_of_run.cmd` which will also update this file to the most recent copy from the mapped `o:` drive on the NDX. If the cycle number is not updating then:
 - sometimes the first run in a cycle gets given the wrong number in the data file, but is put in the correct cycle directory. This is a "feature" as the cycle number is updated as part of copying the file, hence the file will already have been written using the previous number.  
-- if all files are in the wrong cycle, either the central copy has not been updated, or the `o:` drive on the instrument has become disconnected so it is not being updated to the latest version
+- if all files are in the wrong cycle, either the central copy has not been updated, or the `o:` drive on the instrument has become disconnected so it is not being updated to the latest version. Try clicking on `o:` in windows explorer to reconnect it, and confirm the file `o:\setcycle.cmd` exists and contains the correct cycle number. 
 
-to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials. Then check that `o:\setcycle.cmd` has the correct cycle number.
+to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials. Then check that `o:\setcycle.cmd` has the correct cycle number. We had one case recently where the `o:` mapping was incorrect and was missing the `instrument` subdirectory - the network drive mapping needed to be readded so `o:` pointed at the directory containing `setcycle.cmd`
 
 ### journal has run number in incorrect cycle
 
