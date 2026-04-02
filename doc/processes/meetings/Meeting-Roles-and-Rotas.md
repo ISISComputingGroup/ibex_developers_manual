@@ -43,35 +43,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 ## Rotas
 
-From week commencing 1/12/25, the standup will be hosted by whoever is undertaking first-line support.
+From week commencing 1/12/25, the standup is hosted by whoever is covering support, unless specified otherwise. The rota for this is in the Experiment Controls Outlook calendar.
 
 ---
 
-## Sprint Meetings
-
-| Meeting                 | Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
-| ----------------------- | ----- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 2025_03_05_Planning     | JH    | X          | TW         | X          | IG         | X          |
-| 2025_03_05_Review/Retro | JD    | X          | DM         | X          | SC         | X          |
-| 2025_04_10_Planning     | TW    | X          | JD         | X          | DM         | X          |
-| 2025_04_10_Review/Retro | FA    | X          | KB         | X          | DK         | X          |
-| 2025_05_08_Planning     | JD    | X          | LJ         | X          | GR         | X          |
-| 2025_05_08_Review/Retro | LC    | X          | KB         | X          | GR         | X          |
-| 2025_06_12_Planning     | LJ    | X          | CMS        | X          | ES         | X          |
-| 2025_06_12_Review/Retro | DM    | X          | JH         | X          | SC         | X          |
-| 2025_07_10_Planning     | IG    | X          | DK         | X          | TW         | X          |
-| 2025_07_10_Review/Retro | SC    | X          | IG         | X          | LJ         | X          |
-| 2025_07_31_Planning     | ES    | X          | GR         | X          | DM         | X          |
-| 2025_07_31_Review/Retro | GR    | X          | JH         | X          | SC         | X          |
-| 2025_08_28_Planning     | FA    | X          | TW         | X          | LC         | X          |
-| 2025_08_28_Review/Retro | GR    | X          | DM         | X          | LJ         | X          |
-| 2025_10_02_Planning     | TW    | X          | FA         | X          | IG         | X          |
-| 2025_10_02_Review/Retro | JH    | X          | TW         | X          | KB         | X          |
-| 2025_10_30_Planning     | KB    | X          | LJ         | X          | FA         | X          |
-| 2025_10_30_Review/Retro | GR    |            | CMS        |            | SpC        |            |
-| 2025_11_27_Planning     | FA    |            | DK         |            | SC         |            |
-| 2025_11_27_Review/Retro | SpC   |            | IG         |            | DK         |            |
-| 2026_01_08_Planning     | IG    |            | KB         |            |            | LJ         |
-| 2026_01_08_Review/Retro | DK    |            | CMS        |            | DM         |            |
-| 2026_02_05_Planning     | CMS   |            | LJ         |            | JH         |            |
-| 2026_02_05_Review/Retro | IG    |            | GR         |            | DK         |            |
+The rotas for roles in planning and group meetings are on [the relevant tab in Teams](https://teams.microsoft.com/l/entity/1c256a65-83a6-4b5c-9ccf-78f8afb6f1e8/_djb2_msteams_prefix_3782972393?context=%7B%22channelId%22%3A%2219%3Aeaf1bd106e2d4df78f4ea9f7aa3d003d%40thread.skype%22%7D&tenantId=3f66361c-a87e-4158-8f61-99e82db3cac8).
