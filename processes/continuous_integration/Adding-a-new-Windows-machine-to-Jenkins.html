@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding Jenkins nodes &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Github Actions versus Jenkins" href="GHA_vs_Jenkins.html" />
+    <link rel="prev" title="Continuous Integration" href="../Continuous-Integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding Jenkins nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GHA_vs_Jenkins.html">Github Actions versus Jenkins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jenkins-Build-Server.html">Jenkins Build Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jenkins-Trouble-Shooting.html">Jenkins Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RHEL-jenkins-linux-dependency-update.html">Updating the RHEL Jenkins Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-Automated-System-Tests.html">Running automated system tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestBuild-Jenkins-Build.html">TestBuild Jenkins Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reusable_workflows.html">reusable workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Continuous-Integration.html">Continuous Integration</a></li>
+      <li class="breadcrumb-item active">Adding Jenkins nodes</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/continuous_integration/Adding-a-new-Windows-machine-to-Jenkins.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-jenkins-nodes">
+<h1>Adding Jenkins nodes<a class="headerlink" href="#adding-jenkins-nodes" title="Link to this heading"></a></h1>
+<p>These are instructions for adding a new Windows machine as a node to be used by Jenkins.</p>
+<section id="hardware-prerequisites">
+<h2>Hardware Prerequisites<a class="headerlink" href="#hardware-prerequisites" title="Link to this heading"></a></h2>
+<p>A useful build server will need roughly the following specifications:</p>
+<ul class="simple">
+<li><p>Processor:</p>
+<ul>
+<li><p>Not a virtual machine (we have tried VMs in the past, but the performance penalty is too high for a
+build server)</p></li>
+<li><p>Semi-modern processor. Most of our builds are <em>primarily</em> single-threaded, so single-core performance
+is more important than multi-core at present.</p></li>
+</ul>
+</li>
+<li><p>Memory:</p>
+<ul>
+<li><p>32GB or more of RAM (16GB may be possible to use, but will be substantially slower to build). Extra RAM
+can be acquired relatively cheaply, if the machine has spare memory slots (check compatibility carefully).</p></li>
+</ul>
+</li>
+<li><p>Storage</p>
+<ul>
+<li><p><strong>Must be an SSD</strong>. PCIe (M.2) preferred but not required. Do not use a spinning hard disk as a build drive - it will be painfully slow.</p></li>
+<li><p>Doesn’t need to be the primary OS drive - a separate drive also works and can generally be acquired relatively cheaply, if the machine has a spare M.2 or SATA port.</p></li>
+<li><p><strong>For an EPICS build node</strong>: 1TB capacity minimum. This capacity is needed because multiple builds’ workspaces will be present at once.</p></li>
+<li><p><strong>For a system tests build node</strong>: 500GB capacity minimum.</p></li>
+</ul>
+</li>
+<li><p>Location</p>
+<ul>
+<li><p>The machine should be located in a suitable place, ideally in a room with air-conditioning. Many of our
+build servers are in the R55 server room for this reason.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="software-prerequisites">
+<h2>Software Prerequisites<a class="headerlink" href="#software-prerequisites" title="Link to this heading"></a></h2>
+<p>It is possible to follow the “full” first-time install guide to get all the components necessary for build jobs:</p>
+<ul class="simple">
+<li><p>First set up the machine so it can be used to build the back-end system manually by following these <a class="reference internal" href="../../overview/First-Time-Build.html"><span class="doc std std-doc">instructions</span></a></p></li>
+<li><p>After you have registered the ISISICP go into <code class="docutils literal notranslate"><span class="pre">c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae</span></code> and read <code class="docutils literal notranslate"><span class="pre">README_isisicp_reg.txt</span></code> in particular you will probably need to add the the account running jenkins to the windows group mentioned</p></li>
+<li><p>Delete the EPICS subdirectory that was created in the previous step (maintaining C:\Instrument\Apps)</p></li>
+</ul>
+<section id="epics-build-node">
+<h3>EPICS build node<a class="headerlink" href="#epics-build-node" title="Link to this heading"></a></h3>
+<p>The bare minimum requirements for an EPICS/GUI/Uktena build node are:</p>
+<ul class="simple">
+<li><p>Visual Studio</p>
+<ul>
+<li><p>C++</p></li>
+<li><p>ATL</p></li>
+<li><p>MFC</p></li>
+<li><p>.NET targeting pack</p></li>
+</ul>
+</li>
+<li><p>Perl</p></li>
+<li><p>Java</p></li>
+<li><p>Maven</p></li>
+<li><p>Doxygen</p></li>
+<li><p>git</p></li>
+<li><p>TwinCAT bits</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">symstore</span></code> (<code class="docutils literal notranslate"><span class="pre">\\isis\inst$\Kits$\CompGroup\ICP\winsdk</span></code>)</p></li>
+</ul>
+</section>
+<section id="system-tests-node">
+<h3>System tests node<a class="headerlink" href="#system-tests-node" title="Link to this heading"></a></h3>
+<p>The bare minimum requirements for a system tests node are:</p>
+<ul class="simple">
+<li><p>Create directories:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Instrument\Apps</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Instrument\var\autosave</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Instrument\var\logs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Instrument\var\tmp</span></code></p></li>
+</ul>
+</li>
+<li><p>Java</p></li>
+<li><p>git</p></li>
+<li><p>Latest MySQL (use <code class="docutils literal notranslate"><span class="pre">upgrade_mysql</span></code> script in <code class="docutils literal notranslate"><span class="pre">ibex_utils</span></code>)</p></li>
+<li><p>Ensure there is a config directory for this instrument, in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\&lt;machine</span> <span class="pre">name&gt;</span></code></p>
+<ul>
+<li><p>Must be checked out onto an instrument branch</p></li>
+</ul>
+</li>
+<li><p>Ensure there is a calibrations directory for this instrument, in <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Settings\config\common</span></code></p>
+<ul>
+<li><p>Must be a git checkout, on <code class="docutils literal notranslate"><span class="pre">master</span></code> branch</p></li>
+</ul>
+</li>
+<li><p>LabVIEW</p></li>
+<li><p>NI DaqMX</p></li>
+</ul>
+</section>
+</section>
+<section id="adding-to-jenkins">
+<h2>Adding to Jenkins<a class="headerlink" href="#adding-to-jenkins" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Go to <a class="reference external" href="https://epics-jenkins.isis.rl.ac.uk/computer/">our jenkins instance</a> and log in to Jenkins</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Node</span></code> with the Node Name as the computer name, select ‘Permanent Agent’</p></li>
+<li><p>Set a root directory of <code class="docutils literal notranslate"><span class="pre">C:\Jenkins</span></code></p>
+<ul class="simple">
+<li><p>The root directory may need to be on a different drive, if the <code class="docutils literal notranslate"><span class="pre">c:\</span></code> drive is small. See hardware prerequisites
+above, for minimum hardware requirements of this drive.</p></li>
+</ul>
+</li>
+<li><p>Set labels</p>
+<ul class="simple">
+<li><p>For an EPICS build node, create <strong>two</strong> build nodes in Jenkins</p>
+<ul>
+<li><p>One called <code class="docutils literal notranslate"><span class="pre">&lt;computer_name&gt;</span></code>, with the following labels: <code class="docutils literal notranslate"><span class="pre">ConfigCheck</span> <span class="pre">genie</span> <span class="pre">gui</span> <span class="pre">isisicp</span></code>, with 4 executors.</p></li>
+<li><p>One called <code class="docutils literal notranslate"><span class="pre">&lt;computer_name&gt;_epics</span></code>, with the <code class="docutils literal notranslate"><span class="pre">epics_build</span></code> label, with a single executor.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>For a system tests build node, create a single Jenkins node, with label <code class="docutils literal notranslate"><span class="pre">system_tests</span></code>, with a single executor.</p></li>
+</ul>
+</li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">agent</span> <span class="pre">by</span> <span class="pre">connecting</span> <span class="pre">it</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">controller</span></code></p></li>
+<li><p>Save</p></li>
+<li><p>Select the slave that has just been created and make a note of secret. For an initial test make a note of the curl and java commands from <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">from</span> <span class="pre">agent</span> <span class="pre">command</span> <span class="pre">line:</span> <span class="pre">(Windows)</span></code></p></li>
+<li><p>In a command window in c:\jenkins run the curl and java commands. These can be put into a bat file for interactive running.</p></li>
+</ul>
+</section>
+<section id="setup-as-service">
+<h2>Setup as service<a class="headerlink" href="#setup-as-service" title="Link to this heading"></a></h2>
+<p>We use <a class="reference external" href="https://github.com/jenkinsci/windows-slave-installer-module">https://github.com/jenkinsci/windows-slave-installer-module</a> and <a class="reference external" href="https://github.com/winsw/winsw">https://github.com/winsw/winsw</a> the relevant files are in
+<code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\builderserver</span></code> to copy to <code class="docutils literal notranslate"><span class="pre">c:\Jenkins</span></code></p>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">jenkins-agent.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">jenkins-agent.xml</span></code> into same directory on the target machine e.g. <code class="docutils literal notranslate"><span class="pre">c:\jenkins</span></code></p>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">jenkins-agent.xml</span></code> and change  <a class="reference external" href="https://epics-jenkins.isis.rl.ac.uk/computer/COMPUTER/jenkins-agent.jnlp">https://epics-jenkins.isis.rl.ac.uk/computer/COMPUTER/jenkins-agent.jnlp</a> and the SECRET field to the same as they are from the Jenkins’ Node page, add <code class="docutils literal notranslate"><span class="pre">-workDir</span></code> argument of <code class="docutils literal notranslate"><span class="pre">c:\jenkins</span></code>
+COMPUTER should be capitalised in same way as written on Jenkins.</p>
+<p>Open an admin cmd window and run <code class="docutils literal notranslate"><span class="pre">jenkins-agent.exe</span> <span class="pre">install</span></code> and then <code class="docutils literal notranslate"><span class="pre">services.msc</span></code></p>
+<p>Find the jenkins service in the Service Manager window on the machine, and change it to run as <code class="docutils literal notranslate"><span class="pre">isis\ibexbuilder</span></code> rather than local service account, you’ll need to enter <code class="docutils literal notranslate"><span class="pre">ISISBuilder</span></code> password.</p>
+<p>Then run start service from the Service Manager window.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Continuous-Integration.html" class="btn btn-neutral float-left" title="Continuous Integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GHA_vs_Jenkins.html" class="btn btn-neutral float-right" title="Github Actions versus Jenkins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Apr 02, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
