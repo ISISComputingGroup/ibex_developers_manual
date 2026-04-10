@@ -137,6 +137,7 @@ configMenu
 configs
 configtool
 configurator
+configurer
 conserver
 correlator
 Cottee
