@@ -27,7 +27,7 @@ There will be a register, in the streaming control VXI crate that `kafka_dae_con
 
 The overall concept of {external+ibex_user_manual:ref}`concept_good_raw_frames` will still be needed, as scientists will use {external+genie_python:py:obj}`genie.waitfor_frames` and similar functions to control their run durations.
 
-WLSF modules may also emit their own detector-specific vetoes (for example, a local buffer overrun on a specific detector). These will be OR'ed together with the vetoes emitted by the streaming control board, by `kafka_event_aggregator`
+WLSF modules may also emit their own detector-specific vetoes (for example, a local buffer overrun on a specific detector). These will be `OR`ed together with the vetoes emitted by the streaming control board, by `kafka_event_aggregator`
 
 ## Consequences
 
