@@ -15,9 +15,7 @@ There are two ways that an event packet could be vetoed, configurable via the VX
 - **Software veto:** Emit the frame, but mark it as invalid using veto flags
 - **Hardware veto:** Do not emit the frame
 
-Long term, we will likely need to allow for both modes. We _may_ also need to support each mode for each different type of veto - e.g. not emitting frames if one type of veto is active, while emitting frames marked as invalid for another type of veto.
-
-Data is still forwarded by UDP, but may not get processed into the `ev44` format if it is vetoed. This is configurable by the streaming boards.
+Long term, we will likely need to allow for both modes. We also need to support each mode for each different type of veto - e.g. not emitting frames if one type of veto is active, while emitting frames marked as invalid for another type of veto.
 
 **Run control** 
 
@@ -29,7 +27,7 @@ There will be a register, in the streaming control VXI crate that `kafka_dae_con
 
 The overall concept of {external+ibex_user_manual:ref}`concept_good_raw_frames` will still be needed, as scientists will use {external+genie_python:py:obj}`genie.waitfor_frames` and similar functions to control their run durations.
 
-We have also agreed with DSG that the WLSF modules should _not_ be allowed to individually veto data despite this being technically possible and this should be the responsibility of the VXI control board. 
+WLSF modules may also emit their own detector-specific vetoes (for example, a local buffer overrun on a specific detector). These will be `OR`ed together with the vetoes emitted by the streaming control board, by `kafka_event_aggregator`
 
 ## Consequences
 
