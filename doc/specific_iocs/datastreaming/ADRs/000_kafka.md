@@ -16,7 +16,7 @@ There are several options here:
 Within each of these options we need to decide on a serialization format.
 Options are: 
 - protobuffers
-- flatbuffers with ESS schemas
+- flatbuffers with ESS-like schemas
 - JSONB
 - msgpack
 - Avro
@@ -30,7 +30,7 @@ We have decided to use a Kafka compatible broker as a streaming platform. This m
 This is because we can lean on the ESS experience in using this technology and may be able to collaborate with them and use shared tools. 
 Flatbuffers encoding was performance tested during the in-kind project and showed good performance versus the alternatives at the time. 
 
-We have also decided to serialize the data using the [ESS flatbuffers schemas](https://github.com/ess-dmsc/streaming-data-types) with ISIS additions where necessary. 
+We have also decided to serialize the data using the [ISIS flatbuffers schemas](https://github.com/ISISComputingGroup/streaming-data-types), which are based on ESS schemas with ISIS additions where necessary. 
 
 Kafka is a broker-based streaming technology - as opposed to brokerless systems which do not keep messages. This allows a Kafka-based system to replay messages or for a consumer to catch up with the 'history' of a stream. We will not retain events in Kafka indefinitely - retention will be tuned to keep a suitable number of messages for our use-cases versus hardware constraints.
 
