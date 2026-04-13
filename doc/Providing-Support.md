@@ -90,9 +90,13 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
 <details>
   <summary>I can't log in to *** computer</summary>
 
-  1. What is the name of the computer? 
-    - If it is the NDX or NDH, we care, look at the next steps, there are a small subset of other systems we support that others might be logging into which will be listed in the older SharePoint along with the access information as appropriate. 
-    - Anything else, NDC, NDL, NDW, cabin PCs, or an ISIS or CLRC domain account as opposed to a local instrument account:
+  1. What is the name of the computer?
+    - NDX or NDH machine: the credentials for these machines are managed in Keeper. For instructions on adding scientists to records in Keeper, see {external+sysadmin:doc}`systems administration manual <services/Keeper>`.
+    - There are a small number of other systems we support that others might be logging into; the access credentials for these are in Keeper.
+    - NDC:
+      - If it is a **problem with / preventing usage of a Daxten**, provide best-efforts support for resolving the problem so that the Daxten may be used. Best efforts may mean doing nothing.
+      - If it is **any other type of problem**, treat the machine as per an NDL/NDW machine and refer to FIT/DI
+    - Anything else, NDL, NDW, cabin PCs, or an ISIS or CLRC domain account as opposed to a local instrument account:
       - In office hours, refer them to the Facilities IT/DI service desk
       - Out of hours, if in cycle then call "RAL ISIS IT Infrastructure On Call" in Teams (phone number **01235 394499**)
     - If attempting to connect to EMMA, remember the -A
