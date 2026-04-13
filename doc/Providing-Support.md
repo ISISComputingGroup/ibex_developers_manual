@@ -95,7 +95,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
     - There are a small number of other systems we support that others might be logging into; the access credentials for these are in Keeper.
     - NDC:
       - If it is a **problem with / preventing usage of a Daxten**, provide best-efforts support for resolving the problem so that the Daxten may be used. Best efforts may mean doing nothing.
-      - If it is **any other type of problem**, treat the machine as per an NDL/NDW machine and refer to FIT/DI
+      - If it is **any other type of problem** that does not directly relate to something we are responsible for (e.g support with using VNC or mounting the archive), treat the machine as per an NDL/NDW machine and refer to FIT/DI
     - Anything else, NDL, NDW, cabin PCs, or an ISIS or CLRC domain account as opposed to a local instrument account:
       - In office hours, refer them to the Facilities IT/DI service desk
       - Out of hours, if in cycle then call "RAL ISIS IT Infrastructure On Call" in Teams (phone number **01235 394499**)
