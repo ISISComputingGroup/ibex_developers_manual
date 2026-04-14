@@ -41,13 +41,7 @@ ISIS Experiment Controls
  
 Database disc space is taken up by tables stored in `C:\Instrument\Var\mysql\data` the space can be regained by truncating the table. This could lose the data and will certainly remove it from the database so be careful. At various stages you will be prompted for the database password it is on the passwords page. This can be done while the EPICS back-end on the instrument is up, but should not be done while data is being collected as some data points may get lost during the process.
 
-Run the script in:
-
-```
-\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\truncate_database.bat
-```
-
-Note that you may need the full name of the public share root.
+Run [this Ansible playbook](https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/windows/instrument_deploy.yaml)
 
 ## _If you wish to do this manually:_
 
