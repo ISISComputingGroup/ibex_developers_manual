@@ -16,7 +16,7 @@ Flatbuffers schemas in this topic:
 
 ## `_rawEvents`
 
-Partitions: variable
+Partitions: variable (will not change at runtime)
 
 This contains _raw_ events (`ev44` schema) and metadata (`pu00`) schema, as emitted by
 the streaming control board and the individual detector modules.
@@ -27,7 +27,7 @@ Flatbuffers schemas in this topic:
 
 ## `_events`
 
-partitions: variable
+Partitions: variable (will not change at runtime)
 
 This contains _aggregated_ event data. "Aggregated data" means that the metadata for each frame has been merged,
 and events concatenated from a large number of small messages to a smaller number of larger messages.
