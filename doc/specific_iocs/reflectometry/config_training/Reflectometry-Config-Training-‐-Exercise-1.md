@@ -101,7 +101,7 @@ add_parameter(AxisParameter("param_name", component, ChangeAxis.[Axis parameter]
 ```
 `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. For more information on the different options for `AxisParameter`, see [here](../Reflectometry-Configuration)
 Here, the angle, to be called `SMANGLE`, will be of the type `ANGLE` and the height, to be called `SMOFFSET`, of type `POSITION`
-Note that you need to name parameters according to a certain standard in order to be able to view them readily in the reflectometry OPIs. That naming makes the use of a description, which will appear as a tooltip in the GUI extremely useful.
+Note that you need to name parameters according to a certain standard in order to be able to view them readily in the reflectometry OPIs. That naming makes the use of a description, which will appear as a tooltip in the GUI which can be extremely useful.
 
 ### 4. Add drivers for the supermirror
 Those items which can be varied here will need a driver as well, although that isn't always the case for every parameter.
