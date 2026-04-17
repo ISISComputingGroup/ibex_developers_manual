@@ -22,7 +22,7 @@ As an example, let's say our beamline has a structure of `Beam Source - Sample -
 
 ## Exercise 4
 In this exercise, let's add Theta and a detector component from which we can derive its value to our beamline model. For this exercise, we will assume we are using the setup that is found on SURF and CRISP, i.e. a detector that can move up and down on a linear height axis, and tilt towards the beam via a separate rotation axis. (we will look at a bench setup in a later exercise).
-At the end of this exercise your bemline should have the following in order:
+At the end of this exercise your beamline should have the following in order:
 * Slit 1, with a height (as was set up in exercise 2)
 * a supermirror, with a height and an angle (as was set up in exercise 1)
 * Slit 2, with a height (as was set up in exercise 2)
@@ -39,7 +39,7 @@ The `Theta` parameter itself is just a simple Axis Parameter, same as we added f
 ### 2. Add in the detector component
 Start by creating the constant for `DET_Z`, which is the distance to the detector, and for this exercise will be `SAMPLE_Z` + `10.0`. 
 The detector is added after Theta, and is another `TiltingComponent`. The `PositionAndAngle` setup should be set to `0.0`, `DET_Z`, and the `NATURAL_ANGLE`.
-We also need to add 2 parameters, the angle and the height, which will be referenced to `MTR0201` and `MTR0202` respectedly, and are available in all modes. This is done in the same way as items were added in previous exercises.
+We also need to add 2 parameters, the angle and the height, which will be referenced to `MTR0201` and `MTR0202` respectively, and are available in all modes. This is done in the same way as items were added in previous exercises.
 
 At this point you can restart the IOC and you should be able to see the detector height and angle parameters as with everything we have added previously. The angle should be reading `22.5` and the height `-4.142`, whilst on the table of motors both are at `0.0`. Theta should also be there and read `NaN` as we have not yet told it what axis it should derive its value from. Similarly the downstream `RBV` value on the `Collimation` tab will be `NaN`, as they are downstream of something unknown. At this point you can move those axes like the others.
 
