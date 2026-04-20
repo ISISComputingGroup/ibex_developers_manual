@@ -23,10 +23,10 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 - Keep an eye on the end time of the meeting - give everyone a five minute warning
 - If the meeting is scheduled for more than an hour to indicate the halfway time to make sure we take a break
 
-### Note taker in Retrospective:
+### Note taker in Retrospective/Group Meeting:
 
 - Keep notes of the discussed points
-- Add them to the wiki with a link on the [main retrospective notes page](../Retrospective-Notes)
+- Add them to the meeting notes folder under `General > Group Meetings` in teams
 
 ### Note taker in Planning:
 

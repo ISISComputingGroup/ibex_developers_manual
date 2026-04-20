@@ -55,7 +55,7 @@ Useful [GitHub Workflows](https://docs.github.com/en/actions/learn-github-action
 A template repository which can be used when creating a submodule where you would like the parent repository to be updated automatically on push to the main / master branch of the child repository.
 * https://github.com/ISISComputingGroup/Update_Submodule_Workflow_Action
 
-The repository was created in response to a discussion held in the retrospective [Retrospective notes 2022.09.07](/processes/retrospective-notes/Retrospective-Notes-2022.09.07) to remove the need for a check to scan repositories to ensure submodules have correctly been updated.
+The repository was created in response to a discussion held in the retrospective 2022.09.07 to remove the need for a check to scan repositories to ensure submodules have correctly been updated.
 
 The repository can be used as a starting point for integration into Jenkins CI/CD.
 
