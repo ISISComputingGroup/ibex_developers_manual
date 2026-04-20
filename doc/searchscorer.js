@@ -6,11 +6,6 @@ var Scorer = {
 	  if (docName.includes("instrument_details")) {
 	    score -= 100000;
 	  }
-	  
-	  // Deprioritize retrospective-notes heavily (but still include them in results)
-	  if (docName.includes("retrospective-notes")) {
-	    score -= 1000000;
-	  }
 
       return score
     },

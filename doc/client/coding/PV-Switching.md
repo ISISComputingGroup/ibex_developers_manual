@@ -28,7 +28,7 @@ This extension point is setup in `uk.ac.stfc.isis.ibex.instrument/META-INF/MANIF
 This sets up the name of the extension point and the schema. 
 The schema is in `/uk.ac.stfc.isis.ibex.instrument/schema/uk.ac.stfc.isis.ibex.instrument.info.exsd`
 (click Schema on previous page).
-This defines the methods that should be fulfilled by the plugin that want to sign up to this extension.
+This defines the methods that a plugin must implement to use this extension point.
 
 In this case there are three methods:
 - `preSetInstrument` - this will be called before the instrument is switched. This is useful for closing resources 
