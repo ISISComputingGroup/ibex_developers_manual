@@ -37,7 +37,7 @@ In this exercise, we will add parking behaviour to the super mirror and sample c
 3. Restart the IOC to pick up the updated config.py.
 4. If you go to the `Activation Parameters` tab in the reflectometry view you should now see the two parameters created in this exercise listed there, and both should be `IN`.
 5. Change the mode to `NR`, go back to the `Activation Parameters` tab, and the `IN|OUT` buttons for the supermirror parameter should be swapped, and highlighted in yellow. Note that the move is saved until other values are changed, but if you hit move at this point, the `RBV` for the supermirror parameter should start moving. When it reads out, if you look on the table of motors then the height axis for the supermirror should be reading `-20`.
-6. Go back to the reflectometry front panel, go back to PNR mode, set theta to 22.5, and select `Move`. Theta should start to change, along with the other associated values. However, as things bing in/out are meant to be a specific descision, you will still have to go to the activation parameters tab to trigger the move for the supermirror.
+6. Go back to the reflectometry front panel, go back to PNR mode, set theta to 22.5, and select `Move`. Theta should start to change, along with the other associated values. However, as things being in/out are meant to be a specific decision, you will still have to go to the activation parameters tab to trigger the move for the supermirror.
 
 ## Solution
 <details>
