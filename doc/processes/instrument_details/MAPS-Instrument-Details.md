@@ -55,8 +55,13 @@ Lift is controlled by a PLC, therefore IBEX can report status of lift by interro
 Given the above, the requirement that "The Fermi chopper must not be operated (i.e. it must not be spinning) when it is in the raised position.  Lift controls should not be accessible to the user." is automatically satisfied.<br>
 
 {#maps_noteLinMot}
-##### Note: LinMot #####
-LinMots are used to drive the jaws.  There are two 4-blade sets: one named "fermi" and the other "sample" which relate to their positions in the beamline.
+##### Note: Fermi Jaws (Linmot)
+
+LinMots are used to drive the Fermi jaws.
+
+##### Note: Sample Jaws (Galil)
+
+Standard galil-controlled JJ x-ray sample jaw set.
 
 {#maps_notePfeiffer}
 ##### Note: Pfeiffer #####
