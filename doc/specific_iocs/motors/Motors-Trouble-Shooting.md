@@ -152,10 +152,15 @@ _Note the above is done here: https://github.com/ISISComputingGroup/EPICS-axis/b
 
 If motion is completing successfully but you still see a border, you might need to increase the tolerance in the first instance by increasing retry deadband. Check with the scientists what an achievable precision is.
 
-## Controller can communicate, soft limits are fine, but cannot move motor which is showing a W1 fault 
+### Controller can communicate, soft limits are fine, but cannot move motor which is showing a W1 fault 
 W1 or W2 fault is a winding fault which can happen to the drive cards of the motor. This has happened a few times on ALF specifically after power has been cut.  This issue shows up as a little red LED on the drive card itself. To fix, power cycle the drive card itself using the off/on toggle switch on the front: 
 ![image](Motors-Trouble-Shooting-w1-fault.png)
- 
+
+### Limit switches not being detected in Galil
+
+The symptom of this problem is that a physical hardware limit switch is detected by the Galil diagnostic card (i.e. the LEDs change correctly according to the limit being hit or not), but the Galil controller does not register the limit being hit (e.g. there will be no change in `MG _LR<axis>` or `MG _LF<axis>` when the limit is hit, even though the limit LED on the diagnostic card changes).
+
+The problem is likely an electrical connection problem between the diagnostic card and the Galil controller; check cables are plugged in firmly, and if this does not fix the issue, ask motion team to swap the expander card which sits between the diagnostic cards and the Galil controller itself.
 
 ## ZOOM PGC
 The PGC on ZOOM (MTR0101 and MTR0102) uses absolute encoders. To set these up after a power cycle of the Galil the following must be sent to the device:
