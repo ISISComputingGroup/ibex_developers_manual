@@ -312,6 +312,6 @@ The local database can then be truncated to remove the import once work is compl
 
 ### `EPICS_CA_MAX_ARRAY_BYTES`
 
-The `EPICS_CA_MAX_ARRAY_BYTES` constant is used throughout ibex to specify the size of the largest waveform (which is usually produced by the dae). Large objects are need especially for (Live View)[/specific_iocs/dae/DAE-Live-View]. Currently the largest know version of this is on POLREF who want to see their linear detector with a time of flight 2D view. This has the size of:
+The `EPICS_CA_MAX_ARRAY_BYTES` constant is used throughout ibex to specify the size of the largest waveform (which is usually produced by the dae). Large objects are need especially for [Live View](/specific_iocs/dae/DAE-Live-View). Currently the largest know version of this is on POLREF who want to see their linear detector with a time of flight 2D view. This has the size of:
 
     5001 (time channels) * 640 * 8 ~ 20M
