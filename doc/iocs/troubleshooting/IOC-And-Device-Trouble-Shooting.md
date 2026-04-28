@@ -299,7 +299,7 @@ Certain IOCs can be made to generate log files using the [ARACCESS component](/s
 ### Reading historical PV values from local database _after_ it has been backed up and truncated
 
 This can be done by _importing_ the backed-up database (usually on a network drive) into a local developer's copy, then reading/plotting from there.
-Example command from a request to read chopper values on MERLIN:
+Example command to read vallues from the backup on yyyy-dd-mm on INSTRUMENT, to be run in an EPICSterm:
 
 ```
 mysql.exe -u root -p < \\isis\inst$\Backups$\stage-deleted\ndxINSTRUMENT\ibex_db_sqldump_yyyy_mm_dd.sql
