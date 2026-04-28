@@ -302,7 +302,7 @@ This can be done by _importing_ the backed-up database (usually on a network dri
 Example command from a request to read chopper values on MERLIN:
 
 ```
-mysql.exe -u root -p < \\isis\inst$\Backups$\stage-deleted\ndxMERLIN\ibex_database_backup_2024_01_30\ibex_db_sqldump_2024_01_30.sql
+mysql.exe -u root -p < \\isis\inst$\Backups$\stage-deleted\ndxINSTRUMENT\ibex_db_sqldump_yyyy_mm_dd.sql
 Enter password: ************
 ```
 
