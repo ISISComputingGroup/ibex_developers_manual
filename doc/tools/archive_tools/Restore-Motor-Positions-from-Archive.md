@@ -62,9 +62,9 @@ You should check that the motor has not moved for a while and is not moving for 
 
 It should also produce a log in the `var\logs` directory listing the redefines and summary table.
 
-## Oh no! I've just truncated my database and don't have positions anymore! 
+## Instrument database has been truncated since the restore time
 
-Don't panic. You can reimport a database dump by: 
+You can reimport a database dump by: 
 
 1) Copying the MySQL dump file from `\\isis\inst$\backups$\stage-deleted\ndxinstrument\` to `\instrument\var\tmp\`
 2) from `\instrument\apps\mysql\bin\`, run `mysql.exe -u root -p < \instrument\var\tmp\<dumpfile>` - this will take a fairly long time for large databases. 
