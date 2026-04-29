@@ -53,7 +53,9 @@ See multi-detector and single-detector below.
 INTER has a Mk3 chopper.<br>
 
 ##### Note: Motion safety #####
-INTER has a safety system which includes light curtains and some other bits, but these are controlled via a safety-rated PLC within a Beckhoff. It forwards a signal when it is "about to trip" motion, which we then use to send an `AB 1` command (abort all motion) to all of the galils. this is done to avoid positions being lost on open-loop axes. The actual forwarding code for this lives in `custom_records.db` in the settings area, and is loaded in by the `INSTETC` IOC. 
+INTER has a safety system which includes light curtains and some other bits, but these are controlled via a safety-rated PLC within a Beckhoff. It forwards a signal when it is "about to trip" motion, which we then use to send an `AB 1` command (abort all motion) to all of the galils. this is done to avoid positions being lost on open-loop axes. The actual forwarding code for this lives in `custom_records.db` in the settings area, and is loaded in by the `INSTETC` IOC.
+
+In the same DB, for all Galil axes, the `.SPMG` field is set to `STOP` automatically when the motion is disabled, and to `GO` when it is re-enabled. Moves put in to the motor record while the motion safety system was tripped will be actioned when the motion safety system is re-enabled. This prevents new moves from being requested while the safety system is tripped.
 
 {#inter_note-jaws}
 ##### Note: Jaws #####
