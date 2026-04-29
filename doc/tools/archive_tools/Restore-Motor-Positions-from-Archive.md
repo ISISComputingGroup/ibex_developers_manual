@@ -1,9 +1,5 @@
 # Restore motor positions from archive
 
-```{note}
-Edge case: If you are applying positions obtained with this script via SECI, be careful as the user offsets may be different for each axis i.e. the difference needs to be added to the recovered position.
-```
-
 This tool can be used to restore motor positions from the archive and put them on the current motor axis. It works by running in an epics terminal (EPICSTerm.bat in the start menu) the commands:
 
 ```
@@ -65,3 +61,10 @@ Set motor to record position? [Y/N]
 You should check that the motor has not moved for a while and is not moving for a while after this time. If it does move think about plotting the values at that time. You should check that the value is reasonable. If this is good then the position should be restored. If for any reason this fails to set the motor position make sure that the axis motor calibration is set to `use` not `set`.
 
 It should also produce a log in the `var\logs` directory listing the redefines and summary table.
+
+## Oh no! I've just truncated my database and don't have positions anymore! 
+
+Don't panic. You can reimport a database dump by: 
+
+1) Copying the MySQL dump file from `\\isis\inst$\backups$\stage-deleted\ndxinstrument\` to `\instrument\var\tmp\`
+2) from `\instrument\apps\mysql\bin\`, run `mysql.exe -u root -p < \instrument\var\tmp\<dumpfile>` - this will take a fairly long time for large databases. 
