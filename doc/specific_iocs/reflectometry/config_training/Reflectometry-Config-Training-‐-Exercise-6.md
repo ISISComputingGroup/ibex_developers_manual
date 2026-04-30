@@ -9,23 +9,16 @@ Sometimes, scientists want to be able to see a beamline parameter and the low le
 ## `DirectParameter`
 A type of beamline parameter that forgoes the `Component` and `IocDriver` layers, and directly mirrors the value from a given `PvWrapper` instead. We use this in instances where we want a parameter on the front panel but what the parameter controls is completely independent of the beam path. Slit Gap and Centre parameters are instances of `DirectParameter` for example.
 
-## `custom_function`
-Run a custom function whenever a given parameter is being "moved". This is potentially quite powerful as this can be arbitrary code, however this should be used sparingly and cautiously, as it is not subject to reviews, automated tests etc. We have used this in the past e.g. to load appropriate wiring tables when moving Point / Linear detectors in or out of the beam.
-
-## Exercise 6a - `characteristic_value` and `DirectParameter`
+## Exercise 6
 ### 1. Add a `characteristic_value`
 Go to the `AxisParameter` creation for the sample offset, and add in the `chatacteristic_value` parameter after the description, and assign it to `MOT:MTR0307` in our fictitous beamline. 
 
 ### 2. Add a `DirectParameter`
 Create this somewhere in the config file, call it `MONITORPOS`, give it a `pv_wrapper` value of a `MotorPVWrapper` pointing at `MOT:MTR0208` which in our beamline is the axis controlling the position of the monitor.
 
-## Testing 6a - `characteristic_value` and `DirectParameter`
+## Testing
 1. Go to the table of motors and make sure all are at a 0 position.
 2. Restart the IOC to pick up the updated config.py.
 3. On the `Collimation Plane Parameters` tab, the `SAMPOFFSET` parameter should now have a label alongside it, reading `0.0`.
 4. Set the `SMANGLE` to `22.5`. Whilst the `RDB` for `SAMPOFFSET` should update to `-20.0` the label should remain at `0.0`, that difference is equal to the displacement of the reflected beam.
 5. Go now to the `Slit Parameters` page and you should see the direct parameter created above listed in there, in the appropriate place in the list in relation to the slit sets. If you set this parameter, then the appropriate axis on the table of motors should move with it with no differences seen.
-
-## Exercise 6b - `custom_function`
-This information was not in the original version of the instructions and will need to be checked and added as there are currently no descriptions for it, so is to follow at present.
-
