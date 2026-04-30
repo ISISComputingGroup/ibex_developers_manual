@@ -18,7 +18,7 @@ All team members should add the proposal label to tickets that should be conside
 
 ### After the meeting
 1. For tickets being added, remove proposal labels and make sure that size labels and fields match. This is most readily done using the table views.
-2. Update the sprint value for every item in the sprint that has just finished to be the sprint just starting, for every columne except `Done`.
+2. Update the sprint value for every item in the sprint that has just finished to be the sprint just starting, for every column except `Done`.
 3. Move the search filters on the planning and current sprint table and boards to the next sprint value.
 4. Using the `Change Sprint` button on the appropriate automation tool page (the link to that page is available in the `Planning` tab on the IBEX Developers MS Teams `announce` channel) move the automation tool into the new sprint. You can verify this by reloading the daily `burndown` chart.
 
