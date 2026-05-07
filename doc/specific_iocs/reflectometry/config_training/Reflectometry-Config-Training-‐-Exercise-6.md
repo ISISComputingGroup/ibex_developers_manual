@@ -1,7 +1,7 @@
 # Exercise 6 - Optional Features
 
 ## `autosave`
-Should you see this it is related to the ability to swap between multiple control software types, and as only IBEX and this server is now in use is informally deprecated, and as such will not be covered in detail, merely mentioned that with autosave, if you change a value when the reflectometry server is not running it should come back with the last SP before IOC restart. Without, it should come back with the current RBV applied as SP
+With autosave set to `True`, if you change a value when the reflectometry server is not running it should come back with the last SP before IOC restart. Without, it should come back with the current RBV applied as SP. This is usually desired for parameters which are assigned to variables, which is why you will get a warning if you don't add this to the `AxisParameter`.
 
 ## `characteristic_value`
 Sometimes, scientists want to be able to see a beamline parameter and the low level axis it derives its value from side by side for diagnostics purposes. You can do this by "tagging" a beamline parameter with the relevant axis e.g. `AxisParameter(..., characteristic_value="MOT:MTR0101")`. This will just make the value for the given PV display next to the parameter, there is nothing too clever happening under the hood.
