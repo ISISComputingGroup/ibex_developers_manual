@@ -14,7 +14,7 @@ A type of beamline parameter that forgoes the `Component` and `IocDriver` layers
 Go to the `AxisParameter` creation for the sample offset, and add in the `chatacteristic_value` parameter after the description, and assign it to `MOT:MTR0307` in our fictitous beamline. 
 
 ### 2. Add a `DirectParameter`
-Create this somewhere in the config file, call it `MONITORPOS`, give it a `pv_wrapper` value of a `MotorPVWrapper` pointing at `MOT:MTR0208` which in our beamline is the axis controlling the position of the monitor.
+Create this somewhere in the config file, call it `MONITORPOS`, give it a `pv_wrapper` value of a `MotorPVWrapper` pointing at `MOT:MTR0208` which in our beamline is the axis controlling the position of the monitor. Don't forget to import `DirectParameter` from `ReflectometryServer.parameters`.
 
 ## Testing
 1. Go to the table of motors and make sure all are at a 0 position.
