@@ -11,7 +11,7 @@ We have different types of engineering corrections, namely:
 Any of the above can also be made to apply for specific modes only.
 
 ## Exercise 7
-Here we will add corrections to the detector, as we will be considering things against actual motor values do consider adding in charactaristic values to the detector height and angle to save on moving between views.
+Here we will add corrections to the detector, as we will be considering things against actual motor values do consider adding in characteristic values to the detector height and angle to save on moving between views.
 
 ### 1. Add a constant correction
 Create a `constant_correction` variable using the `ConstantCorrection` function with a value of `0.3`. `ConstantCorrection`, and `UserFunctionCorrection` which you will use in the next step are both in `ReflectometryServer.engineering_corrections`.
@@ -19,10 +19,10 @@ Add this as an `engineering_correction` to the driver for the detector angle.
 
 ### 2. Add a user function correction
 Create a function in your config file for this training, normally it would probably be cleaner to put these functions in a separate file and import them.
-This function should take in a float, and return that float mulitplied by `0.1`
+This function should take in a float, and return that float mulitiplied by `0.1`
 For our example, let's use the supermirror angle as the source for our float, which is already defined as a parameter. However, to use this that parameter will need to be assigned to a variable, so make sure you do that.
-It's also a good idea to specify an autosave on any parameter you use like this, that way even if the motor is moved it is easy to see what the setpoint was. If you don't, then there will be a warning displyed.
-To use this function create a variable that calls `UserFunctionCorrection`, supplying it with the namce of the function you have just created, and the `BeamlineParameter` to use, in this case use the variable you have just created. Apply this correction to the detector height.
+It's also a good idea to specify an autosave on any parameter you use like this, that way even if the motor is moved it is easy to see what the setpoint was. If you don't, then there will be a warning displayed.
+To use this function create a variable that calls `UserFunctionCorrection`, supplying it with the name of the function you have just created, and the `BeamlineParameter` to use, in this case use the variable you have just created. Apply this correction to the detector height.
 
 ## To Test
 1. Before doing anything else, have a look at your collimation panel, to see the behaviour without the corrections. If it is in the same state as it was before then `theta` is currently `0.0`, the detector angle is `0.0` for collimation purposes, but is at `45.0` on the actual motor, and the detector height is `0.0` with a motor position of `30.0`. Your supermirror angle should be at `22.5`.
