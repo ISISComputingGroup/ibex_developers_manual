@@ -19,7 +19,7 @@ Add this as an `engineering_correction` to the driver for the detector angle.
 
 ### 2. Add a user function correction
 Create a function in your config file for this training, normally it would probably be cleaner to put these functions in a separate file and import them.
-This function should take in a float, and return that float mulitiplied by `0.1`
+This function should take in a float, and return that float multiplied by `0.1`
 For our example, let's use the supermirror angle as the source for our float, which is already defined as a parameter. However, to use this that parameter will need to be assigned to a variable, so make sure you do that.
 It's also a good idea to specify an autosave on any parameter you use like this, that way even if the motor is moved it is easy to see what the setpoint was. If you don't, then there will be a warning displayed.
 To use this function create a variable that calls `UserFunctionCorrection`, supplying it with the name of the function you have just created, and the `BeamlineParameter` to use, in this case use the variable you have just created. Apply this correction to the detector height.
