@@ -30,6 +30,7 @@ We also need to add in the concept of both the `NATURAL_ANGLE` we've been using 
 
 ### 3. Add the bench component
 Use the bench component helper method, and the associated setup to create the bench as per: `bench = add_component(BenchComponent("bench", BenchSetup( ... )))`.
+Both `BenchComponent` and `BenchSetup` are in `ReflectometryServer.components`.
 Give the setup the following arguments: `0.0`, `BENCH_PIVOT_Z`, `ANGLE_OF_MOVEMENT`, `BENCH_PIVOT_TO_FRONT`, `BENCH_PIVOT_TO_REAR`, `NATURAL_ANGLE`, `BENCH_PIVOT_TO_BEAM`, `0.0`, and `10.0`.
 
 ### 4. Add parameters and drivers for the bench
