@@ -21,6 +21,7 @@ Slit 1 exists on our imaginary beamline between the source and the supermirror, 
 The slits have already been set up with the addition of the `jaws.cmd` during the setup.
 You will need to add a constant for the distance to these slits, `S1_Z`, which needs to be set to `10.0`.
 You can add slit parameters to your config with a helper method, e.g.:`add_slit_parameters(slit_number=1, include_centres=True)`, for this slit set the centres should be included.
+This helper method is in `ReflectometryServer.config_helper`.
 As with the supermirror in the previous exercise add a component for the slits, using `0.0`, `S1_Z`, and the `NATURAL_ANGLE` to set the `PositionAndAngle` of the component.
 Add another parameter here, but this time the axis parameter is a `POSITION` related to the height of the slit set, which has to be called `S1OFFSET`.
 Add the driver for that parameter pointing at `MTR0301`.
@@ -40,7 +41,7 @@ We added in the axes for this during the setup via the `axes.cmd`.
 Again, a distance will be needed, this time it is `SAMPLE_Z` and should be set to `S2_Z + 10.0`.
 Add parameters and drivers for the height, translation, phi, and psi, which should be called `SAMPOFFSET`, `SAMPTRANS`, `SAMPPHI`, and `SAMPPSI`.
 The height (or vertical position) is a `POSITION` axis, on motor `MTR0307`, phi (or the pitch) is an `ANGLE` on `MTR0306`, psi (or the roll) is a `PSI` on `MTR0308`, and the translation (or horizontal position) is a `TRANS` on `MTR0305`.
-Perhaps counterintuitively, we do not want the sample to change the beam path! While the sample reflects the beam in the physical world, in the reflectometry server this is handled via a special parameter "Theta" which we will talk about more later. We do, however, want this component to track the beam in both height and angle, so it's a `TiltingComponent`.
+Perhaps counterintuitively, we do not want the sample to change the beam path! While the sample reflects the beam in the physical world, in the reflectometry server this is handled via a special parameter "Theta" which we will talk about more later. We do, however, want this component to track the beam in both height and angle, so it's a `TiltingComponent`, which should be imported from `ReflectometryServer.components`.
 
 ## To Test
 Once you have added all these components, you should now be able to set the parameters and see the related motor axes move as in the previous exercise. You now also have enough in your beamline model to see beamline parameters react to changes in the beam.
