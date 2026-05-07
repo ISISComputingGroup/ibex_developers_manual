@@ -75,6 +75,7 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     # Modes
     _nr = add_mode("NR")
 ```
+Note that `add_constant` is in the `ReflectometryServer.config_helper` library, while `BeamlineConstant` needs to be imported from the `ReflectometryServer.beamline_constant` library.
 
 The first item on our imagined reflectometer is going to be a supermirror. This supermirror will have a few things that need to be added.
 
@@ -87,11 +88,12 @@ The generic code for adding a component is as follows:
 ```python
 component = add_component(Component("comp_name", PositionAndAngle(Y, Z, Angle)))
 ```
+`add_component` is in `ReflectometryServer.config_helper`, `Component` is in `ReflectometryServer.components`, and `PositionAndAngle` is in `ReflectometryServer.geometry`.
 There are different subclasses of Components: 
     - `Component` just tracks the beam path in height
     - `TiltingComponent` tracks the beam path in height and angle 
     - `ReflectingComponent` tracks the in height and angle and can also change the path of the beam for components further downstream
-This will be a `ReflectingComponent`, as it can impact on the direction of the beam. It can be added using the `add_component` helper method shown above. This will need a `name` and a geometry setup, in this case a `PositionAndAngle` setup will be suitable, setting `Y` to `0`, `Z` to `SM_Z`, and `Angle` to `NATURAL_ANGLE`
+This will be a `ReflectingComponent`, as it can impact on the direction of the beam. It can be added using the `add_component` helper method shown above. This will need a `name` and a geometry setup, in this case a `PositionAndAngle` setup will be suitable, setting `Y` to `0`, `Z` to `SM_Z`, and `Angle` to `NATURAL_ANGLE`. Don't forget to import this from `ReflectometryServer.components`
 
 ### 3. Add parameters for the supermirror
 Our supermirror has two things which can be varied, its height, and its angle. Each of these will need a parameter to interact with them.
@@ -99,6 +101,7 @@ The generic code for adding a parameter is as follows:
 ```python
 add_parameter(AxisParameter("param_name", component, ChangeAxis.[Axis parameter], "description of parameter"))
 ```
+`add_parameter` is in `ReflectometryServer.config_helper`, `AxisParameter` is in `ReflectometryServer.parameters`, and `ChangeAxis` is in `ReflectometryServer.geometry`.
 `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. For more information on the different options for `AxisParameter`, see [here](../Reflectometry-Configuration)
 Here, the angle, to be called `SMANGLE`, will be of the type `ANGLE` and the height, to be called `SMOFFSET`, of type `POSITION`
 Note that you need to name parameters according to a certain standard in order to be able to view them readily in the reflectometry OPIs. That naming makes the use of a description, which will appear as a tooltip in the GUI which can be extremely useful.
@@ -109,6 +112,7 @@ The generic code for adding a driver is as follows:
 ```python
 add_driver(IocDriver(component, ChangeAxis.[Axis parameter], MotorPVWrapper("MOT:MTRXXXX")))
 ```
+Don't forget to add the imports. `add_driver` is in `ReflectometryServer.config_helper`, `IocDriver` is in `ReflectometryServer.ioc_driver`, and `MotorPVWrapper` is in `ReflectometryServer.pv_wrapper`
 `MTRXXXX` should be replaced with the appropriate motor axis. In this case, they should have been set up as `MTR0207` for the angle, and `MTR0206` for the height (which is still has an `Axis Parameter` of `POSITION`.
 
 ## To Test
