@@ -25,16 +25,14 @@ It's also a good idea to specify an autosave on any parameter you use like this,
 To use this function create a variable that calls `UserFunctionCorrection`, supplying it with the namce of the function you have just created, and the `BeamlineParameter` to use, in this case use the variable you have just created. Apply this correction to the detector height.
 
 ## To Test
-1. Before doing anything else, have a look at your collimation panel, if it is in the same state as it was before then `theta` is currently `-45.0`, the detector angle is `90.0` and the detector height is `20.0`. Your supermirror angle should be at `22.5`.
-2. Set everything to `0.0` on the collimation panel.
-3. Set `theta` to `2.0`. Note that the height and angle for the detector will still read `0.0` (or very close to that value), whilst the motors will read `4.0` for the angle and `0.7` for the height.
-4. Go to the table of motors and make sure all are at a 0 position.
-5. Restart the IOC to pick up the updated config.py.
-6. If you look at the collimation tab in the reflectometry server view you will now see that the detector angle is reading `-0.3`, this is the correction from `0.0` applied by the constant created during this exercise. If you look at the table of motors (or the characteristic value if you set it up) you will see that the motor position is still `0.0`.
+1. Before doing anything else, have a look at your collimation panel, to see the behaviour without the corrections. If it is in the same state as it was before then `theta` is currently `0.0`, the detector angle is `0.0` for collimation purposes, but is at `45.0` on the actual motor, and the detector height is `0.0` with a motor position of `30.0`. Your supermirror angle should be at `22.5`.
+2. Set `theta` to `2.0`. Note that the height and angle for the detector will still read `0.0` (or very close to that value), whilst the motors will read `49.0` for the angle and `31.504` for the height.
+3. Go to the table of motors and make sure all are at a 0 position.
+4. Restart the IOC to pick up the updated config.py.
+5. If you look at the collimation tab in the reflectometry server view you will now see that the detector angle is reading `-0.3`, this is the correction from `0.0` applied by the constant created during this exercise. If you look at the table of motors (or the characteristic value if you set it up) you will see that the motor position is still `0.0`.
+6. Set the supermirror angle to `22.5`. Looking at the values when the move completes, `theta` is still `0.0`, the detector angle is reading `-0.3`, with an actual motor position of `45.0`, which shows that the engineering corrections are made in relation to the final value in the reflectometry server. This time the height is also still reading '0.0', but the motor position is `32.25`, which is to be expected given that the engineering correction adds `22.5*0.1` to the value.
 7. Set `theta` to `2.0`.
-8. At this point, the detector angle and height should still be reading as `-0.3` and `0.0`, but, the motors themselves have moved to `4.0` and `0.7` respectively, to maintain that theta value.
-9. Set everything back to `0.0` on the collimation panel tab. All actual motor position should be `0.0`, apart from the detector angle, which will now be `0.3` having had the constant value applied. It may be worth restarting the IOC again for clarity in the next steps.
-12. Set the supermirror angle to `22.5`. Looking at the values when the move completes, `theta` is again `-45.0`, the detector angle is instead `44.7`, and the detector height is `-12.25`. All the motor positions shuold be `0.0`.
+8. At this point, the detector angle and height should still be reading as `-0.3` and `0.0`, but, the motors themselves have moved to `49.0` and `33.754` respectively, to maintain that theta value.
 
 ## Solution
 <details>
