@@ -14,7 +14,7 @@ Any of the above can also be made to apply for specific modes only.
 Here we will add corrections to the detector, as we will be considering things against actual motor values do consider adding in charactaristic values to the detector height and angle to save on moving between views.
 
 ### 1. Add a constant correction
-Create a `constant_correction` variable using the `ConstantCorrection` function with a value of `0.3`
+Create a `constant_correction` variable using the `ConstantCorrection` function with a value of `0.3`. `ConstantCorrection`, and `UserFunctionCorrection` which you will use in the next step are both in `ReflectometryServer.engineering_corrections`.
 Add this as an `engineering_correction` to the driver for the detector angle.
 
 ### 2. Add a user function correction
