@@ -19,17 +19,12 @@ These parameters function very similarly to [Motion Set Points](/specific_iocs/m
 ## Exercise 5
 
 ### 1. Add an in beam parameter to the supermirror
-Adding in this kind of parameter is very similar to other parameters, `add_parameter(InBeamParameter("comp_in", some_compon, description=""),modes=[mode], mode_inits=[(mode, value)])`. Whilst it is typically best practice to only include this in appropriate modalities, for now keep this in `all_modes`. To initialise the value of this parameter for specific modes use the `mode_inits` list, at the moment set this to `0` for `nr`, and `1` for `pnr`.
+Adding in this kind of parameter is very similar to other parameters, `add_parameter(InBeamParameter("comp_in", some_compon, description=""),modes=[mode], mode_inits=[(mode, value)])`. `InBeamParameter` in in `ReflectometryServer.parameters`. Whilst it is typically best practice to only include this in appropriate modalities, for now keep this in `all_modes`. To initialise the value of this parameter for specific modes use the `mode_inits` list, at the moment set this to `0` for `nr`, and `1` for `pnr`.
 Add the information for the parked position to the existing drivers using the parameter `out_of_beam_positions` setting it to a list containing the appropriate position. In the case of the supermirror the height should be `-20.0` and the angle set to `0.0`
+To make all this work don't forget to import `OutOfBeamPosition` from `ReflectometryServer.out_of_beam`.
 
 ### 2. And an in beam parameter to the sample component
 Add an in beam parameter to the sample in just the same way as above. This time however, only the translation needs to be given a position, set it to `100.0`, and the mode items can be omitted, as there will always be a sample point to consider.
-
-In this exercise, we will add parking behaviour to the super mirror and sample components. We want the following:
-- An `InBeamParameter` each for the Super Mirror and Sample components, which lets you toggle between in and out of beam for each component
-- When the Super Mirror gets parked, move its height to -20 and its angle to 0
-- When the Sample gets parked, move its `TRANS` axis to 100
-- Think about which parameters are used in which experimental modality and give them appropriate Modes and Mode Inits
 
 ## To Test
 1. Go to the table of motors and make sure all are at a 0 position.
