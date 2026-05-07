@@ -54,7 +54,7 @@ $(IFIOC_GALIL_02) dbLoadRecords("$(AXIS)/db/axis.db","P=$(MYPVPREFIX)MOT:,AXIS=M
 13. At this point if you open the Reflectometry perspective the `Server Status` should indicate an `ERROR` as it can't find the configuration.
 14. In the configurations folder for the computer you are using create a folder called `refl`, and in `refl` create `config.py`.
 15. If you restart the `REFL_01` IOC at this point, the server will still be in error, but the error text should have changed to being unable to read the file rather than being unable to find it.
-16. Open `config.py` in the editor of your choice, and copy in this code, which is the most reflectometry configuration you have that will load.
+16. Open `config.py` in the editor of your choice, and copy in this code, which is the reflectometry configuration you have that will edit and load during the exercises. This is the simplest version you can have to load and not create an error or warning.
 
 ```Python
 from typing import Dict
