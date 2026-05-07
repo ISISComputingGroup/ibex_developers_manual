@@ -32,7 +32,7 @@ At the end of this exercise your beamline should have the following in order:
 
 ### 1. Add in the Theta Component and Parameter
 Because Theta is related in reality to the sample position, this component should be added next to the sample stack. Because we don't want theta to influence the sample stack, as explained above, it should be put directly after the sample stack if using one. In our imaginary beamline, we are keeping the sample stack in.
-Theta has it's own component type, `ThetaComponent`. This component has the added functionality of being able to listen to a different component from which to derive it's values.
+Theta has it's own component type, `ThetaComponent`, which is in `ReflectometryServer.components`. This component has the added functionality of being able to listen to a different component from which to derive it's values.
 The (virtual) Theta component's coordinates need to match the (real) Sample Components coordinates, so you should using `0.0`, `SAMPLE_Z`, and the `NATURAL_ANGLE` to set the PositionAndAngle of the component. 
 The `Theta` parameter itself is just a simple Axis Parameter, same as we added for the supermirror in Exercise 1. This parameter is used in `all_modes`.
 
