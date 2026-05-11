@@ -22,7 +22,7 @@ We actually run two archive engines on each instrument:
 
 To run these archive engines there are two batch files in `EPICS\CSS\master\ArchiveEngine` called `start_block_archiver` and `start_inst_archiver`. They can also both be accessed via procserv as **ARBLOCK** and **ARINST**.
 
-Each Archive Engine can be accessed via a web browser when running. This is what the [web dashboard](/webdashboard/Web-Dashboard) is based on.
+Each Archive Engine can be accessed via a web browser when running. The inst archiver is served on `http://machine:4812/groups`; the block archiver is served on `http://machine:4813/groups`.
 
 ## Prerequisites
 
@@ -59,4 +59,4 @@ As our version of the Archive Engine is no different to CSS we can just copy the
 
 ## Editing the Archive Engine
 
-In some cases we may want to build the archive engine ourselves. For example, if we want to edit the code. To do this follow the instructions laid out [here](https://github.com/ISISComputingGroup/org.csstudio.sns)
+The archive engine is built as part of [`isis_css_top`](https://github.com/isisComputingGroup/isis_css_top).
