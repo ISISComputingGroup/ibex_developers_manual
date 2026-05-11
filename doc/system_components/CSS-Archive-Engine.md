@@ -59,4 +59,4 @@ As our version of the Archive Engine is no different to CSS we can just copy the
 
 ## Editing the Archive Engine
 
-In some cases we may want to build the archive engine ourselves. For example, if we want to edit the code. To do this follow the instructions laid out [here](https://github.com/ISISComputingGroup/org.csstudio.sns)
+The archive engine is built as part of [`isis_css_top`](https://github.com/isisComputingGroup/isis_css_top).
