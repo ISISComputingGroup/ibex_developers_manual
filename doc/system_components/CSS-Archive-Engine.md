@@ -22,7 +22,7 @@ We actually run two archive engines on each instrument:
 
 To run these archive engines there are two batch files in `EPICS\CSS\master\ArchiveEngine` called `start_block_archiver` and `start_inst_archiver`. They can also both be accessed via procserv as **ARBLOCK** and **ARINST**.
 
-Each Archive Engine can be accessed via a web browser when running.
+Each Archive Engine can be accessed via a web browser when running. The inst archiver is served on `http://machine:4812/groups`; the block archiver is served on `http://machine:4813/groups`.
 
 ## Prerequisites
 
