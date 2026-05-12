@@ -294,6 +294,7 @@ Gerrit
 getIOCGroup
 getIOCName
 getters
+GiB
 Gibbins
 GigE
 github
