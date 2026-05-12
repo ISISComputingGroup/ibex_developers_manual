@@ -43,7 +43,9 @@ The Sample changer has some `pt100` sensors for temperature mounted on it, these
 
 This is currently the most complex implementation of using a Beckhoff PLC as it handles kinematics between physical axes and flight paths, traditionally "worked out" by the Reflectometry server. It has some custom routines which can be accessed from the PLC HMI or through the `INTER Beckhoff Diagnostics` device screen in IBEX.
 
-It also controls some Jaws on the front of the tank. 
+It also controls some Jaws on the front of the tank.
+
+When motion on the beckhoff system on INTER is reset, some "Offset" virtual axes will return to saved positions. These are generally the positions that the beamline was aligned to at the beginning of cycle. Stored offsets are updated by the "Update defaults" button in the INTER-specific beckhoff diagnostics OPI.
 
 ### LARMOR - Detector Bench
 
