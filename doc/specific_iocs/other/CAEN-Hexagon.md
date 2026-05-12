@@ -17,6 +17,9 @@ Files on the hexagon digitiser have names like `HEX0_00000213_ch0.bin` - there a
  
 ## Troubleshooting
 
+
+### Hexagon loses connection with IOC
+
 Sometimes the hexagon loses connection with the IOC, this can be due to a hexagon spontaneous reboot or it may have hung. If you see errors like `exception in pollerTask: CAENMCA::GetData(): Generic error` then
 - try an IOC restart
 - try a hexagon power cycle then an IOC restart
@@ -24,3 +27,9 @@ Sometimes the hexagon loses connection with the IOC, this can be due to a hexago
 After a hexagon power cycle, a timing register needs to be set on the hexagon using the CAEN MCA2 vendor software to make the event/list mode work properly. The scientists know about this and will do this. 
 
 If the timing register is not set properly then you will see a `WARNING: Timing registers not set` appear in the log files for the IOC.
+
+### Noisy electronics
+
+The hexagon cannot write files larger than 2GiB without failing; this can be caused by electronic noise on a detector channel.
+
+This may cause the (simulated) ISISICP run state to desync from the hexagon run state - to fix this, manually stop the acquisition in each hexagon using it's OPI.
