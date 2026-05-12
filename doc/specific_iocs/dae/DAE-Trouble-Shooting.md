@@ -96,7 +96,7 @@ To fix this and other errors see [experimental runs troubleshooting](Experimenta
 
 ### No frames/beam current registered by the DAE
 
-Try switching the timing source to "Internal test clock" (found in experiment setup tab of DAE) and starting a run. If frames are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the detector systems group (`RAL ISIS Detector Systems Group` in Teams). Don't forget to switch the timing source back when you're done!
+Try switching the timing source to "Internal test clock" (found in experiment setup tab of DAE) and starting a run. If frames are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the detector systems group (`RAL ISIS Detector Systems Group` in Teams phone). Don't forget to switch the timing source back when you're done!
 
 This may occur on more than one beam line - if it does, it is likely to be a problem with the central PPP (protons-per-pulse) or timing signals. Contact Detector systems group if you believe timing or PPP signals may be the cause. If the problem is affecting multiple instruments, send a message to affected instruments or ask the MCR to put out a general MCR news message about the issues.
 
