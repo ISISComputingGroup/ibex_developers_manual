@@ -32,4 +32,4 @@ If the timing register is not set properly then you will see a `WARNING: Timing 
 
 The hexagon cannot write files larger than 2GiB without failing; this can be caused by electronic noise on a detector channel.
 
-This may cause the (simulated) ISISICP run state to desync from the hexagon run state - to fix this, manually stop the acquisition in each hexagon using it's OPI.
+This may cause the (simulated) ISISICP run state to de-sync from the hexagon run state - to fix this, manually stop the acquisition in each hexagon using it's OPI.
