@@ -45,7 +45,7 @@ This is currently the most complex implementation of using a Beckhoff PLC as it 
 
 It also controls some Jaws on the front of the tank.
 
-When motion on the beckhoff system on INTER is reset, some "Offset" virtual axes will return to saved positions. These are generally the positions that the beamline was aligned to at the beginning of cycle. Stored offsets are updated by the "Update defaults" button in the INTER-specific beckhoff diagnostics OPI.
+When motion on the Beckhoff system on INTER is reset, some "Offset" virtual axes will return to saved positions. These are generally the positions that the beamline was aligned to at the beginning of cycle. Stored offsets are updated by the "Update defaults" button in the INTER-specific Beckhoff diagnostics OPI.
 
 ### LARMOR - Detector Bench
 
