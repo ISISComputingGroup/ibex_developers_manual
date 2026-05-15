@@ -2,7 +2,7 @@
 
 ## Training material
 
-- [IBEX Training Material](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FTraining&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3)
+- IBEX Training Material (`\\isis.cclrc.ac.uk\shares\ISIS_Experiment_Controls_Public\training`)
 
 - There is a settings branch called NDXTRAIN with the setup for the training PCs (excluding machine specific files)
 
