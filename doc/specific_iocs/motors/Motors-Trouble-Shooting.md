@@ -19,6 +19,25 @@ IN:INST:MOT:JAWS<N>:VGAP:MIN:SP
 On many instruments, this has been set to `-2147483648` to effectively disable the minimum-gap checking. This can
 also be set temporarily.
 
+### Settings are suspected to have changed recently
+
+Not all motor record fields are archived, however their values are saved in autosave files. 
+
+An easy way of seeing whether a field has changed recently, is to use `grep` and look in the file contents. As the files are suffixed with the time they were created this effectively gives a time record of when things happened: 
+
+For example in this case we want to see the `UEIP` field of `MTR0102`. First open a git bash session (which works over ssh):
+```
+"\Program Files\Git\bin\bash.exe"
+```
+
+then:
+
+```
+grep -rnw '/c/Instrument/var/autosave/GALIL_01' -e 'MTR0103.UEIP'
+```
+
+
+
 ### Position needs to be restored 
 
 Note: [a script exists for this](/tools/archive_tools/Restore-Motor-Positions-from-Archive)
