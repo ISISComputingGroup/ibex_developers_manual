@@ -125,3 +125,5 @@ But this is not recommended for obvious reasons.
 Pyright keeps a cache directory in `c:\Users\<user>\.cache\pyright-python`, this can get corrupted, if it does get corrupted pyright will entirely fail to execute. This cache directory can be deleted (at the cost of the next script-check operation being much slower).
 
 Error from {external+genie_python:py:obj}`g.load_script <genie.load_script>` will be a `json.decoder.JSONDecodeError` as pyright does not return JSON in this case (but rather, returns some non-JSON error message).
+
+Pyright may also give an error about a corrupted cache if {external+genie_python:py:obj}`g.load_script <genie.load_script>` is called with an invalid path such as `z:a.py` (instead of the correct `z:/a.py`).
