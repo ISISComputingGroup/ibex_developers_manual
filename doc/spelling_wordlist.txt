@@ -653,6 +653,7 @@ Postgres
 potentio
 potentiometry
 potentiostat
+Poweredge
 powerpoint
 powershell
 ppt

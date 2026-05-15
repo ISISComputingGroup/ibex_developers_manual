@@ -8,9 +8,9 @@ The specifications listed below are for a single node, however for very high dat
 
 ### Network interface(s)
 
-We will require 2x 10Gigabit interfaces for each node.
+We will require 2x 10 Gigabit interfaces for each node.
 1 of these will be used for direct data transfer from detectors.
-1 of these will be used for connections to other nodes in the kafka cluster and connection to the wider ISIS network.
+1 of these will be used for connections to other nodes in the Kafka cluster and connection to the wider ISIS network.
 
 Standard DRAC interfaces are also being assumed (meaning a total of 3 links from each node to a switch)
 
@@ -42,7 +42,7 @@ HRPD-X has notably lower requirements than SANDALS-II. There are two options:
 
 For HRPD-X: 
 
-Worst case sustained count rate estimate is 50Mbps. There is a requirement to be able to keep 1 run's amount of events in a kafka instance along with the same amount of space for a nexus file to be written (until it is ultimately moved off this machine)
+Worst case sustained count rate estimate is `50Mbps`. There is a requirement to be able to keep 1 run's amount of events in a Kafka instance along with the same amount of space for a nexus file to be written (until it is ultimately moved off this machine)
 
 We then need other space for slower streams such as sample environment and run info. 
 
@@ -54,4 +54,4 @@ On this basis we will specify these machines with 4TB of storage along with a se
 
 - From dell consumer prices, we worked out that our baseline versus the SuperMuSR specifications was about 16% - with the differences being half the CPU cores and RAM.
 - The NDHes could be an option, but their chassis do not support NVME storage which is a Redpanda requirement. With a specification adjusted to allow this and a CPU upgraded to the lower bound of what is considered reasonable the SuperMuSR machines are +~60% more expensive. These were also out of stock on dell's website so may be about to be discontinued.
-- For HRPD-X, a single node will likely suffice. For SANDALS-II, it will not - performance tests showed that Repanda or Apache Kafka scale much more with multiple nodes. A single node was maxing out at ~350MB/s with kafka's built in `kafka-producer-perf-test.sh` (Exact arguments were ` ./kafka-producer-perf-test.sh --topic perf-test --record-size 1047576 --num-records 100000 --throughput -1 --print-metrics --producer-props linger.ms=50 batch.size=1048576 bootstrap.servers=localhost:9092`)
+- For HRPD-X, a single node will likely suffice. For SANDALS-II, it will not - performance tests showed that Redpanda or Apache Kafka scale much more with multiple nodes. A single node was maxing out at `~350MB/s` with Kafka's built in `kafka-producer-perf-test.sh` (Exact arguments were ` ./kafka-producer-perf-test.sh --topic perf-test --record-size 1047576 --num-records 100000 --throughput -1 --print-metrics --producer-props linger.ms=50 batch.size=1048576 bootstrap.servers=localhost:9092`)
