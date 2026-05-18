@@ -16,6 +16,12 @@ Types of daughter boards are:
 
 The device should be talked to via serial (RS232 / ISOBUS in OI terms) at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode** (when the box in the bottom left of the home screen **_doesn't_** have an orange background).
 
+The device is also capable of talking via an Ethernet link, getting an IP from DHCP which is viewable on the front panel of the device (under the Ethernet configuration screen). It can also be configured using a static IP. If using Ethernet, use port `7020` for communication. The protocol (SCPI) is identical to serial communication, so only need an `drvAsynIPPortConfigure("L0", "<ip>:7020")` line in the `st-common.cmd`.
+
+```{note}
+At present the IOC does not support Ethernet communication natively; if you need to use Ethernet comms (e.g. if serial is not working), you will need to manually adjust the `st-common.cmd`.
+```
+
 The configuration screens look like:
 
 ![Comms general](comms1.jpg)
