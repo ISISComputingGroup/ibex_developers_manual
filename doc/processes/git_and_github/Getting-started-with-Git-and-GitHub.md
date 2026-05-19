@@ -5,7 +5,7 @@
 
 (if asked, Choose `Checkout-as-is; commit Unix style line-endings`)
 
-During setup ensure you have selected "**Git from the command line and also 3rd-party software**" (do NOT add the optional Unix tools to your PATH). If `sh` is added to the PATH, Make will try to compile for Linux rather than Windows. This will cause syntax errors when reading the Makefiles (such as parse errors whenever a `(` is found in an echo message).
+During setup ensure you have selected "**Git from the command line and also 3rd-party software**" (do NOT add the optional Unix tools to your PATH). If `sh` is added to the PATH, Make will try to compile for Linux rather than Windows. This will cause syntax errors when reading the Makefiles (such as parse errors whenever a `(` is found in an echo message) and also `CreateProcess` errors. Basically, your `PATH` should have the `Git\cmd` directory and not e.g. the `Git\bin` directory in it. 
 
 * Set you username and email address  via the command line:
 
