@@ -52,7 +52,7 @@ Always `0xFFFFFFFF`.
 - **Bits 0..=9**: nanoseconds
 - **Bits 10..=19**: microseconds
 - **Bits 20..=29**: milliseconds
-- **Bits 30..=31**: milliseconds (least significant bits; combine with most significant bits from word 5)
+- **Bits 30..=31**: milliseconds (least significant bits; combine with most significant bits from word 4)
 
 ### Word 6: period number
 
