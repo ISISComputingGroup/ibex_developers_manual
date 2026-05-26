@@ -19,7 +19,7 @@ The 'engineer' password for the Nanodac is stored in Keeper under `Hydrogen Lab 
 
 ### CCD100s
 
-4x CCD100 pressure transducers. Connected via Moxa.
+4x Mk2 CCD100 pressure transducers. Connected via Moxa.
 
 ### Eurotherms
 
