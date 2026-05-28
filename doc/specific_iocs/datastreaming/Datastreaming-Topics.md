@@ -36,7 +36,9 @@ When sorted by `message_id`, this stream will contain, for each frame:
 - One `pu00` message (containing vetos, period number, protons-per-pulse)
 - Zero or more `ev44` messages containing the events
 
-See documentation of [`kafka-event-aggregator`](https://github.com/isisComputingGroup/kafka_event_aggregator) for more details about precise format of the `_events` stream.
+:::{seealso}
+See [`kafka-event-aggregator` documentation](https://isiscomputinggroup.github.io/kafka_event_aggregator/kafka_event_aggregator/#events-stream-format) for more details about precise format of the `_events` stream.
+:::
 
 Flatbuffers schemas in this topic:
 - [`ev44` - Events](https://github.com/ISISComputingGroup/streaming-data-types/tree/master/schemas/ev44_events.fbs)
