@@ -9,19 +9,19 @@ The default is to check out the `master` branch of the top level of EPICS and do
 - Checks that there is a newline at the end of files which should have one (`do_newline_endfile_check`)
 - Check the format of the IOC names are correct (`do_ioc_naming_check`)
 - Look for double carriage returns in any Make files (`do_makefile_separator_check`)
-- TCheck for any temporary build directories (`temporary_build_directories_check`)
+- Check for any temporary build directories (`temporary_build_directories_check`)
 - Check for any `__pycache__` directories (`pycache_directories_check`)
-- Check for any pyc/pyo files (`pyc_pyo_file_check`)
-- Check for any Db files in the gitignores (`do_gitignore_check`)
-- Check for any archvied repos (`do_archived_repo_check`)
-- Check for any missing/unremoved dirs (`missing_dir_check`)
+- Check for any `pyc`/`pyo` files (`pyc_pyo_file_check`)
+- Check for any Db files in the `gitignores` (`do_gitignore_check`)
+- Check for any archived repos (`do_archived_repo_check`)
+- Check for any missing/unremoved directories (`missing_dir_check`)
 - Check that repos have the correct permissions for the groups used at ISIS, this is considered an unstable test
 
-If you don't want to run all the tests there are a few arguments that can be passed to the script, to use these in Jenkins, just add them after the call in the `Execute Shell`, you can `--skip_unit_test=Yes`, and similarly you can `--skip_unstable_checks=Yes` to skip any unstable tests. Note that any text after the `=` will skip these items at this time. For the rest of them you can opt to include a subset instead using `--do_these_tests` and provide a comma separated list after an `=` of the test names as given inside the parantheses above.
+If you don't want to run all the tests there are a few arguments that can be passed to the script, to use these in Jenkins, just add them after the call in the `Execute Shell`, you can `--skip_unit_test=Yes`, and similarly you can `--skip_unstable_checks=Yes` to skip any unstable tests. Note that any text after the `=` will skip these items at this time. For the rest of them you can opt to include a subset instead using `--do_these_tests` and provide a comma separated list after an `=` of the test names as given inside the parentheses above.
 
 ## Checking against other branches
 If checking against a different branch at the top EPICS level as part of the CI via Jenkins, check out the appropriate branch and run it at that level is likely to be the safest option.
-If you want to check on a subrepo on a specific branch then you can use the `--repo_branch` argument to provide a list in this kind of manner, "relative path from the check_scripts directory to the repo in question"+name_of_branch_to_checkout (e.g. `--repo_branch=".."+Ticket123456` would check out a branch called `Ticket123456` at the top level, whilst `--repo_branch="../support/device/master"+Ticket987654,"../ioc/master"+Ticket987654` would check out a branch called `Ticket987654` for the device specified in support and for the main IOC repo)
+If you want to check on a submodule on a specific branch then you can use the `--repo_branch` argument to provide a list in this kind of manner, "relative path from the check_scripts directory to the repo in question"+name_of_branch_to_checkout (e.g. `--repo_branch=".."+Ticket123456` would check out a branch called `Ticket123456` at the top level, whilst `--repo_branch="../support/device/master"+Ticket987654,"../ioc/master"+Ticket987654` would check out a branch called `Ticket987654` for the device specified in support and for the main IOC repo)
 
 ## Checking for changes on only certain submodules
 If you only want to be informed of errors on certain submodules of EPICS the the argument `--submodules_of_interest` should be set to a comma separated list of submodules of interest, e.g. `--submodules_of_interest=ioc,device` would only provide an error if there were unpushed errors in IOC or the device repo.
