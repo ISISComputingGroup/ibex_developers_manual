@@ -19,6 +19,6 @@ For both the ICP and streaming systems, we will pull out things like `TITLE` and
 ## Consequences
 
 - `kafka_dae_control` will get smaller in terms of responsibilities, which may make it easier to maintain
-- If we need to write `kafka_dae_control_2` for whatever reason (ie. new streaming control boards with a different interface), its reponsibilities should be limited to just controlling the hardware and serving PVs to do so. 
+- If we need to write `kafka_dae_control_2` for whatever reason (ie. new streaming control boards with a different interface), its responsibilities should be limited to just controlling the hardware and serving PVs to do so. 
 - Some extra effort will be required to add these PVs to `INSTETC` and modify the ICP to suit, as well as removing them from `kafka_dae_control`
 - `kafka_dae_control` will rely on CA/PVA for these items. This is already the case for the list of blocks which is required to form a run start message.
