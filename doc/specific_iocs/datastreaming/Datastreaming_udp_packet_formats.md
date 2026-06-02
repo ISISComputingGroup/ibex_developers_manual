@@ -28,8 +28,8 @@ Always `0xFFFFFFFF`.
 - **Bits 0..=3**: Reserved for header type
 - **Bits 4..=8**: Length of header
 - **Bits 9..=10**: Not used
-- **Bit 11**: Bad frame
-- **Bit 12**: Run will continue
+- **Bit 11**: Bad frame (not currently used by streaming control board)
+- **Bit 12**: Run will continue (not currently used by streaming control board)
 - **Bit 13**: No frame sync
 - **Bit 14**: Frame Memory Full veto
 - **Bit 15**: Frame data overrun
