@@ -216,3 +216,11 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   
 To find contact numbers for instrument scientists and cabin phone numbers for instruments, the following website is available: [Instrument Map](https://www.isis.stfc.ac.uk/Pages/Instruments.aspx). On this page you can either click on the instrument (in the top image), or click the `Contacts And Support > Instrument Scientists` tab and find the instrument you are looking for.
 </details>
+
+<details>
+  <summary>Setting up a Support Phone/Work Phone</summary>
+
+When setting up a support phone, you will be required to enter your work Microsoft email and password to connect to Eduroam. Additionally, you should be prompted to enter your information into 'Microsoft Intune', which helps STFC manage the corporate apps such as Teams and enables the user to access the Play store without having to create a separate work google email account. If this application is not on your device, then there may have been an issue during its set up and you should visit the DI IT Service Desk at RAL R89 (3rd Floor - Walk in Service, no ticket is required).
+
+</details>
+
