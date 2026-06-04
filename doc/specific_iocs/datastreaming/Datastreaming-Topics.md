@@ -111,3 +111,14 @@ partitions: 1
 This is the last known forwarder configuration, sent by {ref}`bskafka`. This is for if the forwarder crashes, then it can quickly retrieve its last configuration.
 Flatbuffers schemas in this topic: 
 - [`fc00` - Forwarder Configuration](https://github.com/ISISComputingGroup/streaming-data-types/tree/master/schemas/fc00_forwarder_config.fbs)
+
+
+{#vetoconfigtopic}
+## `_vetoConfig`
+
+partitions: 1
+
+This contains updates for the veto configuration for hard or soft vetos as set by `kafka_dae_control`. Thse are published whenever a veto is enabled or whenever a run is started or stopped. 
+
+Flatbuffers schemas in this topic: 
+- [`TBD!`]()
