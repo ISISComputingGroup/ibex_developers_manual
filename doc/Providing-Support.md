@@ -220,7 +220,9 @@ To find contact numbers for instrument scientists and cabin phone numbers for in
 <details>
   <summary>Setting up a Support Phone/Work Phone</summary>
 
-When setting up a support phone, you will be required to enter your work Microsoft email and password to connect to Eduroam. Additionally, you should be prompted to enter your information into 'Microsoft Intune', which helps STFC manage the corporate apps such as Teams and enables the user to access the Play store without having to create a separate work google email account. If this application is not on your device, then there may have been an issue during its set up and you should visit the DI IT Service Desk at RAL R89 (2nd Floor - Walk in Service, no ticket is required).
+The documentation for setting up a support phone can be found [here](https://stfc365.sharepoint.com/sites/DI-Servicedesk/SitePages/MobileGuidance.aspx).
+
+NOTE: When setting up a support phone, you will be required to enter your work Microsoft email and password to connect to Eduroam. Additionally, you should be prompted to enter your information into 'Microsoft Intune', which helps STFC manage the corporate apps such as Teams and enables the user to access the Play store without having to create a separate work google email account. If this application is not on your device, then there may have been an issue during its set up and you should visit the DI IT Service Desk at RAL R89 (2nd Floor - Walk in Service, no ticket is required).
 
 </details>
 
