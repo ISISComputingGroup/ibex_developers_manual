@@ -2,10 +2,13 @@
 
 This device is a temperature-controlled multi-cuvette holder.
 
-It is controlled by the `QNW` IOC, which supports all `TC-1`-based Quantum Northwest temperature controllers.
+It is controlled by the `QNW` IOC, which supports all `TC-1`-based Quantum Northwest temperature controllers. It
+connects with a 9-way male serial cable into the back of the device, without null modem.
 
 Temperatures of all cuvettes are controlled by a single temperature control loop, so the device only has a single
 "temperature" and "temperature setpoint", not channels.
 
 The device defaults to sending many messages asynchronously; a periodic scan task turns off most asynchronous messages,
 in favour of explicit polling.
+
+The device needs to be polled very slowly and with a very high reply timeout in order to communicate reliably.
