@@ -31,7 +31,7 @@ search isis.cclrc.ac.uk
 ...
 ```
 
-To test if this works, run an [adhoc command](#Ad-hoc-commands) and use the module `ping` (for linux machines) or `win_ping` (for windows machines ie. NDXes) to test for aliveness. 
+To test if this works, run an {ref}`ansibleadhoccommand` and use the module `ping` (for linux machines) or `win_ping` (for windows machines ie. NDXes) to test for aliveness. 
 
 PRs will be linted by CI. To run this locally run `ansible-lint` - this is included in `requirements.txt`. Configuration is set by `.ansible-lint`.
 
@@ -155,6 +155,7 @@ To test playbooks on a local virtual machine running in Hyper-V, you need to set
 3) [OpenSSH set up](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) on the VM
 
 
+{#ansibleadhoccommand}
 ### Ad-hoc commands 
 To run an [adhoc command](https://docs.ansible.com/projects/ansible/latest/command_guide/intro_adhoc.html) to ie. `win_ping` to `TS2` machines to check they're reachable, you can run: 
 
