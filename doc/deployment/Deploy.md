@@ -1,9 +1,12 @@
 # Deployment
 
+We use a combination of [ansible playbooks](https://github.com/ISISComputingGroup/ansible-playbooks) followed by [`ibex_utils`](https://github.com/ISISComputingGroup/IBEX_utils) for deployment. 
+
 ```{toctree}
 :glob:
 :maxdepth: 1
 
+deploy/ansible
 deploy/Updating-Instrument-Machines
 deploy/Deployment-on-an-Instrument-Control-PC
 deploy/Configure-Mini-Inst

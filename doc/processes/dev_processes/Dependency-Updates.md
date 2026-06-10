@@ -160,7 +160,7 @@ In `c:\instrument\apps\epics\support\mysql\master\MySQLCppApp\src\mysql-connecto
   * ALARM
   * IOCLOG
 - Check that CS Studio IDE is loaded correctly
-- Update the Ansible playbook with the new version as per [these instructions](https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#updating-jdk-version). 
+- Update the Ansible playbook with the new version as per {ref}`ansibleupdatingjdk`
 
 ### Maven
 - There are two versions of maven, this is to update the one following the format `maven-X.x.x`
