@@ -11,13 +11,13 @@ These run on your own computer (the control node) and orchestrate steps on remot
 
 Playbooks should be idempotent, ie. they can be run multiple times and will always result in the same output - this is marked in Ansible as `OK`/`Changed` if a task is skipped or changed respectively. For example, checking that a dependency is a certain version and skipping a set of tasks to update it (which may remove the previous version) and so on. This means that the "deploy" playbook can be run absolutely everywhere, and machines that are already up to date will get most tasks skipped completely. Most Ansible modules are built to be idempotent by default. 
 
-We are working towards these playbooks being the declarative steps to provision an instrument machine so it can easily be (re)created. As a developer you should keep this in mind - Ansible playbooks _can_ be used for one-shot rollouts of a specific set of tasks, but we should make them repeatable. This repo should not become a 'dumping ground' of playbooks we've written to roll out a certain change - they should be applied to the [blueprints of an instrument machine](https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/windows/instrument_deploy.yaml) so we can use them again. 
+We are working towards these playbooks being the declarative steps to provision an instrument machine so it can easily be (re)created. As a developer you should keep this in mind - Ansible playbooks _can_ be used for one-shot roll outs of a specific set of tasks, but we should make them repeatable. This repo should not become a 'dumping ground' of playbooks we've written to roll out a certain change - they should be applied to the [blueprints of an instrument machine](https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/windows/instrument_deploy.yaml) so we can use them again. 
 
 ## Setup 
 Preliminary steps to run these: 
 1. If you haven't already, set up a keeper account with access to our group's passwords.
 1. Make sure your ssh public keys (which should be stored [here](https://github.com/ISISComputingGroup/keys)) are deployed to instruments - see below for the playbook that does this
-1. Set up the WSL if you're using a Windows control node - [Ansible does not support running on a windows control node natively](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#control-node-requirements). You will need your [SSH keys registered in the WSL](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/). If you are running Linux you can install ansible natively.
+1. Set up the WSL if you're using a Windows control node - [Ansible does not support running on a windows control node natively](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#control-node-requirements). You will need your [SSH keys registered in the WSL](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/). If you are running Linux you can install Ansible natively.
 1. Install Ansible, including plugins we require, by:
   1. `sudo snap install astral-uv --classic`
   1. `uv venv` & `source .venv/bin/activate`
@@ -35,7 +35,7 @@ To test if this works, run an {ref}`ansibleadhoccommand` and use the module `pin
 
 PRs will be linted by CI. To run this locally run `ansible-lint` - this is included in `requirements.txt`. Configuration is set by `.ansible-lint`.
 
-## Hosts.yaml
+## `Hosts.yaml`
 This is the main [inventory file](https://docs.ansible.com/projects/ansible/latest/inventory_guide/intro_inventory.html) which lists hosts in groups such as by target station and/or by deploy group. It is contained in the inventory directory.
 
 to limit running a playbook to just TS1 instruments, for example, you can use `ansible-playbook playbook.yaml --limit ts1`. This works because `ts1` is a host group in the inventory file. 
@@ -77,14 +77,14 @@ These are:
 
 ### `deploy_ssh_keys.yaml`
 
-This is the windows equivalent of the Linux workflow for deploying [the group's ssh keys](https://github.com/ISISComputingGroup/keys) and turning off password auth in favour of pubkey auth. 
+This is the windows equivalent of the Linux workflow for deploying [the group's ssh keys](https://github.com/ISISComputingGroup/keys) and turning off password auth in favour of public key auth. 
 
 To run this on all NDXes run `ansible-playbook windows/deploy_ssh_keys.yaml`. To limit to certain hosts/host groups use `--limit` ie. 
 `--limit NDXHRPD_SETUP` to just run on `NDXHRPD_SETUP` or `--limit muons` to only run on muon NDXes. 
 
 ### `nsclient.yaml`
 
-Install nsclient++ monitor program. Needs to be run with 
+Install `nsclient++` monitor program. Needs to be run with 
 
 `ansible-playbook --ask-vault-password windows/nsclient.yaml`
 
@@ -102,7 +102,7 @@ To use this you need to run `ansible-playbook windows/instrument_deploy.yaml` - 
 
 This is for deploying a new set of credentials to NDXes. The credentials should be updated in keeper first; this playbook reads the credentials from keeper.
 
-To use this you need to run `ansible-playbook windows/deploy_wincred.yaml --ask-vault-pass` - it should prompt for ansible vault password (found in keeper - search for "ansible") and hosts to target. 
+To use this you need to run `ansible-playbook windows/deploy_wincred.yaml --ask-vault-pass` - it should prompt for a vault password (found in keeper - search for `ansible`) and hosts to target. 
 
 
 ## Linux-only playbooks (`linux/`)
@@ -111,7 +111,7 @@ To use this you need to run `ansible-playbook windows/deploy_wincred.yaml --ask-
 
 This involves: 
 1) copying over the keys in [this repo](https://github.com/ISISComputingGroup/keys)
-2) disabling openssh password-authentication (ie. you can only use pub/priv keys!)
+2) disabling OpenSSH password-authentication (ie. you can only use pub/priv keys!)
 
 It can be run multiple times if for example you wanted to update the deployed keys if someone new joins the team or someone gets a new computer with a different public key. 
 
@@ -122,7 +122,7 @@ This can be run on multiple hosts by using `ansible-playbook playbook_deploy_ssh
 For example, to run this on `madara`: 
 
 `ansible-playbook playbook_deploy_ssh_keys.yaml --ask-pass --limit madara`
-which will prompt for madara's ssh password. 
+which will prompt for `madara`s ssh password. 
 
 This step also prompts for a personal access token to access the `keys` repo, which is in Keeper. 
 
@@ -142,7 +142,7 @@ This will prompt for the vault password, which is in keeper (`ds-config ansible 
 
 ### Kafka cluster provisioning
 
-`deploy_kafka.yaml` and `deploy_redpanda_console.yaml` exist to provision a kafka cluster, currently on the test machines in R55. 
+`deploy_kafka.yaml` and `deploy_redpanda_console.yaml` exist to provision a Kafka cluster, currently on the test machines in R55. 
 
 ## Notes
 
