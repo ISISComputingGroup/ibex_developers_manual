@@ -1,3 +1,4 @@
+{#ansible}
 # Ansible
 
 We are moving towards using [Ansible](https://github.com/ISISComputingGroup/IBEX_utils) for both initial configuration of machines as well as deployment. 

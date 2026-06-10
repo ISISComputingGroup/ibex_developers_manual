@@ -1,6 +1,6 @@
 # Deployment
 
-We use a combination of [ansible playbooks](https://github.com/ISISComputingGroup/ansible-playbooks) followed by [`ibex_utils`](https://github.com/ISISComputingGroup/IBEX_utils) for deployment. 
+We use a combination of {ref}`ansible` followed by [`ibex_utils`](https://github.com/ISISComputingGroup/IBEX_utils) for deployment. 
 
 ```{toctree}
 :glob:
