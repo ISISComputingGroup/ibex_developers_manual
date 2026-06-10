@@ -54,12 +54,14 @@ This performs a backup and truncation of the local databases on instruments. It 
 
 `ansible-playbook windows/truncate_databases.yaml`
 
+{#instrumentdeployyaml}
 ### `instrument_deploy.yaml`
 
 This is the main playbook for deploying software to NDXes. Currently this stops the server if it is running and installs the JDK using the `jdk` role. 
 
 To use this you need to run `ansible-playbook windows/instrument_deploy.yaml` - it should prompt for hosts. 
 
+{#ansibleupdatingjdk}
 #### Updating JDK version
 
 To update the JDK version, you will need to set the vars in `roles\defaults\main.yaml`. 
@@ -148,7 +150,7 @@ This will prompt for the vault password, which is in keeper (`ds-config ansible 
 To test playbooks on a local virtual machine running in Hyper-V, you need to set the following up: 
 
 1) A virtual machine itself. You can use the [evaluation `.iso` images for this](https://www.microsoft.com/en-gb/evalcenter/)
-2) If using the `Default switch` on the VM, you need to forward the WSL network so it can reach the VM. To do this run `Get-NetIPInterface | where {$_.InterfaceAlias -eq 'vEthernet (WSL (Hyper-V firewall))' -or $_.InterfaceAlias -eq 'vEthernet (Default Switch)'} | Set-NetIPInterface -Forwarding Enabled -Verbose` from an _elevated_ powershell window. Note that by default most server windows images do not respond to ping requests. You can enable this by enabling the inbound rule `File and Printer Sharing (Echo Request - ICMPv4-In)` in the firewall settings. 
+2) If using the `Default switch` on the VM, you need to forward the WSL network so it can reach the VM. To do this run `Get-NetIPInterface | where {$_.InterfaceAlias -eq 'vEthernet (WSL (Hyper-V firewall))' -or $_.InterfaceAlias -eq 'vEthernet (Default Switch)'} | Set-NetIPInterface -Forwarding Enabled -Verbose` from an _elevated_ powershell window. Note that by default most server windows images do not respond to ping requests. You can enable this by enabling the inbound rule `File and Printer Sharing (Echo Request - ICMPv4-In)` in the firewall settings.
 3) [OpenSSH set up](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) on the VM
 
 
