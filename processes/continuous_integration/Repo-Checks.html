@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repository Checking &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Running automated system tests" href="Running-Automated-System-Tests.html" />
+    <link rel="prev" title="Updating the RHEL Jenkins Node" href="RHEL-jenkins-linux-dependency-update.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-new-Windows-machine-to-Jenkins.html">Adding Jenkins nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GHA_vs_Jenkins.html">Github Actions versus Jenkins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jenkins-Build-Server.html">Jenkins Build Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jenkins-Trouble-Shooting.html">Jenkins Trouble Shooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RHEL-jenkins-linux-dependency-update.html">Updating the RHEL Jenkins Node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Repository Checking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-these-tests-by-hand">Running these tests by hand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Running-Automated-System-Tests.html">Running automated system tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TestBuild-Jenkins-Build.html">TestBuild Jenkins Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reusable_workflows.html">reusable workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Continuous-Integration.html">Continuous Integration</a></li>
+      <li class="breadcrumb-item active">Repository Checking</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/continuous_integration/Repo-Checks.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="repository-checking">
+<h1>Repository Checking<a class="headerlink" href="#repository-checking" title="Link to this heading"></a></h1>
+<p>Given the complex relationships between the various repositories used in our distribution and how easy it is to make mistakes there are various checks undertaken against our repositories ensuring clean source code which can be automated via Jenkins.</p>
+<p>The default is to check out the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of the top level of EPICS and does the following:</p>
+<ul class="simple">
+<li><p>Run the unit tests for this code</p></li>
+<li><p>Resets the upstream git checkout tags prior to submodule version check (<code class="docutils literal notranslate"><span class="pre">reset_checkout_tags</span></code>)</p></li>
+<li><p>Checks that the submodule revisions have all been pushed (<code class="docutils literal notranslate"><span class="pre">submodule_revisions_check</span></code>)</p></li>
+<li><p>Checks that there is a newline at the end of files which should have one (<code class="docutils literal notranslate"><span class="pre">do_newline_endfile_check</span></code>)</p></li>
+<li><p>Check the format of the IOC names are correct (<code class="docutils literal notranslate"><span class="pre">do_ioc_naming_check</span></code>)</p></li>
+<li><p>Look for double carriage returns in any Make files (<code class="docutils literal notranslate"><span class="pre">do_makefile_separator_check</span></code>)</p></li>
+<li><p>Check for any temporary build directories (<code class="docutils literal notranslate"><span class="pre">temporary_build_directories_check</span></code>)</p></li>
+<li><p>Check for any <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code> directories (<code class="docutils literal notranslate"><span class="pre">pycache_directories_check</span></code>)</p></li>
+<li><p>Check for any <code class="docutils literal notranslate"><span class="pre">pyc</span></code>/<code class="docutils literal notranslate"><span class="pre">pyo</span></code> files (<code class="docutils literal notranslate"><span class="pre">pyc_pyo_file_check</span></code>)</p></li>
+<li><p>Check for any Db files in the <code class="docutils literal notranslate"><span class="pre">gitignores</span></code> (<code class="docutils literal notranslate"><span class="pre">do_gitignore_check</span></code>)</p></li>
+<li><p>Check for any archived repos (<code class="docutils literal notranslate"><span class="pre">do_archived_repo_check</span></code>)</p></li>
+<li><p>Check for any missing/unremoved directories (<code class="docutils literal notranslate"><span class="pre">missing_dir_check</span></code>)</p></li>
+<li><p>Check that repos have the correct permissions for the groups used at ISIS, this is considered an unstable test</p></li>
+</ul>
+<p>If you don’t want to run all the tests there are a few arguments that can be passed to the script, to use these in Jenkins, just add them after the call in the <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">Shell</span></code>, you can <code class="docutils literal notranslate"><span class="pre">--skip_unit_test=Yes</span></code>, and similarly you can <code class="docutils literal notranslate"><span class="pre">--skip_unstable_checks=Yes</span></code> to skip any unstable tests. Note that any text after the <code class="docutils literal notranslate"><span class="pre">=</span></code> will skip these items at this time. For the rest of them you can opt to include a subset instead using <code class="docutils literal notranslate"><span class="pre">--do_these_tests</span></code> and provide a comma separated list after an <code class="docutils literal notranslate"><span class="pre">=</span></code> of the test names as given inside the parentheses above.</p>
+<section id="checking-against-other-branches">
+<h2>Checking against other branches<a class="headerlink" href="#checking-against-other-branches" title="Link to this heading"></a></h2>
+<p>If checking against a different branch at the top EPICS level as part of the CI via Jenkins, check out the appropriate branch and run it at that level is likely to be the safest option.
+If you want to check on a submodule on a specific branch then you can use the <code class="docutils literal notranslate"><span class="pre">--repo_branch</span></code> argument to provide a list in this kind of manner, “relative path from the check_scripts directory to the repo in question”+name_of_branch_to_checkout (e.g. <code class="docutils literal notranslate"><span class="pre">--repo_branch=&quot;..&quot;+Ticket123456</span></code> would check out a branch called <code class="docutils literal notranslate"><span class="pre">Ticket123456</span></code> at the top level, whilst <code class="docutils literal notranslate"><span class="pre">--repo_branch=&quot;../support/device/master&quot;+Ticket987654,&quot;../ioc/master&quot;+Ticket987654</span></code> would check out a branch called <code class="docutils literal notranslate"><span class="pre">Ticket987654</span></code> for the device specified in support and for the main IOC repo)</p>
+</section>
+<section id="checking-for-changes-on-only-certain-submodules">
+<h2>Checking for changes on only certain submodules<a class="headerlink" href="#checking-for-changes-on-only-certain-submodules" title="Link to this heading"></a></h2>
+<p>If you only want to be informed of errors on certain submodules of EPICS the the argument <code class="docutils literal notranslate"><span class="pre">--submodules_of_interest</span></code> should be set to a comma separated list of submodules of interest, e.g. <code class="docutils literal notranslate"><span class="pre">--submodules_of_interest=ioc,device</span></code> would only provide an error if there were unpushed errors in IOC or the device repo.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="running-these-tests-by-hand">
+<h1>Running these tests by hand<a class="headerlink" href="#running-these-tests-by-hand" title="Link to this heading"></a></h1>
+<p>If you are using a windows system you will need to do the following in a Git Bash window:</p>
+<ol class="arabic simple">
+<li><p>If you don’t have a python executable in your path you can add one temporarily in the following fashion <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;/path/to/pyhton/folder:$PATH&quot;</span></code>, and you will need to install the <code class="docutils literal notranslate"><span class="pre">requests</span></code> module via <code class="docutils literal notranslate"><span class="pre">pip</span></code> if it isn’t already available.</p></li>
+<li><p>You will need a GitHub Token with suitable permissions, this is already handled for Jenkins, and the same token can be reused if other jobs need to be created that use this script.</p></li>
+<li><p>To run with the default settings simply execute the following: <code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN=[the_token_information]</span> <span class="pre">python3</span> <span class="pre">do_all_checks.py</span></code></p></li>
+<li><p>To run them with various settings as above, just add the arguments to the end, for example <code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN=[the_token_information]</span> <span class="pre">python3</span> <span class="pre">do_all_checks.py</span> <span class="pre">--submodules_of_interest=ioc,device</span> <span class="pre">--repo_branch=&quot;../support/device/master&quot;+Ticket987654,&quot;../ioc/master&quot;+Ticket987654</span> <span class="pre">--skip_unit_test=Yes</span> <span class="pre">--skip_unstable_checks=Yes</span> <span class="pre">--do_these_tests=submodule_revisions_check,do_ioc_naming_check</span></code> would report on the submodule revisions check of IOC and device, and make sure that the naming is correct, for the <code class="docutils literal notranslate"><span class="pre">Ticket987654</span></code> branch only.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="RHEL-jenkins-linux-dependency-update.html" class="btn btn-neutral float-left" title="Updating the RHEL Jenkins Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Running-Automated-System-Tests.html" class="btn btn-neutral float-right" title="Running automated system tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jun 11, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

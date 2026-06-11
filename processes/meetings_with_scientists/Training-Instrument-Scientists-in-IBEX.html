@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Instrument Scientists in IBEX &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project Management" href="../Pm.html" />
+    <link rel="prev" title="Regular Demos of IBEX to Scientists" href="Regular-Demos-of-IBEX-to-Scientists.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Regular-Demos-of-IBEX-to-Scientists.html">Regular Demos of IBEX to Scientists</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Training Instrument Scientists in IBEX</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+      <li class="breadcrumb-item active">Training Instrument Scientists in IBEX</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/meetings_with_scientists/Training-Instrument-Scientists-in-IBEX.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="training-instrument-scientists-in-ibex">
+<h1>Training Instrument Scientists in IBEX<a class="headerlink" href="#training-instrument-scientists-in-ibex" title="Link to this heading"></a></h1>
+<p>From time-to-time, we run IBEX and genie_python training courses.  This page collects information that you will need to organise and run the IBEX and genie_python train courses.</p>
+<section id="when-should-we-run-ibex-and-genie-python-train-courses">
+<h2>When should we run IBEX and genie_python train courses?<a class="headerlink" href="#when-should-we-run-ibex-and-genie-python-train-courses" title="Link to this heading"></a></h2>
+<p>There is never an ideal time to run IBEX and genie_python train courses.  Running training courses during cycle is difficult, because scientists are usually heavily involved with their instruments. Running training courses out of cycle is difficult, because scientists use the opportunity to take holidays, attend conferences, catch up on other work…</p>
+<p>The best compromise is to run IBEX and genie_python train courses during the shutdown, shortly before the start of a new cycle. Why shortly before the start of a new cycle? Because people tend to forget what they have learned unless they have an opportunity to put it into practice. So, as a rule of thumb, try to schedule the course 2-3 weeks before the start of cycle. You could also run the courses during the week before cycle, but you might need this time to make final adjustments to instruments, so try to avoid this time if possible.</p>
+<p>Because training has to be synchronised with ISIS cycles, you need to think about planning training sessions well in advance. It is worth checking a selection of scientists’ calendars to make sure the training does not clash with other major meetings, for example the NMSUM conference, division/group away days, or FAP meetings.</p>
+</section>
+<section id="recording-that-a-person-would-like-to-attend-the-next-training-session">
+<h2>Recording that a Person would like to attend the next Training Session<a class="headerlink" href="#recording-that-a-person-would-like-to-attend-the-next-training-session" title="Link to this heading"></a></h2>
+<p>We record people who would like to attend the next training session by listing them (or linking to a document on the shares which lists them) on the relevant training course ticket.</p>
+</section>
+<section id="training-materials">
+<h2>Training materials<a class="headerlink" href="#training-materials" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../overview/Links-and-Resources.html"><span class="doc std std-doc">IBEX</span></a></p>
+<ul>
+<li><p>There are various slides at the end of the material: “Reference card”, “GUI Reference Card” and “Useful Locations”. These are supposed to provide a brief reference of the major IBEX features, GUI elements and a memo sheet for folder locations respectively. Print off a copy of each for each delegate.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://isiscomputinggroup.github.io/ibex_user_manual/scripting/Genie-Python-Training.html" title="(in IBEX User Manual)"><span>Genie Python Training Course</span></a></p></li>
+</ul>
+</section>
+<section id="planning-the-ibex-and-genie-python-training-courses">
+<h2>Planning the IBEX and genie_python training courses<a class="headerlink" href="#planning-the-ibex-and-genie-python-training-courses" title="Link to this heading"></a></h2>
+<p>This section summarises the steps you will need to consider when planning the IBEX and genie_python training courses.</p>
+<section id="select-a-date-for-the-training">
+<h3>Select a date for the training<a class="headerlink" href="#select-a-date-for-the-training" title="Link to this heading"></a></h3>
+<p>Select a suitable date for the training, ensuring that a suitable venue is available on your chosen date.</p>
+<p>Typically, we run the introduction as 9:00-12:00, and python/<code class="docutils literal notranslate"><span class="pre">genie_python</span></code> as 13:00-17:00.</p>
+</section>
+<section id="advertise-the-training-course">
+<h3>Advertise the training course<a class="headerlink" href="#advertise-the-training-course" title="Link to this heading"></a></h3>
+<p>Tell instrument scientists and technicians about the proposed dates for the training course and invite them to sign up to attend. Ensure people listed on the ticket who have previously expressed interest are included on the invite.</p>
+<p>The ISIS comms team can help to advertise the training course by adding the course to “The Pulse” staff newsletter. The training can also be added to the staff calendar on the hub using <a class="reference external" href="https://stfc365.sharepoint.com/:l:/s/isis-hub/FFxYsG3IgQlKuYgFVWi1orABeQZSSriNT_uwoDvl_U2sUA?nav=MzBjMGU2OGEtOTkwZS00NjIyLWExNzktZmY3NDE0MjBlYjEy">this link</a>.</p>
+<p>Scientists will typically need several weeks advance notice, so make sure you tell them early. Make sure you tell scientists to respond by a cut-off date - otherwise, it can be tricky trying to squeeze people in if they respond only 2-3 days before the course is due to run.</p>
+</section>
+<section id="decide-which-training-venue-to-use">
+<h3>Decide which training venue to use<a class="headerlink" href="#decide-which-training-venue-to-use" title="Link to this heading"></a></h3>
+<p>Recent training courses have been presented in R80 (rooms CR16 &amp; CR17) and in the Central Design Facility (CDF) suite in the Atlas Building.  The CDF is a dedicated training and collaborative design facility, operated by RAL Space.  If you wish to use the CDF, you need to book it with RAL Space. The CDF currently has 14 work stations. Historically, attendance has fluctuated between <code class="docutils literal notranslate"><span class="pre">&lt;50%</span></code> and <code class="docutils literal notranslate"><span class="pre">100%</span></code> of those who sign up. It is possible to pair program on the training course. Feedback on this has been mixed so it is best not to overbook courses.</p>
+<p>As of 2026, we no longer have access to a dedicated computer training room, and Facilities IT no longer offer a pool of loan laptops. Therefore, you should book a large-enough conference room for the number of attendees, and ask the invitees to bring laptops so that they can follow along with the exercises.</p>
+<p>We use the <strong><code class="docutils literal notranslate"><span class="pre">NDXTEST</span></code></strong> machines for training courses; these can be accessed over VNC like instruments. You will need to help the invitees to sign in to each test machine; the credentials are in Keeper.</p>
+<p>One way to split up the training is:</p>
+<ol class="arabic simple">
+<li><p>Introduction to IBEX:</p>
+<ul class="simple">
+<li><p>How to start/stop everything</p></li>
+<li><p>What do the different perspectives do</p></li>
+<li><p>A basic overview of what’s going on behind the scenes</p></li>
+</ul>
+</li>
+<li><p>Configurations and Synoptics:</p>
+<ul class="simple">
+<li><p>How to create and edit configurations</p></li>
+<li><p>How to create and edit components</p></li>
+<li><p>How to create and edit synoptics</p></li>
+</ul>
+</li>
+<li><p>genie_python and Scripting in IBEX:</p>
+<ul class="simple">
+<li><p>Basic genie_python commands</p></li>
+<li><p>User and instrument scripts</p></li>
+<li><p>The script server/script generator</p></li>
+</ul>
+</li>
+<li><p>Converting between open genie and genie_python:</p>
+<ul class="simple">
+<li><p>The major differences between the languages</p></li>
+<li><p>Some example conversions</p></li>
+<li><p>Hands on conversion of a selection of SANS2D user scripts</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="review-the-training-course-materials">
+<h3>Review the training course materials<a class="headerlink" href="#review-the-training-course-materials" title="Link to this heading"></a></h3>
+<p>Make sure you review the training course materials.  Have any new features been added to IBEX or <a class="reference external" href="https://isiscomputinggroup.github.io/genie/genie_python.html#module-genie" title="(in genie_python v0.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">genie_python</span></code></a> that might require a change to the course content, or are there training tickets on the backlog which should be considered? If so, update the course. It is a good idea to run through the course materials even if there have been no significant changes, to re-familiarise yourself with the course contents.</p>
+</section>
+<section id="e-mail-course-joining-instructions-to-all-delegates">
+<h3>E-mail course joining instructions to all delegates<a class="headerlink" href="#e-mail-course-joining-instructions-to-all-delegates" title="Link to this heading"></a></h3>
+<p>Shortly before the training course is due to run, send an e-mail to all delegates, reminding them how to join the course.  Make sure you tell them:</p>
+<ul class="simple">
+<li><p>Where the course is being held (building, room number)</p></li>
+<li><p>Which day(s) the course is running</p></li>
+<li><p>Start time, finish time (e.g. if the course is due to start at 9:00AM, tell delegates to arrive at 8:45AM, so that the inevitable late-comers don’t disrupt things too much).</p></li>
+<li><p>Any other joining instructions (e.g. who to call if they get lost)</p></li>
+<li><p>Reminding them to bring a laptop so that they can follow along with the exercises</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Regular-Demos-of-IBEX-to-Scientists.html" class="btn btn-neutral float-left" title="Regular Demos of IBEX to Scientists" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Pm.html" class="btn btn-neutral float-right" title="Project Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jun 11, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

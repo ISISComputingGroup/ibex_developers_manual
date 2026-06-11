@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ansible &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Updating an instrument machine (email templates)" href="Updating-Instrument-Machines.html" />
+    <link rel="prev" title="Deployment" href="../Deploy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Creating-a-release.html">Creating a release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Manual-System-Tests.html">Manual system tests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Deploy.html">Deployment</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Ansible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Updating-Instrument-Machines.html">Updating an instrument machine (email templates)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Deployment-on-an-Instrument-Control-PC.html">Deploy to an instrument machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Configure-Mini-Inst.html">Configure Mini Inst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client-Release-Tests.html">Client release tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Server-Release-Tests.html">Server Release Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IBEX-Deployment-on-Training-machine.html">Deploy to a training machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Making-an-Instrument-Available-from-the-GUI.html">Adding an instrument to the instrument list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-a-new-branch-for-IBEX-configurations.html">Creating a new branch for IBEX configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reviewing-Deploy-Tickets.html">Reviewing deploy tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-ISISICP.html">ISISICP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade-Java.html">Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Installing-and-Upgrading-MySQL.html">MySQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Patch.html">Patching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Future.html">Future Workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Deployment.html">Releases &amp; Deployment</a></li>
+          <li class="breadcrumb-item"><a href="../Deploy.html">Deployment</a></li>
+      <li class="breadcrumb-item active">Ansible</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/deployment/deploy/ansible.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ansible">
+<h1>Ansible<a class="headerlink" href="#ansible" title="Link to this heading"></a></h1>
+<p>We are moving towards using <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX_utils">Ansible</a> for both initial configuration of machines as well as deployment.</p>
+<p>The main repository for this is <a class="reference external" href="https://github.com/ISISComputingGroup/ansible-playbooks">here</a> which contains our configuration, inventories, playbooks, roles and tasks.</p>
+<p><a class="reference external" href="https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_intro.html">Ansible playbooks</a> used for remotely automating tasks on NDX machines and other machines we look after.</p>
+<p>These run on your own computer (the control node) and orchestrate steps on remote machines.</p>
+<p>Playbooks should be idempotent, ie. they can be run multiple times and will always result in the same output - this is marked in Ansible as <code class="docutils literal notranslate"><span class="pre">OK</span></code>/<code class="docutils literal notranslate"><span class="pre">Changed</span></code> if a task is skipped or changed respectively. For example, checking that a dependency is a certain version and skipping a set of tasks to update it (which may remove the previous version) and so on. This means that the “deploy” playbook can be run absolutely everywhere, and machines that are already up to date will get most tasks skipped completely. Most Ansible modules are built to be idempotent by default.</p>
+<p>We are working towards these playbooks being the declarative steps to provision an instrument machine so it can easily be (re)created. As a developer you should keep this in mind - Ansible playbooks <em>can</em> be used for one-shot roll outs of a specific set of tasks, but we should make them repeatable. This repo should not become a ‘dumping ground’ of playbooks we’ve written to roll out a certain change - they should be applied to the <a class="reference external" href="https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/windows/instrument_deploy.yaml">blueprints of an instrument machine</a> so we can use them again.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<p>Preliminary steps to run these:</p>
+<ol class="arabic simple">
+<li><p>If you haven’t already, set up a keeper account with access to our group’s passwords.</p></li>
+<li><p>Make sure your ssh public keys (which should be stored <a class="reference external" href="https://github.com/ISISComputingGroup/keys">here</a>) are deployed to instruments - see below for the playbook that does this</p></li>
+<li><p>Set up the WSL if you’re using a Windows control node - <a class="reference external" href="https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#control-node-requirements">Ansible does not support running on a windows control node natively</a>. You will need your <a class="reference external" href="https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/">SSH keys registered in the WSL</a>. If you are running Linux you can install Ansible natively.</p></li>
+<li><p>Install Ansible, including plugins we require, by:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">snap</span> <span class="pre">install</span> <span class="pre">astral-uv</span> <span class="pre">--classic</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">venv</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.venv/bin/activate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+<li><p>Install the galaxy collections and roles by running <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.yml</span></code></p></li>
+<li><p>Add the DNS search suffix (<code class="docutils literal notranslate"><span class="pre">isis.cclrc.ac.uk</span></code>) to <code class="docutils literal notranslate"><span class="pre">/etc/resolv.conf</span></code> (to edit the file, use e.g. <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">/etc/resolv.conf</span></code>) by adding the following line:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">search</span> <span class="n">isis</span><span class="o">.</span><span class="n">cclrc</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>To test if this works, run an <a class="reference internal" href="#ansibleadhoccommand"><span class="std std-ref">Ad-hoc commands</span></a> and use the module <code class="docutils literal notranslate"><span class="pre">ping</span></code> (for linux machines) or <code class="docutils literal notranslate"><span class="pre">win_ping</span></code> (for windows machines ie. NDXes) to test for aliveness.</p>
+<p>PRs will be linted by CI. To run this locally run <code class="docutils literal notranslate"><span class="pre">ansible-lint</span></code> - this is included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. Configuration is set by <code class="docutils literal notranslate"><span class="pre">.ansible-lint</span></code>.</p>
+</section>
+<section id="hosts-yaml">
+<h2><code class="docutils literal notranslate"><span class="pre">Hosts.yaml</span></code><a class="headerlink" href="#hosts-yaml" title="Link to this heading"></a></h2>
+<p>This is the main <a class="reference external" href="https://docs.ansible.com/projects/ansible/latest/inventory_guide/intro_inventory.html">inventory file</a> which lists hosts in groups such as by target station and/or by deploy group. It is contained in the inventory directory.</p>
+<p>to limit running a playbook to just TS1 instruments, for example, you can use <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">playbook.yaml</span> <span class="pre">--limit</span> <span class="pre">ts1</span></code>. This works because <code class="docutils literal notranslate"><span class="pre">ts1</span></code> is a host group in the inventory file.</p>
+</section>
+<section id="windows-only-playbooks-windows">
+<h2>Windows-only playbooks (<code class="docutils literal notranslate"><span class="pre">windows/</span></code>)<a class="headerlink" href="#windows-only-playbooks-windows" title="Link to this heading"></a></h2>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h3>
+<p>These playbooks will prompt for a host group to run on, equivalent to (and taking precedence over) <code class="docutils literal notranslate"><span class="pre">--limit</span></code> as a command line argument.</p>
+<p>As an example, to run the playbook on all NDXes other than <code class="docutils literal notranslate"><span class="pre">NDXENGINX</span></code>, enter <code class="docutils literal notranslate"><span class="pre">ndxes,!NDXENGINX</span></code> - this syntax is documented <a class="reference external" href="https://docs.ansible.com/projects/ansible/latest/inventory_guide/intro_patterns.html#common-patterns">here</a></p>
+</section>
+<section id="truncate-databases-yaml">
+<h3><code class="docutils literal notranslate"><span class="pre">truncate_databases.yaml</span></code><a class="headerlink" href="#truncate-databases-yaml" title="Link to this heading"></a></h3>
+<p>This performs a backup and truncation of the local databases on instruments. It will prompt for hosts so to run use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">windows/truncate_databases.yaml</span></code></p>
+</section>
+<section id="instrumentdeployyaml">
+<h3><code class="docutils literal notranslate"><span class="pre">instrument_deploy.yaml</span></code><a class="headerlink" href="#instrumentdeployyaml" title="Link to this heading"></a></h3>
+<p>This is the main playbook for deploying software to NDXes. Currently this stops the server if it is running and installs the JDK using the <code class="docutils literal notranslate"><span class="pre">jdk</span></code> role.</p>
+<p>To use this you need to run <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">windows/instrument_deploy.yaml</span></code> - it should prompt for hosts.</p>
+<section id="ansibleupdatingjdk">
+<h4>Updating JDK version<a class="headerlink" href="#ansibleupdatingjdk" title="Link to this heading"></a></h4>
+<p>To update the JDK version, you will need to set the vars in <code class="docutils literal notranslate"><span class="pre">roles\defaults\main.yaml</span></code>.
+These are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jdk_major_ver</span></code> - the major version (excluding .min.patch) of the JDK.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jdk_full_ver</span></code> - the full version string of the JDK.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jdk_url</span></code> - the URL to download the JDK from.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jdk_checksum</span></code> - the checksum for the downloaded JDK.</p></li>
+<li><p>(optionally) <code class="docutils literal notranslate"><span class="pre">jdk_force_update</span></code> - whether to overwrite the current version if it already exists</p></li>
+</ul>
+</section>
+</section>
+<section id="deploy-ssh-keys-yaml">
+<h3><code class="docutils literal notranslate"><span class="pre">deploy_ssh_keys.yaml</span></code><a class="headerlink" href="#deploy-ssh-keys-yaml" title="Link to this heading"></a></h3>
+<p>This is the windows equivalent of the Linux workflow for deploying <a class="reference external" href="https://github.com/ISISComputingGroup/keys">the group’s ssh keys</a> and turning off password auth in favour of public key auth.</p>
+<p>To run this on all NDXes run <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">windows/deploy_ssh_keys.yaml</span></code>. To limit to certain hosts/host groups use <code class="docutils literal notranslate"><span class="pre">--limit</span></code> ie.
+<code class="docutils literal notranslate"><span class="pre">--limit</span> <span class="pre">NDXHRPD_SETUP</span></code> to just run on <code class="docutils literal notranslate"><span class="pre">NDXHRPD_SETUP</span></code> or <code class="docutils literal notranslate"><span class="pre">--limit</span> <span class="pre">muons</span></code> to only run on muon NDXes.</p>
+</section>
+<section id="nsclient-yaml">
+<h3><code class="docutils literal notranslate"><span class="pre">nsclient.yaml</span></code><a class="headerlink" href="#nsclient-yaml" title="Link to this heading"></a></h3>
+<p>Install <code class="docutils literal notranslate"><span class="pre">nsclient++</span></code> monitor program. Needs to be run with</p>
+<p><code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">--ask-vault-password</span> <span class="pre">windows/nsclient.yaml</span></code></p>
+<p>There is a host group <code class="docutils literal notranslate"><span class="pre">nsclient</span></code> that is used to hold encrypted passwords and can also be used
+for deploying</p>
+</section>
+<section id="instrument-deploy-yaml">
+<h3><code class="docutils literal notranslate"><span class="pre">instrument_deploy.yaml</span></code><a class="headerlink" href="#instrument-deploy-yaml" title="Link to this heading"></a></h3>
+<p>This is for deploying software to NDXes. Currently this stops the server if it is running and installs the JDK using the <code class="docutils literal notranslate"><span class="pre">jdk</span></code> role.</p>
+<p>To use this you need to run <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">windows/instrument_deploy.yaml</span></code> - it should prompt for hosts.</p>
+</section>
+<section id="deploy-wincred-yaml">
+<h3><code class="docutils literal notranslate"><span class="pre">deploy_wincred.yaml</span></code><a class="headerlink" href="#deploy-wincred-yaml" title="Link to this heading"></a></h3>
+<p>This is for deploying a new set of credentials to NDXes. The credentials should be updated in keeper first; this playbook reads the credentials from keeper.</p>
+<p>To use this you need to run <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">windows/deploy_wincred.yaml</span> <span class="pre">--ask-vault-pass</span></code> - it should prompt for a vault password (found in keeper - search for <code class="docutils literal notranslate"><span class="pre">ansible</span></code>) and hosts to target.</p>
+</section>
+</section>
+<section id="linux-only-playbooks-linux">
+<h2>Linux-only playbooks (<code class="docutils literal notranslate"><span class="pre">linux/</span></code>)<a class="headerlink" href="#linux-only-playbooks-linux" title="Link to this heading"></a></h2>
+<section id="initial-ssh-set-up">
+<h3>Initial SSH set up<a class="headerlink" href="#initial-ssh-set-up" title="Link to this heading"></a></h3>
+<p>This involves:</p>
+<ol class="arabic simple">
+<li><p>copying over the keys in <a class="reference external" href="https://github.com/ISISComputingGroup/keys">this repo</a></p></li>
+<li><p>disabling OpenSSH password-authentication (ie. you can only use pub/priv keys!)</p></li>
+</ol>
+<p>It can be run multiple times if for example you wanted to update the deployed keys if someone new joins the team or someone gets a new computer with a different public key.</p>
+<section id="deploying-ssh-keys-playbook-deploy-ssh-keys-yaml">
+<h4>Deploying ssh keys (<code class="docutils literal notranslate"><span class="pre">playbook_deploy_ssh_keys.yaml</span></code>)<a class="headerlink" href="#deploying-ssh-keys-playbook-deploy-ssh-keys-yaml" title="Link to this heading"></a></h4>
+<p>This can be run on multiple hosts by using <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">playbook_deploy_ssh_keys.yaml</span></code> if you already have ssh key-based auth set up (ie. if you wanted to <em>update</em> the list of keys because someone’s public key changed), but if this is a new machine you should use <code class="docutils literal notranslate"><span class="pre">--ask-pass</span></code> (to ask for the ssh password) along with <code class="docutils literal notranslate"><span class="pre">--limit</span></code> to limit the single host (as your ssh passwords may/should be different between machines)</p>
+<p>For example, to run this on <code class="docutils literal notranslate"><span class="pre">madara</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">playbook_deploy_ssh_keys.yaml</span> <span class="pre">--ask-pass</span> <span class="pre">--limit</span> <span class="pre">madara</span></code>
+which will prompt for <code class="docutils literal notranslate"><span class="pre">madara</span></code>s ssh password.</p>
+<p>This step also prompts for a personal access token to access the <code class="docutils literal notranslate"><span class="pre">keys</span></code> repo, which is in Keeper.</p>
+</section>
+<section id="turning-off-sshd-password-authentication-playbook-turn-off-ssh-passwd-auth-yaml">
+<h4>Turning off <code class="docutils literal notranslate"><span class="pre">sshd</span></code> password authentication (<code class="docutils literal notranslate"><span class="pre">playbook_turn_off_ssh_passwd_auth.yaml</span></code>)<a class="headerlink" href="#turning-off-sshd-password-authentication-playbook-turn-off-ssh-passwd-auth-yaml" title="Link to this heading"></a></h4>
+<p>This is fairly obvious but to do this you need to have done the above step otherwise you’ll lock yourself out.</p>
+<p>to run on all hosts, use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ansible-playbook</span> <span class="pre">playbook_turn_off_ssh_passwd_auth.yaml</span></code></p>
+<p>This will prompt for the vault password, which is in keeper (<code class="docutils literal notranslate"><span class="pre">ds-config</span> <span class="pre">ansible</span> <span class="pre">vault</span></code>)</p>
+</section>
+</section>
+<section id="general-system-updates">
+<h3>General system updates<a class="headerlink" href="#general-system-updates" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">playbook_system_updates.yaml</span></code> exists to update the system packages.</p>
+</section>
+<section id="kafka-cluster-provisioning">
+<h3>Kafka cluster provisioning<a class="headerlink" href="#kafka-cluster-provisioning" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">deploy_kafka.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">deploy_redpanda_console.yaml</span></code> exist to provision a Kafka cluster, currently on the test machines in R55.</p>
+</section>
+</section>
+<section id="id1">
+<h2>Notes<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="setting-up-a-windows-hyper-v-virtual-machine-for-testing">
+<h3>Setting up a windows hyper-v virtual machine for testing<a class="headerlink" href="#setting-up-a-windows-hyper-v-virtual-machine-for-testing" title="Link to this heading"></a></h3>
+<p>To test playbooks on a local virtual machine running in Hyper-V, you need to set the following up:</p>
+<ol class="arabic simple">
+<li><p>A virtual machine itself. You can use the <a class="reference external" href="https://www.microsoft.com/en-gb/evalcenter/">evaluation <code class="docutils literal notranslate"><span class="pre">.iso</span></code> images for this</a></p></li>
+<li><p>If using the <code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">switch</span></code> on the VM, you need to forward the WSL network so it can reach the VM. To do this run <code class="docutils literal notranslate"><span class="pre">Get-NetIPInterface</span> <span class="pre">|</span> <span class="pre">where</span> <span class="pre">{$_.InterfaceAlias</span> <span class="pre">-eq</span> <span class="pre">'vEthernet</span> <span class="pre">(WSL</span> <span class="pre">(Hyper-V</span> <span class="pre">firewall))'</span> <span class="pre">-or</span> <span class="pre">$_.InterfaceAlias</span> <span class="pre">-eq</span> <span class="pre">'vEthernet</span> <span class="pre">(Default</span> <span class="pre">Switch)'}</span> <span class="pre">|</span> <span class="pre">Set-NetIPInterface</span> <span class="pre">-Forwarding</span> <span class="pre">Enabled</span> <span class="pre">-Verbose</span></code> from an <em>elevated</em> powershell window. Note that by default most server windows images do not respond to ping requests. You can enable this by enabling the inbound rule <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">and</span> <span class="pre">Printer</span> <span class="pre">Sharing</span> <span class="pre">(Echo</span> <span class="pre">Request</span> <span class="pre">-</span> <span class="pre">ICMPv4-In)</span></code> in the firewall settings.</p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">OpenSSH set up</a> on the VM</p></li>
+</ol>
+</section>
+<section id="ansibleadhoccommand">
+<h3>Ad-hoc commands<a class="headerlink" href="#ansibleadhoccommand" title="Link to this heading"></a></h3>
+<p>To run an <a class="reference external" href="https://docs.ansible.com/projects/ansible/latest/command_guide/intro_adhoc.html">adhoc command</a> to ie. <code class="docutils literal notranslate"><span class="pre">win_ping</span></code> to <code class="docutils literal notranslate"><span class="pre">TS2</span></code> machines to check they’re reachable, you can run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ansible</span> <span class="pre">ts2</span> <span class="pre">-m</span> <span class="pre">win_ping</span></code></p>
+<p>This can also be used to perform one-line shell/bash commands remotely.</p>
+<section id="chaining-commands">
+<h4>Chaining commands<a class="headerlink" href="#chaining-commands" title="Link to this heading"></a></h4>
+<p>There is an issue with passing environment variables on windows specifically between chained commands.
+If you wanted to run <code class="docutils literal notranslate"><span class="pre">config_env.bat</span></code> to define <code class="docutils literal notranslate"><span class="pre">MYPVPREFIX</span></code> then call <code class="docutils literal notranslate"><span class="pre">caput</span></code> after, you need to use a batch script and copy it across instead.</p>
+<p>This can be done with a playbook similar to the following:</p>
+<details>
+<summary>Show playbook</summary>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">set some PVs</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ndxes</span>
+<span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create temp dir</span>
+<span class="w">      </span><span class="nt">ansible.windows.win_tempfile</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
+<span class="w">      </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tmpdir</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">copy bat over</span>
+<span class="w">      </span><span class="nt">ansible.windows.win_copy</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mybat.bat</span>
+<span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{tmpdir.path}}&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">call bat</span>
+<span class="w">      </span><span class="nt">ansible.windows.win_command</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{tmpdir.path}}\\mybat.bat&quot;</span>
+<span class="w">      </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">print output</span>
+<span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
+</pre></div>
+</div>
+<p>which copies over a batch script <code class="docutils literal notranslate"><span class="pre">mybat.bat</span></code> to a temporary dir, calls it, then Ansible cleans up the temp dir containing the batch script.</p>
+<p>Example batch script, which resets the power check with a for loop:</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">call</span> \instrument\apps\epics\config_env.bat
+<span class="p">@</span><span class="k">echo</span> on
+<span class="k">FOR</span> <span class="k">/L</span> <span class="se">%%</span>v <span class="k">IN</span> <span class="p">(</span><span class="mi">1</span>, <span class="mi">1</span>, <span class="mi">9</span><span class="p">)</span> <span class="k">DO</span> <span class="p">(</span>
+    <span class="k">echo</span> running caput <span class="nv">%MYPVPREFIX%</span>MOT:DMC0<span class="se">%%</span>v:PWRDET:RESET:SP 1
+caput <span class="nv">%MYPVPREFIX%</span>MOT:DMC0<span class="se">%%</span>v:PWRDET:RESET:SP 1
+<span class="p">)</span>
+
+<span class="k">exit</span> /B 0
+</pre></div>
+</div>
+</details>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Deploy.html" class="btn btn-neutral float-left" title="Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Updating-Instrument-Machines.html" class="btn btn-neutral float-right" title="Updating an instrument machine (email templates)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jun 11, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
