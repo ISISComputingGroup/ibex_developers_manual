@@ -193,6 +193,7 @@ dbs
 dcalc
 dcom
 dcomcnfg
+DDR
 deadband
 deadbands
 deadman
