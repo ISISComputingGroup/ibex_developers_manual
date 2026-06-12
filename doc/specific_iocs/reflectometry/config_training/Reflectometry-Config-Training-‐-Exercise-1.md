@@ -26,8 +26,6 @@ In the following exercise, we will add a single item to the reflectometry config
 Before we start making changes, let's review the content of the blank config in front of you:
 
 ```Python
-from typing import Dict
-
 from ReflectometryServer.beamline import Beamline
 from ReflectometryServer.config_helper import (
     add_mode,
@@ -35,7 +33,7 @@ from ReflectometryServer.config_helper import (
 )
 
 
-def get_beamline(macros: Dict[str, str]) -> Beamline:
+def get_beamline(macros: dict[str, str]) -> Beamline:
     #########################
     # FIXED BEAMLINE VALUES #
     #########################
@@ -51,7 +49,6 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
 
 ```
 
-- `from typing import Dict` relates to the output of the function and the enforcement of typing via PyRight.
 - The various imports from `ReflectometryServer` are the items used below. Any classes or helper methods needed to construct the model of the beamline is within this namespace.
 - `def get_beamline`: While the python config file gives you tremendous freedom to include arbitrary python code, this is the one method we expect to be here as the reflectometry server calls it on config load. It should return an object of type `Beamline`
 - The `fixed beamline values` will contain variables and things which do not change. For example, the distances between components.
