@@ -133,8 +133,6 @@ You should also be able to see 2 constants in the `Constants` tab.
 <summary>Should you have trouble the following is what the code could look like</summary>
 
 ```python
-from typing import Dict
-
 from ReflectometryServer.beamline import Beamline
 from ReflectometryServer.beamline_constant import BeamlineConstant
 from ReflectometryServer.components import (
@@ -158,7 +156,7 @@ NATURAL_ANGLE = 90
 SM_Z = 20.0
 
 
-def get_beamline(macros: Dict[str, str]) -> Beamline:
+def get_beamline(macros: dict[str, str]) -> Beamline:
     #########################
     # FIXED BEAMLINE VALUES #
     #########################
