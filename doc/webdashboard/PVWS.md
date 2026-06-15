@@ -97,7 +97,7 @@ this will start a https connector using the `.pfx` file generated from the certi
    ![image](https://github.com/user-attachments/assets/1d040def-06fe-4e0d-b6cd-126a27797658)
 
 1. Open `server.xml` (see above) to work out where the current `keystoreFile` is. Rename this by appending `.old` or similar to make reverting this change easier
-1. rename the pfx file generated to match the name of the previous key-store file and place it in the same directory. The file extension may be `.p12` rather than `.pfx`, they are interchangeable for this purpose. (If doing this using windows explorer, you may want to ensure that file extensions are visible).
+1. rename the `.pfx` file generated to match the name of the previous key-store file and place it in the same directory. The file extension may be `.p12` rather than `.pfx`, they are interchangeable for this purpose. (If doing this using windows explorer, you may want to ensure that file extensions are visible).
 1. Go to `services.msc` and restart the tomcat service (name starts `APACHE TOMCAT`).
 1. In a web browser, navigate to `https://<machine name>/pvws` - this should present the PVWS test page. User you browser to check that the new certificate is in use (should have later expiry date)
 1. Add a task to the group tasks list to renew the certificate with a due date one month before expiry
