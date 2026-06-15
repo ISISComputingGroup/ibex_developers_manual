@@ -16,6 +16,11 @@ Things to consider when updating `Tomcat/PVWS`:
 - [`pvws`](https://github.com/ornl-epics/pvws) - we are using the latest nightly .war as of 01/11/24 - to update download this and place in the tomcat `dir\webapps` folder and restart the service
 - jdk 21 from https://adoptium.net/en-GB/ installed in `C:\Program Files\Eclipse Adoptium\jdk-21.0.5.11-hotspot`
 
+### Problem solving during updating
+- Check that the file permissions on the tomcat directory are set so that `LOCAL SERIVCE` account has full access
+- In the tomcat bin directory is `Tomcat9w` this will give you a config dialouge that you can use to check that the correct java path is provided
+- If you create a new directory structure for tomcat, remember to copy the old config over the top
+
 ## Setting up PVWS on a machine from scratch
 
 1) install tomcat as a windows service, using the defaults set by the wizard. Note the shutdown port to `-1`, this disables it as per [the security guidelines](https://tomcat.apache.org/tomcat-9.0-doc/security-howto.html#Server): 
