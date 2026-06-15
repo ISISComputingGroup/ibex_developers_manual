@@ -18,7 +18,7 @@ Things to consider when updating `Tomcat/PVWS`:
 
 ### Problem solving during updating
 - Check that the file permissions on the tomcat directory are set so that `LOCAL SERIVCE` account has full access
-- In the tomcat bin directory is `Tomcat9w` this will give you a config dialouge that you can use to check that the correct java path is provided
+- In the tomcat bin directory is `Tomcat9w` this will give you a config dialogue that you can use to check that the correct java path is provided
 - If you create a new directory structure for tomcat, remember to copy the old config over the top
 
 ## Setting up PVWS on a machine from scratch
