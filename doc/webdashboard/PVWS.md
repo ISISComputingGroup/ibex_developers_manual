@@ -25,7 +25,7 @@ Things to consider when updating `Tomcat/PVWS`:
 
 1) install tomcat as a windows service, using the defaults set by the wizard. Note the shutdown port to `-1`, this disables it as per [the security guidelines](https://tomcat.apache.org/tomcat-9.0-doc/security-howto.html#Server): 
 
-<img width="373" alt="image" src="https://github.com/user-attachments/assets/a6d31707-139b-41ee-9069-38c682ced46c" />
+![Apache Tomcat config](PVWS-1.png)
 
 During the installer expand `+Tomcat` when it asks you which components to install, and tick the option which starts tomcat on startup.
 
@@ -39,7 +39,7 @@ During the installer expand `+Tomcat` when it asks you which components to insta
 > [!NOTE]  
 > when finished you'll need to add `local service` to the users that can read this file like so: 
 >
-> ![image](https://github.com/user-attachments/assets/1d040def-06fe-4e0d-b6cd-126a27797658)
+> ![Local Service permissions](PVWS-2.png)
 
 4) edit `server.xml` to contain these lines, removing the default connector: 
 
@@ -94,7 +94,7 @@ this will start a https connector using the `.pfx` file generated from the certi
       Note: `winpty` may be required for openssl to function correctly on Windows. 
 1. Add `local service` to the users that can read the file you have just generated like so:
 
-   ![image](https://github.com/user-attachments/assets/1d040def-06fe-4e0d-b6cd-126a27797658)
+   ![Local Service permissions](PVWS-2.png)
 
 1. Open `server.xml` (see above) to work out where the current `keystoreFile` is. Rename this by appending `.old` or similar to make reverting this change easier
 1. rename the `.pfx` file generated to match the name of the previous key-store file and place it in the same directory. The file extension may be `.p12` rather than `.pfx`, they are interchangeable for this purpose. (If doing this using windows explorer, you may want to ensure that file extensions are visible).
