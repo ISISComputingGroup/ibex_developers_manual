@@ -60,6 +60,7 @@ is recent enough to include the most recent changes in the
 
 1. Do the same for the `EPICS32` 32-bit build, replacing `EPICS` with `EPICS32` everywhere in the commands above.
 1. Check release is now listed in [`https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases`](https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases)
+1. Copy the zipped client to the [newly created github release](https://github.com/ISISComputingGroup/ibex_gui/releases/latest) by uploading it as an asset. It must be named `client.7z`
 1. Run the {ref}`instrumentdeployyaml` playbook on any test machines which will be used for manual system testing. 
 
 
