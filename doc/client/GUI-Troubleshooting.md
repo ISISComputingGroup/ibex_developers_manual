@@ -22,7 +22,7 @@ increase both of those settings slightly if you feel like the display elements l
 
 ### Menus appear blank in GUI
 
-If menus within the GUI appear blank, e.g. edit configuration, this may be a result of the PC from whihc the VNC connection is being made having scaling set larger than 100. In this instance this is [known](https://github.com/ISISComputingGroup/IBEX/issues/8981) not to work and you should change the scaling on the machine making the connection and recconect. 
+If menus within the GUI appear blank, e.g. edit configuration, this may be a result of the PC from which the VNC connection is being made having scaling set larger than 100. In this instance this is [known](https://github.com/ISISComputingGroup/IBEX/issues/8981) not to work and you should change the scaling on the machine making the connection and reconnect. 
 
 
 ## IBEX appears fullscreen with top menu items hidden
