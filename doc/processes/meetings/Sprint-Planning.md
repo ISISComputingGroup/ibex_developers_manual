@@ -6,7 +6,7 @@ During a sizing meeting, the second meeting, the whole group will ensure that ti
 
 All team members should add the proposal label to tickets that should be considered whenever they are aware of this. These will automatically be added to the appropriate Program Increment project in GitHub.
 
-### Befor the prioritisation meeting
+### Before the prioritisation meeting
 1. Check that any proposed tickets are in the appropriate sprint.
 2. Make sure that any tickets needed for that sprint are listed within it.
 
@@ -18,7 +18,7 @@ All team members should add the proposal label to tickets that should be conside
        3. If it is not needed, assign it to a future sprint in the PI, or to the next PI as appropriate.
 2. With the search set to look at the backlog for the current sprint:
    1. For each ticket on the board:
-      1. Check whehter or not the ticket is still needed, or if it should be delayed.
+      1. Check whether or not the ticket is still needed, or if it should be delayed.
       2. If it is still needed, check that the `High`, `Medium`, or `Low` assignment is still appropriate.
       3. If it is not needed, assign it to a future sprint in the PI, or to the next PI as appropriate.
 3. With the search set for both the current and next sprint, make sure that the number of tickets being put into the new backlog is appropriate, and that the relative priorities are still appropriate
