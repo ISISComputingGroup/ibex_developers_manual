@@ -20,6 +20,11 @@ setting for text, icons etc. that is meant to ensure they do not look too small 
 Generally a resolution of 1920 x 1080 with a scaling factor of 100% should look correct on standard screens. You can
 increase both of those settings slightly if you feel like the display elements look uncomfortably small.
 
+### Menus appear blank in GUI
+
+If menus within the GUI appear blank, e.g. edit configuration, and the connection is over RDP (remote desktop) this may be a result of the PC from which the RDP connection is being made having scaling set larger than 100. In this instance this is [known](https://github.com/ISISComputingGroup/IBEX/issues/8981) not to work and you should change the scaling on the machine making the connection and reconnect. 
+
+
 ## IBEX appears fullscreen with top menu items hidden
 
 Solution: right click inside any OPI and select "exit full screen".
