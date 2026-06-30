@@ -49,6 +49,20 @@ These playbooks will prompt for a host group to run on, equivalent to (and takin
 
 As an example, to run the playbook on all NDXes other than `NDXENGINX`, enter `ndxes,!NDXENGINX` - this syntax is documented [here](https://docs.ansible.com/projects/ansible/latest/inventory_guide/intro_patterns.html#common-patterns) 
 
+#### Setting up a "clean" windows machine to test playbooks with
+
+There is a Docker compose file located in `docker/windows/` which uses [`dockur/windows`](https://github.com/dockur/windows) to spin up a windows machine by running it via `qemu` inside of a Linux container. You can use this to test playbooks with a clean state. 
+
+Prerequisites for using this are [Docker engine (_not_ Docker desktop as we are likely to in breach of license agreements)](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) - this is needed even if you have rancher desktop as that doesn't map ports over to the host easily. 
+
+To start the machine, `cd` to the directory and run `docker compose up -d`. You can check the progress of the install and see the remote console at `http://localhost:8006/`
+
+When running a playbook and prompted for the target, just use `localhost` - the container maps to localhost with a non standard SSH port (see the inventory for this). You can test alive-ness by using `ansible dockur -m win_ping --ask-pass`
+
+We use an evaluation image for this as our use case fits its [license agreements](https://www.microsoft.com/content/dam/microsoft/usetm/documents/windows-server/2025-datacenter-and-standard/oem/UseTerms_OEM_WindowsServer2025_DatacenterAndStandard_English.pdf), as we are not using it for production.
+
+By default the image will persist, so you can stop and start the container as needed and it will keep its data. To remove, `rm -rf /tmp/windows/*` to delete all the volume data. 
+
 ### `truncate_databases.yaml`
 
 This performs a backup and truncation of the local databases on instruments. It will prompt for hosts so to run use:
