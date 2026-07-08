@@ -30,4 +30,3 @@ Bits:
 - **Bits 14..=15**: Reserved vetoes
 - **Bits 16..=23**: Unused
 - **Bits 24..=31**: Frame repeat number
-TODO: this isn't quite right, and we should probably link these up with the docs on event_udp_to_kafka so there's only one place to change if we need to update them. 

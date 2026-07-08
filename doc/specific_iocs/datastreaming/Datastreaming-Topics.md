@@ -118,7 +118,7 @@ Flatbuffers schemas in this topic:
 
 partitions: 1
 
-This contains updates for the veto configuration for hard or soft vetos as set by `kafka_dae_control`. Thse are published whenever a veto is enabled or whenever a run is started or stopped. 
+This contains updates for the veto configuration for hard or soft vetos as set by `kafka_dae_control`. These are published whenever a veto is enabled or whenever a run is started or stopped. 
 
 Flatbuffers schemas in this topic: 
 - [`vc00`](https://github.com/ISISComputingGroup/streaming-data-types/blob/master/schemas/vc00_veto_configuration.fbs)
