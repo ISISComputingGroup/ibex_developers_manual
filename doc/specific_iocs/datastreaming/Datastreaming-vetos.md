@@ -13,6 +13,10 @@ The only difference between soft and hard from a controls point of view is wheth
 
 For every frame, there exists [a field](https://github.com/ISISComputingGroup/streaming-data-types/blob/master/schemas/pu00_pulse_metadata.fbs#L12) in the header (which is always sent, even if no events are streamed) which is the frame's "active" veto information. This is whether or not a frame has been vetoed due to the condition. 
 
+For both the above schemas, the veto flag is essentially just an `OR` of hard and soft vetoes - downstream consumers only need to know to ignore vetoed events, rather than whether they are soft or hard vetoed.
+
+As an example, `(1 << 14) & veto_configuration_flags` will be non-zero if veto `14` is enabled.
+
 ## Veto bit mask
 This is the same for: 
 1) the configured vetoes in the [`vc00`](https://github.com/ISISComputingGroup/streaming-data-types/blob/master/schemas/vc00_veto_configuration.fbs) schema, emitted by `kafka_dae_control`
@@ -28,5 +32,4 @@ Bits:
 - **Bits 6..=9**: External vetoes
 - **Bits 10..=13**: Fast chopper vetoes
 - **Bits 14..=15**: Reserved vetoes
-- **Bits 16..=23**: Unused
-- **Bits 24..=31**: Frame repeat number
+- **Bits 16..=31**: Unused
