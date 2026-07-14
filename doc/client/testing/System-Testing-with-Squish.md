@@ -64,7 +64,7 @@ shortcut on the desktop. This will prompt for escalated privileges - enter your 
 1. Install Jenkins build system but run it from a command line.
 1. Add the script for running the command to the startup.
 1. Install squish as above.
-1. Add to `C:\Users\<user>\AppData\Roaming\froglogic\Squish\ver1\paths.ini` the sectiopn `[General]` with key
+1. Add to `C:\Users\<user>\AppData\Roaming\froglogic\Squish\ver1\paths.ini` the section `[General]` with key
 `GlobalScriptDirs = "C:\\Jenkins\\workspace\\System_Tests_Squish\\global_scripts"`
 1. Add applications under test to the server setup as above using the IDE
 1. Change the Application Behaviour to have a startup time of 120s.
