@@ -5,7 +5,8 @@ This page describes the UDP packet format for instruments which stream UDP from 
 Translation between this UDP format and the {doc}`flatbuffers format <ADRs/000_kafka>` is done by [`event_udp_to_kafka`](https://github.com/ISISComputingGroup/event_udp_to_kafka), which initially get written to the `_rawEvents` Kafka topic.
 
 The data comes in over UDP packets, each of which is made up of 32-bit words. All data is transmitted in big-endian
-format.
+format. Multiple messages can be concatenated together into a single UDP packet. The data does not currently have
+trailing zero-padding bytes, but these may be added in future and should be ignored.
 
 ## Header format
 
@@ -23,10 +24,12 @@ Always `0xFFFFFFFF`.
 - **Bit 3**: Not used
 - **Bits 4..=31**: Always `0xFFFFFFF`
 
+If all bits are high, this packet is a neutron data packet.
+
 ### Word 2: Information
 
 - **Bits 0..=3**: Reserved for header type
-- **Bits 4..=8**: Length of header
+- **Bits 4..=8**: Length of header, in 32-bit words
 - **Bits 9..=10**: Not used
 - **Bit 11**: Bad frame (not currently used by streaming control board)
 - **Bit 12**: Run will continue (not currently used by streaming control board)
