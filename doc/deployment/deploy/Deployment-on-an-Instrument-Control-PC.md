@@ -4,7 +4,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 ## Preparatory Steps for Client and Server
 
-Before the group starts any manual deployments, one developer should run the [`instrument_deploy.yaml` ansible playbook](https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#instrument_deployyaml) which currently installs the JDK on instruments. This should be run on the relevant deploy group - the playbook will prompt for the hosts to run it on to avoid accidentally deploying to all instruments. As an example, to deploy to the winter group, enter `winter_deploy` (as specified in the [inventory file](https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/hosts.yaml)).
+Before the group starts any manual deployments, one developer should run the {ref}`instrumentdeployyaml` playbook which currently installs the JDK on instruments. This should be run on the relevant deploy group - the playbook will prompt for the hosts to run it on to avoid accidentally deploying to all instruments. As an example, to deploy to the winter group, enter `winter_deploy` (as specified in the [inventory file](https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/hosts.yaml)).
 This playbook has been designed so it is idempotent, ie. if a step has already occurred such as deploying the JDK it will not be repeated.
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.

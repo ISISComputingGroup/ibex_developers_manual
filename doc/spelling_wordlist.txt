@@ -162,6 +162,7 @@ csstudio
 ctrl
 Culham
 customisable
+cuvettes
 cxx
 Cybaman
 cyber
@@ -232,6 +233,7 @@ dt
 dt
 dvd
 Ecorr
+Eduroam
 efxclipse
 EGU
 Eilidh
@@ -367,6 +369,7 @@ installable
 Instron
 interlayer
 intialisation
+Intune
 IOC
 ioc
 iocBoot

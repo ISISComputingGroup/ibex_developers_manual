@@ -36,7 +36,9 @@ When sorted by `message_id`, this stream will contain, for each frame:
 - One `pu00` message (containing vetos, period number, protons-per-pulse)
 - Zero or more `ev44` messages containing the events
 
-See documentation of [`kafka-event-aggregator`](https://github.com/isisComputingGroup/kafka_event_aggregator) for more details about precise format of the `_events` stream.
+:::{seealso}
+See [`kafka-event-aggregator` documentation](https://isiscomputinggroup.github.io/kafka_event_aggregator/kafka_event_aggregator/#events-stream-format) for more details about precise format of the `_events` stream.
+:::
 
 Flatbuffers schemas in this topic:
 - [`ev44` - Events](https://github.com/ISISComputingGroup/streaming-data-types/tree/master/schemas/ev44_events.fbs)
@@ -111,3 +113,14 @@ partitions: 1
 This is the last known forwarder configuration, sent by {ref}`bskafka`. This is for if the forwarder crashes, then it can quickly retrieve its last configuration.
 Flatbuffers schemas in this topic: 
 - [`fc00` - Forwarder Configuration](https://github.com/ISISComputingGroup/streaming-data-types/tree/master/schemas/fc00_forwarder_config.fbs)
+
+
+{#vetoconfigtopic}
+## `_vetoConfig`
+
+partitions: 1
+
+This contains updates for the veto configuration for hard or soft vetos as set by `kafka_dae_control`. These are published whenever a veto is enabled or whenever a run is started or stopped. 
+
+Flatbuffers schemas in this topic: 
+- [`vc00`](https://github.com/ISISComputingGroup/streaming-data-types/blob/master/schemas/vc00_veto_configuration.fbs)

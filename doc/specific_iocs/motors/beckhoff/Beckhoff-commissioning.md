@@ -23,10 +23,15 @@ To actually communicate via the ADS transport layer you will need to set up a ro
 ### IOC setup
 
 The IOC (`TC_01`) should in principle be able to talk via ADS at this point but will need setting up in the respective configs. 
-- A `MTRCTRL` number will need to be given - this is the controller number as shown on the table of motors.
-- `Beckhoff_plc_code` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
-- Number of axes (`NUM_AXES` macro)
-- the `IP` and `AMSnetID` of the controller
+
+Macros:
+- `IP_AD` - the IP address of the Beckhoff (usually `192.168.1.221`)
+- `AMS_ID` - the `AmsnetID` of the Beckhoff
+- `ADS_PORT` - the port to use for communication with the Beckhoff
+- `MTRCTRL` - this is the controller number as shown on the table of motors.
+- `PLC_VERSION` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
+- `FORWARD_DESC` - whether to forward the axis description from the controller. This forwards the value from `stDescription.sAxisName` to the motor record's `.DESC` field. Should be disabled if not filled in.
+- `ALLOW_FROZEN_OFFSETS` - whether to allow setting frozen offsets on the device. This relies on `stControl.fSetPosition` existing and should be turned off if it doesn't. 
 
 {#beckhoff_manual_commission_step}
 #### Fields that aren't automatically populated
@@ -34,8 +39,8 @@ The IOC (`TC_01`) should in principle be able to talk via ADS at this point but 
 Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are: 
 
 - Engineering units (`.EGU`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
-- Axis description (`.DESC`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
-  - Note, if `stDescription` is actually filled out on a Beckhoff you can use the `FORWARD_DESC` macro set to `1` which will forward the PLC description to the corresponding motor record's `.DESC` field. 
+- Axis description (`.DESC`) (if not using the `FORWARD_DESC` macro)
+  - Note, if `stDescription` is filled out on a Beckhoff you can use the `FORWARD_DESC` macro set to `1` which will forward the PLC description to the corresponding motor record's `.DESC` field. 
 - Soft limits - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/8763)
 - Velocities (`.VELO`, `.JVEL`, `.VMAX` and others)
 

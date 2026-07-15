@@ -14,7 +14,11 @@ Types of daughter boards are:
 
 ## Communications
 
-The device should be talked to via serial (RS232 / ISOBUS in OI terms) at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode** (when the box in the bottom left of the home screen **_doesn't_** have an orange background).
+The device can be talked to via either:
+- Serial (RS232 / ISOBUS in OI terms) at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode** (when the box in the bottom left of the home screen **_doesn't_** have an orange background).
+- Ethernet link, getting an IP from DHCP which is viewable on the front panel of the device (under the Ethernet configuration screen), or using a static IP. Use port `7020` for communication. The protocol (SCPI) is identical to serial communication.
+
+A blank value for the `IPADDR` macro will cause the IOC to communicate over serial, otherwise it will communicate over Ethernet.
 
 The configuration screens look like:
 
