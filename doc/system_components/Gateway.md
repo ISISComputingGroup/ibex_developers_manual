@@ -66,7 +66,7 @@ record (bo, "$(P)CS:EXCLUSIVE")
 }
 ```
 
-It is also possible to generate 4 more (they have the name $(P)CS:EXCLUSIVE$(ID) in the db entry) using macros EXCLUSIVE1, EXCLUSIVE2, EXCLUSIVE3 and EXCLUSIVE4 which can be set via globals.txt. Note that these entries will need to include a : to use in the ID name, this has been left to implement there as otherwise if for some reason there was an expectation in an ACF for such a macro and it didn't exist we don't end up with a PV with nothing after a :.
+It is also possible to generate 4 more (they have the name `$(P)CS:EXCLUSIVE$(ID)` in the db entry) using macros EXCLUSIVE1, EXCLUSIVE2, EXCLUSIVE3 and EXCLUSIVE4 which can be set via globals.txt. Note that these entries will need to include a : to use in the ID name, this has been left to implement there as otherwise if for some reason there was an expectation in an ACF for such a macro and it didn't exist we don't end up with a PV with nothing after a :.
 
 Should an IBEX server require specific security group settings, then creating a file called `gwext.acf` in the `Settings\config\servername\AccessSecurity` folder will ensure that the gateway loads up with both the default groups, and any groups specified in `gwext.acf`.
 
