@@ -2,7 +2,7 @@
 
 The data streaming system requires several items to be on the same network:
 - `kafka_dae_control` (speaks UDP to streaming control board)
-- `event_udp_to_kafka` (recieves UDP from detector modules, converts and forwards them to Kafka)
+- `event_udp_to_kafka` (receives UDP from detector modules, converts and forwards them to Kafka)
 - Streaming control board
   - Control port which `kafka_dae_control` communicates with
   - Status packet port which UDP headers come out of (which get processed by `event_udp_to_kafka`)
