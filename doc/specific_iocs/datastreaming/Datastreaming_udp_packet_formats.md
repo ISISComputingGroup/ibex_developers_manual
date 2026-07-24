@@ -31,7 +31,7 @@ Always `0xFFFFFFFF`.
     - **Bit 2**: Pause frame packet header marker (active low)
     - **Bit 3**: No frame sync (active low) (not implemented)
     - **Bit 4..=15**: Reserved for future use
-- **Bits 16..=31**: PCB Board Number
+- **Bits 16..=31**: PCB Board Number, encoded as an integer. e.g. for `PC1234M1S`, the board identifier would be `1234`. Ignore any `PC` prefix and any suffix such as `M1S`.
 
 ### Word 3: GPS timestamp
 
