@@ -72,6 +72,7 @@ See header word 8 if looking for length of *this* message.
 
 - **Bits 0..=7**: protons-per-pulse in this ISIS frame.
 - **Bits 16..27**: number of 32-bit words from the beginning of this header to the start of the next header.
+- **Bits 28..=31**: unused
 
 To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math}`1.738{\times}10^{-6}`.
 
