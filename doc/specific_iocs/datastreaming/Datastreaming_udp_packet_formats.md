@@ -111,10 +111,6 @@ To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math
 
 - **Bits 0..=31**: Reserved for future use
 
-:::{note}
-Did consider adding information for how long the event data is and how long the time data is to make it easier to slice but think that might come from the packet type anyway
-:::
-
 ### Word 14: unused
 
 - **Bits 0..=31**: Unused
