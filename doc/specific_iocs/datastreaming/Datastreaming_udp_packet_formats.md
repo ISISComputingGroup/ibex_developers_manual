@@ -76,6 +76,7 @@ See header word 8 if looking for length of *this* message.
 
 To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math}`1.738{\times}10^{-6}`.
 
+{#ds_veto_bit_definitions}
 ### Word 9: vetoes
 - **Bits 0..=15**: Common vetoes
     - **Bit 0**: Data Overflow veto
