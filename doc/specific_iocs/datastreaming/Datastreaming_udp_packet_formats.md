@@ -83,15 +83,16 @@ To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math
     - **Bit 2**: TS2 pulse veto
     - **Bit 3**: Wrong pulse veto *-awaiting clarity what this is*
     - **Bit 4**: ISIS slow *-awaiting clarity what this is*
-    - **Bit 5**: period overflow veto *-awaiting clarity what this is*
-    - **Bit 6**: run sig veto *-not sure if this will be needed when not using DAE3*
-    - **Bit 7**: pause veto
-    - **Bit 8**: Status Packet CRC fault veto
-    - **Bits 9..=12**: Fast chopper vetoes
-    - **Bits 13..=15**: Reserved for future use
+    - **Bit 5**: Run signal veto *-not sure if this will be needed when not using DAE3*
+    - **Bit 6**: Pause veto
+    - **Bit 7**: Period overflow veto pause veto
+    - **Bit 8**: Dwell Period veto
+    - **Bit 9**: Status Packet CRC fault veto
+    - **Bits 10..=15**: Reserved for future use
 - **Bits 16..=31**: Instrument Specific Vetoes
     - **Bits 16..=19**: External vetoes
-    - **Bits 20..=31**: Reserved for future use
+    - **Bits 20..=23**: Fast chopper vetoes (Fermi)
+    - **Bits 24..=31**: Reserved for future use
 
 ### Word 10: next frame address
 
