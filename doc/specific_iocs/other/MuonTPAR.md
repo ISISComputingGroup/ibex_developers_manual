@@ -5,7 +5,7 @@ This works by reading in "master" copies, set up by the scientists, and loading 
 
 The IOC works by using the [`FileContentsServer`](https://github.com/ISISComputingGroup/EPICS-FileServer/tree/master/FileContentsServerApp) module, which takes an input and an output file.
 
-These files usually reside in `\Instrument\Settings\` on muon instruments. 
+The master copies and the `current` tpar files (`current.tpar` and `current_booster.tpar`) reside in `\Instrument\Settings\` on muon instruments. 
 
 They are a custom format that are essentially space-separated files with a header for column names and then rows for values (much like a `csv`)
 
