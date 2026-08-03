@@ -25,41 +25,41 @@ Always `0xFFFFFFFF`.
 
 ### Word 2: Header Information
 
-- **Bit 0..=7**: Header Flags
-    - **Bit 0**: End of run header marker (active low)
-    - **Bit 1**: Veto frame packet header marker (active low)
-    - **Bit 2**: Pause frame packet header marker (active low)
-    - **Bit 3**: No frame sync (active low) (not implemented)
-    - **Bit 4..=15**: Reserved for future use
-- **Bits 16..=31**: PCB Board Number, encoded as an integer. e.g. for `PC1234M1S`, the board identifier would be `1234`. Ignore any `PC` prefix and any suffix such as `M1S`.
+- **Bit 0..7**: Header Flags
+    - **Bit 0**: End of run header marker
+    - **Bit 1**: Veto frame packet header marker
+    - **Bit 2**: Pause frame packet header marker
+    - **Bit 3**: No frame sync (not implemented)
+    - **Bit 4..15**: Reserved for future use
+- **Bits 16..31**: PCB Board Number, encoded as an integer. e.g. for `PC1234M1S`, the board identifier would be `1234`. Ignore any `PC` prefix and any suffix such as `M1S`.
 
 ### Word 3: GPS timestamp
 
-- **Bits 0..=3**: seconds (most significant bits; combine with least significant bits from word 5)
-- **Bits 4..=9**: minutes
-- **Bits 10..=14**: hours
-- **Bits 15..=23**: days
-- **Bits 24..=31**: years (as offset from year 2000)
+- **Bits 0..3**: seconds (most significant bits; combine with least significant bits from word 5)
+- **Bits 4..9**: minutes
+- **Bits 10..14**: hours
+- **Bits 15..23**: days
+- **Bits 24..31**: years (as offset from year 2000)
 
 ### Word 4: GPS timestamp
 
-- **Bits 0..=9**: nanoseconds
-- **Bits 10..=19**: microseconds
-- **Bits 20..=29**: milliseconds
-- **Bits 30..=31**: seconds (least significant bits; combine with most significant bits from word 4)
+- **Bits 0..9**: nanoseconds
+- **Bits 10..19**: microseconds
+- **Bits 20..29**: milliseconds
+- **Bits 30..31**: seconds (least significant bits; combine with most significant bits from word 4)
 
 ### Word 5: Frame number
 
-- **Bits 0..=31**: frame number as u32
+- **Bits 0..31**: frame number as u32
 
 ### Word 6: period number
 
-- **Bits 0..=15**: Period number
-- **Bits 16..=31**: Frame repeat number
+- **Bits 0..15**: Period number
+- **Bits 16..31**: Frame repeat number
 
 ### Word 7: events in frame
 
-- **Bits 0..=31**: number of neutron events in this frame.
+- **Bits 0..31**: number of neutron events in this frame.
 
 :::{note}
 This is not necessarily the same as the number of events in this UDP message, as the events may be split between
@@ -70,15 +70,15 @@ See header word 8 if looking for length of *this* message.
 
 ### Word 8: packet length & protons-per-pulse
 
-- **Bits 0..=7**: protons-per-pulse in this ISIS frame.
+- **Bits 0..7**: protons-per-pulse in this ISIS frame.
 - **Bits 16..27**: number of 32-bit words from the beginning of this header to the start of the next header.
-- **Bits 28..=31**: unused
+- **Bits 28..31**: unused
 
 To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math}`1.738{\times}10^{-6}`.
 
 {#ds_veto_bit_definitions}
 ### Word 9: vetoes
-- **Bits 0..=15**: Common vetoes
+- **Bits 0..15**: Common vetoes
     - **Bit 0**: Data Overflow veto
     - **Bit 1**: SMP veto
     - **Bit 2**: TS2 pulse veto
@@ -90,31 +90,23 @@ To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math
     - **Bit 8**: Dwell Period veto
     - **Bit 9**: Status Packet CRC fault veto
     - **Bits 10..=15**: Reserved for future use
-- **Bits 16..=31**: Instrument Specific Vetoes
-    - **Bits 16..=19**: External vetoes
-    - **Bits 20..=23**: Fast chopper vetoes (Fermi)
-    - **Bits 24..=31**: Reserved for future use
+- **Bits 16..31**: Instrument Specific Vetoes
+    - **Bits 16..19**: External vetoes
+    - **Bits 20..23**: Fast chopper vetoes (Fermi)
+    - **Bits 24..31**: Reserved for future use
 
 ### Word 10: next frame address
 
-- **Bits 0..=31**: Address of the next frame, in bytes.
+- **Bits 0..31**: Address of the next frame, in bytes.
 
 ### Word 11: streamed frame number
 
-- **Bits 0..=31**: streamed frame number.
+- **Bits 0..31**: streamed frame number.
 
-### Word 12: checksum
+### Word 12: unused
 
-- **Bits 0..=31**: Pre-DDR checksum
+- **Bits 0..31**: Reserved for future use
 
-### Word 13: unused
+### Word 13: checksum
 
-- **Bits 0..=31**: Reserved for future use
-
-### Word 14: unused
-
-- **Bits 0..=31**: Unused
-
-### Word 15: unused
-
-- **Bits 0..=31**: Unused
+- **Bits 0..31**: Pre-DDR checksum
