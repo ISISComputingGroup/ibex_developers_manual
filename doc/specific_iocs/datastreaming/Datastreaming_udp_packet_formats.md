@@ -10,7 +10,8 @@ trailing zero-padding bytes, but these may be added in future and should be igno
 
 ## Header format
 
-The header is 16 words (64 bytes). 
+The header has an adjustable length with words 0 to 12 have fixed functionality and the final packet will be the DDR checksum.
+Words in between these will be board specific and their functionality defined in the header type.
 
 ### Word 0: marker word
 
@@ -103,20 +104,20 @@ To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math
 
 - **Bits 0..31**: streamed frame number.
 
-### Word 12: board-specific parameters 0
+### Word 12: Frame sync delay
+
+- **Bits 0..31**: Delay of the frame sync from Time Of Flight pulse.
+
+### Word 13: board-specific parameters 0
 
 - **Bits 0..7**: pos_bits_per_ch - how many positional bits needed for each channel (only need 5 bits for 32 bits)
 - **Bits 15..8**: diag_bits_per_ch - how many bits needed diagnostic data for each channel (only need 5 bits for 32 bits) 
 - **Bits 16..23**: channel_bits - how bits for channel (make this the most significant bits)
 - **Bits 24..31**: board_address - which board in the system
 
-### Word 13: board-specific parameters 1
+### Word 14: board-specific parameters 1
 
 - **Bits 0..31**: detector_id_offset
-
-### Word 14: unused
-
-- **Bits 0..31**: unused
 
 ### Word 15: checksum
 
