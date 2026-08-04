@@ -20,16 +20,6 @@ As an example, `(1 << 14) & veto_configuration_flags` will be non-zero if veto `
 ## Veto bit mask
 This is the same for: 
 1) the configured vetoes in the [`vc00`](https://github.com/ISISComputingGroup/streaming-data-types/blob/master/schemas/vc00_veto_configuration.fbs) schema, emitted by `kafka_dae_control`
-2) the streamed UDP frame packet's header in word 9, and in turn the `pu00` [active vetoes](https://github.com/ISISComputingGroup/streaming-data-types/blob/master/schemas/pu00_pulse_metadata.fbs#L12) that are sent every frame regardless of whether or not events are being vetoed.
+2) the streamed UDP frame packet's header, and in turn the `pu00` [active vetoes](https://github.com/ISISComputingGroup/streaming-data-types/blob/master/schemas/pu00_pulse_metadata.fbs#L12) that are sent every frame regardless of whether or not events are being vetoed.
 
-Bits: 
-- **Bit 0**: FIFO veto
-- **Bit 1**: SMP veto
-- **Bit 2**: TS2 pulse veto
-- **Bit 3**: Wrong pulse veto
-- **Bit 4**: Unused
-- **Bit 5**: ISIS slow
-- **Bits 6..=9**: External vetoes
-- **Bits 10..=13**: Fast chopper vetoes
-- **Bits 14..=15**: Reserved vetoes
-- **Bits 16..=31**: Unused
+For definitions of each veto bit, see {ref}`UDP Packet Format veto bit definitions <ds_veto_bit_definitions>`.

@@ -12,37 +12,28 @@ trailing zero-padding bytes, but these may be added in future and should be igno
 
 The header is 16 words (64 bytes). 
 
-### Word 0: marker byte
+### Word 0: marker word
 
 Always `0xFFFFFFFF`.
 
 ### Word 1: header information
 
-- **Bit 0**: End of run header marker (active low)
-- **Bit 1**: Veto frame packet header marker (active low)
-- **Bit 2**: Sample environment packet header marker (active low)
-- **Bit 3**: Not used
-- **Bits 4..=31**: Always `0xFFFFFFF`
 
-If all bits are high, this packet is a neutron data packet.
+- **Bits 0..7**: Length of header, in 32-bit words (max 255 *too many?*)
+- **Bits 8..23**: Header Type (max 65535 *too many?*)
+- **Bits 24..31**: Marker - Always `0xFF` *(think it will be useful to keep extra Fs to show start of header but not sure if necessary?)*
 
-### Word 2: Information
+### Word 2: Header Information
 
-- **Bits 0..=3**: Reserved for header type
-- **Bits 4..=8**: Length of header, in 32-bit words
-- **Bits 9..=10**: Not used
-- **Bit 11**: Bad frame (not currently used by streaming control board)
-- **Bit 12**: Run will continue (not currently used by streaming control board)
-- **Bit 13**: No frame sync
-- **Bit 14**: Frame Memory Full veto
-- **Bit 15**: Frame data overrun
-- **Bits 16..=31**: Not used
+- **Bit 0..=7**: Header Flags
+    - **Bit 0**: End of run header marker (active low)
+    - **Bit 1**: Veto frame packet header marker (active low)
+    - **Bit 2**: Pause frame packet header marker (active low)
+    - **Bit 3**: No frame sync (active low) (not implemented)
+    - **Bit 4..=15**: Reserved for future use
+- **Bits 16..=31**: PCB Board Number, encoded as an integer. e.g. for `PC1234M1S`, the board identifier would be `1234`. Ignore any `PC` prefix and any suffix such as `M1S`.
 
-### Word 3: Frame number
-
-- **Bits 0..=31**: frame number as u32
-
-### Word 4: GPS timestamp
+### Word 3: GPS timestamp
 
 - **Bits 0..=3**: seconds (most significant bits; combine with least significant bits from word 5)
 - **Bits 4..=9**: minutes
@@ -50,17 +41,21 @@ If all bits are high, this packet is a neutron data packet.
 - **Bits 15..=23**: days
 - **Bits 24..=31**: years (as offset from year 2000)
 
-### Word 5: GPS timestamp
+### Word 4: GPS timestamp
 
 - **Bits 0..=9**: nanoseconds
 - **Bits 10..=19**: microseconds
 - **Bits 20..=29**: milliseconds
 - **Bits 30..=31**: seconds (least significant bits; combine with most significant bits from word 4)
 
+### Word 5: Frame number
+
+- **Bits 0..=31**: frame number as u32
+
 ### Word 6: period number
 
 - **Bits 0..=15**: Period number
-- **Bits 16..=31**: Not used
+- **Bits 16..=31**: Frame repeat number
 
 ### Word 7: events in frame
 
@@ -70,51 +65,56 @@ If all bits are high, this packet is a neutron data packet.
 This is not necessarily the same as the number of events in this UDP message, as the events may be split between
 multiple UDP messages. This is the *total* number of events in the ISIS frame.
 
-See header word 13 if looking for length of *this* message.
+See header word 8 if looking for length of *this* message.
 :::
 
-### Word 8: protons-per-pulse
+### Word 8: packet length & protons-per-pulse
 
 - **Bits 0..=7**: protons-per-pulse in this ISIS frame.
-- **Bits 8..=31**: unused
+- **Bits 16..27**: number of 32-bit words from the beginning of this header to the start of the next header.
+- **Bits 28..=31**: unused
 
 To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math}`1.738{\times}10^{-6}`.
 
+{#ds_veto_bit_definitions}
 ### Word 9: vetoes
-
-- **Bit 0**: FIFO veto
-- **Bit 1**: SMP veto
-- **Bit 2**: TS2 pulse veto
-- **Bit 3**: Wrong pulse veto
-- **Bit 4**: Unused
-- **Bit 5**: ISIS slow
-- **Bits 6..=9**: External vetoes
-- **Bits 10..=13**: Fast chopper vetoes
-- **Bits 14..=15**: Reserved vetoes
-- **Bits 16..=23**: Unused
-- **Bits 24..=31**: Frame repeat number
+- **Bits 0..=15**: Common vetoes
+    - **Bit 0**: Data Overflow veto
+    - **Bit 1**: SMP veto
+    - **Bit 2**: TS2 pulse veto
+    - **Bit 3**: Wrong pulse veto *-awaiting clarity what this is*
+    - **Bit 4**: ISIS slow *-awaiting clarity what this is*
+    - **Bit 5**: Run signal veto *-not sure if this will be needed when not using DAE3*
+    - **Bit 6**: Pause veto
+    - **Bit 7**: Period overflow veto pause veto
+    - **Bit 8**: Dwell Period veto
+    - **Bit 9**: Status Packet CRC fault veto
+    - **Bits 10..=15**: Reserved for future use
+- **Bits 16..=31**: Instrument Specific Vetoes
+    - **Bits 16..=19**: External vetoes
+    - **Bits 20..=23**: Fast chopper vetoes (Fermi)
+    - **Bits 24..=31**: Reserved for future use
 
 ### Word 10: next frame address
 
 - **Bits 0..=31**: Address of the next frame, in bytes.
 
-### Word 11: next frame address
-
-- **Bits 0..=31**: Address of the next frame, in 64-bit words.
-
-### Word 12: streamed frame number
+### Word 11: streamed frame number
 
 - **Bits 0..=31**: streamed frame number.
 
-### Word 13: packet length
+### Word 12: checksum
 
-- **Bits 0..=11**: number of 32-bit words from the beginning of this header to the start of the next header.
-- **Bits 12..=31**: Unused
+- **Bits 0..=31**: Pre-DDR checksum
+
+### Word 13: unused
+
+- **Bits 0..=31**: Reserved for future use
 
 ### Word 14: unused
 
 - **Bits 0..=31**: Unused
 
-### Word 15: checksum
+### Word 15: unused
 
-- **Bits 0..=31**: Pre-DDR checksum
+- **Bits 0..=31**: Unused
