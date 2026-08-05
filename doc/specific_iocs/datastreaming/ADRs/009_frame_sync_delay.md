@@ -28,10 +28,21 @@ This means that what the streaming hardware emits over UDP is:
 
 The decision is:
 - The hardware will emit an additional `frame_sync_delay` field in the UDP header to tell consumers how long the frame sync
-was delayed by.
-- `event_udp_to_kafka` will apply corrections for this frame sync delay between receiving the UDP data and forming the `_rawData` stream:
+was delayed by, relative to the original timing signal which may have been either the ISIS timing pulse or an SMP (chopper) timing pulse.
+- `event_udp_to_kafka` will transform timestamps from delayed-frame coordinates into pulse-relative coordinates for this frame sync delay, between when `event_udp_to_kafka` receives the UDP data and when it forms the `_rawData` stream:
   - The reference time as emitted in an `ev44` schema should be `udp_gps_time - frame_sync_delay`
   - The timestamp of each individual neutron event should be `event_timestamp + frame_sync_delay`
+
+---
+
+- `frame_sync_delay` may be greater than one frame period.
+
+## Alternatives rejected
+
+- Make every consumer of the event-stream implement frame sync delay corrections
+  - Rejected because it would be easy to forget to do
+  this, leading to subtly incorrect data: data would appear shifted in time-of-flight, would be a small shift for small frame sync delays.
+- Implement corrections in hardware/firmware - larger firmware change, hardware has limited resources/ability to do this.
 
 ## Consequences
 
