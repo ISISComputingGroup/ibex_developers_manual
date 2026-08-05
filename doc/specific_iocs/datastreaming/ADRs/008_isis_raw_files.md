@@ -40,9 +40,11 @@ Some old analysis scripts may still use OpenGENIE, and not have finished migrati
 
 OpenGENIE [supports reading both `.raw` and `.nxs` file formats](http://download.opengenie.org/doc/old_manuals/GENIEUserManual/gdai.htm), however many of its built in commands only work on workspaces created by reading `.raw` files.
 
-If instruments still require OpenGENIE analysis or reduction code, they will need to either:
+If instruments still require OpenGENIE analysis or reduction code, there will be a need to either:
 - Migrate their code to a supported data reduction/analysis package, for example Mantid.
-- Write a utility which reads in a `.nxs` file, and outputs a corresponding `.raw` formatted file for their analysis code to use (this converter would only need to 'convert' the `.raw` fields which are actually used by the corresponding analysis code).
+- Write a utility which reads in a `.nxs` file, and outputs a corresponding `.raw` formatted file for their analysis code to use.
+
+OpenGENIE usage does not apply to the immediate-term target instruments for data streaming at the time of writing this document.
 
 #### Technique-specific tools
 
@@ -62,7 +64,8 @@ The data streaming filewriter will **NOT** write `.raw` files, and will only sup
 - We will **not** develop a `.raw` file filewriter as part of the data streaming work.
 - Only one file output format, `.nxs`, will be supported. This will reduce the maintenance burden on the filewriter.
 - Programs which read the data produced by the data acquisition system will only have access to `.nxs` files
-- For programs which are only capable of reading `.raw` files, the developers of that program will need to either:
-  - Modify their program to read `.nxs` files in addition/instead of `.raw` files
-  - Write a utility which reads in a `.nxs` file and writes out a corresponding `.raw` file for use by their program. *For avoidance of doubt, we are not proposing to write such a program as part of the data streaming work*.
+- For programs which are only capable of reading `.raw` files, for example OpenGENIE scripts, there will be a need to either:
+  - Modify their program to read `.nxs` files in addition/instead of `.raw` files, or migrate the program to a supported codebase such as Mantid.
+  - Write a utility which reads in a `.nxs` file and writes out a corresponding `.raw` file for use by their program.
+  - The immediate-term target instruments at the time of writing this document use Mantid or GudRun for data reduction and analysis. Therefore, the decision of whether to write a nexus-to-raw converter or to convert these analysis scripts to something that can use `.nxs` files is **deferred to the MNeuData project**.
 - We will need to do work, captured in [datastreaming issue 85](https://github.com/ISISComputingGroup/DataStreaming/issues/85), to work out how to replace the functionality currently performed by the `checksum` NTFS alternate file stream attached to the `.raw` file. This may mean generating the checksums required for file-archiving in a different way.
