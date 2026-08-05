@@ -91,7 +91,7 @@ dbLoadRecords "$(TOP)/db/SSMUON.db", "P=$(MYPVPREFIX)$(IOCNAME):,SESS=OPC1,SUBS=
 The [identity_cert.txt](https://epics-modules.github.io/opcua/how-to/security_configuration.html#certificate-identity-token) file contents are
 ```
 cert=c:/full/path/to/client_certificate.der
-key=c:/full/path/to/client_private_key.pem"
+key=c:/full/path/to/client_private_key.pem
 ```
 
 ## Communication
