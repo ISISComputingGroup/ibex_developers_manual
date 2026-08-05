@@ -38,7 +38,11 @@ JournalViewer [can load data and metadata from both `.nxs` and `.raw` files](htt
 
 Some old analysis scripts may still use OpenGENIE, and not have finished migration to Mantid.
 
-OpenGENIE [supports both `.raw` and `.nxs` file formats](http://download.opengenie.org/doc/old_manuals/GENIEUserManual/gdai.htm). Analysis scripts using OpenGENIE should therefore be adaptable to work with `.nxs` files only. This may involve some changes to the analysis scripts in question.
+OpenGENIE [supports reading both `.raw` and `.nxs` file formats](http://download.opengenie.org/doc/old_manuals/GENIEUserManual/gdai.htm), however many of its built in commands only work on workspaces created by reading `.raw` files.
+
+If instruments still require OpenGENIE analysis or reduction code, they will need to either:
+- Migrate their code to a supported data reduction/analysis package, for example Mantid.
+- Write a utility which reads in a `.nxs` file, and outputs a corresponding `.raw` formatted file for their analysis code to use (this converter would only need to 'convert' the `.raw` fields which are actually used by the corresponding analysis code).
 
 #### Technique-specific tools
 
@@ -58,7 +62,7 @@ The data streaming filewriter will **NOT** write `.raw` files, and will only sup
 - We will **not** develop a `.raw` file filewriter as part of the data streaming work.
 - Only one file output format, `.nxs`, will be supported. This will reduce the maintenance burden on the filewriter.
 - Programs which read the data produced by the data acquisition system will only have access to `.nxs` files
-- If a program that currently reads `.raw` files only has been missed, the developers of that program will need to either:
+- For programs which are only capable of reading `.raw` files, the developers of that program will need to either:
   - Modify their program to read `.nxs` files in addition/instead of `.raw` files
   - Write a utility which reads in a `.nxs` file and writes out a corresponding `.raw` file for use by their program. *For avoidance of doubt, we are not proposing to write such a program as part of the data streaming work*.
 - We will need to do work, captured in [datastreaming issue 85](https://github.com/ISISComputingGroup/DataStreaming/issues/85), to work out how to replace the functionality currently performed by the `checksum` NTFS alternate file stream attached to the `.raw` file. This may mean generating the checksums required for file-archiving in a different way.
