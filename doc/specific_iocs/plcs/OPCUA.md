@@ -68,11 +68,11 @@ and then send `client_certificate.der` to the PLC team for them to add to the PL
 ```bash
 openssl x509 -in  client_certificate.pem -noout -text
 ```
-It looks like you do not need to have the PLC certificate on the computer running the IOC, it may be this was only needed for basic password authentication. If you do nede to install it, there are two ways to get this:
+It looks like you do not need to have the PLC certificate on the computer running the IOC, it may be this was only needed for basic password authentication. If you do need to install it, there are two ways to get this:
 - The PLC team can send you it and then put it into `c:/Instrument/Settings/config/%COMPUTERNAME%/configurations/opcua/certstore/trusted/certs/`
 - If you try and run the IOC without having this added but have used the `opcuaSaveRejected` command you should get a copy saved to the folder specified by this command that you can then copy to the same `trusted/certs` directory
 
-Copy teh above `client_certificate.der`, `client_certificate.pem` and `client_private_key.pem` to `c:/Instrument/Settings/config/%COMPUTERNAME%/configurations/opcua/certstore`
+Copy the above `client_certificate.der`, `client_certificate.pem` and `client_private_key.pem` to `c:/Instrument/Settings/config/%COMPUTERNAME%/configurations/opcua/certstore`
 Your `OPCUA_01.cmd` file in `c:/Instrument/Settings/config/%COMPUTERNAME%/configurations/opcua` should look a bit like this (replace 127.0.0.1 with real PLC IP address)
 
 ```
