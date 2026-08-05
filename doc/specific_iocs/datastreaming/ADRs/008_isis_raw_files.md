@@ -44,6 +44,11 @@ OpenGENIE [supports both `.raw` and `.nxs` file formats](http://download.opengen
 
 A large variety of technique-specific analysis code exists, for example Refl1D (reflectometry), SASView (SANS). These tools typically read the **processed** Nexus files emitted by Mantid, not the files emitted by the data acquisition system. These tools should therefore have no dependency on `.raw` files being emitted by the data acquisition system.
 
+### Archival process
+
+The current archival process attaches checksums of all files generated as part of a run, to an NTFS secondary
+file stream **attached to the `.raw` file**.
+
 ## Decision
 
 The data streaming filewriter will **NOT** write `.raw` files, and will only support `.nxs` file output. All major downstream consumers have been verified to either already use `.nxs` files, or have a viable migration path towards using `.nxs` files.
@@ -56,3 +61,4 @@ The data streaming filewriter will **NOT** write `.raw` files, and will only sup
 - If a program that currently reads `.raw` files only has been missed, the developers of that program will need to either:
   - Modify their program to read `.nxs` files in addition/instead of `.raw` files
   - Write a utility which reads in a `.nxs` file and writes out a corresponding `.raw` file for use by their program. *For avoidance of doubt, we are not proposing to write such a program as part of the data streaming work*.
+- We will need to do work, captured in [datastreaming issue 85](https://github.com/ISISComputingGroup/DataStreaming/issues/85), to work out how to replace the functionality currently performed by the `checksum` NTFS alternate file stream attached to the `.raw` file. This may mean generating the checksums required for file-archiving in a different way.
