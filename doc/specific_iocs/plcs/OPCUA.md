@@ -24,6 +24,52 @@ Currently, the IOC does not seem to be able to support encrypted message securit
 
 Authentication configurations in Windows only seem to work with username and password. This is likely due to functionality missing from the `open62541` library, the open source library that we use in conjunction with `opcua` EPICS module. A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument, the `client_private_key.pem` (which needs to either be generated, or gotten from the appropriate instrument's `OPCUA` folder from the private network shares), `cert.txt` (which will need to be edited to reflect current username and password for the target PLC/server), and `OPCUA_01.cmd` should be moved from the Experiment Controls private network share `OPCUA` folder, to the instrument's configurations area, in a new folder that should be named `opcua`. If done properly, the `opcua` EPICS module should be able to pick up the user name and password, log in to the OPC server properly, and begin a connection. 
 
+### Creating a client certificate
+Create a configuration file `opcua_cert.conf` with the following contents
+```ini
+[ req ]
+default_bits = 2048
+encrypt_key = no
+distinguished_name = dn
+x509_extensions = ext_x509
+default_md = sha256
+prompt = no
+
+[ dn ]
+CN = ${ENV::COMPUTERNAME}
+emailAddress = ISISExperimentControls@stfc.ac.uk
+O = UK Research and Innovation
+OU = STFC
+ST = Wiltshire
+C = GB
+
+[ ext_x509 ]
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment, keyCertSign
+extendedKeyUsage = critical, serverAuth, clientAuth
+subjectAltName = URI:urn:iocOPCUA-IOC-01@${ENV::COMPUTERNAME}:EPICS:IOC,IP:${ENV::IP}
+```
+Then use `ipconfig` command to get the IP address of the computer and then from a git bash window run
+```bash
+env IP=<IP> openssl req -x509 -config opcua_cert.conf -newkey rsa:2048 -keyout client_private_key.pem -out client_certificate.pem -days 365
+```
+The PLC usually needs the client certioficate in `der` format so run
+```bash
+openssl x509 -in client_certificate.pem -outform der -out client_certificate.der
+```bash
+and then send `client_certificate.der` to the PLC team for them to add to the PLC trusted certificates. You can check a certificate contents using e.g.
+```bash
+openssl x509 -in  client_certificate.pem -noout -text
+```
+You will also need to have the PLC certificate on the computer running the IOC. There are two ways to get this:
+- The PLC team can send you it and then put it into `c:/Instrument/Settings/config/%OMPUTERNAME%/configurations/opcua/certstore/trusted/certs/`
+- If you try and run the IOC without having it but have used the `opcuaSaveRejected` command you should get a copy in the shoyudl get saved
+  816  openssl x509 -in /c/Instrument/Settings/config/NDW2127/configurations/opcua/certstore/trusted/certs/Mx80_07_BMENUA_250414657.der
+  818  openssl x509 -in /c/Instrument/Settings/config/NDW2127/configurations/opcua/certstore/trusted/certs/Mx80_07_BMENUA_250414657.der -noout -text
+  819  openssl x509 -in  client_certificate.pem -noout -text
+  820  openssl x509 -in  client_certificate.pem -noout -text
+
+
 ## Communication
 ### Do any settings in the PLC side need to be adjusted to get communicating properly?
 On occasion, a client certificate needs to be trusted manually, from the PLC technician side. However, things *_should_* be set up on our PLCs currently deployed; this step is done in deployment/implementation. A security policy might be set that is not what the IOC is trying to use, if everything else seems fine but you are unable to connect. Lastly, another person might be connected to the server (perhaps testing an IOC or something), and they would need to be kicked off in order for the IOC to communicate properly. Speak with Tim Carter or a member of the team, Instrumentation and Control Systems Group, to see if this is the case.
