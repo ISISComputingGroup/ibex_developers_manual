@@ -19,6 +19,9 @@ existing commercial and/or open-source stacks available in all popular programmi
 More info can be found [here on Wikipedia for a general overview](https://en.wikipedia.org/wiki/OPC_Unified_Architecture), or for a more detailed description from [OPC Foundation](https://opcfoundation.org/about/what-is-opc/).
 
 ## Authentication
+
+See the *Configuring OPC UA Security* section of [EPICS OPCUA documentation](https://epics-modules.github.io/opcua/)
+
 ### How is authentication handled?
 Currently, the IOC does not seem to be able to support encrypted message security policy. It does, however, support “None” security mode, and connecting with a username and password, which also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the `opcuaCLientCertificate` option in the `st-common.cmd` or `st.cmd` file, which loads the IOC with some other options, such as IP address, node configuration, namespace address, etc. More information on the EPICS OPC UA module can be found here: [EPICS OPC UA Documentation](https://github.com/epics-modules/opcua?tab=readme-ov-file#documentation).
 
@@ -62,13 +65,34 @@ and then send `client_certificate.der` to the PLC team for them to add to the PL
 openssl x509 -in  client_certificate.pem -noout -text
 ```
 You will also need to have the PLC certificate on the computer running the IOC. There are two ways to get this:
-- The PLC team can send you it and then put it into `c:/Instrument/Settings/config/%OMPUTERNAME%/configurations/opcua/certstore/trusted/certs/`
-- If you try and run the IOC without having it but have used the `opcuaSaveRejected` command you should get a copy in the shoyudl get saved
-  816  openssl x509 -in /c/Instrument/Settings/config/NDW2127/configurations/opcua/certstore/trusted/certs/Mx80_07_BMENUA_250414657.der
-  818  openssl x509 -in /c/Instrument/Settings/config/NDW2127/configurations/opcua/certstore/trusted/certs/Mx80_07_BMENUA_250414657.der -noout -text
-  819  openssl x509 -in  client_certificate.pem -noout -text
-  820  openssl x509 -in  client_certificate.pem -noout -text
+- The PLC team can send you it and then put it into `c:/Instrument/Settings/config/%COMPUTERNAME%/configurations/opcua/certstore/trusted/certs/`
+- If you try and run the IOC without having this but have used the `opcuaSaveRejected` command you should get a copy saved to the folder specified by this command that you can then copy to the same `trusted/certs` directory
 
+Copy `client_certificate.der`, `client_certificate.pem` and `client_private_key.pem` to `c:/Instrument/Settings/config/%COMPUTERNAME%/configurations/opcua/certstore`
+Your `OPCUA_01.cmd` file should look a bit like this (replace 127.0.0.1 with real PLC IP address)
+
+```
+opcuaSession OPC1 opc.tcp://127.0.0.1:4840
+opcuaSubscription SUB1 OPC1 200
+
+epicsEnvSet OPCCONFIGROOT "/Instrument/Settings/config/$(COMPUTERNAME)/configurations/opcua"
+
+opcuaSetupPKI "$(OPCCONFIGROOT)/certstore"
+opcuaSaveRejected "$(OPCCONFIGROOT)/certstore/rejected"
+
+opcuaClientCertificate "$(OPCCONFIGROOT)/certstore/client_certificate.der", "$(OPCCONFIGROOT)/certstore/client_private_key.pem"
+
+opcuaOptions OPC1 sec-mode=SignAndEncrypt, sec-policy=Basic256Sha256, sec-id="$(OPCCONFIGROOT)/certstore/identity_cert.txt"
+
+## example - will be different for each instruent 
+dbLoadRecords "$(TOP)/db/SSMUON_Header.db", "P=$(MYPVPREFIX)$(IOCNAME):,SESS=OPC1,SUBS=SUB1,NS=2"
+dbLoadRecords "$(TOP)/db/SSMUON.db", "P=$(MYPVPREFIX)$(IOCNAME):,SESS=OPC1,SUBS=SUB1,NS=2"
+```
+The [identity_cert.txt](https://epics-modules.github.io/opcua/how-to/security_configuration.html#certificate-identity-token) file contents are
+```
+cert=c:/full/path/to/client_certificate.der
+key=c:/full/path/to/client_private_key.pem"
+```
 
 ## Communication
 ### Do any settings in the PLC side need to be adjusted to get communicating properly?
