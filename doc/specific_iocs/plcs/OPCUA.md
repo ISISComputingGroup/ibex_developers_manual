@@ -59,7 +59,7 @@ env IP=<IP> openssl req -x509 -config opcua_cert.conf -newkey rsa:2048 -keyout c
 The PLC usually needs the client certioficate in `der` format so run
 ```bash
 openssl x509 -in client_certificate.pem -outform der -out client_certificate.der
-```bash
+```
 and then send `client_certificate.der` to the PLC team for them to add to the PLC trusted certificates. You can check a certificate contents using e.g.
 ```bash
 openssl x509 -in  client_certificate.pem -noout -text
