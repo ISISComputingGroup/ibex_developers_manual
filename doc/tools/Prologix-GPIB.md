@@ -10,3 +10,4 @@ You can run `netfinder` on the same network as the adapter to find its IP addres
 The `prologix configurator` program lets you change other settings on the device, but is generally not needed by us as
 the main ones are set by asyn when it connects. See the [adapter FAQs](https://prologix.biz/resources/frequently-asked-questions/gpib-ethernet-controller-faq/) for more details.
 
+<img width="1530" height="2040" alt="1000000246" src="https://github.com/user-attachments/assets/7c01b868-1b3a-491c-b402-e938a4eb73f6" />
