@@ -1,6 +1,6 @@
 ## Prologix GPIB Adapter
 
-The [Prologix GPIB-ETHERNET adapter](https://prologix.biz/) is a GPIB -> Ethernet adapter that is supported by EPICS asyn via the `prologixGPIBConfigure` command 
+The [Prologix GPIB-ETHERNET adapter](https://prologix.biz/) is a GPIB -> ethernet adapter that is supported by EPICS asyn via the `prologixGPIBConfigure` command 
 and is used by some of our aeroflex and PS300 series devices.
 
 The device support DHCP but it may not work across a network gateway, so when testing best be on the same network as the adapter. The MAC address is written on the adapter.
