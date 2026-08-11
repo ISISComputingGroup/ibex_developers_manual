@@ -28,7 +28,7 @@ Always `0xFFFFFFFF`.
 
 - **Bit 0..7**: Header Flags
     - **Bit 0**: End of run header marker
-    - **Bit 1**: Veto frame packet header marker
+    - **Bit 1**: Veto frame packet header marker - This show that the frame has been hard vetoed. If a mask is set to cover this corresponding but this won't be set.
     - **Bit 2**: Pause frame packet header marker
     - **Bit 3**: No frame sync (not implemented)
     - **Bit 4..15**: Reserved for future use
@@ -79,6 +79,7 @@ To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math
 
 {#ds_veto_bit_definitions}
 ### Word 9: vetoes
+These values be even if there is a veto mark that corresponds to them
 - **Bits 0..15**: Common vetoes
     - **Bit 0**: Data Overflow veto
     - **Bit 1**: SMP veto
