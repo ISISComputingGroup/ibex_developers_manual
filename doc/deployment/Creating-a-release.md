@@ -60,7 +60,6 @@ is recent enough to include the most recent changes in the
 
 1. Do the same for the `EPICS32` 32-bit build, replacing `EPICS` with `EPICS32` everywhere in the commands above.
 1. Check release is now listed in [`https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases`](https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases)
-1. Copy the zipped client to the [newly created github release](https://github.com/ISISComputingGroup/ibex_gui/releases/latest) by uploading it as an asset. It must be named `client.7z`
 1. Run the {ref}`instrumentdeployyaml` playbook on any test machines which will be used for manual system testing. 
 
 
@@ -88,6 +87,7 @@ the relevant release branch after it has been tagged.
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
     1. **Delete the release branch** once the release and tag has been created. 
+1. Copy the zipped client to the [newly created github release](https://github.com/ISISComputingGroup/ibex_gui/releases/latest) by uploading it as an asset. It must be named `client.7z`
 1. Create release tag from the release branch for each submodules in EPICS, then delete the release branch. To do this, run the following two git commands in top level EPICS (replace `X.x.x` with the release number): 
     1. `git submodule foreach --recursive "git fetch && git tag Release_ibex_X.x.x origin/Release_X.x.x || exit 0"` // Create tag
     1. `git submodule foreach --recursive "git push origin tag Release_ibex_X.x.x && git push --delete origin Release_X.x.x || exit 0"` // Push tags and delete release branch
