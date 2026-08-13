@@ -56,7 +56,7 @@ keyUsage = critical, digitalSignature, nonRepudiation, keyEncipherment, dataEnci
 extendedKeyUsage = critical, serverAuth, clientAuth
 subjectAltName = URI:urn:iocOPCUA-IOC-01@${ENV::HOSTNAME}:EPICS:IOC,IP:${ENV::IP}
 ```
-Run `ipconfig` command on the computer you will generate a certificate for to get its IP address. The `HOSTNAME` should match the `%COMPUTERNAME%` variable of the machine the certificate will be used for e.g. `NDXMERLIN`
+Run `ipconfig` command on the computer you will generate a certificate for to get its IP address. The `HOSTNAME` should match the `%COMPUTERNAME%` variable of the machine the certificate will be used for e.g. `NDXMERLIN`. Then run:
 ```bash
 env IP=<IP> HOSTNAME=<hostname> openssl req -x509 -config opcua_cert.conf -newkey rsa:2048 -keyout client_private_key.pem -out client_certificate.pem -days 365
 ```
