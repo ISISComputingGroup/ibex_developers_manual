@@ -43,7 +43,7 @@ default_md = sha256
 prompt = no
 
 [ dn ]
-CN = ${ENV::COMPUTERNAME}
+CN = ${ENV::HOSTNAME}
 emailAddress = ISISExperimentControls@stfc.ac.uk
 O = UK Research and Innovation
 OU = STFC
@@ -54,11 +54,11 @@ C = GB
 basicConstraints = critical, CA:FALSE
 keyUsage = critical, digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment, keyCertSign
 extendedKeyUsage = critical, serverAuth, clientAuth
-subjectAltName = URI:urn:iocOPCUA-IOC-01@${ENV::COMPUTERNAME}:EPICS:IOC,IP:${ENV::IP}
+subjectAltName = URI:urn:iocOPCUA-IOC-01@${ENV::HOSTNAME}:EPICS:IOC,IP:${ENV::IP}
 ```
-Then use `ipconfig` command to get the IP address of the computer and then from a git bash window run
+Run `ipconfig` command on the computer you will generate a certificate for to get its IP address. The `HOSTNAME` should match the `%COMPUTERNAME%` variable of the machine the certificate will be used for e.g. `NDXMERLIN`
 ```bash
-env IP=<IP> openssl req -x509 -config opcua_cert.conf -newkey rsa:2048 -keyout client_private_key.pem -out client_certificate.pem -days 365
+env IP=<IP> HOSTNAME=<hostname> openssl req -x509 -config opcua_cert.conf -newkey rsa:2048 -keyout client_private_key.pem -out client_certificate.pem -days 365
 ```
 The PLC usually needs the client certificate in `der` format so run
 ```bash
