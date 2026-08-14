@@ -20,15 +20,15 @@ Always `0xFFFFFFFF`.
 ### Word 1: header information
 
 
-- **Bits 0..7**: Length of header, in 32-bit words (max 255 *too many?*)
-- **Bits 8..23**: Header Type (max 65535 *too many?*)
-- **Bits 24..31**: Marker - Always `0xFF` *(think it will be useful to keep extra Fs to show start of header but not sure if necessary?)*
+- **Bits 0..7**: Length of header, in 32-bit words
+- **Bits 8..23**: Header Type
+- **Bits 24..31**: Marker - Always `0xFF` *(This will be useful to keep extra Fs to show start of header but not sure if necessary?)*
 
 ### Word 2: Header Information
 
 - **Bit 0..7**: Header Flags
     - **Bit 0**: End of run header marker
-    - **Bit 1**: Veto frame packet header marker - This show that the frame has been hard vetoed. If a mask is set to cover this corresponding but this won't be set.
+    - **Bit 1**: Veto frame packet header marker - This show that the frame has been hard vetoed. If a mask is set to cover this corresponding bit this won't be set.
     - **Bit 2**: Pause frame packet header marker
     - **Bit 3**: No frame sync (not implemented)
     - **Bit 4..15**: Reserved for future use
@@ -72,7 +72,7 @@ See header word 8 if looking for length of *this* message.
 ### Word 8: packet length & protons-per-pulse
 
 - **Bits 0..7**: protons-per-pulse in this ISIS frame.
-- **Bits 16..27**: number of 32-bit words from the beginning of this header to the start of the next header.
+- **Bits 16..27**: number of 32-bit words from the beginning of this header to the start of the next header or till the end of this UDP packet.
 - **Bits 28..31**: unused
 
 To convert to {math}`\mu Ah` delivered during this ISIS frame, multiply by {math}`1.738{\times}10^{-6}`.
@@ -91,7 +91,7 @@ These values be even if there is a veto mark that corresponds to them
     - **Bit 7**: Period overflow veto pause veto
     - **Bit 8**: Dwell Period veto
     - **Bit 9**: Status Packet CRC fault veto
-    - **Bits 10..=15**: Reserved for future use
+    - **Bits 10..15**: Reserved for future use
 - **Bits 16..31**: Instrument Specific Vetoes
     - **Bits 16..19**: External vetoes
     - **Bits 20..23**: Fast chopper vetoes (Fermi)
