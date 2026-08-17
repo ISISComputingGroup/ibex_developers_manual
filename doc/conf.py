@@ -116,4 +116,5 @@ intersphinx_mapping = {
     # This inventory needs to be periodically updated (manually) if new pages are added or
     # page layouts changed.
     "sysadmin": ("https://shadow.nd.rl.ac.uk/ibex_sysadmin_manual/", "sysadmin_manual.inv"),
+    "mantid": ("https://docs.mantidproject.org/", None),
 }
