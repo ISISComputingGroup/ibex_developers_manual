@@ -4,7 +4,7 @@ This is a gas adsorption system, used on WISH and also used in the Hydrogen lab.
 
 The principle of operation is to 'dose' gas into a porous material, and measure the rate at which that gas gets adsorbed onto that material. When used on a beamline, we also want to perform neutron measurements between doses.
 
-The iSorb has no native communication interface (despite the manufacturer having been asked for this). Our support is implemented in an unusual way:
+The iSorb has no native communication interface (despite the manufacturer having been asked for this). Our EPICS support module is implemented in an unusual way:
 - There is a program running on the manufacturer PC, alongside the manufacturer software
 - This program uses a combination of GUI automation and log-scraping to extract information of interest from the manufacturer software
 - This information is then exposed over standard HTTP endpoints
