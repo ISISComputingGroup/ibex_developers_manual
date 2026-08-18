@@ -109,17 +109,52 @@ These values be even if there is a veto mark that corresponds to them
 
 - **Bits 0..31**: Delay of the frame sync from Time Of Flight pulse.
 
-### Word 13: board-specific parameters 0
+### Variable number of board-specific parameters
+
+The interpretation of these words depends on the board number. There may be zero or more of these. The number of words of board-specific parameters is "length of header" (from word 1) minus 14.
+
+See {ref}`ds_board_specific_header_parameters` for interpretation of these words for different board types.
+
+### Last Word: checksum
+
+- **Bits 0..31**: Pre-DDR checksum
+
+---
+
+{#ds_board_specific_header_parameters}
+## Board-specific parameters
+
+### `pc3544` / `pc3634` / `pc3877`
+
+The scheme used by these boards is for 64-bit neutron events to look like:
+
+```
+1110000T TTTTTTTT TTTTTTTT TTTTTTTT
+CCCxxxxx xxxxxxxx xxDDDDDD DDPPPPPP
+```
+
+Where:
+- `1` is a bit that is *always* set to `1`
+- `0` is a bit that is *always* set to `0`
+- `T` is a bit that forms part of the raw timestamp
+- `C` is a bit that forms part of the channel index
+- `D` is a bit that forms part of 'diagnostic data' (for example pulse height)
+- `P` is a bit that forms part of the 'position' (pixel) that this event corresponds to
+- `x` is an unused bit
+
+The example above has `pos_bits_per_ch = 6`, `diag_bits_per_ch = 8`, `channel_bits = 3`.
+
+The detector ID sent to Kafka then needs to be `detector_id_offset + P + (C * (2^channel_bits))`.
+
+#### Word 13: board-specific parameters 0
 
 - **Bits 0..7**: pos_bits_per_ch - how many positional bits needed for each channel (only need 5 bits for 32 bits)
-- **Bits 8..15**: diag_bits_per_ch - how many bits needed diagnostic data for each channel (only need 5 bits for 32 bits) 
+- **Bits 8..15**: diag_bits_per_ch - how many bits needed diagnostic data for each channel (only need 5 bits for 32 bits) 
 - **Bits 16..23**: channel_bits - how bits for channel (make this the most significant bits)
 - **Bits 24..31**: board_address - which board in the system
 
-### Word 14: board-specific parameters 1
+#### Word 14: board-specific parameters 1
 
 - **Bits 0..31**: detector_id_offset
 
-### Word 15: checksum
-
-- **Bits 0..31**: Pre-DDR checksum
+---
