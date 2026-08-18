@@ -144,7 +144,7 @@ Where:
 
 The example above has `pos_bits_per_ch = 6`, `diag_bits_per_ch = 8`, `channel_bits = 3`.
 
-The detector ID sent to Kafka then needs to be `detector_id_offset + P + (C * (2^channel_bits))`.
+The detector ID sent to Kafka then needs to be `detector_id_offset + P + (C * (2^pos_bits_per_ch))`.
 
 #### Word 13: board-specific parameters 0
 
