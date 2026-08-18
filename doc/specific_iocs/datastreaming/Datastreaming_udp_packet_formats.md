@@ -112,7 +112,7 @@ These values be even if there is a veto mark that corresponds to them
 ### Word 13: board-specific parameters 0
 
 - **Bits 0..7**: pos_bits_per_ch - how many positional bits needed for each channel (only need 5 bits for 32 bits)
-- **Bits 15..8**: diag_bits_per_ch - how many bits needed diagnostic data for each channel (only need 5 bits for 32 bits) 
+- **Bits 8..15**: diag_bits_per_ch - how many bits needed diagnostic data for each channel (only need 5 bits for 32 bits) 
 - **Bits 16..23**: channel_bits - how bits for channel (make this the most significant bits)
 - **Bits 24..31**: board_address - which board in the system
 
