@@ -156,5 +156,3 @@ The detector ID sent to Kafka then needs to be `detector_id_offset + P + (C * (2
 #### Word 14: board-specific parameters 1
 
 - **Bits 0..31**: detector_id_offset
-
----
