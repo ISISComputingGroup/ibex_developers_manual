@@ -61,7 +61,7 @@ This performs a backup and truncation of the local databases on instruments. It 
 
 This is the main playbook for deploying software to NDXes. Currently this stops the server if it is running and installs the JDK using the `jdk` role. 
 
-To use this you need to run `ansible-playbook windows/instrument_deploy.yaml` - it should prompt for hosts. 
+To use this you need to run `ansible-playbook windows/instrument_deploy.yaml --ask-vault-pass` - it should prompt for hosts and vault password. 
 
 {#ansibleupdatingjdk}
 #### Updating JDK version
