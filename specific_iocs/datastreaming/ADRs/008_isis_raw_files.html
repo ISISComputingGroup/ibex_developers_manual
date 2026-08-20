@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8 - Datastreaming filewriter will not write .raw files &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="9 - Frame sync delay handling" href="009_frame_sync_delay.html" />
+    <link rel="prev" title="7 - Periods" href="007_periods.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../ADRs.html">Data streaming: ADRs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="000_kafka.html">0 - Kafka</a></li>
+<li class="toctree-l4"><a class="reference internal" href="001_histograms.html">1 - Histograms and event mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="002_spectra_mapping.html">2 - Wiring and Spectra mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="003_linux.html">3 - Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="004_vetos_runcontrol.html">4 - Vetos and Run control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="005_os_deployment.html">5 - Base OS and deployment strategy for data streaming technology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="006_event_aggregation.html">6 - Event aggregator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="007_periods.html">7 - Periods</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">8 - Datastreaming filewriter will not write <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="009_frame_sync_delay.html">9 - Frame sync delay handling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming---File-writing.html">Data streaming: File writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming---Sample-Environment.html">Data streaming: Sample environment forwarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming--neutron-events-histograms.html">Data streaming: Neutron events and histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-How-To.html">Data streaming: how-to guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-Topics.html">Data streaming: topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-hardware-architecture.html">Data streaming: hardware architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-run-starts-stops.html">Data streaming: run starts/stops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-vetos.html">Data streaming - Vetoes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming_hardware_requirements.html">Data streaming server hardware requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming_udp_packet_formats.html">Datastreaming: UDP packet formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Datastreaming.html">Data Streaming</a></li>
+          <li class="breadcrumb-item"><a href="../ADRs.html">Data streaming: ADRs</a></li>
+      <li class="breadcrumb-item active">8 - Datastreaming filewriter will not write <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/datastreaming/ADRs/008_isis_raw_files.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="datastreaming-filewriter-will-not-write-raw-files">
+<h1>8 - Datastreaming filewriter will not write <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files<a class="headerlink" href="#datastreaming-filewriter-will-not-write-raw-files" title="Link to this heading"></a></h1>
+<section id="status">
+<h2>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h2>
+<p>Accepted.</p>
+</section>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading"></a></h2>
+<p>The existing <code class="docutils literal notranslate"><span class="pre">ISISICP</span></code> data acquisition code can write both legacy ISIS <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files and newer <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files. In the data streaming system, we need to choose which file outputs we will support.</p>
+<section id="definitions">
+<h3>Definitions<a class="headerlink" href="#definitions" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ISIS <code class="docutils literal notranslate"><span class="pre">.raw</span></code> file</strong> - an ISIS-specific data format, written by previous versions of ISIS data-acquisition systems. See <a class="reference external" href="https://docs.mantidproject.org/nightly/concepts/RAWFile.html" title="(in MantidProject v6.16)"><span class="xref std std-doc">Mantid documentation</span></a> for further information about the format. <code class="docutils literal notranslate"><span class="pre">.raw</span></code> is a legacy ISIS-specific format, and can only ever support histogram-mode data.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file</strong> - a cross-facility standard data format for neutron, x-ray, and muon science. See <a class="reference external" href="https://www.nexusformat.org/">NeXuS webpages</a> for further details. In this document, when the term <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file is used, we refer to a <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file generated by the instrument data acquisition system, which may contain either histograms, event-mode data, or both.</p></li>
+<li><p><strong>Reduced or processed <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file</strong> - Mantid can write results of data reduction and processing operations to a <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file. This file is distinct from the <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files generated by the instrument data acquisition system. The formats of these files are defined and managed by the Mantid team, and are <strong>outside the scope of this ADR</strong> as they have no direct dependence on the streaming system.</p></li>
+</ul>
+</section>
+<section id="consumers">
+<h3>Consumers<a class="headerlink" href="#consumers" title="Link to this heading"></a></h3>
+<p>Various programs may consume file outputs from the data acquisition system.</p>
+<section id="mantid">
+<h4>Mantid<a class="headerlink" href="#mantid" title="Link to this heading"></a></h4>
+<p>Mantid can read ISIS <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files, and both histogram and event-mode <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files. As part of filewriter definition work, we are working with the Mantid team to ensure that our <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files will remain compatible with Mantid. Mantid therefore has no hard dependency on <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files being generated.</p>
+</section>
+<section id="gudrun">
+<h4>Gudrun<a class="headerlink" href="#gudrun" title="Link to this heading"></a></h4>
+<p>GudRun can directly read both ISIS <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files and histogram-mode <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files. To read event-mode <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files, the files are first put through a <a class="reference external" href="https://github.com/disorderedmaterials/np"><code class="docutils literal notranslate"><span class="pre">nexus-processor</span></code></a>, which performs required event-based data manipulations and then outputs a histogram-mode <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file suitable for loading into GudRun.</p>
+<p>The current GudRun maintainer was consulted about <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files, and stated that:</p>
+<ul class="simple">
+<li><p>SANDALS already uses <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files as standard, and does not use <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files</p></li>
+<li><p>NIMROD currently uses <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files, but “there isn’t anything blocking us from moving to nxs”</p></li>
+<li><p>GEM &amp; POLARIS may need some minor work to create definition files for GudRun: “Those instruments may need a little work as Gudrun requires a text-based definitions file when using NeXuS in order to understand the detector layout”</p></li>
+</ul>
+</section>
+<section id="journalviewer">
+<h4>JournalViewer<a class="headerlink" href="#journalviewer" title="Link to this heading"></a></h4>
+<p>JournalViewer <a class="reference external" href="https://github.com/disorderedmaterials/jv/blob/c646dc9c97f749d8c45c9c022a23a1dcb2ebc98d/src/jv_local.cpp#L114">can load data and metadata from both <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> and <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files</a>. It therefore has no hard dependency on <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files being generated.</p>
+</section>
+<section id="opengenie">
+<h4>OpenGENIE<a class="headerlink" href="#opengenie" title="Link to this heading"></a></h4>
+<p>Some old analysis scripts may still use OpenGENIE, and not have finished migration to Mantid.</p>
+<p>OpenGENIE <a class="reference external" href="http://download.opengenie.org/doc/old_manuals/GENIEUserManual/gdai.htm">supports reading both <code class="docutils literal notranslate"><span class="pre">.raw</span></code> and <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file formats</a>, however many of its built in commands only work on workspaces created by reading <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files.</p>
+<p>If instruments still require OpenGENIE analysis or reduction code, there will be a need to either:</p>
+<ul class="simple">
+<li><p>Migrate their code to a supported data reduction/analysis package, for example Mantid.</p></li>
+<li><p>Write a utility which reads in a <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file, and outputs a corresponding <code class="docutils literal notranslate"><span class="pre">.raw</span></code> formatted file for their analysis code to use.</p></li>
+</ul>
+<p>OpenGENIE usage does not apply to the immediate-term target instruments for data streaming at the time of writing this document.</p>
+</section>
+<section id="technique-specific-tools">
+<h4>Technique-specific tools<a class="headerlink" href="#technique-specific-tools" title="Link to this heading"></a></h4>
+<p>A large variety of technique-specific analysis code exists, for example Refl1D (reflectometry), SASView (SANS). These tools typically read the <strong>processed</strong> Nexus files emitted by Mantid, not the files emitted by the data acquisition system. These tools should therefore have no dependency on <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files being emitted by the data acquisition system.</p>
+</section>
+</section>
+<section id="archival-process">
+<h3>Archival process<a class="headerlink" href="#archival-process" title="Link to this heading"></a></h3>
+<p>The current archival process attaches checksums of all files generated as part of a run, to an NTFS secondary
+file stream <strong>attached to the <code class="docutils literal notranslate"><span class="pre">.raw</span></code> file</strong>.</p>
+</section>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Link to this heading"></a></h2>
+<p>The data streaming filewriter will <strong>NOT</strong> write <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files, and will only support <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file output. All major downstream consumers have been verified to either already use <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files, or have a viable migration path towards using <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files.</p>
+</section>
+<section id="consequences">
+<h2>Consequences<a class="headerlink" href="#consequences" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>We will <strong>not</strong> develop a <code class="docutils literal notranslate"><span class="pre">.raw</span></code> file filewriter as part of the data streaming work.</p></li>
+<li><p>Only one file output format, <code class="docutils literal notranslate"><span class="pre">.nxs</span></code>, will be supported. This will reduce the maintenance burden on the filewriter.</p></li>
+<li><p>Programs which read the data produced by the data acquisition system will only have access to <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files</p></li>
+<li><p>For programs which are only capable of reading <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files, for example OpenGENIE scripts, there will be a need to either:</p>
+<ul>
+<li><p>Modify their program to read <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files in addition/instead of <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files, or migrate the program to a supported codebase such as Mantid.</p></li>
+<li><p>Write a utility which reads in a <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> file and writes out a corresponding <code class="docutils literal notranslate"><span class="pre">.raw</span></code> file for use by their program.</p></li>
+<li><p>The immediate-term target instruments at the time of writing this document use Mantid or GudRun for data reduction and analysis. Therefore, the decision of whether to write a nexus-to-raw converter or to convert these analysis scripts to something that can use <code class="docutils literal notranslate"><span class="pre">.nxs</span></code> files is <strong>deferred to the MNeuData project</strong>.</p></li>
+</ul>
+</li>
+<li><p>We will need to do work, captured in <a class="reference external" href="https://github.com/ISISComputingGroup/DataStreaming/issues/85">datastreaming issue 85</a>, to work out how to replace the functionality currently performed by the <code class="docutils literal notranslate"><span class="pre">checksum</span></code> NTFS alternate file stream attached to the <code class="docutils literal notranslate"><span class="pre">.raw</span></code> file. This may mean generating the checksums required for file-archiving in a different way.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="007_periods.html" class="btn btn-neutral float-left" title="7 - Periods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="009_frame_sync_delay.html" class="btn btn-neutral float-right" title="9 - Frame sync delay handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Aug 20, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+# ITC503
+
+It is an oxford instruments Piece of kit. It is used as the cryostat as part of the 7.5T magnet (see also [ips](Oxford-Instruments-IPS) which has more detailed documentation about the 7.5t magnet). It is also used as part of the MuSR 3He Refrigerator (though that lives in its own IOC see [here](ICE-Dilution-Fridge)).
+
+## Gotchas
+
+- Scans very (very) slowly. This is necessary for communication with device.
+- It is stolen from diamond.
+- Occasionally device will ignore first character of command, e.g.
+
+```
+2018/05/16 16:57:02.169 \\.\COM2 write 3
+R9\r
+2018/05/16 16:57:02.190 \\.\COM2 read 3
+?9\r
+2018/05/16 16:57:02.189831 L0 TE:NDW1799:ITC503_01:I: Input "?9" mismatch after 0 bytes
+2018/05/16 16:57:02.189842 L0 TE:NDW1799:ITC503_01:I: got "?9" where "R" was expected
+```
+
+Usually it should reply with something like `R+5.000` to that command. The `?9` response suggests that the device has dropped the first character. I tried various things to get this to work but it is just a fail on the device's part.
+
+## Getting weird stuff on serial line
+
+- Check serial settings (9600 baud/8 bits/No parity/2 stop bits)
+- Check you only have one device on the end of the line. ITC/ILM systems can be addressed, if they both share a line then you can get interleaved replies from both devices which looks like nonsense on a serial line
+
+## ISOBUS addresses
+
+ITC and ILM devices can be addressed by an ISOBUS address. There is a utility in `C:\LabVIEW Modules\Oxford Software\COMMDEV.llb\Instruments?.vi` which will scan all ISOBUS addresses on a COM port and tell you what device(s) are connected to each one.

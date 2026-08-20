@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datastreaming: UDP packet formats &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fluxgates &amp; Magnetometers" href="../Fluxgates.html" />
+    <link rel="prev" title="Data streaming server hardware requirements" href="Datastreaming_hardware_requirements.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Datastreaming.html">Data Streaming</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ADRs.html">Data streaming: ADRs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming---File-writing.html">Data streaming: File writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming---Sample-Environment.html">Data streaming: Sample environment forwarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming--neutron-events-histograms.html">Data streaming: Neutron events and histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-How-To.html">Data streaming: how-to guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-Topics.html">Data streaming: topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-hardware-architecture.html">Data streaming: hardware architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-run-starts-stops.html">Data streaming: run starts/stops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming-vetos.html">Data streaming - Vetoes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Datastreaming_hardware_requirements.html">Data streaming server hardware requirements</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Datastreaming: UDP packet formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Datastreaming.html">Data Streaming</a></li>
+      <li class="breadcrumb-item active">Datastreaming: UDP packet formats</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/datastreaming/Datastreaming_udp_packet_formats.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="datastreaming-udp-packet-formats">
+<h1>Datastreaming: UDP packet formats<a class="headerlink" href="#datastreaming-udp-packet-formats" title="Link to this heading"></a></h1>
+<p>This page describes the UDP packet format for instruments which stream UDP from detectors (e.g. HRPD-X).</p>
+<p>Translation between this UDP format and the <a class="reference internal" href="ADRs/000_kafka.html"><span class="doc">flatbuffers format</span></a> is done by <a class="reference external" href="https://github.com/ISISComputingGroup/event_udp_to_kafka"><code class="docutils literal notranslate"><span class="pre">event_udp_to_kafka</span></code></a>, which initially get written to the <code class="docutils literal notranslate"><span class="pre">_rawEvents</span></code> Kafka topic.</p>
+<p>The data comes in over UDP packets, each of which is made up of 32-bit words. All data is transmitted in big-endian
+format. Multiple messages can be concatenated together into a single UDP packet. The data does not currently have
+trailing zero-padding bytes, but these may be added in future and should be ignored.</p>
+<section id="header-format">
+<h2>Header format<a class="headerlink" href="#header-format" title="Link to this heading"></a></h2>
+<p>The header has an adjustable length with words 0 to 12 have fixed functionality and the final packet will be the DDR checksum.
+Words in between these will be board specific and their functionality defined in the header type.</p>
+<section id="word-0-marker-word">
+<h3>Word 0: marker word<a class="headerlink" href="#word-0-marker-word" title="Link to this heading"></a></h3>
+<p>Always <code class="docutils literal notranslate"><span class="pre">0xFFFFFFFF</span></code>.</p>
+</section>
+<section id="word-1-header-information">
+<h3>Word 1: header information<a class="headerlink" href="#word-1-header-information" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..7</strong>: Length of header, in 32-bit words</p></li>
+<li><p><strong>Bits 8..23</strong>: Header Type</p></li>
+<li><p><strong>Bits 24..31</strong>: Marker - Always <code class="docutils literal notranslate"><span class="pre">0xFF</span></code> <em>(This will be useful to keep extra Fs to show start of header but not sure if necessary?)</em></p></li>
+</ul>
+</section>
+<section id="word-2-header-information">
+<h3>Word 2: Header Information<a class="headerlink" href="#word-2-header-information" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bit 0..7</strong>: Header Flags</p>
+<ul>
+<li><p><strong>Bit 0</strong>: End of run header marker</p></li>
+<li><p><strong>Bit 1</strong>: Veto frame packet header marker - This show that the frame has been hard vetoed. If a mask is set to cover this corresponding bit this won’t be set.</p></li>
+<li><p><strong>Bit 2</strong>: Pause frame packet header marker</p></li>
+<li><p><strong>Bit 3</strong>: No frame sync (not implemented)</p></li>
+<li><p><strong>Bit 4..15</strong>: Reserved for future use</p></li>
+</ul>
+</li>
+<li><p><strong>Bits 16..31</strong>: PCB Board Number, encoded as an integer. e.g. for <code class="docutils literal notranslate"><span class="pre">PC1234M1S</span></code>, the board identifier would be <code class="docutils literal notranslate"><span class="pre">1234</span></code>. Ignore any <code class="docutils literal notranslate"><span class="pre">PC</span></code> prefix and any suffix such as <code class="docutils literal notranslate"><span class="pre">M1S</span></code>.</p></li>
+</ul>
+</section>
+<section id="word-3-gps-timestamp">
+<h3>Word 3: GPS timestamp<a class="headerlink" href="#word-3-gps-timestamp" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..3</strong>: seconds (most significant bits; combine with least significant bits from word 5)</p></li>
+<li><p><strong>Bits 4..9</strong>: minutes</p></li>
+<li><p><strong>Bits 10..14</strong>: hours</p></li>
+<li><p><strong>Bits 15..23</strong>: days</p></li>
+<li><p><strong>Bits 24..31</strong>: years (as offset from year 2000)</p></li>
+</ul>
+</section>
+<section id="word-4-gps-timestamp">
+<h3>Word 4: GPS timestamp<a class="headerlink" href="#word-4-gps-timestamp" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..9</strong>: nanoseconds</p></li>
+<li><p><strong>Bits 10..19</strong>: microseconds</p></li>
+<li><p><strong>Bits 20..29</strong>: milliseconds</p></li>
+<li><p><strong>Bits 30..31</strong>: seconds (least significant bits; combine with most significant bits from word 4)</p></li>
+</ul>
+</section>
+<section id="word-5-frame-number">
+<h3>Word 5: Frame number<a class="headerlink" href="#word-5-frame-number" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..31</strong>: frame number as u32</p></li>
+</ul>
+</section>
+<section id="word-6-period-number">
+<h3>Word 6: period number<a class="headerlink" href="#word-6-period-number" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..15</strong>: Period number</p></li>
+<li><p><strong>Bits 16..31</strong>: Frame repeat number</p></li>
+</ul>
+</section>
+<section id="word-7-events-in-frame">
+<h3>Word 7: events in frame<a class="headerlink" href="#word-7-events-in-frame" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..31</strong>: number of neutron events in this frame.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not necessarily the same as the number of events in this UDP message, as the events may be split between
+multiple UDP messages. This is the <em>total</em> number of events in the ISIS frame.</p>
+<p>See header word 8 if looking for length of <em>this</em> message.</p>
+</div>
+</section>
+<section id="word-8-packet-length-protons-per-pulse">
+<h3>Word 8: packet length &amp; protons-per-pulse<a class="headerlink" href="#word-8-packet-length-protons-per-pulse" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..7</strong>: protons-per-pulse in this ISIS frame.</p></li>
+<li><p><strong>Bits 16..27</strong>: number of 32-bit words from the beginning of this header to the start of the next header or till the end of this UDP packet.</p></li>
+<li><p><strong>Bits 28..31</strong>: unused</p></li>
+</ul>
+<p>To convert to <span class="math notranslate nohighlight">\(\mu Ah\)</span> delivered during this ISIS frame, multiply by <span class="math notranslate nohighlight">\(1.738{\times}10^{-6}\)</span>.</p>
+</section>
+<section id="ds-veto-bit-definitions">
+<h3>Word 9: vetoes<a class="headerlink" href="#ds-veto-bit-definitions" title="Link to this heading"></a></h3>
+<p>These values be even if there is a veto mark that corresponds to them</p>
+<ul class="simple">
+<li><p><strong>Bits 0..15</strong>: Common vetoes</p>
+<ul>
+<li><p><strong>Bit 0</strong>: Data Overflow veto</p></li>
+<li><p><strong>Bit 1</strong>: SMP veto</p></li>
+<li><p><strong>Bit 2</strong>: TS2 pulse veto</p></li>
+<li><p><strong>Bit 3</strong>: Wrong pulse veto <em>-awaiting clarity what this is</em></p></li>
+<li><p><strong>Bit 4</strong>: ISIS slow <em>-awaiting clarity what this is</em></p></li>
+<li><p><strong>Bit 5</strong>: Run signal veto <em>-not sure if this will be needed when not using DAE3</em></p></li>
+<li><p><strong>Bit 6</strong>: Pause veto</p></li>
+<li><p><strong>Bit 7</strong>: Period overflow veto pause veto</p></li>
+<li><p><strong>Bit 8</strong>: Dwell Period veto</p></li>
+<li><p><strong>Bit 9</strong>: Status Packet CRC fault veto</p></li>
+<li><p><strong>Bits 10..15</strong>: Reserved for future use</p></li>
+</ul>
+</li>
+<li><p><strong>Bits 16..31</strong>: Instrument Specific Vetoes</p>
+<ul>
+<li><p><strong>Bits 16..19</strong>: External vetoes</p></li>
+<li><p><strong>Bits 20..23</strong>: Fast chopper vetoes (Fermi)</p></li>
+<li><p><strong>Bits 24..31</strong>: Reserved for future use</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="word-10-next-frame-address">
+<h3>Word 10: next frame address<a class="headerlink" href="#word-10-next-frame-address" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..31</strong>: Address of the next frame, in bytes.</p></li>
+</ul>
+</section>
+<section id="word-11-streamed-frame-number">
+<h3>Word 11: streamed frame number<a class="headerlink" href="#word-11-streamed-frame-number" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..31</strong>: streamed frame number.</p></li>
+</ul>
+</section>
+<section id="word-12-frame-sync-delay">
+<h3>Word 12: Frame sync delay<a class="headerlink" href="#word-12-frame-sync-delay" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..31</strong>: Delay of the frame sync from Time Of Flight pulse.</p></li>
+</ul>
+</section>
+<section id="variable-number-of-board-specific-parameters">
+<h3>Variable number of board-specific parameters<a class="headerlink" href="#variable-number-of-board-specific-parameters" title="Link to this heading"></a></h3>
+<p>The interpretation of these words depends on the board number. There may be zero or more of these. The number of words of board-specific parameters is “length of header” (from word 1) minus 14.</p>
+<p>See <a class="reference internal" href="#ds-board-specific-header-parameters"><span class="std std-ref">Board-specific parameters</span></a> for interpretation of these words for different board types.</p>
+</section>
+<section id="last-word-checksum">
+<h3>Last Word: checksum<a class="headerlink" href="#last-word-checksum" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Bits 0..31</strong>: Pre-DDR checksum</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ds-board-specific-header-parameters">
+<h2>Board-specific parameters<a class="headerlink" href="#ds-board-specific-header-parameters" title="Link to this heading"></a></h2>
+<section id="pc3544-pc3634-pc3877">
+<h3><code class="docutils literal notranslate"><span class="pre">pc3544</span></code> / <code class="docutils literal notranslate"><span class="pre">pc3634</span></code> / <code class="docutils literal notranslate"><span class="pre">pc3877</span></code><a class="headerlink" href="#pc3544-pc3634-pc3877" title="Link to this heading"></a></h3>
+<p>The scheme used by these boards is for 64-bit neutron events to look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1110000</span><span class="n">T</span> <span class="n">TTTTTTTT</span> <span class="n">TTTTTTTT</span> <span class="n">TTTTTTTT</span>
+<span class="n">CCCxxxxx</span> <span class="n">xxxxxxxx</span> <span class="n">xxDDDDDD</span> <span class="n">DDPPPPPP</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> is a bit that is <em>always</em> set to <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> is a bit that is <em>always</em> set to <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> is a bit that forms part of the raw timestamp</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C</span></code> is a bit that forms part of the channel index</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> is a bit that forms part of ‘diagnostic data’ (for example pulse height)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> is a bit that forms part of the ‘position’ (pixel) that this event corresponds to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> is an unused bit</p></li>
+</ul>
+<p>The example above has <code class="docutils literal notranslate"><span class="pre">pos_bits_per_ch</span> <span class="pre">=</span> <span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">diag_bits_per_ch</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">channel_bits</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
+<p>The detector ID sent to Kafka then needs to be <code class="docutils literal notranslate"><span class="pre">detector_id_offset</span> <span class="pre">+</span> <span class="pre">P</span> <span class="pre">+</span> <span class="pre">(C</span> <span class="pre">*</span> <span class="pre">(2^pos_bits_per_ch))</span></code>.</p>
+<section id="word-13-board-specific-parameters-0">
+<h4>Word 13: board-specific parameters 0<a class="headerlink" href="#word-13-board-specific-parameters-0" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Bits 0..7</strong>: pos_bits_per_ch - how many positional bits needed for each channel (only need 5 bits for 32 bits)</p></li>
+<li><p><strong>Bits 8..15</strong>: diag_bits_per_ch - how many bits needed diagnostic data for each channel (only need 5 bits for 32 bits)</p></li>
+<li><p><strong>Bits 16..23</strong>: channel_bits - how bits for channel (make this the most significant bits)</p></li>
+<li><p><strong>Bits 24..31</strong>: board_address - which board in the system</p></li>
+</ul>
+</section>
+<section id="word-14-board-specific-parameters-1">
+<h4>Word 14: board-specific parameters 1<a class="headerlink" href="#word-14-board-specific-parameters-1" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Bits 0..31</strong>: detector_id_offset</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Datastreaming_hardware_requirements.html" class="btn btn-neutral float-left" title="Data streaming server hardware requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Fluxgates.html" class="btn btn-neutral float-right" title="Fluxgates &amp; Magnetometers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Aug 20, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

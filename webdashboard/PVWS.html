@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PVWS (PV Web socket) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Backend System Components" href="../System-components.html" />
+    <link rel="prev" title="Web Dashboard" href="Web-Dashboard.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Web-Dashboard.html">Web Dashboard</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PVWS (PV Web socket)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Web.html">Web Dashboard &amp; Chat</a></li>
+      <li class="breadcrumb-item active">PVWS (PV Web socket)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/webdashboard/PVWS.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pvws">
+<h1>PVWS (PV Web socket)<a class="headerlink" href="#pvws" title="Link to this heading"></a></h1>
+<p>PVWS is a tool which lets you get EPICS PV information and expose it via a websocket. We use this for the <a class="reference external" href="https://github.com/ISISComputingGroup/WebDashboard?tab=readme-ov-file#web-dashboard">web dashboard.</a></p>
+<p>we run a <code class="docutils literal notranslate"><span class="pre">PVWS</span></code> instance on <code class="docutils literal notranslate"><span class="pre">NDAEXTWEB4</span></code> for the <a class="reference external" href="https://github.com/ISISComputingGroup/WebDashboard">Web Dashboard</a></p>
+<p>This is done with a native tomcat service (rather than a container) following the <a class="reference external" href="https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat">PVWS instructions</a>, though it could be run as a container in the future.</p>
+<section id="pvws-config">
+<h2>PVWS Config<a class="headerlink" href="#pvws-config" title="Link to this heading"></a></h2>
+<p>Our config can be found <a class="reference external" href="https://github.com/ISISComputingGroup/pvws-config?tab=readme-ov-file#pvws-config">here.</a></p>
+</section>
+<section id="updating">
+<h2>Updating<a class="headerlink" href="#updating" title="Link to this heading"></a></h2>
+<p>Things to consider when updating <code class="docutils literal notranslate"><span class="pre">Tomcat/PVWS</span></code>:</p>
+<ul class="simple">
+<li><p>Tomcat installer from <a class="reference external" href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a> installed in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Apache</span> <span class="pre">Software</span> <span class="pre">Foundation\Tomcat</span> <span class="pre">9.0</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/ornl-epics/pvws"><code class="docutils literal notranslate"><span class="pre">pvws</span></code></a> - we are using the latest nightly .war as of 01/11/24 - to update download this and place in the tomcat <code class="docutils literal notranslate"><span class="pre">dir\webapps</span></code> folder and restart the service</p></li>
+<li><p>jdk 21 from <a class="reference external" href="https://adoptium.net/en-GB/">https://adoptium.net/en-GB/</a> installed in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Eclipse</span> <span class="pre">Adoptium\jdk-21.0.5.11-hotspot</span></code></p></li>
+<li><p>You may need to update the max message size to <code class="docutils literal notranslate"><span class="pre">131072</span></code> as per “increasing maximum message size” of <a class="reference external" href="https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat">https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat</a> - this should be done in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Apache</span> <span class="pre">Software</span> <span class="pre">Foundation\Tomcat</span> <span class="pre">9.0\webapps\pvws\WEB-INF\web.xml</span></code> as per the instruction in the installation section below.</p></li>
+</ul>
+<section id="problem-solving-during-updating">
+<h3>Problem solving during updating<a class="headerlink" href="#problem-solving-during-updating" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Check that the file permissions on the tomcat directory are set so that <code class="docutils literal notranslate"><span class="pre">LOCAL</span> <span class="pre">SERIVCE</span></code> account has full access</p></li>
+<li><p>In the tomcat bin directory is <code class="docutils literal notranslate"><span class="pre">Tomcat9w</span></code> this will give you a config dialogue that you can use to check that the correct java path is provided</p></li>
+<li><p>If you create a new directory structure for tomcat, remember to copy the old config over the top</p></li>
+</ul>
+</section>
+</section>
+<section id="setting-up-pvws-on-a-machine-from-scratch">
+<h2>Setting up PVWS on a machine from scratch<a class="headerlink" href="#setting-up-pvws-on-a-machine-from-scratch" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>install tomcat as a windows service, using the defaults set by the wizard. Note the shutdown port to <code class="docutils literal notranslate"><span class="pre">-1</span></code>, this disables it as per <a class="reference external" href="https://tomcat.apache.org/tomcat-9.0-doc/security-howto.html#Server">the security guidelines</a>:</p></li>
+</ol>
+<p><img alt="Apache Tomcat config" src="../_images/PVWS-1.png" /></p>
+<p>During the installer expand <code class="docutils literal notranslate"><span class="pre">+Tomcat</span></code> when it asks you which components to install, and tick the option which starts tomcat on startup.</p>
+<ol class="arabic simple" start="2">
+<li><p>copy <code class="docutils literal notranslate"><span class="pre">pvws.war</span></code> to the <code class="docutils literal notranslate"><span class="pre">webapps</span></code> directory in the tomcat directory (usually <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Apache</span> <span class="pre">Software</span> <span class="pre">Foundation\Tomcat</span> <span class="pre">9.0\webapps</span></code>)</p></li>
+<li><p>in your <code class="docutils literal notranslate"><span class="pre">tomcat\bin</span></code> directory, we need to add the <code class="docutils literal notranslate"><span class="pre">EPICS_CA</span></code> variables that specify the gateway address so PVWS knows where to look for PVs. this is done by running <code class="docutils literal notranslate"><span class="pre">Tomcat9.exe</span></code> with the <code class="docutils literal notranslate"><span class="pre">//US</span></code> (update server) flag ie:
+<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Apache</span> <span class="pre">Software</span> <span class="pre">Foundation\Tomcat</span> <span class="pre">9.0\bin&gt;Tomcat9.exe</span> <span class="pre">//US</span> <span class="pre">++Environment</span> <span class="pre">EPICS_CA_AUTO_ADDR_LIST=NO;EPICS_CA_ADDR_LIST=&lt;ip&gt;</span></code> where ip is the gateway address. (more info on this command <a class="reference external" href="https://tomcat.apache.org/tomcat-9.0-doc/windows-service-howto.html">here</a>) <em>note, don’t do this in powershell as it tries to interpret the arguments as separate commands.</em></p></li>
+<li><p>create a <code class="docutils literal notranslate"><span class="pre">.pfx</span></code> file if you need a new certificate by using Windows’ <code class="docutils literal notranslate"><span class="pre">certificate</span> <span class="pre">manager</span> <span class="pre">-&gt;</span> <span class="pre">wherever</span> <span class="pre">the</span> <span class="pre">cert</span> <span class="pre">is</span> <span class="pre">-&gt;</span> <span class="pre">all</span> <span class="pre">tasks</span> <span class="pre">-&gt;</span> <span class="pre">export</span></code></p></li>
+</ol>
+<ul class="simple">
+<li><p>no, do not export the private key</p></li>
+<li><p>“personal information exchange”, <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">all</span> <span class="pre">certificates</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">certification</span> <span class="pre">path</span> <span class="pre">if</span> <span class="pre">possible:</span> <span class="pre">true,</span> <span class="pre">delete</span> <span class="pre">the</span> <span class="pre">private</span> <span class="pre">key</span> <span class="pre">if</span> <span class="pre">export</span> <span class="pre">is</span> <span class="pre">successful:</span> <span class="pre">false,</span> <span class="pre">export</span> <span class="pre">all</span> <span class="pre">extended</span> <span class="pre">properties:</span> <span class="pre">false,</span> <span class="pre">enable</span> <span class="pre">certificate</span> <span class="pre">privacy:</span> <span class="pre">false</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>[!NOTE]<br />
+when finished you’ll need to add <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">service</span></code> to the users that can read this file like so:</p>
+<p><img alt="Local Service permissions" src="../_images/PVWS-2.png" /></p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>edit <code class="docutils literal notranslate"><span class="pre">server.xml</span></code> to contain these lines, removing the default connector:</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Connector</span><span class="w"> </span><span class="na">port=</span><span class="s">"443"</span><span class="w"> </span><span class="na">protocol=</span><span class="s">"org.apache.coyote.http11.Http11NioProtocol"</span>
+<span class="w">               </span><span class="na">maxThreads=</span><span class="s">"150"</span><span class="w"> </span><span class="na">SSLEnabled=</span><span class="s">"true"</span>
+<span class="w">               </span><span class="na">maxParameterCount=</span><span class="s">"1000"</span><span class="w"> </span><span class="na">Server=</span><span class="s">" "</span><span class="w"> </span>
+<span class="w">			   </span><span class="na">scheme=</span><span class="s">"https"</span><span class="w"> </span><span class="na">secure=</span><span class="s">"true"</span><span class="w"> </span><span class="na">clientAuth=</span><span class="s">"false"</span><span class="w"> </span><span class="na">sslProtocol=</span><span class="s">"TLS"</span><span class="w"> </span><span class="na">keystoreFile=</span><span class="s">"file:///C:/PROGRA~1/APACHE~1/TOMCAT~1.0/dataweb.pfx"</span><span class="w"> </span><span class="na">keystoreType=</span><span class="s">"PKCS12"</span><span class="w"> </span><span class="na">keystorePass=</span><span class="s">"&lt;keeper:.pfx keystore password for PVWS tomcat instance on NDAEXTWEB3&gt;"</span>
+<span class="w">               </span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Connector&gt;</span>
+</pre></div>
+</div>
+<p>this will start a https connector using the <code class="docutils literal notranslate"><span class="pre">.pfx</span></code> file generated from the certificate.</p>
+<ol class="arabic simple" start="5">
+<li><p>go to <code class="docutils literal notranslate"><span class="pre">services.msc</span></code> and hit restart on the tomcat service then navigate to <code class="docutils literal notranslate"><span class="pre">https://&lt;machine</span> <span class="pre">name&gt;:7777/pvws</span></code> - this should present the PVWS test page.</p></li>
+<li><p>update the max message size to <code class="docutils literal notranslate"><span class="pre">131072</span></code> as per “increasing maximum message size” of <a class="reference external" href="https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat">https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat</a> - this should be done in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Apache</span> <span class="pre">Software</span> <span class="pre">Foundation\Tomcat</span> <span class="pre">9.0\webapps\pvws\WEB-INF\web.xml</span></code></p></li>
+<li><p>restart the service again</p></li>
+<li><p>if you want the web dashboard to permanently use this, update <a class="reference external" href="https://github.com/ISISComputingGroup/WebDashboard/blob/main/.env">https://github.com/ISISComputingGroup/WebDashboard/blob/main/.env</a></p></li>
+<li><p>Add the following in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Apache</span> <span class="pre">Software</span> <span class="pre">Foundation\Tomcat</span> <span class="pre">9.0\conf\web.xml</span></code> (or equivalent path if you’ve updated tomcat):</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">&lt;</span><span class="n">security</span><span class="o">-</span><span class="n">constraint</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">web</span><span class="o">-</span><span class="n">resource</span><span class="o">-</span><span class="n">collection</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">web</span><span class="o">-</span><span class="n">resource</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="n">restricted</span> <span class="n">methods</span><span class="o">&lt;/</span><span class="n">web</span><span class="o">-</span><span class="n">resource</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">url</span><span class="o">-</span><span class="n">pattern</span><span class="o">&gt;/*&lt;/</span><span class="n">url</span><span class="o">-</span><span class="n">pattern</span><span class="o">&gt;</span>       
+      <span class="o">&lt;</span><span class="n">http</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span><span class="n">OPTIONS</span><span class="o">&lt;/</span><span class="n">http</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">http</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span><span class="n">DELETE</span><span class="o">&lt;/</span><span class="n">http</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">web</span><span class="o">-</span><span class="n">resource</span><span class="o">-</span><span class="n">collection</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">auth</span><span class="o">-</span><span class="n">constraint</span><span class="o">/&gt;</span>
+  <span class="o">&lt;/</span><span class="n">security</span><span class="o">-</span><span class="n">constraint</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="renewing-the-certificate">
+<h2>Renewing the certificate<a class="headerlink" href="#renewing-the-certificate" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>For access to the host, see the <a class="reference external" href="https://shadow.nd.rl.ac.uk/ibex_sysadmin_manual/systems/Webserver.html">systems administration wiki</a>.</p></li>
+<li><p>Request a new certificate</p>
+<ol class="arabic">
+<li><p>Use OpenSSL to generate a CSR (for simplicity, do this on the host using Git Bash):</p>
+<p><code class="docutils literal notranslate"><span class="pre">winpty</span> <span class="pre">openssl</span> <span class="pre">req</span> <span class="pre">-newkey</span> <span class="pre">rsa:2048</span> <span class="pre">-keyout</span> <span class="pre">PRIVATEKEY.key</span> <span class="pre">-out</span> <span class="pre">MYCSR.csr</span></code></p>
+<p>The answers to the questions it asks can be found by opening the old certificate. Store the passphrase you use to encrypt the private key somewhere safe (e.g. keeper) and the private key in a sensible directory (e.g. <code class="docutils literal notranslate"><span class="pre">C:\certificates\yyyy-mm</span></code>)</p>
+</li>
+<li><p>Send the CSR to DI requesting a new certificate (use the group email account)</p></li>
+<li><p>wait for an email back with a link to the signed certificate</p></li>
+</ol>
+</li>
+<li><p>Once we receive the certificate back, generate a <code class="docutils literal notranslate"><span class="pre">.pfx</span></code>/<code class="docutils literal notranslate"><span class="pre">.p12</span></code> file (for simplicity, do this on the host)</p>
+<ol class="arabic">
+<li><p>On the host, open the link sent by the certificate provider (<code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">Certificate</span> <span class="pre">(w/</span> <span class="pre">chain),</span> <span class="pre">PEM</span> <span class="pre">encoded</span></code>) and use it to download the certificate to a sensible directory (e.g. <code class="docutils literal notranslate"><span class="pre">C:\certificates\yyyy-mm</span></code>)</p></li>
+<li><p>Run OpenSSL in that directory using Git Bash to combine the certificate and private key:</p>
+<p><code class="docutils literal notranslate"><span class="pre">winpty</span> <span class="pre">openssl</span> <span class="pre">pkcs12</span> <span class="pre">-export</span> <span class="pre">-out</span> <span class="pre">new_cert_yy_mm.pfx</span> <span class="pre">-inkey</span> <span class="pre">key.key</span> <span class="pre">-passin</span> <span class="pre">pass:PASSWORD</span> <span class="pre">-in</span> <span class="pre">cert.cer</span></code></p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">key.key</span></code> is the private key created when you created your certificate signing request in step 2, <code class="docutils literal notranslate"><span class="pre">PASSWORD</span></code> is the passphrase used to generate that key, and <code class="docutils literal notranslate"><span class="pre">cert.cer</span></code> is the certificate you downloaded. When prompted enter the passphrase specified for the current certificate in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Apache</span> <span class="pre">Software</span> <span class="pre">Foundation\Tomcat</span> <span class="pre">9.0\conf\server.xml</span></code> and also stored in keeper.</p>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">winpty</span></code> may be required for openssl to function correctly on Windows.</p>
+</li>
+</ol>
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">service</span></code> to the users that can read the file you have just generated like so:</p>
+<p><img alt="Local Service permissions" src="../_images/PVWS-2.png" /></p>
+</li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">server.xml</span></code> (see above) to work out where the current <code class="docutils literal notranslate"><span class="pre">keystoreFile</span></code> is. Rename this by appending <code class="docutils literal notranslate"><span class="pre">.old</span></code> or similar to make reverting this change easier</p></li>
+<li><p>rename the <code class="docutils literal notranslate"><span class="pre">.pfx</span></code> file generated to match the name of the previous key-store file and place it in the same directory. The file extension may be <code class="docutils literal notranslate"><span class="pre">.p12</span></code> rather than <code class="docutils literal notranslate"><span class="pre">.pfx</span></code>, they are interchangeable for this purpose. (If doing this using windows explorer, you may want to ensure that file extensions are visible).</p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">services.msc</span></code> and restart the tomcat service (name starts <code class="docutils literal notranslate"><span class="pre">APACHE</span> <span class="pre">TOMCAT</span></code>).</p></li>
+<li><p>In a web browser, navigate to <code class="docutils literal notranslate"><span class="pre">https://&lt;machine</span> <span class="pre">name&gt;/pvws</span></code> - this should present the PVWS test page. User you browser to check that the new certificate is in use (should have later expiry date)</p></li>
+<li><p>Add a task to the group tasks list to renew the certificate with a due date one month before expiry</p></li>
+</ol>
+</section>
+<section id="gateway">
+<h2>Gateway<a class="headerlink" href="#gateway" title="Link to this heading"></a></h2>
+<p>A gateway runs on NDAEXTWEB4 which is needed to only allow PVWS to access some PVs but not others.</p>
+<p>This runs under the task scheduler as making a <code class="docutils literal notranslate"><span class="pre">.bat</span></code> run as a Windows service is not trivial.</p>
+<p>the files in the top level (<code class="docutils literal notranslate"><span class="pre">gw_*</span></code> and <code class="docutils literal notranslate"><span class="pre">start_gateway.bat</span></code>) of this repo are located in <code class="docutils literal notranslate"><span class="pre">C:\gateway</span></code> on the machine it is running on. A static gateway build is also required (ie. from the latest static build of EPICS)</p>
+<p>This points at <code class="docutils literal notranslate"><span class="pre">control-svcs</span></code> gateway, but denies everything that isn’t in the gateway pvlist. It also only gives read-only access to any clients (in this case PVWS itself)</p>
+</section>
+<section id="useful-reading">
+<h2>Useful reading<a class="headerlink" href="#useful-reading" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://tomcat.apache.org/tomcat-9.0-doc/windows-service-howto.html">https://tomcat.apache.org/tomcat-9.0-doc/windows-service-howto.html</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Web-Dashboard.html" class="btn btn-neutral float-left" title="Web Dashboard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../System-components.html" class="btn btn-neutral float-right" title="Backend System Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Aug 20, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
