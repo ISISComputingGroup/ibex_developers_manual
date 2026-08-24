@@ -39,13 +39,13 @@ We would add a section in [`kafka_dae_control`'s config file](https://github.com
 # multiple boards, to help reduce repetition.
 [diagnostic_parameter_groups.temperature]
 parameters = [
-    { reg_name = "temp1", "pv_name" = "TEMP1", write = false },
-    { reg_name = "temp2", "pv_name" = "TEMP2", write = false },
+    { reg_id = "temp1", "pv_name" = "TEMP1", write = false },
+    { reg_id = "temp2", "pv_name" = "TEMP2", write = false },
 ]
 
 [diagnostic_parameter_groups.event_rate]
 parameters = [
-    { reg_name = "event_rate", "pv_name" = "EVENTRATE", write = false },
+    { reg_id = "event_rate", "pv_name" = "EVENTRATE", write = false },
 ]
 
 # Each board defines it's key parameters (ip, PV name).
@@ -56,7 +56,7 @@ ip = "192.168.1.21"
 pv_suffix = "MOD1"
 parameter_groups = ["temperature", "event_rate"]
 parameters = [
-    { reg_name = "super_special_parameter_for_mod1", "pv_name" = "SUPER_SPECIAL", write = true },
+    { reg_id = "super_special_parameter_for_mod1", "pv_name" = "SUPER_SPECIAL", write = true },
 ]
 
 [diagnostic_modules.mod2]
@@ -89,7 +89,7 @@ Every parameter would be written as an integer, with no parameter-specific logic
 ## Alternatives
 
 - In the first instance, we could avoid the architectural complexity of a central memory-map store and self-describing boards by requiring a `reg_address` in the `config.toml`.
-  - Mapping via `reg_name` and self-description could still be added later if desired
+  - Mapping via `reg_id` and self-description could still be added later if desired
 - We could make this an entirely separate process from `kafka_dae_control`, which happens to be implemented in a similar way.
   - Advantage: This would better insulate the *critical* functionality in `kafka_dae_control` from the non-critical functionality of providing diagnostics on individual detector modules.
   - Disadvantage: There would be some duplication between `kafka_dae_control` and this new process; both would be doing UDP comms to boards with a similar interface, and serving PVs over PVAccess.
