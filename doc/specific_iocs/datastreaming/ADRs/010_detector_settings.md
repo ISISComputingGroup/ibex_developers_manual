@@ -112,3 +112,4 @@ If instruments begin accumulating scripts or workflows which involve 'fiddling' 
 - It is possible to read and write a specified set of registers from individual detector modules from EPICS PVs. This set is statically configurable per-instrument.
 - We increase the risk of architectural 'shortcuts' being taken later which, if taken, would adversely impact maintainability.
 - The `kafka_dae_control` repository becomes more complicated, as it now hosts the source code for two independent processes, which happen to share some functionality and architectural approaches.
+- Diagnostic functionality is isolated from core DAE control functionality through process-level separation, reducing the likelihood that detector diagnostic failures will impact routine instrument operations.
