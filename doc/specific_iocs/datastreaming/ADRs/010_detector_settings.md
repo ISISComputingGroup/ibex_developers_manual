@@ -36,6 +36,9 @@ We will add a separate process to read and write diagnostics from individual boa
 `kafka_dae_control` to allow re-use of shared infrastructure (for example, UDP comms logic), but will be a separate runtime
 process.
 
+This process is less critical than `kafka_dae_control`, in the sense that an instrument should be able to _run_ and perform all
+routine DAE operations without this process available, albeit with reduced diagnostic visibility.
+
 ### Configuration
 
 The new process would be configured using a `config.toml` in a similar style to the existing `kafka_dae_control` config file.
@@ -71,6 +74,8 @@ ip = "192.168.1.22"
 pv_suffix = "MOD2"
 parameter_groups = ["temperature", "event_rate"]
 ```
+
+If the `write=` parameter is omitted, it will default to what is specified in the memory-map.
 
 ### Runtime
 
