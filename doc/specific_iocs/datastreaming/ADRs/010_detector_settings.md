@@ -30,9 +30,16 @@ Individual detector boards which want to participate in this scheme will:
 - In a register which is common across all detector boards, publish an identifier which uniquely identifies a specific memory map.
 - This memory map will specify a mapping of `name <-> register` for all parameters this board can expose to IBEX.
 
+### New process
+
+We will add a separate process to read and write diagnostics from individual boards. The code will be in the same repository as
+`kafka_dae_control` to allow re-use of shared infrastructure (for example, UDP comms logic), but will be a separate runtime
+process.
+
 ### Configuration
 
-We would add a section in [`kafka_dae_control`'s config file](https://github.com/ISISComputingGroup/kafka_dae_control/blob/main/config.example.toml), which looks like:
+The new process would be configured using a `config.toml` in a similar style to the existing `kafka_dae_control` config file.
+An example of a configuration file is:
 
 ```toml
 # 'Parameter groups' define shared sets of parameters which may exist on
@@ -67,32 +74,27 @@ parameter_groups = ["temperature", "event_rate"]
 
 ### Runtime
 
-When `kafka_dae_control` starts, it will create a thread dedicated to communication with 'diagnostic' modules.
-
-It would then:
+When the new process starts, it will:
+- Update it's local cache of memory maps (e.g. `git pull`), with a timeout. If the pull fails or times out, the most recent set of memory maps will continue to be used, with a warning.
 - Read register `0` of each configured diagnostic module to retrieve a memory-map identifier
-- Look up that register map identifier in a central store to retrieve a 'full' memory map for this board
-  - The central store could be cached locally on startup to ensure `kafka_dae_control` still boots correctly if the central store is offline.
-  - In any case, a failure in the 'diagnostic' functionality should not prevent the critical functionality of `kafka_dae_control` from working.
-- Use the retrieved mappings to map each configured register (in the `parameters` of the `config.toml` to a numeric address)
-- A dedicated thread in `kafka_dae_control` would attempt to poll each diagnostic register in turn, looping for the lifetime of the program.
+- Use the retrieved mappings to map each configured register (in the `parameters` and `parameter_groups` sections of the `config.toml`) to a numeric address
+- Attempt to poll each diagnostic register in turn, looping for the lifetime of the program.
 - The updated numbers would be served in PVs of the form `IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL`. This allows them to be accessible to IBEX, monitored by Nagios, or consumed by DSG's monitoring infrastructure.
 
-Every parameter would be exposed as an integer, with no parameter-specific logic inside `kafka_dae_control`.
+Every parameter would be exposed as an integer, with no parameter-specific logic.
 
 ### Writing
 
-`kafka_dae_control` would also create standard setpoint PVs for each writeable parameter, in the form `IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL:SP`.
+The new process would also create standard setpoint PVs for each writeable parameter, in the form `IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL:SP`.
 
-Every parameter would be written as an integer, with no parameter-specific logic inside `kafka_dae_control`.
+Every parameter would be written as an integer, with no parameter-specific logic.
 
 ## Alternatives
 
 - In the first instance, we could avoid the architectural complexity of a central memory-map store and self-describing boards by requiring a `reg_address` in the `config.toml`.
   - Mapping via `reg_id` and self-description could still be added later if desired
-- We could make this an entirely separate process from `kafka_dae_control`, which happens to be implemented in a similar way.
-  - Advantage: This would better insulate the *critical* functionality in `kafka_dae_control` from the non-critical functionality of providing diagnostics on individual detector modules.
-  - Disadvantage: There would be some duplication between `kafka_dae_control` and this new process; both would be doing UDP comms to boards with a similar interface, and serving PVs over PVAccess.
+- We could embed this within the `kafka_dae_control` process at runtime, for example as a separate thread.
+  - This would increase the risk that a failure in 'diagnostic' functionality could affect the core 'control' functionality.
 
 ## Risks
 
@@ -104,4 +106,4 @@ If instruments begin accumulating scripts or workflows which involve 'fiddling' 
 
 - It is possible to read and write a specified set of registers from individual detector modules from EPICS PVs. This set is statically configurable per-instrument.
 - We increase the risk of architectural 'shortcuts' being taken later which, if taken, would adversely impact maintainability.
-- `kafka_dae_control` becomes more complicated.
+- The `kafka_dae_control` repository becomes more complicated, as it now hosts the source code for two independent processes, which happen to share some functionality and architectural approaches.
