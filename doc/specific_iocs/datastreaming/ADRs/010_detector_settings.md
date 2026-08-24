@@ -35,22 +35,34 @@ Individual detector boards which want to participate in this scheme will:
 We would add a section in [`kafka_dae_control`'s config file](https://github.com/ISISComputingGroup/kafka_dae_control/blob/main/config.example.toml), which looks like:
 
 ```toml
+# 'Parameter groups' define shared sets of parameters which may exist on
+# multiple boards, to help reduce repetition.
+[diagnostic_parameter_groups.temperature]
+parameters = [
+    { reg_name = "temp1", "pv_name" = "TEMP1", write = false },
+    { reg_name = "temp2", "pv_name" = "TEMP2", write = false },
+]
+
+[diagnostic_parameter_groups.event_rate]
+parameters = [
+    { reg_name = "event_rate", "pv_name" = "EVENTRATE", write = false },
+]
+
+# Each board defines it's key parameters (ip, PV name).
+# It then defines any parameters and parameter_groups which it uses; these are merged
+# to form the list of parameters read by this board.
 [diagnostic_modules.mod1]
 ip = "192.168.1.21"
 pv_suffix = "MOD1"
+parameter_groups = ["temperature", "event_rate"]
 parameters = [
-    { reg_name = "temp", "pv_name" = "TEMP", write = false },
-    { reg_name = "event_rate", "pv_name" = "EVENTRATE", write = false },
     { reg_name = "super_special_parameter_for_mod1", "pv_name" = "SUPER_SPECIAL", write = true },
 ]
 
 [diagnostic_modules.mod2]
 ip = "192.168.1.22"
 pv_suffix = "MOD2"
-parameters = [
-    { reg_name = "temp", "pv_name" = "TEMP", write = false },
-    { reg_name = "event_rate", "pv_name" = "EVENTRATE", write = false },
-]
+parameter_groups = ["temperature", "event_rate"]
 ```
 
 ### Runtime
@@ -66,9 +78,13 @@ It would then:
 - A dedicated thread in `kafka_dae_control` would attempt to poll each diagnostic register in turn, looping for the lifetime of the program.
 - The updated numbers would be served in PVs of the form `IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL`. This allows them to be accessible to IBEX, monitored by Nagios, or consumed by DSG's monitoring infrastructure.
 
+Every parameter would be exposed as an integer, with no parameter-specific logic inside `kafka_dae_control`.
+
 ### Writing
 
 `kafka_dae_control` would also create standard setpoint PVs for each writeable parameter, in the form `IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL:SP`.
+
+Every parameter would be written as an integer, with no parameter-specific logic inside `kafka_dae_control`.
 
 ## Alternatives
 
