@@ -13,6 +13,8 @@ trailing zero-padding bytes, but these may be added in future and should be igno
 The header has an adjustable length with words 0 to 12 have fixed functionality and the final packet will be the DDR checksum.
 Words in between these will be board specific and their functionality defined in the header type.
 
+Note that the bit ranges listed on this page are inclusive, so for example `0..7` is 8 bits.
+
 ### Word 0: marker word
 
 Always `0xFFFFFFFF`.
