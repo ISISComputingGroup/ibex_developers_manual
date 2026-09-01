@@ -18,11 +18,10 @@ Preliminary steps to run these:
 1. If you haven't already, set up a keeper account with access to our group's passwords.
 1. Make sure your ssh public keys (which should be stored [here](https://github.com/ISISComputingGroup/keys)) are deployed to instruments - see below for the playbook that does this
 1. Set up the WSL if you're using a Windows control node - [Ansible does not support running on a windows control node natively](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#control-node-requirements). You will need your [SSH keys registered in the WSL](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/). If you are running Linux you can install Ansible natively.
-1. Install Ansible and repository, including plugins we require, by:
-  1. `curl -LsSf https://astral.sh/uv/install.sh | sh` NOTE: If this does not work, it may have been altered. Please check [here](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) if this is the case.
+1. Install Ansible, including plugins we require, by:
+  1. `sudo snap install astral-uv --classic`
   1. `uv venv` & `source .venv/bin/activate`
-  2. git clone the repository `git clone git@github.com:ISISComputingGroup/ansible-playbooks.git` 
-  1. Change directory into the repository, `uv pip install -r requirements.txt`
+  1. `uv pip install -r requirements.txt`
 1. Install the galaxy collections and roles by running `ansible-galaxy install -r requirements.yml`
 1. Add the DNS search suffix (`isis.cclrc.ac.uk`) to `/etc/resolv.conf` (to edit the file, use e.g. `nano /etc/resolv.conf`) by adding the following line: 
 
@@ -50,6 +49,22 @@ These playbooks will prompt for a host group to run on, equivalent to (and takin
 
 As an example, to run the playbook on all NDXes other than `NDXENGINX`, enter `ndxes,!NDXENGINX` - this syntax is documented [here](https://docs.ansible.com/projects/ansible/latest/inventory_guide/intro_patterns.html#common-patterns) 
 
+#### Setting up a "clean" windows machine to test playbooks with
+
+There is a Docker compose file located in `docker/windows/` which uses [`dockur/windows`](https://github.com/dockur/windows) to spin up a windows machine by running it via `qemu` inside of a Linux container. You can use this to test playbooks with a clean state. 
+
+Prerequisites for using this are [Docker engine (_not_ Docker desktop as we are likely to in breach of license agreements)](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) - this is needed even if you have rancher desktop as that doesn't map ports over to the host easily. 
+
+In addition to this, make sure you are _not_ using [mirrored mode in the WSL](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking) as this will make the SSH port used by the container available outside your machine, assuming port `2222` is enabled in your firewall. Despite these containers being ephemeral, we still need to keep security in mind.
+
+To start the machine, `cd` to the directory and run `docker compose up -d`. You can check the progress of the install and see the remote console at `http://localhost:8006/`
+
+When running a playbook and prompted for the target, just use `localhost` - the container maps to localhost with a non standard SSH port (see the inventory for this). You can test alive-ness by using `ansible dockur -m win_ping --ask-pass`
+
+We use an evaluation image for this as our use case fits its [license agreements](https://www.microsoft.com/content/dam/microsoft/usetm/documents/windows-server/2025-datacenter-and-standard/oem/UseTerms_OEM_WindowsServer2025_DatacenterAndStandard_English.pdf), as we are not using it for production.
+
+By default the image will persist, so you can stop and start the container as needed and it will keep its data. To remove, `rm -rf /tmp/windows/*` to delete all the volume data. 
+
 ### `truncate_databases.yaml`
 
 This performs a backup and truncation of the local databases on instruments. It will prompt for hosts so to run use:
@@ -61,7 +76,7 @@ This performs a backup and truncation of the local databases on instruments. It 
 
 This is the main playbook for deploying software to NDXes. Currently this stops the server if it is running and installs the JDK using the `jdk` role. 
 
-To use this you need to run `ansible-playbook windows/instrument_deploy.yaml --ask-vault-pass` - it should prompt for hosts and vault password. 
+To use this you need to run `ansible-playbook windows/instrument_deploy.yaml` - it should prompt for hosts. 
 
 {#ansibleupdatingjdk}
 #### Updating JDK version
@@ -97,7 +112,7 @@ for deploying
 
 This is for deploying software to NDXes. Currently this stops the server if it is running and installs the JDK using the `jdk` role. 
 
-To use this you need to run `ansible-playbook windows/instrument_deploy.yaml --ask-vault-pass` - it should prompt for hosts. 
+To use this you need to run `ansible-playbook windows/instrument_deploy.yaml` - it should prompt for hosts. 
 
 ### `deploy_wincred.yaml`
 
