@@ -17,11 +17,10 @@ We are working towards these playbooks being the declarative steps to provision 
 Preliminary steps to run these: 
 1. If you haven't already, set up a keeper account with access to our group's passwords.
 1. Make sure your ssh public keys (which should be stored [here](https://github.com/ISISComputingGroup/keys)) are deployed to instruments - see below for the playbook that does this
-1. Set up the WSL if you're using a Windows control node - [Ansible does not support running on a windows control node natively](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#control-node-requirements). You will need your [SSH keys registered in the WSL](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/). If you are running Linux you can install Ansible natively.
-1. Install Ansible, including plugins we require, by:
-  1. `sudo snap install astral-uv --classic`
-  1. `uv venv` & `source .venv/bin/activate`
-  1. `uv pip install -r requirements.txt`
+1. Set up `Ubuntu` in the WSL if you're using a Windows control node - [Ansible does not support running on a windows control node natively](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#control-node-requirements). You will need your [SSH keys registered in the WSL](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/).
+1. Clone our `ansible-playbooks` repository and install Ansible, including plugins we require, by:
+  1. `sudo snap install astral-uv --classic && git clone git@github.com:ISISComputingGroup/ansible-playbooks.git && cd ansible-playbooks`
+  1. `uv venv && source .venv/bin/activate && uv pip install -r requirements.txt`
 1. Install the galaxy collections and roles by running `ansible-galaxy install -r requirements.yml`
 1. Add the DNS search suffix (`isis.cclrc.ac.uk`) to `/etc/resolv.conf` (to edit the file, use e.g. `nano /etc/resolv.conf`) by adding the following line: 
 
