@@ -17,13 +17,14 @@ Glossary
 ```
 
 ```{toctree}
-:caption: User Interfaces & Scripting
+:caption: User Interfaces, files & Scripting
 :maxdepth: 1
 :titlesonly:
 
 Client
 Script-Generator
 Scripting
+Nexus
 Web
 ```
 
