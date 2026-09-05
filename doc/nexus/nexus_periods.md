@@ -2,7 +2,7 @@
 
 This has an `NX_class` of `IXperiods`; this is not a class specified by upstream NeXus definitions.
 
-Periods are a way of segregating a run into discrete subcomponents during data acquisition. The run may switch between
+Periods are a way of segregating a run into discrete subsections during data acquisition. The run may switch between
 periods using a number of hardware or software mechanisms, and may return to a previous period later.
 
 For example, periods may represent spin-up and spin-down measurements, or may be used to separate points during the scan

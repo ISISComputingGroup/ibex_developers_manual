@@ -43,6 +43,11 @@ It is in units of `mm`.
 
 This is user-settable string metadata. It is set in IBEX under Experiment Details -> Sample Parameters -> Sample Type
 
+:::{note}
+{external+nexus_manual:doc}`classes/base_classes/NXsample` defines that this can only be one of a defined set of values.
+Our files impose no such restriction and will write the arbitrary user-specified string.
+:::
+
 {#nexus_sample_shape}
 ## `raw_data_1/sample/shape`
 

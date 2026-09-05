@@ -1,4 +1,4 @@
-# NeXus files
+# NeXus Files
 
 IBEX writes out scientific data as {external+nexus:doc}`NeXus files <index>`. The NeXus format documents the *general*
 layout of a NeXus file; this documentation documents the *specific* datasets written in practice by IBEX,
@@ -10,7 +10,7 @@ The NeXus files conform, where possible, to the {external+nexus:doc}`TOFRaw` def
 
 Except where otherwise noted:
 - Strings are ASCII-encoded, null terminated.
-- Little-endian datatypes are used.
+- Little-endian data types are used.
 - 32-bit signed integers or 32-bit floats are used
 
 {#nexus_raw_data_1}
