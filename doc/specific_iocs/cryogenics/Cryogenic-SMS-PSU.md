@@ -22,7 +22,7 @@ It was originally designed to be used for the HIFI main instrument cryomagnet, b
 ### Comms
 
 The power supply needs to be started and connected before the IOC starts as the IOC performs some initialisation of the device. A good troubleshooting routine would be:
-  1. Check the IOC is physically connected
+  1. Check the PSU is physically connected
   1. Turn off the IOC
   1. Power cycle the device
   1. Restart the IOC
