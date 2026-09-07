@@ -22,7 +22,7 @@ Note: The free version of Visual Studio 2010, Visual Studio 2010 Express, isn't 
 </details>
 
 ## Instructions for Visual Studio 2022
-Download installer (Visual Studio **Community** 2022 exe) from installer page https://my.visualstudio.com using your stfc email address.
+Download installer (Visual Studio **Community** 2022 exe) from [the installer page](https://visualstudio.microsoft.com/vs/older-downloads/) using your stfc email address when prompted to sign in.
 During install, select "Desktop development with C++" and check/enable these individual features if they are not already: 
 - The most recent Windows 11 SDK
 - C++ MFC support
