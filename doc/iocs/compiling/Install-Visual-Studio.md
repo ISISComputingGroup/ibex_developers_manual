@@ -4,6 +4,9 @@ Most developers should install VS2022 - we have 2010 on a build server for build
 
 ## Instructions for Visual Studio 2010 (not needed in most cases)
 
+<details>
+<summary>Installation instructions (click to expand)</summary>
+  
 Install SDK 7.1 
 -The SDK may fail if you have these installed: 
 * Microsoft Visual C++ 2010 x86 Redistributable
@@ -16,6 +19,7 @@ Install:
 * Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
 
 Note: The free version of Visual Studio 2010, Visual Studio 2010 Express, isn't supported by the EPICS build process.
+</details>
 
 ## Instructions for Visual Studio 2022
 Download installer (Visual Studio **Community** 2022 exe) from installer page https://my.visualstudio.com using your stfc email address.
@@ -26,17 +30,6 @@ During install, select "Desktop development with C++" and check/enable these ind
 
 Also select ".NET desktop development" (needed for mk3chopper):
 - make sure .NET 4.7.2 development is included as one of the options   
-
-## Instructions for Visual Studio 2019 (old)
-Download installer (Visual Studio **Community** 2019 exe) from installer page https://my.visualstudio.com using your stfc email address.
-During install, select "Desktop development with C++" and check/enable these individual features: 
-- The most recent Windows 10 SDK
-- C++ MFC support
-- C++ ATL support
-
-Also select .NET development and "Universal windows CRT/universal platform development" from the features  
-
-NOTE: If you are having issues running the installer, moving the .exe from 'Downloads' to 'Documents'.
 
 ## Installing a new Version of Visual Studio
 If you are on a newer version of Visual Studio then you will need to upgrade various files to take this into account. Below is a list of things we needed to do when upgrading to 2017 your list may be different.
