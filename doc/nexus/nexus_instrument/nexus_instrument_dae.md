@@ -42,6 +42,14 @@ A string identifying the type of data acquisition hardware in use; for example:
 
 Future acquisition systems may use different type identifiers; this list should not be treated as exhaustive.
 
+{#nexus_instrument_dae_period_index}
+### `raw_data_1/instrument/dae/period_index`
+
+This is always an array with length equal to the number of DAQ periods, and values equal to `idx + 1`, as an int32.
+
+Examples:
+- For a run in software period mode with 5 periods: `[1, 2, 3, 4, 5]`
+
 ---
 
 The `raw_data_1/instrument/dae` group also contains the following groups:
