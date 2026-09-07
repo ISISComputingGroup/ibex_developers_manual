@@ -38,8 +38,7 @@ Attributes:
 {#nexus_definition_local}
 ### `raw_data_1/definition_local`
 
-`"ISISTOFRAW"`. See {external+nexus_manual:doc}`classes/applications/NXtofraw` for the application
-definition this references.
+`"ISISTOFRAW"`.
 
 Attributes:
 - `version`: `"1.0"`
@@ -111,6 +110,10 @@ Attributes:
 
 The duration of the measurement, as a float32. Identical to {ref}`nexus_collection_time`. This is not necessarily equal to the difference between {ref}`nexus_start_time` and
 {ref}`nexus_end_time`, because time spent paused or under run control is not included.
+
+:::{note}
+The datatype used by the ISISICP (float32) is incompatible with the type specified by the NeXus standard (`NX_INT`).
+:::
 
 Attributes:
 - `units`: `"second"`

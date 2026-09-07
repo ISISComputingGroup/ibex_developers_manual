@@ -10,7 +10,11 @@ This is user-settable string metadata. It is set in IBEX under Experiment Detail
 {#nexus_sample_distance}
 ## `raw_data_1/sample/distance`
 
-This is unconditionally written as `0.0`, as a float64.
+This is unconditionally written as `0.0`, **as a float64**.
+
+:::{note}
+No units attribute is written by the ISISICP, which is invalid as per the NeXus standard.
+:::
 
 {#nexus_sample_id}
 ## `raw_data_1/sample/id`
@@ -22,21 +26,23 @@ This is user-settable string metadata. It is set in IBEX under Experiment Detail
 
 This is user-settable float32 metadata. It is set in IBEX under Experiment Details -> Sample Parameters -> Sample Thickness
 
-It is in units of `mm`.
+:::{note}
+It is in units of `mm`, but no units attribute is written by the ISISICP, which is invalid as per the NeXus standard.
+:::
 
 {#nexus_sample_width}
 ## `raw_data_1/sample/width`
 
 This is user-settable float32 metadata. It is set in IBEX under Experiment Details -> Sample Parameters -> Sample Width
 
-It is in units of `mm`.
+It is in units of `mm`, but no units attribute is written.
 
 {#nexus_sample_height}
 ## `raw_data_1/sample/height`
 
 This is user-settable float32 metadata. It is set in IBEX under Experiment Details -> Sample Parameters -> Sample Height
 
-It is in units of `mm`.
+It is in units of `mm`, but no units attribute is written.
 
 {#nexus_sample_type}
 ## `raw_data_1/sample/type`
