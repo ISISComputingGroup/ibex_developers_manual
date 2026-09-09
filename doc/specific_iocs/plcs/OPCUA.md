@@ -28,7 +28,7 @@ See the [Configuring OPC UA Security](https://epics-modules.github.io/opcua/how-
 When using version 1.4 and above of open62541 the IOC supports encrypted message security policy as well as “None” security mode. 
 
 ### Basic authentication
-The "None" mode allows connecting with a username and password, which also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the `opcuaClientCertificate` option in the `st-common.cmd` or `st.cmd` file, which loads the IOC with some other options, such as IP address, node configuration, namespace address, etc. A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument, the `client_private_key.pem` (which needs to either be generated, or gotten from the appropriate instrument's `OPCUA` folder from the private network shares), `cert.txt` (which will need to be edited to reflect current username and password for the target PLC/server), and `OPCUA_01.cmd` should be moved from the Experiment Controls private network share `OPCUA` folder, to the instrument's configurations area, in a new folder that should be named `opcua`. If done properly, the `opcua` EPICS module should be able to pick up the user name and password, log in to the OPC server properly, and begin a connection. 
+The "None" mode allows connecting with a username and password, which also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the `opcuaClientCertificate` option in the `st-common.cmd` or `st.cmd` file, which loads the IOC with some other options, such as IP address, node configuration, namespace address, etc. A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument, the `client_private_key.pem` (which needs to either be generated, or gotten from the appropriate instrument's `OPCUA` folder from the private network shares), `identity_username.txt` (which will need to be edited to reflect current username and password for the target PLC/server), and `OPCUA_01.cmd` should be moved from the Experiment Controls private network share `OPCUA` folder, to the instrument's configurations area, in a new folder that should be named `opcua`. If done properly, the `opcua` EPICS module should be able to pick up the user name and password, log in to the OPC server properly, and begin a connection. 
 
 ### Client certificate based authentication
 
@@ -56,7 +56,7 @@ keyUsage = critical, digitalSignature, nonRepudiation, keyEncipherment, dataEnci
 extendedKeyUsage = critical, serverAuth, clientAuth
 subjectAltName = URI:urn:iocOPCUA-IOC-01@${ENV::HOSTNAME}:EPICS:IOC,IP:${ENV::IP}
 ```
-Run `ipconfig` command on the computer you will generate a certificate for to get its IP address. The `HOSTNAME` should match the `%COMPUTERNAME%` variable of the machine the certificate will be used for e.g. `NDXMERLIN`. Then run:
+Run `ipconfig` command in an cmd shell on the computer you will be generating a certificate for to get its IP address. On Windows the `HOSTNAME` should match the `%COMPUTERNAME%` environment variable of the machine the certificate will be used for e.g. `NDXMERLIN`. You can type `echo %COMPUTERNAME%` in a cmd shell to confirm. Then you need to open a git bash terminal and run the `openssl` command provided there like this:
 ```bash
 env IP=<IP> HOSTNAME=<hostname> openssl req -x509 -config opcua_cert.conf -newkey rsa:2048 -keyout client_private_key.pem -out client_certificate.pem -days 365
 ```
@@ -68,7 +68,7 @@ and then send `client_certificate.der` to the PLC team for them to add to the PL
 ```bash
 openssl x509 -in  client_certificate.pem -noout -text
 ```
-It looks like you do not need to have the PLC certificate on the computer running the IOC, it may be this was only needed for basic password authentication. If you do need to install it, there are two ways to get this:
+It looks like we do not need to have the PLC's own certificate on the computer running the IOC, it may be this was only needed for basic password authentication. If you do need to install it, there are two ways to get this:
 - The PLC team can send you it and then put it into `c:/Instrument/Settings/config/%COMPUTERNAME%/configurations/opcua/certstore/trusted/certs/`
 - If you try and run the IOC without having this added but have used the `opcuaSaveRejected` command you should get a copy saved to the folder specified by this command that you can then copy to the same `trusted/certs` directory
 
