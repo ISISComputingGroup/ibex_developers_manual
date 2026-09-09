@@ -58,3 +58,37 @@ Our files impose no such restriction and will write the arbitrary user-specified
 ## `raw_data_1/sample/shape`
 
 This is user-settable string metadata. It is set in IBEX under Experiment Details -> Sample Parameters -> Sample Geometry
+
+{#nexus_sample_temperature}
+## `raw_data_1/sample/temperature`
+
+This is user-settable metadata. It is set in IBEX under Experiment Details -> Sample Parameters -> Temperature Label as a string,
+but written to the NeXus file as a float32.
+
+This dataset is only written on a muon instrument.
+
+Attributes:
+- `units`: `"Kelvin"`
+
+{#nexus_sample_magneticfield}
+## `raw_data_1/sample/magnetic_field`
+
+This is user-settable metadata. It is set in IBEX under Experiment Details -> Sample Parameters -> Magnetic Field Label as a string,
+but written to the NeXus file as a float32.
+
+This dataset is only written on a muon instrument.
+
+Attributes:
+- `units`: `"Gauss"`
+
+{#nexus_sample_temperaturelog}
+## `raw_data_1/sample/temperature_log`
+
+If this is a muon instrument **and** a block named exactly `temp_sample` exists, this is a NeXus link to the
+{ref}`raw_data_1/selog/temp_sample <nexus_selog>` group.
+
+{#nexus_sample_fieldlog}
+## `raw_data_1/sample/magnetic_field_log`
+
+If this is a muon instrument **and** a block named exactly `field_sample` exists, this is a NeXus link to the
+{ref}`raw_data_1/selog/field_sample <nexus_selog>` group.

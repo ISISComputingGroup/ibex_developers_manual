@@ -525,6 +525,7 @@ Mihai
 minidump
 mins
 Mirion
+misconfigurations
 misconfigured
 mitigations
 mK
@@ -786,6 +787,7 @@ scsi
 sdk
 searchable
 seci
+selog
 sendSlackMessage
 Sensirion
 setIOCName
