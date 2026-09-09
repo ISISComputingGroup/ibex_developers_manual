@@ -2,13 +2,13 @@
 ## General / What is OPC UA
 OPC UA is a cross-platform, open-source, IEC62541 standard for data exchange from sensors to cloud applications developed by the OPC Foundation. It is characterised by: 
 
-* Standardized data models freely available for over 60 types of industrial equipment, published by the OPC Foundation via Companion Specifications
-* Extensible security profiles, including authentication, authorization, encryption and checksums
+* Standardised data models freely available for over 60 types of industrial equipment, published by the OPC Foundation via Companion Specifications
+* Extensible security profiles, including authentication, authorisation, encryption and checksums
 * Extensible security key management, including X.509, token and password
 * Support for both client-server and publish-subscribe communication patterns
 * Communication protocol independent. Mappings to several communication protocols like TCP/IP, UDP/ 
 IP, WebSockets, AMQP and MQTT are specified
-* Initially successful in standardized data exchange with industrial equipment (discrete manufacturing, process manufacturing, energy) and systems for data collection and control, but now also leveraged in building automation, weighing and kitchen equipment and cloud applications
+* Initially successful in standardised data exchange with industrial equipment (discrete manufacturing, process manufacturing, energy) and systems for data collection and control, but now also leveraged in building automation, weighing and kitchen equipment and cloud applications
 * [Open](https://en.wikipedia.org/wiki/Open_standard) – open-source reference implementations freely available to OPC Foundation members, non members under GPL 2.0 license[2]
 * [Cross-platform](https://en.wikipedia.org/wiki/Cross-platform) – not tied to one operating system or programming language
 * [Service-oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture) (SOA)
@@ -28,7 +28,7 @@ See the [Configuring OPC UA Security](https://epics-modules.github.io/opcua/how-
 When using version 1.4 and above of open62541 the IOC supports encrypted message security policy as well as “None” security mode. 
 
 ### Basic authentication
-The "None" mode allows connecting with a username and password, which also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the `opcuaClientCertificate` option in the `st-common.cmd` or `st.cmd` file, which loads the IOC with some other options, such as IP address, node configuration, namespace address, etc. A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument, the `client_private_key.pem` (which needs to either be generated, or gotten from the appropriate instrument's `OPCUA` folder from the private network shares), `identity_username.txt` (which will need to be edited to reflect current username and password for the target PLC/server), and `OPCUA_01.cmd` should be moved from the Experiment Controls private network share `OPCUA` folder, to the instrument's configurations area, in a new folder that should be named `opcua`. If done properly, the `opcua` EPICS module should be able to pick up the user name and password, log in to the OPC server properly, and begin a connection. 
+The "None" mode allows connecting with a username and password. This also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the `opcuaClientCertificate` option in the `st-common.cmd` or `st.cmd` file, which loads the IOC with some other options, such as IP address, node configuration, namespace address, etc.). A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument: the `client_private_key.pem` (which needs to either be generated, or gotten from the appropriate instrument's `OPCUA` folder from the private network shares), `identity_username.txt` (which will need to be edited to reflect current username and password for the target PLC/server), and `OPCUA_01.cmd` should be moved from the Experiment Controls private network share `OPCUA` folder into a new folder, named `opcua`, in the instrument's configurations area. If done properly, the `opcua` EPICS module should be able to: pick up the user name and password, log in to the OPC server properly, and begin a connection. 
 
 ### Client certificate based authentication
 
@@ -56,7 +56,7 @@ keyUsage = critical, digitalSignature, nonRepudiation, keyEncipherment, dataEnci
 extendedKeyUsage = critical, serverAuth, clientAuth
 subjectAltName = URI:urn:iocOPCUA-IOC-01@${ENV::HOSTNAME}:EPICS:IOC,IP:${ENV::IP}
 ```
-Run `ipconfig` command in an cmd shell on the computer you will be generating a certificate for to get its IP address. On Windows the `HOSTNAME` should match the `%COMPUTERNAME%` environment variable of the machine the certificate will be used for e.g. `NDXMERLIN`. You can type `echo %COMPUTERNAME%` in a cmd shell to confirm. Then you need to open a git bash terminal and run the `openssl` command provided there like this:
+Run `ipconfig` command in an cmd shell on the computer you will be generating a certificate for to get its IP address. On Windows, the `HOSTNAME` should match the `%COMPUTERNAME%` environment variable of the machine the certificate will be used for e.g. `NDXMERLIN`. You can type `echo %COMPUTERNAME%` in a cmd shell to confirm. Then you need to open a git bash terminal and run the `openssl` command provided there with the following parameters:
 ```bash
 env IP=<IP> HOSTNAME=<hostname> openssl req -x509 -config opcua_cert.conf -newkey rsa:2048 -keyout client_private_key.pem -out client_certificate.pem -days 365
 ```
