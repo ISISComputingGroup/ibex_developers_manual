@@ -37,7 +37,9 @@ It is possible to set macros for an IOC either through the IBEX GUI or using the
 
 ### Globals.txt
 
-The globals.txt is file is held in `C:\Instrument\Settings\config\NDW_____\configurations`. In here, global macros are set with `<macro name>=<value>`, and macros specific for an IOC are set with `<ioc name>__<macro name>=<value>`
+`globals.txt` is a file used to set global macros which take precedence over any macros set in the configuration (usually done via the GUI). 
+
+The `globals.txt` is file is held in `C:\Instrument\Settings\config\NDW_____\configurations`. In here, global macros are set with `<macro name>=<value>`, and macros specific for an IOC are set with `<ioc name>__<macro name>=<value>`
 
 e.g.
 
