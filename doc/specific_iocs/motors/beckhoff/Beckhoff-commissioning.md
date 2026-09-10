@@ -36,7 +36,7 @@ Additionally, these should all be `1` if the project has been commissioned by ID
 - `FORWARD_VELO` - whether to forward velocities from the controller. This forwards `stControl.fVelocity` to `.VELO` and `.VMAX`, and forwards `stControl.fJogVelocity` to `.JVEL`.
 - `FORWARD_UNITS` - whether to forward units from the controller. This relies on `stDescription.sUnits` to be filled out for every axis.
 - `ALLOW_FROZEN_OFFSETS` - whether to allow setting frozen offsets on the device. This relies on `stControl.fSetPosition` existing and should be turned off if it doesn't. 
-- `ENABLE_AUTO_ON_OFF` - Whether to allow monitoring and enabling/disabling the auto-energise functionality on the beckhoff. This relies on `stControl.bAutoEnableDisable` to be present.
+- `ENABLE_AUTO_ON_OFF` - Whether to allow monitoring and enabling/disabling the auto-energise functionality on the Beckhoff. This relies on `stControl.bAutoEnableDisable` to be present.
 - `ENABLE_HOMING_PVS` - Whether to load values from `stHomingConfig` for reading and setting things like homing position values, homing sequence numbers. 
 
 {#beckhoff_manual_commission_step}
