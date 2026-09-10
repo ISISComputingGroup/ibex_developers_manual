@@ -8,8 +8,8 @@ The list of blocks to be written is defined by the IBEX configuration, and is us
 
 In addition to the list of blocks from IBEX, the following logs are written:
 - `EPICS_PUTLOG`: a string log containing the EPICS channel access put log, with each put operation as a string.
-- `ICP_DAE_TD`: TODO
-- `IDP_SYS_TD`: TODO
+- `ICP_DAE_TD`: This describes the difference between the DAE's internal clock and a *monotonic* software clock
+- `IDP_SYS_TD`: This describes the difference between the *monotonic* software clock and an (NTP-corrected) system clock
 
 Each `IXseblock` contains the following datasets:
 
