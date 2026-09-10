@@ -97,6 +97,8 @@ Every parameter would be written as an integer, with no parameter-specific logic
 
 We may also provide an `:SP` PV which writes an arbitrary value in future, though we need to be careful that this does not encourage _routine_ use of these settings as part of running an instrument.
 
+The set of PVs created could be self-described, for example using {external+pvi:doc}`PVI <index>`.
+
 ## Alternatives
 
 - In the first instance, we could avoid the architectural complexity of a central memory-map store and self-describing boards by requiring a `reg_address` in the `config.toml`.
