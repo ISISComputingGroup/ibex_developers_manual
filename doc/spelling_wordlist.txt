@@ -899,6 +899,7 @@ TwinCAT
 txt
 ua
 uA
+uAh
 uamps
 UC
 UDP
