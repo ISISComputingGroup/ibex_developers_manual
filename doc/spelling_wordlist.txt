@@ -602,6 +602,7 @@ npcap
 NPort
 npp
 nt
+NTP
 nxs
 oercone
 Oerlikon

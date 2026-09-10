@@ -20,9 +20,7 @@ This is user-settable string metadata. It is set in IBEX under Experiment Detail
 {#nexus_measurement_first_run}
 ## `raw_data_1/measurement/first_run`
 
-:::{danger}
-**TODO** - some logic in ISISICP for this...
-:::
+This gives the run number of the first run which had the same {ref}`nexus_measurement_id` as this run, as an int32.
 
 {#nexus_measurement_label}
 ## `raw_data_1/measurement/label`
