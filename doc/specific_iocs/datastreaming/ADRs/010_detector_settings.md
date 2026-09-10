@@ -66,7 +66,7 @@ ip = "192.168.1.21"
 pv_suffix = "MOD1"
 parameter_groups = ["temperature", "event_rate"]
 parameters = [
-    { reg_id = "super_special_parameter_for_mod1", "pv_name" = "SUPER_SPECIAL", write = true },
+    { reg_id = "super_special_parameter_for_mod1", "pv_name" = "SUPER_SPECIAL", write = true, init_value = 12345 },
 ]
 
 [diagnostic_modules.mod2]
@@ -90,9 +90,12 @@ Every parameter would be exposed as an integer, with no parameter-specific logic
 
 ### Writing
 
-The new process would also create standard setpoint PVs for each writeable parameter, in the form `IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL:SP`.
+The new process would also create standard setpoint PVs for each writeable parameter, in the form `IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL:REINITIALIZE`, which writes
+the value specified in the `config.toml` to the detector.
 
 Every parameter would be written as an integer, with no parameter-specific logic.
+
+We may also provide an `:SP` PV which writes an arbitrary value in future, though we need to be careful that this does not encourage _routine_ use of these settings as part of running an instrument.
 
 ## Alternatives
 
