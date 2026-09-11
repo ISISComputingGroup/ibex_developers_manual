@@ -1,6 +1,7 @@
 # `raw_data_1/framelog`
 
-This is an {external+nexus_manual:doc}`classes/base_classes/NXcollection`. It is only written if event-mode is enabled.
+This is an {external+nexus_manual:doc}`classes/base_classes/NXcollection` which contains a set of time-series arrays
+with equal sizes, indexed by the frame number. It is only written if event-mode is enabled.
 Each subgroup is an {external+nexus_manual:doc}`classes/base_classes/NXlog`.
 
 The datasets written are:

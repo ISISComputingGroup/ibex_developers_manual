@@ -1,6 +1,7 @@
 # `raw_data_1/detector_<N>`
 
-This is an {external+nexus_manual:doc}`classes/base_classes/NXdata`.
+This is an {external+nexus_manual:doc}`classes/base_classes/NXdata`. This is always a histogram; for event data, see
+{ref}`nexus_detevents`.
 
 ### `raw_data_1/detector_<N>/counts`
 

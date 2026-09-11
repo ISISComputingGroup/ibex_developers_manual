@@ -1,8 +1,13 @@
 # NeXus Files
 
-IBEX writes out scientific data as {external+nexus:doc}`NeXus files <index>`. The NeXus format documents the *general*
+IBEX writes out scientific data as {external+nexus:doc}`NeXus files <index>`, which are a set of definitions built
+on top of the HDF5 format and used by most scattering-type experiments (including x-ray, lasers, Neutron and Muon
+facilities worldwide). The NeXus format documents the *general*
 layout of a NeXus file; this documentation documents the *specific* datasets written in practice by IBEX,
 including any quirks or facility-specific details of their interpretation.
+
+On a DAE2 or DAE3 instrument, these files are written by the ISISICP process. On a streaming instrument, these files
+are written by the data streaming filewriter.
 
 The NeXus files conform, where possible, to the {external+nexus:doc}`TOFRaw` definition.
 
