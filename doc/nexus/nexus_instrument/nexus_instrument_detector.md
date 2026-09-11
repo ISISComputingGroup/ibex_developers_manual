@@ -101,3 +101,66 @@ made from multiple detector pixels.
 User tables start from `user_table01`.
 
 `user_table01` is always equivalent to {ref}`nexus_instrument_detector_azangle`.
+
+{#nexus_instrument_detector_eventframenumber}
+### `raw_data_1/instrument/detector_<N>/event_frame_number`
+
+This is the frame number corresponding to each entry in {ref}`nexus_detevents_eventtimezero`, as an int32. It always
+increments by 1 for each frame.
+
+This is only written in event mode. See also {external+nexus_manual:doc}`classes/base_classes/NXevent_data`.
+
+{#nexus_instrument_detector_eventid}
+### `raw_data_1/instrument/detector_<N>/event_id`
+
+This is the *spectrum* (not *detector*) that each event was detected on.
+
+This is only written in event mode. See also {external+nexus_manual:doc}`classes/base_classes/NXevent_data`.
+
+{#nexus_instrument_detector_eventindex}
+### `raw_data_1/instrument/detector_<N>/event_index`
+
+The index into the event_time_offset, event_id pair for the pulse occurring at the matching entry in event_time_zero.
+
+This is only written in event mode. See also {external+nexus_manual:doc}`classes/base_classes/NXevent_data`.
+
+{#nexus_instrument_detector_eventtimezero}
+### `raw_data_1/instrument/detector_<N>/event_time_zero`
+
+This is the time that each pulse started, as float32 microseconds, with respect to the offset which is the beginning
+of a run.
+
+This is only written in event mode. See also {external+nexus_manual:doc}`classes/base_classes/NXevent_data`.
+
+Attributes:
+- `offset`: The start of run timestamp, for example `"2025-03-27T13:38:28"`
+- `units`: `"second"`
+
+{#nexus_instrument_detector_eventtimeoffset}
+### `raw_data_1/instrument/detector_<N>/event_time_offset`
+
+This is the timestamp of each event, as float32 microseconds, with respect to the offset in {ref}`nexus_instrument_detector_eventtimezero`.
+
+This is only written in event mode. See also {external+nexus_manual:doc}`classes/base_classes/NXevent_data`.
+
+Attributes:
+- `units`: `"second"`
+
+{#nexus_instrument_detector_eventtimeoffsetshift}
+### `raw_data_1/instrument/detector_<N>/event_time_offset_shift`
+
+This dataset contains the string `"random"` if event time offsets have been assigned a randomised position within the
+time bin given by {ref}`nexus_detevents_eventtimebins`.
+
+This randomisation is needed to avoid artefacts in downstream reduction software when using event-mode hardware with a
+low resolution clock (for example DAE2/3).
+
+This is only written in event mode. 
+
+{#nexus_instrument_detector_totalcounts}
+### `raw_data_1/instrument/detector_<N>/total_counts`
+
+This dataset contains the total number of event-mode events, as an int64. It is equal to the length of the
+{ref}`event_time_offset <nexus_instrument_detector_eventtimeoffset>` or {ref}`event_id <nexus_instrument_detector_eventid>` datasets.
+
+This is only written in event mode. 
