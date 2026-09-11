@@ -2,7 +2,7 @@
 
 This has an `NX_class` of `IXrunlog`; this is not a class specified by upstream NeXus definitions.
 
-Each subgroup is an {external+nexus_manual:doc}`classes/base_classes/NXdata`.
+Each subgroup is an {external+nexus_manual:doc}`classes/base_classes/NXlog`.
 
 The datasets written are:
 - `count_rate` (float32, units="counts")
@@ -53,7 +53,7 @@ Attributes:
 {#nexus_runlog_time}
 ### `raw_data_1/runlog/<name>/time`
 
-This contains int32 timestamps of the values.
+This contains float32 timestamps of the values.
 
 It is written approximately every 30 seconds, and is relative to the start of the run.
 
