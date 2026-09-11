@@ -205,6 +205,13 @@ A network-based control system.  Some elements of it are used in the [script ser
 
 **Operator Interface**.  A file used in [CSS](#css) to enable a user to interact with an IOC graphically.
 
+## Period
+
+This is a data acquisition concept, used to segregate a run into logical components. Periods can be changed:
+- By software, for example to separate data points during a scan of a motion axis
+- By the data acquisition hardware, which may for example alternate between two periods and provide signals to external hardware
+- By external hardware, which may tell the data acquisition system which period to collect in (for example, pulsed magnet on or off)
+
 ## Perspective
 
 ## Plugin
