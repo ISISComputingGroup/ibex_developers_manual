@@ -1,4 +1,4 @@
-# Data streaming server hardware requirements
+# Data streaming: server hardware requirements
 
 This page aims to set a standard for the hardware requirements for the HRPD-X, SANDALS-II, WISH and VESUVIO instrument upgrades.
 

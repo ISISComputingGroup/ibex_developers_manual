@@ -1,4 +1,4 @@
-# Data streaming - Vetoes
+# Data streaming: Vetoes
 
 Vetoes are essentially a way of telling either the detector acquisition hardware (with a `hard` veto) or downstream consumers of event data (`soft` veto) to ignore a set of events in a frame conditionally based on a signal (whether that's an internal state, electrical signal or a software-based condition).
 
