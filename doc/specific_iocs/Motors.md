@@ -33,6 +33,10 @@ Motors will tend to have a subset of the following *.cmd files for loading dbs:
 | `st-motor.cmd` | Loads the actual db files for each individual axis | A single file in the first IOC |
 | `galilXX.cmd` | Sets up the physical connection for a Galil | A file for each galil in `configurations\galil` |
 
+## Creating a motor IOC
+
+see [Create Motor IOC](/iocs/creation/Create-Motor-IOC.md)
+
 ## Motors used at ISIS
 
 The motors currently used at ISIS are:
