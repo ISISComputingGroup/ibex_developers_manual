@@ -1,4 +1,4 @@
-# 10 - handling low-level detector settings
+# 11 - handling low-level detector settings
 
 ## Status
 
