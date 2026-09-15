@@ -2,8 +2,7 @@
 
 ## Status
 
-- Provisional until agreed with DSG
-- Requires prioritisation against other streaming work
+- Accepted
 
 ## Context
 
@@ -45,6 +44,9 @@ The new process would be configured using a `config.toml` in a similar style to 
 An example of a configuration file is:
 
 ```toml
+# Global flag for whether to allow writing
+allow_write = true
+
 # 'Parameter groups' define shared sets of parameters which may exist on
 # multiple boards, to help reduce repetition.
 [diagnostic_parameter_groups.temperature]
@@ -95,7 +97,9 @@ the value specified in the `config.toml` to the detector.
 
 Every parameter would be written as an integer, with no parameter-specific logic.
 
-We may also provide an `:SP` PV which writes an arbitrary value in future, though we need to be careful that this does not encourage _routine_ use of these settings as part of running an instrument.
+If `allow_write` is set in the `config.toml`:
+- Additionally create a `:SP` PV which writes an arbitrary value to the register.
+- Display a clear warning in the streaming OPI and in nagios that the DAE is in a configuration/maintenance mode
 
 The set of PVs created could be self-described, for example using {external+pvi:doc}`PVI <index>`.
 
