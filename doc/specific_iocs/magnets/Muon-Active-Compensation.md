@@ -18,7 +18,7 @@ If the offset changes at all while corrections are enabled (whether by a change 
 
 
 ### Macros
-While setting up the Beam Correction IOC, Macros must be set to define to PVs to interact with for each interfering and steering magnet, as well as an additional macro to set the number of steering magnets. (Currently should be 2 for EMU and MUSR, and 4 for HIFI, SUPERMUSR plans to move to 6).
+While setting up the Beam Correction IOC, Macros must be set to define to PVs to interact with for each interfering and steering magnet, as well as an additional macro to set the number of steering magnets. (Currently should be 2 for EMU and MUSR, and 4 for HIFI, SUPERMUSR plans to move to 6). There is also a macro that allows the scientists to control whether or not corrections are enabled by default (Though this macro itself defaults to false).
 
 The OPI allows for an additional 4 macros to be used to name steering magnets to increase clarity for users.
 
