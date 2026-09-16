@@ -1,31 +1,27 @@
 # Muon Active Compensation
 
-```{note}
-This is a design document; the functionality is not currently implemented.
-```
-
-A [new opportunity for a small project](https://stfc365.sharepoint.com/sites/ISISProjects-Hub/Lists/Project%20List/All%20ISIS%20Projects%20%20Open.aspx?FilterFields1=ListID&FilterValues1=672%2E000000000000%3B%23816%2E000000000000&FilterTypes1=Number&viewid=2180a052%2D20c1%2D4f00%2D9018%2D48e893ad2986) was added by the Muon scientists in 2018 to provide active compensation to the Muon beam-steering magnets on the south side (EMU, MUSR and HIFI). This page contains the notes from a meeting trying to scope the requirements shortly after and was updated in September 2025 following a meeting to confirm requirements. This should capture the basics of the requirements, whoever takes the project on should verify that the requirements are complete.
-
 As muons have a magnetic moment and as the instruments are in close proximity the use of the magnet on one instrument can have an impact on the behaviour of the muons and the flux seen on the other two.
 
 Typically this is EMU diverting the paths of the other two beams due to location and shielding differences.
 
 Each instrument needs to be aware of the magnitude and direction (positive/negative and transverse/longitudinal) of their own magnet, and of the other two instruments.
 
-Each steering magnet will be set to the desired value by the scientist/user, and the system should correct the actual value sent, based on the power of the main magnets of the other instruments. The time to react should be less than two seconds, though ideally faster. 
+This has been achieved via an IOC that reads values from all interfering magnet IOCs across the 3 beam-lines (That is, the main and transverse field on HIFI and EMU, and the field and direction on MUSR.) These values are then multiplied with a coefficient set by the scientists per magnet and then summed to find the correction for a single steering magnet, this process is repeated with unique coefficients for each steering magnet.
 
-A set of linear coefficients (to be provided by the scientists, and ideally alterable by them as well) should be enough to provide this information. It should be possible to run the system without the corrections being used (i.e. the coefficients are not actioned), as this will be required for calibration and refining these coefficients. 
+<img width="743" height="362" alt="image" src="https://github.com/user-attachments/assets/79670ff7-2344-4a9b-8fdf-21b2d2600105" />
 
-Both the corrected and set values should be exposed through the GUI.
+The offset calculated from the interfering magnets and coefficients can then be used to modify set-points to each steering magnet, or ignored if corrections are disabled.
 
-The data flow would be as follows:
-1. Value requested of A for the steering magnet
-1. Value A is passed through the coefficients and altered based on the status of the magnets on the other instruments (this is a continuous loop with a timescale of a couple of seconds), giving value B
-1. Value B is sent to the device
-1. The value read back from the device should be considered and kept within a tolerance of Value B
+<img width="604" height="414" alt="image" src="https://github.com/user-attachments/assets/b64891bf-3b4d-4731-8d6f-8ff09e6cf8b2" />
 
-The coefficients should be of a similar layout to the following:
+If the offset changes at all while corrections are enabled (whether by a change in the interfering magnets, or the coefficients being altered) then the value sent to the magnet will also immediately be updated, based on the most recent set-point and the new offset.
 
-| Steering Magnet | Set | EMU | MUSR | HIFI | Offset to Apply |
-| --- | --- | --- | ---| --- | --- |
-| Horizontal | Desired value | Coefficient 1 | 1 (This instrument) | Coefficient 2 | The result of the equation for the offset to apply to the setpoint based on the appropriate input values |
+
+### Macros
+While setting up the Beam Correction IOC, Macros must be set to define to PVs to interact with for each interfering and steering magnet, as well as an additional macro to set the number of steering magnets. (Currently should be 2 for EMU and MUSR, and 4 for HIFI, SUPERMUSR plans to move to 6). There is also a macro that allows the scientists to control whether or not corrections are enabled by default (Though this macro itself defaults to false).
+
+The OPI allows for an additional 4 macros to be used to name steering magnets to increase clarity for users.
+
+### Implementation Details
+While corrections are enabled the calculation for a Steering magnet is  $`b = a + \sum_{i=1}^n c_im_i`$ where $`n`$ is the number of interfering magnets, $`c_i`$ is the coefficient for a specific interfering magnet and the steering magnet, $`m_i`$ is the current value of an interfering magnet, $`a`$ is the requested set-point, and $`b`$ is the output sent to the steering magnet.
+When the correction is disabled the the requested set-point $`a`$ is instead sent directly to the magnet IOC.
