@@ -1,0 +1,686 @@
+CALL OPEN_FILE(RUNID, FOUND)
+
+--------------------------------------------------------------
+Extracting Data from a RAW file
+--------------------------------------------------------------
+
+In the descriptions below:
+          · [in] describes a parameter which must be set before a call,
+            but whose value is unchanged by the call.
+
+          · [out] describes a parameter that is altered by the routine,
+            but need hold no particular value before the call
+          · [in,out] describes a parameter that contains input
+            information for the routine and whose value may be altered
+            by the routine.
+
+Data can be extracted from a RAW file with the GETDAT routine:
+
+          SUBROUTINE GETDAT(RUNID, IFSN, NOS, IDATA, LENGTH, ERRCODE)
+          CHARACTER*(*) RUNID      !  [in] Name of the RAW file to use
+          INTEGER IFSN             !  [in] Number of first spectrum required
+          INTEGER NOS              !  [in] Total number of spectra required
+          INTEGER IDATA(LENGTH)    !  [out] Array to hold the returned data
+          INTEGER ERRCODE          !  [out] Error status variable
+
+          Error codes returned in ERRCODE are:
+
+          0 - All OK
+          2 - Attempt to access CRPT (not supported)
+          4 - Too many spectra (NOS) asked for
+          5 - Error in unpacking compressed data in the file
+          6 - The routine cannot understand the data section of the file
+
+**********************
+*** Important Note ***
+**********************
+In collecting the data there is a 'channel 0' which contains no useful
+information; This will appear in the first channel of each spectrum and should
+not be used in calculations. This means that LENGTH needs to be at least
+NTC1+1 in size, and the NTC1 useful values are returned in elements
+(2) ... (NTC1+1) of the array. See the example programs libget_test.f
+and libget_test2.f for more information
+
+Extracting Run Parameters from a RAW file
+-----------------------------------------
+Parameters can be extracted by
+	CALL GETPARI(RUNID,NAME,IARRAY,LENGTH_IN,LENGTH_OUT,ERRCODE)
+	CALL GETPARR(RUNID,NAME,RARRAY,LENGTH_IN,LENGTH_OUT,ERROCDE)
+	CALL GETPARC(RUNID,NAME,CARRAY,LENGTH_IN,LENGTH_OUT,ERRCODE)
+where 	RUNID is a character string specifying the RAW file name.
+	NAME is a character string identifying the parameter.
+	IARRAY,RARRAY and CARRAY are arrays of Integer, Real of Character type
+	for returning the requested values.
+
+          SUBROUTINE GETPARI(RUNID, NAME, IVALUE, LENGTH_IN, LENGTH_OUT, ERRCODE)
+          CHARACTER*(*) RUNID             ! [in] Name of the RAW file
+          CHARACTER*4 NAME                ! [in] The name of the item to return
+          INTEGER*4 LENGTH_IN             ! [in] size of the input array
+          INTEGER*4 IVALUE(LENGTH_IN)     ! [out] Array to hold the returned values
+          INTEGER*4 LENGTH_OUT            ! [out] Amount of IVALUE used
+          INTEGER*4 ERRCODE               ! [out] Returned status value
+
+          Error codes returned by ERRCODE are:
+
+          0 = All OK
+          2 = Attempt to access CRPT, which is not supported
+          3 = Non existent parameter NAME specified
+          4 = Some other error (see screen output)
+
+          SUBROUTINE GETPARC(RUNID, NAME, IVALUE, LENGTH_IN, LENGTH_OUT, ERRCODE)
+
+          CHARACTER*(*) RUNID             ! [in] Name of the RAW file to use
+          CHARACTER*4 NAME                ! [in] The name of the item to return
+          INTEGER*4 LENGTH_IN                ! [in] Size of the input array
+          CHARACTER*(*) CVALUE(LENGTH_IN)    ! [out] Array to hold the returned values
+          INTEGER*4 LENGTH_OUT            ! [out] Amount of CVALUE used
+          INTEGER*4 ERRCODE               ! [out] Error status value
+
+          Error codes returned by ERRCODE are:
+          0 = All OK
+          2 = Attempt to access the CRPT (not supported)
+          3 = Non existent parameter NAME specified
+          4 = Some other error occurred (see screen output)
+
+          SUBROUTINE GETPARR(RUNID, NAME, RVALUE, LENGTH_IN, LENGTH_OUT, ERRCODE)
+          CHARACTER*(*) RUNID             ! [in] Name of the RAW file
+          CHARACTER*4 NAME                ! [in] The name of the item to return
+          INTEGER*4 LENGTH_IN             ! [in] Size of the data array
+          REAL*4 RVALUE(LENGTH_IN)        ! [out] Array to hold the returned value(s)
+          INTEGER*4 LENGTH_OUT            ! [out] Portion of IVALUE used
+          INTEGER*4 ERRCODE               ! [out] Returned status value
+
+          Error codes returned by ERRCODE are:
+
+          0 = All OK
+          2 = Attempt to access the CRPT (not supported)
+          3 = Non existent parameter NAME specified
+          4 = Some other error occurred (see screen output)
+
+
+The most common parameters required are
+	NSP1	total number of spectra
+	NTC1	total number of channels per spectrum (ignoring 'channel 0')
+	TCB1	time channel boundaries in microseconds
+For example to pick these up
+	INTEGER IARRAY(100)
+	REAL RARRAY(10000)
+        INTERGER ERRCODE,LOUT,NUMCHAN,NUMSPECT
+	CALL GETPARI(RUNID,'NSP1',IARRAY,100,LOUT,ERRCODE)
+	NUMSPECT=IARRAY(1)
+	CALL GETPARI(RUNID,'NTC1',IARRAY,100,LOUT,ERRCODE)
+	NUMCHAN=IARRAY(1)
+	CALL GETPARR(RUNID,'TCB1',RARRAY,10000,LOUT,ERRCODE)
+The RARRAY should now hold NUMCHAN time channel boundaries.
+
+If the parameter you require is not named individually you will need to use
+the name of the parameter block to return a series of parameters into an array
+and then extract the appropriate element of the array. For example, the total
+number of good frames is element 10 of the 'Run Parameter Block' which has the
+name RPB. eg.
+	INTEGER IARRAY(32)
+        INTERGER ERRCODE,LOUT,NGOOD
+	CALL GETPARI(RUNID,'RPB',IARRAY,32,LOUT,ERRCODE)
+	NGOOD=IARRAY(10)
+
+Parameter Names
+---------------
+SECTION  ITEM  NAME    TYPE            CONTENTS
+   1        1   HDR     C*80            HEADER BLOCK
+   1        2   VER1    I*4             FORMAT version number
+   1        3   ADD     I*4(10)         SECTION addresses
+
+   2        1   VER2    I*4             RUN section version #
+   2        2   RUN     I*4             RUN #
+   2        3   TITL    C*80            RUN title
+   2        4   USER    C*20(8)         USER information
+   2        5   RPB     I*4(32)         RUN parameter block
+
+   3        1   VER3    I*4             INSTRUMENT section version #
+   3        2   NAME    C*8             INSTRUMENT name
+   3        3   IVPB  R/I*4(64)         INSTRUMENT parameter block
+   3        4   NDET    I*4             No. of detectors
+   3        5   NMON    I*4             No. of monitors
+   3        6   NUSE    I*4             NO. of USER defined (UTn) tables  ***B
+   3        7   MDET    I*4(nmon)       detector no. for each monitor
+   3        8   MONP    I*4(nmon)       prescale value for each monitor
+   3        9   SPEC    I*4(ndet)       SPECTRUM # table
+   3       10   DELT    R*4(ndet)       HOLD OFF table                    ***B
+   3       11   LEN2    R*4(ndet)       L2         table
+   3       12   CODE    I*4(ndet)       CODE for UTn tables               ***B
+   3       13   TTHE    R*4(ndet)       2Theta     table (scattering ang)
+   3       14   PHI     R*4(ndet)       PHI        table (azimuthal angle)
+   3       15   UT01    R*4(ndet)       USER defined table 1              ***B
+    ..cont. to  UTn
+
+   4        1   VER4    I*4             SE section version #
+   4        2   SPB     I*4(32)         SAMPLE parameter block
+   4        3   NSEP    I*4             number of controlled SEPs
+   4        4   SE01    I*4(24)         SE parameter block #1
+    ..cont. to  SEnn
+
+   5        1   VER5    I*4             DAE section version #
+   5        2   DAEP    I*4(64)         DAE parameter block
+   5        3   CRAT    I*4(ndet)       crate no.for each detector
+   5        4   MODN    I*4(ndet)       module no. for each detector
+   5        5   MPOS    I*4(ndet)       position in module for each detector
+   5        6   TIMR    I*4(ndet)       TIME REGIME # table
+   5        7   UDET    I*4(ndet)       'USER detector #' for each detector
+
+   6        1   VER6    I*4             TCB secton version #
+   6        2   NTRG    I*4             # of time regimes (normally =1)
+   6        3   NFPP    I*4             No. of frames per period
+   6        4   NPER    I*4             No. of periods
+   6        5   PMAP    I*4             period # for each basic period
+   6        6   NSP1    I*4             No. of spectra for time reg.= 1(tr=1)
+   6        7   NTC1    I*4             No. of time chan.              (tr=1)
+   6        8   TCM1    I*4(5)          time channel mode (0,1,2, ..) (tr=1) *A
+   6        9   TCP1    R*4(20)         time channel parameters       (tr=1) *A
+   6       10   PRE1    I*4             prescale value for 32MHz clock (tr=1)
+        (6.6 - 6.10 repeated for each time regime : NSP2,NTC2..etc.)
+   6       11   TCB1    I*4(ntc1+1)     Time channel boundaries        (tr=1)
+        (6.11 repeated for each time regime : TCB2,TCB3..etc.)
+
+   7            USER DEFINED  (max length =400 R*4 wds.)
+
+   8        1   VER7    I*4             DATA version #
+   8        2   DAT1    I*4(ntc1,nsp1)  raw data for first time regime
+        ..cont. for NTRG time regimes
+
+Detailed Listing of Sections
+----------------------------
+  1     FORMAT
+
+        ITEM    NAME            TYPE    CONTENTS
+
+        --------------------------------------------------------------
+   P    1       HDR(1:8)        c*8     RUN identifier (eg. LAD12345 )
+
+                                         -  3 characters for INSTRUMENT,
+
+                                         -  5 characters for RUN NUMBER.)
+
+   U            HDR(9:28)       c*20    User name
+   U            HDR(29:52)      c*24    Experiment short title
+   P            HDR(53:64)      c*12    start date
+   P            HDR(65:72)      c*8     start time
+                HDR(73:80)      c*8     run duration (µA.Hr)
+        --------------------------------------------------------------
+   F    2       VER1            I*4     format version number (ver=2)   ***B
+        --------------------------------------------------------------
+   P    3       ADD(1)          I*4     start address of RUN  section
+   P            ADD(2)          I*4     start address of INST section
+   P            ADD(3)          I*4     start address of SE   section
+   P            ADD(4)          I*4     start address of DAE  section
+   P            ADD(5)          I*4     start address of TCB  section
+   P            ADD(6)          I*4     start address of USER section   ***B
+   P            ADD(7)          I*4     start address of DATA section   ***B
+   P            ADD(8)          I*4     start address of LOG  section   ***B
+		ADD(9)          I*4  	spare
+		FORM		I*4	data format flag (0 or 1)       ***C
+					0 - all TC for each spectrum
+					1 - the same TC from every spectrum
+        --------------------------------------------------------------
+
+  2     RUN
+
+        ITEM    NAME            TYPE    CONTENTS
+
+        --------------------------------------------------------------
+   F    1       VER2            I*4     RUN section version number
+        --------------------------------------------------------------
+   P    2       RUN             I*4     run number (starting from 1)
+        --------------------------------------------------------------
+   U    3       TITL            C*80    run title
+        --------------------------------------------------------------
+   U    2       USER(1)         C*20    user name
+   U            USER(2)         C*20    user telephone no. 1(day)
+   U            USER(3)         C*20    user telephone no. 2(day)
+   U            USER(4)         C*20    user telephone no. (night)
+   U            USER(5)         C*20    user institution
+                                C*20(3) spare
+        --------------------------------------------------------------
+   P    4       RPB(1)          I*4     actual run duration
+   U            RPB(2)          I*4     scaler for RPB(1),(22) (1=sec,..)
+   U            RPB(3)          I*4     test interval of RPB(2) (sec)
+   U            RPB(4)          I*4     dump interval
+   U            RPB(5)          I*4     scaler for RPB(4)
+   U            RPB(6)          I*4     test interval of RPB(5)(sec)
+   U            RPB(7)          I*4     2**k (SNS frequency(Hz)=50/2**k)
+   P            RPB(8)          R*4     good proton charge (uA.hr)
+   P            RPB(9)          R*4     total proton charge (uA.hr)
+   P            RPB(10)         I*4     number of 'good' frames
+   P            RPB(11)         I*4     total number of frames
+   U            RPB(12)         I*4     required run duration(units=RPB(1))***B
+   P            RPB(13)         I*4     actual run duration (seconds)      ***B
+   P            RPB(14)         I*4     monitor sum 1
+   P            RPB(15)         I*4     monitor sum 2
+                RPB(16)         I*4     monitor sum 3
+   P            RPB(17-19)      C*12    finish date (dd-mmm-yyyy_)
+   P            RPB(20-21)      C*8     finish time (hh-mm-ss)
+		RPB(22)		I*4	RAL Proposal Number
+                RPB(- 32)       spare
+        --------------------------------------------------------------
+
+  3     INSTRUMENT
+
+        ITEM    NAME            TYPE            CONTENTS
+
+        --------------------------------------------------------------
+   F    1       VER3            I*4     INSTRUMENT section version no.(=2) ***B
+        --------------------------------------------------------------
+   F    2       NAME            C*8     instrument name
+        --------------------------------------------------------------
+        3               INSTRUMENT VARIABLE PARAMETER BLOCK
+   U            IVPB(1)         R*4     frequency chopper 1     (Hz)
+   U            IVPB(2)         R*4     frequency chopper 2     (Hz)
+   U            IVPB(3)         R*4     frequency chopper 3     (Hz)
+   U            IVPB(4)         I*4     delay c1                (µs)
+   U            IVPB(5)         I*4     delay c2                (µs)
+   U            IVPB(6)         I*4     delay c3                (µs)
+   U            IVPB(7)         I*4     max error on delay c1   (µs)
+   U            IVPB(8)         I*4     max error on delay c2   (µs)
+   U            IVPB(9)         I*4     max error on delay c3   (µs)
+   U            IVPB(10)        I*4     apperture c1
+   U            IVPB(11)        I*4     apperture c2
+   U            IVPB(12)        I*4     apperture c3
+   U            IVPB(13)        I*4     status c1  (run,stopped,stop open)
+   U            IVPB(14)        I*4     status c2  (run,stopped,stop open)
+   U            IVPB(15)        I*4     status c3  (run,stopped,stop open)
+   U            IVPB(16)        I*4     main shutter (open=1)
+   U            IVPB(17)        I*4     thermal shutter( " )
+   U            IVPB(18)        R*4     beam apperture horizontal(mm)
+   U            IVPB(19)        R*4     beam apperture vertical(mm)
+   U            IVPB(20)        I*4     scattering posn.(eg 1or2 HRPD)
+   U            IVPB(21)        I*4     moderator type no. (e.g HET=3)
+   U            IVPB(22)        I*4     detector tank vacuum (1=vacuum on)
+   U            IVPB(23)        R*4     L1
+        	IVPB(24)	I*4	Rotor Frequency			HET
+		IVPB(25)	R*4	Rotor Energy			HET
+		IVPB(26)	R*4	Rotor Phase			HET
+		IVPB(27)	I*4	Rotor Slit Package (0="unknown",1="L",2="Med",3="Hi") 		HET
+		IVPB(28)	I*4	Slow Chopper (1=on,0=off)	HET
+		IVPB(29)	R*4	LOQ X centre			LOQ
+		IVPB(30)	R*4	LOQ Y centre			LOQ
+		IVPB(31)	I*4	Beam stop			LOQ
+		IVPB(32)	R*4	Radius Beam Stop		LOQ
+		IVPB(33)	R*4	Source to detector distance	LOQ
+		IVPB(34)	R*4	FOE angle			LOQ
+		IVPB(35)	R*4	Angle of Incidence		CRISP
+	        IVPB( - 64)             spare
+        --------------------------------------------------------------
+
+   U    4       NDET    I*4             no.  of detectors
+        --------------------------------------------------------------
+   U    5       NMON    I*4             no.  of monitors
+        --------------------------------------------------------------
+   U    6       NUSE    I*4             no. of UTn  tables                 ***B
+        --------------------------------------------------------------
+   U    7       MDET    I*4(nmon)       detector nos. of the monitors
+        --------------------------------------------------------------
+   U    8       MONP    I*4(nmon)       prescale values for the monitors
+        --------------------------------------------------------------
+   U    9       SPEC    I*4(ndet)       spectrum # table
+        --------------------------------------------------------------
+   U    10      DELT    R*4(ndet)       'HOLD OFF' in (µs)           ***B
+        --------------------------------------------------------------
+   U    11      LEN2    R*4(ndet)       L2  table (m) (upstrem monitors -ve.
+        --------------------------------------------------------------
+   U    12      CODE    I*4(ndet)       code to define use of UT values    ***B
+        --------------------------------------------------------------
+   U    13      TTHE    R*4(ndet)       2Theta table (scattering angle)
+        --------------------------------------------------------------
+   U    14      PHI     R*4(ndet)       PHI        table (azimuthal angle)
+        --------------------------------------------------------------
+   U    15      UT01    R*4(ndet)       User defined table                 ***B
+        --------------------------------------------------------------
+         .
+   U     .      UTn     R*4(ndet)       User defined table                 ***B
+        --------------------------------------------------------------
+
+
+  4     SAMPLE ENVIRONMENT
+
+        ITEM    NAME    TYPE            CONTENTS
+        --------------------------------------------------------------
+   F    1       VER4    I*4             SE section version #    (=2)
+        --------------------------------------------------------------
+        2                               SAMPLE PARAMETER BLOCK
+   U            SPB(1)  I*4             position of sample changer
+   U            SPB(2)  I*4             sample type     (1 = sample+can
+                                                         2 = empty can
+                                                         3 = vanadium
+                                                         4 = absorber
+                                                         5 = nothing
+							 6 = sample, no can)
+   U            SPB(3)  I*4             sample geometry (1 = cylinder
+                                                         2 = flat plate
+                                                         3 = HRPD slab)
+   U            SPB(4)  R*4             sample thickness normal to sampl.(mm)
+   U            SPB(5)  R*4             sample height (mm)
+   U            SPB(6)  R*4             sample width (mm)
+   U            SPB(7)  R*4             omega sample angle (deg)
+   U            SPB(8)  R*4             psi sample angle (deg)
+   U            SPB(9)  R*4             phi sample angle (deg)
+   U            SPB(10) R*4             scat.geom.(1=trans.2=reflect.      ***B
+   U            SPB(11) R*4             sample sCOH (barns)            ***B
+   U            SPB(12) R*4             sample sINC (barns)            ***B
+   U            SPB(13) R*4             sample sABS (barns)            ***B
+   U            SPB(14) R*4             sample number density (atoms.A-3)
+   U            SPB(15) R*4             can wall thickness (mm)            ***B
+   U            SPB(16) R*4             can    sCOH (barns)             ***B
+   U            SPB(17) R*4             can    sINC (barns)             ***B
+   U            SPB(18) R*4             can    sABS (barns)             ***B
+   U            SPB(19) R*4             can   number density (atoms.A-3)
+   U            SPB(20) C*40            sample name or chemical formula
+                SPB( -64)               spare
+        --------------------------------------------------------------
+   F=0  3       NSEP    I*4             no. of SE parameters
+        --------------------------------------------------------------
+        4       SE01(32)                SE parameter block #1           ***B
+                        C*4(2)          name
+                        I*4             value
+                        I*4             value exponent
+                        C*4(2)          units of value
+                        I*4             low trip
+                        I*4             high trip
+                        I*4             current value
+                        I*4             status (in bounds ?)
+                        I*4             controlled parameter    (true/false)
+                        I*4             run control parameter   (true/false)
+                        I*4             log parameter changes   (true/false)
+                        R*4             stability value (units per sec)
+                        R*4             monitor repeat period
+                        I*4             CAMAC location N
+                        I*4             CAMAC location A
+                        I*4             CAMAC offset (added to value)
+                        I*4             CAMAC register group (1 or 2)
+                        I*4             Pre process routine number
+                        I*4(12)         CAMAC values
+        --------------------------------------------------------------
+        3+nsep  SEnsep  I*4(32)         SE parameter block #nsep
+
+  5     DATA ACQUISTION ELECTRONICS
+
+      ITEM      NAME    TYPE            CONTENTS
+
+        --------------------------------------------------------------
+   F    1       VER5    I*4             DAE section version #   (=2)
+        ---------------------------------------------------------------
+        2               DAE PARAMETER BLOCK
+   U            DAEP(1) I*4             Word length in bulk store memory
+   F            DAEP(2) I*4             Length of bulk store memory (bytes)**A
+   U            DAEP(3) I*4             PPP minimum value                  ***B
+   P            DAEP(4) I*4             good PPP total (high 32 bits)   ***B
+   P            DAEP(5) I*4             good PPP total (low  32 bits)   ***B
+   P            DAEP(6) I*4             raw  PPP total (high 32 bits)   ***B
+   P            DAEP(7) I*4             raw  PPP total (low  32 bits)   ***B
+   P            DAEP(8) I*4             good ext. neut tot (high 32bits)***B
+   P            DAEP(9) I*4             good ext. neut tot (low  32 bits)***B
+   P            DAEP(10) I*4            raw  ext. neut tot (high 32 bits)***B
+   P            DAEP(11) I*4            raw  ext. neut tot (low  32 bits)***B
+   P            DAEP(12) I*4            ext. neutron gate (t1) (µs)   ***B
+   P            DAEP(13) I*4            ext. neutron gate (t2) (µs)   ***B
+   U            DAEP(14) I*4            detector for MON 1  (12 bits)   ***B
+   U            DAEP(15) I*4            module   for MON 1  ( 4 bits)   ***B
+   U            DAEP(16) I*4            crate    for MON 1  ( 4 bits)   ***B
+   U            DAEP(17) I*4            mask     for MON 1  (c4:m4:d12) ***B
+   U            DAEP(18) I*4            detector for MON 2  (12 bits)   ***B
+   U            DAEP(19) I*4            module   for MON 2  ( 4 bits)   ***B
+   U            DAEP(20) I*4            crate    for MON 2  ( 4 bits)   ***B
+   U            DAEP(21) I*4            mask     for MON 2  (c4:m4:d12) ***B
+   P            DAEP(22) I*4            total GOOD EVENTS (high 32 bits)***B
+   P            DAEP(23) I*4            total GOOD EVENTS (low  32 bits)***B
+   P            DAEP(24) I*4            frame synch delay (4µs steps) ***B
+   U            DAEP(25) I*4            frm snch origin(0:none/1:ext/2:int)***B
+   U		DAEP(26) I*4		Secondary Master Pulse (0:en,1:dis)
+   U		DAEP(27-29) I*4		External vetoes 0,1,2 (0 dis,1 en)
+                DAEP( -64)              Spare
+        --------------------------------------------------------------
+   U    3       CRAT    I*4(ndet)       crate no.for each detector
+        --------------------------------------------------------------
+   U    4       MODN    I*4(ndet)       module no. for each detector
+        --------------------------------------------------------------
+   U    5       MPOS    I*4(ndet)       posn. in module for each detector
+        --------------------------------------------------------------
+   U    6       TIMR    I*4(ndet)       TIME REGIME # table
+        --------------------------------------------------------------
+   U    7       UDET    I*4(ndet)       'USER DETECTOR #' for each det ***B
+        --------------------------------------------------------------
+
+
+  6     TIME CHANNEL BOUNDARIES
+
+        ITEM    NAME    TYPE            CONTENTS
+        --------------------------------------------------------------
+   F    1       VER6    I*4             TCB secton version #
+        --------------------------------------------------------------
+   U/P  2       NTRG    I*4             # of time regimes (normally =1)
+        --------------------------------------------------------------
+   F=1  3       NFPP    I*4             # of frames per period
+        --------------------------------------------------------------
+   F=1  4       NPER    I*4             # of periods
+        --------------------------------------------------------------
+   F=1  5       PMAP    I*4(256)        period # for each basic period
+        --------------------------------------------------------------
+   repeat following block for each time regime
+   time regime =1
+        --------------------------------------------------------------
+   U/P  3       NSP1    I*4             No. of spectra (+1 for zeroth)
+        --------------------------------------------------------------
+   U/P  4       NTC1    I*4             No. of time channels ( " )
+        --------------------------------------------------------------
+   U    5       TCM1    I*4(5)          time chan. mode (see footnote)
+        --------------------------------------------------------------
+   U    6       TCP1    R*4(4,5)                time chan. parameters (µs)
+        --------------------------------------------------------------
+   P    7       PRE1    I*4             prescale value for 32MHz clock (<=15)
+        --------------------------------------------------------------
+   time regime =2
+        --------------------------------------------------------------
+        11      NSP2    I*4          )
+        --------------------------------------------------------------
+        12      NTC2    I*4          )
+        --------------------------------------------------------------
+        13      TCM2    I*4(5)       )  As for 6.3,6.4,6.5,6.6,
+        --------------------------------------------------------------
+        14      TCP2    R*4(20)      )  6.7,6.8 for regime=2
+        --------------------------------------------------------------
+        15      PRE2    I*4          )
+        --------------------------------------------------------------
+        16      TCB2    I*4(ntc2+1)  )
+        --------------------------------------------------------------
+   ...cont for additional time regimes
+   U    8       TCB1    I*4(ntc1+1)     time chan. bound. for TR=1(clock pulses)
+        --------------------------------------------------------------
+   U    8       TCB2    I*4(ntc1+1)     time chan. bound. for TR=2(clock pulses)
+        --------------------------------------------------------------
+   ...cont for additional time regimes
+
+TIME CHANNEL MODES:
+        0       Boundaries set by a table held in file TCB.DAT
+
+        1       TCB1(n) = (TCP1(1) + (n-1)*TCP1(2)-DAEP(24)*4)*32/PRE1
+                        (ie. Dt = c )
+                        (ie. less frm.synch delay)
+
+        2       temp(1)  = TCP1(1)
+                TCB1(1)  = (TCP1(1)-DAEP(24)*4)*32/PRE1 (ie. Dt = c.t
+                temp(n+1)= temp(n)*(1 + TCP1(2))
+                TCB1(n+1)= (temp(n+1) - DAEP(24)*4)*32/PRE1
+
+  7     USER DEFINED    (suggested layout)
+
+        ITEM    NAME    TYPE            CONTENTS
+
+        --------------------------------------------------------------
+        1       VER7    I*4             DATA version #
+        --------------------------------------------------------------
+        2       ULEN    I*4             USER_LEN
+        --------------------------------------------------------------
+        3       DAT1    R*4(user_len)   USER data
+        --------------------------------------------------------------
+
+  8      RAW DATA
+
+        Two formats exist for the data section. The earlier Version1 is
+        simply an array of consecutive data channels in 32bit integers.
+        Version2 compresses each spectrum to reduce the file size and
+        also has a data section header to describe the exact format.
+
+  8a     RAW DATA Version 1
+
+        ITEM    NAME    TYPE            CONTENTS
+
+        --------------------------------------------------------------
+   F    1       VER7    I*4             DATA version # (=1)
+        --------------------------------------------------------------
+   P    2       DAT1    I*4		raw data for first time regime
+                        		(ntc1+1)*(nsp1+1) channels
+			                If data format flag=0
+						arranged (ntc1+1,nsp1+1)
+						(nsp1 spectra each containing
+                                                ntc1 data points)
+			                If data format flag=1
+						arranged (nsp1+1,ntc1+1)
+						(for each time channel all
+						spectra stored together)
+        --------------------------------------------------------------
+        3       DAT2    I*4	       	raw data for 2nd time regime
+					(nt2+1,nsp2+1) channels
+      --------------------------------------------------------------
+                ...cont for additional time regimes..
+
+
+---Section Continued Overleaf---
+
+  8b     RAW DATA Version 2                                        ***C
+
+        ITEM    NAME    TYPE            CONTENTS
+
+        --------------------------------------------------------------
+   F    1       VER7    I*4             DATA version #  (=2)
+        --------------------------------------------------------------
+        2             Data Section Header Block
+                DHDR(1) I*4             Compression Type
+                                           0 no compression
+                                           1 byte relative
+                DHDR(2) I*4             Reserved
+                DHDR(3) I*4             Offset to Spectrum Descriptor Array
+                DHDR(4) I*4             Equivalent version 1 filesize (blocks)
+                DHDR(5) R*4             Compression Ratio for data section
+                DHDR(6) R*4             Compression Ratio for whole file
+                DHDR(7-32)              Unused
+      --------------------------------------------------------------
+        3             Spectrum Descriptor Array (spect=0..nspec)
+                DDES(2*spect+1) I*4     Number of words in compressed spectrum
+                DDES(2*spect+2) I*4     Offset to compressed spectrum
+                  .
+                  .   nspec = total of all spectra in all time regimes
+                  .                 in all periods
+      --------------------------------------------------------------
+        4       DATA(0)     		Compressed raw data for each
+                  .                      spectrum from each time regime
+                  .                      for each period
+                  .      		(**see below for details)
+		  .	                On expansion a spectrum contains
+.                      channel numbers from 0 to ntc
+		DATA(nspec)
+      ---------------------------------------------------------------
+
+   ***The data section now allows the use of a compressed format for the
+data. At the time of writing only one compressed format is used. This is
+byte relative. Each integer value in the data is stored as a relative offset
+to the previous data point. This offset is stored within a byte thus allowing
+offsets of + or - 127 between consecutive values. Should the offset
+be outside this range then -128 is inserted in the byte as a flag and the
+absolute value of the data point is stored in the next 4bytes. As the reduction
+of space used for a value is from a 32bit integer to one byte, the maximum
+compression ratio is 4.
+
+	STATUS SECTION
+
+The status section is used during the run to store temporary values. It is
+not copied to the raw data file.
+
+It generally is placed in the gap between the FORMAT and RUN sections. The
+table below names the parameters stored in the section.
+
+OFFSET is I*4 array element if load all of status section into array
+NAME refers to name in SYS$PUBLIC:CRPTSECT.DEF with the "ST_" prefix removed
+
+OFFSET  ITEM    NAME    TYPE            CONTENTS
+        --------------------------------------------------------------
+1       1       RUN     I*4             Run state (-3=waiting, -2=waiting,
+						-1=paused,0=setup,1=running)
+        --------------------------------------------------------------
+2	2	START	I*4(2)		Start time in binary
+        --------------------------------------------------------------
+4	3	PAUSED	I*4(2)		Paused time in binary
+        --------------------------------------------------------------
+6	4	PREV	I*4(2)		Run time up to last pause
+					in binary
+        --------------------------------------------------------------
+8	5	ICPCODE	I*4		Internal error code
+						1	-	OK
+						other odd	Warning
+						even		error
+        --------------------------------------------------------------
+9	6	SYSCODE	I*4		VAX status code
+        --------------------------------------------------------------
+10	7	SPECT	I*4		Monitor Spectrum Number
+		FIRST   R*4		Start time in µsecs
+		LAST	R*4		End   time in µsecs
+		TCB1	I*4		Start boundary
+		TCB2	I*4		End   boundary
+        --------------------------------------------------------------
+15	8  CAMACFLAGS	I*4		Status display flags for CAMAC
+        --------------------------------------------------------------
+16	9  HEARTBEAT	I*4		CAMAC heartbeat
+        --------------------------------------------------------------
+17	10 SEP_RUN_OK	I*4		SE run OK
+        --------------------------------------------------------------
+18	11 SIMULATE	I*4		Simulate flag
+						0 for normal running
+						1 for simulation mode
+						(no reads/writes to DAE)
+        --------------------------------------------------------------
+19	12 NOMSG	I*4		No message flag
+        --------------------------------------------------------------
+20	13 HOLD		I*4		Hold flag (do not return till
+					end of run)
+        --------------------------------------------------------------
+21	14 ENDWANTED	I*4		End wanted?
+        --------------------------------------------------------------
+26	15 GOODFRM	I*4(2)		Good frame up to last pause
+	   RAWFRM				Raw  frame
+
+---Section Continued Overleaf---
+
+        --------------------------------------------------------------
+28	16 		I*4()		Maximum values allowed for CRPT
+					MAX_CRPT
+					MAX_DET
+					MAX_NUT
+					MAX_SPEC
+					MAX_CHAN
+					MAX_MON
+					MAX_VAX
+					MAX_DAE
+					MAX_SEP
+					MAX_TRG
+					MAX_UDAT
+ 					MAX_PER
+					MAX_TOTSPEC
+       --------------------------------------------------------------
+46	17 CPERIOD	I*4		Current Period Number
+       --------------------------------------------------------------
+47	18 PERMAX	I*4		Number of channels in period
+       --------------------------------------------------------------
+48	19 TPOFFSET	I*4(16)		16 time channel offsets
+					(One for each crate)
+       --------------------------------------------------------------
+64	20 COUNTSUM	I*4		Monitor Sum of counts
+       --------------------------------------------------------------
+65	21 TABLES	I*4		Tables?
+       --------------------------------------------------------------
