@@ -119,4 +119,5 @@ intersphinx_mapping = {
     "mantid": ("https://docs.mantidproject.org/", None),
     "nexus": ("https://www.nexusformat.org/", None),
     "nexus_manual": ("https://manual.nexusformat.org", None),
+    "pvi": ("https://epics-containers.github.io/pvi/main/", None),
 }
