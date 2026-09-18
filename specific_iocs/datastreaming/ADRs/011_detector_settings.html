@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11 - handling low-level detector settings &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Data streaming: File writing" href="../Datastreaming---File-writing.html" />
+    <link rel="prev" title="10 - File writer implementation" href="010_filewriter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../ADRs.html">Data streaming: ADRs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="000_kafka.html">0 - Kafka</a></li>
+<li class="toctree-l4"><a class="reference internal" href="001_histograms.html">1 - Histograms and event mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="002_spectra_mapping.html">2 - Wiring and Spectra mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="003_linux.html">3 - Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="004_vetos_runcontrol.html">4 - Vetos and Run control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="005_os_deployment.html">5 - Base OS and deployment strategy for data streaming technology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="006_event_aggregation.html">6 - Event aggregator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="007_periods.html">7 - Periods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="008_isis_raw_files.html">8 - Datastreaming filewriter will not write <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="009_frame_sync_delay.html">9 - Frame sync delay handling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="010_filewriter.html">10 - File writer implementation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">11 - handling low-level detector settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming---File-writing.html">Data streaming: File writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming---Sample-Environment.html">Data streaming: Sample environment forwarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming--neutron-events-histograms.html">Data streaming: Neutron events and histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-How-To.html">Data streaming: how-to guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-Topics.html">Data streaming: topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-hardware-architecture.html">Data streaming: hardware architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-run-starts-stops.html">Data streaming: run starts/stops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-vetos.html">Data streaming - Vetoes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming_hardware_requirements.html">Data streaming server hardware requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming_udp_packet_formats.html">Datastreaming: UDP packet formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Datastreaming.html">Data Streaming</a></li>
+          <li class="breadcrumb-item"><a href="../ADRs.html">Data streaming: ADRs</a></li>
+      <li class="breadcrumb-item active">11 - handling low-level detector settings</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/datastreaming/ADRs/011_detector_settings.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="handling-low-level-detector-settings">
+<h1>11 - handling low-level detector settings<a class="headerlink" href="#handling-low-level-detector-settings" title="Link to this heading"></a></h1>
+<section id="status">
+<h2>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Accepted</p></li>
+</ul>
+</section>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code> primarily talks to the streaming control board (SCB). All user-facing operations are routed through this board, for example:</p>
+<ul class="simple">
+<li><p>Beginning and ending runs</p></li>
+<li><p>Configuring hardware vetoes</p></li>
+<li><p>Configuring time-sync source</p></li>
+</ul>
+<p>We want all <strong>user-facing</strong> workflows to remain possible purely via the streaming control board. For example, we do <strong>not</strong> want to end up in a situation where we need to tell each individual detector to begin a run. The streaming control board should remain the common control interface to all streaming instruments.</p>
+<p>However, for ‘diagnostic’ workflows, Detector Systems Group (DSG) would also like to be able to read and write some parameters on individual detector boards through IBEX. This may include workflows like:</p>
+<ul class="simple">
+<li><p>Configuring detector-specific parameters, for example discriminator thresholds or maximum event-rates before triggering a local ‘overcount’ veto.</p></li>
+<li><p>Verifying that a detector’s configuration is as expected after a hardware reboot or a swap.</p></li>
+<li><p>Monitoring detector-specific diagnostic parameters, for example temperatures or local event rates.</p></li>
+</ul>
+<p>The set of ‘individual’ detector boards is likely to be large, varied, and different on different instruments. For example, HRPD-X will have ~80 detector modules; SANDALS-2 will use an entirely different type of detector modules. For this reason, it is not sustainable for IBEX to individually cater for the quirks of every detector board on every instrument.</p>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Link to this heading"></a></h2>
+<section id="detector-board-self-description">
+<h3>Detector board self-description<a class="headerlink" href="#detector-board-self-description" title="Link to this heading"></a></h3>
+<p>Individual detector boards which want to participate in this scheme will:</p>
+<ul class="simple">
+<li><p>Publish a UDP comms interface using the same request/response mechanism as the SCB</p></li>
+<li><p>In a register which is common across all detector boards, publish an identifier which uniquely identifies a specific memory map.</p></li>
+<li><p>This memory map will specify a mapping of <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">&lt;-&gt;</span> <span class="pre">register</span></code> for all parameters this board can expose to IBEX.</p></li>
+</ul>
+</section>
+<section id="new-process">
+<h3>New process<a class="headerlink" href="#new-process" title="Link to this heading"></a></h3>
+<p>We will add a separate process to read and write diagnostics from individual boards. The code will be in the same repository as
+<code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code> to allow re-use of shared infrastructure (for example, UDP comms logic), but will be a separate runtime
+process.</p>
+<p>This process is less critical than <code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code>, in the sense that an instrument should be able to <em>run</em> and perform all
+routine DAE operations without this process available, albeit with reduced diagnostic visibility.</p>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h3>
+<p>The new process would be configured using a <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> in a similar style to the existing <code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code> config file.
+An example of a configuration file is:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Global flag for whether to allow writing</span>
+<span class="n">allow_write</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+
+<span class="c1"># 'Parameter groups' define shared sets of parameters which may exist on</span>
+<span class="c1"># multiple boards, to help reduce repetition.</span>
+<span class="k">[diagnostic_parameter_groups.temperature]</span>
+<span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">reg_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"temp1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pv_name"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"TEMP1"</span><span class="p">,</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">reg_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"temp2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pv_name"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"TEMP2"</span><span class="p">,</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="k">[diagnostic_parameter_groups.event_rate]</span>
+<span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">reg_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"event_rate"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pv_name"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"EVENTRATE"</span><span class="p">,</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1"># Each board defines it's key parameters (ip, PV name).</span>
+<span class="c1"># It then defines any parameters and parameter_groups which it uses; these are merged</span>
+<span class="c1"># to form the list of parameters read by this board.</span>
+<span class="k">[diagnostic_modules.mod1]</span>
+<span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.1.21"</span>
+<span class="n">pv_suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"MOD1"</span>
+<span class="n">parameter_groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"temperature"</span><span class="p">,</span><span class="w"> </span><span class="s2">"event_rate"</span><span class="p">]</span>
+<span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">reg_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"super_special_parameter_for_mod1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pv_name"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"SUPER_SPECIAL"</span><span class="p">,</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">init_value</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12345</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="k">[diagnostic_modules.mod2]</span>
+<span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"192.168.1.22"</span>
+<span class="n">pv_suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"MOD2"</span>
+<span class="n">parameter_groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"temperature"</span><span class="p">,</span><span class="w"> </span><span class="s2">"event_rate"</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">write=</span></code> parameter is omitted, it will default to what is specified in the memory-map.</p>
+</section>
+<section id="runtime">
+<h3>Runtime<a class="headerlink" href="#runtime" title="Link to this heading"></a></h3>
+<p>When the new process starts, it will:</p>
+<ul class="simple">
+<li><p>Update it’s local cache of memory maps (e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>), with a timeout. If the pull fails or times out, the most recent set of memory maps will continue to be used, with a warning.</p></li>
+<li><p>Read register <code class="docutils literal notranslate"><span class="pre">0</span></code> of each configured diagnostic module to retrieve a memory-map identifier</p></li>
+<li><p>Use the retrieved mappings to map each configured register (in the <code class="docutils literal notranslate"><span class="pre">parameters</span></code> and <code class="docutils literal notranslate"><span class="pre">parameter_groups</span></code> sections of the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>) to a numeric address</p></li>
+<li><p>Attempt to poll each diagnostic register in turn, looping for the lifetime of the program.</p></li>
+<li><p>The updated numbers would be served in PVs of the form <code class="docutils literal notranslate"><span class="pre">IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL</span></code>. This allows them to be accessible to IBEX, monitored by Nagios, or consumed by DSG’s monitoring infrastructure.</p></li>
+</ul>
+<p>Every parameter would be exposed as an integer, with no parameter-specific logic.</p>
+</section>
+<section id="writing">
+<h3>Writing<a class="headerlink" href="#writing" title="Link to this heading"></a></h3>
+<p>The new process would also create standard setpoint PVs for each writeable parameter, in the form <code class="docutils literal notranslate"><span class="pre">IN:INST:DAE:DIAG:MOD1:SUPER_SPECIAL:REINITIALIZE</span></code>, which writes
+the value specified in the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> to the detector.</p>
+<p>Every parameter would be written as an integer, with no parameter-specific logic.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">allow_write</span></code> is set in the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>:</p>
+<ul class="simple">
+<li><p>Additionally create a <code class="docutils literal notranslate"><span class="pre">:SP</span></code> PV which writes an arbitrary value to the register.</p></li>
+<li><p>Display a clear warning in the streaming OPI and in nagios that the DAE is in a configuration/maintenance mode</p></li>
+</ul>
+<p>The set of PVs created could be self-described, for example using <a class="reference external" href="https://epics-containers.github.io/pvi/main/index.html" title="(in pvi main)"><span class="xref std std-doc">PVI</span></a>.</p>
+</section>
+</section>
+<section id="alternatives">
+<h2>Alternatives<a class="headerlink" href="#alternatives" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In the first instance, we could avoid the architectural complexity of a central memory-map store and self-describing boards by requiring a <code class="docutils literal notranslate"><span class="pre">reg_address</span></code> in the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code>.</p>
+<ul>
+<li><p>Mapping via <code class="docutils literal notranslate"><span class="pre">reg_id</span></code> and self-description could still be added later if desired</p></li>
+</ul>
+</li>
+<li><p>We could embed this within the <code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code> process at runtime, for example as a separate thread.</p>
+<ul>
+<li><p>This would increase the risk that a failure in ‘diagnostic’ functionality could affect the core ‘control’ functionality.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="risks">
+<h2>Risks<a class="headerlink" href="#risks" title="Link to this heading"></a></h2>
+<p>Providing a route through to individual detectors from IBEX may encourage architectural shortcuts to be taken later. For example, a parameter that should conceptually be set via the SCB may get set on individual detectors instead of adding the relevant functionality to the SCB. Over time, these shortcuts may accumulate and increase system maintenance burden to an unsustainable level.</p>
+<p>If instruments begin accumulating scripts or workflows which involve ‘fiddling’ with detector parameters directly, those instruments will become much harder to migrate to different detectors in future. It will reduce the commonality between instruments, which will increase system maintenance burden.</p>
+</section>
+<section id="consequences">
+<h2>Consequences<a class="headerlink" href="#consequences" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>It is possible to read and write a specified set of registers from individual detector modules from EPICS PVs. This set is statically configurable per-instrument.</p></li>
+<li><p>We increase the risk of architectural ‘shortcuts’ being taken later which, if taken, would adversely impact maintainability.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code> repository becomes more complicated, as it now hosts the source code for two independent processes, which happen to share some functionality and architectural approaches.</p></li>
+<li><p>Diagnostic functionality is isolated from core DAE control functionality through process-level separation, reducing the likelihood that detector diagnostic failures will impact routine instrument operations.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="010_filewriter.html" class="btn btn-neutral float-left" title="10 - File writer implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Datastreaming---File-writing.html" class="btn btn-neutral float-right" title="Data streaming: File writing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Sep 18, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
