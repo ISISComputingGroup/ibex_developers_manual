@@ -18,6 +18,7 @@ This training unit presents a series of exercises which take you through the cre
 ```
 $(IFIOC_GALIL_01) dbLoadRecords("$(JAWS)/db/jaws.db","P=$(MYPVPREFIX)MOT:,JAWS=JAWS1:,mXN=MTR0101,mXS=MTR0102,mXW=MTR0104,mXE=MTR0103")
 $(IFIOC_GALIL_01) dbLoadRecords("$(JAWS)/db/jaws.db","P=$(MYPVPREFIX)MOT:,JAWS=JAWS2:,mXN=MTR0105,mXS=MTR0106,mXW=MTR0108,mXE=MTR0107")
+
 ```
 
 3. In the same folder create an `axes.cmd` with the following, these aliases are useful later.
@@ -28,6 +29,7 @@ $(IFIOC_GALIL_03) dbLoadRecords("$(AXIS)/db/axis.db","P=$(MYPVPREFIX)MOT:,AXIS=S
 $(IFIOC_GALIL_03) dbLoadRecords("$(AXIS)/db/axis.db","P=$(MYPVPREFIX)MOT:,AXIS=STACK:PHI,mAXIS=MTR0306")
 $(IFIOC_GALIL_03) dbLoadRecords("$(AXIS)/db/axis.db","P=$(MYPVPREFIX)MOT:,AXIS=STACK:PSI,mAXIS=MTR0308")
 $(IFIOC_GALIL_02) dbLoadRecords("$(AXIS)/db/axis.db","P=$(MYPVPREFIX)MOT:,AXIS=MONITOR,mAXIS=MTR0208")
+
 ```
 
 4. Open up the IBEX GUI.
