@@ -527,6 +527,7 @@ Mihai
 minidump
 mins
 Mirion
+misconfigurations
 misconfigured
 mitigations
 mK
@@ -603,6 +604,7 @@ npcap
 NPort
 npp
 nt
+NTP
 nxs
 oercone
 Oerlikon
@@ -789,6 +791,7 @@ scsi
 sdk
 searchable
 seci
+selog
 sendSlackMessage
 Sensirion
 setIOCName
@@ -900,6 +903,7 @@ TwinCAT
 txt
 ua
 uA
+uAh
 uamps
 UC
 UDP
