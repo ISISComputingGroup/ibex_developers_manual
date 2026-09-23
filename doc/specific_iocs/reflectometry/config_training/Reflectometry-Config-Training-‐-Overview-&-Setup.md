@@ -12,7 +12,7 @@ This training unit presents a series of exercises which take you through the cre
 
 ## Setup Instrument Configuration & Dev Environment:
 
-1. Navigate to `...\Apps\EPICS\support\motorExtensions\master\settings\<computer name>\galil`
+1. Navigate to `...\Apps\EPICS\support\motorExtensions\master\settings\<computer name>\galil`. If the folder doesn't exist already, please create it.
 2. Create a `jaws.cmd` with the following contents, so that the appropriate jaws are available later.
 
 ```
