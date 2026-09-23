@@ -19,8 +19,8 @@ These parameters function very similarly to [Motion Set Points](/specific_iocs/m
 ## Exercise 5
 
 ### 1. Add an in beam parameter to the supermirror
-Adding in this kind of parameter is very similar to other parameters, `add_parameter(InBeamParameter("comp_in", some_compon, description=""),modes=[mode], mode_inits=[(mode, value)])`. `InBeamParameter` in in `ReflectometryServer.parameters`. Whilst it is typically best practice to only include this in appropriate modalities, for now keep this in `all_modes`. To initialise the value of this parameter for specific modes use the `mode_inits` list, at the moment set this to `0` for `nr`, and `1` for `pnr`.
-Add the information for the parked position to the existing drivers using the parameter `out_of_beam_positions` setting it to a list containing the appropriate position. In the case of the supermirror the height should be `-20.0` and the angle set to `0.0`
+Adding in this kind of parameter is very similar to other parameters, `add_parameter(InBeamParameter("comp_in", some_compon, description=""),modes=[mode], mode_inits=[(mode, value)])`. `InBeamParameter` is in `ReflectometryServer.parameters`. Whilst it is typically best practice to only include this in appropriate modalities, for now keep this in `all_modes`. To initialise the value of this parameter for specific modes use the `mode_inits` list, at the moment set this to `0` for `nr`, and `1` for `pnr`.
+Add the information for the parked position to the existing drivers using the named `out_of_beam_positions` parameter, which is part of the `IOCDriver` parameters, setting it to a list containing the appropriate position. In the case of the supermirror the height should be `-20.0` and the angle set to `0.0`. Note that whilst floats can be used these are of type `OutOfBeamPosition(<float>)`.
 To make all this work don't forget to import `OutOfBeamPosition` from `ReflectometryServer.out_of_beam`.
 
 ### 2. And an in beam parameter to the sample component
