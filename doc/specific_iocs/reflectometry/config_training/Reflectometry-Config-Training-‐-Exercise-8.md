@@ -25,7 +25,7 @@ In terms of the configuration, the bench takes a `BenchSetup` object instead of 
 We shall consider here a post sample bench, which replaces the tracking detector component usually. However, as this is a simulated beamline we can use the appropriate motors set up initially. however, as everything else stays valid, just put the detector part of `config.py` into a block comment.
 
 ### 2. Add the bench constants
-Add in `BENCH_PIVOT_Z` and set it to `SAMPLE_Z`, as that is the ideal pivot point. Also create `BENCH_FRONT_Z` which is `10.0` from `BENCH_PIVOT_Z`, `BENCH_PIVOT_TO_FRONT` and set it to `10.0`, `BENCH_PIVOT_TO_REAR` and set it to `20.0`, and `BENCH_PIVOT_TO_BEAM` and set it to `5.0`.
+Add in `BENCH_PIVOT_Z` and set it to `SAMPLE_Z`, as that is the ideal pivot point. Also create `BENCH_FRONT_Z` and set it to `BENCH_PIVOT_Z + 10.0`, `BENCH_PIVOT_TO_FRONT` and set it to `10.0`, `BENCH_PIVOT_TO_REAR` and set it to `20.0`, and `BENCH_PIVOT_TO_BEAM` and set it to `5.0`.
 We also need to add in the concept of both the `NATURAL_ANGLE` we've been using throughout and the `ANGLE_OF_MOVEMENT`. Rename `NATURAL_ANGLE` to `ANGLE_OF_MOVEMENT` throughout and add in a new `NATURAL_ANGLE` of `0.0`. Update the `ANGLE_OF_MOVEMENT` to be the `NATURAL_ANGLE` + `90.0`.
 
 ### 3. Add the bench component
