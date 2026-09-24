@@ -1,0 +1,15 @@
+# SMC100
+
+Newport SMC100 Single-Axis Motor controller.  Used with the [HTS magnet system](../magnets/HTS-Magnet), along with the Smartmonitor and two Kepco PSUs in master/slave configuration.
+
+It has a peculiar startup and homing behaviour - after powering up it must be homed and once homed it cannot be homed again.  Unless...
+
+... If the motor refuses to move despite not returning an error code, and an orange/red LED is shown on the front panel, then it simply needs to be re-homed.  This is explained on the diagram and table on the cover of the controller.
+
+If running asyn trace, when it is working you may have nothing printed, so I guess It doesn't look to regularly poll. but all a bit confusion. If you want to run asyn trace, note that the port is called `serial1` rather than `L0`
+
+### Connection
+
+DLS system: connected to laptop via a gender changer. It does not seem to need a null modem.
+
+If using correct-gender cable (female cable), then the device *does* need a null modem.

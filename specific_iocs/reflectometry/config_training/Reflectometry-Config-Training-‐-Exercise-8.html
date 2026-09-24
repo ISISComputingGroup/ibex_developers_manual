@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 8 - The Bench &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Reflectometry Design Documents" href="../Design-Docs.html" />
+    <link rel="prev" title="Exercise 7 - Engineering Corrections" href="Reflectometry-Config-Training-%E2%80%90-Exercise-7.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Config-Training.html">Reflectometry Config Training</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Overview-%26-Setup.html">Reflectometry Config Training: Overview &amp; Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-1.html">Exercise 1 - Parameters, Drivers, Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-2.html">Exercise 2 - Beamline Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-3.html">Exercise 3 - Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-4.html">Exercise 4 - Theta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-5.html">Exercise 5 - Parking Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-6.html">Exercise 6 - Optional Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-7.html">Exercise 7 - Engineering Corrections</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Exercise 8 - The Bench</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+          <li class="breadcrumb-item"><a href="../Config-Training.html">Reflectometry Config Training</a></li>
+      <li class="breadcrumb-item active">Exercise 8 - The Bench</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/config_training/Reflectometry-Config-Training-‐-Exercise-8.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-8-the-bench">
+<h1>Exercise 8 - The Bench<a class="headerlink" href="#exercise-8-the-bench" title="Link to this heading"></a></h1>
+<section id="the-bench">
+<h2>The Bench<a class="headerlink" href="#the-bench" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../reflectometry-bench-configuration.html"><span class="doc std std-doc">More detail on the Bench Configuration available here</span></a>.</p>
+<p>The bench is a large motion component which moves on an arc around a given pivot point (i.e. the last point where the beam may bounce before the bench). The reason for this is that we want to keep the detector at a constant distance from the sample for all experiments to preserve e.g. Time of Flight regardless of Theta. In case you are wondering how this is handled on beamlines that use a detector driving on a linear height stage, the answer is they do not. However, those instruments (i.e. CRISP and SURF) have an optical lever short enough that they can ignore this factor without sacrificing too much quality. Other devices (such as slits and detectors) can be mounted statically on top of it while the bench handles all the beam tracking. Benches are used for the POLREF secondary beam path (everything after the sample) and for the OFFSPEC primary &amp; secondary beam path.</p>
+<p>This component is special compared to the rest of the Reflectometry server as it provides a much more dramatic transformation between motor- and control axes. The control axes provided by the bench component and settable as parameters are</p>
+<ul class="simple">
+<li><p>Height</p></li>
+<li><p>Angle - pivoting around the last point of reflection</p></li>
+<li><p>Seesaw - pivoting around the centre of rotation of the bench itself - used for alignment only</p></li>
+</ul>
+<p>The physical motor axes are:</p>
+<ul class="simple">
+<li><p>Front Height Jack</p></li>
+<li><p>Back Height Jack</p></li>
+<li><p>A slide towards/ away from the pivot point (used to maintain a static distance)</p></li>
+</ul>
+<p>The transformation between these two sets of axes happens in the BenchComponent, using maths provided to us by the POLREF scientists.</p>
+<p>In terms of the configuration, the bench takes a <code class="docutils literal notranslate"><span class="pre">BenchSetup</span></code> object instead of the usual <code class="docutils literal notranslate"><span class="pre">PositionAndAngle</span></code>, which defines the specific geometry of the bench. It is worth noting that all the benches (i.e. Detector bench on POLREF and the Front- and Detector benches on OFFSPEC) are identical regarding their dimensions.</p>
+</section>
+<section id="exercise-8">
+<h2>Exercise 8<a class="headerlink" href="#exercise-8" title="Link to this heading"></a></h2>
+<section id="comment-out-the-existing-tracking-detectors">
+<h3>1. Comment out the existing tracking detectors<a class="headerlink" href="#comment-out-the-existing-tracking-detectors" title="Link to this heading"></a></h3>
+<p>We shall consider here a post sample bench, which replaces the tracking detector component usually. However, as this is a simulated beamline we can use the appropriate motors set up initially. however, as everything else stays valid, just put the detector part of <code class="docutils literal notranslate"><span class="pre">config.py</span></code> into a block comment.</p>
+</section>
+<section id="add-the-bench-constants">
+<h3>2. Add the bench constants<a class="headerlink" href="#add-the-bench-constants" title="Link to this heading"></a></h3>
+<p>Add in <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_Z</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">SAMPLE_Z</span></code>, as that is the ideal pivot point. Also create <code class="docutils literal notranslate"><span class="pre">BENCH_FRONT_Z</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_Z</span> <span class="pre">+</span> <span class="pre">10.0</span></code>, <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_TO_FRONT</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">10.0</span></code>, <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_TO_REAR</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">20.0</span></code>, and <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_TO_BEAM</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">5.0</span></code>.
+We also need to add in the concept of both the <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code> we’ve been using throughout and the <code class="docutils literal notranslate"><span class="pre">ANGLE_OF_MOVEMENT</span></code>. Rename <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code> to <code class="docutils literal notranslate"><span class="pre">ANGLE_OF_MOVEMENT</span></code> throughout and add in a new <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code> of <code class="docutils literal notranslate"><span class="pre">0.0</span></code>. Update the <code class="docutils literal notranslate"><span class="pre">ANGLE_OF_MOVEMENT</span></code> to be the <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code> + <code class="docutils literal notranslate"><span class="pre">90.0</span></code>.</p>
+</section>
+<section id="add-the-bench-component">
+<h3>3. Add the bench component<a class="headerlink" href="#add-the-bench-component" title="Link to this heading"></a></h3>
+<p>Use the bench component helper method, and the associated setup to create the bench as per: <code class="docutils literal notranslate"><span class="pre">bench</span> <span class="pre">=</span> <span class="pre">add_component(BenchComponent(&quot;bench&quot;,</span> <span class="pre">BenchSetup(</span> <span class="pre">...</span> <span class="pre">)))</span></code>.
+Both <code class="docutils literal notranslate"><span class="pre">BenchComponent</span></code> and <code class="docutils literal notranslate"><span class="pre">BenchSetup</span></code> are in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.components</span></code>.
+Give the setup the following arguments: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_Z</span></code>, <code class="docutils literal notranslate"><span class="pre">ANGLE_OF_MOVEMENT</span></code>, <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_TO_FRONT</span></code>, <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_TO_REAR</span></code>, <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code>, <code class="docutils literal notranslate"><span class="pre">BENCH_PIVOT_TO_BEAM</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, and <code class="docutils literal notranslate"><span class="pre">10.0</span></code>.</p>
+</section>
+<section id="add-parameters-and-drivers-for-the-bench">
+<h3>4. Add parameters and drivers for the bench<a class="headerlink" href="#add-parameters-and-drivers-for-the-bench" title="Link to this heading"></a></h3>
+<p>We need to add the parameters for the Change Axes <code class="docutils literal notranslate"><span class="pre">POSITION</span></code>, <code class="docutils literal notranslate"><span class="pre">ANGLE</span></code> and <code class="docutils literal notranslate"><span class="pre">SEESAW</span></code>, as well as drivers for Change Axes <code class="docutils literal notranslate"><span class="pre">JACK_FRONT</span></code>, <code class="docutils literal notranslate"><span class="pre">JACK_REAR</span></code> and <code class="docutils literal notranslate"><span class="pre">SLIDE</span></code> which are associated with <code class="docutils literal notranslate"><span class="pre">MOT:MTR0203</span></code>, <code class="docutils literal notranslate"><span class="pre">MOT:MTR0204</span></code>, <code class="docutils literal notranslate"><span class="pre">MOT:MTR0205</span></code> respectively.</p>
+</section>
+<section id="add-the-bench-to-theta">
+<h3>5. Add the bench to <code class="docutils literal notranslate"><span class="pre">theta</span></code><a class="headerlink" href="#add-the-bench-to-theta" title="Link to this heading"></a></h3>
+<p>This time you are using the <code class="docutils literal notranslate"><span class="pre">theta.add_angle_of</span></code> method, and asking it to use the bench which is a different method to the one used by the detector previously.</p>
+</section>
+</section>
+<section id="to-test">
+<h2>To Test<a class="headerlink" href="#to-test" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Set everything to <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p></li>
+<li><p>Restart the IOC to pick up the updated <code class="docutils literal notranslate"><span class="pre">config.py</span></code>.</p></li>
+<li><p>The collimation panel should now have swapped out the detector entries for the bench angle and offset. The bench seesaw parameter should have been added to the other parameters tab.</p></li>
+<li><p>Set the supermirror angle to <code class="docutils literal notranslate"><span class="pre">22.5</span></code>, and <code class="docutils literal notranslate"><span class="pre">theta</span></code> to <code class="docutils literal notranslate"><span class="pre">2.0</span></code>, use the move all button to set both values at the same time.</p></li>
+<li><p>After the move, everything in the reflectometry server should be reading <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, but the motors will be reading quite different values, as those are maintaining the transformed values to be <code class="docutils literal notranslate"><span class="pre">0.0</span></code>. The bench front should have gone to <code class="docutils literal notranslate"><span class="pre">29.785</span></code>, the back to <code class="docutils literal notranslate"><span class="pre">41.288</span></code>, and the slide to <code class="docutils literal notranslate"><span class="pre">0.578</span></code>.</p></li>
+</ol>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading"></a></h2>
+<details>
+<summary>Should you have trouble the following is what the code could look like</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.beamline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Beamline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.beamline_constant</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeamlineConstant</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.components</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BenchComponent</span><span class="p">,</span>
+    <span class="n">BenchSetup</span><span class="p">,</span>
+    <span class="n">Component</span><span class="p">,</span>
+    <span class="n">ReflectingComponent</span><span class="p">,</span>
+    <span class="n">ThetaComponent</span><span class="p">,</span>
+    <span class="n">TiltingComponent</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.config_helper</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">add_component</span><span class="p">,</span>
+    <span class="n">add_constant</span><span class="p">,</span>
+    <span class="n">add_driver</span><span class="p">,</span>
+    <span class="n">add_mode</span><span class="p">,</span>
+    <span class="n">add_parameter</span><span class="p">,</span>
+    <span class="n">add_slit_parameters</span><span class="p">,</span>
+    <span class="n">get_configured_beamline</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.engineering_corrections</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConstantCorrection</span><span class="p">,</span> <span class="n">UserFunctionCorrection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChangeAxis</span><span class="p">,</span> <span class="n">PositionAndAngle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.ioc_driver</span><span class="w"> </span><span class="kn">import</span> <span class="n">IocDriver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.out_of_beam</span><span class="w"> </span><span class="kn">import</span> <span class="n">OutOfBeamPosition</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">AxisParameter</span><span class="p">,</span> <span class="n">DirectParameter</span><span class="p">,</span> <span class="n">InBeamParameter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.pv_wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">MotorPVWrapper</span>
+
+<span class="c1"># Beamline Constants</span>
+<span class="n">NATURAL_ANGLE</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">ANGLE_OF_MOVEMENT</span> <span class="o">=</span> <span class="n">NATURAL_ANGLE</span> <span class="o">+</span> <span class="mf">90.0</span>
+<span class="n">S1_Z</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">SM_Z</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">S2_Z</span> <span class="o">=</span> <span class="n">SM_Z</span> <span class="o">+</span> <span class="mf">10.0</span>
+<span class="n">SAMPLE_Z</span> <span class="o">=</span> <span class="n">S2_Z</span> <span class="o">+</span> <span class="mf">10.0</span>
+<span class="n">DET_Z</span> <span class="o">=</span> <span class="n">SAMPLE_Z</span> <span class="o">+</span> <span class="mf">10.0</span>
+<span class="n">BENCH_PIVOT_Z</span> <span class="o">=</span> <span class="n">SAMPLE_Z</span>
+<span class="n">BENCH_FRONT_Z</span> <span class="o">=</span> <span class="n">BENCH_PIVOT_Z</span> <span class="o">+</span> <span class="mf">10.0</span>
+<span class="n">BENCH_PIVOT_TO_FRONT</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">BENCH_PIVOT_TO_REAR</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">BENCH_PIVOT_TO_BEAM</span> <span class="o">=</span> <span class="mf">5.0</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">correction_function</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="n">param</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">param</span> <span class="o">*</span> <span class="mf">0.1</span>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_beamline</span><span class="p">(</span><span class="n">macros</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Beamline</span><span class="p">:</span>
+    <span class="c1">#########################</span>
+    <span class="c1"># FIXED BEAMLINE VALUES #</span>
+    <span class="c1">#########################</span>
+
+    <span class="c1"># Constants</span>
+    <span class="n">add_constant</span><span class="p">(</span>
+        <span class="n">BeamlineConstant</span><span class="p">(</span>
+            <span class="s2">"ANGLE_OF_MOVEMENT"</span><span class="p">,</span>
+            <span class="n">ANGLE_OF_MOVEMENT</span><span class="p">,</span>
+            <span class="s2">"The difference between the beam and straight through"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"S1_Z"</span><span class="p">,</span> <span class="n">S1_Z</span><span class="p">,</span> <span class="s2">"The distance to slits 1"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"SM_Z"</span><span class="p">,</span> <span class="n">SM_Z</span><span class="p">,</span> <span class="s2">"The distance to the supermirror"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"S2_Z"</span><span class="p">,</span> <span class="n">S2_Z</span><span class="p">,</span> <span class="s2">"The distance to slits 2"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"DET_Z"</span><span class="p">,</span> <span class="n">DET_Z</span><span class="p">,</span> <span class="s2">"The distance to the detector"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"BENCH_PIVOT_Z"</span><span class="p">,</span> <span class="n">BENCH_PIVOT_Z</span><span class="p">,</span> <span class="s2">"The distance to the bench pivot point"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"BENCH_FRONT_Z"</span><span class="p">,</span> <span class="n">BENCH_FRONT_Z</span><span class="p">,</span> <span class="s2">"The distance to the front of the bench"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"BENCH_PIVOT_TO_FRONT"</span><span class="p">,</span> <span class="n">BENCH_PIVOT_TO_FRONT</span><span class="p">,</span> <span class="s2">"The distance from the bench pivot point to the front of the bench"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"BENCH_PIVOT_TO_REAR"</span><span class="p">,</span> <span class="n">BENCH_PIVOT_TO_REAR</span><span class="p">,</span> <span class="s2">"The distance from the bench pivot point to the rear of the bench"</span><span class="p">))</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"BENCH_PIVOT_TO_BEAM"</span><span class="p">,</span> <span class="n">BENCH_PIVOT_TO_BEAM</span><span class="p">,</span> <span class="s2">"The distance from the bench pivot point to the beam"</span><span class="p">))</span>
+
+    <span class="c1"># Modes</span>
+    <span class="n">nr</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span><span class="s2">"NR"</span><span class="p">)</span>
+    <span class="n">pnr</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span><span class="s2">"PNR"</span><span class="p">)</span>
+    <span class="n">all_modes</span> <span class="o">=</span> <span class="p">[</span><span class="n">nr</span><span class="p">,</span> <span class="n">pnr</span><span class="p">]</span>
+    
+    <span class="c1"># Direct Parameters</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">DirectParameter</span><span class="p">(</span>
+            <span class="s2">"MONITORPOS"</span><span class="p">,</span>
+            <span class="n">pv_wrapper</span><span class="o">=</span><span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0208"</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Vertical pos of beam monitor"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1">##############################</span>
+    <span class="c1"># BEAMLINE MODEL STARTS HERE #</span>
+    <span class="c1">##############################</span>
+
+    <span class="c1"># Slits 1</span>
+    <span class="n">add_slit_parameters</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">include_centres</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">s1_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">"s1"</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">S1_Z</span><span class="p">,</span> <span class="n">ANGLE_OF_MOVEMENT</span><span class="p">)))</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"S1OFFSET"</span><span class="p">,</span>
+            <span class="n">s1_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Vertical Position of Slit 1"</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">s1_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0301"</span><span class="p">)))</span>
+
+    <span class="c1"># Mirror</span>
+    <span class="n">mirror_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span>
+        <span class="n">ReflectingComponent</span><span class="p">(</span><span class="s2">"Mirror"</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SM_Z</span><span class="p">,</span> <span class="n">ANGLE_OF_MOVEMENT</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">SMANGLE</span> <span class="o">=</span> <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SMANGLE"</span><span class="p">,</span>
+            <span class="n">mirror_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Angle of the Supermirror"</span><span class="p">,</span>
+            <span class="n">autosave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">pnr</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SMOFFSET"</span><span class="p">,</span>
+            <span class="n">mirror_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Vertical Position of the Supermirror"</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">modes</span><span class="o">=</span><span class="p">[</span><span class="n">pnr</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">InBeamParameter</span><span class="p">(</span><span class="s2">"SMIN"</span><span class="p">,</span> <span class="n">mirror_comp</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Toggle Supermirror In Beam"</span><span class="p">),</span>
+        <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">,</span>
+        <span class="n">mode_inits</span><span class="o">=</span><span class="p">[(</span><span class="n">nr</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">pnr</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+    <span class="p">)</span>
+    <span class="n">add_driver</span><span class="p">(</span>
+        <span class="n">IocDriver</span><span class="p">(</span>
+            <span class="n">mirror_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span>
+            <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0207"</span><span class="p">),</span>
+            <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)],</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_driver</span><span class="p">(</span>
+        <span class="n">IocDriver</span><span class="p">(</span>
+            <span class="n">mirror_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+            <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0206"</span><span class="p">),</span>
+            <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="o">-</span><span class="mf">20.0</span><span class="p">)],</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Slits 2</span>
+    <span class="n">add_slit_parameters</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">include_centres</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">s2_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">"s2"</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">S2_Z</span><span class="p">,</span> <span class="n">ANGLE_OF_MOVEMENT</span><span class="p">)))</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"S2OFFSET"</span><span class="p">,</span>
+            <span class="n">s2_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Vertical Position of Slit 2"</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">s2_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0302"</span><span class="p">)))</span>
+
+    <span class="c1"># SAMPLE</span>
+    <span class="n">sample_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span>
+        <span class="n">TiltingComponent</span><span class="p">(</span><span class="s2">"sample"</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SAMPLE_Z</span><span class="p">,</span> <span class="n">ANGLE_OF_MOVEMENT</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SAMPOFFSET"</span><span class="p">,</span>
+            <span class="n">sample_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Vertical Position of Sample"</span><span class="p">,</span>
+            <span class="n">characteristic_value</span><span class="o">=</span><span class="s2">"MOT:MTR0307"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SAMPPHI"</span><span class="p">,</span>
+            <span class="n">sample_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Phi Angle of Sample (Pitch)"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SAMPPSI"</span><span class="p">,</span>
+            <span class="n">sample_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">PSI</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Psi Angle of Sample (Roll)"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SAMPTRANS"</span><span class="p">,</span>
+            <span class="n">sample_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">TRANS</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Horizontal Position of Sample"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">InBeamParameter</span><span class="p">(</span>
+            <span class="s2">"SAMPIN"</span><span class="p">,</span> 
+            <span class="n">sample_comp</span><span class="p">,</span> 
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Toggle Sample In Beam"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_driver</span><span class="p">(</span>
+        <span class="n">IocDriver</span><span class="p">(</span><span class="n">sample_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0307"</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">sample_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0306"</span><span class="p">)))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">sample_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">PSI</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0308"</span><span class="p">)))</span>
+    <span class="n">add_driver</span><span class="p">(</span>
+        <span class="n">IocDriver</span><span class="p">(</span>
+            <span class="n">sample_comp</span><span class="p">,</span> 
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">TRANS</span><span class="p">,</span> 
+            <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0305"</span><span class="p">),</span>
+            <span class="n">out_of_beam_positions</span><span class="o">=</span><span class="p">[</span><span class="n">OutOfBeamPosition</span><span class="p">(</span><span class="mf">100.0</span><span class="p">)],</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># THETA</span>
+    <span class="n">theta_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span>
+        <span class="n">ThetaComponent</span><span class="p">(</span><span class="s2">"ThetaComp"</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">SAMPLE_Z</span><span class="p">,</span> <span class="n">ANGLE_OF_MOVEMENT</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"THETA"</span><span class="p">,</span>
+            <span class="n">theta_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Incident Angle at Sample"</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="w"> </span>
+<span class="w">    </span><span class="sd">""" </span>
+<span class="sd">    Comment out for Exercise 8 </span>
+<span class="sd">    # DETECTOR</span>
+<span class="sd">    constant_correction = ConstantCorrection(0.3)</span>
+<span class="sd">    function_correction = UserFunctionCorrection(correction_function, SMANGLE)</span>
+<span class="sd">    </span>
+<span class="sd">    det_comp = add_component(</span>
+<span class="sd">        TiltingComponent("Detector", PositionAndAngle(0.0, DET_Z, ANGLE_OF_MOVEMENT))</span>
+<span class="sd">    )</span>
+<span class="sd">    add_parameter(</span>
+<span class="sd">        AxisParameter(</span>
+<span class="sd">            "DETANGLE", det_comp, ChangeAxis.ANGLE, description="Angle of Detector", characteristic_value="MOT:MTR0201",</span>
+<span class="sd">        ),</span>
+<span class="sd">        modes=all_modes,</span>
+<span class="sd">    )</span>
+<span class="sd">    add_parameter(</span>
+<span class="sd">        AxisParameter("DETHEIGHT", det_comp, ChangeAxis.POSITION, description="Vertical Position of Detector", characteristic_value="MOT:MTR0202",),</span>
+<span class="sd">        modes=all_modes,</span>
+<span class="sd">    )</span>
+<span class="sd">    add_driver(</span>
+<span class="sd">        IocDriver(</span>
+<span class="sd">            det_comp, </span>
+<span class="sd">            ChangeAxis.ANGLE, </span>
+<span class="sd">            MotorPVWrapper("MOT:MTR0201"), </span>
+<span class="sd">            engineering_correction=constant_correction,</span>
+<span class="sd">        )</span>
+<span class="sd">    )</span>
+<span class="sd">    add_driver(</span>
+<span class="sd">        IocDriver(</span>
+<span class="sd">            det_comp, </span>
+<span class="sd">            ChangeAxis.POSITION, </span>
+<span class="sd">            MotorPVWrapper("MOT:MTR0202"),</span>
+<span class="sd">            engineering_correction=function_correction,</span>
+<span class="sd">        )</span>
+<span class="sd">    )</span>
+<span class="sd">    theta_comp.add_angle_to(det_comp)</span>
+<span class="sd">    """</span>
+
+    <span class="c1"># BENCH</span>
+    <span class="n">bench</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span>
+        <span class="n">BenchComponent</span><span class="p">(</span>
+            <span class="s2">"bench"</span><span class="p">,</span>
+            <span class="n">BenchSetup</span><span class="p">(</span>
+                <span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">BENCH_PIVOT_Z</span><span class="p">,</span>
+                <span class="n">ANGLE_OF_MOVEMENT</span><span class="p">,</span>
+                <span class="n">BENCH_PIVOT_TO_FRONT</span><span class="p">,</span>
+                <span class="n">BENCH_PIVOT_TO_REAR</span><span class="p">,</span>
+                <span class="n">NATURAL_ANGLE</span><span class="p">,</span>
+                <span class="n">BENCH_PIVOT_TO_BEAM</span><span class="p">,</span>
+                <span class="mf">0.0</span><span class="p">,</span>
+                <span class="mf">10.0</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">"B_ANGLE"</span><span class="p">,</span> <span class="n">bench</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">"B_OFFSET"</span><span class="p">,</span> <span class="n">bench</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">"B_SEESAW"</span><span class="p">,</span> <span class="n">bench</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">SEESAW</span><span class="p">),</span> <span class="n">modes</span><span class="o">=</span><span class="n">all_modes</span><span class="p">)</span>
+
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">bench</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">JACK_FRONT</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0203"</span><span class="p">)))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">bench</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">JACK_REAR</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0204"</span><span class="p">)))</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">bench</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">SLIDE</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0205"</span><span class="p">)))</span>
+
+    <span class="n">theta_comp</span><span class="o">.</span><span class="n">add_angle_of</span><span class="p">(</span><span class="n">bench</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">get_configured_beamline</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reflectometry-Config-Training-%E2%80%90-Exercise-7.html" class="btn btn-neutral float-left" title="Exercise 7 - Engineering Corrections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Design-Docs.html" class="btn btn-neutral float-right" title="Reflectometry Design Documents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Sep 24, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

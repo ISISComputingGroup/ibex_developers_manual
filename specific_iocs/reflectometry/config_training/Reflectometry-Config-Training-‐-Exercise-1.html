@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 1 - Parameters, Drivers, Components &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 2 - Beamline Model" href="Reflectometry-Config-Training-%E2%80%90-Exercise-2.html" />
+    <link rel="prev" title="Reflectometry Config Training: Overview &amp; Setup" href="Reflectometry-Config-Training-%E2%80%90-Overview-%26-Setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Beamlines.html">Beamline-specific information</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Config-Training.html">Reflectometry Config Training</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Overview-%26-Setup.html">Reflectometry Config Training: Overview &amp; Setup</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Exercise 1 - Parameters, Drivers, Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-2.html">Exercise 2 - Beamline Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-3.html">Exercise 3 - Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-4.html">Exercise 4 - Theta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-5.html">Exercise 5 - Parking Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-6.html">Exercise 6 - Optional Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-7.html">Exercise 7 - Engineering Corrections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Reflectometry-Config-Training-%E2%80%90-Exercise-8.html">Exercise 8 - The Bench</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Design-Docs.html">Reflectometry Design Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometers-Beam-Height-Calc.html">Beam height calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Alignment.html">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beam-Blocker.html">Beam Blocker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Object.html">Beamline object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Beamline-Parameters.html">Beamline Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Composite-Driving-Layer.html">Composite Driving Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Configuration.html">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Geometry-Components.html">Geometry Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Glossary.html">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Testing.html">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflectometry-Troubleshooting-and-FAQ.html">Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry-bench-configuration.html">Bench Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script.html">Blind script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reflectometry_blind_script_output.html">Blind script output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+          <li class="breadcrumb-item"><a href="../Config-Training.html">Reflectometry Config Training</a></li>
+      <li class="breadcrumb-item active">Exercise 1 - Parameters, Drivers, Components</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/reflectometry/config_training/Reflectometry-Config-Training-‐-Exercise-1.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-parameters-drivers-components">
+<h1>Exercise 1 - Parameters, Drivers, Components<a class="headerlink" href="#exercise-1-parameters-drivers-components" title="Link to this heading"></a></h1>
+<section id="introduction-to-reflectometry-and-specific-terminology">
+<h2>Introduction to Reflectometry and Specific Terminology<a class="headerlink" href="#introduction-to-reflectometry-and-specific-terminology" title="Link to this heading"></a></h2>
+<p><img alt="image" src="../../../_images/refl_beamline_setup.PNG" /></p>
+<p>Fundamentally, the Reflectometry Config defines a geometry model of the beamline, which we use to calculate relative positions for each axis in the model based on the current beam path. We think about this model in 3 layers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Drivers</span></code> are wrappers responsible for talking to the low-level motor axes which report their positions in coordinates <strong>relative to the Natural Beam</strong>, i.e. the straight beam as it enters the blockhouse (dotted blue line in the diagram above)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Parameters</span></code> are high level parameters <strong>relative to the current (bounced) beam</strong> (solid blue line above). These provide an abstraction so the users do not have to worry about specific offsets as all values they interact with are relative to the reflected beam. They also provide functionality which lets you enter a setpoint but not action it until you press a separate action (“move”) button, as opposed to setting a value as soon as you hit enter on an OPI text box as is the behaviour everywhere els. (This was an explicit requirement)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Components</span></code> are the middle layer geometry nodes. This layer is responsible for translating between the two different sets of coordinates mentioned above. Each component represents one node of interaction with the beam e.g. a Slit or the Sample Stack.</p></li>
+</ul>
+<p>Going forward, whenever any of these 3 terms are used, they will be referring to the definitions above.</p>
+<p>In the reflectometry config, we define a list of items for each of these 3 layers. <strong>The items in this list must appear in the order in which they appear along the physical beamline</strong> as changes in one component trigger changes downstream only. These lists are packaged into a single <code class="docutils literal notranslate"><span class="pre">Beamline</span></code> object, which coordinates everything at the top level. Here is a diagram representing at an abstract level what the beamline model may look like internally:</p>
+<p><img alt="image" src="../../../_images/Beamline1.png" /></p>
+<p>To Note:</p>
+<ul class="simple">
+<li><p>Parameters/Drivers have a many-to-one relationship to Components</p></li>
+<li><p>Parameters and Drivers do not <em>have</em> to be a one-to-one match, even though often this is the case (like a height offset parameter on the POLREF bench will equally displace front and back height jacks).</p></li>
+</ul>
+</section>
+<section id="the-config-py-file">
+<h2>The <code class="docutils literal notranslate"><span class="pre">config.py</span></code> file<a class="headerlink" href="#the-config-py-file" title="Link to this heading"></a></h2>
+<p>In the following exercise, we will add a single item to the reflectometry configuration, a Supermirror, complete with Parameters and Drivers.
+Before we start making changes, let’s review the content of the blank config in front of you:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.beamline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Beamline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.config_helper</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">add_mode</span><span class="p">,</span>
+    <span class="n">get_configured_beamline</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_beamline</span><span class="p">(</span><span class="n">macros</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Beamline</span><span class="p">:</span>
+    <span class="c1">#########################</span>
+    <span class="c1"># FIXED BEAMLINE VALUES #</span>
+    <span class="c1">#########################</span>
+
+    <span class="c1"># Modes</span>
+    <span class="n">_nr</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span><span class="s2">"NR"</span><span class="p">)</span>
+
+    <span class="c1">##############################</span>
+    <span class="c1"># BEAMLINE MODEL STARTS HERE #</span>
+    <span class="c1">##############################</span>
+
+    <span class="k">return</span> <span class="n">get_configured_beamline</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The various imports from <code class="docutils literal notranslate"><span class="pre">ReflectometryServer</span></code> are the items used below. Any classes or helper methods needed to construct the model of the beamline is within this namespace.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">get_beamline</span></code>: While the python config file gives you tremendous freedom to include arbitrary python code, this is the one method we expect to be here as the reflectometry server calls it on config load. It should return an object of type <code class="docutils literal notranslate"><span class="pre">Beamline</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">fixed</span> <span class="pre">beamline</span> <span class="pre">values</span></code> will contain variables and things which do not change. For example, the distances between components.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">beamline</span> <span class="pre">model</span></code> describes the actual beamline, in order, from the beam entry point to the detectors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_nr</span> <span class="pre">=</span> <span class="pre">add_mode(&quot;NR&quot;)</span></code>: Modes are “presets” used to define which devices are in use &amp; should automatically track depending on the type of experiment being run. At least one mode should be specified. This version has the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> at the front because at present the variable is not used, and PyRight requires the variable to be used, but it accepts one with an underscore at the front.</p></li>
+</ul>
+</section>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading"></a></h2>
+<p>The first thing to add to our configuration is the <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code> as per <a class="reference internal" href="../Reflectometry-Configuration.html"><span class="doc std std-doc">here</span></a>. This defines the angle of movement of the physical components relative to the natural beam which defines our coordinate system, i.e. the angle between the dotted blue line and the dotted grey lines above. Usually this is 90 + 1.5 for TS1, and 90 + 2.3 for TS2 instruments. However, in this training course for now we will assume that the natural beam is level to the floor for simplicity.
+The constants which need to be named according to the interactions above do need to be set somewhere. This could be as a set of constants in another file, or simply a block before the definition for <code class="docutils literal notranslate"><span class="pre">get_beamline</span></code>, which is what will be used here. For the training, please set <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code> to <code class="docutils literal notranslate"><span class="pre">90</span></code>.</p>
+<p>This is a fixed beamline parameter, so can be set as a constant value in the <code class="docutils literal notranslate"><span class="pre">FIXED</span> <span class="pre">BEAMLINE</span> <span class="pre">VALUES</span></code> section.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_beamline</span><span class="p">(</span><span class="n">macros</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Beamline</span><span class="p">:</span>
+    <span class="c1">#########################</span>
+    <span class="c1"># FIXED BEAMLINE VALUES #</span>
+    <span class="c1">#########################</span>
+
+    <span class="c1"># Constants</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"NATURAL_ANGLE"</span><span class="p">,</span> <span class="n">NATURAL_ANGLE</span><span class="p">,</span> <span class="s2">"The angle between the natural beamline and our coordinate system"</span><span class="p">))</span>
+
+    <span class="c1"># Modes</span>
+    <span class="n">_nr</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span><span class="s2">"NR"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">add_constant</span></code> is in the <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.config_helper</span></code> library, while <code class="docutils literal notranslate"><span class="pre">BeamlineConstant</span></code> needs to be imported from the <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.beamline_constant</span></code> library.</p>
+<p>The first item on our imagined reflectometer is going to be a supermirror. This supermirror will have a few things that need to be added.</p>
+<section id="add-a-constant-for-the-distance">
+<h3>1. Add a constant for the distance<a class="headerlink" href="#add-a-constant-for-the-distance" title="Link to this heading"></a></h3>
+<p>The supermirror will have a distance from the beam entry point, and this will be constant. Add it in a similar way to the previous constant, using <code class="docutils literal notranslate"><span class="pre">SM_Z</span></code> as a name, and a value of <code class="docutils literal notranslate"><span class="pre">20.0</span></code>.</p>
+</section>
+<section id="add-the-supermirror-component">
+<h3>2. Add the supermirror component<a class="headerlink" href="#add-the-supermirror-component" title="Link to this heading"></a></h3>
+<p>The supermirror is considered a component within the beam line model, see above for the definition of this.
+The generic code for adding a component is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">component</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s2">"comp_name"</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">Angle</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">add_component</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.config_helper</span></code>, <code class="docutils literal notranslate"><span class="pre">Component</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.components</span></code>, and <code class="docutils literal notranslate"><span class="pre">PositionAndAngle</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.geometry</span></code>.
+There are different subclasses of Components:
+- <code class="docutils literal notranslate"><span class="pre">Component</span></code> just tracks the beam path in height
+- <code class="docutils literal notranslate"><span class="pre">TiltingComponent</span></code> tracks the beam path in height and angle
+- <code class="docutils literal notranslate"><span class="pre">ReflectingComponent</span></code> tracks the in height and angle and can also change the path of the beam for components further downstream
+This will be a <code class="docutils literal notranslate"><span class="pre">ReflectingComponent</span></code>, as it can impact on the direction of the beam. It can be added using the <code class="docutils literal notranslate"><span class="pre">add_component</span></code> helper method shown above. This will need a <code class="docutils literal notranslate"><span class="pre">name</span></code> and a geometry setup, in this case a <code class="docutils literal notranslate"><span class="pre">PositionAndAngle</span></code> setup will be suitable, setting <code class="docutils literal notranslate"><span class="pre">Y</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">Z</span></code> to <code class="docutils literal notranslate"><span class="pre">SM_Z</span></code>, and <code class="docutils literal notranslate"><span class="pre">Angle</span></code> to <code class="docutils literal notranslate"><span class="pre">NATURAL_ANGLE</span></code>. Don’t forget to import this from <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.components</span></code></p>
+</section>
+<section id="add-parameters-for-the-supermirror">
+<h3>3. Add parameters for the supermirror<a class="headerlink" href="#add-parameters-for-the-supermirror" title="Link to this heading"></a></h3>
+<p>Our supermirror has two things which can be varied, its height, and its angle. Each of these will need a parameter to interact with them.
+The generic code for adding a parameter is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_parameter</span><span class="p">(</span><span class="n">AxisParameter</span><span class="p">(</span><span class="s2">"param_name"</span><span class="p">,</span> <span class="n">component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="p">[</span><span class="n">Axis</span> <span class="n">parameter</span><span class="p">],</span> <span class="s2">"description of parameter"</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">add_parameter</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.config_helper</span></code>, <code class="docutils literal notranslate"><span class="pre">AxisParameter</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.parameters</span></code>, and <code class="docutils literal notranslate"><span class="pre">ChangeAxis</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.geometry</span></code>.
+<code class="docutils literal notranslate"><span class="pre">ChangeAxis</span></code> is used to link a given <code class="docutils literal notranslate"><span class="pre">AxisParameter</span></code> to a given <code class="docutils literal notranslate"><span class="pre">IocDriver</span></code>. For more information on the different options for <code class="docutils literal notranslate"><span class="pre">AxisParameter</span></code>, see <a class="reference internal" href="../Reflectometry-Configuration.html"><span class="doc std std-doc">here</span></a>
+Here, the angle, to be called <code class="docutils literal notranslate"><span class="pre">SMANGLE</span></code>, will be of the type <code class="docutils literal notranslate"><span class="pre">ANGLE</span></code> and the height, to be called <code class="docutils literal notranslate"><span class="pre">SMOFFSET</span></code>, of type <code class="docutils literal notranslate"><span class="pre">POSITION</span></code>
+Note that you need to name parameters according to a certain standard in order to be able to view them readily in the reflectometry OPIs. That naming makes the use of a description, which will appear as a tooltip in the GUI which can be extremely useful.</p>
+</section>
+<section id="add-drivers-for-the-supermirror">
+<h3>4. Add drivers for the supermirror<a class="headerlink" href="#add-drivers-for-the-supermirror" title="Link to this heading"></a></h3>
+<p>Those items which can be varied here will need a driver as well, although that isn’t always the case for every parameter.
+The generic code for adding a driver is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="p">[</span><span class="n">Axis</span> <span class="n">parameter</span><span class="p">],</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTRXXXX"</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Don’t forget to add the imports. <code class="docutils literal notranslate"><span class="pre">add_driver</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.config_helper</span></code>, <code class="docutils literal notranslate"><span class="pre">IocDriver</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.ioc_driver</span></code>, and <code class="docutils literal notranslate"><span class="pre">MotorPVWrapper</span></code> is in <code class="docutils literal notranslate"><span class="pre">ReflectometryServer.pv_wrapper</span></code>
+<code class="docutils literal notranslate"><span class="pre">MTRXXXX</span></code> should be replaced with the appropriate motor axis. In this case, they should have been set up as <code class="docutils literal notranslate"><span class="pre">MTR0207</span></code> for the angle, and <code class="docutils literal notranslate"><span class="pre">MTR0206</span></code> for the height (which is still has an <code class="docutils literal notranslate"><span class="pre">Axis</span> <span class="pre">Parameter</span></code> of <code class="docutils literal notranslate"><span class="pre">POSITION</span></code>.</p>
+</section>
+</section>
+<section id="to-test">
+<h2>To Test<a class="headerlink" href="#to-test" title="Link to this heading"></a></h2>
+<p>Once you are done making changes, you can load the updated config by restarting the REFL_01 IOC.
+On the <code class="docutils literal notranslate"><span class="pre">Front</span> <span class="pre">Panel</span></code> tab, the <code class="docutils literal notranslate"><span class="pre">SM</span> <span class="pre">Angle</span></code> value should now be visible. Don’t worry about the rest of the disconnected items, they will be added in as you progress through the exercises.
+You should be able to see 2 parameters in the <code class="docutils literal notranslate"><span class="pre">Collimation</span> <span class="pre">Plane</span> <span class="pre">Parameters</span></code> tab, that, when set, will move the appropriate Galil axes. If you hover the parameter names the description should appear in the tool tip.
+You should also be able to see 2 constants in the <code class="docutils literal notranslate"><span class="pre">Constants</span></code> tab.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting:<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>The Reflectometry server gets stuck Initialising</strong> - Likely trying to monitor a PV that does not exist, check the parameters on your IocDrivers</p></li>
+<li><p><strong>The Reflectometry server reports an Error status!</strong> - There is an error somewhere in your config file: Check the log in <code class="docutils literal notranslate"><span class="pre">/Instrument/var/logs/ioc/REFL_01_&lt;current</span> <span class="pre">date&gt;.log</span></code> for stack traces</p></li>
+<li><p><strong>Parameter is not showing up!</strong> - Check you have defined the right ChangeAxes, if not they may show in “Other Parameters” instead.</p></li>
+<li><p><strong>Parameter is there but I can’t set it!</strong> - Check you can move the motors in question from the low motor table. If so, check the parameter you are setting and the IocDriver for the Galil axis have matching ChangeAxes</p></li>
+</ul>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading"></a></h2>
+<details>
+<summary>Should you have trouble the following is what the code could look like</summary>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.beamline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Beamline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.beamline_constant</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeamlineConstant</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.components</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ReflectingComponent</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.config_helper</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">add_component</span><span class="p">,</span>
+    <span class="n">add_constant</span><span class="p">,</span>
+    <span class="n">add_driver</span><span class="p">,</span>
+    <span class="n">add_mode</span><span class="p">,</span>
+    <span class="n">add_parameter</span><span class="p">,</span>
+    <span class="n">get_configured_beamline</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChangeAxis</span><span class="p">,</span> <span class="n">PositionAndAngle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.ioc_driver</span><span class="w"> </span><span class="kn">import</span> <span class="n">IocDriver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">AxisParameter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ReflectometryServer.pv_wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">MotorPVWrapper</span>
+
+<span class="c1"># Beamline Constants</span>
+<span class="n">NATURAL_ANGLE</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">SM_Z</span> <span class="o">=</span> <span class="mf">20.0</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_beamline</span><span class="p">(</span><span class="n">macros</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Beamline</span><span class="p">:</span>
+    <span class="c1">#########################</span>
+    <span class="c1"># FIXED BEAMLINE VALUES #</span>
+    <span class="c1">#########################</span>
+
+    <span class="c1"># Constants</span>
+    <span class="n">add_constant</span><span class="p">(</span>
+        <span class="n">BeamlineConstant</span><span class="p">(</span>
+            <span class="s2">"NATURAL_ANGLE"</span><span class="p">,</span>
+            <span class="n">NATURAL_ANGLE</span><span class="p">,</span>
+            <span class="s2">"The difference between the beam and straight through"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_constant</span><span class="p">(</span><span class="n">BeamlineConstant</span><span class="p">(</span><span class="s2">"SM_Z"</span><span class="p">,</span> <span class="n">SM_Z</span><span class="p">,</span> <span class="s2">"The distance to the supermirror"</span><span class="p">))</span>
+
+    <span class="c1"># Modes</span>
+    <span class="n">_nr</span> <span class="o">=</span> <span class="n">add_mode</span><span class="p">(</span>
+        <span class="s2">"NR"</span>
+    <span class="p">)</span>  <span class="c1"># Using underscre to pass pyright as mode has to be created but is not used</span>
+
+    <span class="c1">##############################</span>
+    <span class="c1"># BEAMLINE MODEL STARTS HERE #</span>
+    <span class="c1">##############################</span>
+
+    <span class="c1"># Mirror</span>
+    <span class="n">mirror_comp</span> <span class="o">=</span> <span class="n">add_component</span><span class="p">(</span>
+        <span class="n">ReflectingComponent</span><span class="p">(</span><span class="s2">"Mirror"</span><span class="p">,</span> <span class="n">PositionAndAngle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SM_Z</span><span class="p">,</span> <span class="n">NATURAL_ANGLE</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SMANGLE"</span><span class="p">,</span>
+            <span class="n">mirror_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Angle of the Supermirror"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_parameter</span><span class="p">(</span>
+        <span class="n">AxisParameter</span><span class="p">(</span>
+            <span class="s2">"SMOFFSET"</span><span class="p">,</span>
+            <span class="n">mirror_comp</span><span class="p">,</span>
+            <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">"Vertical Position of the Supermirror"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">add_driver</span><span class="p">(</span><span class="n">IocDriver</span><span class="p">(</span><span class="n">mirror_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">ANGLE</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0207"</span><span class="p">)))</span>
+    <span class="n">add_driver</span><span class="p">(</span>
+        <span class="n">IocDriver</span><span class="p">(</span><span class="n">mirror_comp</span><span class="p">,</span> <span class="n">ChangeAxis</span><span class="o">.</span><span class="n">POSITION</span><span class="p">,</span> <span class="n">MotorPVWrapper</span><span class="p">(</span><span class="s2">"MOT:MTR0206"</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">get_configured_beamline</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</details>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Reflectometry-Config-Training-%E2%80%90-Overview-%26-Setup.html" class="btn btn-neutral float-left" title="Reflectometry Config Training: Overview &amp; Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Reflectometry-Config-Training-%E2%80%90-Exercise-2.html" class="btn btn-neutral float-right" title="Exercise 2 - Beamline Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Sep 24, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
