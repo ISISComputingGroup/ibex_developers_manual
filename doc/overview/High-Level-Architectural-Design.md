@@ -24,7 +24,7 @@ This is the Windows PC running the control software for the instrument (e.g. NDX
 
 ### Instrument Hardware
 
-Coming soon...
+See {external+sysadmin:doc}`systems/NDH`.
 
 ### Low Level Design Documents
 
