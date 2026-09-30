@@ -20,28 +20,28 @@ Discussions regarding IMAT data collection requirements are documented in [Minut
 ## IMAT Equipment ##
 The equipment listed below is used on IMAT. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
-Manufacturer | Model | Type | Connection | Driver | Notes |
------------- | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
-[SKF](http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html) | Double Disc Chopper | CHOPPER | Ethernet/Modbus | #617, #622 | [see SKF Choppers note](#imat_noteSKFChoppers) 
-[SKF](http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html) | T0 Chopper | CHOPPER | Ethernet/Modbus | #617, #622 | [see SKF Choppers note](#imat_noteSKFChoppers) 
-[SKF](http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html) | Double Disc Chopper | CHOPPER | Ethernet/Modbus | #617, #622 | [see SKF Choppers note](#imat_noteSKFChoppers) 
-[Pfeiffer](http://www.pfeiffer-vacuum.com/products/measurement/container.action) | TPG 300 | ISIS Vacuum System | RS232 | #216 | 
-OMRON PLC | | | TCP/FINS | #215 | [see OMRON PLC note](#imat_noteOMRONplc) 
-ISIS | Sample Attenuator | Pneumatic Actuator | | | [see Beam Attenuator note](#imat_noteBeamAttenuator)
-ISIS | Pin Hole Selector | | | #265 | [see Pinhole Selector note](#imat_notePinhole)
-ISIS | JAWS | GALIL-based | Ethernet | #178, #179 | [see Jaws note](#imat_noteJaws)
-ISIS | Incident Slits | GALIL-based | Ethernet | #178, #179 | [see Incident Slits note](#imat_noteSlits)
-ISIS | Monitors |  | | #265 | [see Incident Slits note](#imat_noteMonitors)
- | 7-axis Sample Positioning System | | | #435 | [see Sample Positioning System note](#imat_noteSampleStack)
-ISIS |  | Sample Environment | Various |  | [see Sample Environment note](#imat_noteSampleEnvironment)
-TBD | TBD | Camera Positioning Robot | TBD | | [see Camera Positioning Robot note](#imat_noteCameraRobot)
+Manufacturer | Model | Type                         | Connection | Driver | Notes |
+------------ | ------------- |------------------------------| ------------- | ------------- | -------------------------------------------
+[SKF](http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html) | Double Disc Chopper | CHOPPER                      | Ethernet/Modbus | #617, #622 | [see SKF Choppers note](#imat_noteSKFChoppers) 
+[SKF](http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html) | T0 Chopper | CHOPPER                      | Ethernet/Modbus | #617, #622 | [see SKF Choppers note](#imat_noteSKFChoppers) 
+[SKF](http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html) | Double Disc Chopper | CHOPPER                      | Ethernet/Modbus | #617, #622 | [see SKF Choppers note](#imat_noteSKFChoppers) 
+[Pfeiffer](http://www.pfeiffer-vacuum.com/products/measurement/container.action) | TPG 300 | ISIS Vacuum System           | RS232 | #216 | 
+OMRON PLC | |                              | TCP/FINS | #215 | [see OMRON PLC note](#imat_noteOMRONplc) 
+ISIS | Sample Attenuator | Pneumatic Actuator           | | | [see Beam Attenuator note](#imat_noteBeamAttenuator)
+ISIS | Pin Hole Selector |                              | | #265 | [see Pinhole Selector note](#imat_notePinhole)
+ISIS | JAWS | Beckhoff                     | Ethernet | #178, #179 | [see Jaws note](#imat_noteJaws)
+ISIS | Incident Slits | Beckhoff                  | Ethernet | #178, #179 | [see Incident Slits note](#imat_noteSlits)
+ISIS | Monitors |                              | | #265 | [see Incident Slits note](#imat_noteMonitors)
+ | 7-axis Sample Positioning System | |                              | #435 | [see Sample Positioning System note](#imat_noteSampleStack)
+ISIS |  | Sample Environment           | Various |  | [see Sample Environment note](#imat_noteSampleEnvironment)
+TBD | TBD | Camera Positioning Robot     | TBD | | [see Camera Positioning Robot note](#imat_noteCameraRobot)
 UC(Berkeley) | Camera1 | Med. Res. CCD Imaging Camera | Specific to camera | | [see Berkeley Camera note](#imat_noteBerkeleyCamera)
-CNR | Camera2 | | | | [see Messina Camera note](#imat_noteMessinaCamera)
-CNR | Camera Focussing | | | | [see Messina Camera note](#imat_noteMessinaCamera)
-ISIS | DAE 2 or 3? | Detector Electronics | Ethernet | |  [see DAE note](#imat_noteDAE)
-Mantracourt | ADW15 | Load cell meter | RS232 or RS485 | |  [see Mantracourt note](#imat_noteMantracourt)
-GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet | EPICS | | 
-Newport | [M-ILS50PP](https://web.archive.org/web/20130828020800/http://search.newport.com:80/?q=*&x2=sku&q2=ILS50PP) | Linear Stage, Stepper Motor | Ethernet | EPICS | [see Newport Motor note](#imat_noteNewportMotor)
+CNR | Camera2 |                              | | | [see Messina Camera note](#imat_noteMessinaCamera)
+CNR | Camera Focussing |                              | | | [see Messina Camera note](#imat_noteMessinaCamera)
+ISIS | DAE 2 or 3? | Detector Electronics         | Ethernet | |  [see DAE note](#imat_noteDAE)
+Mantracourt | ADW15 | Load cell meter              | RS232 or RS485 | |  [see Mantracourt note](#imat_noteMantracourt)
+GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller            | Ethernet | EPICS | | 
+Newport | [M-ILS50PP](https://web.archive.org/web/20130828020800/http://search.newport.com:80/?q=*&x2=sku&q2=ILS50PP) | Linear Stage, Stepper Motor  | Ethernet | EPICS | [see Newport Motor note](#imat_noteNewportMotor)
 
 {#imat_noteSKFChoppers}
 ##### Note: SKF Choppers #####
@@ -57,19 +57,19 @@ The OMRON PLC will be used to control gate valves and instrument vacuum.  It wil
 
 {#imat_notePinhole}
 ##### Note: Pinhole Selector #####
-The Pinhole Selector is a wheel containing mounts for 6 pinhole apertures - set positions for each.  Single axis motion control (stepper motor). Controlled by Galil.  See [IMAT Pin Hole Selector](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_PinHoleSelector.pptx) for a diagram.  See also: [IMAT Pin Hole Selector Details](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/PinholeSelector_2014.pdf) and [IMAT Pin Hole Selector Minutes](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_PinholeSelector_Computing_minutes_28Nov2014.docx).
+The Pinhole Selector is a wheel containing mounts for 6 pinhole apertures - set positions for each. Single axis motion control (stepper motor). See [IMAT Pin Hole Selector](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_PinHoleSelector.pptx) for a diagram.  See also: [IMAT Pin Hole Selector Details](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/PinholeSelector_2014.pdf) and [IMAT Pin Hole Selector Minutes](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_PinholeSelector_Computing_minutes_28Nov2014.docx).
 
 {#imat_noteJaws}
 ##### Note: Jaws #####
-5 x beam-collimating jaw-sets, controlled by Galil. <br>See [IMAT Jaws & Collimating Slits](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Jaws_Collimating_Slits.pptx) for a diagram.  See also: [IMAT Jaws/Slits Minutes](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Jaws-Slits_computing_minutes_17Nov2014.docx)
+5 x beam-collimating jaw-sets. <br>See [IMAT Jaws & Collimating Slits](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Jaws_Collimating_Slits.pptx) for a diagram.  See also: [IMAT Jaws/Slits Minutes](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Jaws-Slits_computing_minutes_17Nov2014.docx)
 
 {#imat_noteSlits}
 ##### Note: Slits #####
-X-Y slits (2 linear translations), controlled by Galil. <br>See [IMAT Jaws & Collimating Slits](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Jaws_Collimating_Slits.pptx) for a diagram.
+X-Y slits (2 linear translations). <br>See [IMAT Jaws & Collimating Slits](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IMAT/IMAT_Computing_Jaws_Collimating_Slits.pptx) for a diagram.
 
 {#imat_noteMonitors}
 ##### Note: Monitors #####
-6 monitors, controlled by Galil. In/Out set positions.
+6 monitors. In/Out set positions.
 
 1. M1 is positioned immediately upstream of the first double-disk chopper.
 2. M2 is positioned immediately upstream of the second double-disk chopper.
