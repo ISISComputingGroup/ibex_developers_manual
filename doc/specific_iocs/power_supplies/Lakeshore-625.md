@@ -15,5 +15,3 @@ Items that can be set include:
 - Current, Voltage and Ramp Rate Limits 
 - Persistent Switch Heater Parameters (10 - 125 mA and 5 - 100 s)
 - Quench Parameters (0.0100 - 10.000 A/s)
-
-
