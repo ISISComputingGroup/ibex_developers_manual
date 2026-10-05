@@ -9,7 +9,7 @@ The forwarder currently in use to send information from PVs to the file-writer r
 We will rewrite the forwarder to make use of `async-io`:
 - Channel Access will be handled using `aioca`
 - PV Access will be handled using `p4p`'s async mode.
-- Sections irrelevant to ISIS (`tdct`, previous versions of serialisers, etc.) will not be carried forward.
+- Sections irrelevant to ISIS (`tdct`, previous versions of `serialiser.py` files, etc.) will not be carried forward.
 - Kafka interactions will be handled by `aiokafka`
 - The external facing interfaces such as Kafka schemas, serialisation, and forwarder configs will not change.
 
