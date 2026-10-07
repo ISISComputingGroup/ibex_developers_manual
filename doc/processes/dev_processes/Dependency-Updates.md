@@ -10,7 +10,7 @@ When updating dependencies add the new dependencies to the upcoming release note
 
 ## WebDashboard
 
-- [Update `tomcat` on external webserver](https://github.com/isiscomputinggroup/pvws-config?tab=readme-ov-file#updating). This is an external-facing process so **must** be kept up-to-date with latest security bug fixes.
+- [Update `tomcat` on external webserver](https://isiscomputinggroup.github.io/ibex_developers_manual/webdashboard/PVWS.html#updating). This is an external-facing process so **must** be kept up-to-date with latest security bug fixes.
 - Update java JDK on external webserver. This is used to run tomcat, which is an external-facing process, so **must** be kept up-to-date with latest security bug fixes.
 - Update [javascript dependencies](https://github.com/ISISComputingGroup/WebDashboard/blob/main/package.json). This is done automatically by dependabot, so this step is to ensure that no outstanding dependabot pull requests are unmerged, and to check any dependencies which dependabot is not configured to upgrade.
 
