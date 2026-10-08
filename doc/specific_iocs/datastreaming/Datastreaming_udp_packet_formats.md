@@ -1,4 +1,4 @@
-# Datastreaming: UDP packet formats
+# Data streaming: UDP packet formats
 
 This page describes the UDP packet format for instruments which stream UDP from detectors (e.g. HRPD-X).
 
