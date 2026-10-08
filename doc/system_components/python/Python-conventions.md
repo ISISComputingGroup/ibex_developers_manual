@@ -13,7 +13,7 @@ We have a [Ruff config](https://github.com/ISISComputingGroup/reusable-workflows
 Ruff should be run from the base directory of any project you are working in, for example in `DeviceEmulator`, it should be run from `master`, not from, for example `DeviceEmulator\master\lewis_emulators\eurotherm`
 :::
 
-For new repos containing python you should add the following [workflow](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/.github/workflows/linters.yml) to ensure standards compliance.
+For new repos containing python you should add the following [workflow](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/.github/workflows/linters.yml) to ensure standards compliance. New repositories should use our [copier template](https://github.com/isisComputingGroup/copier_template) to create the project scaffolding, including standard CI, documentation, test and linting setups.
 
 Key points relating to general code formatting:
 
@@ -220,7 +220,7 @@ AVOID combining strings with '\\', '\\\\' or '/'
 
 ### GitHub Workflows:
 
-For new repos containing python you should add the following [workflow](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/.github/workflows/linters.yml) to ensure standards compliance.
+For new repos containing python you should add the following [workflow](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/.github/workflows/linters.yml) to ensure standards compliance. New repositories should use our [copier template](https://github.com/isisComputingGroup/copier_template) to create the project scaffolding, including standard CI, documentation, test and linting setups.
 
 An example of how to call this workflow is [here](https://github.com/ISISComputingGroup/EPICS-inst_servers/blob/master/.github/workflows/linter.yml), you may need to adjust `master` vs `main` depending on which branch your repository uses as it's primary branch (should be `main` for new repos usually).
 
