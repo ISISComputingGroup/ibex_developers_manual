@@ -1,4 +1,4 @@
-# 12 - Clocks & Kafka timestamping
+# 12 - Clocks & Kafka time stamping
 
 ## Status
 
@@ -95,7 +95,7 @@ timestamps _inside_ the flatbuffers schemas "as seen". For sample-environment da
 under-inclusion may make analysis of the data impossible later.
 
 In the NeXus file, we will need to document whether `start_time` and `stop_time` represent NTP time or GPS time. This
-will require discussions with consumers such as Mantid, to ensure that mantid will accept event data that falls outside
+will require discussions with consumers such as Mantid, to ensure that Mantid will accept event data that falls outside
 the `start_time`-`stop_time` range. We may choose to write additional datasets describing the "other" timestamp.
 
 ### `kafka_dae_diagnostics` and other consumers
@@ -125,7 +125,7 @@ monitoring/alerting and user feedback.
 
 ## Consequences
 
-- The system is resilient against GPS time desyncing from NTP time
+- The system is resilient against GPS time de-syncing from NTP time
 - The system is *not* resilient against large mismatches in NTP time across multiple NTP-based systems - this is
 considered a failure condition that will require manual intervention to fix.
   - The system is tolerant of "small" NTP drifts (configurable in filewriter, assumed to be a number of seconds).

@@ -603,6 +603,7 @@ npcap
 NPort
 npp
 nt
+NTP
 nxs
 oercone
 Oerlikon
@@ -789,6 +790,7 @@ scsi
 sdk
 searchable
 seci
+seeked
 sendSlackMessage
 Sensirion
 setIOCName
