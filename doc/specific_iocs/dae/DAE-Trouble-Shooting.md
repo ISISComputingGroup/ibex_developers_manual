@@ -203,7 +203,7 @@ If IBEX has either been in simulation mode or not running for a long time previo
 ```
 Quixtream Error: Failed to bind the socket to the local port."
 ``` 
-in the ICP log and some client applications may complain about `NULL Pointer` errors. The only solution is to reboot the NDX computer. This can be done remotely within a cmd window with `shutdown r/ t/ 0`.
+in the ICP log and some client applications may complain about `NULL Pointer` errors. The only solution is to reboot the NDX computer. This can be done remotely within a cmd window using `shutdown r/ t/ 0`.
 
 ### Error code 112
 
