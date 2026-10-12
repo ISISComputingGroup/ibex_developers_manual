@@ -90,7 +90,7 @@ this will start a https connector using the `.pfx` file generated from the certi
 
       `winpty openssl pkcs12 -export -out new_cert_yy_mm.pfx -inkey key.key -passin pass:PASSWORD -in cert.cer`
 
-      Where `key.key` is the private key created when you created your certificate signing request in step 2, `PASSWORD` is the passphrase used to generate that key, and `cert.cer` is the certificate you downloaded. When prompted for an export password enter the keystore password specified for the current certificate in `C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\server.xml` and also stored in keeper.
+      Where `key.key` is the private key created when you created your certificate signing request in step 2, `PASSWORD` is the passphrase used to generate that key, and `cert.cer` is the certificate you downloaded. When prompted for an export password enter the key-store password specified for the current certificate in `C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\server.xml` and also stored in keeper.
 
       Note: `winpty` may be required for openssl to function correctly on Windows. 
 1. Add `local service` to the users that can read the file you have just generated like so:
