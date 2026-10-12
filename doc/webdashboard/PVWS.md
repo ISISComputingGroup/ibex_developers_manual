@@ -81,7 +81,7 @@ this will start a https connector using the `.pfx` file generated from the certi
       
       `winpty openssl req -newkey rsa:2048 -keyout PRIVATEKEY.key -out MYCSR.csr`
    
-      The answers to the questions it asks can be found by opening the old certificate. Store the passphrase you use to encrypt the private key somewhere safe (e.g. keeper) and the private key in a sensible directory (e.g. `C:\certificates\yyyy-mm`)
+      The answers to the questions it asks can be found by opening the old certificate. Use the key passphrase stored in keeper to encrypt the private key and store the private key in a sensible directory (e.g. `C:\certificates\yyyy-mm`)
    1. Send the CSR to DI requesting a new certificate (use the group email account)
    1. wait for an email back with a link to the signed certificate 
 1. Once we receive the certificate back, generate a `.pfx`/`.p12` file (for simplicity, do this on the host)
@@ -90,7 +90,7 @@ this will start a https connector using the `.pfx` file generated from the certi
 
       `winpty openssl pkcs12 -export -out new_cert_yy_mm.pfx -inkey key.key -passin pass:PASSWORD -in cert.cer`
 
-      Where `key.key` is the private key created when you created your certificate signing request in step 2, `PASSWORD` is the passphrase used to generate that key, and `cert.cer` is the certificate you downloaded. When prompted for an export password enter the key-store password specified for the current certificate in `C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\server.xml` and also stored in keeper.
+      Where `key.key` is the private key created when you created your certificate signing request in step 2, `PASSWORD` is the passphrase from keeper used to generate that key, and `cert.cer` is the certificate you downloaded. When prompted for an export password enter the key-store password specified for the current certificate in `C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\server.xml` and also stored in keeper.
 
       Note: `winpty` may be required for openssl to function correctly on Windows. 
 1. Add `local service` to the users that can read the file you have just generated like so:
