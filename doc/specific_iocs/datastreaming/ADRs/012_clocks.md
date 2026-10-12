@@ -19,7 +19,8 @@ the streaming server generate timestamps. In future, this may be multiple clocks
 multiple machines.
 
 **NDX clock** - Local clock on the NDX virtual machine. Synchronized only via NTP. Historically has high drift (tens of
-seconds) due to running in a VM. Used for EPICS timestamps for sample-environment IOCs.
+seconds) due to running in a VM. EPICS updates use a performance counter which is periodically synchronised to this
+system clock.
 
 **Kafka server clock** - Local clock on Kafka server. Used as the Kafka message timestamp if any Kafka topics are
 configured to use `LogAppendTime`. This may be *multiple* clocks if the Kafka cluster is distributed across machines.
@@ -30,6 +31,9 @@ each board represents another clock, which would be used if Kafka `CreateTime` i
 
 None of the above clocks are guaranteed to be monotonic; NTP may correct time backwards, and GPS time may jump backwards
 under foreseeable failure conditions.
+
+In future, some or all of the computer clocks could be synced via PTP to the same underlying GPS time-source used by
+the event-streaming hardware.
 
 ### Problem statement
 
