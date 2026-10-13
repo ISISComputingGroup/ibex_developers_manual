@@ -23,6 +23,7 @@ If you do not have either a D: or O: network drive, then you will need to specif
 :::
 
 ## Upgrading IBEX to the latest version
+1. It can be useful to leave a notepad window open on the instrument screen saying *IBEX update in progress* during the upgrade   
 1. Ensure the instrument is running and in a setup state
 1. Take screenshots of server status, blocks, motors, running VIs, etc. to allow later comparison
 1. Ensure all command lines to EPICS or windows accessing the EPICS path are closed (though there is no need to stop the IBEX Server)
