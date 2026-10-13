@@ -155,7 +155,7 @@ There is also a minimum acceleration on galil controllers which is 1024 (in gali
 
 ### The limits are both made/on/limit light are lit
 
-This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils. However, there could be other reasons such as in the [IMAT Lens Adjustment](/specific_iocs/motor_extensions/IMAT-Lens-Adjustment)
+This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils.
 
 ## The motor is surrounded by a red border in the table of motors
 
