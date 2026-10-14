@@ -1,6 +1,10 @@
 # DAE Spectra
 
-The DAE IOC serves spectra information (data collected in the Data Acquisition Electronics hardware) via the following PV format
+Spectra refers to a contiguous array of numbers which are used to map and/or group detectors which may not be in any order and may describe individual sections of a detector array which should be treated as one pixel.
+
+This grouping/mapping is configured by the spectra `.dat` files which are selected by the user, and are applied in practice for the spectra plots as well as for grouping within a NeXus file.
+
+The `ISISDAE` IOC serves spectra information (data collected in the Data Acquisition Electronics hardware) via the following PV format
 ```
 $(P)DAE:SPEC:$(PERIOD):$(SPEC):X
 $(P)DAE:SPEC:$(PERIOD):$(SPEC):Y
