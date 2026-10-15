@@ -117,5 +117,7 @@ intersphinx_mapping = {
     # page layouts changed.
     "sysadmin": ("https://shadow.nd.rl.ac.uk/ibex_sysadmin_manual/", "sysadmin_manual.inv"),
     "mantid": ("https://docs.mantidproject.org/", None),
+    "nexus": ("https://www.nexusformat.org/", None),
+    "nexus_manual": ("https://manual.nexusformat.org", None),
     "pvi": ("https://epics-containers.github.io/pvi/main/", None),
 }
