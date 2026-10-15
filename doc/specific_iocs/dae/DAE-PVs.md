@@ -1,8 +1,8 @@
 # DAE Spectra
 
-Spectra refers to a contiguous array of numbers which are used to map and/or group detectors which may not be in any order and may describe individual sections of a detector array which should be treated as one pixel.
+Spectra refers to a contiguous array of numbers which are used to map and/or group detectors which may not be in any order and may describe individual sections of a detector array which should be treated as one pixel. Grouping detectors together may be because this creates a smaller resultant histogram, or as an example several detectors may map to the same scattering angle on a powder diffractometer and therefore should be treated as one area. 
 
-This grouping/mapping is configured by the spectra `.dat` files which are selected by the user, and are applied in practice for the spectra plots as well as for grouping within a NeXus file.
+This grouping/mapping is configured by the spectra `.dat` files which are selected by the user, and are applied in practice for the spectra plots as well as for writing datasets separated by spectra ID in a NeXus file.
 
 The `ISISDAE` IOC serves spectra information (data collected in the Data Acquisition Electronics hardware) via the following PV format
 ```
