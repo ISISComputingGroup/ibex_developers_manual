@@ -1,3 +1,4 @@
+{#daespectra}
 # DAE Spectra
 
 Spectra refers to a contiguous array of numbers which are used to map and/or group detectors which may not be in any order and may describe individual sections of a detector array which should be treated as one pixel. Grouping detectors together may be because this creates a smaller resultant histogram, or as an example several detectors may map to the same scattering angle on a powder diffractometer and therefore should be treated as one area. 
