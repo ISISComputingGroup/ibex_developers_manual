@@ -80,7 +80,7 @@ See [this module](https://docs.ansible.com/projects/ansible/latest/collections/c
 
 We will be adopting Debian as the preferred operating system rather than Rocky Linux. This aligns with the direction taken by the ISIS Controls Group, promoting consistency across related systems and enabling the sharing of knowledge, tooling, and support practices. Debian is also easier to administer and offers a clearer upgrade path between major releases, simplifying long-term maintenance. Additionally, existing Ansible roles and collections support both Debian- and RHEL-based distributions, minimising the impact on deployment and configuration automation.
 
-We will use Ansible to manage our streaming machine configurations as code, ensuring repeatability and enabling rapid provisioning. This allows us to drastically reduce the timeframe needed to bring new machines to standard or recover from an operational incident.
+We will use Ansible to manage our streaming machine configurations as code, ensuring repeatability and enabling rapid provisioning. This allows us to drastically reduce the time-frame needed to bring new machines to standard or recover from an operational incident.
 
 A playbook will serve as a single source of truth for a machine in a GitHub repository, and this will be idempotent so can be run multiple times on an existing machine. No manual steps besides installing the operating system should be performed, this is so they aren't lost when the machine is re-provisioned.
 
