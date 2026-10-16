@@ -78,9 +78,21 @@ See [this module](https://docs.ansible.com/projects/ansible/latest/collections/c
 
 ## Decision
 
-We will use the latest version of Rocky Linux for the base operating system, and update/re-provision when new versions come out. This is because it's widely used on site - SCD and Accelerator Controls both use it. We use it for our main Jenkins node and so on. Ansible collections/roles available all seem to support RHEL-based distributions as well as Debian. 
+We will be adopting Debian as the preferred operating system rather than Rocky Linux. This aligns with the direction taken by the ISIS Controls Group, promoting consistency across related systems and enabling the sharing of knowledge, tooling, and support practices. Debian is also easier to administer and offers a clearer upgrade path between major releases, simplifying long-term maintenance. Additionally, existing Ansible roles and collections support both Debian- and RHEL-based distributions, minimising the impact on deployment and configuration automation.
 
-We will use Ansible for both the base OS configuration, as well as container deployment. A playbook will serve as a single source of truth for a machine in a Github repository, and this will be idempotent so can be run multiple times on an existing machine. No manual steps besides installing the operating system should be performed, this is so they aren't lost when the machine is re-provisioned. 
+We will use Ansible to manage our streaming machine configurations as code, ensuring repeatability and enabling rapid provisioning. This allows us to drastically reduce the time-frame needed to bring new machines to standard or recover from an operational incident.
+
+A playbook will serve as a single source of truth for a machine in a GitHub repository, and this will be idempotent so can be run multiple times on an existing machine. No manual steps besides installing the operating system should be performed, this is so they aren't lost when the machine is re-provisioned.
+
+Deployment tasks will be organised into separate Ansible roles, enabling reusable, modular components and allowing deployments to be customised to meet the specific requirements of individual machines or environments.
+
+Updating a machine will be performed manually using an Ansible playbook to prevent unexpected deployments mid-run to the instruments, which may be communicating with hardware, writing files, etc.
+
+Containers will be used where possible, with bare-metal deployment being a secondary decision, if required. 
+
+We will prioritise containerised deployments wherever possible, with bare-metal deployment acting as a fallback. With our drafted deployment, Redpanda would be running on bare-metal as this is a production method as defined by its [maintainers](https://docs.redpanda.com/streaming/current/deploy/redpanda/manual/production/production-deployment/)
+
+Local configuration will be held on the machines themselves. Future steps will be taken to store these configuration files within a Git repo, but this step will require further thought on how best to implement. 
 
 These decisions are initial and can be changed later - if the base OS changes for example, it doesn't matter too much as its main role is to host containers.
 
