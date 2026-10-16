@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>raw_data_1/monitor_&lt;N&gt; &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="raw_data_1/periods" href="nexus_periods.html" />
+    <link rel="prev" title="raw_data_1/measurement" href="nexus_measurement.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces, files &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Nexus.html">NeXus Files</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nexus_detector.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_detector_events.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_framelog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/framelog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_instrument.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_isis_vms_compat.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_measurement.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_periods.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_runlog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/runlog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_sample.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/sample</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_selog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/selog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_user.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/user_1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Nexus.html">NeXus Files</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/nexus/nexus_monitor.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="raw-data-1-monitor-n">
+<h1><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code><a class="headerlink" href="#raw-data-1-monitor-n" title="Link to this heading"></a></h1>
+<p>This is an <a class="reference external" href="https://manual.nexusformat.org/classes/base_classes/NXmonitor.html" title="(in nexus v2026)"><span>NXmonitor</span></a>.</p>
+<p>Monitors are numbered from 1; the groups are called <code class="docutils literal notranslate"><span class="pre">monitor_1</span></code>, <code class="docutils literal notranslate"><span class="pre">monitor_2</span></code>, and so on.</p>
+<section id="nexus-monitor-data">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;/data</span></code><a class="headerlink" href="#nexus-monitor-data" title="Link to this heading"></a></h2>
+<p>An int32 array with dimensions (number of DAQ periods, number of time channels) containing the histogrammed counts
+for this monitor.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">axes</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">period_index,spectrum_index,raw_time</span></code> on a neutron instrument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">period_index,spectrum_index,time_of_flight</span></code> on a muon instrument</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">long_name</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;positron</span> <span class="pre">counts&quot;</span></code> (only written on a muon instrument)</p></li>
+</ul>
+</section>
+<section id="nexus-monitor-monnum">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;/monitor_number</span></code><a class="headerlink" href="#nexus-monitor-monnum" title="Link to this heading"></a></h2>
+<p>An int32 monitor number.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;/monitor_number</span></code> dataset always has value <code class="docutils literal notranslate"><span class="pre">N</span></code>.</p>
+</section>
+<section id="nexus-monitor-period-index">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;/period_index</span></code><a class="headerlink" href="#nexus-monitor-period-index" title="Link to this heading"></a></h2>
+<p>This is a NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_dae.html#nexus-instrument-dae-period-index"><span class="std std-ref">raw_data_1/instrument/dae/period_index</span></a>.</p>
+</section>
+<section id="nexus-monitor-spectrum-index">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;/spectrum_index</span></code><a class="headerlink" href="#nexus-monitor-spectrum-index" title="Link to this heading"></a></h2>
+<p>This is a scalar int32 dataset describing which spectrum this monitor corresponds to.</p>
+</section>
+<section id="nexus-monitor-tof">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;/time_of_flight</span></code><a class="headerlink" href="#nexus-monitor-tof" title="Link to this heading"></a></h2>
+<p>This is a NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_dae/nexus_instrument_dae_time_channels.html#nexus-instrument-dae-time-channels-tof"><span class="std std-ref">raw_data_1/instrument/dae/time_channels_&lt;N&gt;/time_of_flight</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nexus_measurement.html" class="btn btn-neutral float-left" title="raw_data_1/measurement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nexus_periods.html" class="btn btn-neutral float-right" title="raw_data_1/periods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 16, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

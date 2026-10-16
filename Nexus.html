@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeXus Files &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="raw_data_1/detector_&lt;N&gt;" href="nexus/nexus_detector.html" />
+    <link rel="prev" title="Shared Instrument Scripts" href="scripting/instrument-scripts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces, files &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NeXus Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_detector.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_detector_events.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_framelog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/framelog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_instrument.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_isis_vms_compat.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_measurement.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_monitor.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_periods.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_runlog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/runlog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_sample.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/sample</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_selog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/selog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_user.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/user_1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">NeXus Files</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/Nexus.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="nexus-files">
+<h1>NeXus Files<a class="headerlink" href="#nexus-files" title="Link to this heading"></a></h1>
+<p>IBEX writes out scientific data as <a class="reference external" href="https://www.nexusformat.org/index.html" title="(in nexusformat_wiki)"><span class="xref std std-doc">NeXus files</span></a>, which are a set of definitions built
+on top of the HDF5 format and used by most scattering-type experiments (including x-ray, lasers, Neutron and Muon
+facilities worldwide). The NeXus format documents the <em>general</em>
+layout of a NeXus file; this documentation documents the <em>specific</em> datasets written in practice by IBEX,
+including any quirks or facility-specific details of their interpretation.</p>
+<p>On a DAE2 or DAE3 instrument, these files are written by the ISISICP process. On a streaming instrument, these files
+are written by the data streaming filewriter.</p>
+<p>The NeXus files conform, where possible, to the <a class="reference external" href="https://www.nexusformat.org/TOFRaw.html" title="(in nexusformat_wiki)"><span class="xref std std-doc">TOFRaw</span></a> definition.</p>
+<section id="data-types">
+<h2>Data types<a class="headerlink" href="#data-types" title="Link to this heading"></a></h2>
+<p>Except where otherwise noted:</p>
+<ul class="simple">
+<li><p>Strings are ASCII-encoded, null terminated.</p></li>
+<li><p>Little-endian data types are used.</p></li>
+<li><p>32-bit signed integers or 32-bit floats are used</p></li>
+</ul>
+</section>
+<section id="nexus-raw-data-1">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1</span></code><a class="headerlink" href="#nexus-raw-data-1" title="Link to this heading"></a></h2>
+<p>An ISIS NeXus file always contains a top-level <code class="docutils literal notranslate"><span class="pre">raw_data_1</span></code> group, which is an <a class="reference external" href="https://manual.nexusformat.org/classes/base_classes/NXentry.html" title="(in nexus v2026)"><span>NXentry</span></a>.
+It may contain the datasets and groups listed below:</p>
+<section id="nexus-definition">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/definition</span></code><a class="headerlink" href="#nexus-definition" title="Link to this heading"></a></h3>
+<p><strong>On a Neutron instrument</strong>: ASCII string containing <code class="docutils literal notranslate"><span class="pre">TOFRAW</span></code>. See <a class="reference external" href="https://manual.nexusformat.org/classes/applications/NXtofraw.html" title="(in nexus v2026)"><span>NXtofraw</span></a> for the application
+definition this references.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;http://definition.nexusformat.org/instruments/TOFRAW?version=1.0&quot;</span></code></p></li>
+</ul>
+<p><strong>On a Muon instrument</strong>: ASCII string containing <code class="docutils literal notranslate"><span class="pre">pulsedTD</span></code>.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;2.0&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;http://definition.nexusformat.org/instruments/pulsedTD?version=2.0&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-definition-local">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/definition_local</span></code><a class="headerlink" href="#nexus-definition-local" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;ISISTOFRAW&quot;</span></code>.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;http://svn.isis.rl.ac.uk/instruments/ISISTOFRAW?version=1.0&quot;</span></code></p></li>
+</ul>
+<p><strong>This dataset is not written on a Muon instrument</strong>.</p>
+</section>
+<section id="nexus-program-name">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/program_name</span></code><a class="headerlink" href="#nexus-program-name" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;ISISICP.EXE&quot;</span></code> on a DAE2/DAE3 instrument, or the name of the file-writer executable on a data-streaming instrument.</p>
+</section>
+<section id="nexus-run-number">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/run_number</span></code><a class="headerlink" href="#nexus-run-number" title="Link to this heading"></a></h3>
+<p>The run number, as a 32-bit signed integer. For example, for run <code class="docutils literal notranslate"><span class="pre">POLREF12345</span></code>, the run number is <code class="docutils literal notranslate"><span class="pre">12345</span></code>.</p>
+</section>
+<section id="nexus-run-cycle">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/run_cycle</span></code><a class="headerlink" href="#nexus-run-cycle" title="Link to this heading"></a></h3>
+<p>The ISIS cycle identifier, as a string. For example <code class="docutils literal notranslate"><span class="pre">24_5</span></code> for cycle 2024/05.</p>
+</section>
+<section id="nexus-title">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/title</span></code><a class="headerlink" href="#nexus-title" title="Link to this heading"></a></h3>
+<p>The user-provided run title as a string.</p>
+<p>For example <code class="docutils literal notranslate"><span class="pre">&quot;Quiet</span> <span class="pre">Counts</span> <span class="pre">after</span> <span class="pre">DAE</span> <span class="pre">fix</span> <span class="pre">24/5&quot;</span></code>.</p>
+</section>
+<section id="nexus-notes">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/notes</span></code><a class="headerlink" href="#nexus-notes" title="Link to this heading"></a></h3>
+<p>The user-provided notes as a string. Commonly empty and written as a zero-length string in that case. Set in IBEX via
+Experiment Details -&gt; Sample -&gt; Comments.</p>
+</section>
+<section id="nexus-name">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/name</span></code><a class="headerlink" href="#nexus-name" title="Link to this heading"></a></h3>
+<p>The instrument name, for example <code class="docutils literal notranslate"><span class="pre">POLREF</span></code> or <code class="docutils literal notranslate"><span class="pre">MERLIN</span></code>.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">short_name</span></code>: a shortened, typically 3-character, representation of the instrument name. For example, <code class="docutils literal notranslate"><span class="pre">MERLIN</span></code>’s short
+name is <code class="docutils literal notranslate"><span class="pre">MER</span></code>.</p></li>
+</ul>
+</section>
+<section id="nexus-beamline">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/beamline</span></code><a class="headerlink" href="#nexus-beamline" title="Link to this heading"></a></h3>
+<p>The instrument name, for example <code class="docutils literal notranslate"><span class="pre">POLREF</span></code> or <code class="docutils literal notranslate"><span class="pre">MERLIN</span></code>. The instrument name is identical to the <a class="reference internal" href="#nexus-name"><span class="std std-ref">raw_data_1/name</span></a> dataset.
+Unlike <a class="reference internal" href="#nexus-name"><span class="std std-ref">raw_data_1/name</span></a>, this dataset does <strong>not</strong> contain a <code class="docutils literal notranslate"><span class="pre">short_name</span></code> attribute.</p>
+</section>
+<section id="nexus-start-time">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/start_time</span></code><a class="headerlink" href="#nexus-start-time" title="Link to this heading"></a></h3>
+<p>The time when data collection started, as an ISO8601 string. For example <code class="docutils literal notranslate"><span class="pre">2025-03-27T10:56:13</span></code>.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;ISO8601&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-end-time">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/end_time</span></code><a class="headerlink" href="#nexus-end-time" title="Link to this heading"></a></h3>
+<p>The time when data collection ended, as an ISO8601 string. For example <code class="docutils literal notranslate"><span class="pre">2025-03-27T10:56:13</span></code>.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;ISO8601&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-duration">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/duration</span></code><a class="headerlink" href="#nexus-duration" title="Link to this heading"></a></h3>
+<p>The duration of the measurement, as a float32. Identical to <a class="reference internal" href="#nexus-collection-time"><span class="std std-ref">raw_data_1/collection_time</span></a>. This is not necessarily equal to the difference between <a class="reference internal" href="#nexus-start-time"><span class="std std-ref">raw_data_1/start_time</span></a> and
+<a class="reference internal" href="#nexus-end-time"><span class="std std-ref">raw_data_1/end_time</span></a>, because time spent paused or under run control is not included.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The datatype used by the ISISICP (float32) is incompatible with the type specified by the NeXus standard (<code class="docutils literal notranslate"><span class="pre">NX_INT</span></code>).</p>
+</div>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;second&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-collection-time">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/collection_time</span></code><a class="headerlink" href="#nexus-collection-time" title="Link to this heading"></a></h3>
+<p>The duration of the measurement, as a float32. Identical to <a class="reference internal" href="#nexus-duration"><span class="std std-ref">raw_data_1/duration</span></a>. This is not necessarily equal to the difference between <a class="reference internal" href="#nexus-start-time"><span class="std std-ref">raw_data_1/start_time</span></a> and
+<a class="reference internal" href="#nexus-end-time"><span class="std std-ref">raw_data_1/end_time</span></a>, because time spent paused or under run control is not included.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;second&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-proton-charge">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/proton_charge</span></code><a class="headerlink" href="#nexus-proton-charge" title="Link to this heading"></a></h3>
+<p>Accumulated “good” proton charge (i.e. the proton charge corresponding to <a class="reference internal" href="#nexus-good-frames"><span class="std std-ref">raw_data_1/good_frames</span></a>) during the run, as a float32.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;uAh&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-proton-charge-raw">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/proton_charge_raw</span></code><a class="headerlink" href="#nexus-proton-charge-raw" title="Link to this heading"></a></h3>
+<p>Accumulated total proton charge (i.e. the proton charge corresponding to <a class="reference internal" href="#nexus-raw-frames"><span class="std std-ref">raw_data_1/raw_frames</span></a>) during the run, as a float32.</p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;uAh&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-good-frames">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/good_frames</span></code><a class="headerlink" href="#nexus-good-frames" title="Link to this heading"></a></h3>
+<p>Number of good frames during the run, as an int32.</p>
+</section>
+<section id="nexus-raw-frames">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/raw_frames</span></code><a class="headerlink" href="#nexus-raw-frames" title="Link to this heading"></a></h3>
+<p>Number of good and vetoed frames during the run, as an int32.</p>
+</section>
+<section id="nexus-experiment-identifier">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/experiment_identifier</span></code><a class="headerlink" href="#nexus-experiment-identifier" title="Link to this heading"></a></h3>
+<p>RB number of the run, formatted as a string. For example <code class="docutils literal notranslate"><span class="pre">&quot;12345678&quot;</span></code></p>
+</section>
+<section id="nexus-seci-config">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/seci_config</span></code><a class="headerlink" href="#nexus-seci-config" title="Link to this heading"></a></h3>
+<p>This represents the <strong>IBEX</strong> configuration loaded at the time of the run. The name <code class="docutils literal notranslate"><span class="pre">seci_config</span></code> is historical, as
+SECI was the previous control system used before IBEX. IBEX configuration names are user-specified, within a set of rules.
+For example, <code class="docutils literal notranslate"><span class="pre">&quot;Horizontal_HCM_with_Helmholtz_coils&quot;</span></code></p>
+</section>
+<section id="raw-data-1-measurement-id">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement_id</span></code><a class="headerlink" href="#raw-data-1-measurement-id" title="Link to this heading"></a></h3>
+<p>A copy of <a class="reference internal" href="nexus/nexus_measurement.html#nexus-measurement-id"><span class="std std-ref">raw_data_1/measurement/id</span></a>.</p>
+</section>
+<section id="raw-data-1-measurement-subid">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement_subid</span></code><a class="headerlink" href="#raw-data-1-measurement-subid" title="Link to this heading"></a></h3>
+<p>A copy of <a class="reference internal" href="nexus/nexus_measurement.html#nexus-measurement-subid"><span class="std std-ref">raw_data_1/measurement/subid</span></a>.</p>
+</section>
+<section id="raw-data-1-measurement-type">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement_type</span></code><a class="headerlink" href="#raw-data-1-measurement-type" title="Link to this heading"></a></h3>
+<p>A copy of <a class="reference internal" href="nexus/nexus_measurement.html#nexus-measurement-type"><span class="std std-ref">raw_data_1/measurement/type</span></a>.</p>
+</section>
+<section id="raw-data-1-measurement-first-run">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement_first_run</span></code><a class="headerlink" href="#raw-data-1-measurement-first-run" title="Link to this heading"></a></h3>
+<p>A copy of <a class="reference internal" href="nexus/nexus_measurement.html#nexus-measurement-first-run"><span class="std std-ref">raw_data_1/measurement/first_run</span></a>.</p>
+</section>
+<section id="raw-data-1-measurement-label">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement_label</span></code><a class="headerlink" href="#raw-data-1-measurement-label" title="Link to this heading"></a></h3>
+<p>A copy of <a class="reference internal" href="nexus/nexus_measurement.html#nexus-measurement-label"><span class="std std-ref">raw_data_1/measurement/label</span></a>.</p>
+</section>
+<section id="raw-data-1-script-name">
+<h3><code class="docutils literal notranslate"><span class="pre">raw_data_1/script_name</span></code><a class="headerlink" href="#raw-data-1-script-name" title="Link to this heading"></a></h3>
+<p>This is user-settable string metadata. It is set in IBEX under Experiment Details -&gt; Sample Parameters -&gt; Script Name.</p>
+<hr class="docutils" />
+<p>The top-level <a class="reference internal" href="#nexus-raw-data-1"><span class="std std-ref">raw_data_1</span></a> <a class="reference external" href="https://manual.nexusformat.org/classes/base_classes/NXentry.html" title="(in nexus v2026)"><span>NXentry</span></a> also contains the following groups,
+which are documented on their own pages:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_detector.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_detector_events.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_framelog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/framelog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_instrument.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_instrument/nexus_instrument_dae.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument/dae</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nexus/nexus_instrument/nexus_instrument_dae/nexus_instrument_dae_time_channels.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument/dae/time_channels_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="nexus/nexus_instrument/nexus_instrument_dae/nexus_instrument_dae_vetos.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument/dae/vetos</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_instrument/nexus_instrument_detector.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument/detector_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_instrument/nexus_instrument_moderator.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument/moderator</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_instrument/nexus_instrument_source.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument/source</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_isis_vms_compat.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_measurement.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_monitor.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_periods.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_runlog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/runlog</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_sample.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/sample</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_selog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/selog</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nexus/nexus_selog/nexus_selog_valuelog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/selog/&lt;name&gt;/value_log</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nexus/nexus_user.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/user_1</span></code></a></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scripting/instrument-scripts.html" class="btn btn-neutral float-left" title="Shared Instrument Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nexus/nexus_detector.html" class="btn btn-neutral float-right" title="raw_data_1/detector_&lt;N&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 16, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
