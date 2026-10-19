@@ -1,7 +1,7 @@
 # Mirion Lynx2 HPGe detector
 
 The Lynx HPGe detector is a gamma detector, used on VESUVIO as a gamma detector. It may also be called
-a "digital signal analyzer" or a "multichannel analyzer", and is made by a company called Mirion.
+a "digital signal analyzer", "digitizer" or a "multichannel analyzer", and is made by a company called Mirion.
 
 ## Manual
 
