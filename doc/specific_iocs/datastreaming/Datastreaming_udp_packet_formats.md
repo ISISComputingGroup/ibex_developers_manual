@@ -93,7 +93,9 @@ These values be even if there is a veto mark that corresponds to them
     - **Bit 7**: Period overflow veto pause veto
     - **Bit 8**: Dwell Period veto
     - **Bit 9**: Status Packet CRC fault veto
-    - **Bits 10..15**: Reserved for future use
+    - **Bit 10**: overcount veto *not implemented yet*
+    - **Bit 11**: external run signal veto
+    - **Bits 12..15**: Reserved for future use
 - **Bits 16..31**: Instrument Specific Vetoes
     - **Bits 16..19**: External vetoes
     - **Bits 20..23**: Fast chopper vetoes (Fermi)
