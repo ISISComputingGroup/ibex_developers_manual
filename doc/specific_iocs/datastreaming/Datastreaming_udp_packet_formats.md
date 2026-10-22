@@ -109,7 +109,7 @@ These values be even if there is a veto mark that corresponds to them
 
 ### Word 12: Frame sync delay
 
-- **Bits 0..31**: Delay of the frame sync from Time Of Flight pulse.
+- **Bits 0..31**: Delay of the frame sync from Time Of Flight pulse, in μs.
 
 ### Variable number of board-specific parameters
 
