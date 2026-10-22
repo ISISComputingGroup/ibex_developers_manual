@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>raw_data_1/detector_&lt;N&gt;_events &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="raw_data_1/framelog" href="nexus_framelog.html" />
+    <link rel="prev" title="raw_data_1/detector_&lt;N&gt;" href="nexus_detector.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces, files &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Nexus.html">NeXus Files</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nexus_detector.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_framelog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/framelog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_instrument.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_isis_vms_compat.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_measurement.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_monitor.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_periods.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_runlog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/runlog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_sample.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/sample</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_selog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/selog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_user.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/user_1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Nexus.html">NeXus Files</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/nexus/nexus_detector_events.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="nexus-detevents">
+<h1><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code><a class="headerlink" href="#nexus-detevents" title="Link to this heading"></a></h1>
+<p>This is an <a class="reference external" href="https://manual.nexusformat.org/classes/base_classes/NXevent_data.html" title="(in nexus v2026)"><span>NXevent_data</span></a>. It is only written in event mode.</p>
+<section id="nexus-detevents-framenumber">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/event_frame_number</span></code><a class="headerlink" href="#nexus-detevents-framenumber" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_detector.html#nexus-instrument-detector-eventframenumber"><span class="std std-ref">raw_data_1/instrument/detector_&lt;N&gt;/event_frame_number</span></a></p>
+</section>
+<section id="nexus-detevents-eventid">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/event_id</span></code><a class="headerlink" href="#nexus-detevents-eventid" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_detector.html#nexus-instrument-detector-eventid"><span class="std std-ref">raw_data_1/instrument/detector_&lt;N&gt;/event_id</span></a></p>
+</section>
+<section id="nexus-detevents-eventindex">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/event_index</span></code><a class="headerlink" href="#nexus-detevents-eventindex" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_detector.html#nexus-instrument-detector-eventindex"><span class="std std-ref">raw_data_1/instrument/detector_&lt;N&gt;/event_index</span></a></p>
+</section>
+<section id="nexus-detevents-eventtimezero">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/event_time_zero</span></code><a class="headerlink" href="#nexus-detevents-eventtimezero" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_detector.html#nexus-instrument-detector-eventtimezero"><span class="std std-ref">raw_data_1/instrument/detector_&lt;N&gt;/event_time_zero</span></a></p>
+</section>
+<section id="nexus-detevents-eventtimebins">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/event_time_bins</span></code><a class="headerlink" href="#nexus-detevents-eventtimebins" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_dae/nexus_instrument_dae_time_channels.html#nexus-instrument-dae-time-channels-tof"><span class="std std-ref">raw_data_1/instrument/dae/time_channels_&lt;N&gt;/time_of_flight</span></a></p>
+</section>
+<section id="nexus-detevents-eventtimeoffset">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/event_time_offset</span></code><a class="headerlink" href="#nexus-detevents-eventtimeoffset" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_detector.html#nexus-instrument-detector-eventtimeoffset"><span class="std std-ref">raw_data_1/instrument/detector_&lt;N&gt;/event_time_offset</span></a></p>
+</section>
+<section id="nexus-detevents-eventtimeoffsetshift">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/event_time_offset_shift</span></code><a class="headerlink" href="#nexus-detevents-eventtimeoffsetshift" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_detector.html#nexus-instrument-detector-eventtimeoffsetshift"><span class="std std-ref">raw_data_1/instrument/detector_&lt;N&gt;/event_time_offset_shift</span></a></p>
+</section>
+<section id="nexus-detevents-totalcounts">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events/total_counts</span></code><a class="headerlink" href="#nexus-detevents-totalcounts" title="Link to this heading"></a></h2>
+<p>NeXus link to <a class="reference internal" href="nexus_instrument/nexus_instrument_detector.html#nexus-instrument-detector-totalcounts"><span class="std std-ref">raw_data_1/instrument/detector_&lt;N&gt;/total_counts</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nexus_detector.html" class="btn btn-neutral float-left" title="raw_data_1/detector_&lt;N&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nexus_framelog.html" class="btn btn-neutral float-right" title="raw_data_1/framelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 22, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

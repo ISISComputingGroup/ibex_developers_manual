@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>raw_data_1/isis_vms_compat &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="raw_data_1/measurement" href="nexus_measurement.html" />
+    <link rel="prev" title="raw_data_1/instrument/source" href="nexus_instrument/nexus_instrument_source.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces, files &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Nexus.html">NeXus Files</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nexus_detector.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_detector_events.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_framelog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/framelog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_instrument.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_measurement.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_monitor.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_periods.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_runlog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/runlog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_sample.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/sample</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_selog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/selog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_user.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/user_1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Nexus.html">NeXus Files</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/nexus/nexus_isis_vms_compat.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="raw-data-1-isis-vms-compat">
+<h1><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat" title="Link to this heading"></a></h1>
+<p>This has an <code class="docutils literal notranslate"><span class="pre">NX_class</span></code> of <code class="docutils literal notranslate"><span class="pre">IXvms</span></code>; this is not a class specified by upstream NeXus definitions.</p>
+<p>Data under these groups are provided to aid backwards-compatibility with older analysis programs.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See also <a class="reference download internal" download="" href="../_downloads/829508686aca438e1d75ba978ecbdaaf/libget.txt"><code class="xref download docutils literal notranslate"><span class="pre">libget.txt</span></code></a></p>
+</div>
+<section id="raw-data-1-isis-vms-compat-hdr">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/HDR</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-hdr" title="Link to this heading"></a></h2>
+<p>This is the “header block”. Is is a fixed-size 80 character string.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">P</span>    <span class="mi">1</span>       <span class="n">HDR</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">)</span>        <span class="n">c</span><span class="o">*</span><span class="mi">8</span>     <span class="n">RUN</span> <span class="n">identifier</span> <span class="p">(</span><span class="n">eg</span><span class="o">.</span> <span class="n">LAD12345</span> <span class="p">)</span>
+                                         <span class="o">-</span>  <span class="mi">3</span> <span class="n">characters</span> <span class="k">for</span> <span class="n">INSTRUMENT</span><span class="p">,</span>
+                                         <span class="o">-</span>  <span class="mi">5</span> <span class="n">characters</span> <span class="k">for</span> <span class="n">RUN</span> <span class="n">NUMBER</span><span class="o">.</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">HDR</span><span class="p">(</span><span class="mi">9</span><span class="p">:</span><span class="mi">28</span><span class="p">)</span>       <span class="n">c</span><span class="o">*</span><span class="mi">20</span>    <span class="n">User</span> <span class="n">name</span>                      
+   <span class="n">U</span>            <span class="n">HDR</span><span class="p">(</span><span class="mi">29</span><span class="p">:</span><span class="mi">52</span><span class="p">)</span>      <span class="n">c</span><span class="o">*</span><span class="mi">24</span>    <span class="n">Experiment</span> <span class="n">short</span> <span class="n">title</span>         
+   <span class="n">P</span>            <span class="n">HDR</span><span class="p">(</span><span class="mi">53</span><span class="p">:</span><span class="mi">64</span><span class="p">)</span>      <span class="n">c</span><span class="o">*</span><span class="mi">12</span>    <span class="n">start</span> <span class="n">date</span>                     
+   <span class="n">P</span>            <span class="n">HDR</span><span class="p">(</span><span class="mi">65</span><span class="p">:</span><span class="mi">72</span><span class="p">)</span>      <span class="n">c</span><span class="o">*</span><span class="mi">8</span>     <span class="n">start</span> <span class="n">time</span>                     
+                <span class="n">HDR</span><span class="p">(</span><span class="mi">73</span><span class="p">:</span><span class="mi">80</span><span class="p">)</span>      <span class="n">c</span><span class="o">*</span><span class="mi">8</span>     <span class="n">run</span> <span class="n">duration</span> <span class="p">(</span><span class="n">µA</span><span class="o">.</span><span class="n">Hr</span><span class="p">)</span>    
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver1">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER1</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver1" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span>    <span class="mi">2</span>       <span class="n">VER1</span>            <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="nb">format</span> <span class="n">version</span> <span class="n">number</span> <span class="p">(</span><span class="n">ver</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>   
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-add">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/ADD</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-add" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">P</span>    <span class="mi">3</span>       <span class="n">ADD</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">RUN</span>  <span class="n">section</span>
+   <span class="n">P</span>            <span class="n">ADD</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">INST</span> <span class="n">section</span>
+   <span class="n">P</span>            <span class="n">ADD</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">SE</span>   <span class="n">section</span>
+   <span class="n">P</span>            <span class="n">ADD</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">DAE</span>  <span class="n">section</span>
+   <span class="n">P</span>            <span class="n">ADD</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">TCB</span>  <span class="n">section</span>
+   <span class="n">P</span>            <span class="n">ADD</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">USER</span> <span class="n">section</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">ADD</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">DATA</span> <span class="n">section</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">ADD</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">start</span> <span class="n">address</span> <span class="n">of</span> <span class="n">LOG</span>  <span class="n">section</span>   <span class="o">***</span><span class="n">B</span>
+		<span class="n">ADD</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>  	<span class="n">spare</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-form">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/FORM</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-form" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>		<span class="n">FORM</span>		<span class="n">I</span><span class="o">*</span><span class="mi">4</span>	<span class="n">data</span> <span class="nb">format</span> <span class="n">flag</span> <span class="p">(</span><span class="mi">0</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>       <span class="o">***</span><span class="n">C</span>
+					<span class="mi">0</span> <span class="o">-</span> <span class="nb">all</span> <span class="n">TC</span> <span class="k">for</span> <span class="n">each</span> <span class="n">spectrum</span>
+					<span class="mi">1</span> <span class="o">-</span> <span class="n">the</span> <span class="n">same</span> <span class="n">TC</span> <span class="kn">from</span><span class="w"> </span><span class="nn">every</span> <span class="n">spectrum</span> 
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver2">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER2</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver2" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span>    <span class="mi">1</span>       <span class="n">VER2</span>            <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">RUN</span> <span class="n">section</span> <span class="n">version</span> <span class="n">number</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-run">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/RUN</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-run" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">P</span>    <span class="mi">2</span>       <span class="n">RUN</span>             <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">run</span> <span class="n">number</span> <span class="p">(</span><span class="n">starting</span> <span class="kn">from</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-titl">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/TITL</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-titl" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">3</span>       <span class="n">TITL</span>            <span class="n">C</span><span class="o">*</span><span class="mi">80</span>    <span class="n">run</span> <span class="n">title</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-user">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/USER</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-user" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">2</span>       <span class="n">USER</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>         <span class="n">C</span><span class="o">*</span><span class="mi">20</span>    <span class="n">user</span> <span class="n">name</span>
+   <span class="n">U</span>            <span class="n">USER</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>         <span class="n">C</span><span class="o">*</span><span class="mi">20</span>    <span class="n">user</span> <span class="n">telephone</span> <span class="n">no</span><span class="o">.</span> <span class="mi">1</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">USER</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>         <span class="n">C</span><span class="o">*</span><span class="mi">20</span>    <span class="n">user</span> <span class="n">telephone</span> <span class="n">no</span><span class="o">.</span> <span class="mi">2</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>       
+   <span class="n">U</span>            <span class="n">USER</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>         <span class="n">C</span><span class="o">*</span><span class="mi">20</span>    <span class="n">user</span> <span class="n">telephone</span> <span class="n">no</span><span class="o">.</span> <span class="p">(</span><span class="n">night</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">USER</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>         <span class="n">C</span><span class="o">*</span><span class="mi">20</span>    <span class="n">user</span> <span class="n">institution</span>
+                                <span class="n">C</span><span class="o">*</span><span class="mi">20</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">spare</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-irbp-rrbp-crbp">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/IRBP</span></code> / <code class="docutils literal notranslate"><span class="pre">RRBP</span></code> / <code class="docutils literal notranslate"><span class="pre">CRBP</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-irbp-rrbp-crbp" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">IRBP</span></code> and <code class="docutils literal notranslate"><span class="pre">RRBP</span></code> represent the <code class="docutils literal notranslate"><span class="pre">RBP</span></code> table, represented as integer and float types respectively.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">IRPB</span></code> is an integer representation of this data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RRBP</span></code> is a float representation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CRBP</span></code> is a string representation. Non-printable characters, <code class="docutils literal notranslate"><span class="pre">\0</span></code>, and any character outside the ASCII range are replaced with the <code class="docutils literal notranslate"><span class="pre">?</span></code> character. The string is then null-terminated.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">P</span>    <span class="mi">4</span>       <span class="n">RPB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">actual</span> <span class="n">run</span> <span class="n">duration</span> 
+   <span class="n">U</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">scaler</span> <span class="k">for</span> <span class="n">RPB</span><span class="p">(</span><span class="mi">1</span><span class="p">),(</span><span class="mi">22</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="o">=</span><span class="n">sec</span><span class="p">,</span><span class="o">..</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">test</span> <span class="n">interval</span> <span class="n">of</span> <span class="n">RPB</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="n">sec</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">dump</span> <span class="n">interval</span>
+   <span class="n">U</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">scaler</span> <span class="k">for</span> <span class="n">RPB</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">test</span> <span class="n">interval</span> <span class="n">of</span> <span class="n">RPB</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="n">sec</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>          <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="mi">2</span><span class="o">**</span><span class="n">k</span> <span class="p">(</span><span class="n">SNS</span> <span class="n">frequency</span><span class="p">(</span><span class="n">Hz</span><span class="p">)</span><span class="o">=</span><span class="mi">50</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">k</span><span class="p">)</span> 
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>          <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">good</span> <span class="n">proton</span> <span class="n">charge</span> <span class="p">(</span><span class="n">uA</span><span class="o">.</span><span class="n">hr</span><span class="p">)</span>
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>          <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">total</span> <span class="n">proton</span> <span class="n">charge</span> <span class="p">(</span><span class="n">uA</span><span class="o">.</span><span class="n">hr</span><span class="p">)</span>
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">number</span> <span class="n">of</span> <span class="s1">'good'</span> <span class="n">frames</span>         
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">frames</span>
+   <span class="n">U</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">required</span> <span class="n">run</span> <span class="n">duration</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="n">RPB</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">actual</span> <span class="n">run</span> <span class="n">duration</span> <span class="p">(</span><span class="n">seconds</span><span class="p">)</span>      <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">monitor</span> <span class="nb">sum</span> <span class="mi">1</span>
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">monitor</span> <span class="nb">sum</span> <span class="mi">2</span>
+                <span class="n">RPB</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">monitor</span> <span class="nb">sum</span> <span class="mi">3</span>
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">17</span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>      <span class="n">C</span><span class="o">*</span><span class="mi">12</span>    <span class="n">finish</span> <span class="n">date</span> <span class="p">(</span><span class="n">dd</span><span class="o">-</span><span class="n">mmm</span><span class="o">-</span><span class="n">yyyy_</span><span class="p">)</span>      
+   <span class="n">P</span>            <span class="n">RPB</span><span class="p">(</span><span class="mi">20</span><span class="o">-</span><span class="mi">21</span><span class="p">)</span>      <span class="n">C</span><span class="o">*</span><span class="mi">8</span>     <span class="n">finish</span> <span class="n">time</span> <span class="p">(</span><span class="n">hh</span><span class="o">-</span><span class="n">mm</span><span class="o">-</span><span class="n">ss</span><span class="p">)</span>          
+		        <span class="n">RPB</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>		    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>	    <span class="n">RAL</span> <span class="n">Proposal</span> <span class="n">Number</span>
+                <span class="n">RPB</span><span class="p">(</span><span class="o">-</span> <span class="mi">32</span><span class="p">)</span>       <span class="n">spare</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver3">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER3</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver3" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span>    <span class="mi">1</span>       <span class="n">VER3</span>            <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">INSTRUMENT</span> <span class="n">section</span> <span class="n">version</span> <span class="n">no</span><span class="o">.</span><span class="p">(</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">***</span><span class="n">B</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-name">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NAME</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-name" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span>    <span class="mi">2</span>       <span class="n">NAME</span>            <span class="n">C</span><span class="o">*</span><span class="mi">8</span>     <span class="n">instrument</span> <span class="n">name</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ivbp-and-raw-data-1-isis-vms-compat-rvbp">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/IVBP</span></code> and <code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/RVBP</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ivbp-and-raw-data-1-isis-vms-compat-rvbp" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">IVPB</span></code> and <code class="docutils literal notranslate"><span class="pre">RVBP</span></code> represent the <code class="docutils literal notranslate"><span class="pre">IVPB</span></code> table, represented as integer and float types respectively.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="mi">3</span>               <span class="n">INSTRUMENT</span> <span class="n">VARIABLE</span> <span class="n">PARAMETER</span> <span class="n">BLOCK</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>         <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">frequency</span> <span class="n">chopper</span> <span class="mi">1</span>     <span class="p">(</span><span class="n">Hz</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>         <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">frequency</span> <span class="n">chopper</span> <span class="mi">2</span>     <span class="p">(</span><span class="n">Hz</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>         <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">frequency</span> <span class="n">chopper</span> <span class="mi">3</span>     <span class="p">(</span><span class="n">Hz</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">delay</span> <span class="n">c1</span>                <span class="p">(</span><span class="n">µs</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">delay</span> <span class="n">c2</span>                <span class="p">(</span><span class="n">µs</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">delay</span> <span class="n">c3</span>                <span class="p">(</span><span class="n">µs</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="nb">max</span> <span class="n">error</span> <span class="n">on</span> <span class="n">delay</span> <span class="n">c1</span>   <span class="p">(</span><span class="n">µs</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="nb">max</span> <span class="n">error</span> <span class="n">on</span> <span class="n">delay</span> <span class="n">c2</span>   <span class="p">(</span><span class="n">µs</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>         <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="nb">max</span> <span class="n">error</span> <span class="n">on</span> <span class="n">delay</span> <span class="n">c3</span>   <span class="p">(</span><span class="n">µs</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">apperture</span> <span class="n">c1</span>            
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">apperture</span> <span class="n">c2</span>            
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">apperture</span> <span class="n">c3</span>           
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">status</span> <span class="n">c1</span>  <span class="p">(</span><span class="n">run</span><span class="p">,</span><span class="n">stopped</span><span class="p">,</span><span class="n">stop</span> <span class="nb">open</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">status</span> <span class="n">c2</span>  <span class="p">(</span><span class="n">run</span><span class="p">,</span><span class="n">stopped</span><span class="p">,</span><span class="n">stop</span> <span class="nb">open</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">status</span> <span class="n">c3</span>  <span class="p">(</span><span class="n">run</span><span class="p">,</span><span class="n">stopped</span><span class="p">,</span><span class="n">stop</span> <span class="nb">open</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">main</span> <span class="n">shutter</span> <span class="p">(</span><span class="nb">open</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">thermal</span> <span class="n">shutter</span><span class="p">(</span> <span class="s2">" )</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>        <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">beam</span> <span class="n">apperture</span> <span class="n">horizontal</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span>   
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>        <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">beam</span> <span class="n">apperture</span> <span class="n">vertical</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span>     
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">scattering</span> <span class="n">posn</span><span class="o">.</span><span class="p">(</span><span class="n">eg</span> <span class="mi">1</span><span class="n">or2</span> <span class="n">HRPD</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">moderator</span> <span class="nb">type</span> <span class="n">no</span><span class="o">.</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span> <span class="n">HET</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>        <span class="n">I</span><span class="o">*</span><span class="mi">4</span>     <span class="n">detector</span> <span class="n">tank</span> <span class="n">vacuum</span> <span class="p">(</span><span class="mi">1</span><span class="o">=</span><span class="n">vacuum</span> <span class="n">on</span><span class="p">)</span> 
+   <span class="n">U</span>            <span class="n">IVPB</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>        <span class="n">R</span><span class="o">*</span><span class="mi">4</span>     <span class="n">L1</span>                              
+        	    <span class="n">IVPB</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>	<span class="n">I</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Rotor</span> <span class="n">Frequency</span>			<span class="n">HET</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Rotor</span> <span class="n">Energy</span>			<span class="n">HET</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Rotor</span> <span class="n">Phase</span>			<span class="n">HET</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>	<span class="n">I</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Rotor</span> <span class="n">Slit</span> <span class="n">Package</span> <span class="p">(</span><span class="mi">0</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">,</span><span class="mi">1</span><span class="o">=</span><span class="s2">"L"</span><span class="p">,</span><span class="mi">2</span><span class="o">=</span><span class="s2">"Med"</span><span class="p">,</span> <span class="mi">3</span><span class="o">=</span><span class="s2">"Hi"</span><span class="p">)</span> 		<span class="n">HET</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span>	<span class="n">I</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Slow</span> <span class="n">Chopper</span> <span class="p">(</span><span class="mi">1</span><span class="o">=</span><span class="n">on</span><span class="p">,</span><span class="mi">0</span><span class="o">=</span><span class="n">off</span><span class="p">)</span>	<span class="n">HET</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">LOQ</span> <span class="n">X</span> <span class="n">centre</span>			<span class="n">LOQ</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">LOQ</span> <span class="n">Y</span> <span class="n">centre</span>			<span class="n">LOQ</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">31</span><span class="p">)</span>	<span class="n">I</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Beam</span> <span class="n">stop</span>			<span class="n">LOQ</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Radius</span> <span class="n">Beam</span> <span class="n">Stop</span>		<span class="n">LOQ</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Source</span> <span class="n">to</span> <span class="n">detector</span> <span class="n">distance</span>	<span class="n">LOQ</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">34</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">FOE</span> <span class="n">angle</span>			<span class="n">LOQ</span>
+                <span class="n">IVPB</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>	<span class="n">R</span><span class="o">*</span><span class="mi">4</span>	<span class="n">Angle</span> <span class="n">of</span> <span class="n">Incidence</span>		<span class="n">CRISP</span>
+	            <span class="n">IVPB</span><span class="p">(</span> <span class="o">-</span> <span class="mi">64</span><span class="p">)</span>             <span class="n">spare</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ndet">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NDET</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ndet" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">4</span>       <span class="n">NDET</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">no</span><span class="o">.</span>  <span class="n">of</span> <span class="n">detectors</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-nmon">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NMON</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-nmon" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">5</span>       <span class="n">NMON</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">no</span><span class="o">.</span>  <span class="n">of</span> <span class="n">monitors</span> 
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-nuse">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NUSE</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-nuse" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">6</span>       <span class="n">NUSE</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">no</span><span class="o">.</span> <span class="n">of</span> <span class="n">UTn</span>  <span class="n">tables</span>                 <span class="o">***</span><span class="n">B</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-mdet">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/MDET</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-mdet" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">7</span>       <span class="n">MDET</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">nmon</span><span class="p">)</span>       <span class="n">detector</span> <span class="n">nos</span><span class="o">.</span> <span class="n">of</span> <span class="n">the</span> <span class="n">monitors</span>  
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-monp">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/MONP</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-monp" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">8</span>       <span class="n">MONP</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">nmon</span><span class="p">)</span>       <span class="n">prescale</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">monitors</span> 
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver4">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER4</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver4" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span>    <span class="mi">1</span>       <span class="n">VER4</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">SE</span> <span class="n">section</span> <span class="n">version</span> <span class="c1">#    (=2)</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-spb-ispb-rspb-and">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/SPB</span></code> / <code class="docutils literal notranslate"><span class="pre">ISPB</span></code> / <code class="docutils literal notranslate"><span class="pre">RSPB</span></code> and `<a class="headerlink" href="#raw-data-1-isis-vms-compat-spb-ispb-rspb-and" title="Link to this heading"></a></h2>
+<p>CSPB`</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SPB</span></code> and <code class="docutils literal notranslate"><span class="pre">ISPB</span></code> are identical integer representations of this data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RSPB</span></code> is a float representation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CSPB</span></code> is a string representation. Non-printable characters, <code class="docutils literal notranslate"><span class="pre">\0</span></code>, and any character outside the ASCII range are replaced with the <code class="docutils literal notranslate"><span class="pre">?</span></code> character. The string is then null-terminated.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="mi">2</span>                               <span class="n">SAMPLE</span> <span class="n">PARAMETER</span> <span class="n">BLOCK</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">position</span> <span class="n">of</span> <span class="n">sample</span> <span class="n">changer</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="nb">type</span>     <span class="p">(</span><span class="mi">1</span> <span class="o">=</span> <span class="n">sample</span><span class="o">+</span><span class="n">can</span>
+                                                         <span class="mi">2</span> <span class="o">=</span> <span class="n">empty</span> <span class="n">can</span>
+                                                         <span class="mi">3</span> <span class="o">=</span> <span class="n">vanadium</span>
+                                                         <span class="mi">4</span> <span class="o">=</span> <span class="n">absorber</span>
+                                                         <span class="mi">5</span> <span class="o">=</span> <span class="n">nothing</span>
+							 <span class="mi">6</span> <span class="o">=</span> <span class="n">sample</span><span class="p">,</span> <span class="n">no</span> <span class="n">can</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">geometry</span> <span class="p">(</span><span class="mi">1</span> <span class="o">=</span> <span class="n">cylinder</span> 
+                                                         <span class="mi">2</span> <span class="o">=</span> <span class="n">flat</span> <span class="n">plate</span>
+                                                         <span class="mi">3</span> <span class="o">=</span> <span class="n">HRPD</span> <span class="n">slab</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">thickness</span> <span class="n">normal</span> <span class="n">to</span> <span class="n">sampl</span><span class="o">.</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">height</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">width</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">omega</span> <span class="n">sample</span> <span class="n">angle</span> <span class="p">(</span><span class="n">deg</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">psi</span> <span class="n">sample</span> <span class="n">angle</span> <span class="p">(</span><span class="n">deg</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>  <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">phi</span> <span class="n">sample</span> <span class="n">angle</span> <span class="p">(</span><span class="n">deg</span><span class="p">)</span>      
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">scat</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="o">=</span><span class="n">trans</span><span class="mf">.2</span><span class="o">=</span><span class="n">reflect</span><span class="o">.</span>      <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">sCOH</span> <span class="p">(</span><span class="n">barns</span><span class="p">)</span>            <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">sINC</span> <span class="p">(</span><span class="n">barns</span><span class="p">)</span>            <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">sABS</span> <span class="p">(</span><span class="n">barns</span><span class="p">)</span>            <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">sample</span> <span class="n">number</span> <span class="n">density</span> <span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">A</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">can</span> <span class="n">wall</span> <span class="n">thickness</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span>            <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">can</span>    <span class="n">sCOH</span> <span class="p">(</span><span class="n">barns</span><span class="p">)</span>             <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">can</span>    <span class="n">sINC</span> <span class="p">(</span><span class="n">barns</span><span class="p">)</span>             <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">can</span>    <span class="n">sABS</span> <span class="p">(</span><span class="n">barns</span><span class="p">)</span>             <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span> <span class="n">R</span><span class="o">*</span><span class="mi">4</span>             <span class="n">can</span>   <span class="n">number</span> <span class="n">density</span> <span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">A</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+   <span class="n">U</span>            <span class="n">SPB</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="n">C</span><span class="o">*</span><span class="mi">40</span>            <span class="n">sample</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">chemical</span> <span class="n">formula</span>
+                <span class="n">SPB</span><span class="p">(</span> <span class="o">-</span><span class="mi">64</span><span class="p">)</span>               <span class="n">spare</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-nsep">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NSEP</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-nsep" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is unconditionally written as zero.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span><span class="o">=</span><span class="mi">0</span>  <span class="mi">3</span>       <span class="n">NSEP</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">no</span><span class="o">.</span> <span class="n">of</span> <span class="n">SE</span> <span class="n">parameters</span>            
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver5">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER5</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver5" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span>    <span class="mi">1</span>       <span class="n">VER5</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">DAE</span> <span class="n">section</span> <span class="n">version</span> <span class="c1">#   (=2)          </span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-daep">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/DAEP</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-daep" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="mi">2</span>               <span class="n">DAE</span> <span class="n">PARAMETER</span> <span class="n">BLOCK</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">Word</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">bulk</span> <span class="n">store</span> <span class="n">memory</span>  
+   <span class="n">F</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">Length</span> <span class="n">of</span> <span class="n">bulk</span> <span class="n">store</span> <span class="n">memory</span> <span class="p">(</span><span class="nb">bytes</span><span class="p">)</span><span class="o">**</span><span class="n">A</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">PPP</span> <span class="n">minimum</span> <span class="n">value</span>                  <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">good</span> <span class="n">PPP</span> <span class="n">total</span> <span class="p">(</span><span class="n">high</span> <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">good</span> <span class="n">PPP</span> <span class="n">total</span> <span class="p">(</span><span class="n">low</span>  <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">raw</span>  <span class="n">PPP</span> <span class="n">total</span> <span class="p">(</span><span class="n">high</span> <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">raw</span>  <span class="n">PPP</span> <span class="n">total</span> <span class="p">(</span><span class="n">low</span>  <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">good</span> <span class="n">ext</span><span class="o">.</span> <span class="n">neut</span> <span class="n">tot</span> <span class="p">(</span><span class="n">high</span> <span class="mi">32</span><span class="n">bits</span><span class="p">)</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">good</span> <span class="n">ext</span><span class="o">.</span> <span class="n">neut</span> <span class="n">tot</span> <span class="p">(</span><span class="n">low</span>  <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">raw</span>  <span class="n">ext</span><span class="o">.</span> <span class="n">neut</span> <span class="n">tot</span> <span class="p">(</span><span class="n">high</span> <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">raw</span>  <span class="n">ext</span><span class="o">.</span> <span class="n">neut</span> <span class="n">tot</span> <span class="p">(</span><span class="n">low</span>  <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">ext</span><span class="o">.</span> <span class="n">neutron</span> <span class="n">gate</span> <span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="p">(</span><span class="n">µs</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">ext</span><span class="o">.</span> <span class="n">neutron</span> <span class="n">gate</span> <span class="p">(</span><span class="n">t2</span><span class="p">)</span> <span class="p">(</span><span class="n">µs</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">detector</span> <span class="k">for</span> <span class="n">MON</span> <span class="mi">1</span>  <span class="p">(</span><span class="mi">12</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">module</span>   <span class="k">for</span> <span class="n">MON</span> <span class="mi">1</span>  <span class="p">(</span> <span class="mi">4</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">crate</span>    <span class="k">for</span> <span class="n">MON</span> <span class="mi">1</span>  <span class="p">(</span> <span class="mi">4</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">mask</span>     <span class="k">for</span> <span class="n">MON</span> <span class="mi">1</span>  <span class="p">(</span><span class="n">c4</span><span class="p">:</span><span class="n">m4</span><span class="p">:</span><span class="n">d12</span><span class="p">)</span> <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">detector</span> <span class="k">for</span> <span class="n">MON</span> <span class="mi">2</span>  <span class="p">(</span><span class="mi">12</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">module</span>   <span class="k">for</span> <span class="n">MON</span> <span class="mi">2</span>  <span class="p">(</span> <span class="mi">4</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">crate</span>    <span class="k">for</span> <span class="n">MON</span> <span class="mi">2</span>  <span class="p">(</span> <span class="mi">4</span> <span class="n">bits</span><span class="p">)</span>   <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">mask</span>     <span class="k">for</span> <span class="n">MON</span> <span class="mi">2</span>  <span class="p">(</span><span class="n">c4</span><span class="p">:</span><span class="n">m4</span><span class="p">:</span><span class="n">d12</span><span class="p">)</span> <span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">total</span> <span class="n">GOOD</span> <span class="n">EVENTS</span> <span class="p">(</span><span class="n">high</span> <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">total</span> <span class="n">GOOD</span> <span class="n">EVENTS</span> <span class="p">(</span><span class="n">low</span>  <span class="mi">32</span> <span class="n">bits</span><span class="p">)</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">P</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">frame</span> <span class="n">synch</span> <span class="n">delay</span> <span class="p">(</span><span class="mi">4</span><span class="n">µs</span> <span class="n">steps</span><span class="p">)</span> <span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>            <span class="n">DAEP</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>            <span class="n">frm</span> <span class="n">snch</span> <span class="n">origin</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">none</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="n">ext</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">***</span><span class="n">B</span>
+   <span class="n">U</span>		<span class="n">DAEP</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>		<span class="n">Secondary</span> <span class="n">Master</span> <span class="n">Pulse</span> <span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">en</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">dis</span><span class="p">)</span>
+   <span class="n">U</span>		<span class="n">DAEP</span><span class="p">(</span><span class="mi">27</span><span class="o">-</span><span class="mi">29</span><span class="p">)</span> <span class="n">I</span><span class="o">*</span><span class="mi">4</span>		<span class="n">External</span> <span class="n">vetoes</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="p">(</span><span class="mi">0</span> <span class="n">dis</span><span class="p">,</span><span class="mi">1</span> <span class="n">en</span><span class="p">)</span>
+                <span class="n">DAEP</span><span class="p">(</span> <span class="o">-</span><span class="mi">64</span><span class="p">)</span>              <span class="n">Spare</span>        
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver6">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER6</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver6" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span>    <span class="mi">1</span>       <span class="n">VER6</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">TCB</span> <span class="n">secton</span> <span class="n">version</span> <span class="c1">#</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ntrg">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NTRG</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ntrg" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span><span class="o">/</span><span class="n">P</span>  <span class="mi">2</span>       <span class="n">NTRG</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="c1"># of time regimes (normally =1)</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-nfpp">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NFPP</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-nfpp" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span><span class="o">=</span><span class="mi">1</span>  <span class="mi">3</span>       <span class="n">NFPP</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="c1"># of frames per period          </span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-nper">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NPER</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-nper" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span><span class="o">=</span><span class="mi">1</span>  <span class="mi">4</span>       <span class="n">NPER</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="c1"># of periods      </span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-pmap">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/PMAP</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-pmap" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">F</span><span class="o">=</span><span class="mi">1</span>  <span class="mi">5</span>       <span class="n">PMAP</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span>        <span class="n">period</span> <span class="c1"># for each basic period  </span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-nsp1">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NSP1</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-nsp1" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span><span class="o">/</span><span class="n">P</span>  <span class="mi">3</span>       <span class="n">NSP1</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">No</span><span class="o">.</span> <span class="n">of</span> <span class="n">spectra</span> <span class="p">(</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">zeroth</span><span class="p">)</span>  
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ntc1">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NTC1</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ntc1" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span><span class="o">/</span><span class="n">P</span>  <span class="mi">4</span>       <span class="n">NTC1</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">No</span><span class="o">.</span> <span class="n">of</span> <span class="n">time</span> <span class="n">channels</span> <span class="p">(</span> <span class="s2">" )      </span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-tcm1">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/TCM1</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-tcm1" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">5</span>       <span class="n">TCM1</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>          <span class="n">time</span> <span class="n">chan</span><span class="o">.</span> <span class="n">mode</span> <span class="p">(</span><span class="n">see</span> <span class="n">footnote</span><span class="p">)</span>
+   
+    <span class="n">TIME</span> <span class="n">CHANNEL</span> <span class="n">MODES</span><span class="p">:</span>
+        <span class="mi">0</span>       <span class="n">Boundaries</span> <span class="nb">set</span> <span class="n">by</span> <span class="n">a</span> <span class="n">table</span> <span class="n">held</span> <span class="ow">in</span> <span class="n">file</span> <span class="n">TCB</span><span class="o">.</span><span class="n">DAT</span>
+
+        <span class="mi">1</span>       <span class="n">TCB1</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">TCP1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">TCP1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">DAEP</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">32</span><span class="o">/</span><span class="n">PRE1</span>
+                        <span class="p">(</span><span class="n">ie</span><span class="o">.</span> <span class="n">Dt</span> <span class="o">=</span> <span class="n">c</span> <span class="p">)</span>
+                        <span class="p">(</span><span class="n">ie</span><span class="o">.</span> <span class="n">less</span> <span class="n">frm</span><span class="o">.</span><span class="n">synch</span> <span class="n">delay</span><span class="p">)</span>
+
+        <span class="mi">2</span>       <span class="n">temp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="o">=</span> <span class="n">TCP1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">TCB1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="o">=</span> <span class="p">(</span><span class="n">TCP1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">DAEP</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">32</span><span class="o">/</span><span class="n">PRE1</span> <span class="p">(</span><span class="n">ie</span><span class="o">.</span> <span class="n">Dt</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">t</span>
+                <span class="n">temp</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span> <span class="n">temp</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">TCP1</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+                <span class="n">TCB1</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span> <span class="p">(</span><span class="n">temp</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">DAEP</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">32</span><span class="o">/</span><span class="n">PRE1</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-tcp1">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/TCP1</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-tcp1" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">6</span>       <span class="n">TCP1</span>    <span class="n">R</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>                <span class="n">time</span> <span class="n">chan</span><span class="o">.</span> <span class="n">parameters</span> <span class="p">(</span><span class="n">µs</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-pre1">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/PRE1</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-pre1" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">P</span>    <span class="mi">7</span>       <span class="n">PRE1</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">prescale</span> <span class="n">value</span> <span class="k">for</span> <span class="mi">32</span><span class="n">MHz</span> <span class="n">clock</span> <span class="p">(</span><span class="o">&lt;=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver7">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER7</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver7" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="mi">1</span>       <span class="n">VER7</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">DATA</span> <span class="n">version</span> <span class="c1">#</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ulen">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/ULEN</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ulen" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is unconditionally written as zero.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="mi">2</span>       <span class="n">ULEN</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span>             <span class="n">USER_LEN</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ver9">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/VER9</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ver9" title="Link to this heading"></a></h2>
+<p>Undocumented. Written as <code class="docutils literal notranslate"><span class="pre">2</span></code> (int32).</p>
+</section>
+<section id="raw-data-1-isis-vms-compat-ntnl">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NTNL</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ntnl" title="Link to this heading"></a></h2>
+<p>Undocumented. Written as <code class="docutils literal notranslate"><span class="pre">0</span></code> (int32).</p>
+</section>
+<section id="raw-data-1-isis-vms-compat-ntll">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NTLL</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ntll" title="Link to this heading"></a></h2>
+<p>Undocumented. Written as <code class="docutils literal notranslate"><span class="pre">0</span></code> (int32).</p>
+</section>
+<section id="raw-data-1-isis-vms-compat-note">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/NOTE</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-note" title="Link to this heading"></a></h2>
+<p>Unconditionally written as the string <code class="docutils literal notranslate"><span class="pre">&quot;No</span> <span class="pre">notes</span> <span class="pre">were</span> <span class="pre">made&quot;</span></code>.</p>
+</section>
+<section id="raw-data-1-isis-vms-compat-tthe">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/TTHE</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-tthe" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">13</span>      <span class="n">TTHE</span>    <span class="n">R</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="mi">2</span><span class="n">Theta</span> <span class="n">table</span> <span class="p">(</span><span class="n">scattering</span> <span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-spec">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/SPEC</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-spec" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">9</span>       <span class="n">SPEC</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">spectrum</span> <span class="c1"># table</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-delt">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/DELT</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-delt" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">10</span>      <span class="n">DELT</span>    <span class="n">R</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="s1">'HOLD OFF'</span> <span class="ow">in</span> <span class="p">(</span><span class="n">µs</span><span class="p">)</span>           <span class="o">***</span><span class="n">B</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-len2">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/LEN2</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-len2" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">11</span>      <span class="n">LEN2</span>    <span class="n">R</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">L2</span>  <span class="n">table</span> <span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="p">(</span><span class="n">upstrem</span> <span class="n">monitors</span> <span class="o">-</span><span class="n">ve</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-code">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/CODE</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-code" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">12</span>      <span class="n">CODE</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">code</span> <span class="n">to</span> <span class="n">define</span> <span class="n">use</span> <span class="n">of</span> <span class="n">UT</span> <span class="n">values</span>    <span class="o">***</span><span class="n">B</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-crat">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/CRAT</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-crat" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">3</span>       <span class="n">CRAT</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">crate</span> <span class="n">no</span><span class="o">.</span><span class="k">for</span> <span class="n">each</span> <span class="n">detector</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-modn">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/MODN</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-modn" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">4</span>       <span class="n">MODN</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">module</span> <span class="n">no</span><span class="o">.</span> <span class="k">for</span> <span class="n">each</span> <span class="n">detector</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-mpos">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/MPOS</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-mpos" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">5</span>       <span class="n">MPOS</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">posn</span><span class="o">.</span> <span class="ow">in</span> <span class="n">module</span> <span class="k">for</span> <span class="n">each</span> <span class="n">detector</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-udet">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/UDET</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-udet" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">7</span>       <span class="n">UDET</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="s1">'USER DETECTOR #'</span> <span class="k">for</span> <span class="n">each</span> <span class="n">det</span> <span class="o">***</span><span class="n">B</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-timr">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/TIMR</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-timr" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">U</span>    <span class="mi">6</span>       <span class="n">TIMR</span>    <span class="n">I</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">TIME</span> <span class="n">REGIME</span> <span class="c1"># table</span>
+</pre></div>
+</div>
+</section>
+<section id="raw-data-1-isis-vms-compat-ut01-ut99">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat/UT01</span></code> - <code class="docutils literal notranslate"><span class="pre">UT99</span></code><a class="headerlink" href="#raw-data-1-isis-vms-compat-ut01-ut99" title="Link to this heading"></a></h2>
+<p>There are <code class="docutils literal notranslate"><span class="pre">NUSE</span></code> user-tables defined.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">3</span>       <span class="mi">15</span>   <span class="n">UT01</span>    <span class="n">R</span><span class="o">*</span><span class="mi">4</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>       <span class="n">USER</span> <span class="n">defined</span> <span class="n">table</span> <span class="mi">1</span>              <span class="o">***</span><span class="n">B</span>
+    <span class="o">..</span><span class="n">cont</span><span class="o">.</span> <span class="n">to</span>  <span class="n">UTn</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nexus_instrument/nexus_instrument_source.html" class="btn btn-neutral float-left" title="raw_data_1/instrument/source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nexus_measurement.html" class="btn btn-neutral float-right" title="raw_data_1/measurement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 22, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

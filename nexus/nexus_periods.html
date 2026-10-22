@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>raw_data_1/periods &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="raw_data_1/runlog" href="nexus_runlog.html" />
+    <link rel="prev" title="raw_data_1/monitor_&lt;N&gt;" href="nexus_monitor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces, files &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Nexus.html">NeXus Files</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nexus_detector.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_detector_events.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/detector_&lt;N&gt;_events</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_framelog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/framelog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_instrument.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/instrument</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_isis_vms_compat.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/isis_vms_compat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_measurement.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/measurement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_monitor.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/monitor_&lt;N&gt;</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_runlog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/runlog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_sample.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/sample</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_selog.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/selog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nexus_user.html"><code class="docutils literal notranslate"><span class="pre">raw_data_1/user_1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Nexus.html">NeXus Files</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/nexus/nexus_periods.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="raw-data-1-periods">
+<h1><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods</span></code><a class="headerlink" href="#raw-data-1-periods" title="Link to this heading"></a></h1>
+<p>This has an <code class="docutils literal notranslate"><span class="pre">NX_class</span></code> of <code class="docutils literal notranslate"><span class="pre">IXperiods</span></code>; this is not a class specified by upstream NeXus definitions.</p>
+<p>Periods are a way of segregating a run into discrete subsections during data acquisition. The run may switch between
+periods using a number of hardware or software mechanisms, and may return to a previous period later.</p>
+<p>For example, periods may represent spin-up and spin-down measurements, or may be used to separate points during the scan
+of a motion axis.</p>
+<section id="nexus-periods-number">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/number</span></code><a class="headerlink" href="#nexus-periods-number" title="Link to this heading"></a></h2>
+<p>The number of periods configured in the data-acquisition system for this measurement, as an int32.</p>
+</section>
+<section id="nexus-periods-highest-used">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/highest_used</span></code><a class="headerlink" href="#nexus-periods-highest-used" title="Link to this heading"></a></h2>
+<p>The maximum period number into which the data acquisition system collected data, as an int32. This is 1-indexed.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p>If five periods were configured and all were used during the data acquisition, <code class="docutils literal notranslate"><span class="pre">highest_used</span></code> would be <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p></li>
+<li><p>If five periods were configured, but only the first period was used, <code class="docutils literal notranslate"><span class="pre">highest_used</span></code> would be <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+</ul>
+</section>
+<section id="nexus-periods-total-counts">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/total_counts</span></code><a class="headerlink" href="#nexus-periods-total-counts" title="Link to this heading"></a></h2>
+<p>The total number of events counted into each period. This is an array of float32, in units of <code class="docutils literal notranslate"><span class="pre">Mev</span></code> (millions of events).</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The array does <strong>NOT</strong> necessarily have length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a>; it instead has a length corresponding to
+the number of configured DAQ periods. This may be smaller than or equal to <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a>. Dwell periods
+are omitted from this array.</p>
+</div>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">Mev</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-periods-good-frames">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/good_frames</span></code><a class="headerlink" href="#nexus-periods-good-frames" title="Link to this heading"></a></h2>
+<p>The total number of good frames counted into each period. This is an array of int32.</p>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+</section>
+<section id="nexus-periods-raw-frames">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/raw_frames</span></code><a class="headerlink" href="#nexus-periods-raw-frames" title="Link to this heading"></a></h2>
+<p>The total number of raw frames (including both good and vetoed frames) counted into each period. This is an array of int32.</p>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+</section>
+<section id="nexus-periods-proton-charge">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/proton_charge</span></code><a class="headerlink" href="#nexus-periods-proton-charge" title="Link to this heading"></a></h2>
+<p>The ‘good’ proton charge (corresponding to <a class="reference internal" href="#nexus-periods-good-frames"><span class="std std-ref">raw_data_1/periods/good_frames</span></a>) counted into each period. This is an array of float32.</p>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">uAh</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-periods-proton-charge-raw">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/proton_charge_raw</span></code><a class="headerlink" href="#nexus-periods-proton-charge-raw" title="Link to this heading"></a></h2>
+<p>The ‘raw’ proton charge (corresponding to <a class="reference internal" href="#nexus-periods-raw-frames"><span class="std std-ref">raw_data_1/periods/raw_frames</span></a>) counted into each period. This is an array of float32.</p>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+<p>Attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: <code class="docutils literal notranslate"><span class="pre">uAh</span></code></p></li>
+</ul>
+</section>
+<section id="nexus-periods-good-frames-daq">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/good_frames_daq</span></code><a class="headerlink" href="#nexus-periods-good-frames-daq" title="Link to this heading"></a></h2>
+<p>The total number of good frames counted into each DAQ period. This is an array of int32.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The array does <strong>NOT</strong> necessarily have length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a>; it instead has a length corresponding to
+the number of configured DAQ periods. This may be smaller than or equal to <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a>. Dwell periods
+are omitted from this array.</p>
+</div>
+</section>
+<section id="nexus-periods-sequences">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/sequences</span></code><a class="headerlink" href="#nexus-periods-sequences" title="Link to this heading"></a></h2>
+<p>The total number of period sequences completed. This is an array of int32.</p>
+<p><strong>In software period mode</strong>, this means the number of times each period was changed into. Beginning a run counts as changing
+into the initial period.</p>
+<p><strong>In hardware period mode</strong>, this means the number of ‘period sequences’ - loops of the period sequence - that have completed.
+If the run was allowed to reach its maximum configured hardware period sequences, the number of sequences completed will
+be that number plus one.</p>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[17,</span> <span class="pre">17,</span> <span class="pre">17,</span> <span class="pre">17]</span></code>, for a run with 4 hardware periods (DAQ, Dwell, DAQ, Dwell) and configured to run for 16 hardware
+period sequences.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>, for running in software-period mode with 4 periods and the control sequence:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">change_period</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">change_period</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">change_period</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">resume</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="nexus-periods-frames-requested">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/frames_requested</span></code><a class="headerlink" href="#nexus-periods-frames-requested" title="Link to this heading"></a></h2>
+<p>The number of frames that were requested in each period, as an array of int32. <strong>This is only meaningful in hardware period mode</strong>; in software
+period mode this may contain arbitrary, non-meaningful, data.</p>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+</section>
+<section id="nexus-periods-type">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/type</span></code><a class="headerlink" href="#nexus-periods-type" title="Link to this heading"></a></h2>
+<p>The number of frames that were requested in each period, as an array of int32. <strong>This is only meaningful in hardware period mode</strong>; in software
+period mode this may contain arbitrary, non-meaningful, data.</p>
+<p>The period types are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: DAQ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: Dwell</p></li>
+</ul>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+</section>
+<section id="nexus-periods-output">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/output</span></code><a class="headerlink" href="#nexus-periods-output" title="Link to this heading"></a></h2>
+<p>The binary output configured for each hardware period, as an array of int32. <strong>This is only meaningful in hardware period mode</strong>; in software
+period mode this may contain arbitrary, non-meaningful, data.</p>
+<p>The array has length <a class="reference internal" href="#nexus-periods-number"><span class="std std-ref">raw_data_1/periods/number</span></a></p>
+</section>
+<section id="nexus-periods-labels">
+<h2><code class="docutils literal notranslate"><span class="pre">raw_data_1/periods/labels</span></code><a class="headerlink" href="#nexus-periods-labels" title="Link to this heading"></a></h2>
+<p>This is the string ‘label’ assigned to each hardware period, concatenated together with a <code class="docutils literal notranslate"><span class="pre">;</span></code> character into a single string.
+<strong>This is only meaningful in hardware period mode</strong>; in software period mode this may contain arbitrary, non-meaningful, data.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;;;;&quot;</span></code> for a run with 4 periods, each having the empty string as a label.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;label1;label2;label3;label4&quot;</span></code>, for a run with 4 periods, each with a non-empty label.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nexus_monitor.html" class="btn btn-neutral float-left" title="raw_data_1/monitor_&lt;N&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nexus_runlog.html" class="btn btn-neutral float-right" title="raw_data_1/runlog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 22, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
