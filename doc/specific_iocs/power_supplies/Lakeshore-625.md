@@ -12,7 +12,7 @@ The 625 has a compliance voltage range of ±5 V (nominal, both source and sink) 
 ### Quirks
 - Difference between compliance voltage and voltage limit. Compliance voltage is akin to a safety/soft limit whereby its the highest voltage the device can be set to. Voltage limit is a hard/hardware limit whereby it defines the actual limit of what the device will output.
 - Ramp rates and segmented ramp rates. The standard ramp rate will do as expected, change to the new setpoint at the supplied rate. Segmented ramp rates allow for a piecewise function of ramp change- e.g., you may tell the device that under ramp segment 1, from 0-20A it must ramp at 1A/s, and at segment 2 from 20-40A it must ramp at 2A/s.
-- Persistent Switch Heater must first be turned on via PSH:ENABLE (Param) and then can be controlled via STAT:PSH (Mode).
+- Persistent Switch Heater must first be turned on via PSH:ENABLE (Parameters) and then can be controlled via STAT:PSH (Mode).
 
 ### Operation
 Items that can be set include:
@@ -25,7 +25,7 @@ Items that can be set include:
 - Output Current Ramp Rate (0.0001 - 99.999 A/s)
 - Computed Magnetic Field Parameters (0.0010 - 1.0000 T/A)
 - Current, Voltage (compliance and safety) and Ramp Rate Limits 
-- Persistent Switch Heater Mode (Off/On/Overide)
+- Persistent Switch Heater Mode (Off/On/Override)
 - Persistent Switch Heater Parameters (Enabled/Disabled, 10 - 125 mA and 5 - 100 s)
 - Quench Parameters (0.0100 - 10.000 A/s)
 
