@@ -26,7 +26,7 @@ Histogram mode has historically been used because:
 
 For HRPD-x, we will initially stream all data, including data from neutron monitors, in event mode. The Kafka streams will only contain event-mode data.
 
-We will write event-mode Nexus files, however HRPD-X also require histogram-mode Nexus files (not containing neutron events) for their analysis routines.
+We will write event-mode Nexus files, however HRPD-X also require histogram-mode Nexus files (not containing neutron events) for their analysis routines. This will be the file writer's responsibility.
 
 ## Consequences
 
@@ -34,3 +34,4 @@ We will write event-mode Nexus files, however HRPD-X also require histogram-mode
 during networking and Kafka processing, as well as final event-mode Nexus file sizes. The histogram file size is independent of number of events.
 - Only considering events will simplify components of the HRPD-x data streaming implementation.
 - There may be two separate files generated per run, `_event.nxs` and `_histogram.nxs`. The exact naming is to be determined.
+- The file writer will be responsible for writing histogrammed data. The exact mechanism for specifying Time Channel Boundaries has not yet been decided, but will likely be as parameters to a writer module within the `nexus_structure` field of a run start. 
