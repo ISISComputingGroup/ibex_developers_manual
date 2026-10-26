@@ -1,5 +1,9 @@
 # Muon Separator Power Supply
 
+:::{attention}
+The separator (`SEPRTR`) IOC was removed on 26/10/26 and superceded by `TECHNIX` separator. 
+:::
+
 The Muon Separator Power Supply is controlled by a National Instruments DAQ-Mx, since IBEX cannot communicate directly with the Separator PSU. The configuration for the DAQ is done in `EPICS\ioc\master\SEPRTR\iocBoot\iocSEPRTR-IOC-01\st-daq.cmd` There is further documentation on how the separator works [here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Muon%20FE/Supporting%20the%20Muon%20Separator.pptx).
 
 
