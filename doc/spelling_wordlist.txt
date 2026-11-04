@@ -527,6 +527,7 @@ Mihai
 minidump
 mins
 Mirion
+misconfigurations
 misconfigured
 mitigations
 mK
@@ -791,6 +792,7 @@ sdk
 searchable
 seci
 seeked
+selog
 sendSlackMessage
 Sensirion
 setIOCName
@@ -902,6 +904,7 @@ TwinCAT
 txt
 ua
 uA
+uAh
 uamps
 UC
 UDP

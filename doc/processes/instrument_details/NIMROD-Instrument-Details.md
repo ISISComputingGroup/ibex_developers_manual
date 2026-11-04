@@ -97,7 +97,7 @@ NIMROD tends to use a lot of different pumps (e.g. Oerlikon, Edwards, Pfeiffer).
 NIMROD will be getting a new gas panel system, which will use two MKS PR4000-B pressure controllers.  IBEX will need to display pressure readings (up to 4, 2 from each).
 
 #### Neutron Camera ####
-There is a plan to install a neutron camera on NIMROD.  The camera would be a Neutron Optics device.  It will be mounted on a simple axis to move it in/out of the beam.
+There is a neutron camera on NIMROD.  The camera is a Neutron Optics device.  It is mounted on a simple axis to move it in/out of the beam.
 
 This has been installed on Galil 4 axis 5 (D) on NIMROD. Motion setpoints have been added under the name `CAMERA` for this, with positions for in/out of the beam. 
 
