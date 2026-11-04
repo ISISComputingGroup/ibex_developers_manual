@@ -791,6 +791,7 @@ scsi
 sdk
 searchable
 seci
+seeked
 selog
 sendSlackMessage
 Sensirion
