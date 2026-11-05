@@ -168,7 +168,7 @@ Unable to create Quixtream on process42: Quixtream Error: Failed to bind the soc
 ```
 The quickstream driver expects certain ports in the UDP dynamic range to be available - this error can indicates either some of these ports are
 not free (grabbed by another process before ISISICP could) or there is a DAE fault. If a reboot of NDX and DAE doesn't clear it you can try again, 
-the whole sitauion is a bit of a race condition with different processes grabbing ports so a second reboot may work. Important thing is to have ibex
+the whole situation is a bit of a race condition with different processes grabbing ports so a second reboot may work. Important thing is to have ibex
 started as soon as possible after reboot, any delay and another process may grab the port instead. If you have run `start_ibex_server` and ibex is currently running, then 
 it should auto-start on boot. If ibex is not running and you start it yourself post boot, there is a chance the delay may give another process time to grab the port. 
 
@@ -177,7 +177,7 @@ a couple of hundred ports above 65024 should be owned by the process id of ISISI
 are just reserved on that private interface. What you need to look out for is something like  `UDP    0.0.0.0:65106`  at the top of this command output with a different number 
 to the ISISICP in the process ID column. If this port number then corresponds to a gap in the ISISICP list, the issue is this process.
 
-If all that looks OK, then it might be a DAE issue. The `processXY` mentioend in the log output is defined in `qxtrm_config.xml` to talk to `EthY` on the DAE3 card number X (both zero based indexes).   
+If all that looks OK, then it might be a DAE issue. The `processXY` mentioned in the log output is defined in `qxtrm_config.xml` to talk to `EthY` on the DAE3 card number X (both zero based indexes).   
 This connection port on the DAE3 card has a mac address `00-0A-35-00-0X-0Y` and IP address suffix `101 + 10*X + Y` with a prefix of `192.168.1`
 So `process42` is `00-0A-35-00-04-02` IP address suffix `101 + 10*4 + 2 = 143`  giving `192.168.1.143` as the DAE card IP address.
 
