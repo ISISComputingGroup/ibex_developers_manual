@@ -164,9 +164,17 @@ If the wiring table is correct, try a restart of the ISISICP - the DAE is only s
 
 If the system is running DAE3, then there is another possible cause. check the log for a line like
 ```
-Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
+Unable to create Quixtream on process62: Quixtream Error: Failed to bind the socket to the local port.
 ```
-The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from `0xFE00` (65024) upwards) so a reboot may be the only option. 
+The quickstream driver expects certain ports in the UDP dynamic range to be available - this error can indicates either something is not free or there is a DAE fault. 
+If a reboot of NDX and DAE doesn't clear it, likely DAE needs checking.
+
+The UDP ports used start at `0xFE00` (65024) and go upwards. Run  `netstat -a -n -o | findstr /i udp | findstr /i 192.168.1` to list UDP ports and owning process id (last column). All the range above 65024 should be owned by the process id of icicicp.
+
+`processXY` is defined in `qxtrm_config.xml` to talk to `EthY` on the DAE3 card number X (both zero based indexes).   
+This connecton port on the DAE3 card has a mac address 00-0A-35-00-0X-0Y and IP address suffix 101 + 10*X + Y with a prefix of 192.168.1
+So `process62` is `00-0A-35-00-06-02` IP address suffix `101 + 10*6 + 2 = 163`  giving `192.168.1.163`. Pass on this MAC and IP address to DSG.
+
 
 ### Real DAE complains about missing cards/crates (new card/crate hardware has just need added)
 
