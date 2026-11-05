@@ -164,16 +164,22 @@ If the wiring table is correct, try a restart of the ISISICP - the DAE is only s
 
 If the system is running DAE3, then there is another possible cause. check the log for a line like
 ```
-Unable to create Quixtream on process62: Quixtream Error: Failed to bind the socket to the local port.
+Unable to create Quixtream on process42: Quixtream Error: Failed to bind the socket to the local port.
 ```
 The quickstream driver expects certain ports in the UDP dynamic range to be available - this error can indicates either some of these ports are
-not free (grabbed by another process before ISISICP could) or there is a DAE fault. If a reboot of NDX and DAE doesn't clear it, likely DAE needs checking.
+not free (grabbed by another process before ISISICP could) or there is a DAE fault. If a reboot of NDX and DAE doesn't clear it you can try again, 
+the whole sitauion is a bit of a race condition with different processes grabbing ports so a second reboot may work. Important thing is to have ibex
+started as soon as possible after reboot, any delay and another process may grab the port instead. If you have run `start_ibex_server` and ibex is currently running, then 
+it should auto-start on boot. If ibex is not running and you start it yourself post boot, there is a chance the delay may give another process time to grab the port. 
 
-The UDP ports used start at `0xFE00` (65024) and go upwards. Run  `netstat -a -n -o | findstr /i udp | findstr /i 192.168.1` to list UDP ports and owning process id (last column). All the range above 65024 should be owned by the process id of ISISICP.
+The UDP ports used start at `0xFE00` (65024) and go upwards. Run  `netstat -a -n -o | findstr /i udp | findstr /i :65` to list UDP ports and owning process id (last column). Up to
+a couple of hundred ports above 65024 should be owned by the process id of ISISICP, if you see gaps that could be the issue. All the ISISICP ports will start with `UDP    192.168.1.1:` as they
+are just reserved on that private interface. What you need to look out for is something like  `UDP    0.0.0.0:65106`  at the top of this command output with a different number 
+to the ISISICP in the process ID column. If this port number then corresponds to a gap in the ISISICP list, the issue is this process.
 
-`processXY` is defined in `qxtrm_config.xml` to talk to `EthY` on the DAE3 card number X (both zero based indexes).   
+If all that looks OK, then it might be a DAE issue. The `processXY` mentioend in the log output is defined in `qxtrm_config.xml` to talk to `EthY` on the DAE3 card number X (both zero based indexes).   
 This connection port on the DAE3 card has a mac address `00-0A-35-00-0X-0Y` and IP address suffix `101 + 10*X + Y` with a prefix of `192.168.1`
-So `process62` is `00-0A-35-00-06-02` IP address suffix `101 + 10*6 + 2 = 163`  giving `192.168.1.163`. Pass on this MAC and IP address to DSG.
+So `process42` is `00-0A-35-00-04-02` IP address suffix `101 + 10*4 + 2 = 143`  giving `192.168.1.143` as the DAE card IP address.
 
 ### Real DAE complains about missing cards/crates (new card/crate hardware has just need added)
 
