@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12 - Clocks &amp; Kafka time stamping &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Data streaming: File writing" href="../Datastreaming---File-writing.html" />
+    <link rel="prev" title="11 - handling low-level detector settings" href="011_detector_settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces, files &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Nexus.html">NeXus Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Choppers.html">Choppers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Cryogenics.html">Cryogenics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Datastreaming.html">Data Streaming</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../ADRs.html">Data streaming: ADRs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="000_kafka.html">0 - Kafka</a></li>
+<li class="toctree-l4"><a class="reference internal" href="001_histograms.html">1 - Histograms and event mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="002_spectra_mapping.html">2 - Wiring and Spectra mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="003_linux.html">3 - Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="004_vetos_runcontrol.html">4 - Vetos and Run control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="005_os_deployment.html">5 - Base OS and deployment strategy for data streaming technology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="006_event_aggregation.html">6 - Event aggregator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="007_periods.html">7 - Periods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="008_isis_raw_files.html">8 - Datastreaming filewriter will not write <code class="docutils literal notranslate"><span class="pre">.raw</span></code> files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="009_frame_sync_delay.html">9 - Frame sync delay handling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="010_filewriter.html">10 - File writer implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="011_detector_settings.html">11 - handling low-level detector settings</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">12 - Clocks &amp; Kafka time stamping</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming---File-writing.html">Data streaming: File writing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming---Sample-Environment.html">Data streaming: Sample environment forwarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming--neutron-events-histograms.html">Data streaming: Neutron events and histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-How-To.html">Data streaming: how-to guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-Topics.html">Data streaming: topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-hardware-architecture.html">Data streaming: hardware architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-run-starts-stops.html">Data streaming: run starts/stops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming-vetos.html">Data streaming - Vetoes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming_hardware_requirements.html">Data streaming server hardware requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Datastreaming_udp_packet_formats.html">Datastreaming: UDP packet formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../../Datastreaming.html">Data Streaming</a></li>
+          <li class="breadcrumb-item"><a href="../ADRs.html">Data streaming: ADRs</a></li>
+      <li class="breadcrumb-item active">12 - Clocks &amp; Kafka time stamping</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/datastreaming/ADRs/012_clocks.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="clocks-kafka-time-stamping">
+<h1>12 - Clocks &amp; Kafka time stamping<a class="headerlink" href="#clocks-kafka-time-stamping" title="Link to this heading"></a></h1>
+<section id="status">
+<h2>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Accepted</p></li>
+</ul>
+</section>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading"></a></h2>
+<p>The streaming system contains many systems with independent clocks. These clocks might not be synchronised with each other.</p>
+<p>These include:</p>
+<p><strong>GPS clock</strong> - This clock is plugged into the streaming control board, fanned out to each detector module. It is used
+to timestamp the signal indicating the start of a frame (which may come from ISIS or a chopper). It is nominally high
+resolution, but operational experience has shown that under failure conditions it can be incorrect by tens of years.</p>
+<p><strong>Streaming server clock</strong> - Local clock on the streaming server. Synchronized only via NTP. Used wherever processes on
+the streaming server generate timestamps. In future, this may be multiple clocks, if processes are distributed across
+multiple machines.</p>
+<p><strong>NDX clock</strong> - Local clock on the NDX virtual machine. Synchronized only via NTP. Historically has high drift (tens of
+seconds) due to running in a VM. EPICS updates use a performance counter which is periodically synchronised to this
+system clock.</p>
+<p><strong>Kafka server clock</strong> - Local clock on Kafka server. Used as the Kafka message timestamp if any Kafka topics are
+configured to use <code class="docutils literal notranslate"><span class="pre">LogAppendTime</span></code>. This may be <em>multiple</em> clocks if the Kafka cluster is distributed across machines.
+Synchronized only via NTP.</p>
+<p><strong>Detector-local clocks</strong> - for instruments like SANDALS2 which will stream direct to Kafka from embedded Linux boards,
+each board represents another clock, which would be used if Kafka <code class="docutils literal notranslate"><span class="pre">CreateTime</span></code> is used local to that board.</p>
+<p>None of the above clocks are guaranteed to be monotonic; NTP may correct time backwards, and GPS time may jump backwards
+under foreseeable failure conditions.</p>
+<p>In future, some or all of the computer clocks could be synced via PTP to the same underlying GPS time-source used by
+the event-streaming hardware.</p>
+<section id="problem-statement">
+<h3>Problem statement<a class="headerlink" href="#problem-statement" title="Link to this heading"></a></h3>
+<p>Various consumers need information such as:</p>
+<ul class="simple">
+<li><p>Where in a stream do I seek to for data corresponding to the start of run <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+<li><p>Is event <span class="math notranslate nohighlight">\(E\)</span> part of run <span class="math notranslate nohighlight">\(R\)</span>?</p></li>
+<li><p>Is sample environment data <span class="math notranslate nohighlight">\(S\)</span> part of run <span class="math notranslate nohighlight">\(R\)</span>?</p></li>
+</ul>
+<p>This information needs to be resilient against foreseeable failure modes, such as:</p>
+<ul class="simple">
+<li><p>GPS time badly wrong (in either direction)</p></li>
+<li><p>GPS time discontinuities</p></li>
+<li><p>Single-event timestamps badly wrong (in either direction)</p></li>
+<li><p>NTP time being corrected forwards/backwards</p></li>
+</ul>
+<p>We must also be able to have run start and stop messages that do not correspond to “now”, to support re-writing
+yesterday’s data with a different filewriter or configuration.</p>
+</section>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Link to this heading"></a></h2>
+<p>We will add infrastructure to ensure that we never need to compare a GPS timestamp against an NTP timestamp for data
+collection purposes. We may compare the two timestamp sources for monitoring/diagnostic/alerting purposes.</p>
+<p>It is not currently seen as viable to disentangle the possible sources of different NTP timestamps. Instead, we will
+set up monitoring and alerting on all relevant servers to monitor the NTP time drift relative to each other. All
+servers will be set up with the same upstream NTP servers.</p>
+<p>Where appropriate, <code class="docutils literal notranslate"><span class="pre">LogAppendTime</span></code> should be preferred for streams that will need to be seeked later. Unlike
+<code class="docutils literal notranslate"><span class="pre">CreateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">LogAppendTime</span></code> ensures Kafka timestamps are monotonic, which is a requirement for seeking streams
+reliably.</p>
+<section id="run-starts-stops">
+<h3>Run starts / stops<a class="headerlink" href="#run-starts-stops" title="Link to this heading"></a></h3>
+<p>Run starts and stops will be modified to contain <strong>both</strong> a local timestamp according to the streaming server, and a
+GPS timestamp according to the streaming control board. This will require changes to the SCB firmware and
+<code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code>.</p>
+</section>
+<section id="event-udp-to-kafka-kafka-event-aggregator">
+<h3><code class="docutils literal notranslate"><span class="pre">event_udp_to_kafka</span></code>, <code class="docutils literal notranslate"><span class="pre">kafka_event_aggregator</span></code><a class="headerlink" href="#event-udp-to-kafka-kafka-event-aggregator" title="Link to this heading"></a></h3>
+<p>Both processes and their corresponding output streams (<code class="docutils literal notranslate"><span class="pre">_rawEvents</span></code> and <code class="docutils literal notranslate"><span class="pre">_events</span></code>) will be modified to use either Kafka
+<code class="docutils literal notranslate"><span class="pre">CreateTime</span></code> or <code class="docutils literal notranslate"><span class="pre">LogAppendTime</span></code> as the Kafka message timestamp. For avoidance of doubt, the timestamp <em>inside</em> the
+schemas will still be the GPS timestamp.</p>
+</section>
+<section id="forwarder">
+<h3>Forwarder<a class="headerlink" href="#forwarder" title="Link to this heading"></a></h3>
+<p>The forwarder should use <code class="docutils literal notranslate"><span class="pre">CreateTime</span></code> or <code class="docutils literal notranslate"><span class="pre">LogAppendTime</span></code> as it’s <em>Kafka</em> message timestamp, and the EPICS timestamp of
+the PV update as the timestamp <em>inside</em> the flatbuffers schemas.</p>
+</section>
+<section id="kafka-file-writer">
+<h3><code class="docutils literal notranslate"><span class="pre">kafka_file_writer</span></code><a class="headerlink" href="#kafka-file-writer" title="Link to this heading"></a></h3>
+<p>The file-writer will seek streams to offsets based on the Kafka message timestamp (either <code class="docutils literal notranslate"><span class="pre">CreateTime</span></code> or
+<code class="docutils literal notranslate"><span class="pre">LogAppendTime</span></code>) of each stream - i.e. an NTP synchronised timestamp. The timestamp to seek <em>to</em> is taken from the
+payload of the run start/stop message. On run end, it will continue writing up to the Kafka offsets
+corresponding to the NTP timestamp in the payload of the run stop message, plus a configurable number of seconds, to
+account for latency introduced in <code class="docutils literal notranslate"><span class="pre">event_udp_to_kafka</span></code>, <code class="docutils literal notranslate"><span class="pre">kafka_event_aggregator</span></code>, or in message transmission. This
+offset may be relatively generous; it’s only negative effect is to delay creation of the final data file, so a number
+of seconds is acceptable.</p>
+<p>The file-writer will ignore events where the GPS timestamp of the event falls outside the GPS timestamps in the run
+start and stop messages.</p>
+<p>For sample-environment data, the filewriter will seek the streams according to the Kafka timestamps and write the EPICS
+timestamps <em>inside</em> the flatbuffers schemas “as seen”. For sample-environment data, over-inclusion is risk-free whereas
+under-inclusion may make analysis of the data impossible later.</p>
+<p>In the NeXus file, we will need to document whether <code class="docutils literal notranslate"><span class="pre">start_time</span></code> and <code class="docutils literal notranslate"><span class="pre">stop_time</span></code> represent NTP time or GPS time. This
+will require discussions with consumers such as Mantid, to ensure that Mantid will accept event data that falls outside
+the <code class="docutils literal notranslate"><span class="pre">start_time</span></code>-<code class="docutils literal notranslate"><span class="pre">stop_time</span></code> range. We may choose to write additional datasets describing the “other” timestamp.</p>
+</section>
+<section id="kafka-dae-diagnostics-and-other-consumers">
+<h3><code class="docutils literal notranslate"><span class="pre">kafka_dae_diagnostics</span></code> and other consumers<a class="headerlink" href="#kafka-dae-diagnostics-and-other-consumers" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">kafka_dae_diagnostics</span></code> will be modified to look at the new GPS run start/stop timestamps and ignore events with GPS
+timestamps falling outside those bounds.</p>
+</section>
+</section>
+<section id="risks">
+<h2>Risks<a class="headerlink" href="#risks" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>If two NTP-based systems get out of sync with each other, neutron or sample-environment data might be wrongly excluded
+from a run.</p>
+<ul>
+<li><p>Mitigation: monitoring/alerting of time drift across all relevant NTP-based systems.</p></li>
+</ul>
+</li>
+<li><p>If the GPS timestamp of a run-start is badly wrong, and the event-mode data later corrects itself, the data may be
+ignored as falling outside the run.</p>
+<ul>
+<li><p>This seems correct behaviour.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kafka_dae_control</span></code> may choose to warn or fail to begin the run if the GPS timestamp is very different from it’s
+local NTP timestamp.</p></li>
+</ul>
+</li>
+<li><p>If GPS timestamps jump, data that is part of a run may be excluded based on the GPS run start/stop times.</p>
+<ul>
+<li><p>We will include a metric in the filewriter for rate of events excluded by start/stop time filters. This metric can
+then be used to trigger alerts in the monitoring system</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kafka_dae_diagnostics</span></code> will also exclude the relevant events, leading to a <code class="docutils literal notranslate"><span class="pre">PROCESSING</span></code> state making it obvious
+that there is a data-collection problem.</p></li>
+</ul>
+</li>
+<li><p>If latency introduced by <code class="docutils literal notranslate"><span class="pre">event_udp_to_kafka</span></code> or <code class="docutils literal notranslate"><span class="pre">kafka_event_aggregator</span></code> is too high, some events at the end of a run
+may be lost. <code class="docutils literal notranslate"><span class="pre">kafka_dae_diagnostics</span></code> will report this latency, as a comparison between the GPS time embedded in the
+message and the NTP time that message is processed in <code class="docutils literal notranslate"><span class="pre">kafka_dae_diagnostics</span></code>. This comparison is only used for
+monitoring/alerting and user feedback.</p></li>
+</ul>
+</section>
+<section id="consequences">
+<h2>Consequences<a class="headerlink" href="#consequences" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The system is resilient against GPS time de-syncing from NTP time</p></li>
+<li><p>The system is <em>not</em> resilient against large mismatches in NTP time across multiple NTP-based systems - this is
+considered a failure condition that will require manual intervention to fix.</p>
+<ul>
+<li><p>The system is tolerant of “small” NTP drifts (configurable in filewriter, assumed to be a number of seconds).</p></li>
+</ul>
+</li>
+<li><p>Messages with erroneous GPS timestamps from the distant past are not immediately eligible for Kafka time-based
+deletion.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="011_detector_settings.html" class="btn btn-neutral float-left" title="11 - handling low-level detector settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Datastreaming---File-writing.html" class="btn btn-neutral float-right" title="Data streaming: File writing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Nov 06, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
