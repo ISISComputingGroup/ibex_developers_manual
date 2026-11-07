@@ -7,13 +7,13 @@ Monitors are numbered from 1; the groups are called `monitor_1`, `monitor_2`, an
 {#nexus_monitor_data}
 ### `raw_data_1/monitor_<N>/data`
 
-An int32 array with dimensions (number of DAQ periods, number of time channels) containing the histogrammed counts
+An int32 array with dimensions (number of DAQ periods, number of spectra, number of time channels) containing the histogrammed counts
 for this monitor.
 
 Attributes:
 - `axes`:
-  - `period_index,spectrum_index,raw_time` on a neutron instrument
-  - `period_index,spectrum_index,time_of_flight` on a muon instrument
+  - `period_index,spectrum_index,time_of_flight` on a neutron instrument
+  - `period_index,spectrum_index,raw_time` on a muon instrument
 - `long_name`: `"positron counts"` (only written on a muon instrument)
 
 {#nexus_monitor_monnum}
