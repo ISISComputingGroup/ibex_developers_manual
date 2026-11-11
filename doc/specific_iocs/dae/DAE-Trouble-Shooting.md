@@ -378,7 +378,13 @@ Sometimes, the four histograms on the DAE display do not show a plot and stay di
 The DAE histogram display comes via a different route and does not recover the same way as the data acquisition does.  The solutions is to restart the DAE IOC (instructions above).
 
 ### DAE tab showing pink borders
-This seems to be a problem with CSS. To fix, restart the GUI. 
+
+This seems to be a problem with CSS. To fix, restart the GUI.
+
+### Detector diagnostics view showing no counts
+
+Verify that the integration range in the detector diagnostics view overlaps with the time-of-flight range specified in
+experiment setup.
 
 ### set a different run number
 
