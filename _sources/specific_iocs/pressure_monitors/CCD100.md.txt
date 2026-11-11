@@ -1,0 +1,34 @@
+# CCD100
+
+This device is used at ISIS to measure either pressure or flow.
+
+There is a unit string set in the device by the team that set it up, they also set up any calibration that is needed (IBEX cannot control the calibration).
+
+The CCD100 on POLARIS is at a particularly high baud rate and long cable run. This means that when the device is disconnected it receives junk. See https://github.com/ISISComputingGroup/IBEX/issues/2326.
+
+
+## Models
+
+There are 3 types of CCD100 in use at ISIS:
+
+### MK1
+
+We cannot talk to these remotely. They do not have a comms menu available via the front panel, and there will be no "func" button on the front panel. See ticket https://github.com/ISISComputingGroup/IBEX/issues/3819
+
+**We can't talk to these units. Although there are ports and cables to physically connect the device to a moxa, there is no remote communication interface that we can use**
+
+### MK2
+
+These are "standard" models which have been in use on a few beamlines, notably Polaris. Connected by serial.
+
+### MK3
+
+These are TCP based - set `IPADDR` (for tcp) instead of `PORT` (for serial) and it will automatically use a different protocol file appropriate for the Mk3.
+
+Set the `IPADDR` macro to IP address of unit (they do not support DHCP). Pressure section have been allocated a range of IP addresses to use for these devices, so we should not need to assign one. Check that the subnet mask on the unit has been changed to 255.255.**252**.0 and is not 255.255.255.0 (factory default). The units do respond to a ping when correctly connected to the network, however they either don't support (or it doesn't work) regarding gateways so they only ping from a machine on the the same subnet 
+
+#### MK3 troubleshooting
+
+These devices present their IP address in a slightly misleading way - with leading zeros which are not valid in an IP address. For example, `130.246.039.156` on a front panel is really `130.246.39.156` - note the 0 has been removed from `039`.
+
+They should respond to a ping, and even have a webpage which gives the current reading.
