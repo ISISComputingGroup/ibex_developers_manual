@@ -74,7 +74,6 @@ motors/Add-support-for-motor-extras
 
 ## See also
 
-* [IMAT Lens Adjustment](motor_extensions/IMAT-Lens-Adjustment)
 * [Motion Setpoints](motor_extensions/Motion-Set-points)
 * [Creating soft motors to control real motors](motor_extensions/Creating-soft-motors-to-control-real-motors) This is useful if you need some logic for transformations between axes.
 * [Portable Eulerian Cradle](motor_extensions/Portable-Eulerian-Cradle) see on ENGINX
