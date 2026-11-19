@@ -60,7 +60,7 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 - Select custom install, install python to a location of your choice (not `c:\instrument\apps\python3`).
 - During the python installation process, **ensure that you tick the box asking whether you want to install TCL/TK support** in optional features. This is needed for independent matplotlib plots in standalone genie_python windows.
 - Also during the python installation process, in advanced options screen select both `download debugging symbols` and `download debug binaries`
-- Zip up the resulting directory and add it to the share at `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` as `python_clean_<version>.zip`
+- Zip up the resulting directory and add it to the share at `\\isis\inst$\Kits$\CompGroup\ICP\uktena_dependencies` as `python_clean_<version>.zip`
 - Edit `package_builder\common_build_python_3.bat` to use the new python version and test that all dependencies work correctly
    
 ### Our packages
