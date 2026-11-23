@@ -447,6 +447,16 @@ Some of these commands take a few seconds to process, so if done using caput it 
     Command: caput %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP
     TODO: add description
 
+**BLOCKSERVER:RESTART_SERVICE_IOC**
+
+	Command: caput %MYPVPREFIX%CS:BLOCKSERVER:RESTART_SERVICE_IOC compress_and_hex(json.dumps([IOCNAME]))
+	Restarts the provided IOC if it is a background server process (defined under SERVICE_IOCS) and manager mode is enabled.
+
+	The block server will restart the IOC via BLOCKSERVER:RESTART_IOCS if it is not:
+	- The block server itself - just does a `sys.exit` instead
+	- The database server - sets a `1` to BLOCKSERVER:RESTART_DBSVR which does a `sys.exit` at the database server level.
+	- The block server gateway - `.reload()` is called.
+
 **BLOCKSERVER:SET_SCREENS**
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_SCREENS

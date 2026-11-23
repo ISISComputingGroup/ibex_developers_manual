@@ -142,4 +142,11 @@ To dehex and decompress see [Reading a Compressed Hex PV](/iocs/testing/Running-
             ["IN:DEMO:SIMPLE:VALUE1", "ai", "A description", "SIMPLE"],
             ["IN:DEMO:SIMPLE:VALUE2", "ai", "Another description", "SIMPLE"]
          ]'
-```		 
+```
+
+**BLOCKSERVER:RESTART_DBSVR**
+
+```
+	Command: Command: caput %MYPVPREFIX%CS:BLOCKSERVER:RESTART_DBSVR 1
+	Restarts the database server, assuming it is set to auto-restart by its parent proc-serv, by running a `sys.exit`. You must be in manager mode to do this.
+```
