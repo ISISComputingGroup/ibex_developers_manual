@@ -450,7 +450,7 @@ Some of these commands take a few seconds to process, so if done using caput it 
 **BLOCKSERVER:RESTART_SERVICE_IOC**
 
 	Command: caput %MYPVPREFIX%CS:BLOCKSERVER:RESTART_SERVICE_IOC compress_and_hex(json.dumps([IOCNAME]))
-	Restarts the provided IOC if it is a background server process (defined under [SERVICE_IOCS](https://github.com/ISISComputingGroup/server_common/blob/main/src/server_common/constants.py)) and manager mode is enabled.
+	Restarts the provided IOC if it is a background server process (defined under SERVICE_IOCS) and manager mode is enabled.
 
 	The block server will restart the IOC via BLOCKSERVER:RESTART_IOCS if it is not:
 	- The block server itself - just does a `sys.exit` instead
