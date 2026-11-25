@@ -82,7 +82,15 @@ These packages include:
 - [`CaChannel`](https://github.com/isiscomputinggroup/cachannel)
 - [`epicscorelibs_pcas`](https://github.com/isiscomputinggroup/epicscorelibs_pcas)
 - [`epicscorelibs`](https://github.com/isiscomputinggroup/epicscorelibs)
-  - This is currently built manually, generating explicit wheels uploaded to [github releases](https://github.com/ISISComputingGroup/epicscorelibs/releases).
+  - This is currently built manually, generating explicit wheels and manually uploaded to [github releases](https://github.com/ISISComputingGroup/epicscorelibs/releases).
+  - To build these releases from our fork for a specific python version, create a `venv` using `uv` and run the build command in it.
+  - Note that you cannot use an old compiler, you will need visual studio >= 2026 at a minimum.
+```
+uv venv .venv --python 3.14  // replace with python version to be built
+.venv\Scripts\activate
+uv pip install build
+python -m build --wheel
+```
 
 {#dep_update_venvs}
 #### Virtual environments for our packages
